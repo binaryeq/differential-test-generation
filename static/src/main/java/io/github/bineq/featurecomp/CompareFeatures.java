@@ -8,8 +8,6 @@ import io.github.bineq.ContentClassification;
 import org.apache.commons.cli.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -228,6 +226,18 @@ public class CompareFeatures {
                                         f = dir.resolve("nonequal-classes.list");
                                         Files.write(f, listOfDiffClasses);
 
+                                        if (!classesWithDiffFeatures1.isEmpty()) {
+                                            Set<String> diffFeatures = flatten(classesWithDiffFeatures1);
+                                            f = dir.resolve("different-features1.list");
+                                            Files.write(f, diffFeatures);
+                                        }
+
+                                        if (!classesWithDiffFeatures2.isEmpty()) {
+                                            Set<String> diffFeatures = flatten(classesWithDiffFeatures2);
+                                            f = dir.resolve("different-features2.list");
+                                            Files.write(f, diffFeatures);
+                                        }
+
                                     }
                                 }
                                 catch (Exception e) {
@@ -243,6 +253,16 @@ public class CompareFeatures {
         catch (Exception x) {
             LOG.error(x.getMessage(),x);
         }
+    }
+
+    private static Set<String> flatten(Map<String,Set<String>> map) {
+        Set<String> flat = new TreeSet<>();
+        for (String cl:map.keySet()) {
+            for (String feature:map.get(cl)) {
+                flat.add(cl + "//" + feature);
+            }
+        }
+        return flat;
     }
 
     private static void showUsage() {
