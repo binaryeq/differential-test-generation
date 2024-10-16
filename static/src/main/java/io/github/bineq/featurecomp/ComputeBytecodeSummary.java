@@ -13,6 +13,8 @@ import java.util.Set;
  */
 public class ComputeBytecodeSummary {
 
+    public static boolean SKIP_ENUM_VALUES_ACCESS = true;
+
     /**
      * Compute a set consisting on superclass, interfaces and non-synthetic fields and methods, methods invocations.
      * Can be used to identify non-equivalent classes.
@@ -54,26 +56,36 @@ public class ComputeBytecodeSummary {
                     public void visitMethodInsn(int opcode, String owner, String name, String descriptor, boolean isInterface) {
                         super.visitMethodInsn(opcode, owner, name, descriptor, isInterface);
                         String invocationType = getInvocationType(opcode) ;
-                        summary.add("invocation: " + methodName + methodDescriptor + "/" + invocationType + "->" + owner+"::"+name+descriptor);
+                        summary.add("call site in " + methodName + methodDescriptor + ": " + invocationType + "->" + owner+"::"+name+descriptor);
                     }
 
                     @Override
                     public void visitInvokeDynamicInsn(String name, String descriptor, Handle bootstrapMethodHandle, Object... bootstrapMethodArguments) {
                         super.visitInvokeDynamicInsn(name, descriptor, bootstrapMethodHandle, bootstrapMethodArguments);
                         String invocationType = "invokedynamic" ;
-                        summary.add("invocation: " + methodName + methodDescriptor + "/" + invocationType + "->[" + bootstrapMethodHandle.getOwner()+"::"+bootstrapMethodHandle.getName()+bootstrapMethodHandle.getDesc()+"]::"+name+descriptor);
+                        summary.add("call site in: " + methodName + methodDescriptor + ": " + invocationType + "->[" + bootstrapMethodHandle.getOwner()+"::"+bootstrapMethodHandle.getName()+bootstrapMethodHandle.getDesc()+"]::"+name+descriptor);
                     }
 
                     @Override
                     public void visitFieldInsn(int opcode, String owner, String name, String descriptor) {
                         super.visitFieldInsn(opcode, owner, name, descriptor);
                         String accessType = getAccessType(opcode) ;
-                        summary.add("access: " + methodName + methodDescriptor + "/" + accessType + "->" + owner+"::"+name+ "|" + descriptor);
+
+                        if (SKIP_ENUM_VALUES_ACCESS && methodName.equals("$values") && accessType.equals("getfield")) {
+                            return;
+                        }
+
+
+                        summary.add("access site in: " + methodName + methodDescriptor + ": " + accessType + "->" + owner+"::"+name+ "|" + descriptor);
                     }
 
                     @Override
                     public void visitLdcInsn(Object cst) {
-                        summary.add("constant: " + methodName + methodDescriptor + "/" + "contant=>" + cst.getClass() + '@' + cst);
+
+                        // ony look for values
+                        if (cst instanceof Number | cst instanceof String) {
+                            summary.add("constant load in: " + methodName + methodDescriptor + ": " + " type: " + cst.getClass() + ", value: " + cst);
+                        }
                     }
                 };
             }

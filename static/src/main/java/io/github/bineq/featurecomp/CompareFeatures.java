@@ -1,15 +1,22 @@
 package io.github.bineq.featurecomp;
 
 import com.google.common.base.Preconditions;
+import com.google.common.collect.Sets;
 import com.google.gson.Gson;
+import io.github.bineq.Content;
+import io.github.bineq.ContentClassification;
 import org.apache.commons.cli.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.*;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import static io.github.bineq.featurecomp.CompareBuildUtils.*;
@@ -122,32 +129,117 @@ public class CompareFeatures {
                     String provider1 = providers.get(i);
                     Set<Record> records1 = setsOfRecords.get(i);
                     for (int j = 0; j < datasets.size(); j++) {
-                        String provider2 = providers.get(j);
-                        Set<Record> records2 = setsOfRecords.get(j);
 
-                        LOG.info("Comparing:" + provider1 + " , "+ provider2);
+                        if (i!=j) {
 
-                        // GUARD TO ONLY COMPARE RECORDS WITH MATCHING SOURCE FILES !
-                        Set<PairOfRecords> pairOfRecords = findMatchingRecordsWithSameSources(provider1, provider2, records1, records2);
+                            String provider2 = providers.get(j);
+                            Set<Record> records2 = setsOfRecords.get(j);
 
-                        Set<Record> matchingRecords1 = pairOfRecords.stream().map(p -> p.left()).collect(Collectors.toSet());
-                        Set<Record> matchingRecords2 = pairOfRecords.stream().map(p -> p.right()).collect(Collectors.toSet());
+                            LOG.info("Comparing:" + provider1 + " , " + provider2);
 
-                        LOG.info("Matching records (GAVs with equivalent sources for both providers): " + pairOfRecords.size());
+                            // GUARD TO ONLY COMPARE RECORDS WITH MATCHING SOURCE FILES !
+                            Set<PairOfRecords> commonRecords = findMatchingRecordsWithSameSources(provider1, provider2, records1, records2);
+                            LOG.info("Matching records (GAVs with equivalent sources for both providers): " + commonRecords.size());
 
-                        Map<String, Object> prov = new HashMap<>();
-                        prov.put("provider1", provider1);
-                        prov.put("provider2", provider2);
 
-                        PairOfProviders comparedProviders = new PairOfProviders(provider1, provider2);
-                        PairOfProviders comparedProvidersReversed = comparedProviders.swap();
+                            AtomicInteger counter = new AtomicInteger(0);
+                            commonRecords.stream().forEach(pairOfRecords -> {
 
-                        // .compare(provider1, provider2, matchingRecords1, matchingRecords2);
-                        LOG.warn("todo: comparison");
+                                String gav = pairOfRecords.left().gav();
+                                try {
+                                    if (counter.incrementAndGet() % 1 == 0) {
+                                        LOG.debug("progress:" + counter.get() + " / " + commonRecords.size());
+                                        LOG.debug("\tcurrent gav: " + gav);
+                                    }
+
+                                    Set<String> listOfDiffClasses = new TreeSet<>();
+                                    Map<String, Set<String>> classesWithDiffFeatures1 = new HashMap<>();
+                                    Map<String, Set<String>> classesWithDiffFeatures2 = new HashMap<>();
+                                    Set<String> diffClasses1 = new TreeSet<>();
+                                    Set<String> diffClasses2 = new TreeSet<>();
+                                    Set<String> commonClasses = new TreeSet<>();
+
+                                    Set<String> bin1 = entries(
+                                        pairOfRecords.left().binMainFile().toFile(),
+                                        f -> ContentClassification.isByteCode(f)
+                                    );
+                                    Set<String> bin2 = entries(
+                                        pairOfRecords.right().binMainFile().toFile(),
+                                        f -> ContentClassification.isByteCode(f)
+                                    );
+                                    commonClasses.addAll(Sets.intersection(bin1, bin2));
+                                    diffClasses1.addAll(Sets.difference(bin1, bin2));
+                                    diffClasses2.addAll(Sets.difference(bin2, bin1));
+
+                                    for (String commonClass : commonClasses) {
+                                        Content content1 = new Content(pairOfRecords.left().binMainFile(), commonClass);
+                                        Content content2 = new Content(pairOfRecords.right().binMainFile(), commonClass);
+
+                                        // any difference
+                                        try {
+                                            if (!Arrays.equals(content1.load(), content2.load())) {
+                                                listOfDiffClasses.add(commonClass);
+
+
+                                                // look for feature difference
+                                                Set<String> features1 = ComputeBytecodeSummary.computeMemberSummary(content1);
+                                                Set<String> features2 = ComputeBytecodeSummary.computeMemberSummary(content2);
+
+                                                Set<String> diff1 = Sets.difference(features1, features2);
+                                                Set<String> diff2 = Sets.difference(features2, features1);
+
+                                                if (!diff1.isEmpty()) {
+                                                    classesWithDiffFeatures1.put(commonClass, new TreeSet(diff1));
+                                                }
+                                                if (!diff2.isEmpty()) {
+                                                    classesWithDiffFeatures2.put(commonClass, new TreeSet(diff2));
+                                                }
+                                            }
+                                        } catch (Exception e) {
+                                            LOG.error("Error comparing " + commonClass, e);
+                                        }
+
+                                    }
+
+
+                                    // write output
+
+                                    if (!listOfDiffClasses.isEmpty()) {
+                                        Path f = null;
+                                        Path dir = RESULT_FOLDER
+                                            .resolve(provider1.toString())
+                                            .resolve(provider2.toString())
+                                            .resolve(gav.replace(":", "__"));
+                                        Files.createDirectories(dir);
+
+                                        if (!diffClasses1.isEmpty()) {
+                                            f = dir.resolve("different-classes1.list");
+                                            Files.write(f, diffClasses1);
+                                        }
+
+                                        if (!diffClasses2.isEmpty()) {
+                                            f = dir.resolve("different-classes2.list");
+                                            Files.write(f, diffClasses2);
+                                        }
+
+                                        f = dir.resolve("common-classes.list");
+                                        Files.write(f, commonClasses);
+
+                                        f = dir.resolve("nonequal-classes.list");
+                                        Files.write(f, listOfDiffClasses);
+
+                                    }
+                                }
+                                catch (Exception e) {
+                                    // LOG.error(e.getMessage(),e);
+                                }
+                            });
+
+                        }
                     }
                 }
+        }
 
-            }
         catch (Exception x) {
             LOG.error(x.getMessage(),x);
         }
@@ -176,5 +268,6 @@ public class CompareFeatures {
             .filter(p -> gavsWithSameSources.contains(p.left().gav()))
             .collect(Collectors.toSet());
     }
+
 
 }
