@@ -151,8 +151,8 @@ public class CompareFeatures {
                                     }
 
                                     Set<String> listOfDiffClasses = new TreeSet<>();
-                                    Map<String, Set<String>> classesWithDiffFeatures1 = new HashMap<>();
-                                    Map<String, Set<String>> classesWithDiffFeatures2 = new HashMap<>();
+                                    Map<String, Set<Feature>> classesWithDiffFeatures1 = new HashMap<>();
+                                    Map<String, Set<Feature>> classesWithDiffFeatures2 = new HashMap<>();
                                     Set<String> diffClasses1 = new TreeSet<>();
                                     Set<String> diffClasses2 = new TreeSet<>();
                                     Set<String> commonClasses = new TreeSet<>();
@@ -180,11 +180,11 @@ public class CompareFeatures {
 
 
                                                 // look for feature difference
-                                                Set<String> features1 = ComputeBytecodeSummary.computeMemberSummary(content1);
-                                                Set<String> features2 = ComputeBytecodeSummary.computeMemberSummary(content2);
+                                                Set<Feature> features1 = ComputeBytecodeSummary.computeMemberSummary(content1);
+                                                Set<Feature> features2 = ComputeBytecodeSummary.computeMemberSummary(content2);
 
-                                                Set<String> diff1 = Sets.difference(features1, features2);
-                                                Set<String> diff2 = Sets.difference(features2, features1);
+                                                Set<Feature> diff1 = Sets.difference(features1, features2);
+                                                Set<Feature> diff2 = Sets.difference(features2, features1);
 
                                                 if (!diff1.isEmpty()) {
                                                     classesWithDiffFeatures1.put(commonClass, new TreeSet(diff1));
@@ -228,13 +228,13 @@ public class CompareFeatures {
 
                                         if (!classesWithDiffFeatures1.isEmpty()) {
                                             Set<String> diffFeatures = flatten(classesWithDiffFeatures1);
-                                            f = dir.resolve("different-features1.list");
+                                            f = dir.resolve("different-features1.tsv");
                                             Files.write(f, diffFeatures);
                                         }
 
                                         if (!classesWithDiffFeatures2.isEmpty()) {
                                             Set<String> diffFeatures = flatten(classesWithDiffFeatures2);
-                                            f = dir.resolve("different-features2.list");
+                                            f = dir.resolve("different-features2.tsv");
                                             Files.write(f, diffFeatures);
                                         }
 
@@ -255,11 +255,11 @@ public class CompareFeatures {
         }
     }
 
-    private static Set<String> flatten(Map<String,Set<String>> map) {
+    private static Set<String> flatten(Map<String,Set<Feature>> map) {
         Set<String> flat = new TreeSet<>();
         for (String cl:map.keySet()) {
-            for (String feature:map.get(cl)) {
-                flat.add(cl + "//" + feature);
+            for (Feature feature:map.get(cl)) {
+                flat.add(feature.toTSV());
             }
         }
         return flat;
