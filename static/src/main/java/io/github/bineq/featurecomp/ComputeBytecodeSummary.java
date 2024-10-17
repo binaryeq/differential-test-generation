@@ -100,16 +100,16 @@ public class ComputeBytecodeSummary {
     }
 
     public static FeatureType getInvocationType(int flags) {
-        if ((Opcodes.INVOKESTATIC & flags) != 0) {
+        if ((Opcodes.INVOKESTATIC & flags) == Opcodes.INVOKESTATIC ) {
             return FeatureType.INVOKE_STATIC;
         }
-        if ((Opcodes.INVOKESPECIAL & flags) != 0) {
+        if ((Opcodes.INVOKESPECIAL & flags) == Opcodes.INVOKESPECIAL) {
             return FeatureType.INVOKE_SPECIAL;
         }
-        if ((Opcodes.INVOKEINTERFACE & flags) != 0) {
+        if ((Opcodes.INVOKEINTERFACE & flags) == Opcodes.INVOKEINTERFACE) {
             return FeatureType.INVOKE_INTERFACE;
         }
-        if ((Opcodes.INVOKEVIRTUAL & flags) != 0) {
+        if ((Opcodes.INVOKEVIRTUAL & flags) == Opcodes.INVOKEVIRTUAL) {
             return FeatureType.INVOKE_VIRTUAL;
         }
         assert false;
@@ -117,16 +117,16 @@ public class ComputeBytecodeSummary {
     }
 
     public static FeatureType getAccessType(int flags) {
-        if ((Opcodes.GETFIELD & flags) != 0) {
+        if ((Opcodes.GETFIELD & flags) == Opcodes.GETFIELD) {
             return FeatureType.GET_FIELD;
         }
-        if ((Opcodes.PUTFIELD & flags) != 0) {
+        if ((Opcodes.PUTFIELD & flags) == Opcodes.PUTFIELD) {
             return FeatureType.PUT_FIELD;
         }
-        if ((Opcodes.GETSTATIC & flags) != 0) {
+        if ((Opcodes.GETSTATIC & flags) == Opcodes.GETSTATIC) {
             return FeatureType.GET_STATIC_FIELD;
         }
-        if ((Opcodes.PUTSTATIC & flags) != 0) {
+        if ((Opcodes.PUTSTATIC & flags) == Opcodes.PUTSTATIC) {
             return FeatureType.PUT_STATIC_FIELD;
         }
         assert false;

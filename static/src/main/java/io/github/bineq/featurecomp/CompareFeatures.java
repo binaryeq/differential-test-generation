@@ -128,7 +128,7 @@ public class CompareFeatures {
                     Set<Record> records1 = setsOfRecords.get(i);
                     for (int j = 0; j < datasets.size(); j++) {
 
-                        if (i!=j) {
+                        if (i<j) { // avoid redundancies
 
                             String provider2 = providers.get(j);
                             Set<Record> records2 = setsOfRecords.get(j);
