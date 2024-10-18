@@ -99,18 +99,12 @@ public class ComputeBytecodeSummary {
         return (Opcodes.ACC_SYNTHETIC & flags) != 0;
     }
 
-    public static FeatureType getInvocationType(int flags) {
-        if ((Opcodes.INVOKESTATIC & flags) == Opcodes.INVOKESTATIC ) {
-            return FeatureType.INVOKE_STATIC;
-        }
-        if ((Opcodes.INVOKESPECIAL & flags) == Opcodes.INVOKESPECIAL) {
-            return FeatureType.INVOKE_SPECIAL;
-        }
-        if ((Opcodes.INVOKEINTERFACE & flags) == Opcodes.INVOKEINTERFACE) {
-            return FeatureType.INVOKE_INTERFACE;
-        }
-        if ((Opcodes.INVOKEVIRTUAL & flags) == Opcodes.INVOKEVIRTUAL) {
-            return FeatureType.INVOKE_VIRTUAL;
+    public static FeatureType getInvocationType(int opcode) {
+        switch (opcode) {
+            case Opcodes.INVOKESTATIC: return FeatureType.INVOKE_STATIC;
+            case Opcodes.INVOKESPECIAL: return FeatureType.INVOKE_SPECIAL;
+            case Opcodes.INVOKEINTERFACE: return FeatureType.INVOKE_INTERFACE;
+            case Opcodes.INVOKEVIRTUAL: return FeatureType.INVOKE_VIRTUAL;
         }
         assert false;
         return FeatureType.UNKNOWN;
