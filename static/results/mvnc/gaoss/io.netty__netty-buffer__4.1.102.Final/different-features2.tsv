@@ -7,6 +7,8 @@ io/netty/buffer/FixedCompositeByteBuf	getBytes	(ILjava/nio/ByteBuffer;)Lio/netty
 io/netty/buffer/FixedCompositeByteBuf	nioBuffer	(II)Ljava/nio/ByteBuffer;	INVOKE_VIRTUAL	java/nio/ByteBuffer::flip()Ljava/nio/Buffer;
 io/netty/buffer/PoolArena$DirectArena	memoryCopy	(Ljava/nio/ByteBuffer;ILio/netty/buffer/PooledByteBuf;I)V	INVOKE_VIRTUAL	java/nio/Buffer::limit(I)Ljava/nio/Buffer;
 io/netty/buffer/PoolArena$DirectArena	memoryCopy	(Ljava/nio/ByteBuffer;ILio/netty/buffer/PooledByteBuf;I)V	INVOKE_VIRTUAL	java/nio/ByteBuffer::position(I)Ljava/nio/Buffer;
+io/netty/buffer/PoolArena$SizeClass	<clinit>	()V	GET_STATIC_FIELD	io/netty/buffer/PoolArena$SizeClass::Normal|Lio/netty/buffer/PoolArena$SizeClass;
+io/netty/buffer/PoolArena$SizeClass	<clinit>	()V	GET_STATIC_FIELD	io/netty/buffer/PoolArena$SizeClass::Small|Lio/netty/buffer/PoolArena$SizeClass;
 io/netty/buffer/PooledByteBuf	_internalNioBuffer	(IIZ)Ljava/nio/ByteBuffer;	INVOKE_VIRTUAL	java/nio/Buffer::position(I)Ljava/nio/Buffer;
 io/netty/buffer/PooledByteBuf	_internalNioBuffer	(IIZ)Ljava/nio/ByteBuffer;	INVOKE_VIRTUAL	java/nio/ByteBuffer::limit(I)Ljava/nio/Buffer;
 io/netty/buffer/PooledByteBuf	internalNioBuffer	()Ljava/nio/ByteBuffer;	INVOKE_VIRTUAL	java/nio/ByteBuffer::clear()Ljava/nio/Buffer;

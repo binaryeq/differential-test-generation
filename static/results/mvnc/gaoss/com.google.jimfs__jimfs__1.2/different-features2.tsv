@@ -1,5 +1,10 @@
+com/google/common/jimfs/AbstractWatchService$Key$State	<clinit>	()V	GET_STATIC_FIELD	com/google/common/jimfs/AbstractWatchService$Key$State::READY|Lcom/google/common/jimfs/AbstractWatchService$Key$State;
+com/google/common/jimfs/AbstractWatchService$Key$State	<clinit>	()V	GET_STATIC_FIELD	com/google/common/jimfs/AbstractWatchService$Key$State::SIGNALLED|Lcom/google/common/jimfs/AbstractWatchService$Key$State;
 com/google/common/jimfs/AclAttributeProvider	toAcl	(Ljava/util/List;)Lcom/google/common/collect/ImmutableList;	INVOKE_SPECIAL	java/lang/StringBuilder::<init>()V
 com/google/common/jimfs/AclAttributeProvider	toAcl	(Ljava/util/List;)Lcom/google/common/collect/ImmutableList;	INVOKE_VIRTUAL	java/lang/StringBuilder::append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+com/google/common/jimfs/AttributeCopyOption	<clinit>	()V	GET_STATIC_FIELD	com/google/common/jimfs/AttributeCopyOption::ALL|Lcom/google/common/jimfs/AttributeCopyOption;
+com/google/common/jimfs/AttributeCopyOption	<clinit>	()V	GET_STATIC_FIELD	com/google/common/jimfs/AttributeCopyOption::BASIC|Lcom/google/common/jimfs/AttributeCopyOption;
+com/google/common/jimfs/AttributeCopyOption	<clinit>	()V	GET_STATIC_FIELD	com/google/common/jimfs/AttributeCopyOption::NONE|Lcom/google/common/jimfs/AttributeCopyOption;
 com/google/common/jimfs/AttributeProvider	checkNotCreate	(Ljava/lang/String;Ljava/lang/String;Z)V	INVOKE_SPECIAL	java/lang/StringBuilder::<init>()V
 com/google/common/jimfs/AttributeProvider	invalidType	(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;[Ljava/lang/Class;)Ljava/lang/IllegalArgumentException;	INVOKE_SPECIAL	java/lang/StringBuilder::<init>()V
 com/google/common/jimfs/AttributeProvider	invalidType	(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;[Ljava/lang/Class;)Ljava/lang/IllegalArgumentException;	INVOKE_VIRTUAL	java/lang/StringBuilder::append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
@@ -26,7 +31,14 @@ com/google/common/jimfs/Directory	put	(Lcom/google/common/jimfs/DirectoryEntry;Z
 com/google/common/jimfs/Directory	put	(Lcom/google/common/jimfs/DirectoryEntry;Z)V	INVOKE_VIRTUAL	java/lang/StringBuilder::append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 com/google/common/jimfs/Directory	remove	(Lcom/google/common/jimfs/Name;)Lcom/google/common/jimfs/DirectoryEntry;	INVOKE_SPECIAL	java/lang/StringBuilder::<init>()V
 com/google/common/jimfs/Directory	remove	(Lcom/google/common/jimfs/Name;)Lcom/google/common/jimfs/DirectoryEntry;	INVOKE_VIRTUAL	java/lang/StringBuilder::append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+com/google/common/jimfs/Feature	<clinit>	()V	GET_STATIC_FIELD	com/google/common/jimfs/Feature::FILE_CHANNEL|Lcom/google/common/jimfs/Feature;
+com/google/common/jimfs/Feature	<clinit>	()V	GET_STATIC_FIELD	com/google/common/jimfs/Feature::LINKS|Lcom/google/common/jimfs/Feature;
+com/google/common/jimfs/Feature	<clinit>	()V	GET_STATIC_FIELD	com/google/common/jimfs/Feature::SECURE_DIRECTORY_STREAM|Lcom/google/common/jimfs/Feature;
+com/google/common/jimfs/Feature	<clinit>	()V	GET_STATIC_FIELD	com/google/common/jimfs/Feature::SYMBOLIC_LINKS|Lcom/google/common/jimfs/Feature;
 com/google/common/jimfs/File	getAttributeKeys	()Lcom/google/common/collect/ImmutableSet;	INVOKE_SPECIAL	java/lang/StringBuilder::<init>()V
+com/google/common/jimfs/FileSystemView$DeleteMode	<clinit>	()V	GET_STATIC_FIELD	com/google/common/jimfs/FileSystemView$DeleteMode::ANY|Lcom/google/common/jimfs/FileSystemView$DeleteMode;
+com/google/common/jimfs/FileSystemView$DeleteMode	<clinit>	()V	GET_STATIC_FIELD	com/google/common/jimfs/FileSystemView$DeleteMode::DIRECTORY_ONLY|Lcom/google/common/jimfs/FileSystemView$DeleteMode;
+com/google/common/jimfs/FileSystemView$DeleteMode	<clinit>	()V	GET_STATIC_FIELD	com/google/common/jimfs/FileSystemView$DeleteMode::NON_DIRECTORY_ONLY|Lcom/google/common/jimfs/FileSystemView$DeleteMode;
 com/google/common/jimfs/Handler	register	(Ljava/lang/Class;)V	INVOKE_SPECIAL	java/lang/StringBuilder::<init>()V
 com/google/common/jimfs/JimfsFileSystem	getDefaultThreadPool	()Ljava/util/concurrent/ExecutorService;	INVOKE_SPECIAL	java/lang/StringBuilder::<init>()V
 com/google/common/jimfs/JimfsFileSystemProvider	checkPath	(Ljava/nio/file/Path;)Lcom/google/common/jimfs/JimfsPath;	INVOKE_SPECIAL	java/lang/StringBuilder::<init>()V
@@ -47,6 +59,11 @@ com/google/common/jimfs/Options	getOptionsForInputStream	([Ljava/nio/file/OpenOp
 com/google/common/jimfs/PathMatchers	getPathMatcher	(Ljava/lang/String;Ljava/lang/String;Lcom/google/common/collect/ImmutableSet;)Ljava/nio/file/PathMatcher;	INVOKE_SPECIAL	java/lang/StringBuilder::<init>()V
 com/google/common/jimfs/PathMatchers	getPathMatcher	(Ljava/lang/String;Ljava/lang/String;Lcom/google/common/collect/ImmutableSet;)Ljava/nio/file/PathMatcher;	INVOKE_VIRTUAL	java/lang/StringBuilder::append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 com/google/common/jimfs/PathMatchers	getPathMatcher	(Ljava/lang/String;Ljava/lang/String;Lcom/google/common/collect/ImmutableSet;)Ljava/nio/file/PathMatcher;	INVOKE_VIRTUAL	java/lang/StringBuilder::toString()Ljava/lang/String;
+com/google/common/jimfs/PathNormalization	<clinit>	()V	GET_STATIC_FIELD	com/google/common/jimfs/PathNormalization::CASE_FOLD_ASCII|Lcom/google/common/jimfs/PathNormalization;
+com/google/common/jimfs/PathNormalization	<clinit>	()V	GET_STATIC_FIELD	com/google/common/jimfs/PathNormalization::CASE_FOLD_UNICODE|Lcom/google/common/jimfs/PathNormalization;
+com/google/common/jimfs/PathNormalization	<clinit>	()V	GET_STATIC_FIELD	com/google/common/jimfs/PathNormalization::NFC|Lcom/google/common/jimfs/PathNormalization;
+com/google/common/jimfs/PathNormalization	<clinit>	()V	GET_STATIC_FIELD	com/google/common/jimfs/PathNormalization::NFD|Lcom/google/common/jimfs/PathNormalization;
+com/google/common/jimfs/PathNormalization	<clinit>	()V	GET_STATIC_FIELD	com/google/common/jimfs/PathNormalization::NONE|Lcom/google/common/jimfs/PathNormalization;
 com/google/common/jimfs/PathService	createPathMatcher	(Ljava/lang/String;)Ljava/nio/file/PathMatcher;	INVOKE_SPECIAL	java/lang/StringBuilder::<init>()V
 com/google/common/jimfs/PathService	createPathMatcher	(Ljava/lang/String;)Ljava/nio/file/PathMatcher;	INVOKE_VIRTUAL	java/lang/StringBuilder::append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 com/google/common/jimfs/PathService	createPathMatcher	(Ljava/lang/String;)Ljava/nio/file/PathMatcher;	INVOKE_VIRTUAL	java/lang/StringBuilder::toString()Ljava/lang/String;
