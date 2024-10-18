@@ -284,6 +284,7 @@ public class CompareFeatures {
         final Set<PairOfRecords> commonRecords = findCommonRecords(records1,records2);
         Set<String> gavsWithSameSources = readFromSameSourcesCache(provider1,provider2);
         LOG.info("Same source cache with GAVs used for " + provider1 + " and " + provider2);
+        Preconditions.checkNotNull(gavsWithSameSources, "No entries found for at least one of these providers in " + SAME_SOURCE_CACHE + " -- for now, generate it using CompareBuildsFromSameSources from the tooling repo and copy it across!");  //TODO: Generate this properly
         return commonRecords.stream()
             .filter(p -> gavsWithSameSources.contains(p.left().gav()))
             .collect(Collectors.toSet());

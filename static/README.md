@@ -2,6 +2,10 @@ the main class is `io.github.bineq.featurecomp.CompareFeatures`,
 expected arguments are the locations of the alternative build index files, like:
 `gav_mvnc.tsv gav_gaoss.tsv gav_obfs.tsv`. Results are saved in `results`. 
 
+The script requires a pre-populated `.same_sources.json` file containing the results for every provider specified on the command line.
+This repo already includes a `.same_sources.json` file with results for the altbuilds providers (`mvnc`, `obfs`, `rh1`, etc.).
+In order to use the script with other providers (e.g., for testing), you'll need to generate a `.same_sources.json` file yourself using the [`CompareBuildsFromSameSources`](https://github.com/binaryeq/tooling/blob/main/src/main/java/io/github/bineq/experiments/altbuilds/CompareBuildsFromSameSources.java) tool.
+
 Only results for "interesting" combinations are saved (some classes must be different).
 
 The script produces the following files for each pair of jars being compared:
