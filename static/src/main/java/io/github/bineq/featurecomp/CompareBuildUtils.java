@@ -45,7 +45,7 @@ public class CompareBuildUtils {
         return Files.lines(indexFile)
             .map(line -> {
                 try {
-                    return Record.parse(indexFile.getParent(),line);
+                    return Record.parse(safeGetParent(indexFile),line);
                 } catch (MalformedURLException e) {
                     LOG.error("Error parsing " + indexFile + " ,  line: " + line);
                     throw new RuntimeException(e);
@@ -54,6 +54,9 @@ public class CompareBuildUtils {
             .collect(Collectors.toUnmodifiableSet());
     }
 
+    private static Path safeGetParent(Path indexFile) {
+        return indexFile.getNameCount() > 1 ? indexFile.getParent() : Path.of("");
+    }
 
     static String format(int i) {
         return NumberFormat.getNumberInstance().format(i);
