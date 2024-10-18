@@ -110,18 +110,12 @@ public class ComputeBytecodeSummary {
         return FeatureType.UNKNOWN;
     }
 
-    public static FeatureType getAccessType(int flags) {
-        if ((Opcodes.GETFIELD & flags) == Opcodes.GETFIELD) {
-            return FeatureType.GET_FIELD;
-        }
-        if ((Opcodes.PUTFIELD & flags) == Opcodes.PUTFIELD) {
-            return FeatureType.PUT_FIELD;
-        }
-        if ((Opcodes.GETSTATIC & flags) == Opcodes.GETSTATIC) {
-            return FeatureType.GET_STATIC_FIELD;
-        }
-        if ((Opcodes.PUTSTATIC & flags) == Opcodes.PUTSTATIC) {
-            return FeatureType.PUT_STATIC_FIELD;
+    public static FeatureType getAccessType(int opcode) {
+        switch (opcode) {
+            case Opcodes.GETFIELD: return FeatureType.GET_FIELD;
+            case Opcodes.PUTFIELD: return FeatureType.PUT_FIELD;
+            case Opcodes.GETSTATIC: return FeatureType.GET_STATIC_FIELD;
+            case Opcodes.PUTSTATIC: return FeatureType.PUT_STATIC_FIELD;
         }
         assert false;
         return FeatureType.UNKNOWN;
