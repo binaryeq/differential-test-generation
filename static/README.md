@@ -46,7 +46,7 @@ $ ln -s $ALTBUILDS_ROOT/maven.oracle.com            # obfs part 2
 $ cp $ALTBUILDS_ROOT/gav_{mvnc,gaoss,obfs}.tsv .    # Or symlink them
 ```
 
-Then run `CompareFeatures` (note that order of arguments is important as it determines subdirectory nesting order). This takes around :
+Then run `CompareFeatures` (note that order of arguments is important as it determines subdirectory nesting order). This takes around 90s:
 ```
 $ time java -cp target/bineq-0.0.1-jar-with-dependencies.jar io.github.bineq.featurecomp.CompareFeatures dataset/gav_mvnc.tsv dataset/gav_gaoss.tsv dataset/gav_obfs.tsv
 ```
