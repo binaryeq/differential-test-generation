@@ -25,10 +25,32 @@ sub isVirtualInvokeToInterfaceInvoke($$) {
 	return 0;
 }
 
+# Does the difference look like one of the probably-uninteresting renumbering-only changes to a staticinvoke of a method named bootstrap$() that occurred in org.jsoup:jsoup:1.16.2?
+# Reflexive so no need to call twice.
+#
+# Example from jsoup:
+# 532c532
+# < v4 = staticinvoke <org.jsoup.internal.StringUtil$init__17: java.util.function.Supplier bootstrap$()>();
+# ---
+# > v4 = staticinvoke <org.jsoup.internal.StringUtil$init__6: java.util.function.Supplier bootstrap$()>();
+sub isBootstrapMethodRenumbering($$) {
+	my ($old, $new) = @_;
+	if ($state eq 'inChange') {
+		my ($start, $end) = $old =~ m/\A< (v\d+ = staticinvoke <[^:]+\$[^:]+__)\d+(: \S+ bootstrap\$\(.*\)>\(.*\);\n)/;
+		if (defined $start and $new =~ m/\A> \Q$start\E\d+\Q$end\E\z/) {
+			return 1;
+		}
+	}
+
+	return 0;
+}
+
 sub maybeOutput() {
 #	print STDERR "maybeOutput() called, state=<$state>, length(saved)=<" . length($saved) . ">.\n";		#DEBUG
 	# Decide whether to keep this change
 	if (isVirtualInvokeToInterfaceInvoke($savedOld, $savedNew) || isVirtualInvokeToInterfaceInvoke($savedNew, $savedOld)) {
+		$keep = 0;
+	} elsif (isBootstrapMethodRenumbering($savedOld, $savedNew)) {
 		$keep = 0;
 	} else {
 		$keep = 1;
