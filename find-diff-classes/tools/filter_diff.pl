@@ -64,7 +64,7 @@ while (<>) {
 			$state = 'inChange';
 		} elsif (/^\d+a\d+(?:,\d+)?\n/) {
 			$state = 'inAdd';
-		} elsif (/^\d+(?:,\d+)d\d+\n/) {
+		} elsif (/^\d+(?:,\d+)?d\d+\n/) {
 			$state = 'inDel';
 		} else {
 			die "Expected a change, addition or deletion at line $.";
