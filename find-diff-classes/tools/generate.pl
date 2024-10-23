@@ -1,4 +1,4 @@
-#!/bin/perl
+#!/usr/bin/perl
 
 use strict;
 use warnings;
@@ -82,6 +82,11 @@ sub generateComparisons() {
 	}
 }
 
+sub unique(@) {
+    my %seen = map { ($_, 1) } @_;
+    return sort keys %seen;
+}
+
 sub generateOrRunTests($$) {
 	my ($shouldGenerateTests, $shouldRunTests) = @_;
 
@@ -101,6 +106,8 @@ sub generateOrRunTests($$) {
 			$jarPathHasMvnc{$jarPath} = 1;
 			my @classes = `cat $fn`;	# Ugh
 			chomp @classes;
+			# Only keep unique top-level class names, since EvoSuite can't handle class names with '$' in them
+			@classes = unique(map { s/\$[^\.]*//; $_ } @classes);
 			push @{$interestingClasses{$jarPath}}, @classes;
 		}
 	}
@@ -131,7 +138,7 @@ sub generateOrRunTests($$) {
 				foreach my $class (@classes) {
 					my $dottedClass = $class =~ s|/|.|gr;
 					$dottedClass =~ s/\.class$// or die;
-					my $evosuiteGenTestsCmd = "time java -jar $EVOSUITEJAR -class $dottedClass -projectCP $projectCP 2>&1 | tee evosuite.$dottedClass.log";
+					my $evosuiteGenTestsCmd = "time java -jar $EVOSUITEJAR -class '$dottedClass' -projectCP $projectCP 2>&1 | tee 'evosuite.$dottedClass.log'";
 					print $evosuiteGenTestsCmd, "\n";
 				}
 
