@@ -28,6 +28,12 @@ tools/json_to_tsv.pl $(find results -name '*.vs.*.json') > convert_json_to_tsv.s
 # Run the script.
 bash convert_json_to_tsv.sh
 
+# Create a shell script to filter out all "uninteresting" differences (e.g., invokeinterface <-> invokevirtual).
+tools/keep_if_any_diffs_remain.pl $(find results -name '*.vs.*.tsv') > filter_all_diffs.sh
+
+# Run the script.
+bash filter_all_diffs.sh
+
 # Create a shell script to run EvoSuite against the Maven Central version of each class identified in the previous step.
 tools/generate.pl --generate-tests > generate_all_tests.sh
 
