@@ -3,10 +3,23 @@
 use strict;
 use warnings;
 
+# An ugly hack to guess the path to a version of the java executable at a given JDK level
+sub findJava($) {
+    my ($jdk) = @_;
+    my @possiblePaths = grep { -x } map { m| java (.*java-$jdk\b.*/java)$| } `update-java-alternatives -v --list`;
+    if (@possiblePaths == 1) {
+        return $possiblePaths[0];
+    }
+
+    die "Could not find a path to a JDK $jdk version of the java executable (" . scalar(@possiblePaths) . " possibilities).";
+}
+
 my $ROOT = "$ENV{HOME}/code";       # Change as necessary
 my $BASE = "$ROOT/craw-redhat-oss/wget/crawl";
 my $CLASSPATH = "$ROOT/tooling/target/bineq-1.0.0-jar-with-dependencies.jar";
-my $COMPAREJARS = "java -cp $CLASSPATH io.github.bineq.cli.CompareJars";
+my $JAVA8 = findJava(8);     # EvoSuite prefers JDK 8, sometimes works with JDK 11
+my $JAVA17 = findJava(17);   # Code in the tooling repo was compiled with JDK 17
+my $COMPAREJARS = "$JAVA17 -cp $CLASSPATH io.github.bineq.cli.CompareJars";
 my $EVOSUITEJAR = "$ROOT/regression-test-generation/evosuite/evosuite-1.2.0.jar";
 
 sub gavToPath($$$) {
@@ -142,7 +155,7 @@ sub generateOrRunTests($$) {
 				foreach my $class (@classes) {
 					my $dottedClass = $class =~ s|/|.|gr;
 					$dottedClass =~ s/\.class$// or die;
-					my $evosuiteGenTestsCmd = "time java -jar $EVOSUITEJAR -class '$dottedClass' -projectCP $projectCP 2>&1 | tee 'evosuite.$dottedClass.log'";
+					my $evosuiteGenTestsCmd = "time $JAVA8 -jar $EVOSUITEJAR -class '$dottedClass' -projectCP $projectCP 2>&1 | tee 'evosuite.$dottedClass.log'";
 					print $evosuiteGenTestsCmd, "\n";
 				}
 
