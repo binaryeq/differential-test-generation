@@ -83,6 +83,11 @@ sub evosuiteCompileDir($$$$) {
 	return join("/", "compile", $p, $g =~ s|\.|/|gr, $a, $v);
 }
 
+sub evosuiteRunDir($$$$) {
+	my ($p, $g, $a, $v) = @_;
+	return join("/", "run", $p, $g =~ s|\.|/|gr, $a, $v);
+}
+
 sub generateComparisons() {
 	while (<>) {
 		chomp;
@@ -107,9 +112,23 @@ sub unique(@) {
     return sort keys %seen;
 }
 
+sub convertClassNameToDotted($$) {
+    my ($compiledClass, $testCompilePath) = @_;
+    $compiledClass =~ s|^\Q$testCompilePath/\E|| or die;
+    $compiledClass =~ s|\.class$|| or die;
+    $compiledClass =~ tr|/|.|;
+    return $compiledClass;
+}
+
 sub generateOrRunTests($$$;$) {
 	my ($shouldGenerateTests, $shouldRunTests, $shouldCompileTests, $targetOtherProvider) = @_;
 #	print STDERR "targetOtherProvider=<$targetOtherProvider>\n";   #DEBUG
+    die if (($shouldCompileTests || $shouldRunTests) && !defined($targetOtherProvider));
+
+    print <<THE_END;
+#!/bin/bash
+set -v
+THE_END
 
 	my (@classesFiltered) = `find results -name 'classes.filtered'`;
 	chomp @classesFiltered;
@@ -212,9 +231,56 @@ sub generateOrRunTests($$$;$) {
 
 			if ($shouldRunTests) {
 				#TODO: Do per-provider-pair work
+                chomp(my $pwd = `pwd`);
+
 				foreach my $providerPair (@{$providersForJar{$jarPath}}) {
-					my ($p1, $p2) = @{$providerPair};
-					print "# Compare $p1 to $p2 on $jarPath\n";
+					my ($otherProvider, $shouldBeUndefined) = grep { $_ ne 'mvnc' } @{$providerPair};
+#                    print STDERR "providerPair=<" . join(", ", @{$providerPair}) . ">. otherProvider=<$otherProvider>, shouldBeUndefined=<$shouldBeUndefined>\n";     #DEBUG
+					if ($otherProvider eq $targetOtherProvider && !defined $shouldBeUndefined) {
+                        # Find all actually generated test classes (there may be none). This step requires that we have
+                        # already run the shell script (generated using --generate-tests) that generates these classes.
+                        print STDERR "# Looking for successfully compiled test classes for $jarPath for $otherProvider\n";     #DEBUG
+                        my $testCompilePath = evosuiteCompileDir($otherProvider, $g, $a, $v);
+                        my $testRunPath = evosuiteRunDir($otherProvider, $g, $a, $v);
+#                        my @compiledClasses = `find '$testGenPath' -name '*_ESTest.class'`;
+                        my $findCompiledClassesCmd = "find '$testCompilePath' -name '*_ESTest.class'";
+                        print STDERR "findCompiledClassesCmd=<$findCompiledClassesCmd>\n";     #DEBUG
+                        my @compiledClasses = `$findCompiledClassesCmd`;
+                        chomp @compiledClasses;
+
+#                        my $pomPath = providerPath($otherProvider, $g, $a, $v) =~ s/\.jar$/.pom/r;
+#                        my $basePath = $pomPath =~ s|/[^/]+$||r;
+                        if (@compiledClasses) {
+                            my $mkdirCmd = "( mkdir -p '$testRunPath' && cd '$testCompilePath'";	# Note we *don't* change to the dir we create this time! Symlink should already be there
+                            print $mkdirCmd, "\n";
+                        } else {
+                            print "# No compiled classes found for $testCompilePath so won't create $testRunPath.\n";
+                        }
+
+                        foreach my $compiledClass (@compiledClasses) {
+                            print "# Run compiled test class $compiledClass for $jarPath for $otherProvider\n";
+
+                            my $classOwnCP = providerPath($otherProvider, $g, $a, $v);
+                            my $projectCP = "$classOwnCP:\$(echo t/dependency/*|perl -lpe 's/ /:/g')";
+                            my $classPath = join(":",
+                                "$projectCP",
+                                "$ROOT/regression-test-generation/evosuite/evosuite-standalone-runtime-1.2.0.jar",
+#                                "$testGenPath/evosuite-tests",
+                                ".",        # We're running from the compilation directory
+                                "$ENV{HOME}/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar",
+                                "$ENV{HOME}/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar"
+                            );
+#                            my %dirsWithClasses = map { $_ => 1 } map { m|(.*)/| } @generatedClasses;
+#                            my @condensedClasses = map { "$pwd/$_/*_ESTest*.java" } sort keys %dirsWithClasses;
+#                            my $javacCmd = "CLASSPATH=$classPath $JAVAC8 -d . " . join(" ", @condensedClasses);
+                            my $dottedClassName = convertClassNameToDotted($compiledClass, $testCompilePath);
+                            my $outBasename = "$pwd/$testRunPath/$dottedClassName";
+                            my $javaCmd = "CLASSPATH=$classPath time $JAVA8 org.junit.runner.JUnitCore $dottedClassName > $outBasename.out 2> $outBasename.err";
+                            print $javaCmd, "\n";
+                        }
+
+                        print ")\n" if @compiledClasses;
+					}
 				}
 			}
 		} else {
@@ -239,7 +305,8 @@ if (!defined $mode) {
     die unless @ARGV == 1;
 	generateOrRunTests(0, 0, 1, shift);
 } elsif ($mode eq '--run-tests') {
-	generateOrRunTests(0, 1, 0);
+    die unless @ARGV == 1;
+	generateOrRunTests(0, 1, 0, shift);
 } elsif ($mode eq '--generate-and-run-tests') {
 	generateOrRunTests(1, 1, 0);
 } else {
