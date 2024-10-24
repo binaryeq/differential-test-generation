@@ -3,10 +3,11 @@
 use strict;
 use warnings;
 
-my $BASE = "/home/wtwhite/code/craw-redhat-oss/wget/crawl";
-my $CLASSPATH = "/home/wtwhite/code/tooling/target/bineq-1.0.0-jar-with-dependencies.jar";
+my $ROOT = "$ENV{HOME}/code";       # Change as necessary
+my $BASE = "$ROOT/craw-redhat-oss/wget/crawl";
+my $CLASSPATH = "$ROOT/tooling/target/bineq-1.0.0-jar-with-dependencies.jar";
 my $COMPAREJARS = "java -cp $CLASSPATH io.github.bineq.cli.CompareJars";
-my $EVOSUITEJAR = "$ENV{HOME}/code/regression-test-generation/evosuite/evosuite-1.2.0.jar";
+my $EVOSUITEJAR = "$ROOT/regression-test-generation/evosuite/evosuite-1.2.0.jar";
 
 sub gavToPath($$$) {
 	$_[0] =~ s|\.|/|g;
@@ -160,6 +161,10 @@ sub generateOrRunTests($$) {
 		}
 	}
 }
+
+# Sanity-check paths
+die "Is \$ROOT set correctly?" if !-d $BASE || !-e $CLASSPATH;
+die "Expected EvoSuite at $EVOSUITEJAR" if !-e $EVOSUITEJAR;
 
 # Main program
 my $mode = shift;
