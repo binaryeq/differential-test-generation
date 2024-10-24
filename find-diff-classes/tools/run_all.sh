@@ -13,9 +13,12 @@ tools/find_jnorm2_distinct_gavs.sh
 # Create a shell script to run CompareJars from the tooling repo to find the individual differing classes in each such GAV.
 tools/generate.pl --generate-comparisons < jnorm2_distinct_gavs.tsv > compare.sh
 
+# Set up a symlink needed by the tools in the tooling repo
+#TODO: Fix this
+[ -e tools/jnorm-jar-with-dependencies.jar ] || ln -s $HOME/code/tooling/tools/jnorm-jar-with-dependencies.jar tools/jnorm-jar-with-dependencies.jar
+
 # Run the script. Creates a results/ subdirectory hierarchy with a <provider1>.vs.<provider2>.json file per
 # (GAV, provider pair), listing the specific classes that differ in that GAV between those providers.
-#TODO: Need to first symlink the tooling repo's jnorm-jar-with-dependencies.jar into our own tools/ subdir
 time bash compare.sh
 
 # Create a shell script to convert the information about different individual classes from JSON to TSV.
