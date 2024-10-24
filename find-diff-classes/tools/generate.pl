@@ -106,10 +106,13 @@ sub generateOrRunTests($$) {
 			$jarPathHasMvnc{$jarPath} = 1;
 			my @classes = `cat $fn`;	# Ugh
 			chomp @classes;
-			# Only keep unique top-level class names, since EvoSuite can't handle class names with '$' in them
-			@classes = unique(map { s/\$[^\.]*//; $_ } @classes);
 			push @{$interestingClasses{$jarPath}}, @classes;
 		}
+	}
+
+    # Only keep unique top-level class names, since EvoSuite can't handle class names with '$' in them
+	foreach my $jarPath (keys %interestingClasses) {
+	    $interestingClasses{$jarPath} = [ unique(map { s/\$[^\.]*//; $_ } @{$interestingClasses{$jarPath}}) ];
 	}
 
 	foreach my $jarPath (sort keys %providersForJar) {
