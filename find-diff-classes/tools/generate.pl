@@ -193,24 +193,23 @@ THE_END
                 chomp(my $pwd = `pwd`);
 
 				foreach my $providerPair (@{$providersForJar{$jarPath}}) {
-					my ($otherProvider, $shouldBeUndefined) = grep { $_ ne 'mvnc' } @{$providerPair};
-#                    print STDERR "providerPair=<" . join(", ", @{$providerPair}) . ">. otherProvider=<$otherProvider>, shouldBeUndefined=<$shouldBeUndefined>\n";     #DEBUG
-					if ($otherProvider eq $targetOtherProvider && !defined $shouldBeUndefined) {
+#                    print STDERR "providerPair=<" . join(", ", @{$providerPair}) . ">. otherProvider=<$targetOtherProvider>, shouldBeUndefined=<$shouldBeUndefined>\n";     #DEBUG
+					if (grep { $_ eq $targetOtherProvider } @{$providerPair}) {
                         # Find all actually generated test classes (there may be none). This step requires that we have
                         # already run the shell script (generated using --generate-tests) that generates these classes.
-                        print STDERR "# Looking for successfully generated test classes for $jarPath for $otherProvider\n";     #DEBUG
+                        print STDERR "# Looking for successfully generated test classes for $jarPath for $targetOtherProvider\n";     #DEBUG
                         my @generatedClasses = `find '$testGenPath' -name '*_ESTest*.java'`;
                         chomp @generatedClasses;
 
                         if (@generatedClasses) {
-                            print "# Compile " . scalar(@generatedClasses) . " generated test classes for $jarPath for $otherProvider\n";
-                            my $testCompilePath = evosuiteCompileDir($otherProvider, $g, $a, $v);
-                            my $pomPath = providerPath($otherProvider, $g, $a, $v) =~ s/\.jar$/.pom/r;
+                            print "# Compile " . scalar(@generatedClasses) . " generated test classes for $jarPath for $targetOtherProvider\n";
+                            my $testCompilePath = evosuiteCompileDir($targetOtherProvider, $g, $a, $v);
+                            my $pomPath = providerPath($targetOtherProvider, $g, $a, $v) =~ s/\.jar$/.pom/r;
                             my $basePath = $pomPath =~ s|/[^/]+$||r;
                             my $mvnCopyDepsCmd = "( mkdir -p '$testCompilePath' && cd '$testCompilePath' && mvn -f $pomPath dependency:copy-dependencies && ln -s $basePath/target t";	# Symlink to make classpath shorter
                             print $mvnCopyDepsCmd, "\n";
 
-                            my $classOwnCP = providerPath($otherProvider, $g, $a, $v);
+                            my $classOwnCP = providerPath($targetOtherProvider, $g, $a, $v);
                             my $projectCP = "$classOwnCP:\$(echo t/dependency/*|perl -lpe 's/ /:/g')";
                             my $classPath = join(":",
                                 "$projectCP",
@@ -234,21 +233,20 @@ THE_END
                 chomp(my $pwd = `pwd`);
 
 				foreach my $providerPair (@{$providersForJar{$jarPath}}) {
-					my ($otherProvider, $shouldBeUndefined) = grep { $_ ne 'mvnc' } @{$providerPair};
-#                    print STDERR "providerPair=<" . join(", ", @{$providerPair}) . ">. otherProvider=<$otherProvider>, shouldBeUndefined=<$shouldBeUndefined>\n";     #DEBUG
-					if ($otherProvider eq $targetOtherProvider && !defined $shouldBeUndefined) {
+#                    print STDERR "providerPair=<" . join(", ", @{$providerPair}) . ">. otherProvider=<$targetOtherProvider>, shouldBeUndefined=<$shouldBeUndefined>\n";     #DEBUG
+					if (grep { $_ eq $targetOtherProvider } @{$providerPair}) {
                         # Find all actually generated test classes (there may be none). This step requires that we have
                         # already run the shell script (generated using --generate-tests) that generates these classes.
-                        print STDERR "# Looking for successfully compiled test classes for $jarPath for $otherProvider\n";     #DEBUG
-                        my $testCompilePath = evosuiteCompileDir($otherProvider, $g, $a, $v);
-                        my $testRunPath = evosuiteRunDir($otherProvider, $g, $a, $v);
+                        print STDERR "# Looking for successfully compiled test classes for $jarPath for $targetOtherProvider\n";     #DEBUG
+                        my $testCompilePath = evosuiteCompileDir($targetOtherProvider, $g, $a, $v);
+                        my $testRunPath = evosuiteRunDir($targetOtherProvider, $g, $a, $v);
 #                        my @compiledClasses = `find '$testGenPath' -name '*_ESTest.class'`;
                         my $findCompiledClassesCmd = "find '$testCompilePath' -name '*_ESTest.class'";
                         print STDERR "findCompiledClassesCmd=<$findCompiledClassesCmd>\n";     #DEBUG
                         my @compiledClasses = `$findCompiledClassesCmd`;
                         chomp @compiledClasses;
 
-#                        my $pomPath = providerPath($otherProvider, $g, $a, $v) =~ s/\.jar$/.pom/r;
+#                        my $pomPath = providerPath($targetOtherProvider, $g, $a, $v) =~ s/\.jar$/.pom/r;
 #                        my $basePath = $pomPath =~ s|/[^/]+$||r;
                         if (@compiledClasses) {
                             my $mkdirCmd = "( mkdir -p '$testRunPath' && cd '$testCompilePath'";	# Note we *don't* change to the dir we create this time! Symlink should already be there
@@ -258,9 +256,9 @@ THE_END
                         }
 
                         foreach my $compiledClass (@compiledClasses) {
-                            print "# Run compiled test class $compiledClass for $jarPath for $otherProvider\n";
+                            print "# Run compiled test class $compiledClass for $jarPath for $targetOtherProvider\n";
 
-                            my $classOwnCP = providerPath($otherProvider, $g, $a, $v);
+                            my $classOwnCP = providerPath($targetOtherProvider, $g, $a, $v);
                             my $projectCP = "$classOwnCP:\$(echo t/dependency/*|perl -lpe 's/ /:/g')";
                             my $classPath = join(":",
                                 "$projectCP",
