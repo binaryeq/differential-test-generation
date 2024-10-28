@@ -17,7 +17,8 @@ sub process($) {
     my $result;
     my @failures;
     if (s/\AJUnit version 4\.13\.2\n([\.E]*)\nTime: ([^\n]+)\n//) {
-        if (s/\AThere were (\d+) failures:\n//) {
+        my ($dots, $time) = ($1, $2);
+        if (s/\AThere (?:was|were) (\d+) failures?:\n//) {
             while (s/\A\d+\) test(\d+)\(.*\)\n([^\t\n][^\n]*\n(?:\t[^\n]*\n)*)//) {
                 push @failures, [ $1, $2 ];
             }
@@ -26,19 +27,28 @@ sub process($) {
 
             if (s/\A\nFAILURES!!!\nTests run: (\d+),\s*Failures: (\d+)\n\n\z//) {
                 die "JUnit listed " . scalar(@failures) . " failures but then reported that $2 failed on the last line." if $2 != @failures;    # Sanity check
-                $result = { "tests" => $1, "successes" => ($1 - $2), "failures" => [ @failures ] };
+                $result = { "tests" => $1, "successes" => ($1 - $2), "failures" => [ @failures ], "time" => $time };
             } else {
                 die "Could not parse: <$_>";
             }
         } elsif (s/\A\nOK \((\d+) tests?\)\n\n\z//) {
-            $result = { "tests" => $1, "successes" => $1, "failures" => [] };
+            $result = { "tests" => $1, "successes" => $1, "failures" => [], "time" => $time };
         } else {
             die "Could not parse: <$_>";
         }
+
+        # Sanity checks
+        my $nTestsFromDots = length($dots =~ s/[^\.]//gr);
+        die "JUnit listed $nTestsFromDots tests according to the dots, but then reported that there were " . $result->{"tests"} . " tests on the last line." if $nTestsFromDots != $result->{"tests"};
+
+        my $nFailuresFromDots = length($dots =~ s/[^E]//gr);
+        die "JUnit listed $nFailuresFromDots failures according to the dots, but then reported that there were " . scalar(@{$result->{"failures"}}) . " failures on the last line." if $nFailuresFromDots != @{$result->{"failures"}};
+    } else {
+        die "Could not parse: <$_>";
     }
 
     # TODO: Output the individual failure details somehow, not just their count and their test sequence numbers
-    my @columns = ($fn, @{$result}{"tests", "successes"}, scalar(@{$result->{"failures"}}));
+    my @columns = ($fn, @{$result}{"tests", "successes"}, scalar(@{$result->{"failures"}}), $result->{"time"});
     push @columns, map { $_->[0] } @{$result->{"failures"}} if $shouldIncludeFailedTestNumbers;
     print join("\t", @columns), "\n";
 }
