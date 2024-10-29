@@ -49,6 +49,9 @@ sub removeCruft($) {
         ++$nRemoved;
     }
 
+    # Ergonomics
+    1 while s/\.\n\./../;
+
     print STDERR "Removed $nRemoved cruft lines.\n" if $nRemoved;
     return $_;
 }
@@ -78,7 +81,7 @@ sub process($) {
         die "Expected to get to end of failure list but found the following still there: <$failureDetails>." if length $failureDetails;
         die "JUnit listed " . scalar(@failures) . " failures but then reported that $nFailures2 failed on the last line." if $nFailures2 != @failures;    # Sanity check
 #                $result = { "tests" => $1, "successes" => ($1 - $2), "failures" => [ @failures ], "time" => $time };
-        $result = { "tests" => $nTests, "successes" => ($nTests - $nFailures2), "failures" => [ @failures ] };
+        $result = { "tests" => $nTests, "successes" => ($nTests - $nFailures2), "failures" => [ sort { $a->[0] <=> $b->[0] } @failures ] };
 #        $nFailures = $2;
     } elsif (s/\n\nOK \((\d+) tests?\)\n\n\z//) {
         $result = { "tests" => $1, "successes" => $1, "failures" => [] };
@@ -93,14 +96,24 @@ sub process($) {
         die "Could not parse: <$_>";
     }
 
-    my $dots = $_;      # Since by now we've stripped everything before and after
+    my $dots = $_;      # By now we've stripped everything before and after
 
-    # Sanity checks
-    my $nTestsFromDots = length($dots =~ s/[^\.]//gr);
-    die "JUnit listed $nTestsFromDots tests according to the dots, but then reported that there were " . $result->{"tests"} . " tests on the last line." if $nTestsFromDots != $result->{"tests"};
+    if ($dots !~ /\A[\.E]*\z/) {
+        $dots = removeCruft($dots);
+    }
 
-    my $nFailuresFromDots = length($dots =~ s/[^E]//gr);
-    die "JUnit listed $nFailuresFromDots failures according to the dots, but then reported that there were " . scalar(@{$result->{"failures"}}) . " failures on the last line." if $nFailuresFromDots != @{$result->{"failures"}};
+    if ($dots =~ /\A[\.E]*\z/) {
+        # Dots look uncontaminated
+
+        # Sanity checks
+        my $nTestsFromDots = length($dots =~ s/[^\.]//gr);
+        die "JUnit listed $nTestsFromDots tests according to the dots, but then reported that there were " . $result->{"tests"} . " tests on the last line." if $nTestsFromDots != $result->{"tests"};
+
+        my $nFailuresFromDots = length($dots =~ s/[^E]//gr);
+        die "JUnit listed $nFailuresFromDots failures according to the dots, but then reported that there were " . scalar(@{$result->{"failures"}}) . " failures on the last line." if $nFailuresFromDots != @{$result->{"failures"}};
+    } else {
+        warn "Ignoring dots for $fn, which look contaminated: <$dots>.";
+    }
 
     # TODO: Output the individual failure details somehow, not just their count and their test sequence numbers
     my @columns = ($fn, @{$result}{"tests", "successes"}, scalar(@{$result->{"failures"}}), $result->{"time"});
