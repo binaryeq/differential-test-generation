@@ -64,7 +64,7 @@ sub process($) {
 #    $_ = removeCruft($_);
 
     if (!s/\AJUnit version 4\.13\.2\n//) {
-        die "Could not parse: <$_>";
+        die "$fn: Could not parse: <$_>";
     }
 
     my $result;
@@ -74,12 +74,12 @@ sub process($) {
 #    if (s/\nFAILURES!!!\nTests run: (\d+),\s*Failures: (\d+)\n\n\z//) {
     if (s/\nThere (?:was|were) (\d+) failures?:\n((?:\d+\) test\d+\(.*\)\n[^\t\n][^\n]*\n(?:\t[^\n]*\n)*)*)\nFAILURES!!!\nTests run: (\d+),\s*Failures: (\d+)\n\n\z//) {
         my ($nFailures1, $failureDetails, $nTests, $nFailures2) = ($1, $2, $3, $4);
-        die "JUnit initially said there were $nFailures1 failures, but then said there were $nFailures2 failures." if $nFailures1 != $nFailures2;   # Sanity check
+        die "$fn: JUnit initially said there were $nFailures1 failures, but then said there were $nFailures2 failures." if $nFailures1 != $nFailures2;   # Sanity check
         while ($failureDetails =~ s/\A\d+\) test(\d+)\(.*\)\n([^\t\n][^\n]*\n(?:\t[^\n]*\n)*)//) {
             push @failures, [ $1, $2 ];
         }
-        die "Expected to get to end of failure list but found the following still there: <$failureDetails>." if length $failureDetails;
-        die "JUnit listed " . scalar(@failures) . " failures but then reported that $nFailures2 failed on the last line." if $nFailures2 != @failures;    # Sanity check
+        die "$fn: Expected to get to end of failure list but found the following still there: <$failureDetails>." if length $failureDetails;
+        die "$fn: JUnit listed " . scalar(@failures) . " failures but then reported that $nFailures2 failed on the last line." if $nFailures2 != @failures;    # Sanity check
 #                $result = { "tests" => $1, "successes" => ($1 - $2), "failures" => [ @failures ], "time" => $time };
         $result = { "tests" => $nTests, "successes" => ($nTests - $nFailures2), "failures" => [ sort { $a->[0] <=> $b->[0] } @failures ] };
 #        $nFailures = $2;
@@ -87,13 +87,13 @@ sub process($) {
         $result = { "tests" => $1, "successes" => $1, "failures" => [] };
 #        $nFailures = 0;
     } else {
-        die "Could not parse: <$_>";
+        die "$fn: Could not parse: <$_>";
     }
 
     if (s/\nTime: ([^\n]+)\z//) {
         $result->{"time"} = $1;
     } else {
-        die "Could not parse: <$_>";
+        die "$fn: Could not parse: <$_>";
     }
 
     my $dots = $_;      # By now we've stripped everything before and after
@@ -107,12 +107,12 @@ sub process($) {
 
         # Sanity checks
         my $nTestsFromDots = length($dots =~ s/[^\.]//gr);
-        die "JUnit listed $nTestsFromDots tests according to the dots, but then reported that there were " . $result->{"tests"} . " tests on the last line." if $nTestsFromDots != $result->{"tests"};
+        die "$fn: JUnit listed $nTestsFromDots tests according to the dots, but then reported that there were " . $result->{"tests"} . " tests on the last line." if $nTestsFromDots != $result->{"tests"};
 
         my $nFailuresFromDots = length($dots =~ s/[^E]//gr);
-        die "JUnit listed $nFailuresFromDots failures according to the dots, but then reported that there were " . scalar(@{$result->{"failures"}}) . " failures on the last line." if $nFailuresFromDots != @{$result->{"failures"}};
+        die "$fn: JUnit listed $nFailuresFromDots failures according to the dots, but then reported that there were " . scalar(@{$result->{"failures"}}) . " failures on the last line." if $nFailuresFromDots != @{$result->{"failures"}};
     } else {
-        warn "Ignoring dots for $fn, which look contaminated: <$dots>.";
+        warn "$fn: Ignoring dots, which look contaminated: <$dots>.";
     }
 
     # TODO: Output the individual failure details somehow, not just their count and their test sequence numbers
