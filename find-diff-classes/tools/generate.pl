@@ -85,7 +85,7 @@ sub evosuiteCompileDir($$$$) {
 
 sub evosuiteRunDir($$$$) {
 	my ($p, $g, $a, $v) = @_;
-	return join("/", "run", $p, $g =~ s|\.|/|gr, $a, $v);
+	return join("/", '$RUNDIR', $p, $g =~ s|\.|/|gr, $a, $v);       # NOTE: Includes an env var that we intend the shell to expand, so don't single-quote
 }
 
 sub generateComparisons() {
@@ -129,6 +129,10 @@ sub generateOrRunTests($$$;$) {
 #!/bin/bash
 set -v
 THE_END
+
+    if ($shouldRunTests) {
+        print "echo \"Will write test results under RUNDIR=\${RUNDIR:=run}\"   # Default to 'run' if not overridden\n";
+    }
 
 	my (@classesFiltered) = `find results -name 'classes.filtered'`;
 	chomp @classesFiltered;
@@ -249,7 +253,7 @@ THE_END
 #                        my $pomPath = providerPath($targetOtherProvider, $g, $a, $v) =~ s/\.jar$/.pom/r;
 #                        my $basePath = $pomPath =~ s|/[^/]+$||r;
                         if (@compiledClasses) {
-                            my $mkdirCmd = "( mkdir -p '$testRunPath' && cd '$testCompilePath'";	# Note we *don't* change to the dir we create this time! Symlink should already be there
+                            my $mkdirCmd = "( mkdir -p \"$testRunPath\" && cd '$testCompilePath'";	# Note we *don't* change to the dir we create this time! Symlink should already be there. Double-quote $testRunPath to let shell expand $RUNDIR.
                             print $mkdirCmd, "\n";
                         } else {
                             print "# No compiled classes found for $testCompilePath so won't create $testRunPath.\n";
@@ -273,7 +277,7 @@ THE_END
 #                            my $javacCmd = "CLASSPATH=$classPath $JAVAC8 -d . " . join(" ", @condensedClasses);
                             my $dottedClassName = convertClassNameToDotted($compiledClass, $testCompilePath);
                             my $outBasename = "$pwd/$testRunPath/$dottedClassName";
-                            my $javaCmd = "CLASSPATH=$classPath time $JAVA8 org.junit.runner.JUnitCore $dottedClassName > $outBasename.out 2> $outBasename.err";
+                            my $javaCmd = "CLASSPATH=\"$classPath\" time $JAVA8 org.junit.runner.JUnitCore \"$dottedClassName\" > \"$outBasename.out\" 2> \"$outBasename.err\"";
                             print $javaCmd, "\n";
                         }
 
