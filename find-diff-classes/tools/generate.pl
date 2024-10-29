@@ -23,6 +23,8 @@ my $JAVA17 = findJava("java", 17);   # Code in the tooling repo was compiled wit
 my $COMPAREJARS = "$JAVA17 -cp $CLASSPATH io.github.bineq.cli.CompareJars";
 my $EVOSUITEJAR = "$ROOT/regression-test-generation/evosuite/evosuite-1.2.0.jar";
 
+my $keepRunFilter = sub { 1 };      # By default, keep everything
+
 sub gavToPath($$$) {
 	$_[0] =~ s|\.|/|g;
 	return join("/", @_);
@@ -252,16 +254,13 @@ THE_END
 
 #                        my $pomPath = providerPath($targetOtherProvider, $g, $a, $v) =~ s/\.jar$/.pom/r;
 #                        my $basePath = $pomPath =~ s|/[^/]+$||r;
-                        if (@compiledClasses) {
-                            my $mkdirCmd = "( mkdir -p \"$testRunPath\" && cd '$testCompilePath'";	# Note we *don't* change to the dir we create this time! Symlink should already be there. Double-quote $testRunPath to let shell expand $RUNDIR.
-                            print $mkdirCmd, "\n";
-                        } else {
+                        if (!@compiledClasses) {
                             print "# No compiled classes found for $testCompilePath so won't create $testRunPath.\n";
                         }
 
-                        foreach my $compiledClass (@compiledClasses) {
-                            print "# Run compiled test class $compiledClass for $jarPath for $targetOtherProvider\n";
+                        my $createdDirYet = 0;
 
+                        foreach my $compiledClass (@compiledClasses) {
                             my $classOwnCP = providerPath($targetOtherProvider, $g, $a, $v);
                             my $projectCP = "$classOwnCP:\$(echo t/dependency/*|perl -lpe 's/ /:/g')";
                             my $classPath = join(":",
@@ -277,11 +276,21 @@ THE_END
 #                            my $javacCmd = "CLASSPATH=$classPath $JAVAC8 -d . " . join(" ", @condensedClasses);
                             my $dottedClassName = convertClassNameToDotted($compiledClass, $testCompilePath);
                             my $outBasename = "$pwd/$testRunPath/$dottedClassName";
-                            my $javaCmd = "CLASSPATH=\"$classPath\" time $JAVA8 org.junit.runner.JUnitCore \"$dottedClassName\" > \"$outBasename.out\" 2> \"$outBasename.err\"";
-                            print $javaCmd, "\n";
+
+                            if ($keepRunFilter->("$outBasename.out")) {
+                                if (!$createdDirYet) {
+                                    my $mkdirCmd = "( mkdir -p \"$testRunPath\" && cd '$testCompilePath'";	# Note we *don't* change to the dir we create this time! Symlink should already be there. Double-quote $testRunPath to let shell expand $RUNDIR.
+                                    print $mkdirCmd, "\n";
+                                    $createdDirYet = 1;
+                                }
+
+                                print "# Run compiled test class $compiledClass for $jarPath for $targetOtherProvider\n";
+                                my $javaCmd = "CLASSPATH=\"$classPath\" time $JAVA8 org.junit.runner.JUnitCore \"$dottedClassName\" > \"$outBasename.out\" 2> \"$outBasename.err\"";
+                                print $javaCmd, "\n";
+                            }
                         }
 
-                        print ")\n" if @compiledClasses;
+                        print ")\n" if @compiledClasses && $createdDirYet;
 					}
 				}
 			}
@@ -296,6 +305,12 @@ die "Is \$ROOT set correctly?" if !-d $BASE || !-e $CLASSPATH;
 die "Expected EvoSuite at $EVOSUITEJAR" if !-e $EVOSUITEJAR;
 
 # Main program
+if (@ARGV && $ARGV[0] eq "--keep-run-filter") {
+    shift;
+    my $filterFunc = shift;
+    $keepRunFilter = sub { return eval($filterFunc); };     # It should check the filename in $_[0]
+}
+
 my $mode = shift;
 if (!defined $mode) {
 	die "Must specify a mode.";
