@@ -339,7 +339,7 @@ THE_END
                                 my @deps = ($classOwnCP, @gatheredDeps);   # Class-under-test should be first in classpath
 
                                 my $pomFn = "$testCompilePath/pom.xml";
-                                writePom($pomFn, "$g-$a-$v", $evoSuiteTestSourcePath, @deps);
+                                writePom($pomFn, "$g-$a-$v", "$pwd/$evoSuiteTestSourcePath", @deps);
                                 my $runMvnCmd = "mvn $pomFn";
                                 print $runMvnCmd, "\n";
                             } else {
