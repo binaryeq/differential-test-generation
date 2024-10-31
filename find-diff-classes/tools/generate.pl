@@ -123,7 +123,6 @@ sub convertClassNameToDotted($$) {
 }
 
 sub generateOrRunTests($) {
-#	my ($opts->{shouldGenerateTests}, $opts->{shouldRunTests}, $opts->{shouldCompileTests}, $opts->{targetOtherProvider}) = @_;
 	my ($opts) = @_;        # Should be a hashref
 #	print STDERR "targetOtherProvider=<$opts->{targetOtherProvider}>\n";   #DEBUG
     die if (($opts->{shouldCompileTests} || $opts->{shouldRunTests}) && !defined($opts->{targetOtherProvider}));
@@ -317,19 +316,14 @@ if (!defined $mode) {
 } elsif ($mode eq '--generate-comparisons') {
 	generateComparisons();
 } elsif ($mode eq '--generate-tests') {
-#	my ($opts->{shouldGenerateTests}, $opts->{shouldRunTests}, $opts->{shouldCompileTests}, $opts->{targetOtherProvider}) = @_;
-#	generateOrRunTests(1, 0, 0);
 	generateOrRunTests({ shouldGenerateTests => 1 });
 } elsif ($mode eq '--compile-tests') {
     die unless @ARGV == 1;
-#	generateOrRunTests(0, 0, 1, shift);
 	generateOrRunTests({ shouldCompileTests => 1, targetOtherProvider => shift });
 } elsif ($mode eq '--run-tests') {
     die unless @ARGV == 1;
-#	generateOrRunTests(0, 1, 0, shift);
 	generateOrRunTests({ shouldRunTests => 1, targetOtherProvider => shift });
 } elsif ($mode eq '--generate-and-run-tests') {
-#	generateOrRunTests(1, 1, 0);
 	generateOrRunTests({ shouldCompileTests => 1, shouldRunTests => 1, targetOtherProvider => shift });
 } else {
 	die "Unrecognised option '$mode'";
