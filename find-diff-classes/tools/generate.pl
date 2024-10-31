@@ -22,6 +22,9 @@ my $JAVAC8 = findJava("javac", 8);
 my $JAVA17 = findJava("java", 17);   # Code in the tooling repo was compiled with JDK 17
 my $COMPAREJARS = "$JAVA17 -cp $CLASSPATH io.github.bineq.cli.CompareJars";
 my $EVOSUITEJAR = "$ROOT/regression-test-generation/evosuite/evosuite-1.2.0.jar";
+my $evosuiteRuntimeJarPath = "$ROOT/regression-test-generation/evosuite/evosuite-standalone-runtime-1.2.0.jar";
+my $junit4JarPath = "$ENV{HOME}/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar";
+my $hamcrestJarPath = "$ENV{HOME}/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar";
 
 my $keepRunFilter = sub { 1 };      # By default, keep everything
 
@@ -122,6 +125,109 @@ sub convertClassNameToDotted($$) {
     return $compiledClass;
 }
 
+sub writeFile($$) {
+    my ($fn, $contents) = @_;
+    open my $F, ">", $fn or die "Could not open $fn: $!";
+    print $F $contents;
+    close $F;
+    print STDERR "writeFile(): Wrote " . length($contents) . " bytes to $fn.\n";    #DEBUG
+}
+
+sub writePom($$@) {
+    my ($pomFn, $origArtifactId, $evoSuiteTestSourcePath, @depJarPaths) = @_;
+    print STDERR "writePom(pomFn=<$pomFn>, evoSuiteTestSourcePath=<$evoSuiteTestSourcePath>, depJarPaths=<" . join(", ", @depJarPaths) . ">.\n";    #DEBUG
+
+    my $genDeps = join("\n", map { my $bn = $_; $bn =~ tr|-A-Za-z0-9|_|c; <<THE_END } @depJarPaths);
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>$bn</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>$_</systemPath>
+    </dependency>
+THE_END
+
+    my $origArtifactIdBn = $origArtifactId;
+    $origArtifactIdBn =~ tr|-A-Za-z0-9|_|c;
+
+    writeFile($pomFn, <<THE_END);
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>regression-test-generation.binaryeq.github.io</groupId>
+  <artifactId>evosuite-tests-for-$origArtifactIdBn</artifactId>
+  <version>1.0-SNAPSHOT</version>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.release>8</maven.compiler.release>
+  </properties>
+
+  <dependencies>
+$genDeps
+    <dependency>
+      <groupId>bogus-groupId-for-evosuite-jar</groupId>
+      <artifactId>evosuite</artifactId>
+      <version>1.2.0</version>
+      <scope>system</scope>
+      <systemPath>$evosuiteRuntimeJarPath</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.13.2</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.hamcrest</groupId>
+      <artifactId>hamcrest-core</artifactId>
+      <version>1.3</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <!-- Add path to EvoSuite-generated test sources (instead of copying them to src/test/java) -->
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>build-helper-maven-plugin</artifactId>
+        <version>3.6.0</version>
+        <executions>
+          <execution>
+            <id>add-test-source</id>
+            <phase>generate-test-sources</phase>
+            <goals>
+              <goal>add-test-source</goal>
+            </goals>
+            <configuration>
+              <sources>
+                <source>$evoSuiteTestSourcePath</source>
+              </sources>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>3.2.5</version>
+        <configuration>
+          <!-- Specify EvoSuite jars here to guarantee they appear at the end of the classpath -->
+          <additionalClasspathElements>
+          </additionalClasspathElements>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
+THE_END
+}
+
 sub generateOrRunTests($) {
 	my ($opts) = @_;        # Should be a hashref
 #	print STDERR "targetOtherProvider=<$opts->{targetOtherProvider}>\n";   #DEBUG
@@ -178,7 +284,7 @@ THE_END
 				print "# Generate tests on the " . scalar(@classes) . " classes in the $p version of $jarPath\n";		#TODO
 
 				# Copy all dependencies just once for the project
-				my $mvnCopyDepsCmd = "( mkdir -p '$testGenPath' && cd '$testGenPath' && mvn -f $genPomPath dependency:copy-dependencies && ln -s $genBasePath/target t";	# Symlink to make classpath shorter
+				my $mvnCopyDepsCmd = "( mkdir -p '$testGenPath' && cd '$testGenPath' && mvn -f $genPomPath dependency:copy-dependencies && ln -sT $genBasePath/target t";	# Symlink to make classpath shorter
 				print $mvnCopyDepsCmd, "\n";
 				my $classOwnCP = providerPath($p, $g, $a, $v);
 				#my $projectCP = "$classOwnCP:\$(echo target/dependency/*|perl -lpe 's/ /:/g')";
@@ -198,6 +304,7 @@ THE_END
             if ($opts->{shouldCompileTests}) {
                 chomp(my $pwd = `pwd`);
 
+                my $evoSuiteTestSourcePath = "$testGenPath/evosuite-tests";
 				foreach my $providerPair (@{$providersForJar{$jarPath}}) {
 #                    print STDERR "providerPair=<" . join(", ", @{$providerPair}) . ">. otherProvider=<$opts->{targetOtherProvider}>, shouldBeUndefined=<$opts->{shouldBeUndefined}>\n";     #DEBUG
 					if (grep { $_ eq $opts->{targetOtherProvider} } @{$providerPair}) {
@@ -208,27 +315,49 @@ THE_END
                         chomp @generatedClasses;
 
                         if (@generatedClasses) {
-                            print "# Compile " . scalar(@generatedClasses) . " generated test classes for $jarPath for $opts->{targetOtherProvider}\n";
                             my $testCompilePath = evosuiteCompileDir($opts->{targetOtherProvider}, $g, $a, $v);
                             my $pomPath = providerPath($opts->{targetOtherProvider}, $g, $a, $v) =~ s/\.jar$/.pom/r;
                             my $basePath = $pomPath =~ s|/[^/]+$||r;
-                            my $mvnCopyDepsCmd = "( mkdir -p '$testCompilePath' && cd '$testCompilePath' && mvn -f $pomPath dependency:copy-dependencies && ln -s $basePath/target t";	# Symlink to make classpath shorter
-                            print $mvnCopyDepsCmd, "\n";
-
                             my $classOwnCP = providerPath($opts->{targetOtherProvider}, $g, $a, $v);
-                            my $projectCP = "$classOwnCP:\$(echo t/dependency/*|perl -lpe 's/ /:/g')";
-                            my $classPath = join(":",
-                                "$projectCP",
-                                "$ROOT/regression-test-generation/evosuite/evosuite-standalone-runtime-1.2.0.jar",
-                                "$testGenPath/evosuite-tests",
-                                "$ENV{HOME}/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar",
-                                "$ENV{HOME}/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar"
-                            );
-                            my %dirsWithClasses = map { $_ => 1 } map { m|(.*)/| } @generatedClasses;
-                            my @condensedClasses = map { "$pwd/$_/*_ESTest*.java" } sort keys %dirsWithClasses;
-                            my $javacCmd = "CLASSPATH=$classPath $JAVAC8 -d . " . join(" ", @condensedClasses);
-                            print $javacCmd, "\n";
-                            print ")\n";
+
+                            print "# Compile " . scalar(@generatedClasses) . " generated test classes for $jarPath for $opts->{targetOtherProvider}\n";
+                            my $mvnCopyDepsCmd = "mkdir -p '$testCompilePath' && cd '$testCompilePath' && mvn -f $pomPath dependency:copy-dependencies >&2 && ln -sT $basePath/target t";	# Symlink to make classpath shorter
+                            my $gatherDepsCmd = "echo t/dependency/*";
+
+                            if ($opts->{viaMvn}) {
+                                # Immediately run this command -- we need to see what deps are there to generate pom.xml
+                                my $mvnCopyDepsAndGatherDepsCmd = "$mvnCopyDepsCmd";
+                                print STDERR "Immediately running: <$mvnCopyDepsAndGatherDepsCmd>\n";
+                                system $mvnCopyDepsAndGatherDepsCmd;
+
+                                my $gatherDepsCmd = "cd '$testCompilePath' && $gatherDepsCmd";
+                                print STDERR "Immediately running: <$gatherDepsCmd>\n";
+                                my $gatheredDepsStr = `$gatherDepsCmd`;
+                                chomp $gatheredDepsStr;
+#                                my @gatheredDeps = split /\s+/, $gatheredDepsStr;
+                                my @gatheredDeps = map { "$pwd/$testCompilePath/$_" } split /\s+/, $gatheredDepsStr;     # Maven requires systemPaths to be absolute
+                                my @deps = ($classOwnCP, @gatheredDeps);   # Class-under-test should be first in classpath
+
+                                my $pomFn = "$testCompilePath/pom.xml";
+                                writePom($pomFn, "$g-$a-$v", $evoSuiteTestSourcePath, @deps);
+                                my $runMvnCmd = "mvn $pomFn";
+                                print $runMvnCmd, "\n";
+                            } else {
+                                print "( ", $mvnCopyDepsCmd, "\n";
+                                my $projectCP = "$classOwnCP:\$($gatherDepsCmd | perl -lpe 's/ /:/g')";
+                                my $classPath = join(":",
+                                    "$projectCP",
+                                    $evosuiteRuntimeJarPath,
+                                    $evoSuiteTestSourcePath,
+                                    $junit4JarPath,
+                                    $hamcrestJarPath
+                                );
+                                my %dirsWithClasses = map { $_ => 1 } map { m|(.*)/| } @generatedClasses;
+                                my @condensedClasses = map { "$pwd/$_/*_ESTest*.java" } sort keys %dirsWithClasses;
+                                my $javacCmd = "CLASSPATH=$classPath $JAVAC8 -d . " . join(" ", @condensedClasses);
+                                print $javacCmd, "\n";
+                                print ")\n";
+                            }
                         }
 					}
 				}
@@ -260,20 +389,21 @@ THE_END
 
                     my $createdDirYet = 0;
 
-                    foreach my $compiledClass (@compiledClasses) {
-                        my $classOwnCP = providerPath($opts->{targetOtherProvider}, $g, $a, $v);
-                        my $projectCP = "$classOwnCP:\$(echo t/dependency/*|perl -lpe 's/ /:/g')";
-                        my $classPath = join(":",
-                            "$projectCP",
-                            "$ROOT/regression-test-generation/evosuite/evosuite-standalone-runtime-1.2.0.jar",
+                    my $classOwnCP = providerPath($opts->{targetOtherProvider}, $g, $a, $v);
+                    my $projectCP = "$classOwnCP:\$(echo t/dependency/*|perl -lpe 's/ /:/g')";
+                    my $classPath = join(":",
+                        "$projectCP",
+                        $evosuiteRuntimeJarPath,
 #                                "$testGenPath/evosuite-tests",
-                            ".",        # We're running from the compilation directory
-                            "$ENV{HOME}/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar",
-                            "$ENV{HOME}/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar"
-                        );
+                        ".",        # We're running from the compilation directory
+                        $junit4JarPath,
+                        $hamcrestJarPath
+                    );
 #                            my %dirsWithClasses = map { $_ => 1 } map { m|(.*)/| } @generatedClasses;
 #                            my @condensedClasses = map { "$pwd/$_/*_ESTest*.java" } sort keys %dirsWithClasses;
 #                            my $javacCmd = "CLASSPATH=$classPath $JAVAC8 -d . " . join(" ", @condensedClasses);
+
+                    foreach my $compiledClass (@compiledClasses) {
                         my $dottedClassName = convertClassNameToDotted($compiledClass, $testCompilePath);
                         my $outBasename = "$pwd/$testRunPath/$dottedClassName";
 
@@ -320,10 +450,14 @@ if (!defined $mode) {
 } elsif ($mode eq '--compile-tests') {
     die unless @ARGV == 1;
 	generateOrRunTests({ shouldCompileTests => 1, targetOtherProvider => shift });
+} elsif ($mode eq '--compile-tests-mvn') {
+    die unless @ARGV == 1;
+	generateOrRunTests({ shouldCompileTests => 1, targetOtherProvider => shift, viaMvn => 1 });
 } elsif ($mode eq '--run-tests') {
     die unless @ARGV == 1;
 	generateOrRunTests({ shouldRunTests => 1, targetOtherProvider => shift });
 } elsif ($mode eq '--generate-and-run-tests') {
+    die unless @ARGV == 1;
 	generateOrRunTests({ shouldCompileTests => 1, shouldRunTests => 1, targetOtherProvider => shift });
 } else {
 	die "Unrecognised option '$mode'";
