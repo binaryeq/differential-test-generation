@@ -122,17 +122,18 @@ sub convertClassNameToDotted($$) {
     return $compiledClass;
 }
 
-sub generateOrRunTests($$$;$) {
-	my ($shouldGenerateTests, $shouldRunTests, $shouldCompileTests, $targetOtherProvider) = @_;
-#	print STDERR "targetOtherProvider=<$targetOtherProvider>\n";   #DEBUG
-    die if (($shouldCompileTests || $shouldRunTests) && !defined($targetOtherProvider));
+sub generateOrRunTests($) {
+#	my ($opts->{shouldGenerateTests}, $opts->{shouldRunTests}, $opts->{shouldCompileTests}, $opts->{targetOtherProvider}) = @_;
+	my ($opts) = @_;        # Should be a hashref
+#	print STDERR "targetOtherProvider=<$opts->{targetOtherProvider}>\n";   #DEBUG
+    die if (($opts->{shouldCompileTests} || $opts->{shouldRunTests}) && !defined($opts->{targetOtherProvider}));
 
     print <<THE_END;
 #!/bin/bash
 set -v
 THE_END
 
-    if ($shouldRunTests) {
+    if ($opts->{shouldRunTests}) {
         print "echo \"Will write test results under RUNDIR=\${RUNDIR:=run}\"   # Default to 'run' if not overridden\n";
     }
 
@@ -171,7 +172,7 @@ THE_END
             my $genPomPath = providerPath($p, $g, $a, $v) =~ s/\.jar$/.pom/r;
             my $genBasePath = $genPomPath =~ s|/[^/]+$||r;
 
-			if ($shouldGenerateTests) {
+			if ($opts->{shouldGenerateTests}) {
 				#print join("\t", $jarPath, $p1, $p2), "\n";		#DEBUG
 				#print join("\t", providerPath($p, $g, $a, $v), $p1, $p2), "\n";		#DEBUG
 				my @classes = @{$interestingClasses{$jarPath}};
@@ -195,27 +196,27 @@ THE_END
 				print ")\n";		# Drops us back to original subdir
 			}
 
-            if ($shouldCompileTests) {
+            if ($opts->{shouldCompileTests}) {
                 chomp(my $pwd = `pwd`);
 
 				foreach my $providerPair (@{$providersForJar{$jarPath}}) {
-#                    print STDERR "providerPair=<" . join(", ", @{$providerPair}) . ">. otherProvider=<$targetOtherProvider>, shouldBeUndefined=<$shouldBeUndefined>\n";     #DEBUG
-					if (grep { $_ eq $targetOtherProvider } @{$providerPair}) {
+#                    print STDERR "providerPair=<" . join(", ", @{$providerPair}) . ">. otherProvider=<$opts->{targetOtherProvider}>, shouldBeUndefined=<$opts->{shouldBeUndefined}>\n";     #DEBUG
+					if (grep { $_ eq $opts->{targetOtherProvider} } @{$providerPair}) {
                         # Find all actually generated test classes (there may be none). This step requires that we have
                         # already run the shell script (generated using --generate-tests) that generates these classes.
-                        print STDERR "# Looking for successfully generated test classes for $jarPath for $targetOtherProvider\n";     #DEBUG
+                        print STDERR "# Looking for successfully generated test classes for $jarPath for $opts->{targetOtherProvider}\n";     #DEBUG
                         my @generatedClasses = `find '$testGenPath' -name '*_ESTest*.java'`;
                         chomp @generatedClasses;
 
                         if (@generatedClasses) {
-                            print "# Compile " . scalar(@generatedClasses) . " generated test classes for $jarPath for $targetOtherProvider\n";
-                            my $testCompilePath = evosuiteCompileDir($targetOtherProvider, $g, $a, $v);
-                            my $pomPath = providerPath($targetOtherProvider, $g, $a, $v) =~ s/\.jar$/.pom/r;
+                            print "# Compile " . scalar(@generatedClasses) . " generated test classes for $jarPath for $opts->{targetOtherProvider}\n";
+                            my $testCompilePath = evosuiteCompileDir($opts->{targetOtherProvider}, $g, $a, $v);
+                            my $pomPath = providerPath($opts->{targetOtherProvider}, $g, $a, $v) =~ s/\.jar$/.pom/r;
                             my $basePath = $pomPath =~ s|/[^/]+$||r;
                             my $mvnCopyDepsCmd = "( mkdir -p '$testCompilePath' && cd '$testCompilePath' && mvn -f $pomPath dependency:copy-dependencies && ln -s $basePath/target t";	# Symlink to make classpath shorter
                             print $mvnCopyDepsCmd, "\n";
 
-                            my $classOwnCP = providerPath($targetOtherProvider, $g, $a, $v);
+                            my $classOwnCP = providerPath($opts->{targetOtherProvider}, $g, $a, $v);
                             my $projectCP = "$classOwnCP:\$(echo t/dependency/*|perl -lpe 's/ /:/g')";
                             my $classPath = join(":",
                                 "$projectCP",
@@ -234,25 +235,25 @@ THE_END
 				}
             }
 
-			if ($shouldRunTests) {
+			if ($opts->{shouldRunTests}) {
 				#TODO: Do per-provider-pair work
                 chomp(my $pwd = `pwd`);
 
                 # If any of the provider pairs for this jar involve the provider that we are interested in:
-                if (grep { $_ eq $targetOtherProvider } map { @$_ } @{$providersForJar{$jarPath}}) {
-#                    print STDERR "providerPair=<" . join(", ", @{$providerPair}) . ">. otherProvider=<$targetOtherProvider>, shouldBeUndefined=<$shouldBeUndefined>\n";     #DEBUG
+                if (grep { $_ eq $opts->{targetOtherProvider} } map { @$_ } @{$providersForJar{$jarPath}}) {
+#                    print STDERR "providerPair=<" . join(", ", @{$providerPair}) . ">. otherProvider=<$opts->{targetOtherProvider}>, shouldBeUndefined=<$opts->{shouldBeUndefined}>\n";     #DEBUG
                     # Find all actually generated test classes (there may be none). This step requires that we have
                     # already run the shell script (generated using --generate-tests) that generates these classes.
-                    print STDERR "# Looking for successfully compiled test classes for $jarPath for $targetOtherProvider\n";     #DEBUG
-                    my $testCompilePath = evosuiteCompileDir($targetOtherProvider, $g, $a, $v);
-                    my $testRunPath = evosuiteRunDir($targetOtherProvider, $g, $a, $v);
+                    print STDERR "# Looking for successfully compiled test classes for $jarPath for $opts->{targetOtherProvider}\n";     #DEBUG
+                    my $testCompilePath = evosuiteCompileDir($opts->{targetOtherProvider}, $g, $a, $v);
+                    my $testRunPath = evosuiteRunDir($opts->{targetOtherProvider}, $g, $a, $v);
 #                        my @compiledClasses = `find '$testGenPath' -name '*_ESTest.class'`;
                     my $findCompiledClassesCmd = "find '$testCompilePath' -name '*_ESTest.class'";
                     print STDERR "findCompiledClassesCmd=<$findCompiledClassesCmd>\n";     #DEBUG
                     my @compiledClasses = `$findCompiledClassesCmd`;
                     chomp @compiledClasses;
 
-#                        my $pomPath = providerPath($targetOtherProvider, $g, $a, $v) =~ s/\.jar$/.pom/r;
+#                        my $pomPath = providerPath($opts->{targetOtherProvider}, $g, $a, $v) =~ s/\.jar$/.pom/r;
 #                        my $basePath = $pomPath =~ s|/[^/]+$||r;
                     if (!@compiledClasses) {
                         print "# No compiled classes found for $testCompilePath so won't create $testRunPath.\n";
@@ -261,7 +262,7 @@ THE_END
                     my $createdDirYet = 0;
 
                     foreach my $compiledClass (@compiledClasses) {
-                        my $classOwnCP = providerPath($targetOtherProvider, $g, $a, $v);
+                        my $classOwnCP = providerPath($opts->{targetOtherProvider}, $g, $a, $v);
                         my $projectCP = "$classOwnCP:\$(echo t/dependency/*|perl -lpe 's/ /:/g')";
                         my $classPath = join(":",
                             "$projectCP",
@@ -284,7 +285,7 @@ THE_END
                                 $createdDirYet = 1;
                             }
 
-                            print "# Run compiled test class $compiledClass for $jarPath for $targetOtherProvider\n";
+                            print "# Run compiled test class $compiledClass for $jarPath for $opts->{targetOtherProvider}\n";
                             my $javaCmd = "CLASSPATH=\"$classPath\" time $JAVA8 org.junit.runner.JUnitCore \"$dottedClassName\" > \"$outBasename.out\" 2> \"$outBasename.err\"";
                             print $javaCmd, "\n";
                         }
@@ -316,15 +317,20 @@ if (!defined $mode) {
 } elsif ($mode eq '--generate-comparisons') {
 	generateComparisons();
 } elsif ($mode eq '--generate-tests') {
-	generateOrRunTests(1, 0, 0);
+#	my ($opts->{shouldGenerateTests}, $opts->{shouldRunTests}, $opts->{shouldCompileTests}, $opts->{targetOtherProvider}) = @_;
+#	generateOrRunTests(1, 0, 0);
+	generateOrRunTests({ shouldGenerateTests => 1 });
 } elsif ($mode eq '--compile-tests') {
     die unless @ARGV == 1;
-	generateOrRunTests(0, 0, 1, shift);
+#	generateOrRunTests(0, 0, 1, shift);
+	generateOrRunTests({ shouldCompileTests => 1, targetOtherProvider => shift });
 } elsif ($mode eq '--run-tests') {
     die unless @ARGV == 1;
-	generateOrRunTests(0, 1, 0, shift);
+#	generateOrRunTests(0, 1, 0, shift);
+	generateOrRunTests({ shouldRunTests => 1, targetOtherProvider => shift });
 } elsif ($mode eq '--generate-and-run-tests') {
-	generateOrRunTests(1, 1, 0);
+#	generateOrRunTests(1, 1, 0);
+	generateOrRunTests({ shouldCompileTests => 1, shouldRunTests => 1, targetOtherProvider => shift });
 } else {
 	die "Unrecognised option '$mode'";
 }
