@@ -17,6 +17,7 @@ sub findJava($$) {
 my $ROOT = "$ENV{HOME}/code";       # Change as necessary
 my $BASE = "$ROOT/craw-redhat-oss/wget/crawl";
 my $CLASSPATH = "$ROOT/tooling/target/bineq-1.0.0-jar-with-dependencies.jar";
+my $JDKVERSION = "8";
 my $JAVA8 = findJava("java", 8);     # EvoSuite prefers JDK 8, sometimes works with JDK 11
 my $JAVAC8 = findJava("javac", 8);
 my $JAVA17 = findJava("java", 17);   # Code in the tooling repo was compiled with JDK 17
@@ -161,7 +162,8 @@ THE_END
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.release>8</maven.compiler.release>
+    <maven.compiler.source>$JDKVERSION</maven.compiler.source>
+    <maven.compiler.target>$JDKVERSION</maven.compiler.target>
   </properties>
 
   <dependencies>
