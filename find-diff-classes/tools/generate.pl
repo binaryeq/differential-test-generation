@@ -23,6 +23,7 @@ my $JAVAC8 = findJava("javac", 8);
 my $JAVA17 = findJava("java", 17);   # Code in the tooling repo was compiled with JDK 17
 my $COMPAREJARS = "$JAVA17 -cp $CLASSPATH io.github.bineq.cli.CompareJars";
 my $EVOSUITEJAR = "$ROOT/regression-test-generation/evosuite/evosuite-1.2.0.jar";
+my $COMPARISONSDIR = "results";
 my $evosuiteRuntimeJarPath = "$ROOT/regression-test-generation/evosuite/evosuite-standalone-runtime-1.2.0.jar";
 my $junit4JarPath = "$ENV{HOME}/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar";
 my $hamcrestJarPath = "$ENV{HOME}/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar";
@@ -105,10 +106,10 @@ sub generateComparisons() {
 		#my $jarPath2 = providerPath($p2, $jarPath);
 		my $jarPath1 = providerPath($p1, $g, $a, $v);
 		my $jarPath2 = providerPath($p2, $g, $a, $v);
-		my $outDir = "results/$jarPath.compare";
-		my $mkdirCmd = "mkdir -p $outDir";
+		my $outDir = "$COMPARISONSDIR/$jarPath.compare";
+		my $mkdirCmd = "mkdir -p '$outDir'";
 
-		my $cmd = "$mkdirCmd && $COMPAREJARS -eq jnorm2,javap -j1 $jarPath1 -j2 $jarPath2 -out $outDir/$p1.vs.$p2.json";
+		my $cmd = "$mkdirCmd && $COMPAREJARS -eq jnorm2,javap -j1 '$jarPath1' -j2 '$jarPath2' -out '$outDir/$p1.vs.$p2.json'";
 		print $cmd, "\n";
 	}
 }
@@ -244,7 +245,7 @@ THE_END
         print "echo \"Will write test results under RUNDIR=\${RUNDIR:=run}\"   # Default to 'run' if not overridden\n";
     }
 
-	my (@classesFiltered) = `find results -name 'classes.filtered'`;
+	my (@classesFiltered) = `find '$COMPARISONSDIR' -name 'classes.filtered'`;
 	chomp @classesFiltered;
 	#print scalar @classesFiltered;
 
@@ -252,7 +253,7 @@ THE_END
 	my %jarPathHasMvnc;
 	my %interestingClasses;
 	foreach my $fn (@classesFiltered) {
-		my ($jarPath, $p1, $p2) = $fn =~ m|^results/(.*)\.compare/(\w+)\.vs\.(\w+)/classes.filtered$| or die;
+		my ($jarPath, $p1, $p2) = $fn =~ m|^\Q$COMPARISONSDIR\E/(.*)\.compare/(\w+)\.vs\.(\w+)/classes.filtered$| or die;
 		#my ($g, $a, $v) = $jarPath =~ m|^(.*)/([^/]+)/([^/]+)/[^/]+\.jar$| or die;
 		#$g =~ tr|/|.|;
 		push @{$providersForJar{$jarPath}}, [$p1, $p2];
