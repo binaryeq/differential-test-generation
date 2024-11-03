@@ -14,3 +14,6 @@ tools/run_all.sh
 ```
 
 See [tools/run_all.sh](tools/run_all.sh), which has detailed comments explaining each step.
+
+Note that all shell scripts in the current directory are **generated** by `tools/run_all.sh`.
+The repo contains a copy of these generated scripts for convenience in case you want to run some of the steps manually, but they will be overwritten by `tools/run_all.sh` -- this is normal.
