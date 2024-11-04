@@ -1,0 +1,36 @@
+174c174
+< java.lang.Runnable v2, v9;
+---
+> java.lang.Runnable v18, v2;
+176,177c176,177
+< java.lang.Object v1;
+< java.lang.String v3, v6, v7, v8;
+---
+> int v12, v13, v15, v16, v8, v9;
+> java.lang.String v10, v11, v14, v17, v3, v6, v7;
+178a179,180
+> java.lang.Object v1;
+> java.lang.StringBuilder v19, v20;
+193c195,199
+< v6 = virtualinvoke v9.<java.lang.Thread: java.lang.String getName()>();
+---
+> v6 = virtualinvoke v18.<java.lang.Thread: java.lang.String getName()>();
+> v7 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v6);
+> v8 = virtualinvoke v7.<java.lang.String: int length()>();
+> v9 = 21 + v8;
+> specialinvoke v19.<java.lang.StringBuilder: void <init>(int)>(v9);
+199,201c205,214
+< v7 = virtualinvoke v0.<com.google.common.util.concurrent.InterruptibleTask: java.lang.String toPendingString()>();
+< v8 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,java.lang.String)>(v3, v7) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001, \u0001");
+< return v8;
+---
+> v10 = virtualinvoke v0.<com.google.common.util.concurrent.InterruptibleTask: java.lang.String toPendingString()>();
+> v11 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v3);
+> v12 = virtualinvoke v11.<java.lang.String: int length()>();
+> v13 = 2 + v12;
+> v14 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v10);
+> v15 = virtualinvoke v14.<java.lang.String: int length()>();
+> v16 = v13 + v15;
+> specialinvoke v20.<java.lang.StringBuilder: void <init>(int)>(v16);
+> v17 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,java.lang.String)>(v3, v10) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001, \u0001");
+> return v17;

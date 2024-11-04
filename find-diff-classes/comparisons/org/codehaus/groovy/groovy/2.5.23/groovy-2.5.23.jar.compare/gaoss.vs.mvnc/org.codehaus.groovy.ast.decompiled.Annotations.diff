@@ -1,0 +1,26 @@
+13a14
+> groovyjarjarasm.asm.Type v3;
+16d16
+< org.objectweb.asm.Type v3;
+26,27c26,27
+< v3 = staticinvoke <org.objectweb.asm.Type: org.objectweb.asm.Type getType(java.lang.String)>(v2);
+< v4 = virtualinvoke v3.<org.objectweb.asm.Type: java.lang.String getClassName()>();
+---
+> v3 = staticinvoke <groovyjarjarasm.asm.Type: groovyjarjarasm.asm.Type getType(java.lang.String)>(v2);
+> v4 = virtualinvoke v3.<groovyjarjarasm.asm.Type: java.lang.String getClassName()>();
+66a67
+> groovyjarjarasm.asm.Type v13, v4;
+68d68
+< org.objectweb.asm.Type v13, v4;
+87,88c87,88
+< v4 = staticinvoke <org.objectweb.asm.Type: org.objectweb.asm.Type getType(java.lang.String)>(v3);
+< v5 = virtualinvoke v4.<org.objectweb.asm.Type: java.lang.String getClassName()>();
+---
+> v4 = staticinvoke <groovyjarjarasm.asm.Type: groovyjarjarasm.asm.Type getType(java.lang.String)>(v3);
+> v5 = virtualinvoke v4.<groovyjarjarasm.asm.Type: java.lang.String getClassName()>();
+105,106c105,106
+< v13 = staticinvoke <org.objectweb.asm.Type: org.objectweb.asm.Type getType(java.lang.String)>(v12);
+< v14 = virtualinvoke v1.<org.codehaus.groovy.ast.decompiled.AsmReferenceResolver: org.codehaus.groovy.ast.ClassNode resolveType(org.objectweb.asm.Type)>(v13);
+---
+> v13 = staticinvoke <groovyjarjarasm.asm.Type: groovyjarjarasm.asm.Type getType(java.lang.String)>(v12);
+> v14 = virtualinvoke v1.<org.codehaus.groovy.ast.decompiled.AsmReferenceResolver: org.codehaus.groovy.ast.ClassNode resolveType(groovyjarjarasm.asm.Type)>(v13);

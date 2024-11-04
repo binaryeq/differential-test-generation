@@ -1,0 +1,61 @@
+253c253
+< org.apache.curator.framework.recipes.cache.PathChildrenCache$RefreshMode v14, v18;
+---
+> org.apache.curator.framework.recipes.cache.PathChildrenCache$RefreshMode v12, v16;
+255,256c255,256
+< java.util.concurrent.atomic.AtomicReference v15, v2;
+< java.util.concurrent.ConcurrentMap v16;
+---
+> java.util.concurrent.atomic.AtomicReference v13, v2;
+> java.util.concurrent.ConcurrentMap v14;
+258,259c258
+< int[] v10;
+< int v11, v12;
+---
+> int v10;
+263c262
+< org.apache.curator.framework.recipes.cache.RefreshOperation v13, v17;
+---
+> org.apache.curator.framework.recipes.cache.RefreshOperation v11, v15;
+279,282c278,279
+< v10 = <org.apache.curator.framework.recipes.cache.PathChildrenCache$9: int[] $SwitchMap$org$apache$curator$framework$recipes$cache$PathChildrenCache$StartMode>;
+< v11 = virtualinvoke v6.<org.apache.curator.framework.recipes.cache.PathChildrenCache$StartMode: int ordinal()>();
+< v12 = v10[v11];
+< tableswitch(v12)
+---
+> v10 = virtualinvoke v6.<org.apache.curator.framework.recipes.cache.PathChildrenCache$StartMode: int ordinal()>();
+> tableswitch(v10)
+284,286c281,283
+< case 1: goto label1;
+< case 2: goto label2;
+< case 3: goto label3;
+---
+> case 0: goto label1;
+> case 1: goto label2;
+> case 2: goto label3;
+290,293c287,290
+< v13 = new org.apache.curator.framework.recipes.cache.RefreshOperation;
+< v14 = <org.apache.curator.framework.recipes.cache.PathChildrenCache$RefreshMode: org.apache.curator.framework.recipes.cache.PathChildrenCache$RefreshMode STANDARD>;
+< specialinvoke v13.<org.apache.curator.framework.recipes.cache.RefreshOperation: void <init>(org.apache.curator.framework.recipes.cache.PathChildrenCache,org.apache.curator.framework.recipes.cache.PathChildrenCache$RefreshMode)>(v0, v14);
+< virtualinvoke v0.<org.apache.curator.framework.recipes.cache.PathChildrenCache: void offerOperation(org.apache.curator.framework.recipes.cache.Operation)>(v13);
+---
+> v11 = new org.apache.curator.framework.recipes.cache.RefreshOperation;
+> v12 = <org.apache.curator.framework.recipes.cache.PathChildrenCache$RefreshMode: org.apache.curator.framework.recipes.cache.PathChildrenCache$RefreshMode STANDARD>;
+> specialinvoke v11.<org.apache.curator.framework.recipes.cache.RefreshOperation: void <init>(org.apache.curator.framework.recipes.cache.PathChildrenCache,org.apache.curator.framework.recipes.cache.PathChildrenCache$RefreshMode)>(v0, v12);
+> virtualinvoke v0.<org.apache.curator.framework.recipes.cache.PathChildrenCache: void offerOperation(org.apache.curator.framework.recipes.cache.Operation)>(v11);
+299,305c296,302
+< v15 = v0.<org.apache.curator.framework.recipes.cache.PathChildrenCache: java.util.concurrent.atomic.AtomicReference initialSet>;
+< v16 = staticinvoke <org.apache.curator.shaded.com.google.common.collect.Maps: java.util.concurrent.ConcurrentMap newConcurrentMap()>();
+< virtualinvoke v15.<java.util.concurrent.atomic.AtomicReference: void set(java.lang.Object)>(v16);
+< v17 = new org.apache.curator.framework.recipes.cache.RefreshOperation;
+< v18 = <org.apache.curator.framework.recipes.cache.PathChildrenCache$RefreshMode: org.apache.curator.framework.recipes.cache.PathChildrenCache$RefreshMode POST_INITIALIZED>;
+< specialinvoke v17.<org.apache.curator.framework.recipes.cache.RefreshOperation: void <init>(org.apache.curator.framework.recipes.cache.PathChildrenCache,org.apache.curator.framework.recipes.cache.PathChildrenCache$RefreshMode)>(v0, v18);
+< virtualinvoke v0.<org.apache.curator.framework.recipes.cache.PathChildrenCache: void offerOperation(org.apache.curator.framework.recipes.cache.Operation)>(v17);
+---
+> v13 = v0.<org.apache.curator.framework.recipes.cache.PathChildrenCache: java.util.concurrent.atomic.AtomicReference initialSet>;
+> v14 = staticinvoke <org.apache.curator.shaded.com.google.common.collect.Maps: java.util.concurrent.ConcurrentMap newConcurrentMap()>();
+> virtualinvoke v13.<java.util.concurrent.atomic.AtomicReference: void set(java.lang.Object)>(v14);
+> v15 = new org.apache.curator.framework.recipes.cache.RefreshOperation;
+> v16 = <org.apache.curator.framework.recipes.cache.PathChildrenCache$RefreshMode: org.apache.curator.framework.recipes.cache.PathChildrenCache$RefreshMode POST_INITIALIZED>;
+> specialinvoke v15.<org.apache.curator.framework.recipes.cache.RefreshOperation: void <init>(org.apache.curator.framework.recipes.cache.PathChildrenCache,org.apache.curator.framework.recipes.cache.PathChildrenCache$RefreshMode)>(v0, v16);
+> virtualinvoke v0.<org.apache.curator.framework.recipes.cache.PathChildrenCache: void offerOperation(org.apache.curator.framework.recipes.cache.Operation)>(v15);

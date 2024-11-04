@@ -1,0 +1,240 @@
+* EvoSuite 1.2.0
+* Going to generate test cases for class: com.google.common.util.concurrent.Monitor
+* Starting Client-0
+* Connecting to master process on port 17807
+* Analyzing classpath: 
+  - /home/wtwhite/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/guava/guava/31.0.1-jre/guava-31.0.1-jre.jar
+  - t/dependency/checker-qual-3.12.0.jar
+  - t/dependency/error_prone_annotations-2.7.1.jar
+  - t/dependency/failureaccess-1.0.1.jar
+  - t/dependency/j2objc-annotations-1.3.jar
+  - t/dependency/jsr305-3.0.2.jar
+  - t/dependency/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar
+* Finished analyzing classpath
+* Generating tests for class com.google.common.util.concurrent.Monitor
+* Test criteria:
+  - Line Coverage
+  - Branch Coverage
+  - Exception
+  - Mutation testing (weak)
+  - Method-Output Coverage
+  - Top-Level Method Coverage
+  - No-Exception Top-Level Method Coverage
+  - Context Branch Coverage
+[Progress:>                             0%] [Cov:>                                  0%]* Total number of test goals for DYNAMOSA: 1332
+* Using seed 1729705688436
+* Starting evolution
+* Initial Number of Goals in DynaMOSA = 398 / 1332
+[Progress:=========>                    33%] [Cov:=================>                 50%][MASTER] 06:48:31.452 [logback-1] WARN  CoverageArchive - A solution with a timeout/exception result has been added to the archive. The covered goal was Branch com.google.common.util.concurrent.Monitor.enterIf(Lcom/google/common/util/concurrent/Monitor$Guard;JLjava/util/concurrent/TimeUnit;)Z: I18 Branch 42 IFNE L715 - true in context: com.google.common.util.concurrent.Monitor:enterIf(Lcom/google/common/util/concurrent/Monitor$Guard;JLjava/util/concurrent/TimeUnit;)Z
+[MASTER] 06:48:31.452 [logback-1] WARN  CoverageArchive - A solution with a timeout/exception result has been added to the archive. The covered goal was [METHODNOEX] com.google.common.util.concurrent.Monitor.waitFor(Lcom/google/common/util/concurrent/Monitor$Guard;JLjava/util/concurrent/TimeUnit;)Z
+[MASTER] 06:48:31.455 [logback-1] WARN  CoverageArchive - A solution with a timeout/exception result has been added to the archive. The covered goal was Branch com.google.common.util.concurrent.Monitor.enterIf(Lcom/google/common/util/concurrent/Monitor$Guard;JLjava/util/concurrent/TimeUnit;)Z: I5 Branch 41 IF_ACMPEQ L712 - true in context: com.google.common.util.concurrent.Monitor:enterIf(Lcom/google/common/util/concurrent/Monitor$Guard;JLjava/util/concurrent/TimeUnit;)Z
+[MASTER] 06:48:31.457 [logback-1] WARN  CoverageArchive - A solution with a timeout/exception result has been added to the archive. The covered goal was Branch com.google.common.util.concurrent.Monitor.enterIf(Lcom/google/common/util/concurrent/Monitor$Guard;JLjava/util/concurrent/TimeUnit;)Z: I37 Branch 43 IFNE L723 - false in context: com.google.common.util.concurrent.Monitor:enterIf(Lcom/google/common/util/concurrent/Monitor$Guard;JLjava/util/concurrent/TimeUnit;)Z
+[MASTER] 06:48:31.459 [logback-1] WARN  CoverageArchive - A solution with a timeout/exception result has been added to the archive. The covered goal was [METHODNOEX] com.google.common.util.concurrent.Monitor.enterIfInterruptibly(Lcom/google/common/util/concurrent/Monitor$Guard;Ljava/time/Duration;)Z
+[MASTER] 06:48:31.460 [logback-1] WARN  CoverageArchive - A solution with a timeout/exception result has been added to the archive. The covered goal was [METHOD] com.google.common.util.concurrent.Monitor.enter(JLjava/util/concurrent/TimeUnit;)Z
+[MASTER] 06:48:31.460 [logback-1] WARN  CoverageArchive - A solution with a timeout/exception result has been added to the archive. The covered goal was [METHODNOEX] com.google.common.util.concurrent.Monitor.enter(JLjava/util/concurrent/TimeUnit;)Z
+[MASTER] 06:48:31.463 [logback-1] WARN  CoverageArchive - A solution with a timeout/exception result has been added to the archive. The covered goal was com.google.common.util.concurrent.Monitor.enter(JLjava/util/concurrent/TimeUnit;)Z: I18 Branch 2 IFEQ L408 - false
+[MASTER] 06:48:56.979 [logback-1] WARN  CoverageArchive - A solution with a timeout/exception result has been added to the archive. The covered goal was [METHODNOEX] com.google.common.util.concurrent.Monitor.enterIfInterruptibly(Lcom/google/common/util/concurrent/Monitor$Guard;)Z
+[Progress:======================>       76%] [Cov:====================>              59%][MASTER] 06:49:17.217 [logback-1] WARN  CoverageArchive - A solution with a timeout/exception result has been added to the archive. The covered goal was [METHODNOEX] com.google.common.util.concurrent.Monitor.waitForUninterruptibly(Lcom/google/common/util/concurrent/Monitor$Guard;Ljava/time/Duration;)Z
+[MASTER] 06:49:17.218 [logback-1] WARN  CoverageArchive - A solution with a timeout/exception result has been added to the archive. The covered goal was Weak Mutation 397: com.google.common.util.concurrent.Monitor.await(Lcom/google/common/util/concurrent/Monitor$Guard;Z)V:1180 - InsertUnaryOp Negation of signalBeforeWaiting
+[MASTER] 06:49:17.218 [logback-1] WARN  CoverageArchive - A solution with a timeout/exception result has been added to the archive. The covered goal was Weak Mutation 398: com.google.common.util.concurrent.Monitor.await(Lcom/google/common/util/concurrent/Monitor$Guard;Z)V:1180 - InsertUnaryOp IINC 1 signalBeforeWaiting
+[MASTER] 06:49:17.218 [logback-1] WARN  CoverageArchive - A solution with a timeout/exception result has been added to the archive. The covered goal was Weak Mutation 399: com.google.common.util.concurrent.Monitor.await(Lcom/google/common/util/concurrent/Monitor$Guard;Z)V:1180 - InsertUnaryOp IINC -1 signalBeforeWaiting
+[MASTER] 06:49:17.218 [logback-1] WARN  CoverageArchive - A solution with a timeout/exception result has been added to the archive. The covered goal was Weak Mutation 400: com.google.common.util.concurrent.Monitor.await(Lcom/google/common/util/concurrent/Monitor$Guard;Z)V:1180 - ReplaceComparisonOperator == -> !=
+[MASTER] 06:49:17.221 [logback-1] WARN  CoverageArchive - A solution with a timeout/exception result has been added to the archive. The covered goal was [METHODNOEX] com.google.common.util.concurrent.Monitor.waitFor(Lcom/google/common/util/concurrent/Monitor$Guard;)V
+[MASTER] 06:49:17.223 [logback-1] WARN  CoverageArchive - A solution with a timeout/exception result has been added to the archive. The covered goal was [METHODNOEX] com.google.common.util.concurrent.Monitor.enterWhen(Lcom/google/common/util/concurrent/Monitor$Guard;)V
+[MASTER] 06:49:17.224 [logback-1] WARN  CoverageArchive - A solution with a timeout/exception result has been added to the archive. The covered goal was com.google.common.util.concurrent.Monitor.await(Lcom/google/common/util/concurrent/Monitor$Guard;Z)V: Line 1180
+[MASTER] 06:49:17.224 [logback-1] WARN  CoverageArchive - A solution with a timeout/exception result has been added to the archive. The covered goal was com.google.common.util.concurrent.Monitor.await(Lcom/google/common/util/concurrent/Monitor$Guard;Z)V: Line 1183
+[Progress:==============================100%] [Cov:======================>            65%]
+* Search finished after 67s and 2 generations, 1553 statements, best individual has fitness: 600.0
+[MASTER] 06:49:17.438 [logback-1] WARN  TimeController - Phase SEARCH lasted too long, 6 seconds more than allowed.
+* Minimizing test suite
+[MASTER] 06:50:19.792 [logback-1] WARN  TestSuiteMinimizer - Minimization timeout. Roll back to original test suite
+* Going to analyze the coverage criteria
+* Coverage analysis for criterion LINE
+* Coverage of criterion LINE: 62%
+* Total number of goals: 303
+* Number of covered goals: 189
+* Coverage analysis for criterion BRANCH
+* Coverage of criterion BRANCH: 47%
+* Total number of goals: 219
+* Number of covered goals: 103
+* Coverage analysis for criterion EXCEPTION
+* Coverage of criterion EXCEPTION: 100%
+* Total number of goals: 18
+* Number of covered goals: 18
+* Coverage analysis for criterion WEAKMUTATION
+* Coverage of criterion WEAKMUTATION: 54%
+* Total number of goals: 448
+* Number of covered goals: 240
+* Coverage analysis for criterion OUTPUT
+* Coverage of criterion OUTPUT: 57%
+* Total number of goals: 63
+* Number of covered goals: 36
+* Coverage analysis for criterion METHOD
+* Coverage of criterion METHOD: 92%
+* Total number of goals: 40
+* Number of covered goals: 37
+* Coverage analysis for criterion METHODNOEXCEPTION
+* Coverage of criterion METHODNOEXCEPTION: 80%
+* Total number of goals: 40
+* Number of covered goals: 32
+* Coverage analysis for criterion CBRANCH
+* Coverage of criterion CBRANCH: 46%
+* Total number of goals: 219
+* Number of covered goals: 100
+* Generated 44 tests with total length 984
+* Resulting test suite's coverage: 65% (average coverage for all fitness functions)
+* Generating assertions
+[MASTER] 06:51:01.687 [logback-1] WARN  SimpleMutationAssertionGenerator - Assertion minimization is taking too long (0.6950166666666666% of time used, but only 18/44 tests minimized), falling back to using all assertions
+* Resulting test suite's mutation score: 6%
+* Compiling and checking tests
+[MASTER] 06:51:24.314 [logback-1] WARN  JUnitAnalyzer - Found unstable test named test0 -> class org.junit.runners.model.TestTimedOutException: test timed out after 4000 milliseconds
+[MASTER] 06:51:24.317 [logback-1] WARN  JUnitAnalyzer - Failing test:
+ Monitor monitor0 = new Monitor();
+assertFalse(monitor0.isFair());
+assertNotNull(monitor0);
+
+BooleanSupplier booleanSupplier0 = mock(BooleanSupplier.class, new ViolatedAssumptionAnswer());
+doReturn(true, false, false).when(booleanSupplier0).getAsBoolean();
+Monitor.Guard monitor_Guard0 = monitor0.newGuard(booleanSupplier0);
+assertFalse(monitor0.isFair());
+assertNotNull(monitor_Guard0);
+
+TimeUnit timeUnit0 = TimeUnit.DAYS;
+boolean boolean0 = monitor0.enterIfInterruptibly(monitor_Guard0, (-2084L), timeUnit0);
+assertFalse(monitor0.isFair());
+assertTrue(boolean0);
+
+BooleanSupplier booleanSupplier1 = mock(BooleanSupplier.class, new ViolatedAssumptionAnswer());
+doReturn(false, false).when(booleanSupplier1).getAsBoolean();
+Monitor.Guard monitor_Guard1 = monitor0.newGuard(booleanSupplier1);
+assertFalse(monitor_Guard1.equals((Object)monitor_Guard0));
+assertFalse(monitor0.isFair());
+assertNotSame(monitor_Guard1, monitor_Guard0);
+assertNotNull(monitor_Guard1);
+
+monitor_Guard1.next = monitor_Guard0;
+assertFalse(monitor0.isFair());
+
+monitor0.leave();
+assertFalse(monitor0.isFair());
+
+TimeUnit timeUnit1 = TimeUnit.DAYS;
+boolean boolean1 = monitor0.enterWhen(monitor_Guard1, 0L, timeUnit1);
+assertFalse(monitor_Guard1.equals((Object)monitor_Guard0));
+assertFalse(boolean1 == boolean0);
+assertFalse(monitor0.isFair());
+assertFalse(boolean1);
+assertNotSame(monitor_Guard1, monitor_Guard0);
+assertSame(timeUnit1, timeUnit0);
+
+BooleanSupplier booleanSupplier2 = mock(BooleanSupplier.class, new ViolatedAssumptionAnswer());
+doReturn(false).when(booleanSupplier2).getAsBoolean();
+boolean boolean2 = monitor_Guard0.isSatisfied();
+assertFalse(monitor_Guard0.equals((Object)monitor_Guard1));
+assertTrue(boolean2 == boolean1);
+assertFalse(boolean2 == boolean0);
+assertFalse(monitor0.isFair());
+assertFalse(boolean2);
+assertNotSame(monitor_Guard0, monitor_Guard1);
+
+Monitor.Guard monitor_Guard2 = monitor0.newGuard(booleanSupplier2);
+assertFalse(monitor_Guard2.equals((Object)monitor_Guard1));
+assertFalse(monitor_Guard2.equals((Object)monitor_Guard0));
+assertFalse(monitor0.isFair());
+assertNotSame(monitor_Guard2, monitor_Guard1);
+assertNotSame(monitor_Guard2, monitor_Guard0);
+assertNotNull(monitor_Guard2);
+
+monitor_Guard1.waiterCount = 1;
+assertFalse(monitor0.isFair());
+
+boolean boolean3 = monitor0.enterIf(monitor_Guard1);
+assertFalse(monitor_Guard1.equals((Object)monitor_Guard0));
+assertFalse(monitor_Guard1.equals((Object)monitor_Guard2));
+assertFalse(boolean3 == boolean0);
+assertTrue(boolean3 == boolean1);
+assertTrue(boolean3 == boolean2);
+assertFalse(monitor0.isFair());
+assertFalse(boolean3);
+assertNotSame(monitor_Guard1, monitor_Guard0);
+assertNotSame(monitor_Guard1, monitor_Guard2);
+
+monitor_Guard2.next = monitor_Guard1.next;
+assertFalse(monitor0.isFair());
+
+monitor_Guard0.waiterCount = (-770);
+assertFalse(monitor0.isFair());
+
+monitor_Guard1.next.waiterCount = 64;
+assertFalse(monitor0.isFair());
+
+TimeUnit timeUnit2 = TimeUnit.MINUTES;
+boolean boolean4 = monitor0.enterIf(monitor_Guard2, 378L, timeUnit2);
+assertFalse(timeUnit2.equals((Object)timeUnit1));
+assertFalse(timeUnit2.equals((Object)timeUnit0));
+assertTrue(boolean4 == boolean2);
+assertTrue(boolean4 == boolean3);
+assertTrue(boolean4 == boolean1);
+assertFalse(boolean4 == boolean0);
+assertFalse(monitor_Guard2.equals((Object)monitor_Guard1));
+assertFalse(monitor_Guard2.equals((Object)monitor_Guard0));
+assertFalse(monitor0.isFair());
+assertFalse(boolean4);
+assertNotSame(monitor_Guard2, monitor_Guard1);
+assertNotSame(monitor_Guard2, monitor_Guard0);
+
+boolean boolean5 = monitor0.hasQueuedThreads();
+assertTrue(boolean5 == boolean2);
+assertTrue(boolean5 == boolean4);
+assertTrue(boolean5 == boolean3);
+assertTrue(boolean5 == boolean1);
+assertFalse(boolean5 == boolean0);
+assertFalse(monitor0.isFair());
+assertFalse(boolean5);
+
+Duration duration0 = Duration.ofNanos(0L);
+assertNotNull(duration0);
+
+Duration duration1 = duration0.minusMinutes((-2084L));
+assertFalse(duration1.equals((Object)duration0));
+assertNotSame(duration0, duration1);
+assertNotSame(duration1, duration0);
+assertNotNull(duration1);
+
+boolean boolean6 = monitor0.enter(duration0);
+assertFalse(duration0.equals((Object)duration1));
+assertFalse(boolean6 == boolean5);
+assertTrue(boolean6 == boolean0);
+assertFalse(boolean6 == boolean1);
+assertFalse(boolean6 == boolean3);
+assertFalse(boolean6 == boolean4);
+assertFalse(boolean6 == boolean2);
+assertFalse(monitor0.isFair());
+assertTrue(boolean6);
+assertNotSame(duration0, duration1);
+
+monitor0.leave();
+assertFalse(monitor0.isFair());
+
+int int0 = monitor0.getWaitQueueLength(monitor_Guard0);
+assertFalse(monitor_Guard0.equals((Object)monitor_Guard1));
+assertFalse(monitor_Guard0.equals((Object)monitor_Guard2));
+assertFalse(monitor0.isFair());
+assertEquals(64, int0);
+assertNotSame(monitor_Guard0, monitor_Guard1);
+assertNotSame(monitor_Guard0, monitor_Guard2);
+
+int int1 = monitor0.getQueueLength();
+assertFalse(int1 == int0);
+assertFalse(monitor0.isFair());
+assertEquals(0, int1);
+
+monitor0.enterWhen(monitor_Guard0, 1L, timeUnit2);
+monitor0.isOccupiedByCurrentThread();
+monitor_Guard0.isSatisfied();
+
+* Writing tests to file
+* Writing JUnit test case 'Monitor_ESTest' to evosuite-tests
+* Done!
+
+* Computation finished

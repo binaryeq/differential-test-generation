@@ -1,0 +1,37 @@
+16c16
+< java.lang.Throwable v14;
+---
+> java.lang.Throwable v18;
+18,19c18,19
+< int v2, v3;
+< java.lang.String v13;
+---
+> int v15, v16, v2, v3;
+> java.lang.String v13, v14, v17;
+21c21
+< java.util.Set v15, v5;
+---
+> java.util.Set v19, v5;
+23a24
+> java.lang.StringBuilder v20;
+63,64c64,70
+< v13 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.reflect.Type)>(v4) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Unknown type: \u0001");
+< specialinvoke v12.<java.lang.AssertionError: void <init>(java.lang.Object)>(v13);
+---
+> v13 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v4);
+> v14 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v13);
+> v15 = virtualinvoke v14.<java.lang.String: int length()>();
+> v16 = 14 + v15;
+> specialinvoke v20.<java.lang.StringBuilder: void <init>(int)>(v16);
+> v17 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v13) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Unknown type: \u0001");
+> specialinvoke v12.<java.lang.AssertionError: void <init>(java.lang.Object)>(v17);
+67,70c73,76
+< v14 := @caughtexception;
+< v15 = v0.<com.google.common.reflect.TypeVisitor: java.util.Set visited>;
+< interfaceinvoke v15.<java.util.Set: boolean remove(java.lang.Object)>(v4);
+< throw v14;
+---
+> v18 := @caughtexception;
+> v19 = v0.<com.google.common.reflect.TypeVisitor: java.util.Set visited>;
+> interfaceinvoke v19.<java.util.Set: boolean remove(java.lang.Object)>(v4);
+> throw v18;

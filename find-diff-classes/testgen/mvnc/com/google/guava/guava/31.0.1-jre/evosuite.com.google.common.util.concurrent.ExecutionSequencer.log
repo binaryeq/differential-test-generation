@@ -1,0 +1,451 @@
+* EvoSuite 1.2.0
+* Going to generate test cases for class: com.google.common.util.concurrent.ExecutionSequencer
+* Starting Client-0
+* Connecting to master process on port 6528
+* Analyzing classpath: 
+  - /home/wtwhite/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/guava/guava/31.0.1-jre/guava-31.0.1-jre.jar
+  - t/dependency/checker-qual-3.12.0.jar
+  - t/dependency/error_prone_annotations-2.7.1.jar
+  - t/dependency/failureaccess-1.0.1.jar
+  - t/dependency/j2objc-annotations-1.3.jar
+  - t/dependency/jsr305-3.0.2.jar
+  - t/dependency/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar
+* Finished analyzing classpath
+* Generating tests for class com.google.common.util.concurrent.ExecutionSequencer
+* Test criteria:
+  - Line Coverage
+  - Branch Coverage
+  - Exception
+  - Mutation testing (weak)
+  - Method-Output Coverage
+  - Top-Level Method Coverage
+  - No-Exception Top-Level Method Coverage
+  - Context Branch Coverage
+[Progress:>                             0%] [Cov:>                                  0%]* Total number of test goals for DYNAMOSA: 199
+* Using seed 1729704625375
+* Starting evolution
+* Initial Number of Goals in DynaMOSA = 74 / 199
+[MASTER] 06:30:29.361 [logback-1] WARN  TestCluster - Failed to check cache for java.util.Collection<java.util.concurrent.Callable<java.sql.SQLWarning>> : Type points to itself
+[MASTER] 06:30:29.870 [logback-1] WARN  TestCluster - Failed to check cache for java.lang.Iterable<org.evosuite.runtime.mock.java.lang.MockThread> : Type points to itself
+[Progress:==========>                   35%] [Cov:===============>                   44%][MASTER] 06:31:06.613 [logback-1] WARN  TestCluster - Failed to check cache for com.google.common.util.concurrent.FluentFuture<V> : Type points to itself
+[MASTER] 06:31:06.654 [logback-1] WARN  TestCluster - Failed to check cache for java.lang.Comparable<T> : Type points to itself
+[MASTER] 06:31:18.884 [logback-1] WARN  TestChromosome - Functional mock problem: org.evosuite.ga.ConstructionFailedException: Max recursion depth reached
+[Progress:==============================100%] [Cov:================>                  46%]
+* Search finished after 67s and 1 generations, 926 statements, best individual has fitness: 121.0
+[MASTER] 06:31:34.577 [logback-1] WARN  TimeController - Phase SEARCH lasted too long, 6 seconds more than allowed.
+* Minimizing test suite
+[MASTER] 06:32:44.154 [logback-1] WARN  TestSuiteMinimizer - Minimization timeout. Roll back to original test suite
+* Going to analyze the coverage criteria
+* Coverage analysis for criterion LINE
+* Coverage of criterion LINE: 51%
+* Total number of goals: 78
+* Number of covered goals: 40
+* Coverage analysis for criterion BRANCH
+* Coverage of criterion BRANCH: 27%
+* Total number of goals: 33
+* Number of covered goals: 9
+* Coverage analysis for criterion EXCEPTION
+* Coverage of criterion EXCEPTION: 100%
+* Total number of goals: 2
+* Number of covered goals: 2
+* Coverage analysis for criterion WEAKMUTATION
+* Coverage of criterion WEAKMUTATION: 31%
+* Total number of goals: 39
+* Number of covered goals: 12
+* Coverage analysis for criterion OUTPUT
+* Coverage of criterion OUTPUT: 50%
+* Total number of goals: 6
+* Number of covered goals: 3
+* Coverage analysis for criterion METHOD
+* Coverage of criterion METHOD: 60%
+* Total number of goals: 5
+* Number of covered goals: 3
+* Coverage analysis for criterion METHODNOEXCEPTION
+* Coverage of criterion METHODNOEXCEPTION: 60%
+* Total number of goals: 5
+* Number of covered goals: 3
+* Coverage analysis for criterion CBRANCH
+* Coverage of criterion CBRANCH: 27%
+* Total number of goals: 33
+* Number of covered goals: 9
+* Generated 9 tests with total length 85
+* Resulting test suite's coverage: 47% (average coverage for all fitness functions)
+* Generating assertions
+* Resulting test suite's mutation score: 0%
+[MASTER] 06:33:44.904 [logback-1] WARN  SimpleMutationAssertionGenerator - Reached maximum time to generate assertions, aborting assertion generation
+* Compiling and checking tests
+[MASTER] 06:33:54.641 [logback-2] ERROR JUnitAnalyzer - Compilation failed on compilation units: [RegularFileObject[/tmp/EvoSuite_7_1729704831569/com/google/common/util/concurrent/ExecutionSequencer_7_tmp__ESTest.java], RegularFileObject[/tmp/EvoSuite_7_1729704831569/com/google/common/util/concurrent/ExecutionSequencer_7_tmp__ESTest_scaffolding.java]]
+[MASTER] 06:33:54.641 [logback-2] ERROR JUnitAnalyzer - Classpath: /home/wtwhite/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/guava/guava/31.0.1-jre/guava-31.0.1-jre.jar:t/dependency/checker-qual-3.12.0.jar:t/dependency/error_prone_annotations-2.7.1.jar:t/dependency/failureaccess-1.0.1.jar:t/dependency/j2objc-annotations-1.3.jar:t/dependency/jsr305-3.0.2.jar:t/dependency/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/home/wtwhite/code/regression-test-generation/evosuite/evosuite-1.2.0.jar:/home/wtwhite/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/guava/guava/31.0.1-jre/guava-31.0.1-jre.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/checker-qual-3.12.0.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/error_prone_annotations-2.7.1.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/failureaccess-1.0.1.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/j2objc-annotations-1.3.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/jsr305-3.0.2.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar
+[MASTER] 06:33:54.641 [logback-2] ERROR JUnitAnalyzer - evosuiteCP: /home/wtwhite/code/regression-test-generation/evosuite/evosuite-1.2.0.jar:/home/wtwhite/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/guava/guava/31.0.1-jre/guava-31.0.1-jre.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/checker-qual-3.12.0.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/error_prone_annotations-2.7.1.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/failureaccess-1.0.1.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/j2objc-annotations-1.3.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/jsr305-3.0.2.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar
+[MASTER] 06:33:54.644 [logback-2] ERROR JUnitAnalyzer - Diagnostic: incompatible types: java.util.concurrent.Callable<java.lang.Object> cannot be converted to java.util.concurrent.Callable<com.google.common.util.concurrent.FluentFuture<com.google.common.util.concurrent.FluentFuture>>: 57
+[MASTER] 06:33:54.644 [logback-2] ERROR JUnitAnalyzer - Diagnostic: /tmp/EvoSuite_7_1729704831569/com/google/common/util/concurrent/ExecutionSequencer_7_tmp__ESTest.java uses unchecked or unsafe operations.: -1
+[MASTER] 06:33:54.644 [logback-2] ERROR JUnitAnalyzer - Diagnostic: Recompile with -Xlint:unchecked for details.: -1
+[MASTER] 06:33:54.645 [logback-2] ERROR JUnitAnalyzer - RegularFileObject[/tmp/EvoSuite_7_1729704831569/com/google/common/util/concurrent/ExecutionSequencer_7_tmp__ESTest.java]
+1: /*
+2:  * This file was automatically generated by EvoSuite
+3:  * Wed Oct 23 17:33:54 GMT 2024
+4:  */
+5: 
+6: package com.google.common.util.concurrent;
+7: 
+8: import org.junit.Test;
+9: import static org.junit.Assert.*;
+10: import static org.evosuite.shaded.org.mockito.Mockito.*;
+11: import static org.evosuite.runtime.EvoAssertions.*;
+12: import com.google.common.util.concurrent.AsyncCallable;
+13: import com.google.common.util.concurrent.ExecutionSequencer;
+14: import com.google.common.util.concurrent.FluentFuture;
+15: import com.google.common.util.concurrent.ListenableFuture;
+16: import com.google.common.util.concurrent.TrustedListenableFutureTask;
+17: import java.time.chrono.HijrahEra;
+18: import java.util.concurrent.Callable;
+19: import java.util.concurrent.Delayed;
+20: import java.util.concurrent.Executor;
+21: import java.util.concurrent.ForkJoinPool;
+22: import java.util.concurrent.ScheduledThreadPoolExecutor;
+23: import java.util.concurrent.ThreadPoolExecutor;
+24: import org.evosuite.runtime.EvoRunner;
+25: import org.evosuite.runtime.EvoRunnerParameters;
+26: import org.evosuite.runtime.ViolatedAssumptionAnswer;
+27: import org.junit.runner.RunWith;
+28: 
+29: @RunWith(EvoRunner.class) @EvoRunnerParameters(mockJVMNonDeterminism = true, useVFS = true, useVNET = true, resetStaticState = true) 
+30: public class ExecutionSequencer_7_tmp__ESTest extends ExecutionSequencer_7_tmp__ESTest_scaffolding {
+31: 
+32:   @Test(timeout = 4000)
+33:   public void test0()  throws Throwable  {
+34:       ExecutionSequencer executionSequencer0 = ExecutionSequencer.create();
+35:       ExecutionSequencer executionSequencer1 = ExecutionSequencer.create();
+36:       AsyncCallable<Object> asyncCallable0 = (AsyncCallable<Object>) mock(AsyncCallable.class, new ViolatedAssumptionAnswer());
+37:       doReturn((ListenableFuture) null).when(asyncCallable0).call();
+38:       ThreadPoolExecutor.DiscardPolicy threadPoolExecutor_DiscardPolicy0 = new ThreadPoolExecutor.DiscardPolicy();
+39:       ScheduledThreadPoolExecutor scheduledThreadPoolExecutor0 = new ScheduledThreadPoolExecutor(0, threadPoolExecutor_DiscardPolicy0);
+40:       executionSequencer1.submitAsync(asyncCallable0, (Executor) scheduledThreadPoolExecutor0);
+41:       AsyncCallable<HijrahEra> asyncCallable1 = (AsyncCallable<HijrahEra>) mock(AsyncCallable.class, new ViolatedAssumptionAnswer());
+42:       doReturn((ListenableFuture) null).when(asyncCallable1).call();
+43:       AsyncCallable<Object> asyncCallable2 = (AsyncCallable<Object>) mock(AsyncCallable.class, new ViolatedAssumptionAnswer());
+44:       doReturn((ListenableFuture) null).when(asyncCallable2).call();
+45:       ScheduledThreadPoolExecutor scheduledThreadPoolExecutor1 = new ScheduledThreadPoolExecutor(2917);
+46:       executionSequencer1.submitAsync(asyncCallable2, (Executor) scheduledThreadPoolExecutor1);
+47:       ForkJoinPool forkJoinPool0 = new ForkJoinPool();
+48:       ForkJoinPool.getCommonPoolParallelism();
+49:       Callable<Delayed> callable0 = (Callable<Delayed>) mock(Callable.class, new ViolatedAssumptionAnswer());
+50:       doReturn((Object) null).when(callable0).call();
+51:       TrustedListenableFutureTask<Delayed> trustedListenableFutureTask0 = new TrustedListenableFutureTask<Delayed>(callable0);
+52:       trustedListenableFutureTask0.toString();
+53:       forkJoinPool0.submit((Runnable) trustedListenableFutureTask0, (Object) executionSequencer1);
+54:       executionSequencer1.submitAsync(asyncCallable1, (Executor) forkJoinPool0);
+55:       Callable<Object> callable1 = (Callable<Object>) mock(Callable.class, new ViolatedAssumptionAnswer());
+56:       doReturn((Object) null).when(callable1).call();
+57:       executionSequencer1.submit((Callable<FluentFuture<FluentFuture>>) callable1, (Executor) scheduledThreadPoolExecutor1);
+58:       ExecutionSequencer.create();
+59:       ExecutionSequencer.create();
+60:       ExecutionSequencer.create();
+61:       ExecutionSequencer.create();
+62:       Callable<Integer> callable2 = (Callable<Integer>) mock(Callable.class, new ViolatedAssumptionAnswer());
+63:       doReturn((Object) null).when(callable2).call();
+64:       executionSequencer0.submit(callable2, (Executor) scheduledThreadPoolExecutor1);
+65:       // Undeclared exception!
+66:       try { 
+67:         ExecutionSequencer.RunningState.valueOf("");
+68:         fail("Expecting exception: IllegalArgumentException");
+69:       
+70:       } catch(IllegalArgumentException e) {
+71:          //
+72:          // No enum constant com.google.common.util.concurrent.ExecutionSequencer.RunningState.
+73:          //
+74:          verifyException("java.lang.Enum", e);
+75:       }
+76:   }
+77: }
+RegularFileObject[/tmp/EvoSuite_7_1729704831569/com/google/common/util/concurrent/ExecutionSequencer_7_tmp__ESTest.java]
+1: /**
+2:  * Scaffolding file used to store all the setups needed to run 
+3:  * tests automatically generated by EvoSuite
+4:  * Wed Oct 23 17:33:54 GMT 2024
+5:  */
+6: 
+7: package com.google.common.util.concurrent;
+8: 
+9: import org.evosuite.runtime.annotation.EvoSuiteClassExclude;
+10: import org.junit.BeforeClass;
+11: import org.junit.Before;
+12: import org.junit.After;
+13: import org.junit.AfterClass;
+14: import org.evosuite.runtime.sandbox.Sandbox;
+15: import org.evosuite.runtime.sandbox.Sandbox.SandboxMode;
+16: 
+17: import static org.evosuite.shaded.org.mockito.Mockito.*;
+18: @EvoSuiteClassExclude
+19: public class ExecutionSequencer_7_tmp__ESTest_scaffolding {
+20: 
+21:   @org.junit.Rule
+22:   public org.evosuite.runtime.vnet.NonFunctionalRequirementRule nfr = new org.evosuite.runtime.vnet.NonFunctionalRequirementRule();
+23: 
+24:   private static final java.util.Properties defaultProperties = (java.util.Properties) java.lang.System.getProperties().clone(); 
+25: 
+26:   private org.evosuite.runtime.thread.ThreadStopper threadStopper =  new org.evosuite.runtime.thread.ThreadStopper (org.evosuite.runtime.thread.KillSwitchHandler.getInstance(), 3000);
+27: 
+28: 
+29:   @BeforeClass
+30:   public static void initEvoSuiteFramework() { 
+31:     org.evosuite.runtime.RuntimeSettings.className = "com.google.common.util.concurrent.ExecutionSequencer"; 
+32:     org.evosuite.runtime.GuiSupport.initialize(); 
+33:     org.evosuite.runtime.RuntimeSettings.maxNumberOfThreads = 100; 
+34:     org.evosuite.runtime.RuntimeSettings.maxNumberOfIterationsPerLoop = 10000; 
+35:     org.evosuite.runtime.RuntimeSettings.mockSystemIn = true; 
+36:     org.evosuite.runtime.RuntimeSettings.sandboxMode = org.evosuite.runtime.sandbox.Sandbox.SandboxMode.RECOMMENDED; 
+37:     org.evosuite.runtime.sandbox.Sandbox.initializeSecurityManagerForSUT(); 
+38:     org.evosuite.runtime.classhandling.JDKClassResetter.init();
+39:     setSystemProperties();
+40:     initializeClasses();
+41:     org.evosuite.runtime.Runtime.getInstance().resetRuntime(); 
+42:     try { initMocksToAvoidTimeoutsInTheTests(); } catch(ClassNotFoundException e) {} 
+43:   } 
+44: 
+45:   @AfterClass
+46:   public static void clearEvoSuiteFramework(){ 
+47:     Sandbox.resetDefaultSecurityManager(); 
+48:     java.lang.System.setProperties((java.util.Properties) defaultProperties.clone()); 
+49:   } 
+50: 
+51:   @Before
+52:   public void initTestCase(){ 
+53:     threadStopper.storeCurrentThreads();
+54:     threadStopper.startRecordingTime();
+55:     org.evosuite.runtime.jvm.ShutdownHookHandler.getInstance().initHandler(); 
+56:     org.evosuite.runtime.sandbox.Sandbox.goingToExecuteSUTCode(); 
+57:     setSystemProperties(); 
+58:     org.evosuite.runtime.GuiSupport.setHeadless(); 
+59:     org.evosuite.runtime.Runtime.getInstance().resetRuntime(); 
+60:     org.evosuite.runtime.agent.InstrumentingAgent.activate(); 
+61:   } 
+62: 
+63:   @After
+64:   public void doneWithTestCase(){ 
+65:     threadStopper.killAndJoinClientThreads();
+66:     org.evosuite.runtime.jvm.ShutdownHookHandler.getInstance().safeExecuteAddedHooks(); 
+67:     org.evosuite.runtime.classhandling.JDKClassResetter.reset(); 
+68:     resetClasses(); 
+69:     org.evosuite.runtime.sandbox.Sandbox.doneWithExecutingSUTCode(); 
+70:     org.evosuite.runtime.agent.InstrumentingAgent.deactivate(); 
+71:     org.evosuite.runtime.GuiSupport.restoreHeadlessMode(); 
+72:   } 
+73: 
+74:   public static void setSystemProperties() {
+75:  
+76:     java.lang.System.setProperties((java.util.Properties) defaultProperties.clone()); 
+77:     java.lang.System.setProperty("user.dir", "/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre"); 
+78:     java.lang.System.setProperty("java.io.tmpdir", "/tmp"); 
+79:   }
+80: 
+81:   private static void initializeClasses() {
+82:     org.evosuite.runtime.classhandling.ClassStateSupport.initializeClasses(ExecutionSequencer_7_tmp__ESTest_scaffolding.class.getClassLoader() ,
+83:       "com.google.common.util.concurrent.ExecutionSequencer$ThreadConfinedTaskQueue",
+84:       "com.google.common.util.concurrent.ExecutionSequencer$RunningState",
+85:       "com.google.common.util.concurrent.AbstractFuture$TrustedFuture",
+86:       "com.google.common.collect.ImmutableCollection",
+87:       "com.google.common.util.concurrent.SettableFuture",
+88:       "com.google.common.base.JdkPattern",
+89:       "com.google.common.util.concurrent.FluentFuture$TrustedFuture",
+90:       "com.google.common.util.concurrent.GwtFluentFutureCatchingSpecialization",
+91:       "com.google.common.util.concurrent.ForwardingFluentFuture",
+92:       "com.google.common.util.concurrent.AbstractFuture$SynchronizedHelper",
+93:       "com.google.common.util.concurrent.DirectExecutor",
+94:       "com.google.common.base.Platform",
+95:       "com.google.common.util.concurrent.Futures$InCompletionOrderState",
+96:       "com.google.common.util.concurrent.AbstractFuture$SafeAtomicHelper",
+97:       "com.google.common.base.Platform$JdkPatternCompiler",
+98:       "com.google.common.util.concurrent.AbstractFuture$Failure",
+99:       "com.google.common.util.concurrent.ElementTypesAreNonnullByDefault",
+100:       "com.google.common.util.concurrent.InterruptibleTask$Blocker",
+101:       "com.google.common.util.concurrent.Futures$CallbackListener",
+102:       "com.google.common.util.concurrent.ImmediateFuture",
+103:       "com.google.errorprone.annotations.DoNotMock",
+104:       "com.google.common.util.concurrent.TrustedListenableFutureTask$TrustedFutureInterruptibleAsyncTask",
+105:       "com.google.common.util.concurrent.InterruptibleTask$DoNothingRunnable",
+106:       "com.google.common.base.Function",
+107:       "com.google.common.util.concurrent.Futures$InCompletionOrderFuture",
+108:       "com.google.common.base.CommonPattern",
+109:       "com.google.common.util.concurrent.AbstractFuture$Trusted",
+110:       "com.google.common.util.concurrent.AbstractFuture$UnsafeAtomicHelper$1",
+111:       "com.google.common.util.concurrent.internal.InternalFutureFailureAccess",
+112:       "com.google.common.util.concurrent.ExecutionSequencer$1",
+113:       "com.google.common.util.concurrent.ExecutionSequencer$2",
+114:       "com.google.common.util.concurrent.ExecutionSequencer$3",
+115:       "com.google.common.util.concurrent.AbstractFuture$Listener",
+116:       "com.google.common.util.concurrent.Futures$NonCancellationPropagatingFuture",
+117:       "com.google.common.util.concurrent.TrustedListenableFutureTask",
+118:       "com.google.common.util.concurrent.ListeningExecutorService",
+119:       "com.google.common.util.concurrent.AbstractFuture$AtomicHelper",
+120:       "com.google.common.util.concurrent.MoreExecutors",
+121:       "com.google.common.util.concurrent.ListenableFuture",
+122:       "com.google.common.util.concurrent.NullnessCasts",
+123:       "com.google.common.util.concurrent.ExecutionError",
+124:       "com.google.common.util.concurrent.AbstractFuture$SetFuture",
+125:       "com.google.common.util.concurrent.AsyncCallable",
+126:       "com.google.common.util.concurrent.InterruptibleTask",
+127:       "com.google.common.util.concurrent.AbstractFuture$Cancellation",
+128:       "com.google.common.base.Strings",
+129:       "com.google.common.util.concurrent.TrustedListenableFutureTask$TrustedFutureInterruptibleTask",
+130:       "com.google.common.util.concurrent.GwtFuturesCatchingSpecialization",
+131:       "com.google.common.base.PatternCompiler",
+132:       "com.google.common.collect.ImmutableList",
+133:       "com.google.common.util.concurrent.AbstractFuture$UnsafeAtomicHelper",
+134:       "com.google.common.util.concurrent.UncheckedExecutionException",
+135:       "com.google.common.util.concurrent.AbstractFuture$Waiter",
+136:       "com.google.common.util.concurrent.ListeningScheduledExecutorService",
+137:       "com.google.common.util.concurrent.ExecutionSequencer$TaskNonReentrantExecutor",
+138:       "com.google.common.util.concurrent.AbstractFuture$Failure$1",
+139:       "com.google.common.util.concurrent.FutureCallback",
+140:       "com.google.common.util.concurrent.Futures",
+141:       "com.google.common.base.Preconditions",
+142:       "com.google.common.util.concurrent.AsyncFunction",
+143:       "com.google.common.util.concurrent.ExecutionSequencer",
+144:       "com.google.common.util.concurrent.AbstractFuture",
+145:       "com.google.common.util.concurrent.FluentFuture"
+146:     );
+147:   } 
+148:   private static void initMocksToAvoidTimeoutsInTheTests() throws ClassNotFoundException { 
+149:     mock(Class.forName("com.google.common.util.concurrent.AsyncCallable", false, ExecutionSequencer_7_tmp__ESTest_scaffolding.class.getClassLoader()));
+150:     mock(Class.forName("java.util.concurrent.Callable", false, ExecutionSequencer_7_tmp__ESTest_scaffolding.class.getClassLoader()));
+151:   }
+152: 
+153:   private static void resetClasses() {
+154:     org.evosuite.runtime.classhandling.ClassResetter.getInstance().setClassLoader(ExecutionSequencer_7_tmp__ESTest_scaffolding.class.getClassLoader()); 
+155: 
+156:     org.evosuite.runtime.classhandling.ClassStateSupport.resetClasses(
+157:       "com.google.common.util.concurrent.ExecutionSequencer",
+158:       "com.google.common.util.concurrent.ExecutionSequencer$ThreadConfinedTaskQueue",
+159:       "com.google.common.util.concurrent.ExecutionSequencer$1",
+160:       "com.google.common.util.concurrent.ExecutionSequencer$TaskNonReentrantExecutor",
+161:       "com.google.common.util.concurrent.ExecutionSequencer$2",
+162:       "com.google.common.util.concurrent.ExecutionSequencer$3",
+163:       "com.google.common.util.concurrent.ExecutionSequencer$RunningState",
+164:       "com.google.common.util.concurrent.ImmediateFuture",
+165:       "com.google.common.util.concurrent.DirectExecutor",
+166:       "com.google.common.util.concurrent.GwtFuturesCatchingSpecialization",
+167:       "com.google.common.util.concurrent.Futures",
+168:       "com.google.common.base.Preconditions",
+169:       "com.google.common.util.concurrent.internal.InternalFutureFailureAccess",
+170:       "com.google.common.util.concurrent.AbstractFuture$AtomicHelper",
+171:       "com.google.common.util.concurrent.AbstractFuture$UnsafeAtomicHelper$1",
+172:       "com.google.common.util.concurrent.AbstractFuture$UnsafeAtomicHelper",
+173:       "com.google.common.util.concurrent.AbstractFuture",
+174:       "com.google.common.util.concurrent.AbstractFuture$TrustedFuture",
+175:       "com.google.common.util.concurrent.SettableFuture",
+176:       "com.google.common.util.concurrent.GwtFluentFutureCatchingSpecialization",
+177:       "com.google.common.util.concurrent.FluentFuture",
+178:       "com.google.common.util.concurrent.FluentFuture$TrustedFuture",
+179:       "com.google.common.util.concurrent.TrustedListenableFutureTask",
+180:       "com.google.common.util.concurrent.InterruptibleTask$DoNothingRunnable",
+181:       "com.google.common.util.concurrent.InterruptibleTask",
+182:       "com.google.common.util.concurrent.TrustedListenableFutureTask$TrustedFutureInterruptibleAsyncTask",
+183:       "com.google.common.util.concurrent.Futures$NonCancellationPropagatingFuture",
+184:       "com.google.common.util.concurrent.MoreExecutors",
+185:       "com.google.common.util.concurrent.AbstractFuture$Listener",
+186:       "com.google.common.base.Strings",
+187:       "com.google.common.base.Platform$JdkPatternCompiler",
+188:       "com.google.common.base.Platform",
+189:       "com.google.common.util.concurrent.ListenableFutureTask",
+190:       "com.google.common.util.concurrent.ExecutionList",
+191:       "com.google.common.util.concurrent.AbstractFuture$Failure$1",
+192:       "com.google.common.util.concurrent.AbstractFuture$Failure",
+193:       "com.google.common.util.concurrent.NullnessCasts",
+194:       "com.google.common.util.concurrent.AbstractFuture$Waiter",
+195:       "com.google.common.util.concurrent.TrustedListenableFutureTask$TrustedFutureInterruptibleTask",
+196:       "com.google.common.util.concurrent.ImmediateFuture$ImmediateFailedFuture",
+197:       "com.google.common.util.concurrent.AbstractFuture$SetFuture",
+198:       "com.google.common.util.concurrent.TimeoutFuture",
+199:       "com.google.common.util.concurrent.TimeoutFuture$Fire",
+200:       "com.google.common.util.concurrent.ForwardingFluentFuture",
+201:       "com.google.common.util.concurrent.TimeoutFuture$TimeoutFutureException",
+202:       "com.google.common.util.concurrent.AbstractFuture$Cancellation",
+203:       "com.google.common.collect.ImmutableCollection",
+204:       "com.google.common.collect.ImmutableMultisetGwtSerializationDependencies",
+205:       "com.google.common.collect.ImmutableMultiset",
+206:       "com.google.common.collect.AbstractMultiset",
+207:       "com.google.common.collect.AbstractMapBasedMultiset",
+208:       "com.google.common.collect.LinkedHashMultiset",
+209:       "com.google.common.util.concurrent.ExecutionList$RunnableExecutorPair",
+210:       "com.google.common.collect.Count",
+211:       "com.google.common.collect.Sets$ImprovedAbstractSet",
+212:       "com.google.common.collect.Multisets$EntrySet",
+213:       "com.google.common.collect.AbstractMultiset$EntrySet",
+214:       "com.google.common.collect.ImmutableList",
+215:       "com.google.common.collect.RegularImmutableList",
+216:       "com.google.common.collect.ImmutableSet",
+217:       "com.google.common.collect.ImmutableSet$CachingAsList",
+218:       "com.google.common.collect.RegularImmutableSet",
+219:       "com.google.common.collect.RegularImmutableMultiset",
+220:       "com.google.common.collect.Hashing",
+221:       "com.google.common.collect.AbstractMapBasedMultiset$2",
+222:       "com.google.common.collect.Multisets$AbstractEntry",
+223:       "com.google.common.collect.AbstractMapBasedMultiset$2$1",
+224:       "com.google.common.collect.Multisets$ImmutableEntry",
+225:       "com.google.common.collect.CollectPreconditions",
+226:       "com.google.common.collect.RegularImmutableMultiset$NonTerminalEntry",
+227:       "com.google.common.primitives.IntsMethodsForWeb",
+228:       "com.google.common.primitives.Ints",
+229:       "com.google.common.util.concurrent.AggregateFutureState$AtomicHelper",
+230:       "com.google.common.util.concurrent.AggregateFutureState$SafeAtomicHelper",
+231:       "com.google.common.util.concurrent.AggregateFutureState",
+232:       "com.google.common.util.concurrent.AggregateFuture",
+233:       "com.google.common.util.concurrent.CombinedFuture",
+234:       "com.google.common.util.concurrent.CombinedFuture$CombinedFutureInterruptibleTask",
+235:       "com.google.common.util.concurrent.CombinedFuture$AsyncCallableInterruptibleTask",
+236:       "com.google.common.util.concurrent.AggregateFuture$2",
+237:       "com.google.common.collect.IndexedImmutableSet",
+238:       "com.google.common.collect.ImmutableMultiset$EntrySet",
+239:       "com.google.common.collect.ImmutableAsList",
+240:       "com.google.common.collect.IndexedImmutableSet$1",
+241:       "com.google.common.collect.UnmodifiableIterator",
+242:       "com.google.common.collect.UnmodifiableListIterator",
+243:       "com.google.common.collect.AbstractIndexedListIterator",
+244:       "com.google.common.collect.ImmutableList$1",
+245:       "com.google.common.collect.ImmutableSet$Indexed",
+246:       "com.google.common.collect.ImmutableMultiset$ElementSet",
+247:       "com.google.common.collect.ImmutableMultiset$1"
+248:     );
+249:   }
+250: }
+
+[MASTER] 06:33:54.647 [logback-2] ERROR JUnitAnalyzer - Failed to compile test case:
+ExecutionSequencer executionSequencer0 = ExecutionSequencer.create();
+ExecutionSequencer executionSequencer1 = ExecutionSequencer.create();
+AsyncCallable<Object> asyncCallable0 = (AsyncCallable<Object>) mock(AsyncCallable.class, new ViolatedAssumptionAnswer());
+doReturn((ListenableFuture) null).when(asyncCallable0).call();
+ThreadPoolExecutor.DiscardPolicy threadPoolExecutor_DiscardPolicy0 = new ThreadPoolExecutor.DiscardPolicy();
+ScheduledThreadPoolExecutor scheduledThreadPoolExecutor0 = new ScheduledThreadPoolExecutor(0, threadPoolExecutor_DiscardPolicy0);
+executionSequencer1.submitAsync(asyncCallable0, (Executor) scheduledThreadPoolExecutor0);
+AsyncCallable<HijrahEra> asyncCallable1 = (AsyncCallable<HijrahEra>) mock(AsyncCallable.class, new ViolatedAssumptionAnswer());
+doReturn((ListenableFuture) null).when(asyncCallable1).call();
+AsyncCallable<Object> asyncCallable2 = (AsyncCallable<Object>) mock(AsyncCallable.class, new ViolatedAssumptionAnswer());
+doReturn((ListenableFuture) null).when(asyncCallable2).call();
+ScheduledThreadPoolExecutor scheduledThreadPoolExecutor1 = new ScheduledThreadPoolExecutor(2917);
+executionSequencer1.submitAsync(asyncCallable2, (Executor) scheduledThreadPoolExecutor1);
+ForkJoinPool forkJoinPool0 = new ForkJoinPool();
+ForkJoinPool.getCommonPoolParallelism();
+Callable<Delayed> callable0 = (Callable<Delayed>) mock(Callable.class, new ViolatedAssumptionAnswer());
+doReturn((Object) null).when(callable0).call();
+TrustedListenableFutureTask<Delayed> trustedListenableFutureTask0 = new TrustedListenableFutureTask<Delayed>(callable0);
+trustedListenableFutureTask0.toString();
+forkJoinPool0.submit((Runnable) trustedListenableFutureTask0, (Object) executionSequencer1);
+executionSequencer1.submitAsync(asyncCallable1, (Executor) forkJoinPool0);
+Callable<Object> callable1 = (Callable<Object>) mock(Callable.class, new ViolatedAssumptionAnswer());
+doReturn((Object) null).when(callable1).call();
+executionSequencer1.submit((Callable<FluentFuture<FluentFuture>>) callable1, (Executor) scheduledThreadPoolExecutor1);
+ExecutionSequencer.create();
+ExecutionSequencer.create();
+ExecutionSequencer.create();
+ExecutionSequencer.create();
+Callable<Integer> callable2 = (Callable<Integer>) mock(Callable.class, new ViolatedAssumptionAnswer());
+doReturn((Object) null).when(callable2).call();
+executionSequencer0.submit(callable2, (Executor) scheduledThreadPoolExecutor1);
+ExecutionSequencer.RunningState.valueOf("");
+
+* Writing tests to file
+* Writing JUnit test case 'ExecutionSequencer_ESTest' to evosuite-tests
+* Done!
+
+* Computation finished

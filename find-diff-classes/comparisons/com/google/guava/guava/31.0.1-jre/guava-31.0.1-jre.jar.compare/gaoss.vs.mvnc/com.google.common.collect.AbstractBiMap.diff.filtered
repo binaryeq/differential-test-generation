@@ -1,0 +1,18 @@
+274c274,275
+< java.lang.String v18;
+---
+> int v20, v21;
+> java.lang.String v18, v19, v22;
+280a282
+> java.lang.StringBuilder v23;
+309,310c311,317
+< v18 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.Object)>(v17) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("value already present: \u0001");
+< specialinvoke v16.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(v18);
+---
+> v18 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v17);
+> v19 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v18);
+> v20 = virtualinvoke v19.<java.lang.String: int length()>();
+> v21 = 23 + v20;
+> specialinvoke v23.<java.lang.StringBuilder: void <init>(int)>(v21);
+> v22 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v18) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("value already present: \u0001");
+> specialinvoke v16.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(v22);

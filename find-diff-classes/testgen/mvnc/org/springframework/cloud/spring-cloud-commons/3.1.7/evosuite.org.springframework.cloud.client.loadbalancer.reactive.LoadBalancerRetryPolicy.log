@@ -1,0 +1,151 @@
+* EvoSuite 1.2.0
+* Going to generate test cases for class: org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerRetryPolicy
+* Starting Client-0
+* Connecting to master process on port 13178
+* Analyzing classpath: 
+  - /home/wtwhite/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/springframework/cloud/spring-cloud-commons/3.1.7/spring-cloud-commons-3.1.7.jar
+  - t/dependency/accessors-smart-2.4.9.jar
+  - t/dependency/asm-9.3.jar
+  - t/dependency/aspectjweaver-1.9.7.jar
+  - t/dependency/bcpkix-jdk15on-1.69.jar
+  - t/dependency/bcprov-jdk15on-1.69.jar
+  - t/dependency/bcutil-jdk15on-1.69.jar
+  - t/dependency/commons-codec-1.15.jar
+  - t/dependency/HdrHistogram-2.1.12.jar
+  - t/dependency/httpclient-4.5.14.jar
+  - t/dependency/httpcore-4.4.16.jar
+  - t/dependency/istack-commons-runtime-3.0.12.jar
+  - t/dependency/jackson-annotations-2.13.5.jar
+  - t/dependency/jackson-core-2.13.5.jar
+  - t/dependency/jackson-databind-2.13.5.jar
+  - t/dependency/jackson-datatype-jdk8-2.13.5.jar
+  - t/dependency/jackson-datatype-jsr310-2.13.5.jar
+  - t/dependency/jackson-module-parameter-names-2.13.5.jar
+  - t/dependency/jakarta.annotation-api-1.3.5.jar
+  - t/dependency/jakarta.xml.bind-api-2.3.3.jar
+  - t/dependency/jaxb-runtime-2.3.8.jar
+  - t/dependency/json-path-2.6.0.jar
+  - t/dependency/json-smart-2.4.10.jar
+  - t/dependency/jul-to-slf4j-1.7.36.jar
+  - t/dependency/LatencyUtils-2.0.3.jar
+  - t/dependency/log4j-api-2.17.2.jar
+  - t/dependency/log4j-to-slf4j-2.17.2.jar
+  - t/dependency/logback-classic-1.2.12.jar
+  - t/dependency/logback-core-1.2.12.jar
+  - t/dependency/logging-interceptor-3.14.9.jar
+  - t/dependency/micrometer-core-1.8.13.jar
+  - t/dependency/netty-buffer-4.1.92.Final.jar
+  - t/dependency/netty-codec-4.1.92.Final.jar
+  - t/dependency/netty-codec-dns-4.1.92.Final.jar
+  - t/dependency/netty-codec-http2-4.1.92.Final.jar
+  - t/dependency/netty-codec-http-4.1.92.Final.jar
+  - t/dependency/netty-codec-socks-4.1.92.Final.jar
+  - t/dependency/netty-common-4.1.92.Final.jar
+  - t/dependency/netty-handler-4.1.92.Final.jar
+  - t/dependency/netty-handler-proxy-4.1.92.Final.jar
+  - t/dependency/netty-resolver-4.1.92.Final.jar
+  - t/dependency/netty-resolver-dns-4.1.92.Final.jar
+  - t/dependency/netty-resolver-dns-classes-macos-4.1.92.Final.jar
+  - t/dependency/netty-resolver-dns-native-macos-4.1.92.Final-osx-x86_64.jar
+  - t/dependency/netty-transport-4.1.92.Final.jar
+  - t/dependency/netty-transport-classes-epoll-4.1.92.Final.jar
+  - t/dependency/netty-transport-native-epoll-4.1.92.Final-linux-x86_64.jar
+  - t/dependency/netty-transport-native-unix-common-4.1.92.Final.jar
+  - t/dependency/okhttp-3.14.9.jar
+  - t/dependency/okio-1.17.2.jar
+  - t/dependency/reactive-streams-1.0.4.jar
+  - t/dependency/reactor-core-3.4.29.jar
+  - t/dependency/reactor-netty-core-1.0.32.jar
+  - t/dependency/reactor-netty-http-1.0.32.jar
+  - t/dependency/slf4j-api-1.7.36.jar
+  - t/dependency/snakeyaml-1.29.jar
+  - t/dependency/spring-aop-5.3.27.jar
+  - t/dependency/spring-beans-5.3.27.jar
+  - t/dependency/spring-boot-2.6.15.jar
+  - t/dependency/spring-boot-actuator-2.6.15.jar
+  - t/dependency/spring-boot-actuator-autoconfigure-2.6.15.jar
+  - t/dependency/spring-boot-autoconfigure-2.6.15.jar
+  - t/dependency/spring-boot-autoconfigure-processor-2.6.15.jar
+  - t/dependency/spring-boot-configuration-processor-2.6.15.jar
+  - t/dependency/spring-boot-starter-2.6.15.jar
+  - t/dependency/spring-boot-starter-actuator-2.6.15.jar
+  - t/dependency/spring-boot-starter-aop-2.6.15.jar
+  - t/dependency/spring-boot-starter-hateoas-2.6.15.jar
+  - t/dependency/spring-boot-starter-json-2.6.15.jar
+  - t/dependency/spring-boot-starter-logging-2.6.15.jar
+  - t/dependency/spring-boot-starter-reactor-netty-2.6.15.jar
+  - t/dependency/spring-boot-starter-tomcat-2.6.15.jar
+  - t/dependency/spring-boot-starter-web-2.6.15.jar
+  - t/dependency/spring-boot-starter-webflux-2.6.15.jar
+  - t/dependency/spring-context-5.3.27.jar
+  - t/dependency/spring-core-5.3.27.jar
+  - t/dependency/spring-expression-5.3.27.jar
+  - t/dependency/spring-hateoas-1.4.5.jar
+  - t/dependency/spring-integration-core-5.5.18.jar
+  - t/dependency/spring-integration-jmx-5.5.18.jar
+  - t/dependency/spring-jcl-5.3.27.jar
+  - t/dependency/spring-messaging-5.3.27.jar
+  - t/dependency/spring-plugin-core-2.0.0.RELEASE.jar
+  - t/dependency/spring-retry-1.3.4.jar
+  - t/dependency/spring-security-config-5.6.10.jar
+  - t/dependency/spring-security-core-5.6.10.jar
+  - t/dependency/spring-security-crypto-5.6.10.jar
+  - t/dependency/spring-security-jwt-1.1.1.RELEASE.jar
+  - t/dependency/spring-security-oauth2-2.5.0.RELEASE.jar
+  - t/dependency/spring-security-oauth2-autoconfigure-2.5.2.jar
+  - t/dependency/spring-security-rsa-1.0.11.RELEASE.jar
+  - t/dependency/spring-security-web-5.6.10.jar
+  - t/dependency/spring-tx-5.3.27.jar
+  - t/dependency/spring-web-5.3.27.jar
+  - t/dependency/spring-webflux-5.3.27.jar
+  - t/dependency/spring-webmvc-5.3.27.jar
+  - t/dependency/tomcat-embed-core-9.0.75.jar
+  - t/dependency/tomcat-embed-el-9.0.75.jar
+  - t/dependency/tomcat-embed-websocket-9.0.75.jar
+  - t/dependency/txw2-2.3.8.jar
+* Finished analyzing classpath
+* Generating tests for class org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerRetryPolicy
+* Test criteria:
+  - Line Coverage
+  - Branch Coverage
+  - Exception
+  - Mutation testing (weak)
+  - Method-Output Coverage
+  - Top-Level Method Coverage
+  - No-Exception Top-Level Method Coverage
+  - Context Branch Coverage
+[Progress:>                             0%] [Cov:>                                  0%]* Total number of test goals for DYNAMOSA: 0
+* Using seed 1729722610902
+* Starting evolution
+* Initial Number of Goals in DynaMOSA = 0 / 0
+* Computation finished
+[MASTER] 11:30:14.045 [logback-2] ERROR ClientNodeImpl - Error when generating tests for: org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerRetryPolicy with seed 1729722610902. Configuration id : null
+java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
+	at java.util.ArrayList.rangeCheck(ArrayList.java:659)
+	at java.util.ArrayList.get(ArrayList.java:435)
+	at org.evosuite.ga.metaheuristics.mosa.AbstractMOSA.getFitnessFunction(AbstractMOSA.java:125)
+	at org.evosuite.ga.metaheuristics.TestSuiteAdapter.getFitnessFunction(TestSuiteAdapter.java:227)
+	at org.evosuite.statistics.StatisticsListener.searchStarted(StatisticsListener.java:149)
+	at org.evosuite.ga.metaheuristics.GeneticAlgorithm.lambda$notifySearchStarted$7(GeneticAlgorithm.java:800)
+	at java.lang.Iterable.forEach(Iterable.java:75)
+	at org.evosuite.ga.metaheuristics.GeneticAlgorithm.notifySearchStarted(GeneticAlgorithm.java:800)
+	at org.evosuite.ga.metaheuristics.TestSuiteAdapter.notifySearchStarted(TestSuiteAdapter.java:474)
+	at org.evosuite.ga.metaheuristics.AdapteeListener.searchStarted(AdapteeListener.java:52)
+	at org.evosuite.ga.metaheuristics.GeneticAlgorithm.lambda$notifySearchStarted$7(GeneticAlgorithm.java:800)
+	at java.lang.Iterable.forEach(Iterable.java:75)
+	at org.evosuite.ga.metaheuristics.GeneticAlgorithm.notifySearchStarted(GeneticAlgorithm.java:800)
+	at org.evosuite.ga.metaheuristics.mosa.AbstractMOSA.notifySearchStarted(AbstractMOSA.java:471)
+	at org.evosuite.ga.metaheuristics.mosa.AbstractMOSA.initializePopulation(AbstractMOSA.java:352)
+	at org.evosuite.ga.metaheuristics.mosa.DynaMOSA.generateSolution(DynaMOSA.java:155)
+	at org.evosuite.ga.metaheuristics.TestSuiteAdapter.generateSolution(TestSuiteAdapter.java:136)
+	at org.evosuite.strategy.MOSuiteStrategy.generateTests(MOSuiteStrategy.java:122)
+	at org.evosuite.TestSuiteGenerator.generateTests(TestSuiteGenerator.java:630)
+	at org.evosuite.TestSuiteGenerator.generateTestSuite(TestSuiteGenerator.java:208)
+	at org.evosuite.rmi.service.ClientNodeImpl.lambda$startNewSearch$0(ClientNodeImpl.java:140)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+[MASTER] 11:30:14.151 [main] ERROR SearchStatistics - No statistics has been saved because EvoSuite failed to generate any test case
+[MASTER] 11:30:14.255 [main] ERROR TestGeneration - failed to write statistics data

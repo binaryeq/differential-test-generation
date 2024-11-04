@@ -1,0 +1,80 @@
+37,43c37,43
+< java.net.URL v16, v6;
+< int v12, v13, v14;
+< java.lang.String v1, v11, v15, v2, v3, v8;
+< boolean v9;
+< java.io.IOException v10;
+< java.io.FileNotFoundException v7;
+< java.lang.Class v4;
+---
+> java.net.URL v20, v7;
+> int v14, v16, v17, v18;
+> java.lang.String v1, v12, v13, v15, v19, v2, v3, v4, v9;
+> boolean v10;
+> java.io.IOException v11;
+> java.io.FileNotFoundException v8;
+> java.lang.Class v5;
+45c45
+< java.lang.ClassLoader v5;
+---
+> java.lang.ClassLoader v6;
+49,56c49,57
+< v3 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v2) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001.class");
+< v4 = virtualinvoke v0.<java.lang.Object: java.lang.Class getClass()>();
+< v5 = virtualinvoke v4.<java.lang.Class: java.lang.ClassLoader getClassLoader()>();
+< v6 = virtualinvoke v5.<java.lang.ClassLoader: java.net.URL getResource(java.lang.String)>(v3);
+< if v6 != null goto label1;
+< v7 = new java.io.FileNotFoundException;
+< specialinvoke v7.<java.io.FileNotFoundException: void <init>(java.lang.String)>(v3);
+< throw v7;
+---
+> v3 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v2);
+> v4 = virtualinvoke v3.<java.lang.String: java.lang.String concat(java.lang.String)>(".class");
+> v5 = virtualinvoke v0.<java.lang.Object: java.lang.Class getClass()>();
+> v6 = virtualinvoke v5.<java.lang.Class: java.lang.ClassLoader getClassLoader()>();
+> v7 = virtualinvoke v6.<java.lang.ClassLoader: java.net.URL getResource(java.lang.String)>(v4);
+> if v7 != null goto label1;
+> v8 = new java.io.FileNotFoundException;
+> specialinvoke v8.<java.io.FileNotFoundException: void <init>(java.lang.String)>(v4);
+> throw v8;
+58,64c59,68
+< v8 = virtualinvoke v6.<java.net.URL: java.lang.String toString()>();
+< v9 = virtualinvoke v8.<java.lang.String: boolean endsWith(java.lang.String)>(v3);
+< if v9 != 0 goto label2;
+< v10 = new java.io.IOException;
+< v11 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v8) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Unsupported path style: \u0001");
+< specialinvoke v10.<java.io.IOException: void <init>(java.lang.String)>(v11);
+< throw v10;
+---
+> v9 = virtualinvoke v7.<java.net.URL: java.lang.String toString()>();
+> v10 = virtualinvoke v9.<java.lang.String: boolean endsWith(java.lang.String)>(v4);
+> if v10 != 0 goto label4;
+> v11 = new java.io.IOException;
+> v12 = "Unsupported path style: ";
+> v13 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v9);
+> v14 = virtualinvoke v13.<java.lang.String: int length()>();
+> if v14 == 0 goto label2;
+> v15 = virtualinvoke v12.<java.lang.String: java.lang.String concat(java.lang.String)>(v13);
+> goto label3;
+66,72c70,82
+< v12 = virtualinvoke v8.<java.lang.String: int length()>();
+< v13 = virtualinvoke v3.<java.lang.String: int length()>();
+< v14 = v12 - v13;
+< v15 = virtualinvoke v8.<java.lang.String: java.lang.String substring(int,int)>(0, v14);
+< v16 = new java.net.URL;
+< specialinvoke v16.<java.net.URL: void <init>(java.net.URL,java.lang.String)>(v6, v15);
+< return v16;
+---
+> v15 = new java.lang.String;
+> specialinvoke v15.<java.lang.String: void <init>(java.lang.String)>("Unsupported path style: ");
+> label3:
+> specialinvoke v11.<java.io.IOException: void <init>(java.lang.String)>(v15);
+> throw v11;
+> label4:
+> v16 = virtualinvoke v9.<java.lang.String: int length()>();
+> v17 = virtualinvoke v4.<java.lang.String: int length()>();
+> v18 = v16 - v17;
+> v19 = virtualinvoke v9.<java.lang.String: java.lang.String substring(int,int)>(0, v18);
+> v20 = new java.net.URL;
+> specialinvoke v20.<java.net.URL: void <init>(java.net.URL,java.lang.String)>(v7, v19);
+> return v20;

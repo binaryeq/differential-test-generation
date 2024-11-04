@@ -1,0 +1,256 @@
+13,14c13,14
+< byte[] v24;
+< byte v30;
+---
+> byte[] v28;
+> byte v34;
+16,17c16,18
+< boolean v29, v32;
+< java.math.RoundingMode v39, v6;
+---
+> boolean v33, v36;
+> java.math.RoundingMode v43, v6;
+> java.lang.StringBuilder v45;
+19,22c20,23
+< int v10, v12, v13, v14, v15, v16, v17, v22, v23, v25, v26, v28, v31, v33, v35, v36, v37, v38, v40, v5, v7;
+< java.lang.String v1, v11, v20, v21;
+< boolean[] v34;
+< char v27;
+---
+> int v10, v12, v13, v14, v15, v16, v17, v23, v26, v27, v29, v30, v32, v35, v37, v39, v40, v41, v42, v44, v5, v7;
+> java.lang.String v1, v11, v20, v21, v22, v24, v25;
+> boolean[] v38;
+> char v31;
+44a46
+> specialinvoke v45.<java.lang.StringBuilder: void <init>(int)>(35);
+59c61
+< goto label08;
+---
+> goto label10;
+63,67c65,72
+< v20 = new java.lang.String;
+< specialinvoke v20.<java.lang.String: void <init>(char[])>(v2);
+< v21 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v20) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Illegal alphabet \u0001");
+< specialinvoke v19.<java.lang.IllegalArgumentException: void <init>(java.lang.String,java.lang.Throwable)>(v21, v18);
+< throw v19;
+---
+> v20 = "Illegal alphabet ";
+> v21 = new java.lang.String;
+> specialinvoke v21.<java.lang.String: void <init>(char[])>(v2);
+> v22 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v21);
+> v23 = virtualinvoke v22.<java.lang.String: int length()>();
+> if v23 == 0 goto label08;
+> v24 = virtualinvoke v20.<java.lang.String: java.lang.String concat(java.lang.String)>(v22);
+> goto label09;
+69,74c74,76
+< v22 = lengthof v2;
+< v23 = v22 - 1;
+< v0.<com.google.common.io.BaseEncoding$Alphabet: int mask> = v23;
+< v24 = newarray (byte)[128];
+< staticinvoke <java.util.Arrays: void fill(byte[],byte)>(v24, -1);
+< v25 = 0;
+---
+> v25 = new java.lang.String;
+> v24 = v25;
+> specialinvoke v25.<java.lang.String: void <init>(java.lang.String)>("Illegal alphabet ");
+76,82c78,79
+< v26 = lengthof v2;
+< if v25 >= v26 goto label14;
+< v27 = v2[v25];
+< v28 = lengthof v24;
+< if v27 >= v28 goto label10;
+< v29 = 1;
+< goto label11;
+---
+> specialinvoke v19.<java.lang.IllegalArgumentException: void <init>(java.lang.String,java.lang.Throwable)>(v24, v18);
+> throw v19;
+83a81,85
+> v26 = lengthof v2;
+> v27 = v26 - 1;
+> v0.<com.google.common.io.BaseEncoding$Alphabet: int mask> = v27;
+> v28 = newarray (byte)[128];
+> staticinvoke <java.util.Arrays: void fill(byte[],byte)>(v28, -1);
+86,90c88,93
+< staticinvoke <com.google.common.base.Preconditions: void checkArgument(boolean,java.lang.String,char)>(v29, "Non-ASCII character: %s", v27);
+< v30 = v24[v27];
+< v31 = (int) -1;
+< if v30 != v31 goto label12;
+< v32 = 1;
+---
+> v30 = lengthof v2;
+> if v29 >= v30 goto label16;
+> v31 = v2[v29];
+> v32 = lengthof v28;
+> if v31 >= v32 goto label12;
+> v33 = 1;
+93c96
+< v32 = 0;
+---
+> v33 = 0;
+95,98c98,103
+< staticinvoke <com.google.common.base.Preconditions: void checkArgument(boolean,java.lang.String,char)>(v32, "Duplicate character: %s", v27);
+< v24[v27] = v25;
+< v25 = v25 + 1;
+< goto label09;
+---
+> staticinvoke <com.google.common.base.Preconditions: void checkArgument(boolean,java.lang.String,char)>(v33, "Non-ASCII character: %s", v31);
+> v34 = v28[v31];
+> v35 = (int) -1;
+> if v34 != v35 goto label14;
+> v36 = 1;
+> goto label15;
+100,103c105
+< v0.<com.google.common.io.BaseEncoding$Alphabet: byte[] decodabet> = v24;
+< v33 = v0.<com.google.common.io.BaseEncoding$Alphabet: int charsPerChunk>;
+< v34 = newarray (boolean)[v33];
+< v35 = 0;
+---
+> v36 = 0;
+105,113c107,110
+< v36 = v0.<com.google.common.io.BaseEncoding$Alphabet: int bytesPerChunk>;
+< if v35 >= v36 goto label16;
+< v37 = v35 * 8;
+< v38 = v0.<com.google.common.io.BaseEncoding$Alphabet: int bitsPerChar>;
+< v39 = <java.math.RoundingMode: java.math.RoundingMode CEILING>;
+< v40 = staticinvoke <com.google.common.math.IntMath: int divide(int,int,java.math.RoundingMode)>(v37, v38, v39);
+< v34[v40] = 1;
+< v35 = v35 + 1;
+< goto label15;
+---
+> staticinvoke <com.google.common.base.Preconditions: void checkArgument(boolean,java.lang.String,char)>(v36, "Duplicate character: %s", v31);
+> v28[v31] = v29;
+> v29 = v29 + 1;
+> goto label11;
+115c112,127
+< v0.<com.google.common.io.BaseEncoding$Alphabet: boolean[] validPadding> = v34;
+---
+> v0.<com.google.common.io.BaseEncoding$Alphabet: byte[] decodabet> = v28;
+> v37 = v0.<com.google.common.io.BaseEncoding$Alphabet: int charsPerChunk>;
+> v38 = newarray (boolean)[v37];
+> v39 = 0;
+> label17:
+> v40 = v0.<com.google.common.io.BaseEncoding$Alphabet: int bytesPerChunk>;
+> if v39 >= v40 goto label18;
+> v41 = v39 * 8;
+> v42 = v0.<com.google.common.io.BaseEncoding$Alphabet: int bitsPerChar>;
+> v43 = <java.math.RoundingMode: java.math.RoundingMode CEILING>;
+> v44 = staticinvoke <com.google.common.math.IntMath: int divide(int,int,java.math.RoundingMode)>(v41, v42, v43);
+> v38[v44] = 1;
+> v39 = v39 + 1;
+> goto label17;
+> label18:
+> v0.<com.google.common.io.BaseEncoding$Alphabet: boolean[] validPadding> = v38;
+170c182
+< byte[] v5;
+---
+> byte[] v9;
+172c184,187
+< com.google.common.io.BaseEncoding$DecodingException v11, v2, v8;
+---
+> byte v10;
+> int v11, v16, v6;
+> java.lang.String v13, v14, v15, v17, v18, v20, v3, v4, v5, v7, v8;
+> com.google.common.io.BaseEncoding$DecodingException v12, v19, v2;
+174,176c189
+< byte v6;
+< int v7;
+< java.lang.String v10, v12, v3, v4, v9;
+---
+> java.lang.StringBuilder v21;
+179c192
+< if v1 <= 127 goto label1;
+---
+> if v1 <= 127 goto label3;
+181,184c194,200
+< v3 = staticinvoke <java.lang.Integer: java.lang.String toHexString(int)>(v1);
+< v4 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v3) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Unrecognized character: 0x\u0001");
+< specialinvoke v2.<com.google.common.io.BaseEncoding$DecodingException: void <init>(java.lang.String)>(v4);
+< throw v2;
+---
+> v3 = "Unrecognized character: 0x";
+> v4 = staticinvoke <java.lang.Integer: java.lang.String toHexString(int)>(v1);
+> v5 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v4);
+> v6 = virtualinvoke v5.<java.lang.String: int length()>();
+> if v6 == 0 goto label1;
+> v7 = virtualinvoke v3.<java.lang.String: java.lang.String concat(java.lang.String)>(v5);
+> goto label2;
+186,191c202,204
+< v5 = v0.<com.google.common.io.BaseEncoding$Alphabet: byte[] decodabet>;
+< v6 = v5[v1];
+< v7 = (int) -1;
+< if v6 != v7 goto label4;
+< if v1 <= 32 goto label2;
+< if v1 != 127 goto label3;
+---
+> v8 = new java.lang.String;
+> v7 = v8;
+> specialinvoke v8.<java.lang.String: void <init>(java.lang.String)>("Unrecognized character: 0x");
+193,197c206,207
+< v8 = new com.google.common.io.BaseEncoding$DecodingException;
+< v9 = staticinvoke <java.lang.Integer: java.lang.String toHexString(int)>(v1);
+< v10 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v9) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Unrecognized character: 0x\u0001");
+< specialinvoke v8.<com.google.common.io.BaseEncoding$DecodingException: void <init>(java.lang.String)>(v10);
+< throw v8;
+---
+> specialinvoke v2.<com.google.common.io.BaseEncoding$DecodingException: void <init>(java.lang.String)>(v7);
+> throw v2;
+199,202c209,214
+< v11 = new com.google.common.io.BaseEncoding$DecodingException;
+< v12 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (char)>(v1) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Unrecognized character: \u0001");
+< specialinvoke v11.<com.google.common.io.BaseEncoding$DecodingException: void <init>(java.lang.String)>(v12);
+< throw v11;
+---
+> v9 = v0.<com.google.common.io.BaseEncoding$Alphabet: byte[] decodabet>;
+> v10 = v9[v1];
+> v11 = (int) -1;
+> if v10 != v11 goto label8;
+> if v1 <= 32 goto label4;
+> if v1 != 127 goto label7;
+204c216,238
+< return v6;
+---
+> v12 = new com.google.common.io.BaseEncoding$DecodingException;
+> v13 = "Unrecognized character: 0x";
+> v14 = staticinvoke <java.lang.Integer: java.lang.String toHexString(int)>(v1);
+> v15 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v14);
+> v16 = virtualinvoke v15.<java.lang.String: int length()>();
+> if v16 == 0 goto label5;
+> v17 = virtualinvoke v13.<java.lang.String: java.lang.String concat(java.lang.String)>(v15);
+> goto label6;
+> label5:
+> v18 = new java.lang.String;
+> v17 = v18;
+> specialinvoke v18.<java.lang.String: void <init>(java.lang.String)>("Unrecognized character: 0x");
+> label6:
+> specialinvoke v12.<com.google.common.io.BaseEncoding$DecodingException: void <init>(java.lang.String)>(v17);
+> throw v12;
+> label7:
+> v19 = new com.google.common.io.BaseEncoding$DecodingException;
+> specialinvoke v21.<java.lang.StringBuilder: void <init>(int)>(25);
+> v20 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (char)>(v1) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Unrecognized character: \u0001");
+> specialinvoke v19.<com.google.common.io.BaseEncoding$DecodingException: void <init>(java.lang.String)>(v20);
+> throw v19;
+> label8:
+> return v10;
+256c290
+< java.lang.String v14, v15;
+---
+> java.lang.String v14, v15, v16;
+290,291c324,326
+< v15 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v14) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001.upperCase()");
+< specialinvoke v13.<com.google.common.io.BaseEncoding$Alphabet: void <init>(java.lang.String,char[])>(v15, v6);
+---
+> v15 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v14);
+> v16 = virtualinvoke v15.<java.lang.String: java.lang.String concat(java.lang.String)>(".upperCase()");
+> specialinvoke v13.<com.google.common.io.BaseEncoding$Alphabet: void <init>(java.lang.String,char[])>(v16, v6);
+298c333
+< java.lang.String v14, v15;
+---
+> java.lang.String v14, v15, v16;
+332,333c367,369
+< v15 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v14) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001.lowerCase()");
+< specialinvoke v13.<com.google.common.io.BaseEncoding$Alphabet: void <init>(java.lang.String,char[])>(v15, v6);
+---
+> v15 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v14);
+> v16 = virtualinvoke v15.<java.lang.String: java.lang.String concat(java.lang.String)>(".lowerCase()");
+> specialinvoke v13.<com.google.common.io.BaseEncoding$Alphabet: void <init>(java.lang.String,char[])>(v16, v6);

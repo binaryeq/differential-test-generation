@@ -1,0 +1,126 @@
+38d37
+< java.nio.file.attribute.GroupPrincipal v3;
+40,47c39,49
+< java.lang.String v16, v17, v7, v8;
+< boolean v11, v13, v4;
+< com.google.common.collect.ImmutableSet v10;
+< com.google.common.collect.ImmutableMap v18;
+< java.util.Set v12;
+< java.lang.IllegalArgumentException v14, v5;
+< java.lang.Class v15, v6;
+< java.lang.Object v2, v9;
+---
+> boolean v22, v24, v4;
+> com.google.common.collect.ImmutableSet v21;
+> com.google.common.collect.ImmutableMap v40;
+> java.util.Set v23;
+> java.lang.StringBuilder v41, v42;
+> java.nio.file.attribute.GroupPrincipal v3;
+> int v11, v12, v14, v15, v17, v18, v31, v32, v34, v35, v37, v38;
+> java.lang.String v10, v13, v16, v19, v27, v28, v29, v30, v33, v36, v39, v7, v8, v9;
+> java.lang.IllegalArgumentException v25, v5;
+> java.lang.Class v26, v6;
+> java.lang.Object v2, v20;
+62,63c64,77
+< v8 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,java.lang.Class,java.lang.Class)>(v7, class "Ljava/lang/String;", class "Ljava/nio/file/attribute/GroupPrincipal;") <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("invalid type \u0001 for attribute \'posix:group\': should be one of \u0001 or \u0001");
+< specialinvoke v5.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(v8);
+---
+> v8 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(class "Ljava/lang/String;");
+> v9 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(class "Ljava/nio/file/attribute/GroupPrincipal;");
+> v10 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v7);
+> v11 = virtualinvoke v10.<java.lang.String: int length()>();
+> v12 = 64 + v11;
+> v13 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v8);
+> v14 = virtualinvoke v13.<java.lang.String: int length()>();
+> v15 = v12 + v14;
+> v16 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v9);
+> v17 = virtualinvoke v16.<java.lang.String: int length()>();
+> v18 = v15 + v17;
+> specialinvoke v42.<java.lang.StringBuilder: void <init>(int)>(v18);
+> v19 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,java.lang.String,java.lang.String)>(v7, v8, v9) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("invalid type \u0001 for attribute \'posix:group\': should be one of \u0001 or \u0001");
+> specialinvoke v5.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(v19);
+66,72c80,86
+< v9 = interfaceinvoke v1.<java.util.Map: java.lang.Object get(java.lang.Object)>("posix:permissions");
+< v10 = <com.google.common.jimfs.PosixAttributeProvider: com.google.common.collect.ImmutableSet DEFAULT_PERMISSIONS>;
+< if v9 == null goto label5;
+< v11 = v9 instanceof java.lang.String;
+< if v11 == 0 goto label3;
+< v12 = staticinvoke <java.nio.file.attribute.PosixFilePermissions: java.util.Set fromString(java.lang.String)>(v9);
+< v10 = staticinvoke <com.google.common.collect.Sets: com.google.common.collect.ImmutableSet immutableEnumSet(java.lang.Iterable)>(v12);
+---
+> v20 = interfaceinvoke v1.<java.util.Map: java.lang.Object get(java.lang.Object)>("posix:permissions");
+> v21 = <com.google.common.jimfs.PosixAttributeProvider: com.google.common.collect.ImmutableSet DEFAULT_PERMISSIONS>;
+> if v20 == null goto label5;
+> v22 = v20 instanceof java.lang.String;
+> if v22 == 0 goto label3;
+> v23 = staticinvoke <java.nio.file.attribute.PosixFilePermissions: java.util.Set fromString(java.lang.String)>(v20);
+> v21 = staticinvoke <com.google.common.collect.Sets: com.google.common.collect.ImmutableSet immutableEnumSet(java.lang.Iterable)>(v23);
+75,77c89,91
+< v13 = v9 instanceof java.util.Set;
+< if v13 == 0 goto label4;
+< v10 = staticinvoke <com.google.common.jimfs.PosixAttributeProvider: com.google.common.collect.ImmutableSet toPermissions(java.util.Set)>(v9);
+---
+> v24 = v20 instanceof java.util.Set;
+> if v24 == 0 goto label4;
+> v21 = staticinvoke <com.google.common.jimfs.PosixAttributeProvider: com.google.common.collect.ImmutableSet toPermissions(java.util.Set)>(v20);
+80,85c94,111
+< v14 = new java.lang.IllegalArgumentException;
+< v15 = virtualinvoke v9.<java.lang.Object: java.lang.Class getClass()>();
+< v16 = virtualinvoke v15.<java.lang.Class: java.lang.String getName()>();
+< v17 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,java.lang.Class,java.lang.Class)>(v16, class "Ljava/lang/String;", class "Ljava/util/Set;") <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("invalid type \u0001 for attribute \'posix:permissions\': should be one of \u0001 or \u0001");
+< specialinvoke v14.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(v17);
+< throw v14;
+---
+> v25 = new java.lang.IllegalArgumentException;
+> v26 = virtualinvoke v20.<java.lang.Object: java.lang.Class getClass()>();
+> v27 = virtualinvoke v26.<java.lang.Class: java.lang.String getName()>();
+> v28 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(class "Ljava/lang/String;");
+> v29 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(class "Ljava/util/Set;");
+> v30 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v27);
+> v31 = virtualinvoke v30.<java.lang.String: int length()>();
+> v32 = 70 + v31;
+> v33 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v28);
+> v34 = virtualinvoke v33.<java.lang.String: int length()>();
+> v35 = v32 + v34;
+> v36 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v29);
+> v37 = virtualinvoke v36.<java.lang.String: int length()>();
+> v38 = v35 + v37;
+> specialinvoke v41.<java.lang.StringBuilder: void <init>(int)>(v38);
+> v39 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,java.lang.String,java.lang.String)>(v27, v28, v29) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("invalid type \u0001 for attribute \'posix:permissions\': should be one of \u0001 or \u0001");
+> specialinvoke v25.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(v39);
+> throw v25;
+87,88c113,114
+< v18 = staticinvoke <com.google.common.collect.ImmutableMap: com.google.common.collect.ImmutableMap of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("posix:group", v3, "posix:permissions", v10);
+< return v18;
+---
+> v40 = staticinvoke <com.google.common.collect.ImmutableMap: com.google.common.collect.ImmutableMap of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("posix:group", v3, "posix:permissions", v21);
+> return v40;
+194c220
+< com.google.common.collect.ImmutableSet v1, v9;
+---
+> com.google.common.collect.ImmutableSet v1, v13;
+196a223
+> int v10, v11;
+198a226
+> java.lang.StringBuilder v14;
+200c228
+< java.lang.String v8;
+---
+> java.lang.String v12, v8, v9;
+213,214c241,247
+< v8 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.Class)>(v7) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("invalid element for attribute \'posix:permissions\': should be Set<PosixFilePermission>, found element of type \u0001");
+< specialinvoke v6.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(v8);
+---
+> v8 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v7);
+> v9 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v8);
+> v10 = virtualinvoke v9.<java.lang.String: int length()>();
+> v11 = 109 + v10;
+> specialinvoke v14.<java.lang.StringBuilder: void <init>(int)>(v11);
+> v12 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v8) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("invalid element for attribute \'posix:permissions\': should be Set<PosixFilePermission>, found element of type \u0001");
+> specialinvoke v6.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(v12);
+217,218c250,251
+< v9 = staticinvoke <com.google.common.collect.Sets: com.google.common.collect.ImmutableSet immutableEnumSet(java.lang.Iterable)>(v1);
+< return v9;
+---
+> v13 = staticinvoke <com.google.common.collect.Sets: com.google.common.collect.ImmutableSet immutableEnumSet(java.lang.Iterable)>(v1);
+> return v13;

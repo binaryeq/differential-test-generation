@@ -1,0 +1,28 @@
+28d27
+< org.objectweb.asm.ClassWriter v7;
+29a29
+> groovyjarjarasm.asm.ClassWriter v7;
+32d31
+< org.objectweb.asm.ClassReader v6;
+36a36
+> groovyjarjarasm.asm.ClassReader v6;
+44,47c44,47
+< v6 = new org.objectweb.asm.ClassReader;
+< specialinvoke v6.<org.objectweb.asm.ClassReader: void <init>(java.io.InputStream)>(v5);
+< v7 = new org.objectweb.asm.ClassWriter;
+< specialinvoke v7.<org.objectweb.asm.ClassWriter: void <init>(int)>(1);
+---
+> v6 = new groovyjarjarasm.asm.ClassReader;
+> specialinvoke v6.<groovyjarjarasm.asm.ClassReader: void <init>(java.io.InputStream)>(v5);
+> v7 = new groovyjarjarasm.asm.ClassWriter;
+> specialinvoke v7.<groovyjarjarasm.asm.ClassWriter: void <init>(int)>(1);
+49,50c49,50
+< specialinvoke v8.<org.codehaus.groovy.runtime.callsite.GroovySunClassLoader$2: void <init>(org.codehaus.groovy.runtime.callsite.GroovySunClassLoader,int,org.objectweb.asm.ClassVisitor)>(v0, 4, v7);
+< virtualinvoke v6.<org.objectweb.asm.ClassReader: void accept(org.objectweb.asm.ClassVisitor,int)>(v8, v1);
+---
+> specialinvoke v8.<org.codehaus.groovy.runtime.callsite.GroovySunClassLoader$2: void <init>(org.codehaus.groovy.runtime.callsite.GroovySunClassLoader,int,groovyjarjarasm.asm.ClassVisitor)>(v0, 4, v7);
+> virtualinvoke v6.<groovyjarjarasm.asm.ClassReader: void accept(groovyjarjarasm.asm.ClassVisitor,int)>(v8, v1);
+52c52
+< v9 = virtualinvoke v7.<org.objectweb.asm.ClassWriter: byte[] toByteArray()>();
+---
+> v9 = virtualinvoke v7.<groovyjarjarasm.asm.ClassWriter: byte[] toByteArray()>();

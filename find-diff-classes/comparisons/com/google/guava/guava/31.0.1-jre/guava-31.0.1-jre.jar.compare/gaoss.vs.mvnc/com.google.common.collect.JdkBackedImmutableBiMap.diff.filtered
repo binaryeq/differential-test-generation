@@ -1,0 +1,80 @@
+8a9,11
+> com.google.common.collect.ImmutableMapEntry v7;
+> com.google.common.collect.JdkBackedImmutableBiMap v39;
+> java.lang.StringBuilder v40, v41;
+10,12c13,15
+< com.google.common.collect.ImmutableList v22;
+< int v0, v4;
+< java.lang.String v12, v19;
+---
+> com.google.common.collect.ImmutableList v38;
+> int v0, v15, v16, v18, v19, v30, v31, v33, v34, v4;
+> java.lang.String v12, v13, v14, v17, v20, v26, v28, v29, v32, v35;
+14,18c17,19
+< java.util.Map$Entry v13, v20, v5;
+< com.google.common.collect.ImmutableMapEntry v7;
+< com.google.common.collect.JdkBackedImmutableBiMap v23;
+< java.lang.IllegalArgumentException v14, v21;
+< java.lang.Object v10, v11, v15, v16, v17, v18, v6, v8, v9;
+---
+> java.util.Map$Entry v21, v36, v5;
+> java.lang.IllegalArgumentException v22, v37;
+> java.lang.Object v10, v11, v23, v24, v25, v27, v6, v8, v9;
+35,38c36,48
+< v12 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.Object,java.lang.Object)>(v11, v10) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001=\u0001");
+< v13 = v1[v4];
+< v14 = staticinvoke <com.google.common.collect.JdkBackedImmutableBiMap: java.lang.IllegalArgumentException conflictException(java.lang.String,java.lang.Object,java.lang.Object)>("key", v12, v13);
+< throw v14;
+---
+> v12 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v11);
+> v13 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v10);
+> v14 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v12);
+> v15 = virtualinvoke v14.<java.lang.String: int length()>();
+> v16 = 1 + v15;
+> v17 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v13);
+> v18 = virtualinvoke v17.<java.lang.String: int length()>();
+> v19 = v16 + v18;
+> specialinvoke v41.<java.lang.StringBuilder: void <init>(int)>(v19);
+> v20 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,java.lang.String)>(v12, v13) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001=\u0001");
+> v21 = v1[v4];
+> v22 = staticinvoke <com.google.common.collect.JdkBackedImmutableBiMap: java.lang.IllegalArgumentException conflictException(java.lang.String,java.lang.Object,java.lang.Object)>("key", v20, v21);
+> throw v22;
+40,48c50,67
+< v15 = interfaceinvoke v7.<java.util.Map$Entry: java.lang.Object getValue()>();
+< v16 = interfaceinvoke v7.<java.util.Map$Entry: java.lang.Object getKey()>();
+< v17 = interfaceinvoke v3.<java.util.Map: java.lang.Object putIfAbsent(java.lang.Object,java.lang.Object)>(v15, v16);
+< if v17 == null goto label3;
+< v18 = interfaceinvoke v7.<java.util.Map$Entry: java.lang.Object getValue()>();
+< v19 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.Object,java.lang.Object)>(v17, v18) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001=\u0001");
+< v20 = v1[v4];
+< v21 = staticinvoke <com.google.common.collect.JdkBackedImmutableBiMap: java.lang.IllegalArgumentException conflictException(java.lang.String,java.lang.Object,java.lang.Object)>("value", v19, v20);
+< throw v21;
+---
+> v23 = interfaceinvoke v7.<java.util.Map$Entry: java.lang.Object getValue()>();
+> v24 = interfaceinvoke v7.<java.util.Map$Entry: java.lang.Object getKey()>();
+> v25 = interfaceinvoke v3.<java.util.Map: java.lang.Object putIfAbsent(java.lang.Object,java.lang.Object)>(v23, v24);
+> if v25 == null goto label3;
+> v26 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v25);
+> v27 = interfaceinvoke v7.<java.util.Map$Entry: java.lang.Object getValue()>();
+> v28 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v27);
+> v29 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v26);
+> v30 = virtualinvoke v29.<java.lang.String: int length()>();
+> v31 = 1 + v30;
+> v32 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v28);
+> v33 = virtualinvoke v32.<java.lang.String: int length()>();
+> v34 = v31 + v33;
+> specialinvoke v40.<java.lang.StringBuilder: void <init>(int)>(v34);
+> v35 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,java.lang.String)>(v26, v28) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001=\u0001");
+> v36 = v1[v4];
+> v37 = staticinvoke <com.google.common.collect.JdkBackedImmutableBiMap: java.lang.IllegalArgumentException conflictException(java.lang.String,java.lang.Object,java.lang.Object)>("value", v35, v36);
+> throw v37;
+53,56c72,75
+< v22 = staticinvoke <com.google.common.collect.ImmutableList: com.google.common.collect.ImmutableList asImmutableList(java.lang.Object[],int)>(v1, v0);
+< v23 = new com.google.common.collect.JdkBackedImmutableBiMap;
+< specialinvoke v23.<com.google.common.collect.JdkBackedImmutableBiMap: void <init>(com.google.common.collect.ImmutableList,java.util.Map,java.util.Map)>(v22, v2, v3);
+< return v23;
+---
+> v38 = staticinvoke <com.google.common.collect.ImmutableList: com.google.common.collect.ImmutableList asImmutableList(java.lang.Object[],int)>(v1, v0);
+> v39 = new com.google.common.collect.JdkBackedImmutableBiMap;
+> specialinvoke v39.<com.google.common.collect.JdkBackedImmutableBiMap: void <init>(com.google.common.collect.ImmutableList,java.util.Map,java.util.Map)>(v38, v2, v3);
+> return v39;

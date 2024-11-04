@@ -1,0 +1,204 @@
+976c976
+< com.google.common.cache.AbstractCache$StatsCounter v27, v28, v30, v31;
+---
+> com.google.common.cache.AbstractCache$StatsCounter v31, v32, v34, v35;
+978c978
+< com.google.common.cache.CacheLoader$UnsupportedLoadingOperationException v20;
+---
+> com.google.common.cache.CacheLoader$UnsupportedLoadingOperationException v24;
+980,983c980,984
+< boolean v10, v11, v15, v22, v7;
+< com.google.common.collect.ImmutableMap v26;
+< com.google.common.cache.CacheLoader v12, v24;
+< java.lang.Throwable v29;
+---
+> boolean v10, v11, v15, v26, v7;
+> com.google.common.collect.ImmutableMap v30;
+> com.google.common.cache.CacheLoader v12, v28;
+> java.lang.StringBuilder v36;
+> java.lang.Throwable v33;
+987,988c988,989
+< int v2, v3;
+< java.lang.String v19;
+---
+> int v2, v21, v22, v3;
+> java.lang.String v19, v20, v23;
+990,991c991,992
+< java.util.Iterator v14, v21, v6;
+< java.lang.Object v16, v17, v23, v25, v8, v9;
+---
+> java.util.Iterator v14, v25, v6;
+> java.lang.Object v16, v17, v27, v29, v8, v9;
+1028,1029c1029,1035
+< v19 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.Object)>(v16) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("loadAll failed to return a value for \u0001");
+< specialinvoke v18.<com.google.common.cache.CacheLoader$InvalidCacheLoadException: void <init>(java.lang.String)>(v19);
+---
+> v19 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v16);
+> v20 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v19);
+> v21 = virtualinvoke v20.<java.lang.String: int length()>();
+> v22 = 37 + v21;
+> specialinvoke v36.<java.lang.StringBuilder: void <init>(int)>(v22);
+> v23 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v19) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("loadAll failed to return a value for \u0001");
+> specialinvoke v18.<com.google.common.cache.CacheLoader$InvalidCacheLoadException: void <init>(java.lang.String)>(v23);
+1035,1036c1041,1042
+< v20 := @caughtexception;
+< v21 = interfaceinvoke v5.<java.util.Set: java.util.Iterator iterator()>();
+---
+> v24 := @caughtexception;
+> v25 = interfaceinvoke v5.<java.util.Set: java.util.Iterator iterator()>();
+1038,1040c1044,1046
+< v22 = interfaceinvoke v21.<java.util.Iterator: boolean hasNext()>();
+< if v22 == 0 goto label09;
+< v23 = interfaceinvoke v21.<java.util.Iterator: java.lang.Object next()>();
+---
+> v26 = interfaceinvoke v25.<java.util.Iterator: boolean hasNext()>();
+> if v26 == 0 goto label09;
+> v27 = interfaceinvoke v25.<java.util.Iterator: java.lang.Object next()>();
+1042,1044c1048,1050
+< v24 = v0.<com.google.common.cache.LocalCache: com.google.common.cache.CacheLoader defaultLoader>;
+< v25 = virtualinvoke v0.<com.google.common.cache.LocalCache: java.lang.Object get(java.lang.Object,com.google.common.cache.CacheLoader)>(v23, v24);
+< interfaceinvoke v4.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>(v23, v25);
+---
+> v28 = v0.<com.google.common.cache.LocalCache: com.google.common.cache.CacheLoader defaultLoader>;
+> v29 = virtualinvoke v0.<com.google.common.cache.LocalCache: java.lang.Object get(java.lang.Object,com.google.common.cache.CacheLoader)>(v27, v28);
+> interfaceinvoke v4.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>(v27, v29);
+1047c1053
+< v26 = staticinvoke <com.google.common.collect.ImmutableMap: com.google.common.collect.ImmutableMap copyOf(java.util.Map)>(v4);
+---
+> v30 = staticinvoke <com.google.common.collect.ImmutableMap: com.google.common.collect.ImmutableMap copyOf(java.util.Map)>(v4);
+1049,1057d1054
+< v27 = v0.<com.google.common.cache.LocalCache: com.google.common.cache.AbstractCache$StatsCounter globalStatsCounter>;
+< interfaceinvoke v27.<com.google.common.cache.AbstractCache$StatsCounter: void recordHits(int)>(v2);
+< v28 = v0.<com.google.common.cache.LocalCache: com.google.common.cache.AbstractCache$StatsCounter globalStatsCounter>;
+< interfaceinvoke v28.<com.google.common.cache.AbstractCache$StatsCounter: void recordMisses(int)>(v3);
+< return v26;
+< label11:
+< v29 := @caughtexception;
+< v30 = v0.<com.google.common.cache.LocalCache: com.google.common.cache.AbstractCache$StatsCounter globalStatsCounter>;
+< interfaceinvoke v30.<com.google.common.cache.AbstractCache$StatsCounter: void recordHits(int)>(v2);
+1059,1060c1056,1066
+< interfaceinvoke v31.<com.google.common.cache.AbstractCache$StatsCounter: void recordMisses(int)>(v3);
+< throw v29;
+---
+> interfaceinvoke v31.<com.google.common.cache.AbstractCache$StatsCounter: void recordHits(int)>(v2);
+> v32 = v0.<com.google.common.cache.LocalCache: com.google.common.cache.AbstractCache$StatsCounter globalStatsCounter>;
+> interfaceinvoke v32.<com.google.common.cache.AbstractCache$StatsCounter: void recordMisses(int)>(v3);
+> return v30;
+> label11:
+> v33 := @caughtexception;
+> v34 = v0.<com.google.common.cache.LocalCache: com.google.common.cache.AbstractCache$StatsCounter globalStatsCounter>;
+> interfaceinvoke v34.<com.google.common.cache.AbstractCache$StatsCounter: void recordHits(int)>(v2);
+> v35 = v0.<com.google.common.cache.LocalCache: com.google.common.cache.AbstractCache$StatsCounter globalStatsCounter>;
+> interfaceinvoke v35.<com.google.common.cache.AbstractCache$StatsCounter: void recordMisses(int)>(v3);
+> throw v33;
+1066c1072
+< com.google.common.cache.AbstractCache$StatsCounter v16, v19, v31, v36;
+---
+> com.google.common.cache.AbstractCache$StatsCounter v16, v19, v35, v44;
+1070,1072c1076,1078
+< com.google.common.cache.CacheLoader$InvalidCacheLoadException v22, v34;
+< boolean v24, v27;
+< java.util.Set v1, v25;
+---
+> com.google.common.cache.CacheLoader$InvalidCacheLoadException v22, v38;
+> boolean v28, v31;
+> java.util.Set v1, v29;
+1074a1081
+> java.lang.StringBuilder v47, v48;
+1079c1086
+< long v18, v21, v33, v38;
+---
+> long v18, v21, v37, v46;
+1082,1083c1089,1091
+< java.lang.String v23, v35;
+< java.util.Iterator v26;
+---
+> int v25, v26, v41, v42;
+> java.lang.String v23, v24, v27, v39, v40, v43;
+> java.util.Iterator v30;
+1086c1094
+< java.util.concurrent.TimeUnit v17, v20, v32, v37;
+---
+> java.util.concurrent.TimeUnit v17, v20, v36, v45;
+1088c1096
+< java.lang.Object v28, v29, v30;
+---
+> java.lang.Object v32, v33, v34;
+1138,1139c1146,1152
+< v23 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (com.google.common.cache.CacheLoader)>(v2) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001 returned null map from loadAll");
+< specialinvoke v22.<com.google.common.cache.CacheLoader$InvalidCacheLoadException: void <init>(java.lang.String)>(v23);
+---
+> v23 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v2);
+> v24 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v23);
+> v25 = virtualinvoke v24.<java.lang.String: int length()>();
+> v26 = 31 + v25;
+> specialinvoke v48.<java.lang.StringBuilder: void <init>(int)>(v26);
+> v27 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v23) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001 returned null map from loadAll");
+> specialinvoke v22.<com.google.common.cache.CacheLoader$InvalidCacheLoadException: void <init>(java.lang.String)>(v27);
+1143,1145c1156,1158
+< v24 = 0;
+< v25 = interfaceinvoke v4.<java.util.Map: java.util.Set entrySet()>();
+< v26 = interfaceinvoke v25.<java.util.Set: java.util.Iterator iterator()>();
+---
+> v28 = 0;
+> v29 = interfaceinvoke v4.<java.util.Map: java.util.Set entrySet()>();
+> v30 = interfaceinvoke v29.<java.util.Set: java.util.Iterator iterator()>();
+1147,1153c1160,1166
+< v27 = interfaceinvoke v26.<java.util.Iterator: boolean hasNext()>();
+< if v27 == 0 goto label14;
+< v28 = interfaceinvoke v26.<java.util.Iterator: java.lang.Object next()>();
+< v29 = interfaceinvoke v28.<java.util.Map$Entry: java.lang.Object getKey()>();
+< v30 = interfaceinvoke v28.<java.util.Map$Entry: java.lang.Object getValue()>();
+< if v29 == null goto label12;
+< if v30 != null goto label13;
+---
+> v31 = interfaceinvoke v30.<java.util.Iterator: boolean hasNext()>();
+> if v31 == 0 goto label14;
+> v32 = interfaceinvoke v30.<java.util.Iterator: java.lang.Object next()>();
+> v33 = interfaceinvoke v32.<java.util.Map$Entry: java.lang.Object getKey()>();
+> v34 = interfaceinvoke v32.<java.util.Map$Entry: java.lang.Object getValue()>();
+> if v33 == null goto label12;
+> if v34 != null goto label13;
+1155c1168
+< v24 = 1;
+---
+> v28 = 1;
+1158c1171
+< virtualinvoke v0.<com.google.common.cache.LocalCache: java.lang.Object put(java.lang.Object,java.lang.Object)>(v29, v30);
+---
+> virtualinvoke v0.<com.google.common.cache.LocalCache: java.lang.Object put(java.lang.Object,java.lang.Object)>(v33, v34);
+1161,1169c1174,1187
+< if v24 == 0 goto label15;
+< v31 = v0.<com.google.common.cache.LocalCache: com.google.common.cache.AbstractCache$StatsCounter globalStatsCounter>;
+< v32 = <java.util.concurrent.TimeUnit: java.util.concurrent.TimeUnit NANOSECONDS>;
+< v33 = virtualinvoke v3.<com.google.common.base.Stopwatch: long elapsed(java.util.concurrent.TimeUnit)>(v32);
+< interfaceinvoke v31.<com.google.common.cache.AbstractCache$StatsCounter: void recordLoadException(long)>(v33);
+< v34 = new com.google.common.cache.CacheLoader$InvalidCacheLoadException;
+< v35 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (com.google.common.cache.CacheLoader)>(v2) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001 returned null keys or values from loadAll");
+< specialinvoke v34.<com.google.common.cache.CacheLoader$InvalidCacheLoadException: void <init>(java.lang.String)>(v35);
+< throw v34;
+---
+> if v28 == 0 goto label15;
+> v35 = v0.<com.google.common.cache.LocalCache: com.google.common.cache.AbstractCache$StatsCounter globalStatsCounter>;
+> v36 = <java.util.concurrent.TimeUnit: java.util.concurrent.TimeUnit NANOSECONDS>;
+> v37 = virtualinvoke v3.<com.google.common.base.Stopwatch: long elapsed(java.util.concurrent.TimeUnit)>(v36);
+> interfaceinvoke v35.<com.google.common.cache.AbstractCache$StatsCounter: void recordLoadException(long)>(v37);
+> v38 = new com.google.common.cache.CacheLoader$InvalidCacheLoadException;
+> v39 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v2);
+> v40 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v39);
+> v41 = virtualinvoke v40.<java.lang.String: int length()>();
+> v42 = 42 + v41;
+> specialinvoke v47.<java.lang.StringBuilder: void <init>(int)>(v42);
+> v43 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v39) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001 returned null keys or values from loadAll");
+> specialinvoke v38.<com.google.common.cache.CacheLoader$InvalidCacheLoadException: void <init>(java.lang.String)>(v43);
+> throw v38;
+1171,1174c1189,1192
+< v36 = v0.<com.google.common.cache.LocalCache: com.google.common.cache.AbstractCache$StatsCounter globalStatsCounter>;
+< v37 = <java.util.concurrent.TimeUnit: java.util.concurrent.TimeUnit NANOSECONDS>;
+< v38 = virtualinvoke v3.<com.google.common.base.Stopwatch: long elapsed(java.util.concurrent.TimeUnit)>(v37);
+< interfaceinvoke v36.<com.google.common.cache.AbstractCache$StatsCounter: void recordLoadSuccess(long)>(v38);
+---
+> v44 = v0.<com.google.common.cache.LocalCache: com.google.common.cache.AbstractCache$StatsCounter globalStatsCounter>;
+> v45 = <java.util.concurrent.TimeUnit: java.util.concurrent.TimeUnit NANOSECONDS>;
+> v46 = virtualinvoke v3.<com.google.common.base.Stopwatch: long elapsed(java.util.concurrent.TimeUnit)>(v45);
+> interfaceinvoke v44.<com.google.common.cache.AbstractCache$StatsCounter: void recordLoadSuccess(long)>(v46);

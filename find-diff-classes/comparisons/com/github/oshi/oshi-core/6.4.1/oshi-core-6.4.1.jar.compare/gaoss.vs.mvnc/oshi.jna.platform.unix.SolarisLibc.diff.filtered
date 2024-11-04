@@ -1,0 +1,43 @@
+34c34
+< public int getrlimit(int, com.sun.jna.platform.unix.Resource$Rlimit)
+---
+> public int close(int)
+36d35
+< com.sun.jna.platform.unix.Resource$Rlimit v2;
+38c37
+< java.lang.Error v3;
+---
+> java.lang.Error v2;
+42,45c41,43
+< v2 := @parameter1: com.sun.jna.platform.unix.Resource$Rlimit;
+< v3 = new java.lang.Error;
+< specialinvoke v3.<java.lang.Error: void <init>(java.lang.String)>("Unresolved compilation error: Method <oshi.jna.platform.unix.SolarisLibc: int getrlimit(int,com.sun.jna.platform.unix.Resource$Rlimit)> does not exist!");
+< throw v3;
+---
+> v2 = new java.lang.Error;
+> specialinvoke v2.<java.lang.Error: void <init>(java.lang.String)>("Unresolved compilation error: Method <oshi.jna.platform.unix.SolarisLibc: int close(int)> does not exist!");
+> throw v2;
+60c58
+< public int close(int)
+---
+> public int getrlimit(int, com.sun.jna.platform.unix.Resource$Rlimit)
+62,69c60,69
+< int parameter0;
+< oshi.jna.platform.unix.SolarisLibc this;
+< java.lang.Error $r0;
+< this := @this: oshi.jna.platform.unix.SolarisLibc;
+< parameter0 := @parameter0: int;
+< $r0 = new java.lang.Error;
+< specialinvoke $r0.<java.lang.Error: void <init>(java.lang.String)>("Unresolved compilation error: Method <oshi.jna.platform.unix.SolarisLibc: int close(int)> does not exist!");
+< throw $r0;
+---
+> com.sun.jna.platform.unix.Resource$Rlimit v2;
+> int v1;
+> java.lang.Error v3;
+> oshi.jna.platform.unix.SolarisLibc v0;
+> v0 := @this: oshi.jna.platform.unix.SolarisLibc;
+> v1 := @parameter0: int;
+> v2 := @parameter1: com.sun.jna.platform.unix.Resource$Rlimit;
+> v3 = new java.lang.Error;
+> specialinvoke v3.<java.lang.Error: void <init>(java.lang.String)>("Unresolved compilation error: Method <oshi.jna.platform.unix.SolarisLibc: int getrlimit(int,com.sun.jna.platform.unix.Resource$Rlimit)> does not exist!");
+> throw v3;

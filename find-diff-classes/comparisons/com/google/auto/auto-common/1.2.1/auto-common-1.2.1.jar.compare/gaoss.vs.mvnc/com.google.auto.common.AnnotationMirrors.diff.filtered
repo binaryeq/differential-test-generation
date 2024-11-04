@@ -1,0 +1,38 @@
+16c16,17
+< java.lang.String v20;
+---
+> int v23, v24, v26, v27;
+> java.lang.String v19, v21, v22, v25, v28;
+18c19
+< javax.lang.model.element.Name v18, v19;
+---
+> javax.lang.model.element.Name v18, v20;
+20c21
+< com.google.common.collect.ImmutableMap v21;
+---
+> com.google.common.collect.ImmutableMap v29;
+25a27
+> java.lang.StringBuilder v30;
+56,58c58,69
+< v19 = interfaceinvoke v10.<javax.lang.model.element.ExecutableElement: javax.lang.model.element.Name getSimpleName()>();
+< v20 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (javax.lang.model.element.Name,javax.lang.model.element.Name)>(v18, v19) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Unset annotation value without default should never happen: \u0001.\u0001()");
+< specialinvoke v15.<java.lang.IllegalStateException: void <init>(java.lang.String)>(v20);
+---
+> v19 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v18);
+> v20 = interfaceinvoke v10.<javax.lang.model.element.ExecutableElement: javax.lang.model.element.Name getSimpleName()>();
+> v21 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v20);
+> v22 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v19);
+> v23 = virtualinvoke v22.<java.lang.String: int length()>();
+> v24 = 63 + v23;
+> v25 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v21);
+> v26 = virtualinvoke v25.<java.lang.String: int length()>();
+> v27 = v24 + v26;
+> specialinvoke v30.<java.lang.StringBuilder: void <init>(int)>(v27);
+> v28 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,java.lang.String)>(v19, v21) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Unset annotation value without default should never happen: \u0001.\u0001()");
+> specialinvoke v15.<java.lang.IllegalStateException: void <init>(java.lang.String)>(v28);
+61,62c72,73
+< v21 = virtualinvoke v1.<com.google.common.collect.ImmutableMap$Builder: com.google.common.collect.ImmutableMap build()>();
+< return v21;
+---
+> v29 = virtualinvoke v1.<com.google.common.collect.ImmutableMap$Builder: com.google.common.collect.ImmutableMap build()>();
+> return v29;

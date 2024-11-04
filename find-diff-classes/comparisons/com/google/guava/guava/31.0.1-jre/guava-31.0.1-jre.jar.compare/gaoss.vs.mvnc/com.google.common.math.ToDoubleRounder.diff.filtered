@@ -1,0 +1,292 @@
+16,17c16,17
+< byte v10, v12, v34, v37, v47;
+< int[] v19, v42, v5;
+---
+> byte v10, v12, v38, v41, v51;
+> int[] v23, v46, v5;
+19,26c19,27
+< boolean v22, v4;
+< java.math.RoundingMode v16, v2, v35, v38;
+< long v45, v46;
+< java.lang.AssertionError v53, v54;
+< int v18, v20, v21, v25, v28, v41, v43, v44, v49, v51, v6, v7, v8;
+< java.lang.String v15;
+< java.lang.Number v1, v17, v32, v36, v39, v40;
+< double v11, v13, v23, v24, v26, v27, v29, v3, v30, v31, v33, v48, v50, v52, v9;
+---
+> boolean v26, v4;
+> java.math.RoundingMode v2, v20, v39, v42;
+> java.lang.StringBuilder v59;
+> long v49, v50;
+> java.lang.AssertionError v57, v58;
+> int v17, v18, v22, v24, v25, v29, v32, v45, v47, v48, v53, v55, v6, v7, v8;
+> java.lang.String v15, v16, v19;
+> java.lang.Number v1, v21, v36, v40, v43, v44;
+> double v11, v13, v27, v28, v3, v30, v31, v33, v34, v35, v37, v52, v54, v56, v9;
+77,78c78,84
+< v15 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.Number)>(v1) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001 cannot be represented precisely as a double");
+< specialinvoke v14.<java.lang.ArithmeticException: void <init>(java.lang.String)>(v15);
+---
+> v15 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v1);
+> v16 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v15);
+> v17 = virtualinvoke v16.<java.lang.String: int length()>();
+> v18 = 44 + v17;
+> specialinvoke v59.<java.lang.StringBuilder: void <init>(int)>(v18);
+> v19 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v15) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001 cannot be represented precisely as a double");
+> specialinvoke v14.<java.lang.ArithmeticException: void <init>(java.lang.String)>(v19);
+81,87c87,93
+< v16 = <java.math.RoundingMode: java.math.RoundingMode UNNECESSARY>;
+< v17 = virtualinvoke v0.<com.google.common.math.ToDoubleRounder: java.lang.Number toX(double,java.math.RoundingMode)>(v3, v16);
+< v18 = interfaceinvoke v1.<java.lang.Comparable: int compareTo(java.lang.Object)>(v17);
+< v19 = <com.google.common.math.ToDoubleRounder$1: int[] $SwitchMap$java$math$RoundingMode>;
+< v20 = virtualinvoke v2.<java.math.RoundingMode: int ordinal()>();
+< v21 = v19[v20];
+< tableswitch(v21)
+---
+> v20 = <java.math.RoundingMode: java.math.RoundingMode UNNECESSARY>;
+> v21 = virtualinvoke v0.<com.google.common.math.ToDoubleRounder: java.lang.Number toX(double,java.math.RoundingMode)>(v3, v20);
+> v22 = interfaceinvoke v1.<java.lang.Comparable: int compareTo(java.lang.Object)>(v21);
+> v23 = <com.google.common.math.ToDoubleRounder$1: int[] $SwitchMap$java$math$RoundingMode>;
+> v24 = virtualinvoke v2.<java.math.RoundingMode: int ordinal()>();
+> v25 = v23[v24];
+> tableswitch(v25)
+100,101c106,107
+< if v18 != 0 goto label12;
+< v22 = 1;
+---
+> if v22 != 0 goto label12;
+> v26 = 1;
+104c110
+< v22 = 0;
+---
+> v26 = 0;
+106c112
+< staticinvoke <com.google.common.math.MathPreconditions: void checkRoundingUnnecessary(boolean)>(v22);
+---
+> staticinvoke <com.google.common.math.MathPreconditions: void checkRoundingUnnecessary(boolean)>(v26);
+109,110c115,116
+< if v18 < 0 goto label15;
+< v23 = v3;
+---
+> if v22 < 0 goto label15;
+> v27 = v3;
+113c119
+< v23 = staticinvoke <com.google.common.math.DoubleUtils: double nextDown(double)>(v3);
+---
+> v27 = staticinvoke <com.google.common.math.DoubleUtils: double nextDown(double)>(v3);
+115c121
+< return v23;
+---
+> return v27;
+117,118c123,124
+< if v18 > 0 goto label18;
+< v24 = v3;
+---
+> if v22 > 0 goto label18;
+> v28 = v3;
+121c127
+< v24 = staticinvoke <java.lang.Math: double nextUp(double)>(v3);
+---
+> v28 = staticinvoke <java.lang.Math: double nextUp(double)>(v3);
+123c129
+< return v24;
+---
+> return v28;
+125,128c131,134
+< v25 = virtualinvoke v0.<com.google.common.math.ToDoubleRounder: int sign(java.lang.Number)>(v1);
+< if v25 < 0 goto label23;
+< if v18 < 0 goto label21;
+< v26 = v3;
+---
+> v29 = virtualinvoke v0.<com.google.common.math.ToDoubleRounder: int sign(java.lang.Number)>(v1);
+> if v29 < 0 goto label23;
+> if v22 < 0 goto label21;
+> v30 = v3;
+131c137
+< v26 = staticinvoke <com.google.common.math.DoubleUtils: double nextDown(double)>(v3);
+---
+> v30 = staticinvoke <com.google.common.math.DoubleUtils: double nextDown(double)>(v3);
+133c139
+< return v26;
+---
+> return v30;
+135,136c141,142
+< if v18 > 0 goto label24;
+< v27 = v3;
+---
+> if v22 > 0 goto label24;
+> v31 = v3;
+139c145
+< v27 = staticinvoke <java.lang.Math: double nextUp(double)>(v3);
+---
+> v31 = staticinvoke <java.lang.Math: double nextUp(double)>(v3);
+141c147
+< return v27;
+---
+> return v31;
+143,146c149,152
+< v28 = virtualinvoke v0.<com.google.common.math.ToDoubleRounder: int sign(java.lang.Number)>(v1);
+< if v28 < 0 goto label29;
+< if v18 > 0 goto label27;
+< v29 = v3;
+---
+> v32 = virtualinvoke v0.<com.google.common.math.ToDoubleRounder: int sign(java.lang.Number)>(v1);
+> if v32 < 0 goto label29;
+> if v22 > 0 goto label27;
+> v33 = v3;
+149c155
+< v29 = staticinvoke <java.lang.Math: double nextUp(double)>(v3);
+---
+> v33 = staticinvoke <java.lang.Math: double nextUp(double)>(v3);
+151c157
+< return v29;
+---
+> return v33;
+153,154c159,160
+< if v18 < 0 goto label30;
+< v30 = v3;
+---
+> if v22 < 0 goto label30;
+> v34 = v3;
+157c163
+< v30 = staticinvoke <com.google.common.math.DoubleUtils: double nextDown(double)>(v3);
+---
+> v34 = staticinvoke <com.google.common.math.DoubleUtils: double nextDown(double)>(v3);
+159c165
+< return v30;
+---
+> return v34;
+161,166c167,172
+< if v18 < 0 goto label34;
+< v31 = v3;
+< v32 = v17;
+< v33 = staticinvoke <java.lang.Math: double nextUp(double)>(v3);
+< v34 = v33 cmpl #Infinity;
+< if v34 != 0 goto label33;
+---
+> if v22 < 0 goto label34;
+> v35 = v3;
+> v36 = v21;
+> v37 = staticinvoke <java.lang.Math: double nextUp(double)>(v3);
+> v38 = v37 cmpl #Infinity;
+> if v38 != 0 goto label33;
+169,170c175,176
+< v35 = <java.math.RoundingMode: java.math.RoundingMode CEILING>;
+< v36 = virtualinvoke v0.<com.google.common.math.ToDoubleRounder: java.lang.Number toX(double,java.math.RoundingMode)>(v33, v35);
+---
+> v39 = <java.math.RoundingMode: java.math.RoundingMode CEILING>;
+> v40 = virtualinvoke v0.<com.google.common.math.ToDoubleRounder: java.lang.Number toX(double,java.math.RoundingMode)>(v37, v39);
+173,177c179,183
+< v33 = v3;
+< v36 = v17;
+< v31 = staticinvoke <com.google.common.math.DoubleUtils: double nextDown(double)>(v3);
+< v37 = v31 cmpl #-Infinity;
+< if v37 != 0 goto label35;
+---
+> v37 = v3;
+> v40 = v21;
+> v35 = staticinvoke <com.google.common.math.DoubleUtils: double nextDown(double)>(v3);
+> v41 = v35 cmpl #-Infinity;
+> if v41 != 0 goto label35;
+180,181c186,187
+< v38 = <java.math.RoundingMode: java.math.RoundingMode FLOOR>;
+< v32 = virtualinvoke v0.<com.google.common.math.ToDoubleRounder: java.lang.Number toX(double,java.math.RoundingMode)>(v31, v38);
+---
+> v42 = <java.math.RoundingMode: java.math.RoundingMode FLOOR>;
+> v36 = virtualinvoke v0.<com.google.common.math.ToDoubleRounder: java.lang.Number toX(double,java.math.RoundingMode)>(v35, v42);
+183,187c189,193
+< v39 = virtualinvoke v0.<com.google.common.math.ToDoubleRounder: java.lang.Number minus(java.lang.Number,java.lang.Number)>(v1, v32);
+< v40 = virtualinvoke v0.<com.google.common.math.ToDoubleRounder: java.lang.Number minus(java.lang.Number,java.lang.Number)>(v36, v1);
+< v41 = interfaceinvoke v39.<java.lang.Comparable: int compareTo(java.lang.Object)>(v40);
+< if v41 >= 0 goto label37;
+< return v31;
+---
+> v43 = virtualinvoke v0.<com.google.common.math.ToDoubleRounder: java.lang.Number minus(java.lang.Number,java.lang.Number)>(v1, v36);
+> v44 = virtualinvoke v0.<com.google.common.math.ToDoubleRounder: java.lang.Number minus(java.lang.Number,java.lang.Number)>(v40, v1);
+> v45 = interfaceinvoke v43.<java.lang.Comparable: int compareTo(java.lang.Object)>(v44);
+> if v45 >= 0 goto label37;
+> return v35;
+189,190c195,196
+< if v41 <= 0 goto label38;
+< return v33;
+---
+> if v45 <= 0 goto label38;
+> return v37;
+192,195c198,201
+< v42 = <com.google.common.math.ToDoubleRounder$1: int[] $SwitchMap$java$math$RoundingMode>;
+< v43 = virtualinvoke v2.<java.math.RoundingMode: int ordinal()>();
+< v44 = v42[v43];
+< tableswitch(v44)
+---
+> v46 = <com.google.common.math.ToDoubleRounder$1: int[] $SwitchMap$java$math$RoundingMode>;
+> v47 = virtualinvoke v2.<java.math.RoundingMode: int ordinal()>();
+> v48 = v46[v47];
+> tableswitch(v48)
+203,207c209,213
+< v45 = staticinvoke <java.lang.Double: long doubleToRawLongBits(double)>(v31);
+< v46 = v45 & 1L;
+< v47 = v46 cmp 0L;
+< if v47 != 0 goto label40;
+< v48 = v31;
+---
+> v49 = staticinvoke <java.lang.Double: long doubleToRawLongBits(double)>(v35);
+> v50 = v49 & 1L;
+> v51 = v50 cmp 0L;
+> if v51 != 0 goto label40;
+> v52 = v35;
+210c216
+< v48 = v33;
+---
+> v52 = v37;
+212c218
+< return v48;
+---
+> return v52;
+214,216c220,222
+< v49 = virtualinvoke v0.<com.google.common.math.ToDoubleRounder: int sign(java.lang.Number)>(v1);
+< if v49 < 0 goto label43;
+< v50 = v31;
+---
+> v53 = virtualinvoke v0.<com.google.common.math.ToDoubleRounder: int sign(java.lang.Number)>(v1);
+> if v53 < 0 goto label43;
+> v54 = v35;
+219c225
+< v50 = v33;
+---
+> v54 = v37;
+221c227
+< return v50;
+---
+> return v54;
+223,225c229,231
+< v51 = virtualinvoke v0.<com.google.common.math.ToDoubleRounder: int sign(java.lang.Number)>(v1);
+< if v51 < 0 goto label46;
+< v52 = v33;
+---
+> v55 = virtualinvoke v0.<com.google.common.math.ToDoubleRounder: int sign(java.lang.Number)>(v1);
+> if v55 < 0 goto label46;
+> v56 = v37;
+228c234
+< v52 = v31;
+---
+> v56 = v35;
+230c236
+< return v52;
+---
+> return v56;
+232,234c238,240
+< v53 = new java.lang.AssertionError;
+< specialinvoke v53.<java.lang.AssertionError: void <init>(java.lang.Object)>("impossible");
+< throw v53;
+---
+> v57 = new java.lang.AssertionError;
+> specialinvoke v57.<java.lang.AssertionError: void <init>(java.lang.Object)>("impossible");
+> throw v57;
+236,238c242,244
+< v54 = new java.lang.AssertionError;
+< specialinvoke v54.<java.lang.AssertionError: void <init>(java.lang.Object)>("impossible");
+< throw v54;
+---
+> v58 = new java.lang.AssertionError;
+> specialinvoke v58.<java.lang.AssertionError: void <init>(java.lang.Object)>("impossible");
+> throw v58;

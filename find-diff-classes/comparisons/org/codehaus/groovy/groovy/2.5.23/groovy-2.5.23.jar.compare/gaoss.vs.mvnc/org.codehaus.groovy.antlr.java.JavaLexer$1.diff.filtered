@@ -1,0 +1,18 @@
+1c1
+< class org.codehaus.groovy.antlr.java.JavaLexer$1 extends java.lang.Object implements antlr.TokenStream
+---
+> class org.codehaus.groovy.antlr.java.JavaLexer$1 extends java.lang.Object implements groovyjarjarantlr.TokenStream
+14c14
+< public antlr.Token nextToken() throws antlr.TokenStreamException
+---
+> public groovyjarjarantlr.Token nextToken() throws groovyjarjarantlr.TokenStreamException
+16d15
+< antlr.Token v8;
+19a19
+> groovyjarjarantlr.Token v8;
+33,34c33,34
+< v8 = virtualinvoke v7.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token nextToken()>();
+< v9 = virtualinvoke v8.<antlr.Token: int getType()>();
+---
+> v8 = virtualinvoke v7.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token nextToken()>();
+> v9 = virtualinvoke v8.<groovyjarjarantlr.Token: int getType()>();

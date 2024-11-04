@@ -1,0 +1,84 @@
+338a339,341
+> int v14, v15, v4, v5, v7;
+> java.lang.String v12, v13, v16;
+> boolean v3, v9;
+341,345c344,346
+< int v4, v5, v7;
+< com.google.common.collect.HashBiMap$BiEntry v10, v13, v6;
+< java.lang.Object v1, v14, v2, v8;
+< java.lang.String v12;
+< boolean v3, v9;
+---
+> com.google.common.collect.HashBiMap$BiEntry v10, v17, v6;
+> java.lang.Object v1, v18, v2, v8;
+> java.lang.StringBuilder v19;
+368,369c369,375
+< v12 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.Object)>(v2) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("value already present: \u0001");
+< specialinvoke v11.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(v12);
+---
+> v12 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v2);
+> v13 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v12);
+> v14 = virtualinvoke v13.<java.lang.String: int length()>();
+> v15 = 23 + v14;
+> specialinvoke v19.<java.lang.StringBuilder: void <init>(int)>(v15);
+> v16 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v12) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("value already present: \u0001");
+> specialinvoke v11.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(v16);
+372,373c378,379
+< v13 = new com.google.common.collect.HashBiMap$BiEntry;
+< specialinvoke v13.<com.google.common.collect.HashBiMap$BiEntry: void <init>(java.lang.Object,int,java.lang.Object,int)>(v1, v4, v2, v5);
+---
+> v17 = new com.google.common.collect.HashBiMap$BiEntry;
+> specialinvoke v17.<com.google.common.collect.HashBiMap$BiEntry: void <init>(java.lang.Object,int,java.lang.Object,int)>(v1, v4, v2, v5);
+376c382
+< specialinvoke v0.<com.google.common.collect.HashBiMap: void insert(com.google.common.collect.HashBiMap$BiEntry,com.google.common.collect.HashBiMap$BiEntry)>(v13, v6);
+---
+> specialinvoke v0.<com.google.common.collect.HashBiMap: void insert(com.google.common.collect.HashBiMap$BiEntry,com.google.common.collect.HashBiMap$BiEntry)>(v17, v6);
+379,380c385,386
+< v14 = v6.<com.google.common.collect.HashBiMap$BiEntry: java.lang.Object value>;
+< return v14;
+---
+> v18 = v6.<com.google.common.collect.HashBiMap$BiEntry: java.lang.Object value>;
+> return v18;
+382c388
+< specialinvoke v0.<com.google.common.collect.HashBiMap: void insert(com.google.common.collect.HashBiMap$BiEntry,com.google.common.collect.HashBiMap$BiEntry)>(v13, null);
+---
+> specialinvoke v0.<com.google.common.collect.HashBiMap: void insert(com.google.common.collect.HashBiMap$BiEntry,com.google.common.collect.HashBiMap$BiEntry)>(v17, null);
+397a404,406
+> int v14, v15, v4, v5, v8;
+> java.lang.String v12, v13, v16;
+> boolean v10, v3;
+400,404c409,411
+< int v4, v5, v8;
+< com.google.common.collect.HashBiMap$BiEntry v13, v6, v7;
+< java.lang.Object v1, v14, v2, v9;
+< java.lang.String v12;
+< boolean v10, v3;
+---
+> com.google.common.collect.HashBiMap$BiEntry v17, v6, v7;
+> java.lang.Object v1, v18, v2, v9;
+> java.lang.StringBuilder v19;
+424,425c431,437
+< v12 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.Object)>(v2) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("key already present: \u0001");
+< specialinvoke v11.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(v12);
+---
+> v12 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v2);
+> v13 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v12);
+> v14 = virtualinvoke v13.<java.lang.String: int length()>();
+> v15 = 21 + v14;
+> specialinvoke v19.<java.lang.StringBuilder: void <init>(int)>(v15);
+> v16 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v12) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("key already present: \u0001");
+> specialinvoke v11.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(v16);
+434,436c446,448
+< v13 = new com.google.common.collect.HashBiMap$BiEntry;
+< specialinvoke v13.<com.google.common.collect.HashBiMap$BiEntry: void <init>(java.lang.Object,int,java.lang.Object,int)>(v2, v5, v1, v4);
+< specialinvoke v0.<com.google.common.collect.HashBiMap: void insert(com.google.common.collect.HashBiMap$BiEntry,com.google.common.collect.HashBiMap$BiEntry)>(v13, v7);
+---
+> v17 = new com.google.common.collect.HashBiMap$BiEntry;
+> specialinvoke v17.<com.google.common.collect.HashBiMap$BiEntry: void <init>(java.lang.Object,int,java.lang.Object,int)>(v2, v5, v1, v4);
+> specialinvoke v0.<com.google.common.collect.HashBiMap: void insert(com.google.common.collect.HashBiMap$BiEntry,com.google.common.collect.HashBiMap$BiEntry)>(v17, v7);
+446,447c458,459
+< v14 = staticinvoke <com.google.common.collect.Maps: java.lang.Object keyOrNull(java.util.Map$Entry)>(v6);
+< return v14;
+---
+> v18 = staticinvoke <com.google.common.collect.Maps: java.lang.Object keyOrNull(java.util.Map$Entry)>(v6);
+> return v18;

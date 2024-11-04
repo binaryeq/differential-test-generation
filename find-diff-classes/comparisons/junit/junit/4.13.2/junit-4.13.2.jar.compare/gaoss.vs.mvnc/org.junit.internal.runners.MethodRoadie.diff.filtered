@@ -1,0 +1,26 @@
+109c109
+< goto label6;
+---
+> goto label7;
+112,113d111
+< specialinvoke v0.<org.junit.internal.runners.MethodRoadie: void runAfters()>();
+< goto label6;
+114a113,115
+> specialinvoke v0.<org.junit.internal.runners.MethodRoadie: void runAfters()>();
+> goto label7;
+> label5:
+119c120
+< label5:
+---
+> label6:
+123c124
+< label6:
+---
+> label7:
+126,127c127,129
+< catch java.lang.Exception from label1 to label2 with label4;
+< catch java.lang.Throwable from label1 to label2 with label5;
+---
+> catch java.lang.Exception from label1 to label2 with label5;
+> catch java.lang.Throwable from label1 to label2 with label6;
+> catch java.lang.Throwable from label3 to label4 with label6;

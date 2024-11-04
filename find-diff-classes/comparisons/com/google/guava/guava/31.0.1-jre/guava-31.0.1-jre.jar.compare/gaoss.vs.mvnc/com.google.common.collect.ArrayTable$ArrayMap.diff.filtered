@@ -1,0 +1,47 @@
+130,133c130
+< com.google.common.collect.ImmutableSet v8;
+< com.google.common.collect.ImmutableMap v3, v7;
+< java.lang.IllegalArgumentException v5;
+< int v10;
+---
+> int v12, v13, v15, v16, v18, v19, v21;
+135,136c132,137
+< java.lang.Object v1, v11, v2, v4;
+< java.lang.String v6, v9;
+---
+> java.lang.String v10, v11, v14, v17, v20, v6, v7;
+> com.google.common.collect.ImmutableSet v9;
+> com.google.common.collect.ImmutableMap v3, v8;
+> java.lang.IllegalArgumentException v5;
+> java.lang.Object v1, v2, v22, v4;
+> java.lang.StringBuilder v23;
+145,148c146,161
+< v7 = v0.<com.google.common.collect.ArrayTable$ArrayMap: com.google.common.collect.ImmutableMap keyIndex>;
+< v8 = virtualinvoke v7.<com.google.common.collect.ImmutableMap: com.google.common.collect.ImmutableSet keySet()>();
+< v9 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,java.lang.Object,com.google.common.collect.ImmutableSet)>(v6, v1, v8) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001 \u0001 not in \u0001");
+< specialinvoke v5.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(v9);
+---
+> v7 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v1);
+> v8 = v0.<com.google.common.collect.ArrayTable$ArrayMap: com.google.common.collect.ImmutableMap keyIndex>;
+> v9 = virtualinvoke v8.<com.google.common.collect.ImmutableMap: com.google.common.collect.ImmutableSet keySet()>();
+> v10 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v9);
+> v11 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v6);
+> v12 = virtualinvoke v11.<java.lang.String: int length()>();
+> v13 = 9 + v12;
+> v14 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v7);
+> v15 = virtualinvoke v14.<java.lang.String: int length()>();
+> v16 = v13 + v15;
+> v17 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v10);
+> v18 = virtualinvoke v17.<java.lang.String: int length()>();
+> v19 = v16 + v18;
+> specialinvoke v23.<java.lang.StringBuilder: void <init>(int)>(v19);
+> v20 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,java.lang.String,java.lang.String)>(v6, v7, v10) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001 \u0001 not in \u0001");
+> specialinvoke v5.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(v20);
+151,153c164,166
+< v10 = virtualinvoke v4.<java.lang.Integer: int intValue()>();
+< v11 = virtualinvoke v0.<com.google.common.collect.ArrayTable$ArrayMap: java.lang.Object setValue(int,java.lang.Object)>(v10, v2);
+< return v11;
+---
+> v21 = virtualinvoke v4.<java.lang.Integer: int intValue()>();
+> v22 = virtualinvoke v0.<com.google.common.collect.ArrayTable$ArrayMap: java.lang.Object setValue(int,java.lang.Object)>(v21, v2);
+> return v22;

@@ -1,0 +1,20 @@
+19c19,21
+< java.lang.String v2, v5;
+---
+> int v10, v11, v7, v8;
+> java.lang.StringBuilder v13;
+> java.lang.String v12, v2, v5, v6, v9;
+25,26c27,36
+< v5 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,com.google.common.util.concurrent.Service$State)>(v2, v4) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001 \u0001");
+< return v5;
+---
+> v5 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v4);
+> v6 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v2);
+> v7 = virtualinvoke v6.<java.lang.String: int length()>();
+> v8 = 1 + v7;
+> v9 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v5);
+> v10 = virtualinvoke v9.<java.lang.String: int length()>();
+> v11 = v8 + v10;
+> specialinvoke v13.<java.lang.StringBuilder: void <init>(int)>(v11);
+> v12 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,java.lang.String)>(v2, v5) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001 \u0001");
+> return v12;

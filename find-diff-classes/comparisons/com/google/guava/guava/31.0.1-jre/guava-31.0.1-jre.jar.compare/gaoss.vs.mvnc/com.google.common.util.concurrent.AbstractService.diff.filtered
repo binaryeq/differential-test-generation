@@ -1,0 +1,401 @@
+85,86d84
+< com.google.common.util.concurrent.AbstractService$StateSnapshot v4;
+< com.google.common.util.concurrent.Monitor$Guard v2;
+89,90c87,88
+< com.google.common.util.concurrent.Monitor v1, v10, v6, v8;
+< java.lang.String v12;
+---
+> int v14, v15;
+> java.lang.String v12, v13, v16;
+91a90,93
+> com.google.common.util.concurrent.AbstractService$StateSnapshot v4;
+> com.google.common.util.concurrent.Monitor$Guard v2;
+> com.google.common.util.concurrent.Monitor v1, v10, v6, v8;
+> java.lang.StringBuilder v17;
+125,126c127,133
+< v12 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (com.google.common.util.concurrent.AbstractService)>(v0) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Service \u0001 has already been started");
+< specialinvoke v11.<java.lang.IllegalStateException: void <init>(java.lang.String)>(v12);
+---
+> v12 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v0);
+> v13 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v12);
+> v14 = virtualinvoke v13.<java.lang.String: int length()>();
+> v15 = 33 + v14;
+> specialinvoke v17.<java.lang.StringBuilder: void <init>(int)>(v15);
+> v16 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v12) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Service \u0001 has already been started");
+> specialinvoke v11.<java.lang.IllegalStateException: void <init>(java.lang.String)>(v16);
+135c142
+< java.lang.Throwable v20, v22;
+---
+> java.lang.Throwable v24, v26;
+140,141c147,148
+< int v6, v7;
+< java.lang.String v18;
+---
+> int v20, v21, v6, v7;
+> java.lang.String v18, v19, v22;
+145c152,153
+< com.google.common.util.concurrent.Monitor v1, v19, v21, v23;
+---
+> com.google.common.util.concurrent.Monitor v1, v23, v25, v27;
+> java.lang.StringBuilder v28;
+194,195c202,208
+< v18 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (com.google.common.util.concurrent.Service$State)>(v4) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("isStoppable is incorrectly implemented, saw: \u0001");
+< specialinvoke v17.<java.lang.AssertionError: void <init>(java.lang.Object)>(v18);
+---
+> v18 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v4);
+> v19 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v18);
+> v20 = virtualinvoke v19.<java.lang.String: int length()>();
+> v21 = 45 + v20;
+> specialinvoke v28.<java.lang.StringBuilder: void <init>(int)>(v21);
+> v22 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v18) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("isStoppable is incorrectly implemented, saw: \u0001");
+> specialinvoke v17.<java.lang.AssertionError: void <init>(java.lang.Object)>(v22);
+198,199c211,212
+< v19 = v0.<com.google.common.util.concurrent.AbstractService: com.google.common.util.concurrent.Monitor monitor>;
+< virtualinvoke v19.<com.google.common.util.concurrent.Monitor: void leave()>();
+---
+> v23 = v0.<com.google.common.util.concurrent.AbstractService: com.google.common.util.concurrent.Monitor monitor>;
+> virtualinvoke v23.<com.google.common.util.concurrent.Monitor: void leave()>();
+203,204c216,217
+< v20 := @caughtexception;
+< virtualinvoke v0.<com.google.common.util.concurrent.AbstractService: void notifyFailed(java.lang.Throwable)>(v20);
+---
+> v24 := @caughtexception;
+> virtualinvoke v0.<com.google.common.util.concurrent.AbstractService: void notifyFailed(java.lang.Throwable)>(v24);
+206,207c219,220
+< v21 = v0.<com.google.common.util.concurrent.AbstractService: com.google.common.util.concurrent.Monitor monitor>;
+< virtualinvoke v21.<com.google.common.util.concurrent.Monitor: void leave()>();
+---
+> v25 = v0.<com.google.common.util.concurrent.AbstractService: com.google.common.util.concurrent.Monitor monitor>;
+> virtualinvoke v25.<com.google.common.util.concurrent.Monitor: void leave()>();
+211,213c224,226
+< v22 := @caughtexception;
+< v23 = v0.<com.google.common.util.concurrent.AbstractService: com.google.common.util.concurrent.Monitor monitor>;
+< virtualinvoke v23.<com.google.common.util.concurrent.Monitor: void leave()>();
+---
+> v26 := @caughtexception;
+> v27 = v0.<com.google.common.util.concurrent.AbstractService: com.google.common.util.concurrent.Monitor monitor>;
+> virtualinvoke v27.<com.google.common.util.concurrent.Monitor: void leave()>();
+215c228
+< throw v22;
+---
+> throw v26;
+262,263d274
+< java.util.concurrent.TimeUnit v2;
+< com.google.common.util.concurrent.Monitor$Guard v4;
+266,267c277,278
+< com.google.common.util.concurrent.Monitor v3, v7, v9;
+< java.lang.String v11;
+---
+> int v13, v14;
+> java.lang.String v11, v12, v15;
+268a280,283
+> java.util.concurrent.TimeUnit v2;
+> com.google.common.util.concurrent.Monitor$Guard v4;
+> com.google.common.util.concurrent.Monitor v3, v7, v9;
+> java.lang.StringBuilder v16;
+290,291c305,311
+< v11 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (com.google.common.util.concurrent.AbstractService)>(v0) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Timed out waiting for \u0001 to reach the RUNNING state.");
+< specialinvoke v10.<java.util.concurrent.TimeoutException: void <init>(java.lang.String)>(v11);
+---
+> v11 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v0);
+> v12 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v11);
+> v13 = virtualinvoke v12.<java.lang.String: int length()>();
+> v14 = 50 + v13;
+> specialinvoke v16.<java.lang.StringBuilder: void <init>(int)>(v14);
+> v15 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v11) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Timed out waiting for \u0001 to reach the RUNNING state.");
+> specialinvoke v10.<java.util.concurrent.TimeoutException: void <init>(java.lang.String)>(v15);
+337a358,362
+> com.google.common.util.concurrent.Service$State v12, v6;
+> com.google.common.util.concurrent.AbstractService v0;
+> int v15, v16, v18, v19;
+> java.lang.String v11, v13, v14, v17, v20;
+> boolean v5;
+340,341d364
+< com.google.common.util.concurrent.Service$State v11, v6;
+< com.google.common.util.concurrent.AbstractService v0;
+343,344c366
+< java.lang.String v12;
+< boolean v5;
+---
+> java.lang.StringBuilder v21;
+366,368c388,399
+< v11 = virtualinvoke v0.<com.google.common.util.concurrent.AbstractService: com.google.common.util.concurrent.Service$State state()>();
+< v12 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (com.google.common.util.concurrent.AbstractService,com.google.common.util.concurrent.Service$State)>(v0, v11) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Timed out waiting for \u0001 to reach a terminal state. Current state: \u0001");
+< specialinvoke v10.<java.util.concurrent.TimeoutException: void <init>(java.lang.String)>(v12);
+---
+> v11 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v0);
+> v12 = virtualinvoke v0.<com.google.common.util.concurrent.AbstractService: com.google.common.util.concurrent.Service$State state()>();
+> v13 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v12);
+> v14 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v11);
+> v15 = virtualinvoke v14.<java.lang.String: int length()>();
+> v16 = 65 + v15;
+> v17 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v13);
+> v18 = virtualinvoke v17.<java.lang.String: int length()>();
+> v19 = v16 + v18;
+> specialinvoke v21.<java.lang.StringBuilder: void <init>(int)>(v19);
+> v20 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,java.lang.String)>(v11, v13) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Timed out waiting for \u0001 to reach a terminal state. Current state: \u0001");
+> specialinvoke v10.<java.util.concurrent.TimeoutException: void <init>(java.lang.String)>(v20);
+376,377c407,408
+< java.lang.Throwable v6;
+< java.lang.IllegalStateException v4, v7;
+---
+> java.lang.Throwable v14;
+> java.lang.IllegalStateException v15, v4;
+380c411,413
+< java.lang.String v5, v8;
+---
+> int v11, v12, v20, v21, v23, v24, v26, v27, v8, v9;
+> java.lang.String v10, v13, v16, v17, v18, v19, v22, v25, v28, v5, v6, v7;
+> java.lang.StringBuilder v29, v30;
+388,390c421,432
+< v5 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (com.google.common.util.concurrent.AbstractService,com.google.common.util.concurrent.Service$State)>(v0, v1) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Expected the service \u0001 to be \u0001, but the service has FAILED");
+< v6 = virtualinvoke v0.<com.google.common.util.concurrent.AbstractService: java.lang.Throwable failureCause()>();
+< specialinvoke v4.<java.lang.IllegalStateException: void <init>(java.lang.String,java.lang.Throwable)>(v5, v6);
+---
+> v5 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v0);
+> v6 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v1);
+> v7 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v5);
+> v8 = virtualinvoke v7.<java.lang.String: int length()>();
+> v9 = 56 + v8;
+> v10 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v6);
+> v11 = virtualinvoke v10.<java.lang.String: int length()>();
+> v12 = v9 + v11;
+> specialinvoke v30.<java.lang.StringBuilder: void <init>(int)>(v12);
+> v13 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,java.lang.String)>(v5, v6) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Expected the service \u0001 to be \u0001, but the service has FAILED");
+> v14 = virtualinvoke v0.<com.google.common.util.concurrent.AbstractService: java.lang.Throwable failureCause()>();
+> specialinvoke v4.<java.lang.IllegalStateException: void <init>(java.lang.String,java.lang.Throwable)>(v13, v14);
+393,396c435,451
+< v7 = new java.lang.IllegalStateException;
+< v8 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (com.google.common.util.concurrent.AbstractService,com.google.common.util.concurrent.Service$State,com.google.common.util.concurrent.Service$State)>(v0, v1, v2) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Expected the service \u0001 to be \u0001, but was \u0001");
+< specialinvoke v7.<java.lang.IllegalStateException: void <init>(java.lang.String)>(v8);
+< throw v7;
+---
+> v15 = new java.lang.IllegalStateException;
+> v16 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v0);
+> v17 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v1);
+> v18 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v2);
+> v19 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v16);
+> v20 = virtualinvoke v19.<java.lang.String: int length()>();
+> v21 = 38 + v20;
+> v22 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v17);
+> v23 = virtualinvoke v22.<java.lang.String: int length()>();
+> v24 = v21 + v23;
+> v25 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v18);
+> v26 = virtualinvoke v25.<java.lang.String: int length()>();
+> v27 = v24 + v26;
+> specialinvoke v29.<java.lang.StringBuilder: void <init>(int)>(v27);
+> v28 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,java.lang.String,java.lang.String)>(v16, v17, v18) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Expected the service \u0001 to be \u0001, but was \u0001");
+> specialinvoke v15.<java.lang.IllegalStateException: void <init>(java.lang.String)>(v28);
+> throw v15;
+402c457
+< java.lang.Throwable v16;
+---
+> java.lang.Throwable v20;
+404c459
+< com.google.common.util.concurrent.Service$State v12, v14, v3, v4, v7;
+---
+> com.google.common.util.concurrent.Service$State v16, v18, v3, v4, v7;
+406,409c461,466
+< java.lang.String v8;
+< boolean v10;
+< com.google.common.util.concurrent.AbstractService$StateSnapshot v11, v13, v2, v6, v9;
+< com.google.common.util.concurrent.Monitor v1, v15, v17;
+---
+> int v10, v11;
+> java.lang.String v12, v8, v9;
+> boolean v14;
+> com.google.common.util.concurrent.AbstractService$StateSnapshot v13, v15, v17, v2, v6;
+> com.google.common.util.concurrent.Monitor v1, v19, v21;
+> java.lang.StringBuilder v22;
+421,422c478,484
+< v8 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (com.google.common.util.concurrent.Service$State)>(v7) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Cannot notifyStarted() when the service is \u0001");
+< specialinvoke v5.<java.lang.IllegalStateException: void <init>(java.lang.String)>(v8);
+---
+> v8 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v7);
+> v9 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v8);
+> v10 = virtualinvoke v9.<java.lang.String: int length()>();
+> v11 = 43 + v10;
+> specialinvoke v22.<java.lang.StringBuilder: void <init>(int)>(v11);
+> v12 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v8) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Cannot notifyStarted() when the service is \u0001");
+> specialinvoke v5.<java.lang.IllegalStateException: void <init>(java.lang.String)>(v12);
+426,432c488,494
+< v9 = v0.<com.google.common.util.concurrent.AbstractService: com.google.common.util.concurrent.AbstractService$StateSnapshot snapshot>;
+< v10 = v9.<com.google.common.util.concurrent.AbstractService$StateSnapshot: boolean shutdownWhenStartupFinishes>;
+< if v10 == 0 goto label3;
+< v11 = new com.google.common.util.concurrent.AbstractService$StateSnapshot;
+< v12 = <com.google.common.util.concurrent.Service$State: com.google.common.util.concurrent.Service$State STOPPING>;
+< specialinvoke v11.<com.google.common.util.concurrent.AbstractService$StateSnapshot: void <init>(com.google.common.util.concurrent.Service$State)>(v12);
+< v0.<com.google.common.util.concurrent.AbstractService: com.google.common.util.concurrent.AbstractService$StateSnapshot snapshot> = v11;
+---
+> v13 = v0.<com.google.common.util.concurrent.AbstractService: com.google.common.util.concurrent.AbstractService$StateSnapshot snapshot>;
+> v14 = v13.<com.google.common.util.concurrent.AbstractService$StateSnapshot: boolean shutdownWhenStartupFinishes>;
+> if v14 == 0 goto label3;
+> v15 = new com.google.common.util.concurrent.AbstractService$StateSnapshot;
+> v16 = <com.google.common.util.concurrent.Service$State: com.google.common.util.concurrent.Service$State STOPPING>;
+> specialinvoke v15.<com.google.common.util.concurrent.AbstractService$StateSnapshot: void <init>(com.google.common.util.concurrent.Service$State)>(v16);
+> v0.<com.google.common.util.concurrent.AbstractService: com.google.common.util.concurrent.AbstractService$StateSnapshot snapshot> = v15;
+436,439c498,501
+< v13 = new com.google.common.util.concurrent.AbstractService$StateSnapshot;
+< v14 = <com.google.common.util.concurrent.Service$State: com.google.common.util.concurrent.Service$State RUNNING>;
+< specialinvoke v13.<com.google.common.util.concurrent.AbstractService$StateSnapshot: void <init>(com.google.common.util.concurrent.Service$State)>(v14);
+< v0.<com.google.common.util.concurrent.AbstractService: com.google.common.util.concurrent.AbstractService$StateSnapshot snapshot> = v13;
+---
+> v17 = new com.google.common.util.concurrent.AbstractService$StateSnapshot;
+> v18 = <com.google.common.util.concurrent.Service$State: com.google.common.util.concurrent.Service$State RUNNING>;
+> specialinvoke v17.<com.google.common.util.concurrent.AbstractService$StateSnapshot: void <init>(com.google.common.util.concurrent.Service$State)>(v18);
+> v0.<com.google.common.util.concurrent.AbstractService: com.google.common.util.concurrent.AbstractService$StateSnapshot snapshot> = v17;
+442,443c504,505
+< v15 = v0.<com.google.common.util.concurrent.AbstractService: com.google.common.util.concurrent.Monitor monitor>;
+< virtualinvoke v15.<com.google.common.util.concurrent.Monitor: void leave()>();
+---
+> v19 = v0.<com.google.common.util.concurrent.AbstractService: com.google.common.util.concurrent.Monitor monitor>;
+> virtualinvoke v19.<com.google.common.util.concurrent.Monitor: void leave()>();
+447,449c509,511
+< v16 := @caughtexception;
+< v17 = v0.<com.google.common.util.concurrent.AbstractService: com.google.common.util.concurrent.Monitor monitor>;
+< virtualinvoke v17.<com.google.common.util.concurrent.Monitor: void leave()>();
+---
+> v20 := @caughtexception;
+> v21 = v0.<com.google.common.util.concurrent.AbstractService: com.google.common.util.concurrent.Monitor monitor>;
+> virtualinvoke v21.<com.google.common.util.concurrent.Monitor: void leave()>();
+451c513
+< throw v16;
+---
+> throw v20;
+458c520
+< java.lang.Throwable v11;
+---
+> java.lang.Throwable v15;
+460,461c522
+< com.google.common.util.concurrent.AbstractService$StateSnapshot v8;
+< com.google.common.util.concurrent.Service$State v2, v9;
+---
+> com.google.common.util.concurrent.Service$State v13, v2;
+464,466c525,529
+< int v4, v5;
+< com.google.common.util.concurrent.Monitor v1, v10, v12;
+< java.lang.String v7;
+---
+> int v10, v4, v5, v9;
+> java.lang.String v11, v7, v8;
+> com.google.common.util.concurrent.AbstractService$StateSnapshot v12;
+> com.google.common.util.concurrent.Monitor v1, v14, v16;
+> java.lang.StringBuilder v17;
+487,488c550,556
+< v7 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (com.google.common.util.concurrent.Service$State)>(v2) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Cannot notifyStopped() when the service is \u0001");
+< specialinvoke v6.<java.lang.IllegalStateException: void <init>(java.lang.String)>(v7);
+---
+> v7 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v2);
+> v8 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v7);
+> v9 = virtualinvoke v8.<java.lang.String: int length()>();
+> v10 = 43 + v9;
+> specialinvoke v17.<java.lang.StringBuilder: void <init>(int)>(v10);
+> v11 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v7) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Cannot notifyStopped() when the service is \u0001");
+> specialinvoke v6.<java.lang.IllegalStateException: void <init>(java.lang.String)>(v11);
+491,494c559,562
+< v8 = new com.google.common.util.concurrent.AbstractService$StateSnapshot;
+< v9 = <com.google.common.util.concurrent.Service$State: com.google.common.util.concurrent.Service$State TERMINATED>;
+< specialinvoke v8.<com.google.common.util.concurrent.AbstractService$StateSnapshot: void <init>(com.google.common.util.concurrent.Service$State)>(v9);
+< v0.<com.google.common.util.concurrent.AbstractService: com.google.common.util.concurrent.AbstractService$StateSnapshot snapshot> = v8;
+---
+> v12 = new com.google.common.util.concurrent.AbstractService$StateSnapshot;
+> v13 = <com.google.common.util.concurrent.Service$State: com.google.common.util.concurrent.Service$State TERMINATED>;
+> specialinvoke v12.<com.google.common.util.concurrent.AbstractService$StateSnapshot: void <init>(com.google.common.util.concurrent.Service$State)>(v13);
+> v0.<com.google.common.util.concurrent.AbstractService: com.google.common.util.concurrent.AbstractService$StateSnapshot snapshot> = v12;
+497,498c565,566
+< v10 = v0.<com.google.common.util.concurrent.AbstractService: com.google.common.util.concurrent.Monitor monitor>;
+< virtualinvoke v10.<com.google.common.util.concurrent.Monitor: void leave()>();
+---
+> v14 = v0.<com.google.common.util.concurrent.AbstractService: com.google.common.util.concurrent.Monitor monitor>;
+> virtualinvoke v14.<com.google.common.util.concurrent.Monitor: void leave()>();
+502,504c570,572
+< v11 := @caughtexception;
+< v12 = v0.<com.google.common.util.concurrent.AbstractService: com.google.common.util.concurrent.Monitor monitor>;
+< virtualinvoke v12.<com.google.common.util.concurrent.Monitor: void leave()>();
+---
+> v15 := @caughtexception;
+> v16 = v0.<com.google.common.util.concurrent.AbstractService: com.google.common.util.concurrent.Monitor monitor>;
+> virtualinvoke v16.<com.google.common.util.concurrent.Monitor: void leave()>();
+506c574
+< throw v11;
+---
+> throw v15;
+513c581
+< java.lang.Throwable v1, v12;
+---
+> java.lang.Throwable v1, v16;
+515,516c583
+< com.google.common.util.concurrent.AbstractService$StateSnapshot v9;
+< com.google.common.util.concurrent.Service$State v10, v3;
+---
+> com.google.common.util.concurrent.Service$State v14, v3;
+519,521c586,590
+< int v5, v6;
+< com.google.common.util.concurrent.Monitor v11, v13, v2;
+< java.lang.String v8;
+---
+> int v10, v11, v5, v6;
+> java.lang.String v12, v8, v9;
+> com.google.common.util.concurrent.AbstractService$StateSnapshot v13;
+> com.google.common.util.concurrent.Monitor v15, v17, v2;
+> java.lang.StringBuilder v18;
+544,545c613,619
+< v8 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (com.google.common.util.concurrent.Service$State)>(v3) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Failed while in state:\u0001");
+< specialinvoke v7.<java.lang.IllegalStateException: void <init>(java.lang.String,java.lang.Throwable)>(v8, v1);
+---
+> v8 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v3);
+> v9 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v8);
+> v10 = virtualinvoke v9.<java.lang.String: int length()>();
+> v11 = 22 + v10;
+> specialinvoke v18.<java.lang.StringBuilder: void <init>(int)>(v11);
+> v12 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v8) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Failed while in state:\u0001");
+> specialinvoke v7.<java.lang.IllegalStateException: void <init>(java.lang.String,java.lang.Throwable)>(v12, v1);
+548,551c622,625
+< v9 = new com.google.common.util.concurrent.AbstractService$StateSnapshot;
+< v10 = <com.google.common.util.concurrent.Service$State: com.google.common.util.concurrent.Service$State FAILED>;
+< specialinvoke v9.<com.google.common.util.concurrent.AbstractService$StateSnapshot: void <init>(com.google.common.util.concurrent.Service$State,boolean,java.lang.Throwable)>(v10, 0, v1);
+< v0.<com.google.common.util.concurrent.AbstractService: com.google.common.util.concurrent.AbstractService$StateSnapshot snapshot> = v9;
+---
+> v13 = new com.google.common.util.concurrent.AbstractService$StateSnapshot;
+> v14 = <com.google.common.util.concurrent.Service$State: com.google.common.util.concurrent.Service$State FAILED>;
+> specialinvoke v13.<com.google.common.util.concurrent.AbstractService$StateSnapshot: void <init>(com.google.common.util.concurrent.Service$State,boolean,java.lang.Throwable)>(v14, 0, v1);
+> v0.<com.google.common.util.concurrent.AbstractService: com.google.common.util.concurrent.AbstractService$StateSnapshot snapshot> = v13;
+554,555c628,629
+< v11 = v0.<com.google.common.util.concurrent.AbstractService: com.google.common.util.concurrent.Monitor monitor>;
+< virtualinvoke v11.<com.google.common.util.concurrent.Monitor: void leave()>();
+---
+> v15 = v0.<com.google.common.util.concurrent.AbstractService: com.google.common.util.concurrent.Monitor monitor>;
+> virtualinvoke v15.<com.google.common.util.concurrent.Monitor: void leave()>();
+559,561c633,635
+< v12 := @caughtexception;
+< v13 = v0.<com.google.common.util.concurrent.AbstractService: com.google.common.util.concurrent.Monitor monitor>;
+< virtualinvoke v13.<com.google.common.util.concurrent.Monitor: void leave()>();
+---
+> v16 := @caughtexception;
+> v17 = v0.<com.google.common.util.concurrent.AbstractService: com.google.common.util.concurrent.Monitor monitor>;
+> virtualinvoke v17.<com.google.common.util.concurrent.Monitor: void leave()>();
+563c637
+< throw v12;
+---
+> throw v16;
+620a695
+> int v10, v6, v7, v9;
+622c697,698
+< java.lang.String v2, v4;
+---
+> java.lang.StringBuilder v12;
+> java.lang.String v11, v2, v4, v5, v8;
+627,628c703,712
+< v4 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,com.google.common.util.concurrent.Service$State)>(v2, v3) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001 [\u0001]");
+< return v4;
+---
+> v4 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v3);
+> v5 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v2);
+> v6 = virtualinvoke v5.<java.lang.String: int length()>();
+> v7 = 3 + v6;
+> v8 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v4);
+> v9 = virtualinvoke v8.<java.lang.String: int length()>();
+> v10 = v7 + v9;
+> specialinvoke v12.<java.lang.StringBuilder: void <init>(int)>(v10);
+> v11 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,java.lang.String)>(v2, v4) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001 [\u0001]");
+> return v11;

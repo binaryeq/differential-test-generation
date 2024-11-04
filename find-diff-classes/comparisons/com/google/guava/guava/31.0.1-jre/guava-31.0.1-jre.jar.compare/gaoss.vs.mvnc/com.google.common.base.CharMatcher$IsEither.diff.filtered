@@ -1,0 +1,22 @@
+51d50
+< com.google.common.base.CharMatcher$IsEither v0;
+53c52,55
+< java.lang.String v2, v4, v5;
+---
+> com.google.common.base.CharMatcher$IsEither v0;
+> int v10, v6, v7, v9;
+> java.lang.StringBuilder v12;
+> java.lang.String v11, v2, v4, v5, v8;
+59,60c61,69
+< v5 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,java.lang.String)>(v2, v4) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("CharMatcher.anyOf(\"\u0001\u0001\")");
+< return v5;
+---
+> v5 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v2);
+> v6 = virtualinvoke v5.<java.lang.String: int length()>();
+> v7 = 21 + v6;
+> v8 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v4);
+> v9 = virtualinvoke v8.<java.lang.String: int length()>();
+> v10 = v7 + v9;
+> specialinvoke v12.<java.lang.StringBuilder: void <init>(int)>(v10);
+> v11 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,java.lang.String)>(v2, v4) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("CharMatcher.anyOf(\"\u0001\u0001\")");
+> return v11;

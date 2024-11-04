@@ -1,0 +1,25 @@
+254c254
+< java.lang.Throwable v22;
+---
+> java.lang.Throwable v21;
+260c260
+< com.sun.jna.Memory v17, v21, v7, v9;
+---
+> com.sun.jna.Memory v17, v7, v9;
+305,306d304
+< v21 = v9;
+< label5:
+308,313c306,311
+< return v21;
+< label6:
+< v22 := @caughtexception;
+< throw v22;
+< catch java.lang.Throwable from label1 to label2 with label6;
+< catch java.lang.Throwable from label3 to label5 with label6;
+---
+> return v9;
+> label5:
+> v21 := @caughtexception;
+> throw v21;
+> catch java.lang.Throwable from label1 to label2 with label5;
+> catch java.lang.Throwable from label3 to label4 with label5;

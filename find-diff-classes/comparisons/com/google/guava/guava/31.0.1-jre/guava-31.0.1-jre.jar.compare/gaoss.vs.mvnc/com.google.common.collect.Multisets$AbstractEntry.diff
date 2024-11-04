@@ -1,0 +1,14 @@
+55c55
+< int v3;
+---
+> int v3, v6, v7;
+58c58,59
+< java.lang.String v2, v4;
+---
+> java.lang.StringBuilder v8;
+> java.lang.String v2, v4, v5;
+66a68,71
+> v5 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v2);
+> v6 = virtualinvoke v5.<java.lang.String: int length()>();
+> v7 = 14 + v6;
+> specialinvoke v8.<java.lang.StringBuilder: void <init>(int)>(v7);

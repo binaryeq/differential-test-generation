@@ -1,0 +1,841 @@
+* EvoSuite 1.2.0
+* Going to generate test cases for class: com.google.common.collect.TreeRangeSet
+* Starting Client-0
+* Connecting to master process on port 17727
+* Analyzing classpath: 
+  - /home/wtwhite/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/guava/guava/31.0.1-jre/guava-31.0.1-jre.jar
+  - t/dependency/checker-qual-3.12.0.jar
+  - t/dependency/error_prone_annotations-2.7.1.jar
+  - t/dependency/failureaccess-1.0.1.jar
+  - t/dependency/j2objc-annotations-1.3.jar
+  - t/dependency/jsr305-3.0.2.jar
+  - t/dependency/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar
+* Finished analyzing classpath
+* Generating tests for class com.google.common.collect.TreeRangeSet
+* Test criteria:
+  - Line Coverage
+  - Branch Coverage
+  - Exception
+  - Mutation testing (weak)
+  - Method-Output Coverage
+  - Top-Level Method Coverage
+  - No-Exception Top-Level Method Coverage
+  - Context Branch Coverage
+[Progress:>                             0%] [Cov:>                                  0%]* Total number of test goals for DYNAMOSA: 1308
+* Using seed 1729698755172
+* Starting evolution
+* Initial Number of Goals in DynaMOSA = 417 / 1308
+[MASTER] 04:52:40.724 [logback-1] WARN  CastClassManager - Nothing is assignable after adding com.google.common.collect.Multisets.UnmodifiableMultiset<E> for wildcard ? extends E
+[MASTER] 04:52:40.878 [logback-1] WARN  TestCluster - Failed to check cache for java.lang.Iterable<com.google.common.collect.Range<com.google.common.collect.Cut<java.lang.Integer>>> : Invalid generic instance
+[MASTER] 04:52:43.966 [logback-1] WARN  TestCluster - Failed to check cache for java.lang.Iterable<com.google.common.collect.Range<com.google.common.collect.BoundType>> : Invalid generic instance
+[MASTER] 04:52:46.001 [logback-1] WARN  TestCluster - Failed to check cache for java.lang.Iterable<com.google.common.collect.Range<java.lang.Integer>> : Invalid generic instance
+[MASTER] 04:52:48.210 [logback-1] WARN  TestCluster - Failed to check cache for java.util.Collection<com.google.common.collect.BoundType> : Invalid generic instance
+[MASTER] 04:52:51.737 [logback-1] WARN  TestCluster - Failed to check cache for java.util.Collection<com.google.common.collect.Range<java.lang.Comparable<java.lang.Object>>> : Invalid generic instance
+[MASTER] 04:52:51.850 [logback-1] WARN  TestCluster - Failed to check cache for java.lang.Comparable<T> : Type points to itself
+[MASTER] 04:52:53.557 [logback-1] WARN  TestCluster - Failed to check cache for java.lang.Comparable<com.google.common.collect.BoundType> : Type points to itself
+[MASTER] 04:52:55.177 [logback-1] WARN  TestCluster - Failed to check cache for java.util.Collection<java.lang.Integer> : Invalid generic instance
+[MASTER] 04:52:56.948 [logback-1] WARN  TestCluster - Failed to check cache for java.lang.Iterable<com.google.common.collect.Range<java.util.Locale$FilteringMode>> : Invalid generic instance
+[MASTER] 04:52:58.453 [logback-1] WARN  TestCluster - Failed to check cache for java.lang.Iterable<com.google.common.collect.Range<java.lang.Integer>> : Type points to itself
+[MASTER] 04:53:00.562 [logback-1] WARN  TestCluster - Failed to check cache for java.lang.Iterable<java.util.Map<java.lang.Object, java.lang.Integer>.Entry<java.lang.Integer, java.util.Locale$FilteringMode>> : Invalid generic instance
+[MASTER] 04:53:05.085 [logback-1] WARN  TestCluster - Failed to check cache for com.google.common.collect.Cut<java.lang.Integer> : Type points to itself
+[MASTER] 04:53:12.019 [logback-1] WARN  TestCluster - Failed to check cache for java.util.Map<K, V>.Entry<K, V> : Type points to itself
+[MASTER] 04:53:13.581 [logback-1] WARN  TestCluster - Failed to check cache for java.lang.Iterable<java.util.Map<java.lang.Object, java.lang.Object>.Entry<java.lang.Object, java.lang.Object>> : Type points to itself
+[MASTER] 04:53:16.978 [logback-1] WARN  TestCluster - Failed to check cache for java.lang.Iterable<com.google.common.collect.Range<java.util.Locale$FilteringMode>> : Type points to itself
+[MASTER] 04:53:20.118 [logback-1] WARN  TestCluster - Failed to check cache for java.lang.Iterable<java.util.Map<java.lang.Integer, java.lang.Object>.Entry<java.util.Locale$FilteringMode, java.lang.Object>> : Invalid generic instance
+[MASTER] 04:53:25.027 [logback-1] WARN  TestCluster - Failed to check cache for java.lang.Iterable<java.util.Locale$FilteringMode> : Invalid generic instance
+[MASTER] 04:53:28.169 [logback-1] WARN  TestCluster - Failed to check cache for java.util.Collection<com.google.common.collect.Range<java.lang.Integer>> : Invalid generic instance
+[MASTER] 04:53:30.463 [logback-1] WARN  TestCluster - Failed to check cache for java.util.Collection<com.google.common.collect.Range<java.lang.Comparable<java.lang.Object>>> : Type points to itself
+[MASTER] 04:53:33.690 [logback-1] WARN  TestCluster - Failed to check cache for java.util.Collection<java.util.Locale$FilteringMode> : Invalid generic instance
+[MASTER] 04:53:37.662 [logback-1] WARN  TestCluster - Failed to check cache for java.lang.Iterable<java.util.Map<java.lang.Object, java.lang.Object>.Entry<java.util.Locale$FilteringMode, java.lang.Integer>> : Type points to itself
+[MASTER] 04:53:45.915 [logback-1] WARN  TestCluster - Failed to check cache for com.google.common.collect.ImmutableSortedSet<com.google.common.collect.Range<java.lang.Integer>> : Type points to itself
+[MASTER] 04:53:47.369 [logback-1] WARN  TestCluster - Failed to check cache for java.lang.Iterable<java.util.Map<java.lang.Object, java.lang.Object>.Entry<java.lang.Integer, java.lang.Integer>> : Type points to itself
+[MASTER] 04:53:50.079 [logback-1] WARN  TestCluster - Failed to check cache for java.lang.Iterable<java.util.Map<java.lang.Object, java.lang.Integer>.Entry<java.lang.Object, java.lang.Object>> : Type points to itself
+[MASTER] 04:53:52.106 [logback-1] WARN  TestCluster - Failed to check cache for java.util.Map<java.lang.Object, java.lang.Integer>.Entry<java.lang.Object, java.lang.Object> : Invalid generic instance
+[Progress:==============================100%] [Cov:>                                  0%][MASTER] 04:53:54.768 [logback-1] WARN  TestCluster - Failed to check cache for java.util.Comparator<T> : Type points to itself
+[MASTER] 04:53:54.788 [logback-1] WARN  ExecutionTrace - Popping method subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet; because we were looking for <init>(Lcom/google/common/collect/TreeRangeSet;Lcom/google/common/collect/Range;)V
+[MASTER] 04:53:54.788 [logback-1] WARN  ExecutionTrace - Current stack: [com.google.common.collect.TreeRangeSet:subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet;
+Branches:  33
+True Distances:  0.0
+False Distances:  1.0
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[Progress:==============================100%] [Cov:=====>                             17%]
+* Search finished after 76s and 0 generations, 44 statements, best individual has fitness: 1241.0
+[MASTER] 04:53:55.449 [logback-1] WARN  TimeController - Phase SEARCH lasted too long, 15 seconds more than allowed.
+[MASTER] 04:53:55.462 [logback-1] WARN  ExecutionTrace - Popping method subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet; because we were looking for <init>(Lcom/google/common/collect/TreeRangeSet;Lcom/google/common/collect/Range;)V
+[MASTER] 04:53:55.462 [logback-1] WARN  ExecutionTrace - Current stack: [com.google.common.collect.TreeRangeSet:subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet;
+Branches:  33
+True Distances:  0.0
+False Distances:  1.0
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+* Minimizing test suite
+[MASTER] 04:53:55.503 [logback-1] WARN  ExecutionTrace - Popping method subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet; because we were looking for <init>(Lcom/google/common/collect/TreeRangeSet;Lcom/google/common/collect/Range;)V
+[MASTER] 04:53:55.503 [logback-1] WARN  ExecutionTrace - Current stack: [com.google.common.collect.TreeRangeSet:subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet;
+Branches:  33
+True Distances:  0.0
+False Distances:  1.0
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 04:53:55.545 [logback-1] WARN  ExecutionTrace - Popping method subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet; because we were looking for <init>(Lcom/google/common/collect/TreeRangeSet;Lcom/google/common/collect/Range;)V
+[MASTER] 04:53:55.545 [logback-1] WARN  ExecutionTrace - Current stack: [com.google.common.collect.TreeRangeSet:subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet;
+Branches:  33
+True Distances:  0.0
+False Distances:  1.0
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 04:53:55.552 [logback-1] WARN  ExecutionTrace - Popping method subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet; because we were looking for <init>(Lcom/google/common/collect/TreeRangeSet;Lcom/google/common/collect/Range;)V
+[MASTER] 04:53:55.552 [logback-1] WARN  ExecutionTrace - Current stack: [com.google.common.collect.TreeRangeSet:subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet;
+Branches:  33
+True Distances:  0.0
+False Distances:  1.0
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 04:53:55.562 [logback-1] WARN  ExecutionTrace - Popping method subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet; because we were looking for <init>(Lcom/google/common/collect/TreeRangeSet;Lcom/google/common/collect/Range;)V
+[MASTER] 04:53:55.563 [logback-1] WARN  ExecutionTrace - Current stack: [com.google.common.collect.TreeRangeSet:subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet;
+Branches:  33
+True Distances:  0.0
+False Distances:  1.0
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 04:53:55.570 [logback-1] WARN  ExecutionTrace - Popping method subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet; because we were looking for <init>(Lcom/google/common/collect/TreeRangeSet;Lcom/google/common/collect/Range;)V
+[MASTER] 04:53:55.570 [logback-1] WARN  ExecutionTrace - Current stack: [com.google.common.collect.TreeRangeSet:subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet;
+Branches:  33
+True Distances:  0.0
+False Distances:  1.0
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 04:53:55.576 [logback-1] WARN  ExecutionTrace - Popping method subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet; because we were looking for <init>(Lcom/google/common/collect/TreeRangeSet;Lcom/google/common/collect/Range;)V
+[MASTER] 04:53:55.576 [logback-1] WARN  ExecutionTrace - Current stack: [com.google.common.collect.TreeRangeSet:subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet;
+Branches:  33
+True Distances:  0.0
+False Distances:  1.0
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 04:53:55.583 [logback-1] WARN  ExecutionTrace - Popping method subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet; because we were looking for <init>(Lcom/google/common/collect/TreeRangeSet;Lcom/google/common/collect/Range;)V
+[MASTER] 04:53:55.583 [logback-1] WARN  ExecutionTrace - Current stack: [com.google.common.collect.TreeRangeSet:subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet;
+Branches:  33
+True Distances:  0.0
+False Distances:  1.0
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 04:53:55.590 [logback-1] WARN  ExecutionTrace - Popping method subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet; because we were looking for <init>(Lcom/google/common/collect/TreeRangeSet;Lcom/google/common/collect/Range;)V
+[MASTER] 04:53:55.590 [logback-1] WARN  ExecutionTrace - Current stack: [com.google.common.collect.TreeRangeSet:subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet;
+Branches:  33
+True Distances:  0.0
+False Distances:  1.0
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 04:53:55.595 [logback-1] WARN  ExecutionTrace - Popping method subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet; because we were looking for <init>(Lcom/google/common/collect/TreeRangeSet;Lcom/google/common/collect/Range;)V
+[MASTER] 04:53:55.595 [logback-1] WARN  ExecutionTrace - Current stack: [com.google.common.collect.TreeRangeSet:subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet;
+Branches:  33
+True Distances:  0.0
+False Distances:  1.0
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 04:53:55.602 [logback-1] WARN  ExecutionTrace - Popping method subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet; because we were looking for <init>(Lcom/google/common/collect/TreeRangeSet;Lcom/google/common/collect/Range;)V
+[MASTER] 04:53:55.602 [logback-1] WARN  ExecutionTrace - Current stack: [com.google.common.collect.TreeRangeSet:subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet;
+Branches:  33
+True Distances:  0.0
+False Distances:  1.0
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 04:53:55.632 [logback-1] WARN  ExecutionTrace - Popping method subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet; because we were looking for <init>(Lcom/google/common/collect/TreeRangeSet;Lcom/google/common/collect/Range;)V
+[MASTER] 04:53:55.632 [logback-1] WARN  ExecutionTrace - Current stack: [com.google.common.collect.TreeRangeSet:subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet;
+Branches:  33
+True Distances:  0.0
+False Distances:  1.0
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 04:53:55.637 [logback-1] WARN  ExecutionTrace - Popping method subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet; because we were looking for <init>(Lcom/google/common/collect/TreeRangeSet;Lcom/google/common/collect/Range;)V
+[MASTER] 04:53:55.637 [logback-1] WARN  ExecutionTrace - Current stack: [com.google.common.collect.TreeRangeSet:subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet;
+Branches:  33
+True Distances:  0.0
+False Distances:  1.0
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 04:53:55.642 [logback-1] WARN  ExecutionTrace - Popping method subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet; because we were looking for <init>(Lcom/google/common/collect/TreeRangeSet;Lcom/google/common/collect/Range;)V
+[MASTER] 04:53:55.643 [logback-1] WARN  ExecutionTrace - Current stack: [com.google.common.collect.TreeRangeSet:subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet;
+Branches:  33
+True Distances:  0.0
+False Distances:  1.0
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 04:53:55.648 [logback-1] WARN  ExecutionTrace - Popping method subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet; because we were looking for <init>(Lcom/google/common/collect/TreeRangeSet;Lcom/google/common/collect/Range;)V
+[MASTER] 04:53:55.648 [logback-1] WARN  ExecutionTrace - Current stack: [com.google.common.collect.TreeRangeSet:subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet;
+Branches:  33
+True Distances:  0.0
+False Distances:  1.0
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 04:53:55.652 [logback-1] WARN  ExecutionTrace - Popping method subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet; because we were looking for <init>(Lcom/google/common/collect/TreeRangeSet;Lcom/google/common/collect/Range;)V
+[MASTER] 04:53:55.652 [logback-1] WARN  ExecutionTrace - Current stack: [com.google.common.collect.TreeRangeSet:subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet;
+Branches:  33
+True Distances:  0.0
+False Distances:  1.0
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 04:53:55.657 [logback-1] WARN  ExecutionTrace - Popping method subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet; because we were looking for <init>(Lcom/google/common/collect/TreeRangeSet;Lcom/google/common/collect/Range;)V
+[MASTER] 04:53:55.657 [logback-1] WARN  ExecutionTrace - Current stack: [com.google.common.collect.TreeRangeSet:subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet;
+Branches:  33
+True Distances:  0.0
+False Distances:  1.0
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 04:53:55.663 [logback-1] WARN  ExecutionTrace - Popping method subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet; because we were looking for <init>(Lcom/google/common/collect/TreeRangeSet;Lcom/google/common/collect/Range;)V
+[MASTER] 04:53:55.663 [logback-1] WARN  ExecutionTrace - Current stack: [com.google.common.collect.TreeRangeSet:subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet;
+Branches:  33
+True Distances:  0.0
+False Distances:  1.0
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 04:53:55.667 [logback-1] WARN  ExecutionTrace - Popping method subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet; because we were looking for <init>(Lcom/google/common/collect/TreeRangeSet;Lcom/google/common/collect/Range;)V
+[MASTER] 04:53:55.667 [logback-1] WARN  ExecutionTrace - Current stack: [com.google.common.collect.TreeRangeSet:subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet;
+Branches:  33
+True Distances:  0.0
+False Distances:  1.0
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 04:53:55.704 [logback-1] WARN  ExecutionTrace - Popping method subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet; because we were looking for <init>(Lcom/google/common/collect/TreeRangeSet;Lcom/google/common/collect/Range;)V
+[MASTER] 04:53:55.705 [logback-1] WARN  ExecutionTrace - Current stack: [com.google.common.collect.TreeRangeSet:subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet;
+Branches:  33
+True Distances:  0.0
+False Distances:  1.0
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 04:53:55.710 [logback-1] WARN  ExecutionTrace - Popping method subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet; because we were looking for <init>(Lcom/google/common/collect/TreeRangeSet;Lcom/google/common/collect/Range;)V
+[MASTER] 04:53:55.710 [logback-1] WARN  ExecutionTrace - Current stack: [com.google.common.collect.TreeRangeSet:subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet;
+Branches:  33
+True Distances:  0.0
+False Distances:  1.0
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 04:53:55.713 [logback-1] WARN  ExecutionTrace - Popping method subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet; because we were looking for <init>(Lcom/google/common/collect/TreeRangeSet;Lcom/google/common/collect/Range;)V
+[MASTER] 04:53:55.713 [logback-1] WARN  ExecutionTrace - Current stack: [com.google.common.collect.TreeRangeSet:subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet;
+Branches:  33
+True Distances:  0.0
+False Distances:  1.0
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 04:53:55.717 [logback-1] WARN  ExecutionTrace - Popping method subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet; because we were looking for <init>(Lcom/google/common/collect/TreeRangeSet;Lcom/google/common/collect/Range;)V
+[MASTER] 04:53:55.717 [logback-1] WARN  ExecutionTrace - Current stack: [com.google.common.collect.TreeRangeSet:subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet;
+Branches:  33
+True Distances:  0.0
+False Distances:  1.0
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 04:53:55.721 [logback-1] WARN  ExecutionTrace - Popping method subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet; because we were looking for <init>(Lcom/google/common/collect/TreeRangeSet;Lcom/google/common/collect/Range;)V
+[MASTER] 04:53:55.721 [logback-1] WARN  ExecutionTrace - Current stack: [com.google.common.collect.TreeRangeSet:subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet;
+Branches:  33
+True Distances:  0.0
+False Distances:  1.0
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 04:53:55.725 [logback-1] WARN  ExecutionTrace - Popping method subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet; because we were looking for <init>(Lcom/google/common/collect/TreeRangeSet;Lcom/google/common/collect/Range;)V
+[MASTER] 04:53:55.726 [logback-1] WARN  ExecutionTrace - Current stack: [com.google.common.collect.TreeRangeSet:subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet;
+Branches:  33
+True Distances:  0.0
+False Distances:  1.0
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 04:53:55.825 [logback-1] WARN  ExecutionTrace - Popping method subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet; because we were looking for <init>(Lcom/google/common/collect/TreeRangeSet;Lcom/google/common/collect/Range;)V
+[MASTER] 04:53:55.825 [logback-1] WARN  ExecutionTrace - Current stack: [com.google.common.collect.TreeRangeSet:subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet;
+Branches:  33
+True Distances:  0.0
+False Distances:  1.0
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 04:53:55.828 [logback-1] WARN  ExecutionTrace - Popping method subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet; because we were looking for <init>(Lcom/google/common/collect/TreeRangeSet;Lcom/google/common/collect/Range;)V
+[MASTER] 04:53:55.828 [logback-1] WARN  ExecutionTrace - Current stack: [com.google.common.collect.TreeRangeSet:subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet;
+Branches:  33
+True Distances:  0.0
+False Distances:  1.0
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 04:53:55.830 [logback-1] WARN  ExecutionTrace - Popping method subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet; because we were looking for <init>(Lcom/google/common/collect/TreeRangeSet;Lcom/google/common/collect/Range;)V
+[MASTER] 04:53:55.830 [logback-1] WARN  ExecutionTrace - Current stack: [com.google.common.collect.TreeRangeSet:subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet;
+Branches:  33
+True Distances:  0.0
+False Distances:  1.0
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 04:53:55.833 [logback-1] WARN  ExecutionTrace - Popping method subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet; because we were looking for <init>(Lcom/google/common/collect/TreeRangeSet;Lcom/google/common/collect/Range;)V
+[MASTER] 04:53:55.833 [logback-1] WARN  ExecutionTrace - Current stack: [com.google.common.collect.TreeRangeSet:subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet;
+Branches:  33
+True Distances:  0.0
+False Distances:  1.0
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 04:53:55.835 [logback-1] WARN  ExecutionTrace - Popping method subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet; because we were looking for <init>(Lcom/google/common/collect/TreeRangeSet;Lcom/google/common/collect/Range;)V
+[MASTER] 04:53:55.835 [logback-1] WARN  ExecutionTrace - Current stack: [com.google.common.collect.TreeRangeSet:subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet;
+Branches:  33
+True Distances:  0.0
+False Distances:  1.0
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 04:53:55.837 [logback-1] WARN  ExecutionTrace - Popping method subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet; because we were looking for <init>(Lcom/google/common/collect/TreeRangeSet;Lcom/google/common/collect/Range;)V
+[MASTER] 04:53:55.837 [logback-1] WARN  ExecutionTrace - Current stack: [com.google.common.collect.TreeRangeSet:subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet;
+Branches:  33
+True Distances:  0.0
+False Distances:  1.0
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 04:53:55.840 [logback-1] WARN  ExecutionTrace - Popping method subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet; because we were looking for <init>(Lcom/google/common/collect/TreeRangeSet;Lcom/google/common/collect/Range;)V
+[MASTER] 04:53:55.840 [logback-1] WARN  ExecutionTrace - Current stack: [com.google.common.collect.TreeRangeSet:subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet;
+Branches:  33
+True Distances:  0.0
+False Distances:  1.0
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 04:53:55.842 [logback-1] WARN  ExecutionTrace - Popping method subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet; because we were looking for <init>(Lcom/google/common/collect/TreeRangeSet;Lcom/google/common/collect/Range;)V
+[MASTER] 04:53:55.842 [logback-1] WARN  ExecutionTrace - Current stack: [com.google.common.collect.TreeRangeSet:subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet;
+Branches:  33
+True Distances:  0.0
+False Distances:  1.0
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 04:53:55.845 [logback-1] WARN  ExecutionTrace - Popping method subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet; because we were looking for <init>(Lcom/google/common/collect/TreeRangeSet;Lcom/google/common/collect/Range;)V
+[MASTER] 04:53:55.845 [logback-1] WARN  ExecutionTrace - Current stack: [com.google.common.collect.TreeRangeSet:subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet;
+Branches:  33
+True Distances:  0.0
+False Distances:  1.0
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 04:53:55.847 [logback-1] WARN  ExecutionTrace - Popping method subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet; because we were looking for <init>(Lcom/google/common/collect/TreeRangeSet;Lcom/google/common/collect/Range;)V
+[MASTER] 04:53:55.847 [logback-1] WARN  ExecutionTrace - Current stack: [com.google.common.collect.TreeRangeSet:subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet;
+Branches:  33
+True Distances:  0.0
+False Distances:  1.0
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 04:53:55.849 [logback-1] WARN  ExecutionTrace - Popping method subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet; because we were looking for <init>(Lcom/google/common/collect/TreeRangeSet;Lcom/google/common/collect/Range;)V
+[MASTER] 04:53:55.849 [logback-1] WARN  ExecutionTrace - Current stack: [com.google.common.collect.TreeRangeSet:subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet;
+Branches:  33
+True Distances:  0.0
+False Distances:  1.0
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 04:53:55.852 [logback-1] WARN  ExecutionTrace - Popping method subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet; because we were looking for <init>(Lcom/google/common/collect/TreeRangeSet;Lcom/google/common/collect/Range;)V
+[MASTER] 04:53:55.852 [logback-1] WARN  ExecutionTrace - Current stack: [com.google.common.collect.TreeRangeSet:subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet;
+Branches:  33
+True Distances:  0.0
+False Distances:  1.0
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 04:53:55.855 [logback-1] WARN  ExecutionTrace - Popping method subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet; because we were looking for <init>(Lcom/google/common/collect/TreeRangeSet;Lcom/google/common/collect/Range;)V
+[MASTER] 04:53:55.855 [logback-1] WARN  ExecutionTrace - Current stack: [com.google.common.collect.TreeRangeSet:subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet;
+Branches:  33
+True Distances:  0.0
+False Distances:  1.0
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 04:53:55.858 [logback-1] WARN  ExecutionTrace - Popping method subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet; because we were looking for <init>(Lcom/google/common/collect/TreeRangeSet;Lcom/google/common/collect/Range;)V
+[MASTER] 04:53:55.858 [logback-1] WARN  ExecutionTrace - Current stack: [com.google.common.collect.TreeRangeSet:subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet;
+Branches:  33
+True Distances:  0.0
+False Distances:  1.0
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 04:53:55.860 [logback-1] WARN  ExecutionTrace - Popping method subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet; because we were looking for <init>(Lcom/google/common/collect/TreeRangeSet;Lcom/google/common/collect/Range;)V
+[MASTER] 04:53:55.860 [logback-1] WARN  ExecutionTrace - Current stack: [com.google.common.collect.TreeRangeSet:subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet;
+Branches:  33
+True Distances:  0.0
+False Distances:  1.0
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 04:53:55.964 [logback-1] WARN  ExecutionTrace - Popping method subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet; because we were looking for <init>(Lcom/google/common/collect/TreeRangeSet;Lcom/google/common/collect/Range;)V
+[MASTER] 04:53:55.965 [logback-1] WARN  ExecutionTrace - Current stack: [com.google.common.collect.TreeRangeSet:subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet;
+Branches:  33
+True Distances:  0.0
+False Distances:  1.0
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 04:53:55.968 [logback-1] WARN  ExecutionTrace - Popping method subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet; because we were looking for <init>(Lcom/google/common/collect/TreeRangeSet;Lcom/google/common/collect/Range;)V
+[MASTER] 04:53:55.968 [logback-1] WARN  ExecutionTrace - Current stack: [com.google.common.collect.TreeRangeSet:subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet;
+Branches:  33
+True Distances:  0.0
+False Distances:  1.0
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 04:53:55.970 [logback-1] WARN  ExecutionTrace - Popping method subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet; because we were looking for <init>(Lcom/google/common/collect/TreeRangeSet;Lcom/google/common/collect/Range;)V
+[MASTER] 04:53:55.971 [logback-1] WARN  ExecutionTrace - Current stack: [com.google.common.collect.TreeRangeSet:subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet;
+Branches:  33
+True Distances:  0.0
+False Distances:  1.0
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 04:53:55.974 [logback-1] WARN  ExecutionTrace - Popping method subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet; because we were looking for <init>(Lcom/google/common/collect/TreeRangeSet;Lcom/google/common/collect/Range;)V
+[MASTER] 04:53:55.974 [logback-1] WARN  ExecutionTrace - Current stack: [com.google.common.collect.TreeRangeSet:subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet;
+Branches:  33
+True Distances:  0.0
+False Distances:  1.0
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 04:53:55.977 [logback-1] WARN  ExecutionTrace - Popping method subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet; because we were looking for <init>(Lcom/google/common/collect/TreeRangeSet;Lcom/google/common/collect/Range;)V
+[MASTER] 04:53:55.978 [logback-1] WARN  ExecutionTrace - Current stack: [com.google.common.collect.TreeRangeSet:subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet;
+Branches:  33
+True Distances:  0.0
+False Distances:  1.0
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 04:53:55.981 [logback-1] WARN  ExecutionTrace - Popping method subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet; because we were looking for <init>(Lcom/google/common/collect/TreeRangeSet;Lcom/google/common/collect/Range;)V
+[MASTER] 04:53:55.981 [logback-1] WARN  ExecutionTrace - Current stack: [com.google.common.collect.TreeRangeSet:subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet;
+Branches:  33
+True Distances:  0.0
+False Distances:  1.0
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 04:53:55.984 [logback-1] WARN  ExecutionTrace - Popping method subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet; because we were looking for <init>(Lcom/google/common/collect/TreeRangeSet;Lcom/google/common/collect/Range;)V
+[MASTER] 04:53:55.984 [logback-1] WARN  ExecutionTrace - Current stack: [com.google.common.collect.TreeRangeSet:subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet;
+Branches:  33
+True Distances:  0.0
+False Distances:  1.0
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 04:53:55.986 [logback-1] WARN  ExecutionTrace - Popping method subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet; because we were looking for <init>(Lcom/google/common/collect/TreeRangeSet;Lcom/google/common/collect/Range;)V
+[MASTER] 04:53:55.987 [logback-1] WARN  ExecutionTrace - Current stack: [com.google.common.collect.TreeRangeSet:subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet;
+Branches:  33
+True Distances:  0.0
+False Distances:  1.0
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 04:53:56.023 [logback-1] WARN  ExecutionTrace - Popping method subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet; because we were looking for <init>(Lcom/google/common/collect/TreeRangeSet;Lcom/google/common/collect/Range;)V
+[MASTER] 04:53:56.023 [logback-1] WARN  ExecutionTrace - Current stack: [com.google.common.collect.TreeRangeSet:subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet;
+Branches:  33
+True Distances:  0.0
+False Distances:  1.0
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 04:53:56.027 [logback-1] WARN  ExecutionTrace - Popping method subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet; because we were looking for <init>(Lcom/google/common/collect/TreeRangeSet;Lcom/google/common/collect/Range;)V
+[MASTER] 04:53:56.027 [logback-1] WARN  ExecutionTrace - Current stack: [com.google.common.collect.TreeRangeSet:subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet;
+Branches:  33
+True Distances:  0.0
+False Distances:  1.0
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 04:53:56.031 [logback-1] WARN  ExecutionTrace - Popping method subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet; because we were looking for <init>(Lcom/google/common/collect/TreeRangeSet;Lcom/google/common/collect/Range;)V
+[MASTER] 04:53:56.031 [logback-1] WARN  ExecutionTrace - Current stack: [com.google.common.collect.TreeRangeSet:subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet;
+Branches:  33
+True Distances:  0.0
+False Distances:  1.0
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 04:53:56.034 [logback-1] WARN  ExecutionTrace - Popping method subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet; because we were looking for <init>(Lcom/google/common/collect/TreeRangeSet;Lcom/google/common/collect/Range;)V
+[MASTER] 04:53:56.034 [logback-1] WARN  ExecutionTrace - Current stack: [com.google.common.collect.TreeRangeSet:subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet;
+Branches:  33
+True Distances:  0.0
+False Distances:  1.0
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 04:53:56.038 [logback-1] WARN  ExecutionTrace - Popping method subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet; because we were looking for <init>(Lcom/google/common/collect/TreeRangeSet;Lcom/google/common/collect/Range;)V
+[MASTER] 04:53:56.038 [logback-1] WARN  ExecutionTrace - Current stack: [com.google.common.collect.TreeRangeSet:subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet;
+Branches:  33
+True Distances:  0.0
+False Distances:  1.0
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 04:53:56.042 [logback-1] WARN  ExecutionTrace - Popping method subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet; because we were looking for <init>(Lcom/google/common/collect/TreeRangeSet;Lcom/google/common/collect/Range;)V
+[MASTER] 04:53:56.042 [logback-1] WARN  ExecutionTrace - Current stack: [com.google.common.collect.TreeRangeSet:subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet;
+Branches:  33
+True Distances:  0.0
+False Distances:  1.0
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 04:53:56.045 [logback-1] WARN  ExecutionTrace - Popping method subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet; because we were looking for <init>(Lcom/google/common/collect/TreeRangeSet;Lcom/google/common/collect/Range;)V
+[MASTER] 04:53:56.046 [logback-1] WARN  ExecutionTrace - Current stack: [com.google.common.collect.TreeRangeSet:subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet;
+Branches:  33
+True Distances:  0.0
+False Distances:  1.0
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 04:53:56.048 [logback-1] WARN  ExecutionTrace - Popping method subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet; because we were looking for <init>(Lcom/google/common/collect/TreeRangeSet;Lcom/google/common/collect/Range;)V
+[MASTER] 04:53:56.049 [logback-1] WARN  ExecutionTrace - Current stack: [com.google.common.collect.TreeRangeSet:subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet;
+Branches:  33
+True Distances:  0.0
+False Distances:  1.0
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 04:53:56.381 [logback-1] WARN  ExecutionTrace - Popping method subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet; because we were looking for <init>(Lcom/google/common/collect/TreeRangeSet;Lcom/google/common/collect/Range;)V
+[MASTER] 04:53:56.381 [logback-1] WARN  ExecutionTrace - Current stack: [com.google.common.collect.TreeRangeSet:subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet;
+Branches:  33
+True Distances:  0.0
+False Distances:  1.0
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+* Going to analyze the coverage criteria
+* Coverage analysis for criterion LINE
+* Coverage of criterion LINE: 13%
+* Total number of goals: 382
+* Number of covered goals: 51
+* Coverage analysis for criterion BRANCH
+* Coverage of criterion BRANCH: 6%
+* Total number of goals: 256
+* Number of covered goals: 16
+* Coverage analysis for criterion EXCEPTION
+* Coverage of criterion EXCEPTION: 100%
+* Total number of goals: 1
+* Number of covered goals: 1
+* Coverage analysis for criterion WEAKMUTATION
+* Coverage of criterion WEAKMUTATION: 8%
+* Total number of goals: 266
+* Number of covered goals: 21
+* Coverage analysis for criterion OUTPUT
+* Coverage of criterion OUTPUT: 19%
+* Total number of goals: 36
+* Number of covered goals: 7
+* Coverage analysis for criterion METHOD
+* Coverage of criterion METHOD: 12%
+* Total number of goals: 56
+* Number of covered goals: 7
+* Coverage analysis for criterion METHODNOEXCEPTION
+* Coverage of criterion METHODNOEXCEPTION: 12%
+* Total number of goals: 56
+* Number of covered goals: 7
+* Coverage analysis for criterion CBRANCH
+* Coverage of criterion CBRANCH: 5%
+* Total number of goals: 256
+* Number of covered goals: 13
+* Generated 6 tests with total length 24
+* Resulting test suite's coverage: 17% (average coverage for all fitness functions)
+* Generating assertions
+[MASTER] 04:53:56.732 [logback-1] WARN  ExecutionTrace - Popping method subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet; because we were looking for <init>(Lcom/google/common/collect/TreeRangeSet;Lcom/google/common/collect/Range;)V
+[MASTER] 04:53:56.732 [logback-1] WARN  ExecutionTrace - Current stack: [com.google.common.collect.TreeRangeSet:subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet;
+Branches:  33
+True Distances:  0.0
+False Distances:  1.0
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 04:53:56.745 [logback-1] WARN  ExecutionTrace - Popping method subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet; because we were looking for <init>(Lcom/google/common/collect/TreeRangeSet;Lcom/google/common/collect/Range;)V
+[MASTER] 04:53:56.745 [logback-1] WARN  ExecutionTrace - Current stack: [com.google.common.collect.TreeRangeSet:subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet;
+Branches:  33
+True Distances:  0.0
+False Distances:  1.0
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 04:53:56.750 [logback-1] WARN  ExecutionTrace - Popping method subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet; because we were looking for <init>(Lcom/google/common/collect/TreeRangeSet;Lcom/google/common/collect/Range;)V
+[MASTER] 04:53:56.750 [logback-1] WARN  ExecutionTrace - Current stack: [com.google.common.collect.TreeRangeSet:subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet;
+Branches:  33
+True Distances:  0.0
+False Distances:  1.0
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 04:53:56.757 [logback-1] WARN  ExecutionTrace - Popping method subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet; because we were looking for <init>(Lcom/google/common/collect/TreeRangeSet;Lcom/google/common/collect/Range;)V
+[MASTER] 04:53:56.757 [logback-1] WARN  ExecutionTrace - Current stack: [com.google.common.collect.TreeRangeSet:subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet;
+Branches:  33
+True Distances:  0.0
+False Distances:  1.0
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 04:53:56.761 [logback-1] WARN  ExecutionTrace - Popping method subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet; because we were looking for <init>(Lcom/google/common/collect/TreeRangeSet;Lcom/google/common/collect/Range;)V
+[MASTER] 04:53:56.761 [logback-1] WARN  ExecutionTrace - Current stack: [com.google.common.collect.TreeRangeSet:subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet;
+Branches:  33
+True Distances:  0.0
+False Distances:  1.0
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 04:53:56.764 [logback-1] WARN  ExecutionTrace - Popping method subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet; because we were looking for <init>(Lcom/google/common/collect/TreeRangeSet;Lcom/google/common/collect/Range;)V
+[MASTER] 04:53:56.764 [logback-1] WARN  ExecutionTrace - Current stack: [com.google.common.collect.TreeRangeSet:subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet;
+Branches:  33
+True Distances:  0.0
+False Distances:  1.0
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 04:53:56.773 [logback-1] WARN  ExecutionTrace - Popping method subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet; because we were looking for <init>(Lcom/google/common/collect/TreeRangeSet;Lcom/google/common/collect/Range;)V
+[MASTER] 04:53:56.773 [logback-1] WARN  ExecutionTrace - Current stack: [com.google.common.collect.TreeRangeSet:subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet;
+Branches:  33
+True Distances:  0.0
+False Distances:  1.0
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 04:53:56.802 [logback-1] WARN  ExecutionTrace - Popping method subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet; because we were looking for <init>(Lcom/google/common/collect/TreeRangeSet;Lcom/google/common/collect/Range;)V
+[MASTER] 04:53:56.802 [logback-1] WARN  ExecutionTrace - Current stack: [com.google.common.collect.TreeRangeSet:subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet;
+Branches:  33
+True Distances:  0.0
+False Distances:  1.0
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 04:53:56.805 [logback-1] WARN  ExecutionTrace - Popping method subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet; because we were looking for <init>(Lcom/google/common/collect/TreeRangeSet;Lcom/google/common/collect/Range;)V
+[MASTER] 04:53:56.805 [logback-1] WARN  ExecutionTrace - Current stack: [com.google.common.collect.TreeRangeSet:subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet;
+Branches:  33
+True Distances:  0.0
+False Distances:  1.0
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 04:53:56.811 [logback-1] WARN  ExecutionTrace - Popping method subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet; because we were looking for <init>(Lcom/google/common/collect/TreeRangeSet;Lcom/google/common/collect/Range;)V
+[MASTER] 04:53:56.811 [logback-1] WARN  ExecutionTrace - Current stack: [com.google.common.collect.TreeRangeSet:subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet;
+Branches:  33
+True Distances:  0.0
+False Distances:  1.0
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 04:53:56.816 [logback-1] WARN  ExecutionTrace - Popping method subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet; because we were looking for <init>(Lcom/google/common/collect/TreeRangeSet;Lcom/google/common/collect/Range;)V
+[MASTER] 04:53:56.816 [logback-1] WARN  ExecutionTrace - Current stack: [com.google.common.collect.TreeRangeSet:subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet;
+Branches:  33
+True Distances:  0.0
+False Distances:  1.0
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+* Resulting test suite's mutation score: 5%
+* Compiling and checking tests
+[MASTER] 04:53:57.022 [logback-1] WARN  ExecutionTrace - Popping method subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet; because we were looking for <init>(Lcom/google/common/collect/TreeRangeSet;Lcom/google/common/collect/Range;)V
+[MASTER] 04:53:57.022 [logback-1] WARN  ExecutionTrace - Current stack: [com.google.common.collect.TreeRangeSet:subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet;
+Branches:  33
+True Distances:  0.0
+False Distances:  1.0
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 04:53:57.807 [logback-1] WARN  ExecutionTrace - Popping method subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet; because we were looking for <init>(Lcom/google/common/collect/TreeRangeSet;Lcom/google/common/collect/Range;)V
+[MASTER] 04:53:57.807 [logback-1] WARN  ExecutionTrace - Current stack: [com.google.common.collect.TreeRangeSet:subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet;
+Branches:  33
+True Distances:  0.0
+False Distances:  1.0
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 04:53:59.297 [logback-1] WARN  ExecutionTrace - Popping method subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet; because we were looking for <init>(Lcom/google/common/collect/TreeRangeSet;Lcom/google/common/collect/Range;)V
+[MASTER] 04:53:59.297 [logback-1] WARN  ExecutionTrace - Current stack: [com.google.common.collect.TreeRangeSet:subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet;
+Branches:  33
+True Distances:  0.0
+False Distances:  1.0
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 04:53:59.497 [logback-1] WARN  ExecutionTrace - Popping method subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet; because we were looking for <init>(Lcom/google/common/collect/TreeRangeSet;Lcom/google/common/collect/Range;)V
+[MASTER] 04:53:59.497 [logback-1] WARN  ExecutionTrace - Current stack: [com.google.common.collect.TreeRangeSet:subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet;
+Branches:  33
+True Distances:  0.0
+False Distances:  1.0
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+* Writing tests to file
+* Writing JUnit test case 'TreeRangeSet_ESTest' to evosuite-tests
+[MASTER] 04:53:59.778 [logback-1] WARN  ExecutionTrace - Popping method subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet; because we were looking for <init>(Lcom/google/common/collect/TreeRangeSet;Lcom/google/common/collect/Range;)V
+[MASTER] 04:53:59.778 [logback-1] WARN  ExecutionTrace - Current stack: [com.google.common.collect.TreeRangeSet:subRangeSet(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeSet;
+Branches:  33
+True Distances:  0.0
+False Distances:  1.0
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+* Done!
+
+* Computation finished

@@ -1,0 +1,20 @@
+14d13
+< java.io.Closeable v1;
+16d14
+< java.lang.String v6;
+18a17,20
+> java.io.Closeable v1;
+> int v8, v9;
+> java.lang.StringBuilder v11;
+> java.lang.String v10, v6, v7;
+25,26c27,33
+< v6 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.io.Closeable)>(v1) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Suppressing exception thrown when closing \u0001");
+< virtualinvoke v4.<java.util.logging.Logger: void log(java.util.logging.Level,java.lang.String,java.lang.Throwable)>(v5, v6, v3);
+---
+> v6 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v1);
+> v7 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v6);
+> v8 = virtualinvoke v7.<java.lang.String: int length()>();
+> v9 = 42 + v8;
+> specialinvoke v11.<java.lang.StringBuilder: void <init>(int)>(v9);
+> v10 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v6) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Suppressing exception thrown when closing \u0001");
+> virtualinvoke v4.<java.util.logging.Logger: void log(java.util.logging.Level,java.lang.String,java.lang.Throwable)>(v5, v10, v3);

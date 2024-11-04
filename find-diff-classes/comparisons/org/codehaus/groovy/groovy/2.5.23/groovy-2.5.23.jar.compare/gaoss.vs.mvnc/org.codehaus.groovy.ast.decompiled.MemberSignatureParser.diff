@@ -1,0 +1,68 @@
+20d19
+< org.objectweb.asm.signature.SignatureReader v27;
+22a22
+> groovyjarjarasm.asm.Type v23, v72, v9;
+24d23
+< org.objectweb.asm.Type v23, v72, v9;
+26d24
+< org.objectweb.asm.Type[] v4;
+28a27
+> groovyjarjarasm.asm.Type[] v4;
+33a33
+> groovyjarjarasm.asm.signature.SignatureReader v27;
+41c41
+< v4 = staticinvoke <org.objectweb.asm.Type: org.objectweb.asm.Type[] getArgumentTypes(java.lang.String)>(v3);
+---
+> v4 = staticinvoke <groovyjarjarasm.asm.Type: groovyjarjarasm.asm.Type[] getArgumentTypes(java.lang.String)>(v3);
+49c49
+< v10 = virtualinvoke v0.<org.codehaus.groovy.ast.decompiled.AsmReferenceResolver: org.codehaus.groovy.ast.ClassNode resolveType(org.objectweb.asm.Type)>(v9);
+---
+> v10 = virtualinvoke v0.<org.codehaus.groovy.ast.decompiled.AsmReferenceResolver: org.codehaus.groovy.ast.ClassNode resolveType(groovyjarjarasm.asm.Type)>(v9);
+72,73c72,73
+< v23 = staticinvoke <org.objectweb.asm.Type: org.objectweb.asm.Type getReturnType(java.lang.String)>(v22);
+< v24 = virtualinvoke v0.<org.codehaus.groovy.ast.decompiled.AsmReferenceResolver: org.codehaus.groovy.ast.ClassNode resolveType(org.objectweb.asm.Type)>(v23);
+---
+> v23 = staticinvoke <groovyjarjarasm.asm.Type: groovyjarjarasm.asm.Type getReturnType(java.lang.String)>(v22);
+> v24 = virtualinvoke v0.<org.codehaus.groovy.ast.decompiled.AsmReferenceResolver: org.codehaus.groovy.ast.ClassNode resolveType(groovyjarjarasm.asm.Type)>(v23);
+79c79
+< v27 = new org.objectweb.asm.signature.SignatureReader;
+---
+> v27 = new groovyjarjarasm.asm.signature.SignatureReader;
+81,82c81,82
+< specialinvoke v27.<org.objectweb.asm.signature.SignatureReader: void <init>(java.lang.String)>(v28);
+< virtualinvoke v27.<org.objectweb.asm.signature.SignatureReader: void accept(org.objectweb.asm.signature.SignatureVisitor)>(v26);
+---
+> specialinvoke v27.<groovyjarjarasm.asm.signature.SignatureReader: void <init>(java.lang.String)>(v28);
+> virtualinvoke v27.<groovyjarjarasm.asm.signature.SignatureReader: void accept(groovyjarjarasm.asm.signature.SignatureVisitor)>(v26);
+165,166c165,166
+< v72 = staticinvoke <org.objectweb.asm.Type: org.objectweb.asm.Type getType(java.lang.String)>(v71);
+< v69 = virtualinvoke v0.<org.codehaus.groovy.ast.decompiled.AsmReferenceResolver: org.codehaus.groovy.ast.ClassNode resolveType(org.objectweb.asm.Type)>(v72);
+---
+> v72 = staticinvoke <groovyjarjarasm.asm.Type: groovyjarjarasm.asm.Type getType(java.lang.String)>(v71);
+> v69 = virtualinvoke v0.<org.codehaus.groovy.ast.decompiled.AsmReferenceResolver: org.codehaus.groovy.ast.ClassNode resolveType(groovyjarjarasm.asm.Type)>(v72);
+214a215
+> groovyjarjarasm.asm.Type v5;
+216d216
+< org.objectweb.asm.Type v5;
+222d221
+< org.objectweb.asm.signature.SignatureReader v8;
+224a224
+> groovyjarjarasm.asm.signature.SignatureReader v8;
+233,234c233,234
+< v5 = staticinvoke <org.objectweb.asm.Type: org.objectweb.asm.Type getType(java.lang.String)>(v4);
+< v6 = virtualinvoke v1.<org.codehaus.groovy.ast.decompiled.AsmReferenceResolver: org.codehaus.groovy.ast.ClassNode resolveType(org.objectweb.asm.Type)>(v5);
+---
+> v5 = staticinvoke <groovyjarjarasm.asm.Type: groovyjarjarasm.asm.Type getType(java.lang.String)>(v4);
+> v6 = virtualinvoke v1.<org.codehaus.groovy.ast.decompiled.AsmReferenceResolver: org.codehaus.groovy.ast.ClassNode resolveType(groovyjarjarasm.asm.Type)>(v5);
+238c238
+< v8 = new org.objectweb.asm.signature.SignatureReader;
+---
+> v8 = new groovyjarjarasm.asm.signature.SignatureReader;
+240c240
+< specialinvoke v8.<org.objectweb.asm.signature.SignatureReader: void <init>(java.lang.String)>(v9);
+---
+> specialinvoke v8.<groovyjarjarasm.asm.signature.SignatureReader: void <init>(java.lang.String)>(v9);
+243c243
+< virtualinvoke v8.<org.objectweb.asm.signature.SignatureReader: void accept(org.objectweb.asm.signature.SignatureVisitor)>(v10);
+---
+> virtualinvoke v8.<groovyjarjarasm.asm.signature.SignatureReader: void accept(groovyjarjarasm.asm.signature.SignatureVisitor)>(v10);

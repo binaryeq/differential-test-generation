@@ -1,0 +1,27 @@
+95d94
+< java.lang.IllegalArgumentException v8;
+97,98c96,97
+< java.lang.Object v1, v2, v4, v5, v7;
+< java.lang.String v9;
+---
+> int v12, v13, v15, v16;
+> java.lang.String v10, v11, v14, v17, v9;
+99a99,101
+> java.lang.IllegalArgumentException v8;
+> java.lang.Object v1, v2, v4, v5, v7;
+> java.lang.StringBuilder v18;
+115,116c117,127
+< v9 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (com.google.common.graph.EndpointPair,java.lang.Object)>(v0, v1) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("EndpointPair \u0001 does not contain node \u0001");
+< specialinvoke v8.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(v9);
+---
+> v9 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v0);
+> v10 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v1);
+> v11 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v9);
+> v12 = virtualinvoke v11.<java.lang.String: int length()>();
+> v13 = 36 + v12;
+> v14 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v10);
+> v15 = virtualinvoke v14.<java.lang.String: int length()>();
+> v16 = v13 + v15;
+> specialinvoke v18.<java.lang.StringBuilder: void <init>(int)>(v16);
+> v17 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,java.lang.String)>(v9, v10) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("EndpointPair \u0001 does not contain node \u0001");
+> specialinvoke v8.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(v17);

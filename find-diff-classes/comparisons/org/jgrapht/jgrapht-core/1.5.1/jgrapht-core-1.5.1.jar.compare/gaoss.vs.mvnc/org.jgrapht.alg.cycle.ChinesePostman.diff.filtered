@@ -1,0 +1,198 @@
+168,171c168,171
+< java.lang.Integer v13, v29, v38, v47;
+< org.jgrapht.alg.matching.KuhnMunkresMinimalWeightBipartitePerfectMatching v61;
+< org.jgrapht.alg.interfaces.MatchingAlgorithm$Matching v62;
+< java.util.Set v5, v69;
+---
+> java.lang.Integer v13, v29;
+> org.jgrapht.alg.matching.KuhnMunkresMinimalWeightBipartitePerfectMatching v59;
+> org.jgrapht.alg.interfaces.MatchingAlgorithm$Matching v60;
+> java.util.Set v5, v67;
+173,174c173,174
+< org.jgrapht.graph.DirectedPseudograph v63;
+< java.util.function.Supplier v64, v65;
+---
+> org.jgrapht.graph.DirectedPseudograph v61;
+> java.util.function.Supplier v62, v63;
+178c178
+< org.jgrapht.alg.cycle.HierholzerEulerianCycle v82;
+---
+> org.jgrapht.alg.cycle.HierholzerEulerianCycle v80;
+180c180
+< boolean v17, v21, v31, v40, v49, v52, v67, v7, v71;
+---
+> boolean v17, v21, v31, v39, v47, v50, v65, v69, v7;
+183c183
+< java.util.HashMap v14, v68;
+---
+> java.util.HashMap v14, v66;
+185,191c185,191
+< int v10, v11, v12, v33, v35, v36, v37, v42, v44, v45, v46, v54, v56, v74, v76, v9;
+< org.jgrapht.GraphType v66;
+< double v60;
+< java.util.Iterator v16, v20, v30, v39, v48, v51, v6, v70;
+< org.jgrapht.GraphPath v24, v83, v84;
+< java.lang.Object v18, v22, v32, v34, v41, v43, v50, v53, v55, v57, v59, v72, v73, v75, v77, v78, v79, v8, v81;
+< org.jgrapht.alg.util.Pair v23, v58, v80;
+---
+> int v10, v11, v12, v33, v35, v36, v37, v41, v43, v44, v45, v52, v54, v72, v74, v9;
+> org.jgrapht.GraphType v64;
+> double v58;
+> java.util.Iterator v16, v20, v30, v38, v46, v49, v6, v68;
+> org.jgrapht.GraphPath v24, v81, v82;
+> java.lang.Object v18, v22, v32, v34, v40, v42, v48, v51, v53, v55, v57, v70, v71, v73, v75, v76, v77, v79, v8;
+> org.jgrapht.alg.util.Pair v23, v56, v78;
+265,266c265
+< v38 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(v37);
+< v29 = v38;
+---
+> v29 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(v37);
+270c269
+< v39 = interfaceinvoke v4.<java.util.Set: java.util.Iterator iterator()>();
+---
+> v38 = interfaceinvoke v4.<java.util.Set: java.util.Iterator iterator()>();
+272,275c271,274
+< v40 = interfaceinvoke v39.<java.util.Iterator: boolean hasNext()>();
+< if v40 == 0 goto label12;
+< v41 = interfaceinvoke v39.<java.util.Iterator: java.lang.Object next()>();
+< v42 = 0;
+---
+> v39 = interfaceinvoke v38.<java.util.Iterator: boolean hasNext()>();
+> if v39 == 0 goto label12;
+> v40 = interfaceinvoke v38.<java.util.Iterator: java.lang.Object next()>();
+> v41 = 0;
+277,279c276,278
+< v43 = interfaceinvoke v2.<java.util.Map: java.lang.Object get(java.lang.Object)>(v41);
+< v44 = virtualinvoke v43.<java.lang.Integer: int intValue()>();
+< if v42 >= v44 goto label10;
+---
+> v42 = interfaceinvoke v2.<java.util.Map: java.lang.Object get(java.lang.Object)>(v40);
+> v43 = virtualinvoke v42.<java.lang.Integer: int intValue()>();
+> if v41 >= v43 goto label10;
+281c280
+< interfaceinvoke v26.<java.util.List: boolean add(java.lang.Object)>(v41);
+---
+> interfaceinvoke v26.<java.util.List: boolean add(java.lang.Object)>(v40);
+283,287c282,285
+< v45 = virtualinvoke v29.<java.lang.Integer: int intValue()>();
+< v46 = v45 + 1;
+< v47 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(v46);
+< v29 = v47;
+< v42 = v42 + 1;
+---
+> v44 = virtualinvoke v29.<java.lang.Integer: int intValue()>();
+> v45 = v44 + 1;
+> v29 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(v45);
+> v41 = v41 + 1;
+290c288
+< v48 = interfaceinvoke v27.<java.util.Set: java.util.Iterator iterator()>();
+---
+> v46 = interfaceinvoke v27.<java.util.Set: java.util.Iterator iterator()>();
+292,295c290,293
+< v49 = interfaceinvoke v48.<java.util.Iterator: boolean hasNext()>();
+< if v49 == 0 goto label15;
+< v50 = interfaceinvoke v48.<java.util.Iterator: java.lang.Object next()>();
+< v51 = interfaceinvoke v28.<java.util.Set: java.util.Iterator iterator()>();
+---
+> v47 = interfaceinvoke v46.<java.util.Iterator: boolean hasNext()>();
+> if v47 == 0 goto label15;
+> v48 = interfaceinvoke v46.<java.util.Iterator: java.lang.Object next()>();
+> v49 = interfaceinvoke v28.<java.util.Set: java.util.Iterator iterator()>();
+297,300c295,300
+< v52 = interfaceinvoke v51.<java.util.Iterator: boolean hasNext()>();
+< if v52 == 0 goto label13;
+< v53 = interfaceinvoke v51.<java.util.Iterator: java.lang.Object next()>();
+< v54 = virtualinvoke v50.<java.lang.Integer: int intValue()>();
+---
+> v50 = interfaceinvoke v49.<java.util.Iterator: boolean hasNext()>();
+> if v50 == 0 goto label13;
+> v51 = interfaceinvoke v49.<java.util.Iterator: java.lang.Object next()>();
+> v52 = virtualinvoke v48.<java.lang.Integer: int intValue()>();
+> v53 = interfaceinvoke v26.<java.util.List: java.lang.Object get(int)>(v52);
+> v54 = virtualinvoke v51.<java.lang.Integer: int intValue()>();
+302,308c302,306
+< v56 = virtualinvoke v53.<java.lang.Integer: int intValue()>();
+< v57 = interfaceinvoke v26.<java.util.List: java.lang.Object get(int)>(v56);
+< v58 = new org.jgrapht.alg.util.Pair;
+< specialinvoke v58.<org.jgrapht.alg.util.Pair: void <init>(java.lang.Object,java.lang.Object)>(v55, v57);
+< v59 = interfaceinvoke v14.<java.util.Map: java.lang.Object get(java.lang.Object)>(v58);
+< v60 = interfaceinvoke v59.<org.jgrapht.GraphPath: double getWeight()>();
+< staticinvoke <org.jgrapht.Graphs: java.lang.Object addEdge(org.jgrapht.Graph,java.lang.Object,java.lang.Object,double)>(v25, v50, v53, v60);
+---
+> v56 = new org.jgrapht.alg.util.Pair;
+> specialinvoke v56.<org.jgrapht.alg.util.Pair: void <init>(java.lang.Object,java.lang.Object)>(v53, v55);
+> v57 = interfaceinvoke v14.<java.util.Map: java.lang.Object get(java.lang.Object)>(v56);
+> v58 = interfaceinvoke v57.<org.jgrapht.GraphPath: double getWeight()>();
+> staticinvoke <org.jgrapht.Graphs: java.lang.Object addEdge(org.jgrapht.Graph,java.lang.Object,java.lang.Object,double)>(v25, v48, v51, v58);
+311,324c309,322
+< v61 = new org.jgrapht.alg.matching.KuhnMunkresMinimalWeightBipartitePerfectMatching;
+< specialinvoke v61.<org.jgrapht.alg.matching.KuhnMunkresMinimalWeightBipartitePerfectMatching: void <init>(org.jgrapht.Graph,java.util.Set,java.util.Set)>(v25, v27, v28);
+< v62 = virtualinvoke v61.<org.jgrapht.alg.matching.KuhnMunkresMinimalWeightBipartitePerfectMatching: org.jgrapht.alg.interfaces.MatchingAlgorithm$Matching getMatching()>();
+< v63 = new org.jgrapht.graph.DirectedPseudograph;
+< v64 = interfaceinvoke v1.<org.jgrapht.Graph: java.util.function.Supplier getVertexSupplier()>();
+< v65 = interfaceinvoke v1.<org.jgrapht.Graph: java.util.function.Supplier getEdgeSupplier()>();
+< v66 = interfaceinvoke v1.<org.jgrapht.Graph: org.jgrapht.GraphType getType()>();
+< v67 = interfaceinvoke v66.<org.jgrapht.GraphType: boolean isWeighted()>();
+< specialinvoke v63.<org.jgrapht.graph.DirectedPseudograph: void <init>(java.util.function.Supplier,java.util.function.Supplier,boolean)>(v64, v65, v67);
+< staticinvoke <org.jgrapht.Graphs: boolean addGraph(org.jgrapht.Graph,org.jgrapht.Graph)>(v63, v1);
+< v68 = new java.util.HashMap;
+< specialinvoke v68.<java.util.HashMap: void <init>()>();
+< v69 = interfaceinvoke v62.<org.jgrapht.alg.interfaces.MatchingAlgorithm$Matching: java.util.Set getEdges()>();
+< v70 = interfaceinvoke v69.<java.util.Set: java.util.Iterator iterator()>();
+---
+> v59 = new org.jgrapht.alg.matching.KuhnMunkresMinimalWeightBipartitePerfectMatching;
+> specialinvoke v59.<org.jgrapht.alg.matching.KuhnMunkresMinimalWeightBipartitePerfectMatching: void <init>(org.jgrapht.Graph,java.util.Set,java.util.Set)>(v25, v27, v28);
+> v60 = virtualinvoke v59.<org.jgrapht.alg.matching.KuhnMunkresMinimalWeightBipartitePerfectMatching: org.jgrapht.alg.interfaces.MatchingAlgorithm$Matching getMatching()>();
+> v61 = new org.jgrapht.graph.DirectedPseudograph;
+> v62 = interfaceinvoke v1.<org.jgrapht.Graph: java.util.function.Supplier getVertexSupplier()>();
+> v63 = interfaceinvoke v1.<org.jgrapht.Graph: java.util.function.Supplier getEdgeSupplier()>();
+> v64 = interfaceinvoke v1.<org.jgrapht.Graph: org.jgrapht.GraphType getType()>();
+> v65 = interfaceinvoke v64.<org.jgrapht.GraphType: boolean isWeighted()>();
+> specialinvoke v61.<org.jgrapht.graph.DirectedPseudograph: void <init>(java.util.function.Supplier,java.util.function.Supplier,boolean)>(v62, v63, v65);
+> staticinvoke <org.jgrapht.Graphs: boolean addGraph(org.jgrapht.Graph,org.jgrapht.Graph)>(v61, v1);
+> v66 = new java.util.HashMap;
+> specialinvoke v66.<java.util.HashMap: void <init>()>();
+> v67 = interfaceinvoke v60.<org.jgrapht.alg.interfaces.MatchingAlgorithm$Matching: java.util.Set getEdges()>();
+> v68 = interfaceinvoke v67.<java.util.Set: java.util.Iterator iterator()>();
+326,329c324,329
+< v71 = interfaceinvoke v70.<java.util.Iterator: boolean hasNext()>();
+< if v71 == 0 goto label17;
+< v72 = interfaceinvoke v70.<java.util.Iterator: java.lang.Object next()>();
+< v73 = interfaceinvoke v25.<org.jgrapht.Graph: java.lang.Object getEdgeSource(java.lang.Object)>(v72);
+---
+> v69 = interfaceinvoke v68.<java.util.Iterator: boolean hasNext()>();
+> if v69 == 0 goto label17;
+> v70 = interfaceinvoke v68.<java.util.Iterator: java.lang.Object next()>();
+> v71 = interfaceinvoke v25.<org.jgrapht.Graph: java.lang.Object getEdgeSource(java.lang.Object)>(v70);
+> v72 = virtualinvoke v71.<java.lang.Integer: int intValue()>();
+> v73 = interfaceinvoke v25.<org.jgrapht.Graph: java.lang.Object getEdgeTarget(java.lang.Object)>(v70);
+331,339c331,337
+< v75 = interfaceinvoke v25.<org.jgrapht.Graph: java.lang.Object getEdgeTarget(java.lang.Object)>(v72);
+< v76 = virtualinvoke v75.<java.lang.Integer: int intValue()>();
+< v77 = interfaceinvoke v26.<java.util.List: java.lang.Object get(int)>(v74);
+< v78 = interfaceinvoke v26.<java.util.List: java.lang.Object get(int)>(v76);
+< v79 = interfaceinvoke v63.<org.jgrapht.Graph: java.lang.Object addEdge(java.lang.Object,java.lang.Object)>(v77, v78);
+< v80 = new org.jgrapht.alg.util.Pair;
+< specialinvoke v80.<org.jgrapht.alg.util.Pair: void <init>(java.lang.Object,java.lang.Object)>(v77, v78);
+< v81 = interfaceinvoke v14.<java.util.Map: java.lang.Object get(java.lang.Object)>(v80);
+< interfaceinvoke v68.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>(v79, v81);
+---
+> v75 = interfaceinvoke v26.<java.util.List: java.lang.Object get(int)>(v72);
+> v76 = interfaceinvoke v26.<java.util.List: java.lang.Object get(int)>(v74);
+> v77 = interfaceinvoke v61.<org.jgrapht.Graph: java.lang.Object addEdge(java.lang.Object,java.lang.Object)>(v75, v76);
+> v78 = new org.jgrapht.alg.util.Pair;
+> specialinvoke v78.<org.jgrapht.alg.util.Pair: void <init>(java.lang.Object,java.lang.Object)>(v75, v76);
+> v79 = interfaceinvoke v14.<java.util.Map: java.lang.Object get(java.lang.Object)>(v78);
+> interfaceinvoke v66.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>(v77, v79);
+342,346c340,344
+< v82 = new org.jgrapht.alg.cycle.HierholzerEulerianCycle;
+< specialinvoke v82.<org.jgrapht.alg.cycle.HierholzerEulerianCycle: void <init>()>();
+< v83 = interfaceinvoke v82.<org.jgrapht.alg.interfaces.EulerianCycleAlgorithm: org.jgrapht.GraphPath getEulerianCycle(org.jgrapht.Graph)>(v63);
+< v84 = specialinvoke v0.<org.jgrapht.alg.cycle.ChinesePostman: org.jgrapht.GraphPath replaceShortcutEdges(org.jgrapht.Graph,org.jgrapht.GraphPath,java.util.Map)>(v1, v83, v68);
+< return v84;
+---
+> v80 = new org.jgrapht.alg.cycle.HierholzerEulerianCycle;
+> specialinvoke v80.<org.jgrapht.alg.cycle.HierholzerEulerianCycle: void <init>()>();
+> v81 = interfaceinvoke v80.<org.jgrapht.alg.interfaces.EulerianCycleAlgorithm: org.jgrapht.GraphPath getEulerianCycle(org.jgrapht.Graph)>(v61);
+> v82 = specialinvoke v0.<org.jgrapht.alg.cycle.ChinesePostman: org.jgrapht.GraphPath replaceShortcutEdges(org.jgrapht.Graph,org.jgrapht.GraphPath,java.util.Map)>(v1, v81, v66);
+> return v82;

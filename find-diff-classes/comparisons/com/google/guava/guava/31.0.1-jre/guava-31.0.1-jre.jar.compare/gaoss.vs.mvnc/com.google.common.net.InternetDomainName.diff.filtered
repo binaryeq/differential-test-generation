@@ -1,0 +1,25 @@
+453c453,454
+< com.google.common.net.InternetDomainName v0, v5;
+---
+> com.google.common.net.InternetDomainName v0, v11;
+> int v5, v6, v8, v9;
+455c456,457
+< java.lang.String v1, v3, v4;
+---
+> java.lang.StringBuilder v12;
+> java.lang.String v1, v10, v3, v4, v7;
+460,462c462,471
+< v4 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,java.lang.String)>(v2, v3) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001.\u0001");
+< v5 = staticinvoke <com.google.common.net.InternetDomainName: com.google.common.net.InternetDomainName 'from'(java.lang.String)>(v4);
+< return v5;
+---
+> v4 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v2);
+> v5 = virtualinvoke v4.<java.lang.String: int length()>();
+> v6 = 1 + v5;
+> v7 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v3);
+> v8 = virtualinvoke v7.<java.lang.String: int length()>();
+> v9 = v6 + v8;
+> specialinvoke v12.<java.lang.StringBuilder: void <init>(int)>(v9);
+> v10 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,java.lang.String)>(v2, v3) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001.\u0001");
+> v11 = staticinvoke <com.google.common.net.InternetDomainName: com.google.common.net.InternetDomainName 'from'(java.lang.String)>(v10);
+> return v11;

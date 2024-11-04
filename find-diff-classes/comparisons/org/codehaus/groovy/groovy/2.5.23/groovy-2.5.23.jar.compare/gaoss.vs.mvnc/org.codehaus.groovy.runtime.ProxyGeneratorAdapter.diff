@@ -1,0 +1,889 @@
+1c1
+< public class org.codehaus.groovy.runtime.ProxyGeneratorAdapter extends org.objectweb.asm.ClassVisitor implements org.objectweb.asm.Opcodes
+---
+> public class org.codehaus.groovy.runtime.ProxyGeneratorAdapter extends groovyjarjarasm.asm.ClassVisitor implements groovyjarjarasm.asm.Opcodes
+30d29
+< org.objectweb.asm.ClassVisitor v36;
+35c34
+< org.objectweb.asm.ClassWriter v7;
+---
+> groovyjarjarasm.asm.ClassWriter v7;
+37a37
+> groovyjarjarasm.asm.ClassVisitor v36;
+53,55c53,55
+< v7 = new org.objectweb.asm.ClassWriter;
+< specialinvoke v7.<org.objectweb.asm.ClassWriter: void <init>(int)>(0);
+< specialinvoke v0.<org.objectweb.asm.ClassVisitor: void <init>(int,org.objectweb.asm.ClassVisitor)>(589824, v7);
+---
+> v7 = new groovyjarjarasm.asm.ClassWriter;
+> specialinvoke v7.<groovyjarjarasm.asm.ClassWriter: void <init>(int)>(0);
+> specialinvoke v0.<groovyjarjarasm.asm.ClassVisitor: void <init>(int,groovyjarjarasm.asm.ClassVisitor)>(589824, v7);
+134c134
+< v36 = v0.<org.codehaus.groovy.runtime.ProxyGeneratorAdapter: org.objectweb.asm.ClassVisitor cv>;
+---
+> v36 = v0.<org.codehaus.groovy.runtime.ProxyGeneratorAdapter: groovyjarjarasm.asm.ClassVisitor cv>;
+137c137
+< v38 = virtualinvoke v36.<org.objectweb.asm.ClassWriter: byte[] toByteArray()>();
+---
+> v38 = virtualinvoke v36.<groovyjarjarasm.asm.ClassWriter: byte[] toByteArray()>();
+376c376
+< v15 = staticinvoke <org.objectweb.asm.Type: java.lang.String getMethodDescriptor(java.lang.reflect.Method)>(v12);
+---
+> v15 = staticinvoke <groovyjarjarasm.asm.Type: java.lang.String getMethodDescriptor(java.lang.reflect.Method)>(v12);
+402c402
+< v31 = staticinvoke <org.objectweb.asm.Type: java.lang.String getMethodDescriptor(java.lang.reflect.Method)>(v21);
+---
+> v31 = staticinvoke <groovyjarjarasm.asm.Type: java.lang.String getMethodDescriptor(java.lang.reflect.Method)>(v21);
+572,573c572,573
+< specialinvoke v0.<org.objectweb.asm.ClassVisitor: void visit(int,int,java.lang.String,java.lang.String,java.lang.String,java.lang.String[])>(49, 1, v21, v4, v23, v25);
+< virtualinvoke v0.<org.codehaus.groovy.runtime.ProxyGeneratorAdapter: org.objectweb.asm.MethodVisitor visitMethod(int,java.lang.String,java.lang.String,java.lang.String,java.lang.String[])>(1, "<init>", "()V", null, null);
+---
+> specialinvoke v0.<groovyjarjarasm.asm.ClassVisitor: void visit(int,int,java.lang.String,java.lang.String,java.lang.String,java.lang.String[])>(49, 1, v21, v4, v23, v25);
+> virtualinvoke v0.<org.codehaus.groovy.runtime.ProxyGeneratorAdapter: groovyjarjarasm.asm.MethodVisitor visitMethod(int,java.lang.String,java.lang.String,java.lang.String,java.lang.String[])>(1, "<init>", "()V", null, null);
+632c632
+< virtualinvoke v0.<org.codehaus.groovy.runtime.ProxyGeneratorAdapter: org.objectweb.asm.MethodVisitor visitMethod(int,java.lang.String,java.lang.String,java.lang.String,java.lang.String[])>(v13, v14, v17, null, v8);
+---
+> virtualinvoke v0.<org.codehaus.groovy.runtime.ProxyGeneratorAdapter: groovyjarjarasm.asm.MethodVisitor visitMethod(int,java.lang.String,java.lang.String,java.lang.String,java.lang.String[])>(v13, v14, v17, null, v8);
+659c659
+< virtualinvoke v0.<org.codehaus.groovy.runtime.ProxyGeneratorAdapter: org.objectweb.asm.MethodVisitor visitMethod(int,java.lang.String,java.lang.String,java.lang.String,java.lang.String[])>(v29, "<init>", v32, null, v24);
+---
+> virtualinvoke v0.<org.codehaus.groovy.runtime.ProxyGeneratorAdapter: groovyjarjarasm.asm.MethodVisitor visitMethod(int,java.lang.String,java.lang.String,java.lang.String,java.lang.String[])>(v29, "<init>", v32, null, v24);
+691c691
+< virtualinvoke v0.<org.codehaus.groovy.runtime.ProxyGeneratorAdapter: org.objectweb.asm.MethodVisitor visitMethod(int,java.lang.String,java.lang.String,java.lang.String,java.lang.String[])>(1, v45, "([Ljava/lang/Object;)Ljava/lang/Object;", null, null);
+---
+> virtualinvoke v0.<org.codehaus.groovy.runtime.ProxyGeneratorAdapter: groovyjarjarasm.asm.MethodVisitor visitMethod(int,java.lang.String,java.lang.String,java.lang.String,java.lang.String[])>(1, v45, "([Ljava/lang/Object;)Ljava/lang/Object;", null, null);
+698,699c698
+< org.objectweb.asm.MethodVisitor v1, v14, v18, v8, v9;
+< org.objectweb.asm.Label v10, v12, v13, v15, v17, v19, v2, v21, v22, v4, v5;
+---
+> groovyjarjarasm.asm.MethodVisitor v1, v14, v18, v8, v9;
+700a700
+> groovyjarjarasm.asm.Label v10, v12, v13, v15, v17, v19, v2, v21, v22, v4, v5;
+703,709c703,709
+< virtualinvoke v0.<org.codehaus.groovy.runtime.ProxyGeneratorAdapter: org.objectweb.asm.FieldVisitor visitField(int,java.lang.String,java.lang.String,java.lang.String,java.lang.Object)>(130, "metaClass", "Lgroovy/lang/MetaClass;", null, null);
+< v1 = specialinvoke v0.<org.objectweb.asm.ClassVisitor: org.objectweb.asm.MethodVisitor visitMethod(int,java.lang.String,java.lang.String,java.lang.String,java.lang.String[])>(1, "getMetaClass", "()Lgroovy/lang/MetaClass;", null, null);
+< virtualinvoke v1.<org.objectweb.asm.MethodVisitor: void visitCode()>();
+< v2 = new org.objectweb.asm.Label;
+< specialinvoke v2.<org.objectweb.asm.Label: void <init>()>();
+< virtualinvoke v1.<org.objectweb.asm.MethodVisitor: void visitLabel(org.objectweb.asm.Label)>(v2);
+< virtualinvoke v1.<org.objectweb.asm.MethodVisitor: void visitVarInsn(int,int)>(25, 0);
+---
+> virtualinvoke v0.<org.codehaus.groovy.runtime.ProxyGeneratorAdapter: groovyjarjarasm.asm.FieldVisitor visitField(int,java.lang.String,java.lang.String,java.lang.String,java.lang.Object)>(130, "metaClass", "Lgroovy/lang/MetaClass;", null, null);
+> v1 = specialinvoke v0.<groovyjarjarasm.asm.ClassVisitor: groovyjarjarasm.asm.MethodVisitor visitMethod(int,java.lang.String,java.lang.String,java.lang.String,java.lang.String[])>(1, "getMetaClass", "()Lgroovy/lang/MetaClass;", null, null);
+> virtualinvoke v1.<groovyjarjarasm.asm.MethodVisitor: void visitCode()>();
+> v2 = new groovyjarjarasm.asm.Label;
+> specialinvoke v2.<groovyjarjarasm.asm.Label: void <init>()>();
+> virtualinvoke v1.<groovyjarjarasm.asm.MethodVisitor: void visitLabel(groovyjarjarasm.asm.Label)>(v2);
+> virtualinvoke v1.<groovyjarjarasm.asm.MethodVisitor: void visitVarInsn(int,int)>(25, 0);
+711,721c711,721
+< virtualinvoke v1.<org.objectweb.asm.MethodVisitor: void visitFieldInsn(int,java.lang.String,java.lang.String,java.lang.String)>(180, v3, "metaClass", "Lgroovy/lang/MetaClass;");
+< v4 = new org.objectweb.asm.Label;
+< specialinvoke v4.<org.objectweb.asm.Label: void <init>()>();
+< virtualinvoke v1.<org.objectweb.asm.MethodVisitor: void visitJumpInsn(int,org.objectweb.asm.Label)>(199, v4);
+< v5 = new org.objectweb.asm.Label;
+< specialinvoke v5.<org.objectweb.asm.Label: void <init>()>();
+< virtualinvoke v1.<org.objectweb.asm.MethodVisitor: void visitLabel(org.objectweb.asm.Label)>(v5);
+< virtualinvoke v1.<org.objectweb.asm.MethodVisitor: void visitVarInsn(int,int)>(25, 0);
+< virtualinvoke v1.<org.objectweb.asm.MethodVisitor: void visitVarInsn(int,int)>(25, 0);
+< virtualinvoke v1.<org.objectweb.asm.MethodVisitor: void visitMethodInsn(int,java.lang.String,java.lang.String,java.lang.String,boolean)>(182, "java/lang/Object", "getClass", "()Ljava/lang/Class;", 0);
+< virtualinvoke v1.<org.objectweb.asm.MethodVisitor: void visitMethodInsn(int,java.lang.String,java.lang.String,java.lang.String,boolean)>(184, "org/codehaus/groovy/runtime/InvokerHelper", "getMetaClass", "(Ljava/lang/Class;)Lgroovy/lang/MetaClass;", 0);
+---
+> virtualinvoke v1.<groovyjarjarasm.asm.MethodVisitor: void visitFieldInsn(int,java.lang.String,java.lang.String,java.lang.String)>(180, v3, "metaClass", "Lgroovy/lang/MetaClass;");
+> v4 = new groovyjarjarasm.asm.Label;
+> specialinvoke v4.<groovyjarjarasm.asm.Label: void <init>()>();
+> virtualinvoke v1.<groovyjarjarasm.asm.MethodVisitor: void visitJumpInsn(int,groovyjarjarasm.asm.Label)>(199, v4);
+> v5 = new groovyjarjarasm.asm.Label;
+> specialinvoke v5.<groovyjarjarasm.asm.Label: void <init>()>();
+> virtualinvoke v1.<groovyjarjarasm.asm.MethodVisitor: void visitLabel(groovyjarjarasm.asm.Label)>(v5);
+> virtualinvoke v1.<groovyjarjarasm.asm.MethodVisitor: void visitVarInsn(int,int)>(25, 0);
+> virtualinvoke v1.<groovyjarjarasm.asm.MethodVisitor: void visitVarInsn(int,int)>(25, 0);
+> virtualinvoke v1.<groovyjarjarasm.asm.MethodVisitor: void visitMethodInsn(int,java.lang.String,java.lang.String,java.lang.String,boolean)>(182, "java/lang/Object", "getClass", "()Ljava/lang/Class;", 0);
+> virtualinvoke v1.<groovyjarjarasm.asm.MethodVisitor: void visitMethodInsn(int,java.lang.String,java.lang.String,java.lang.String,boolean)>(184, "org/codehaus/groovy/runtime/InvokerHelper", "getMetaClass", "(Ljava/lang/Class;)Lgroovy/lang/MetaClass;", 0);
+723,725c723,725
+< virtualinvoke v1.<org.objectweb.asm.MethodVisitor: void visitFieldInsn(int,java.lang.String,java.lang.String,java.lang.String)>(181, v6, "metaClass", "Lgroovy/lang/MetaClass;");
+< virtualinvoke v1.<org.objectweb.asm.MethodVisitor: void visitLabel(org.objectweb.asm.Label)>(v4);
+< virtualinvoke v1.<org.objectweb.asm.MethodVisitor: void visitVarInsn(int,int)>(25, 0);
+---
+> virtualinvoke v1.<groovyjarjarasm.asm.MethodVisitor: void visitFieldInsn(int,java.lang.String,java.lang.String,java.lang.String)>(181, v6, "metaClass", "Lgroovy/lang/MetaClass;");
+> virtualinvoke v1.<groovyjarjarasm.asm.MethodVisitor: void visitLabel(groovyjarjarasm.asm.Label)>(v4);
+> virtualinvoke v1.<groovyjarjarasm.asm.MethodVisitor: void visitVarInsn(int,int)>(25, 0);
+727,746c727,746
+< virtualinvoke v1.<org.objectweb.asm.MethodVisitor: void visitFieldInsn(int,java.lang.String,java.lang.String,java.lang.String)>(180, v7, "metaClass", "Lgroovy/lang/MetaClass;");
+< virtualinvoke v1.<org.objectweb.asm.MethodVisitor: void visitInsn(int)>(176);
+< virtualinvoke v1.<org.objectweb.asm.MethodVisitor: void visitMaxs(int,int)>(2, 1);
+< virtualinvoke v1.<org.objectweb.asm.MethodVisitor: void visitEnd()>();
+< v8 = specialinvoke v0.<org.objectweb.asm.ClassVisitor: org.objectweb.asm.MethodVisitor visitMethod(int,java.lang.String,java.lang.String,java.lang.String,java.lang.String[])>(1, "getProperty", "(Ljava/lang/String;)Ljava/lang/Object;", null, null);
+< virtualinvoke v8.<org.objectweb.asm.MethodVisitor: void visitCode()>();
+< virtualinvoke v8.<org.objectweb.asm.MethodVisitor: void visitIntInsn(int,int)>(25, 0);
+< virtualinvoke v8.<org.objectweb.asm.MethodVisitor: void visitMethodInsn(int,java.lang.String,java.lang.String,java.lang.String,boolean)>(185, "groovy/lang/GroovyObject", "getMetaClass", "()Lgroovy/lang/MetaClass;", 1);
+< virtualinvoke v8.<org.objectweb.asm.MethodVisitor: void visitIntInsn(int,int)>(25, 0);
+< virtualinvoke v8.<org.objectweb.asm.MethodVisitor: void visitVarInsn(int,int)>(25, 1);
+< virtualinvoke v8.<org.objectweb.asm.MethodVisitor: void visitMethodInsn(int,java.lang.String,java.lang.String,java.lang.String,boolean)>(185, "groovy/lang/MetaClass", "getProperty", "(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;", 1);
+< virtualinvoke v8.<org.objectweb.asm.MethodVisitor: void visitInsn(int)>(176);
+< virtualinvoke v8.<org.objectweb.asm.MethodVisitor: void visitMaxs(int,int)>(3, 2);
+< virtualinvoke v8.<org.objectweb.asm.MethodVisitor: void visitEnd()>();
+< v9 = specialinvoke v0.<org.objectweb.asm.ClassVisitor: org.objectweb.asm.MethodVisitor visitMethod(int,java.lang.String,java.lang.String,java.lang.String,java.lang.String[])>(1, "setProperty", "(Ljava/lang/String;Ljava/lang/Object;)V", null, null);
+< virtualinvoke v9.<org.objectweb.asm.MethodVisitor: void visitCode()>();
+< v10 = new org.objectweb.asm.Label;
+< specialinvoke v10.<org.objectweb.asm.Label: void <init>()>();
+< virtualinvoke v9.<org.objectweb.asm.MethodVisitor: void visitLabel(org.objectweb.asm.Label)>(v10);
+< virtualinvoke v9.<org.objectweb.asm.MethodVisitor: void visitVarInsn(int,int)>(25, 0);
+---
+> virtualinvoke v1.<groovyjarjarasm.asm.MethodVisitor: void visitFieldInsn(int,java.lang.String,java.lang.String,java.lang.String)>(180, v7, "metaClass", "Lgroovy/lang/MetaClass;");
+> virtualinvoke v1.<groovyjarjarasm.asm.MethodVisitor: void visitInsn(int)>(176);
+> virtualinvoke v1.<groovyjarjarasm.asm.MethodVisitor: void visitMaxs(int,int)>(2, 1);
+> virtualinvoke v1.<groovyjarjarasm.asm.MethodVisitor: void visitEnd()>();
+> v8 = specialinvoke v0.<groovyjarjarasm.asm.ClassVisitor: groovyjarjarasm.asm.MethodVisitor visitMethod(int,java.lang.String,java.lang.String,java.lang.String,java.lang.String[])>(1, "getProperty", "(Ljava/lang/String;)Ljava/lang/Object;", null, null);
+> virtualinvoke v8.<groovyjarjarasm.asm.MethodVisitor: void visitCode()>();
+> virtualinvoke v8.<groovyjarjarasm.asm.MethodVisitor: void visitIntInsn(int,int)>(25, 0);
+> virtualinvoke v8.<groovyjarjarasm.asm.MethodVisitor: void visitMethodInsn(int,java.lang.String,java.lang.String,java.lang.String,boolean)>(185, "groovy/lang/GroovyObject", "getMetaClass", "()Lgroovy/lang/MetaClass;", 1);
+> virtualinvoke v8.<groovyjarjarasm.asm.MethodVisitor: void visitIntInsn(int,int)>(25, 0);
+> virtualinvoke v8.<groovyjarjarasm.asm.MethodVisitor: void visitVarInsn(int,int)>(25, 1);
+> virtualinvoke v8.<groovyjarjarasm.asm.MethodVisitor: void visitMethodInsn(int,java.lang.String,java.lang.String,java.lang.String,boolean)>(185, "groovy/lang/MetaClass", "getProperty", "(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;", 1);
+> virtualinvoke v8.<groovyjarjarasm.asm.MethodVisitor: void visitInsn(int)>(176);
+> virtualinvoke v8.<groovyjarjarasm.asm.MethodVisitor: void visitMaxs(int,int)>(3, 2);
+> virtualinvoke v8.<groovyjarjarasm.asm.MethodVisitor: void visitEnd()>();
+> v9 = specialinvoke v0.<groovyjarjarasm.asm.ClassVisitor: groovyjarjarasm.asm.MethodVisitor visitMethod(int,java.lang.String,java.lang.String,java.lang.String,java.lang.String[])>(1, "setProperty", "(Ljava/lang/String;Ljava/lang/Object;)V", null, null);
+> virtualinvoke v9.<groovyjarjarasm.asm.MethodVisitor: void visitCode()>();
+> v10 = new groovyjarjarasm.asm.Label;
+> specialinvoke v10.<groovyjarjarasm.asm.Label: void <init>()>();
+> virtualinvoke v9.<groovyjarjarasm.asm.MethodVisitor: void visitLabel(groovyjarjarasm.asm.Label)>(v10);
+> virtualinvoke v9.<groovyjarjarasm.asm.MethodVisitor: void visitVarInsn(int,int)>(25, 0);
+748,766c748,766
+< virtualinvoke v9.<org.objectweb.asm.MethodVisitor: void visitMethodInsn(int,java.lang.String,java.lang.String,java.lang.String,boolean)>(182, v11, "getMetaClass", "()Lgroovy/lang/MetaClass;", 0);
+< virtualinvoke v9.<org.objectweb.asm.MethodVisitor: void visitVarInsn(int,int)>(25, 0);
+< virtualinvoke v9.<org.objectweb.asm.MethodVisitor: void visitVarInsn(int,int)>(25, 1);
+< virtualinvoke v9.<org.objectweb.asm.MethodVisitor: void visitVarInsn(int,int)>(25, 2);
+< virtualinvoke v9.<org.objectweb.asm.MethodVisitor: void visitMethodInsn(int,java.lang.String,java.lang.String,java.lang.String,boolean)>(185, "groovy/lang/MetaClass", "setProperty", "(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/Object;)V", 1);
+< v12 = new org.objectweb.asm.Label;
+< specialinvoke v12.<org.objectweb.asm.Label: void <init>()>();
+< virtualinvoke v9.<org.objectweb.asm.MethodVisitor: void visitLabel(org.objectweb.asm.Label)>(v12);
+< virtualinvoke v9.<org.objectweb.asm.MethodVisitor: void visitInsn(int)>(177);
+< v13 = new org.objectweb.asm.Label;
+< specialinvoke v13.<org.objectweb.asm.Label: void <init>()>();
+< virtualinvoke v9.<org.objectweb.asm.MethodVisitor: void visitLabel(org.objectweb.asm.Label)>(v13);
+< virtualinvoke v9.<org.objectweb.asm.MethodVisitor: void visitMaxs(int,int)>(4, 3);
+< virtualinvoke v9.<org.objectweb.asm.MethodVisitor: void visitEnd()>();
+< v14 = specialinvoke v0.<org.objectweb.asm.ClassVisitor: org.objectweb.asm.MethodVisitor visitMethod(int,java.lang.String,java.lang.String,java.lang.String,java.lang.String[])>(1, "invokeMethod", "(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object;", null, null);
+< v15 = new org.objectweb.asm.Label;
+< specialinvoke v15.<org.objectweb.asm.Label: void <init>()>();
+< virtualinvoke v14.<org.objectweb.asm.MethodVisitor: void visitLabel(org.objectweb.asm.Label)>(v15);
+< virtualinvoke v14.<org.objectweb.asm.MethodVisitor: void visitVarInsn(int,int)>(25, 0);
+---
+> virtualinvoke v9.<groovyjarjarasm.asm.MethodVisitor: void visitMethodInsn(int,java.lang.String,java.lang.String,java.lang.String,boolean)>(182, v11, "getMetaClass", "()Lgroovy/lang/MetaClass;", 0);
+> virtualinvoke v9.<groovyjarjarasm.asm.MethodVisitor: void visitVarInsn(int,int)>(25, 0);
+> virtualinvoke v9.<groovyjarjarasm.asm.MethodVisitor: void visitVarInsn(int,int)>(25, 1);
+> virtualinvoke v9.<groovyjarjarasm.asm.MethodVisitor: void visitVarInsn(int,int)>(25, 2);
+> virtualinvoke v9.<groovyjarjarasm.asm.MethodVisitor: void visitMethodInsn(int,java.lang.String,java.lang.String,java.lang.String,boolean)>(185, "groovy/lang/MetaClass", "setProperty", "(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/Object;)V", 1);
+> v12 = new groovyjarjarasm.asm.Label;
+> specialinvoke v12.<groovyjarjarasm.asm.Label: void <init>()>();
+> virtualinvoke v9.<groovyjarjarasm.asm.MethodVisitor: void visitLabel(groovyjarjarasm.asm.Label)>(v12);
+> virtualinvoke v9.<groovyjarjarasm.asm.MethodVisitor: void visitInsn(int)>(177);
+> v13 = new groovyjarjarasm.asm.Label;
+> specialinvoke v13.<groovyjarjarasm.asm.Label: void <init>()>();
+> virtualinvoke v9.<groovyjarjarasm.asm.MethodVisitor: void visitLabel(groovyjarjarasm.asm.Label)>(v13);
+> virtualinvoke v9.<groovyjarjarasm.asm.MethodVisitor: void visitMaxs(int,int)>(4, 3);
+> virtualinvoke v9.<groovyjarjarasm.asm.MethodVisitor: void visitEnd()>();
+> v14 = specialinvoke v0.<groovyjarjarasm.asm.ClassVisitor: groovyjarjarasm.asm.MethodVisitor visitMethod(int,java.lang.String,java.lang.String,java.lang.String,java.lang.String[])>(1, "invokeMethod", "(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object;", null, null);
+> v15 = new groovyjarjarasm.asm.Label;
+> specialinvoke v15.<groovyjarjarasm.asm.Label: void <init>()>();
+> virtualinvoke v14.<groovyjarjarasm.asm.MethodVisitor: void visitLabel(groovyjarjarasm.asm.Label)>(v15);
+> virtualinvoke v14.<groovyjarjarasm.asm.MethodVisitor: void visitVarInsn(int,int)>(25, 0);
+768,785c768,785
+< virtualinvoke v14.<org.objectweb.asm.MethodVisitor: void visitMethodInsn(int,java.lang.String,java.lang.String,java.lang.String,boolean)>(182, v16, "getMetaClass", "()Lgroovy/lang/MetaClass;", 0);
+< virtualinvoke v14.<org.objectweb.asm.MethodVisitor: void visitVarInsn(int,int)>(25, 0);
+< virtualinvoke v14.<org.objectweb.asm.MethodVisitor: void visitVarInsn(int,int)>(25, 1);
+< virtualinvoke v14.<org.objectweb.asm.MethodVisitor: void visitVarInsn(int,int)>(25, 2);
+< virtualinvoke v14.<org.objectweb.asm.MethodVisitor: void visitMethodInsn(int,java.lang.String,java.lang.String,java.lang.String,boolean)>(185, "groovy/lang/MetaClass", "invokeMethod", "(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object;", 1);
+< virtualinvoke v14.<org.objectweb.asm.MethodVisitor: void visitInsn(int)>(176);
+< v17 = new org.objectweb.asm.Label;
+< specialinvoke v17.<org.objectweb.asm.Label: void <init>()>();
+< virtualinvoke v14.<org.objectweb.asm.MethodVisitor: void visitLabel(org.objectweb.asm.Label)>(v17);
+< virtualinvoke v14.<org.objectweb.asm.MethodVisitor: void visitMaxs(int,int)>(4, 3);
+< virtualinvoke v14.<org.objectweb.asm.MethodVisitor: void visitEnd()>();
+< v18 = specialinvoke v0.<org.objectweb.asm.ClassVisitor: org.objectweb.asm.MethodVisitor visitMethod(int,java.lang.String,java.lang.String,java.lang.String,java.lang.String[])>(1, "setMetaClass", "(Lgroovy/lang/MetaClass;)V", null, null);
+< virtualinvoke v18.<org.objectweb.asm.MethodVisitor: void visitCode()>();
+< v19 = new org.objectweb.asm.Label;
+< specialinvoke v19.<org.objectweb.asm.Label: void <init>()>();
+< virtualinvoke v18.<org.objectweb.asm.MethodVisitor: void visitLabel(org.objectweb.asm.Label)>(v19);
+< virtualinvoke v18.<org.objectweb.asm.MethodVisitor: void visitVarInsn(int,int)>(25, 0);
+< virtualinvoke v18.<org.objectweb.asm.MethodVisitor: void visitVarInsn(int,int)>(25, 1);
+---
+> virtualinvoke v14.<groovyjarjarasm.asm.MethodVisitor: void visitMethodInsn(int,java.lang.String,java.lang.String,java.lang.String,boolean)>(182, v16, "getMetaClass", "()Lgroovy/lang/MetaClass;", 0);
+> virtualinvoke v14.<groovyjarjarasm.asm.MethodVisitor: void visitVarInsn(int,int)>(25, 0);
+> virtualinvoke v14.<groovyjarjarasm.asm.MethodVisitor: void visitVarInsn(int,int)>(25, 1);
+> virtualinvoke v14.<groovyjarjarasm.asm.MethodVisitor: void visitVarInsn(int,int)>(25, 2);
+> virtualinvoke v14.<groovyjarjarasm.asm.MethodVisitor: void visitMethodInsn(int,java.lang.String,java.lang.String,java.lang.String,boolean)>(185, "groovy/lang/MetaClass", "invokeMethod", "(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object;", 1);
+> virtualinvoke v14.<groovyjarjarasm.asm.MethodVisitor: void visitInsn(int)>(176);
+> v17 = new groovyjarjarasm.asm.Label;
+> specialinvoke v17.<groovyjarjarasm.asm.Label: void <init>()>();
+> virtualinvoke v14.<groovyjarjarasm.asm.MethodVisitor: void visitLabel(groovyjarjarasm.asm.Label)>(v17);
+> virtualinvoke v14.<groovyjarjarasm.asm.MethodVisitor: void visitMaxs(int,int)>(4, 3);
+> virtualinvoke v14.<groovyjarjarasm.asm.MethodVisitor: void visitEnd()>();
+> v18 = specialinvoke v0.<groovyjarjarasm.asm.ClassVisitor: groovyjarjarasm.asm.MethodVisitor visitMethod(int,java.lang.String,java.lang.String,java.lang.String,java.lang.String[])>(1, "setMetaClass", "(Lgroovy/lang/MetaClass;)V", null, null);
+> virtualinvoke v18.<groovyjarjarasm.asm.MethodVisitor: void visitCode()>();
+> v19 = new groovyjarjarasm.asm.Label;
+> specialinvoke v19.<groovyjarjarasm.asm.Label: void <init>()>();
+> virtualinvoke v18.<groovyjarjarasm.asm.MethodVisitor: void visitLabel(groovyjarjarasm.asm.Label)>(v19);
+> virtualinvoke v18.<groovyjarjarasm.asm.MethodVisitor: void visitVarInsn(int,int)>(25, 0);
+> virtualinvoke v18.<groovyjarjarasm.asm.MethodVisitor: void visitVarInsn(int,int)>(25, 1);
+787,796c787,796
+< virtualinvoke v18.<org.objectweb.asm.MethodVisitor: void visitFieldInsn(int,java.lang.String,java.lang.String,java.lang.String)>(181, v20, "metaClass", "Lgroovy/lang/MetaClass;");
+< v21 = new org.objectweb.asm.Label;
+< specialinvoke v21.<org.objectweb.asm.Label: void <init>()>();
+< virtualinvoke v18.<org.objectweb.asm.MethodVisitor: void visitLabel(org.objectweb.asm.Label)>(v21);
+< virtualinvoke v18.<org.objectweb.asm.MethodVisitor: void visitInsn(int)>(177);
+< v22 = new org.objectweb.asm.Label;
+< specialinvoke v22.<org.objectweb.asm.Label: void <init>()>();
+< virtualinvoke v18.<org.objectweb.asm.MethodVisitor: void visitLabel(org.objectweb.asm.Label)>(v22);
+< virtualinvoke v18.<org.objectweb.asm.MethodVisitor: void visitMaxs(int,int)>(2, 2);
+< virtualinvoke v18.<org.objectweb.asm.MethodVisitor: void visitEnd()>();
+---
+> virtualinvoke v18.<groovyjarjarasm.asm.MethodVisitor: void visitFieldInsn(int,java.lang.String,java.lang.String,java.lang.String)>(181, v20, "metaClass", "Lgroovy/lang/MetaClass;");
+> v21 = new groovyjarjarasm.asm.Label;
+> specialinvoke v21.<groovyjarjarasm.asm.Label: void <init>()>();
+> virtualinvoke v18.<groovyjarjarasm.asm.MethodVisitor: void visitLabel(groovyjarjarasm.asm.Label)>(v21);
+> virtualinvoke v18.<groovyjarjarasm.asm.MethodVisitor: void visitInsn(int)>(177);
+> v22 = new groovyjarjarasm.asm.Label;
+> specialinvoke v22.<groovyjarjarasm.asm.Label: void <init>()>();
+> virtualinvoke v18.<groovyjarjarasm.asm.MethodVisitor: void visitLabel(groovyjarjarasm.asm.Label)>(v22);
+> virtualinvoke v18.<groovyjarjarasm.asm.MethodVisitor: void visitMaxs(int,int)>(2, 2);
+> virtualinvoke v18.<groovyjarjarasm.asm.MethodVisitor: void visitEnd()>();
+806c806
+< virtualinvoke v0.<org.codehaus.groovy.runtime.ProxyGeneratorAdapter: org.objectweb.asm.FieldVisitor visitField(int,java.lang.String,java.lang.String,java.lang.String,java.lang.Object)>(18, "$closures$delegate$map", "Ljava/util/Map;", null, null);
+---
+> virtualinvoke v0.<org.codehaus.groovy.runtime.ProxyGeneratorAdapter: groovyjarjarasm.asm.FieldVisitor visitField(int,java.lang.String,java.lang.String,java.lang.String,java.lang.Object)>(18, "$closures$delegate$map", "Ljava/util/Map;", null, null);
+811c811
+< virtualinvoke v0.<org.codehaus.groovy.runtime.ProxyGeneratorAdapter: org.objectweb.asm.FieldVisitor visitField(int,java.lang.String,java.lang.String,java.lang.String,java.lang.Object)>(18, "$delegate", v3, null, null);
+---
+> virtualinvoke v0.<org.codehaus.groovy.runtime.ProxyGeneratorAdapter: groovyjarjarasm.asm.FieldVisitor visitField(int,java.lang.String,java.lang.String,java.lang.String,java.lang.Object)>(18, "$delegate", v3, null, null);
+910c910
+< v9 = staticinvoke <org.objectweb.asm.Type: java.lang.String getMethodDescriptor(java.lang.reflect.Method)>(v6);
+---
+> v9 = staticinvoke <groovyjarjarasm.asm.Type: java.lang.String getMethodDescriptor(java.lang.reflect.Method)>(v6);
+937c937
+< public org.objectweb.asm.MethodVisitor visitMethod(int, java.lang.String, java.lang.String, java.lang.String, java.lang.String[])
+---
+> public groovyjarjarasm.asm.MethodVisitor visitMethod(int, java.lang.String, java.lang.String, java.lang.String, java.lang.String[])
+938a939
+> groovyjarjarasm.asm.MethodVisitor v35, v38, v43, v48, v56;
+942,944c943
+< org.objectweb.asm.MethodVisitor v35, v38, v43, v48, v56;
+< org.objectweb.asm.Type v59, v60;
+< org.objectweb.asm.Type[] v57;
+---
+> groovyjarjarasm.asm.Type v59, v60;
+946a946
+> groovyjarjarasm.asm.Type[] v57;
+1020c1020
+< v35 = virtualinvoke v0.<org.codehaus.groovy.runtime.ProxyGeneratorAdapter: org.objectweb.asm.MethodVisitor makeDelegateToClosureCall(java.lang.String,java.lang.String,java.lang.String,java.lang.String[],int)>(v2, v3, v4, v5, v34);
+---
+> v35 = virtualinvoke v0.<org.codehaus.groovy.runtime.ProxyGeneratorAdapter: groovyjarjarasm.asm.MethodVisitor makeDelegateToClosureCall(java.lang.String,java.lang.String,java.lang.String,java.lang.String[],int)>(v2, v3, v4, v5, v34);
+1025c1025
+< v38 = virtualinvoke v0.<org.codehaus.groovy.runtime.ProxyGeneratorAdapter: org.objectweb.asm.MethodVisitor makeDelegateCall(java.lang.String,java.lang.String,java.lang.String,java.lang.String[],int)>(v2, v3, v4, v5, v37);
+---
+> v38 = virtualinvoke v0.<org.codehaus.groovy.runtime.ProxyGeneratorAdapter: groovyjarjarasm.asm.MethodVisitor makeDelegateCall(java.lang.String,java.lang.String,java.lang.String,java.lang.String[],int)>(v2, v3, v4, v5, v37);
+1034c1034
+< v43 = specialinvoke v0.<org.codehaus.groovy.runtime.ProxyGeneratorAdapter: org.objectweb.asm.MethodVisitor createGetProxyTargetMethod(int,java.lang.String,java.lang.String,java.lang.String,java.lang.String[])>(v1, v2, v3, v4, v5);
+---
+> v43 = specialinvoke v0.<org.codehaus.groovy.runtime.ProxyGeneratorAdapter: groovyjarjarasm.asm.MethodVisitor createGetProxyTargetMethod(int,java.lang.String,java.lang.String,java.lang.String,java.lang.String[])>(v1, v2, v3, v4, v5);
+1045c1045
+< v48 = specialinvoke v0.<org.codehaus.groovy.runtime.ProxyGeneratorAdapter: org.objectweb.asm.MethodVisitor createConstructor(int,java.lang.String,java.lang.String,java.lang.String,java.lang.String[])>(v1, v2, v3, v4, v5);
+---
+> v48 = specialinvoke v0.<org.codehaus.groovy.runtime.ProxyGeneratorAdapter: groovyjarjarasm.asm.MethodVisitor createConstructor(int,java.lang.String,java.lang.String,java.lang.String,java.lang.String[])>(v1, v2, v3, v4, v5);
+1058,1060c1058,1060
+< v56 = specialinvoke v0.<org.objectweb.asm.ClassVisitor: org.objectweb.asm.MethodVisitor visitMethod(int,java.lang.String,java.lang.String,java.lang.String,java.lang.String[])>(v55, v2, v3, v4, v5);
+< virtualinvoke v56.<org.objectweb.asm.MethodVisitor: void visitCode()>();
+< v57 = staticinvoke <org.objectweb.asm.Type: org.objectweb.asm.Type[] getArgumentTypes(java.lang.String)>(v3);
+---
+> v56 = specialinvoke v0.<groovyjarjarasm.asm.ClassVisitor: groovyjarjarasm.asm.MethodVisitor visitMethod(int,java.lang.String,java.lang.String,java.lang.String,java.lang.String[])>(v55, v2, v3, v4, v5);
+> virtualinvoke v56.<groovyjarjarasm.asm.MethodVisitor: void visitCode()>();
+> v57 = staticinvoke <groovyjarjarasm.asm.Type: groovyjarjarasm.asm.Type[] getArgumentTypes(java.lang.String)>(v3);
+1063,1064c1063,1064
+< v59 = staticinvoke <org.objectweb.asm.Type: org.objectweb.asm.Type getReturnType(java.lang.String)>(v3);
+< v60 = <org.objectweb.asm.Type: org.objectweb.asm.Type VOID_TYPE>;
+---
+> v59 = staticinvoke <groovyjarjarasm.asm.Type: groovyjarjarasm.asm.Type getReturnType(java.lang.String)>(v3);
+> v60 = <groovyjarjarasm.asm.Type: groovyjarjarasm.asm.Type VOID_TYPE>;
+1066c1066
+< virtualinvoke v56.<org.objectweb.asm.MethodVisitor: void visitInsn(int)>(177);
+---
+> virtualinvoke v56.<groovyjarjarasm.asm.MethodVisitor: void visitInsn(int)>(177);
+1069c1069
+< v61 = staticinvoke <org.codehaus.groovy.runtime.ProxyGeneratorAdapter: int getLoadInsn(org.objectweb.asm.Type)>(v59);
+---
+> v61 = staticinvoke <org.codehaus.groovy.runtime.ProxyGeneratorAdapter: int getLoadInsn(groovyjarjarasm.asm.Type)>(v59);
+1079c1079
+< virtualinvoke v56.<org.objectweb.asm.MethodVisitor: void visitInsn(int)>(3);
+---
+> virtualinvoke v56.<groovyjarjarasm.asm.MethodVisitor: void visitInsn(int)>(3);
+1082c1082
+< virtualinvoke v56.<org.objectweb.asm.MethodVisitor: void visitInsn(int)>(9);
+---
+> virtualinvoke v56.<groovyjarjarasm.asm.MethodVisitor: void visitInsn(int)>(9);
+1085c1085
+< virtualinvoke v56.<org.objectweb.asm.MethodVisitor: void visitInsn(int)>(11);
+---
+> virtualinvoke v56.<groovyjarjarasm.asm.MethodVisitor: void visitInsn(int)>(11);
+1088c1088
+< virtualinvoke v56.<org.objectweb.asm.MethodVisitor: void visitInsn(int)>(14);
+---
+> virtualinvoke v56.<groovyjarjarasm.asm.MethodVisitor: void visitInsn(int)>(14);
+1091c1091
+< virtualinvoke v56.<org.objectweb.asm.MethodVisitor: void visitInsn(int)>(1);
+---
+> virtualinvoke v56.<groovyjarjarasm.asm.MethodVisitor: void visitInsn(int)>(1);
+1093,1095c1093,1095
+< v62 = staticinvoke <org.codehaus.groovy.runtime.ProxyGeneratorAdapter: int getReturnInsn(org.objectweb.asm.Type)>(v59);
+< virtualinvoke v56.<org.objectweb.asm.MethodVisitor: void visitInsn(int)>(v62);
+< v63 = staticinvoke <org.codehaus.groovy.runtime.ProxyGeneratorAdapter: int registerLen(org.objectweb.asm.Type[])>(v57);
+---
+> v62 = staticinvoke <org.codehaus.groovy.runtime.ProxyGeneratorAdapter: int getReturnInsn(groovyjarjarasm.asm.Type)>(v59);
+> virtualinvoke v56.<groovyjarjarasm.asm.MethodVisitor: void visitInsn(int)>(v62);
+> v63 = staticinvoke <org.codehaus.groovy.runtime.ProxyGeneratorAdapter: int registerLen(groovyjarjarasm.asm.Type[])>(v57);
+1097c1097
+< virtualinvoke v56.<org.objectweb.asm.MethodVisitor: void visitMaxs(int,int)>(2, v64);
+---
+> virtualinvoke v56.<groovyjarjarasm.asm.MethodVisitor: void visitMaxs(int,int)>(2, v64);
+1100,1104c1100,1104
+< virtualinvoke v56.<org.objectweb.asm.MethodVisitor: void visitTypeInsn(int,java.lang.String)>(187, "java/lang/UnsupportedOperationException");
+< virtualinvoke v56.<org.objectweb.asm.MethodVisitor: void visitInsn(int)>(89);
+< virtualinvoke v56.<org.objectweb.asm.MethodVisitor: void visitMethodInsn(int,java.lang.String,java.lang.String,java.lang.String,boolean)>(183, "java/lang/UnsupportedOperationException", "<init>", "()V", 0);
+< virtualinvoke v56.<org.objectweb.asm.MethodVisitor: void visitInsn(int)>(191);
+< v65 = staticinvoke <org.codehaus.groovy.runtime.ProxyGeneratorAdapter: int registerLen(org.objectweb.asm.Type[])>(v57);
+---
+> virtualinvoke v56.<groovyjarjarasm.asm.MethodVisitor: void visitTypeInsn(int,java.lang.String)>(187, "java/lang/UnsupportedOperationException");
+> virtualinvoke v56.<groovyjarjarasm.asm.MethodVisitor: void visitInsn(int)>(89);
+> virtualinvoke v56.<groovyjarjarasm.asm.MethodVisitor: void visitMethodInsn(int,java.lang.String,java.lang.String,java.lang.String,boolean)>(183, "java/lang/UnsupportedOperationException", "<init>", "()V", 0);
+> virtualinvoke v56.<groovyjarjarasm.asm.MethodVisitor: void visitInsn(int)>(191);
+> v65 = staticinvoke <org.codehaus.groovy.runtime.ProxyGeneratorAdapter: int registerLen(groovyjarjarasm.asm.Type[])>(v57);
+1106c1106
+< virtualinvoke v56.<org.objectweb.asm.MethodVisitor: void visitMaxs(int,int)>(2, v66);
+---
+> virtualinvoke v56.<groovyjarjarasm.asm.MethodVisitor: void visitMaxs(int,int)>(2, v66);
+1108c1108
+< virtualinvoke v56.<org.objectweb.asm.MethodVisitor: void visitEnd()>();
+---
+> virtualinvoke v56.<groovyjarjarasm.asm.MethodVisitor: void visitEnd()>();
+1112c1112
+< private org.objectweb.asm.MethodVisitor createGetProxyTargetMethod(int, java.lang.String, java.lang.String, java.lang.String, java.lang.String[])
+---
+> private groovyjarjarasm.asm.MethodVisitor createGetProxyTargetMethod(int, java.lang.String, java.lang.String, java.lang.String, java.lang.String[])
+1114d1113
+< org.objectweb.asm.MethodVisitor v6;
+1115a1115
+> groovyjarjarasm.asm.MethodVisitor v6;
+1126,1128c1126,1128
+< v6 = specialinvoke v0.<org.objectweb.asm.ClassVisitor: org.objectweb.asm.MethodVisitor visitMethod(int,java.lang.String,java.lang.String,java.lang.String,java.lang.String[])>(17, v2, v3, v4, v5);
+< virtualinvoke v6.<org.objectweb.asm.MethodVisitor: void visitCode()>();
+< virtualinvoke v6.<org.objectweb.asm.MethodVisitor: void visitIntInsn(int,int)>(25, 0);
+---
+> v6 = specialinvoke v0.<groovyjarjarasm.asm.ClassVisitor: groovyjarjarasm.asm.MethodVisitor visitMethod(int,java.lang.String,java.lang.String,java.lang.String,java.lang.String[])>(17, v2, v3, v4, v5);
+> virtualinvoke v6.<groovyjarjarasm.asm.MethodVisitor: void visitCode()>();
+> virtualinvoke v6.<groovyjarjarasm.asm.MethodVisitor: void visitIntInsn(int,int)>(25, 0);
+1132,1135c1132,1135
+< virtualinvoke v6.<org.objectweb.asm.MethodVisitor: void visitFieldInsn(int,java.lang.String,java.lang.String,java.lang.String)>(180, v7, "$delegate", v9);
+< virtualinvoke v6.<org.objectweb.asm.MethodVisitor: void visitInsn(int)>(176);
+< virtualinvoke v6.<org.objectweb.asm.MethodVisitor: void visitMaxs(int,int)>(1, 1);
+< virtualinvoke v6.<org.objectweb.asm.MethodVisitor: void visitEnd()>();
+---
+> virtualinvoke v6.<groovyjarjarasm.asm.MethodVisitor: void visitFieldInsn(int,java.lang.String,java.lang.String,java.lang.String)>(180, v7, "$delegate", v9);
+> virtualinvoke v6.<groovyjarjarasm.asm.MethodVisitor: void visitInsn(int)>(176);
+> virtualinvoke v6.<groovyjarjarasm.asm.MethodVisitor: void visitMaxs(int,int)>(1, 1);
+> virtualinvoke v6.<groovyjarjarasm.asm.MethodVisitor: void visitEnd()>();
+1138c1138
+< private static int registerLen(org.objectweb.asm.Type[])
+---
+> private static int registerLen(groovyjarjarasm.asm.Type[])
+1139a1140
+> groovyjarjarasm.asm.Type v4;
+1141,1143c1142,1143
+< org.objectweb.asm.Type[] v0;
+< org.objectweb.asm.Type v4;
+< v0 := @parameter0: org.objectweb.asm.Type[];
+---
+> groovyjarjarasm.asm.Type[] v0;
+> v0 := @parameter0: groovyjarjarasm.asm.Type[];
+1150c1150
+< v5 = staticinvoke <org.codehaus.groovy.runtime.ProxyGeneratorAdapter: int registerLen(org.objectweb.asm.Type)>(v4);
+---
+> v5 = staticinvoke <org.codehaus.groovy.runtime.ProxyGeneratorAdapter: int registerLen(groovyjarjarasm.asm.Type)>(v4);
+1157c1157
+< private static int registerLen(org.objectweb.asm.Type)
+---
+> private static int registerLen(groovyjarjarasm.asm.Type)
+1160,1162c1160,1162
+< org.objectweb.asm.Type v0, v1, v2;
+< v0 := @parameter0: org.objectweb.asm.Type;
+< v1 = <org.objectweb.asm.Type: org.objectweb.asm.Type DOUBLE_TYPE>;
+---
+> groovyjarjarasm.asm.Type v0, v1, v2;
+> v0 := @parameter0: groovyjarjarasm.asm.Type;
+> v1 = <groovyjarjarasm.asm.Type: groovyjarjarasm.asm.Type DOUBLE_TYPE>;
+1164c1164
+< v2 = <org.objectweb.asm.Type: org.objectweb.asm.Type LONG_TYPE>;
+---
+> v2 = <groovyjarjarasm.asm.Type: groovyjarjarasm.asm.Type LONG_TYPE>;
+1174c1174
+< private org.objectweb.asm.MethodVisitor createConstructor(int, java.lang.String, java.lang.String, java.lang.String, java.lang.String[])
+---
+> private groovyjarjarasm.asm.MethodVisitor createConstructor(int, java.lang.String, java.lang.String, java.lang.String, java.lang.String[])
+1176c1176
+< org.objectweb.asm.MethodVisitor v16;
+---
+> groovyjarjarasm.asm.Type v10, v21;
+1178c1178
+< org.objectweb.asm.Type v10, v21;
+---
+> groovyjarjarasm.asm.MethodVisitor v16;
+1180d1179
+< org.objectweb.asm.Type[] v6;
+1182a1182
+> groovyjarjarasm.asm.Type[] v6;
+1192c1192
+< v6 = staticinvoke <org.objectweb.asm.Type: org.objectweb.asm.Type[] getArgumentTypes(java.lang.String)>(v3);
+---
+> v6 = staticinvoke <groovyjarjarasm.asm.Type: groovyjarjarasm.asm.Type[] getArgumentTypes(java.lang.String)>(v3);
+1200c1200
+< v11 = virtualinvoke v10.<org.objectweb.asm.Type: java.lang.String getDescriptor()>();
+---
+> v11 = virtualinvoke v10.<groovyjarjarasm.asm.Type: java.lang.String getDescriptor()>();
+1214,1216c1214,1216
+< v16 = specialinvoke v0.<org.objectweb.asm.ClassVisitor: org.objectweb.asm.MethodVisitor visitMethod(int,java.lang.String,java.lang.String,java.lang.String,java.lang.String[])>(v1, v2, v15, v4, v5);
+< virtualinvoke v16.<org.objectweb.asm.MethodVisitor: void visitCode()>();
+< specialinvoke v0.<org.codehaus.groovy.runtime.ProxyGeneratorAdapter: void initializeDelegateClosure(org.objectweb.asm.MethodVisitor,org.objectweb.asm.Type[])>(v16, v6);
+---
+> v16 = specialinvoke v0.<groovyjarjarasm.asm.ClassVisitor: groovyjarjarasm.asm.MethodVisitor visitMethod(int,java.lang.String,java.lang.String,java.lang.String,java.lang.String[])>(v1, v2, v15, v4, v5);
+> virtualinvoke v16.<groovyjarjarasm.asm.MethodVisitor: void visitCode()>();
+> specialinvoke v0.<org.codehaus.groovy.runtime.ProxyGeneratorAdapter: void initializeDelegateClosure(groovyjarjarasm.asm.MethodVisitor,groovyjarjarasm.asm.Type[])>(v16, v6);
+1219c1219
+< specialinvoke v0.<org.codehaus.groovy.runtime.ProxyGeneratorAdapter: void initializeDelegateObject(org.objectweb.asm.MethodVisitor,org.objectweb.asm.Type[])>(v16, v6);
+---
+> specialinvoke v0.<org.codehaus.groovy.runtime.ProxyGeneratorAdapter: void initializeDelegateObject(groovyjarjarasm.asm.MethodVisitor,groovyjarjarasm.asm.Type[])>(v16, v6);
+1221c1221
+< virtualinvoke v16.<org.objectweb.asm.MethodVisitor: void visitVarInsn(int,int)>(25, 0);
+---
+> virtualinvoke v16.<groovyjarjarasm.asm.MethodVisitor: void visitVarInsn(int,int)>(25, 0);
+1228c1228
+< v22 = staticinvoke <org.codehaus.groovy.runtime.ProxyGeneratorAdapter: boolean isPrimitive(org.objectweb.asm.Type)>(v21);
+---
+> v22 = staticinvoke <org.codehaus.groovy.runtime.ProxyGeneratorAdapter: boolean isPrimitive(groovyjarjarasm.asm.Type)>(v21);
+1230,1231c1230,1231
+< v23 = staticinvoke <org.codehaus.groovy.runtime.ProxyGeneratorAdapter: int getLoadInsn(org.objectweb.asm.Type)>(v21);
+< virtualinvoke v16.<org.objectweb.asm.MethodVisitor: void visitIntInsn(int,int)>(v23, v18);
+---
+> v23 = staticinvoke <org.codehaus.groovy.runtime.ProxyGeneratorAdapter: int getLoadInsn(groovyjarjarasm.asm.Type)>(v21);
+> virtualinvoke v16.<groovyjarjarasm.asm.MethodVisitor: void visitIntInsn(int,int)>(v23, v18);
+1234c1234
+< virtualinvoke v16.<org.objectweb.asm.MethodVisitor: void visitVarInsn(int,int)>(25, v18);
+---
+> virtualinvoke v16.<groovyjarjarasm.asm.MethodVisitor: void visitVarInsn(int,int)>(25, v18);
+1236c1236
+< v24 = staticinvoke <org.codehaus.groovy.runtime.ProxyGeneratorAdapter: int registerLen(org.objectweb.asm.Type)>(v21);
+---
+> v24 = staticinvoke <org.codehaus.groovy.runtime.ProxyGeneratorAdapter: int registerLen(groovyjarjarasm.asm.Type)>(v21);
+1243,1244c1243,1244
+< virtualinvoke v16.<org.objectweb.asm.MethodVisitor: void visitMethodInsn(int,java.lang.String,java.lang.String,java.lang.String,boolean)>(183, v26, "<init>", v3, 0);
+< virtualinvoke v16.<org.objectweb.asm.MethodVisitor: void visitInsn(int)>(177);
+---
+> virtualinvoke v16.<groovyjarjarasm.asm.MethodVisitor: void visitMethodInsn(int,java.lang.String,java.lang.String,java.lang.String,boolean)>(183, v26, "<init>", v3, 0);
+> virtualinvoke v16.<groovyjarjarasm.asm.MethodVisitor: void visitInsn(int)>(177);
+1254,1255c1254,1255
+< virtualinvoke v16.<org.objectweb.asm.MethodVisitor: void visitMaxs(int,int)>(v30, v30);
+< virtualinvoke v16.<org.objectweb.asm.MethodVisitor: void visitEnd()>();
+---
+> virtualinvoke v16.<groovyjarjarasm.asm.MethodVisitor: void visitMaxs(int,int)>(v30, v30);
+> virtualinvoke v16.<groovyjarjarasm.asm.MethodVisitor: void visitEnd()>();
+1258c1258
+< private void initializeDelegateClosure(org.objectweb.asm.MethodVisitor, org.objectweb.asm.Type[])
+---
+> private void initializeDelegateClosure(groovyjarjarasm.asm.MethodVisitor, groovyjarjarasm.asm.Type[])
+1260d1259
+< org.objectweb.asm.MethodVisitor v1;
+1261a1261
+> groovyjarjarasm.asm.Type[] v2;
+1263d1262
+< org.objectweb.asm.Type[] v2;
+1264a1264
+> groovyjarjarasm.asm.MethodVisitor v1;
+1266,1268c1266,1268
+< v1 := @parameter0: org.objectweb.asm.MethodVisitor;
+< v2 := @parameter1: org.objectweb.asm.Type[];
+< v3 = staticinvoke <org.codehaus.groovy.runtime.ProxyGeneratorAdapter: int getTypeArgsRegisterLength(org.objectweb.asm.Type[])>(v2);
+---
+> v1 := @parameter0: groovyjarjarasm.asm.MethodVisitor;
+> v2 := @parameter1: groovyjarjarasm.asm.Type[];
+> v3 = staticinvoke <org.codehaus.groovy.runtime.ProxyGeneratorAdapter: int getTypeArgsRegisterLength(groovyjarjarasm.asm.Type[])>(v2);
+1270,1271c1270,1271
+< virtualinvoke v1.<org.objectweb.asm.MethodVisitor: void visitIntInsn(int,int)>(25, 0);
+< virtualinvoke v1.<org.objectweb.asm.MethodVisitor: void visitIntInsn(int,int)>(25, v4);
+---
+> virtualinvoke v1.<groovyjarjarasm.asm.MethodVisitor: void visitIntInsn(int,int)>(25, 0);
+> virtualinvoke v1.<groovyjarjarasm.asm.MethodVisitor: void visitIntInsn(int,int)>(25, v4);
+1273c1273
+< virtualinvoke v1.<org.objectweb.asm.MethodVisitor: void visitFieldInsn(int,java.lang.String,java.lang.String,java.lang.String)>(181, v5, "$closures$delegate$map", "Ljava/util/Map;");
+---
+> virtualinvoke v1.<groovyjarjarasm.asm.MethodVisitor: void visitFieldInsn(int,java.lang.String,java.lang.String,java.lang.String)>(181, v5, "$closures$delegate$map", "Ljava/util/Map;");
+1276c1276
+< private void initializeDelegateObject(org.objectweb.asm.MethodVisitor, org.objectweb.asm.Type[])
+---
+> private void initializeDelegateObject(groovyjarjarasm.asm.MethodVisitor, groovyjarjarasm.asm.Type[])
+1278c1278
+< org.objectweb.asm.MethodVisitor v1;
+---
+> groovyjarjarasm.asm.MethodVisitor v1;
+1279a1280
+> groovyjarjarasm.asm.Type[] v2;
+1282d1282
+< org.objectweb.asm.Type[] v2;
+1285,1287c1285,1287
+< v1 := @parameter0: org.objectweb.asm.MethodVisitor;
+< v2 := @parameter1: org.objectweb.asm.Type[];
+< v3 = staticinvoke <org.codehaus.groovy.runtime.ProxyGeneratorAdapter: int getTypeArgsRegisterLength(org.objectweb.asm.Type[])>(v2);
+---
+> v1 := @parameter0: groovyjarjarasm.asm.MethodVisitor;
+> v2 := @parameter1: groovyjarjarasm.asm.Type[];
+> v3 = staticinvoke <org.codehaus.groovy.runtime.ProxyGeneratorAdapter: int getTypeArgsRegisterLength(groovyjarjarasm.asm.Type[])>(v2);
+1289,1290c1289,1290
+< virtualinvoke v1.<org.objectweb.asm.MethodVisitor: void visitIntInsn(int,int)>(25, 0);
+< virtualinvoke v1.<org.objectweb.asm.MethodVisitor: void visitIntInsn(int,int)>(25, v4);
+---
+> virtualinvoke v1.<groovyjarjarasm.asm.MethodVisitor: void visitIntInsn(int,int)>(25, 0);
+> virtualinvoke v1.<groovyjarjarasm.asm.MethodVisitor: void visitIntInsn(int,int)>(25, v4);
+1294c1294
+< virtualinvoke v1.<org.objectweb.asm.MethodVisitor: void visitFieldInsn(int,java.lang.String,java.lang.String,java.lang.String)>(181, v5, "$delegate", v7);
+---
+> virtualinvoke v1.<groovyjarjarasm.asm.MethodVisitor: void visitFieldInsn(int,java.lang.String,java.lang.String,java.lang.String)>(181, v5, "$delegate", v7);
+1297c1297
+< private static int getTypeArgsRegisterLength(org.objectweb.asm.Type[])
+---
+> private static int getTypeArgsRegisterLength(groovyjarjarasm.asm.Type[])
+1298a1299
+> groovyjarjarasm.asm.Type v4;
+1300,1302c1301,1302
+< org.objectweb.asm.Type[] v0;
+< org.objectweb.asm.Type v4;
+< v0 := @parameter0: org.objectweb.asm.Type[];
+---
+> groovyjarjarasm.asm.Type[] v0;
+> v0 := @parameter0: groovyjarjarasm.asm.Type[];
+1309c1309
+< v5 = staticinvoke <org.codehaus.groovy.runtime.ProxyGeneratorAdapter: int registerLen(org.objectweb.asm.Type)>(v4);
+---
+> v5 = staticinvoke <org.codehaus.groovy.runtime.ProxyGeneratorAdapter: int registerLen(groovyjarjarasm.asm.Type)>(v4);
+1316c1316
+< protected org.objectweb.asm.MethodVisitor makeDelegateCall(java.lang.String, java.lang.String, java.lang.String, java.lang.String[], int)
+---
+> protected groovyjarjarasm.asm.MethodVisitor makeDelegateCall(java.lang.String, java.lang.String, java.lang.String, java.lang.String[], int)
+1318c1318
+< org.objectweb.asm.MethodVisitor v6;
+---
+> groovyjarjarasm.asm.Type v16;
+1320c1320
+< org.objectweb.asm.Type v16;
+---
+> groovyjarjarasm.asm.MethodVisitor v6;
+1322d1321
+< org.objectweb.asm.Type[] v10;
+1323a1323
+> groovyjarjarasm.asm.Type[] v10;
+1332,1333c1332,1333
+< v6 = specialinvoke v0.<org.objectweb.asm.ClassVisitor: org.objectweb.asm.MethodVisitor visitMethod(int,java.lang.String,java.lang.String,java.lang.String,java.lang.String[])>(v5, v1, v2, v3, v4);
+< virtualinvoke v6.<org.objectweb.asm.MethodVisitor: void visitVarInsn(int,int)>(25, 0);
+---
+> v6 = specialinvoke v0.<groovyjarjarasm.asm.ClassVisitor: groovyjarjarasm.asm.MethodVisitor visitMethod(int,java.lang.String,java.lang.String,java.lang.String,java.lang.String[])>(v5, v1, v2, v3, v4);
+> virtualinvoke v6.<groovyjarjarasm.asm.MethodVisitor: void visitVarInsn(int,int)>(25, 0);
+1337,1339c1337,1339
+< virtualinvoke v6.<org.objectweb.asm.MethodVisitor: void visitFieldInsn(int,java.lang.String,java.lang.String,java.lang.String)>(180, v7, "$delegate", v9);
+< virtualinvoke v6.<org.objectweb.asm.MethodVisitor: void visitLdcInsn(java.lang.Object)>(v1);
+< v10 = staticinvoke <org.objectweb.asm.Type: org.objectweb.asm.Type[] getArgumentTypes(java.lang.String)>(v2);
+---
+> virtualinvoke v6.<groovyjarjarasm.asm.MethodVisitor: void visitFieldInsn(int,java.lang.String,java.lang.String,java.lang.String)>(180, v7, "$delegate", v9);
+> virtualinvoke v6.<groovyjarjarasm.asm.MethodVisitor: void visitLdcInsn(java.lang.Object)>(v1);
+> v10 = staticinvoke <groovyjarjarasm.asm.Type: groovyjarjarasm.asm.Type[] getArgumentTypes(java.lang.String)>(v2);
+1341,1342c1341,1342
+< staticinvoke <org.codehaus.groovy.classgen.asm.BytecodeHelper: void pushConstant(org.objectweb.asm.MethodVisitor,int)>(v6, v11);
+< virtualinvoke v6.<org.objectweb.asm.MethodVisitor: void visitTypeInsn(int,java.lang.String)>(189, "java/lang/Object");
+---
+> staticinvoke <org.codehaus.groovy.classgen.asm.BytecodeHelper: void pushConstant(groovyjarjarasm.asm.MethodVisitor,int)>(v6, v11);
+> virtualinvoke v6.<groovyjarjarasm.asm.MethodVisitor: void visitTypeInsn(int,java.lang.String)>(189, "java/lang/Object");
+1350,1353c1350,1353
+< virtualinvoke v6.<org.objectweb.asm.MethodVisitor: void visitInsn(int)>(89);
+< staticinvoke <org.codehaus.groovy.classgen.asm.BytecodeHelper: void pushConstant(org.objectweb.asm.MethodVisitor,int)>(v6, v14);
+< specialinvoke v0.<org.codehaus.groovy.runtime.ProxyGeneratorAdapter: void boxPrimitiveType(org.objectweb.asm.MethodVisitor,int,org.objectweb.asm.Type)>(v6, v13, v16);
+< v17 = staticinvoke <org.codehaus.groovy.runtime.ProxyGeneratorAdapter: int registerLen(org.objectweb.asm.Type)>(v16);
+---
+> virtualinvoke v6.<groovyjarjarasm.asm.MethodVisitor: void visitInsn(int)>(89);
+> staticinvoke <org.codehaus.groovy.classgen.asm.BytecodeHelper: void pushConstant(groovyjarjarasm.asm.MethodVisitor,int)>(v6, v14);
+> specialinvoke v0.<org.codehaus.groovy.runtime.ProxyGeneratorAdapter: void boxPrimitiveType(groovyjarjarasm.asm.MethodVisitor,int,groovyjarjarasm.asm.Type)>(v6, v13, v16);
+> v17 = staticinvoke <org.codehaus.groovy.runtime.ProxyGeneratorAdapter: int registerLen(groovyjarjarasm.asm.Type)>(v16);
+1356c1356
+< v19 = staticinvoke <org.codehaus.groovy.runtime.ProxyGeneratorAdapter: int registerLen(org.objectweb.asm.Type)>(v16);
+---
+> v19 = staticinvoke <org.codehaus.groovy.runtime.ProxyGeneratorAdapter: int registerLen(groovyjarjarasm.asm.Type)>(v16);
+1358c1358
+< virtualinvoke v6.<org.objectweb.asm.MethodVisitor: void visitInsn(int)>(83);
+---
+> virtualinvoke v6.<groovyjarjarasm.asm.MethodVisitor: void visitInsn(int)>(83);
+1362,1364c1362,1364
+< virtualinvoke v6.<org.objectweb.asm.MethodVisitor: void visitMethodInsn(int,java.lang.String,java.lang.String,java.lang.String,boolean)>(184, "org/codehaus/groovy/runtime/InvokerHelper", "invokeMethod", "(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object;", 0);
+< staticinvoke <org.codehaus.groovy.runtime.ProxyGeneratorAdapter: void unwrapResult(org.objectweb.asm.MethodVisitor,java.lang.String)>(v6, v2);
+< v20 = staticinvoke <org.codehaus.groovy.runtime.ProxyGeneratorAdapter: int registerLen(org.objectweb.asm.Type[])>(v10);
+---
+> virtualinvoke v6.<groovyjarjarasm.asm.MethodVisitor: void visitMethodInsn(int,java.lang.String,java.lang.String,java.lang.String,boolean)>(184, "org/codehaus/groovy/runtime/InvokerHelper", "invokeMethod", "(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object;", 0);
+> staticinvoke <org.codehaus.groovy.runtime.ProxyGeneratorAdapter: void unwrapResult(groovyjarjarasm.asm.MethodVisitor,java.lang.String)>(v6, v2);
+> v20 = staticinvoke <org.codehaus.groovy.runtime.ProxyGeneratorAdapter: int registerLen(groovyjarjarasm.asm.Type[])>(v10);
+1366c1366
+< virtualinvoke v6.<org.objectweb.asm.MethodVisitor: void visitMaxs(int,int)>(v12, v21);
+---
+> virtualinvoke v6.<groovyjarjarasm.asm.MethodVisitor: void visitMaxs(int,int)>(v12, v21);
+1369c1369
+< protected org.objectweb.asm.MethodVisitor makeDelegateToClosureCall(java.lang.String, java.lang.String, java.lang.String, java.lang.String[], int)
+---
+> protected groovyjarjarasm.asm.MethodVisitor makeDelegateToClosureCall(java.lang.String, java.lang.String, java.lang.String, java.lang.String[], int)
+1371,1372c1371
+< org.objectweb.asm.MethodVisitor v6;
+< org.objectweb.asm.Label v21;
+---
+> groovyjarjarasm.asm.Type v15;
+1374c1373
+< org.objectweb.asm.Type v15;
+---
+> groovyjarjarasm.asm.MethodVisitor v6;
+1376d1374
+< org.objectweb.asm.Type[] v7;
+1377a1376,1377
+> groovyjarjarasm.asm.Label v21;
+> groovyjarjarasm.asm.Type[] v7;
+1386,1388c1386,1388
+< v6 = specialinvoke v0.<org.objectweb.asm.ClassVisitor: org.objectweb.asm.MethodVisitor visitMethod(int,java.lang.String,java.lang.String,java.lang.String,java.lang.String[])>(v5, v1, v2, v3, v4);
+< virtualinvoke v6.<org.objectweb.asm.MethodVisitor: void visitCode()>();
+< v7 = staticinvoke <org.objectweb.asm.Type: org.objectweb.asm.Type[] getArgumentTypes(java.lang.String)>(v2);
+---
+> v6 = specialinvoke v0.<groovyjarjarasm.asm.ClassVisitor: groovyjarjarasm.asm.MethodVisitor visitMethod(int,java.lang.String,java.lang.String,java.lang.String,java.lang.String[])>(v5, v1, v2, v3, v4);
+> virtualinvoke v6.<groovyjarjarasm.asm.MethodVisitor: void visitCode()>();
+> v7 = staticinvoke <groovyjarjarasm.asm.Type: groovyjarjarasm.asm.Type[] getArgumentTypes(java.lang.String)>(v2);
+1392,1393c1392,1393
+< staticinvoke <org.codehaus.groovy.classgen.asm.BytecodeHelper: void pushConstant(org.objectweb.asm.MethodVisitor,int)>(v6, v10);
+< virtualinvoke v6.<org.objectweb.asm.MethodVisitor: void visitTypeInsn(int,java.lang.String)>(189, "java/lang/Object");
+---
+> staticinvoke <org.codehaus.groovy.classgen.asm.BytecodeHelper: void pushConstant(groovyjarjarasm.asm.MethodVisitor,int)>(v6, v10);
+> virtualinvoke v6.<groovyjarjarasm.asm.MethodVisitor: void visitTypeInsn(int,java.lang.String)>(189, "java/lang/Object");
+1401,1404c1401,1404
+< virtualinvoke v6.<org.objectweb.asm.MethodVisitor: void visitInsn(int)>(89);
+< staticinvoke <org.codehaus.groovy.classgen.asm.BytecodeHelper: void pushConstant(org.objectweb.asm.MethodVisitor,int)>(v6, v13);
+< specialinvoke v0.<org.codehaus.groovy.runtime.ProxyGeneratorAdapter: void boxPrimitiveType(org.objectweb.asm.MethodVisitor,int,org.objectweb.asm.Type)>(v6, v12, v15);
+< v16 = staticinvoke <org.codehaus.groovy.runtime.ProxyGeneratorAdapter: int registerLen(org.objectweb.asm.Type)>(v15);
+---
+> virtualinvoke v6.<groovyjarjarasm.asm.MethodVisitor: void visitInsn(int)>(89);
+> staticinvoke <org.codehaus.groovy.classgen.asm.BytecodeHelper: void pushConstant(groovyjarjarasm.asm.MethodVisitor,int)>(v6, v13);
+> specialinvoke v0.<org.codehaus.groovy.runtime.ProxyGeneratorAdapter: void boxPrimitiveType(groovyjarjarasm.asm.MethodVisitor,int,groovyjarjarasm.asm.Type)>(v6, v12, v15);
+> v16 = staticinvoke <org.codehaus.groovy.runtime.ProxyGeneratorAdapter: int registerLen(groovyjarjarasm.asm.Type)>(v15);
+1406c1406
+< v17 = staticinvoke <org.codehaus.groovy.runtime.ProxyGeneratorAdapter: int registerLen(org.objectweb.asm.Type)>(v15);
+---
+> v17 = staticinvoke <org.codehaus.groovy.runtime.ProxyGeneratorAdapter: int registerLen(groovyjarjarasm.asm.Type)>(v15);
+1409c1409
+< virtualinvoke v6.<org.objectweb.asm.MethodVisitor: void visitInsn(int)>(83);
+---
+> virtualinvoke v6.<groovyjarjarasm.asm.MethodVisitor: void visitInsn(int)>(83);
+1413,1414c1413,1414
+< virtualinvoke v6.<org.objectweb.asm.MethodVisitor: void visitVarInsn(int,int)>(58, v9);
+< virtualinvoke v6.<org.objectweb.asm.MethodVisitor: void visitVarInsn(int,int)>(25, 0);
+---
+> virtualinvoke v6.<groovyjarjarasm.asm.MethodVisitor: void visitVarInsn(int,int)>(58, v9);
+> virtualinvoke v6.<groovyjarjarasm.asm.MethodVisitor: void visitVarInsn(int,int)>(25, 0);
+1416,1418c1416,1418
+< virtualinvoke v6.<org.objectweb.asm.MethodVisitor: void visitFieldInsn(int,java.lang.String,java.lang.String,java.lang.String)>(180, v19, "$closures$delegate$map", "Ljava/util/Map;");
+< virtualinvoke v6.<org.objectweb.asm.MethodVisitor: void visitLdcInsn(java.lang.Object)>(v1);
+< virtualinvoke v6.<org.objectweb.asm.MethodVisitor: void visitMethodInsn(int,java.lang.String,java.lang.String,java.lang.String,boolean)>(185, "java/util/Map", "get", "(Ljava/lang/Object;)Ljava/lang/Object;", 1);
+---
+> virtualinvoke v6.<groovyjarjarasm.asm.MethodVisitor: void visitFieldInsn(int,java.lang.String,java.lang.String,java.lang.String)>(180, v19, "$closures$delegate$map", "Ljava/util/Map;");
+> virtualinvoke v6.<groovyjarjarasm.asm.MethodVisitor: void visitLdcInsn(java.lang.Object)>(v1);
+> virtualinvoke v6.<groovyjarjarasm.asm.MethodVisitor: void visitMethodInsn(int,java.lang.String,java.lang.String,java.lang.String,boolean)>(185, "java/util/Map", "get", "(Ljava/lang/Object;)Ljava/lang/Object;", 1);
+1420,1425c1420,1425
+< virtualinvoke v6.<org.objectweb.asm.MethodVisitor: void visitVarInsn(int,int)>(58, v20);
+< v21 = new org.objectweb.asm.Label;
+< specialinvoke v21.<org.objectweb.asm.Label: void <init>()>();
+< virtualinvoke v6.<org.objectweb.asm.MethodVisitor: void visitIntInsn(int,int)>(25, v20);
+< virtualinvoke v6.<org.objectweb.asm.MethodVisitor: void visitJumpInsn(int,org.objectweb.asm.Label)>(199, v21);
+< virtualinvoke v6.<org.objectweb.asm.MethodVisitor: void visitVarInsn(int,int)>(25, 0);
+---
+> virtualinvoke v6.<groovyjarjarasm.asm.MethodVisitor: void visitVarInsn(int,int)>(58, v20);
+> v21 = new groovyjarjarasm.asm.Label;
+> specialinvoke v21.<groovyjarjarasm.asm.Label: void <init>()>();
+> virtualinvoke v6.<groovyjarjarasm.asm.MethodVisitor: void visitIntInsn(int,int)>(25, v20);
+> virtualinvoke v6.<groovyjarjarasm.asm.MethodVisitor: void visitJumpInsn(int,groovyjarjarasm.asm.Label)>(199, v21);
+> virtualinvoke v6.<groovyjarjarasm.asm.MethodVisitor: void visitVarInsn(int,int)>(25, 0);
+1427,1432c1427,1432
+< virtualinvoke v6.<org.objectweb.asm.MethodVisitor: void visitFieldInsn(int,java.lang.String,java.lang.String,java.lang.String)>(180, v22, "$closures$delegate$map", "Ljava/util/Map;");
+< virtualinvoke v6.<org.objectweb.asm.MethodVisitor: void visitLdcInsn(java.lang.Object)>("*");
+< virtualinvoke v6.<org.objectweb.asm.MethodVisitor: void visitMethodInsn(int,java.lang.String,java.lang.String,java.lang.String,boolean)>(185, "java/util/Map", "get", "(Ljava/lang/Object;)Ljava/lang/Object;", 1);
+< virtualinvoke v6.<org.objectweb.asm.MethodVisitor: void visitVarInsn(int,int)>(58, v20);
+< virtualinvoke v6.<org.objectweb.asm.MethodVisitor: void visitLabel(org.objectweb.asm.Label)>(v21);
+< virtualinvoke v6.<org.objectweb.asm.MethodVisitor: void visitVarInsn(int,int)>(25, v20);
+---
+> virtualinvoke v6.<groovyjarjarasm.asm.MethodVisitor: void visitFieldInsn(int,java.lang.String,java.lang.String,java.lang.String)>(180, v22, "$closures$delegate$map", "Ljava/util/Map;");
+> virtualinvoke v6.<groovyjarjarasm.asm.MethodVisitor: void visitLdcInsn(java.lang.Object)>("*");
+> virtualinvoke v6.<groovyjarjarasm.asm.MethodVisitor: void visitMethodInsn(int,java.lang.String,java.lang.String,java.lang.String,boolean)>(185, "java/util/Map", "get", "(Ljava/lang/Object;)Ljava/lang/Object;", 1);
+> virtualinvoke v6.<groovyjarjarasm.asm.MethodVisitor: void visitVarInsn(int,int)>(58, v20);
+> virtualinvoke v6.<groovyjarjarasm.asm.MethodVisitor: void visitLabel(groovyjarjarasm.asm.Label)>(v21);
+> virtualinvoke v6.<groovyjarjarasm.asm.MethodVisitor: void visitVarInsn(int,int)>(25, v20);
+1435,1436c1435,1436
+< virtualinvoke v6.<org.objectweb.asm.MethodVisitor: void visitMethodInsn(int,java.lang.String,java.lang.String,java.lang.String,boolean)>(184, v24, "ensureClosure", "(Ljava/lang/Object;)Lgroovy/lang/Closure;", 0);
+< virtualinvoke v6.<org.objectweb.asm.MethodVisitor: void visitVarInsn(int,int)>(25, v9);
+---
+> virtualinvoke v6.<groovyjarjarasm.asm.MethodVisitor: void visitMethodInsn(int,java.lang.String,java.lang.String,java.lang.String,boolean)>(184, v24, "ensureClosure", "(Ljava/lang/Object;)Lgroovy/lang/Closure;", 0);
+> virtualinvoke v6.<groovyjarjarasm.asm.MethodVisitor: void visitVarInsn(int,int)>(25, v9);
+1438,1439c1438,1439
+< virtualinvoke v6.<org.objectweb.asm.MethodVisitor: void visitMethodInsn(int,java.lang.String,java.lang.String,java.lang.String,boolean)>(182, "groovy/lang/Closure", "call", "([Ljava/lang/Object;)Ljava/lang/Object;", 0);
+< staticinvoke <org.codehaus.groovy.runtime.ProxyGeneratorAdapter: void unwrapResult(org.objectweb.asm.MethodVisitor,java.lang.String)>(v6, v2);
+---
+> virtualinvoke v6.<groovyjarjarasm.asm.MethodVisitor: void visitMethodInsn(int,java.lang.String,java.lang.String,java.lang.String,boolean)>(182, "groovy/lang/Closure", "call", "([Ljava/lang/Object;)Ljava/lang/Object;", 0);
+> staticinvoke <org.codehaus.groovy.runtime.ProxyGeneratorAdapter: void unwrapResult(groovyjarjarasm.asm.MethodVisitor,java.lang.String)>(v6, v2);
+1441,1442c1441,1442
+< virtualinvoke v6.<org.objectweb.asm.MethodVisitor: void visitMaxs(int,int)>(v25, v26);
+< virtualinvoke v6.<org.objectweb.asm.MethodVisitor: void visitEnd()>();
+---
+> virtualinvoke v6.<groovyjarjarasm.asm.MethodVisitor: void visitMaxs(int,int)>(v25, v26);
+> virtualinvoke v6.<groovyjarjarasm.asm.MethodVisitor: void visitEnd()>();
+1445c1445
+< private void boxPrimitiveType(org.objectweb.asm.MethodVisitor, int, org.objectweb.asm.Type)
+---
+> private void boxPrimitiveType(groovyjarjarasm.asm.MethodVisitor, int, groovyjarjarasm.asm.Type)
+1447,1448c1447,1448
+< org.objectweb.asm.MethodVisitor v1;
+< org.objectweb.asm.Type v3;
+---
+> groovyjarjarasm.asm.Type v3;
+> groovyjarjarasm.asm.MethodVisitor v1;
+1454c1454
+< v1 := @parameter0: org.objectweb.asm.MethodVisitor;
+---
+> v1 := @parameter0: groovyjarjarasm.asm.MethodVisitor;
+1456,1457c1456,1457
+< v3 := @parameter2: org.objectweb.asm.Type;
+< v4 = staticinvoke <org.codehaus.groovy.runtime.ProxyGeneratorAdapter: boolean isPrimitive(org.objectweb.asm.Type)>(v3);
+---
+> v3 := @parameter2: groovyjarjarasm.asm.Type;
+> v4 = staticinvoke <org.codehaus.groovy.runtime.ProxyGeneratorAdapter: boolean isPrimitive(groovyjarjarasm.asm.Type)>(v3);
+1459,1462c1459,1462
+< v5 = staticinvoke <org.codehaus.groovy.runtime.ProxyGeneratorAdapter: int getLoadInsn(org.objectweb.asm.Type)>(v3);
+< virtualinvoke v1.<org.objectweb.asm.MethodVisitor: void visitIntInsn(int,int)>(v5, v2);
+< v6 = staticinvoke <org.codehaus.groovy.runtime.ProxyGeneratorAdapter: java.lang.String getWrappedClassDescriptor(org.objectweb.asm.Type)>(v3);
+< v7 = virtualinvoke v3.<org.objectweb.asm.Type: java.lang.String getDescriptor()>();
+---
+> v5 = staticinvoke <org.codehaus.groovy.runtime.ProxyGeneratorAdapter: int getLoadInsn(groovyjarjarasm.asm.Type)>(v3);
+> virtualinvoke v1.<groovyjarjarasm.asm.MethodVisitor: void visitIntInsn(int,int)>(v5, v2);
+> v6 = staticinvoke <org.codehaus.groovy.runtime.ProxyGeneratorAdapter: java.lang.String getWrappedClassDescriptor(groovyjarjarasm.asm.Type)>(v3);
+> v7 = virtualinvoke v3.<groovyjarjarasm.asm.Type: java.lang.String getDescriptor()>();
+1464c1464
+< virtualinvoke v1.<org.objectweb.asm.MethodVisitor: void visitMethodInsn(int,java.lang.String,java.lang.String,java.lang.String,boolean)>(184, v6, "valueOf", v8, 0);
+---
+> virtualinvoke v1.<groovyjarjarasm.asm.MethodVisitor: void visitMethodInsn(int,java.lang.String,java.lang.String,java.lang.String,boolean)>(184, v6, "valueOf", v8, 0);
+1467c1467
+< virtualinvoke v1.<org.objectweb.asm.MethodVisitor: void visitVarInsn(int,int)>(25, v2);
+---
+> virtualinvoke v1.<groovyjarjarasm.asm.MethodVisitor: void visitVarInsn(int,int)>(25, v2);
+1471c1471
+< private static void unwrapResult(org.objectweb.asm.MethodVisitor, java.lang.String)
+---
+> private static void unwrapResult(groovyjarjarasm.asm.MethodVisitor, java.lang.String)
+1473c1473
+< org.objectweb.asm.MethodVisitor v0;
+---
+> groovyjarjarasm.asm.Type v2, v3;
+1475c1475
+< org.objectweb.asm.Type v2, v3;
+---
+> groovyjarjarasm.asm.MethodVisitor v0;
+1479c1479
+< v0 := @parameter0: org.objectweb.asm.MethodVisitor;
+---
+> v0 := @parameter0: groovyjarjarasm.asm.MethodVisitor;
+1481,1482c1481,1482
+< v2 = staticinvoke <org.objectweb.asm.Type: org.objectweb.asm.Type getReturnType(java.lang.String)>(v1);
+< v3 = <org.objectweb.asm.Type: org.objectweb.asm.Type VOID_TYPE>;
+---
+> v2 = staticinvoke <groovyjarjarasm.asm.Type: groovyjarjarasm.asm.Type getReturnType(java.lang.String)>(v1);
+> v3 = <groovyjarjarasm.asm.Type: groovyjarjarasm.asm.Type VOID_TYPE>;
+1484,1485c1484,1485
+< virtualinvoke v0.<org.objectweb.asm.MethodVisitor: void visitInsn(int)>(87);
+< virtualinvoke v0.<org.objectweb.asm.MethodVisitor: void visitInsn(int)>(177);
+---
+> virtualinvoke v0.<groovyjarjarasm.asm.MethodVisitor: void visitInsn(int)>(87);
+> virtualinvoke v0.<groovyjarjarasm.asm.MethodVisitor: void visitInsn(int)>(177);
+1488c1488
+< v4 = staticinvoke <org.codehaus.groovy.runtime.ProxyGeneratorAdapter: boolean isPrimitive(org.objectweb.asm.Type)>(v2);
+---
+> v4 = staticinvoke <org.codehaus.groovy.runtime.ProxyGeneratorAdapter: boolean isPrimitive(groovyjarjarasm.asm.Type)>(v2);
+1490c1490
+< v5 = virtualinvoke v2.<org.objectweb.asm.Type: java.lang.String getClassName()>();
+---
+> v5 = virtualinvoke v2.<groovyjarjarasm.asm.Type: java.lang.String getClassName()>();
+1492c1492
+< staticinvoke <org.codehaus.groovy.classgen.asm.BytecodeHelper: void unbox(org.objectweb.asm.MethodVisitor,org.codehaus.groovy.ast.ClassNode)>(v0, v6);
+---
+> staticinvoke <org.codehaus.groovy.classgen.asm.BytecodeHelper: void unbox(groovyjarjarasm.asm.MethodVisitor,org.codehaus.groovy.ast.ClassNode)>(v0, v6);
+1495,1496c1495,1496
+< v7 = virtualinvoke v2.<org.objectweb.asm.Type: java.lang.String getInternalName()>();
+< virtualinvoke v0.<org.objectweb.asm.MethodVisitor: void visitTypeInsn(int,java.lang.String)>(192, v7);
+---
+> v7 = virtualinvoke v2.<groovyjarjarasm.asm.Type: java.lang.String getInternalName()>();
+> virtualinvoke v0.<groovyjarjarasm.asm.MethodVisitor: void visitTypeInsn(int,java.lang.String)>(192, v7);
+1498,1499c1498,1499
+< v8 = staticinvoke <org.codehaus.groovy.runtime.ProxyGeneratorAdapter: int getReturnInsn(org.objectweb.asm.Type)>(v2);
+< virtualinvoke v0.<org.objectweb.asm.MethodVisitor: void visitInsn(int)>(v8);
+---
+> v8 = staticinvoke <org.codehaus.groovy.runtime.ProxyGeneratorAdapter: int getReturnInsn(groovyjarjarasm.asm.Type)>(v2);
+> virtualinvoke v0.<groovyjarjarasm.asm.MethodVisitor: void visitInsn(int)>(v8);
+1624c1624
+< private static int getLoadInsn(org.objectweb.asm.Type)
+---
+> private static int getLoadInsn(groovyjarjarasm.asm.Type)
+1627,1629c1627,1629
+< org.objectweb.asm.Type v0;
+< v0 := @parameter0: org.objectweb.asm.Type;
+< v1 = staticinvoke <org.codehaus.groovy.classgen.asm.util.TypeUtil: int getLoadInsnByType(org.objectweb.asm.Type)>(v0);
+---
+> groovyjarjarasm.asm.Type v0;
+> v0 := @parameter0: groovyjarjarasm.asm.Type;
+> v1 = staticinvoke <org.codehaus.groovy.classgen.asm.util.TypeUtil: int getLoadInsnByType(groovyjarjarasm.asm.Type)>(v0);
+1632c1632
+< private static int getReturnInsn(org.objectweb.asm.Type)
+---
+> private static int getReturnInsn(groovyjarjarasm.asm.Type)
+1635,1637c1635,1637
+< org.objectweb.asm.Type v0;
+< v0 := @parameter0: org.objectweb.asm.Type;
+< v1 = staticinvoke <org.codehaus.groovy.classgen.asm.util.TypeUtil: int getReturnInsnByType(org.objectweb.asm.Type)>(v0);
+---
+> groovyjarjarasm.asm.Type v0;
+> v0 := @parameter0: groovyjarjarasm.asm.Type;
+> v1 = staticinvoke <org.codehaus.groovy.classgen.asm.util.TypeUtil: int getReturnInsnByType(groovyjarjarasm.asm.Type)>(v0);
+1640c1640
+< private static boolean isPrimitive(org.objectweb.asm.Type)
+---
+> private static boolean isPrimitive(groovyjarjarasm.asm.Type)
+1642c1642
+< org.objectweb.asm.Type v0;
+---
+> groovyjarjarasm.asm.Type v0;
+1644,1645c1644,1645
+< v0 := @parameter0: org.objectweb.asm.Type;
+< v1 = staticinvoke <org.codehaus.groovy.classgen.asm.util.TypeUtil: boolean isPrimitiveType(org.objectweb.asm.Type)>(v0);
+---
+> v0 := @parameter0: groovyjarjarasm.asm.Type;
+> v1 = staticinvoke <org.codehaus.groovy.classgen.asm.util.TypeUtil: boolean isPrimitiveType(groovyjarjarasm.asm.Type)>(v0);
+1648c1648
+< private static java.lang.String getWrappedClassDescriptor(org.objectweb.asm.Type)
+---
+> private static java.lang.String getWrappedClassDescriptor(groovyjarjarasm.asm.Type)
+1651,1653c1651,1653
+< org.objectweb.asm.Type v0;
+< v0 := @parameter0: org.objectweb.asm.Type;
+< v1 = staticinvoke <org.codehaus.groovy.classgen.asm.util.TypeUtil: java.lang.String getWrappedClassDescriptor(org.objectweb.asm.Type)>(v0);
+---
+> groovyjarjarasm.asm.Type v0;
+> v0 := @parameter0: groovyjarjarasm.asm.Type;
+> v1 = staticinvoke <org.codehaus.groovy.classgen.asm.util.TypeUtil: java.lang.String getWrappedClassDescriptor(groovyjarjarasm.asm.Type)>(v0);

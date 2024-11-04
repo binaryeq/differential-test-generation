@@ -1,0 +1,49 @@
+3d2
+< static final int[] $SwitchMap$org$apache$curator$framework$recipes$cache$PathChildrenCache$StartMode;
+7,11c6,8
+< java.lang.NoSuchFieldError v10, v14, v18, v25, v29, v33, v6;
+< int[] v11, v15, v2, v21, v22, v26, v3, v30, v7;
+< org.apache.curator.framework.recipes.cache.PathChildrenCache$StartMode[] v19;
+< org.apache.curator.framework.recipes.cache.PathChildrenCache$StartMode v23, v27, v31;
+< int v1, v13, v17, v20, v24, v28, v32, v5, v9;
+---
+> java.lang.NoSuchFieldError v10, v14, v18, v6;
+> int[] v11, v15, v2, v3, v7;
+> int v1, v13, v17, v5, v9;
+55,86d51
+< v19 = staticinvoke <org.apache.curator.framework.recipes.cache.PathChildrenCache$StartMode: org.apache.curator.framework.recipes.cache.PathChildrenCache$StartMode[] values()>();
+< v20 = lengthof v19;
+< v21 = newarray (int)[v20];
+< <org.apache.curator.framework.recipes.cache.PathChildrenCache$9: int[] $SwitchMap$org$apache$curator$framework$recipes$cache$PathChildrenCache$StartMode> = v21;
+< label14:
+< v22 = <org.apache.curator.framework.recipes.cache.PathChildrenCache$9: int[] $SwitchMap$org$apache$curator$framework$recipes$cache$PathChildrenCache$StartMode>;
+< v23 = <org.apache.curator.framework.recipes.cache.PathChildrenCache$StartMode: org.apache.curator.framework.recipes.cache.PathChildrenCache$StartMode NORMAL>;
+< v24 = virtualinvoke v23.<org.apache.curator.framework.recipes.cache.PathChildrenCache$StartMode: int ordinal()>();
+< v22[v24] = 1;
+< label15:
+< goto label17;
+< label16:
+< v25 := @caughtexception;
+< label17:
+< v26 = <org.apache.curator.framework.recipes.cache.PathChildrenCache$9: int[] $SwitchMap$org$apache$curator$framework$recipes$cache$PathChildrenCache$StartMode>;
+< v27 = <org.apache.curator.framework.recipes.cache.PathChildrenCache$StartMode: org.apache.curator.framework.recipes.cache.PathChildrenCache$StartMode BUILD_INITIAL_CACHE>;
+< v28 = virtualinvoke v27.<org.apache.curator.framework.recipes.cache.PathChildrenCache$StartMode: int ordinal()>();
+< v26[v28] = 2;
+< label18:
+< goto label20;
+< label19:
+< v29 := @caughtexception;
+< label20:
+< v30 = <org.apache.curator.framework.recipes.cache.PathChildrenCache$9: int[] $SwitchMap$org$apache$curator$framework$recipes$cache$PathChildrenCache$StartMode>;
+< v31 = <org.apache.curator.framework.recipes.cache.PathChildrenCache$StartMode: org.apache.curator.framework.recipes.cache.PathChildrenCache$StartMode POST_INITIALIZED_EVENT>;
+< v32 = virtualinvoke v31.<org.apache.curator.framework.recipes.cache.PathChildrenCache$StartMode: int ordinal()>();
+< v30[v32] = 3;
+< label21:
+< goto label23;
+< label22:
+< v33 := @caughtexception;
+< label23:
+92,94d56
+< catch java.lang.NoSuchFieldError from label14 to label15 with label16;
+< catch java.lang.NoSuchFieldError from label17 to label18 with label19;
+< catch java.lang.NoSuchFieldError from label20 to label21 with label22;

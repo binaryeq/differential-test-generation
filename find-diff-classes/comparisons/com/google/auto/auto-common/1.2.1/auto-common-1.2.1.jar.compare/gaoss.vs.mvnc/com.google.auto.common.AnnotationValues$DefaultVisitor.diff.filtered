@@ -1,0 +1,23 @@
+19a20,21
+> java.lang.IllegalArgumentException v3;
+> int v11, v12, v8, v9;
+22,23c24,25
+< java.lang.String v5, v6;
+< java.lang.IllegalArgumentException v3;
+---
+> java.lang.StringBuilder v14;
+> java.lang.String v10, v13, v5, v6, v7;
+30,31c32,41
+< v6 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,java.lang.Object)>(v5, v1) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Expected a \u0001, got instead: \u0001");
+< specialinvoke v3.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(v6);
+---
+> v6 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v1);
+> v7 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v5);
+> v8 = virtualinvoke v7.<java.lang.String: int length()>();
+> v9 = 26 + v8;
+> v10 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v6);
+> v11 = virtualinvoke v10.<java.lang.String: int length()>();
+> v12 = v9 + v11;
+> specialinvoke v14.<java.lang.StringBuilder: void <init>(int)>(v12);
+> v13 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,java.lang.String)>(v5, v6) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Expected a \u0001, got instead: \u0001");
+> specialinvoke v3.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(v13);

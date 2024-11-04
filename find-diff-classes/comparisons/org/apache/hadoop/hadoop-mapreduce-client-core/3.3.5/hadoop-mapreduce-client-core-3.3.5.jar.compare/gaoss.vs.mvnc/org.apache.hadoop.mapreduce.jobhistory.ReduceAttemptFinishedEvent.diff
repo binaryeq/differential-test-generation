@@ -1,0 +1,13 @@
+101a102
+> int[][] v10;
+107c108
+< int v10;
+---
+> int v11;
+119,120c120,122
+< v10 = (int) -1;
+< specialinvoke v0.<org.apache.hadoop.mapreduce.jobhistory.ReduceAttemptFinishedEvent: void <init>(org.apache.hadoop.mapreduce.TaskAttemptID,org.apache.hadoop.mapreduce.TaskType,java.lang.String,long,long,long,java.lang.String,int,java.lang.String,java.lang.String,org.apache.hadoop.mapreduce.Counters,int[][])>(v1, v2, v3, v4, v5, v6, v7, v10, "", v8, v9, null);
+---
+> v10 = (int[][]) null;
+> v11 = (int) -1;
+> specialinvoke v0.<org.apache.hadoop.mapreduce.jobhistory.ReduceAttemptFinishedEvent: void <init>(org.apache.hadoop.mapreduce.TaskAttemptID,org.apache.hadoop.mapreduce.TaskType,java.lang.String,long,long,long,java.lang.String,int,java.lang.String,java.lang.String,org.apache.hadoop.mapreduce.Counters,int[][])>(v1, v2, v3, v4, v5, v6, v7, v11, "", v8, v9, v10);

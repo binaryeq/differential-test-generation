@@ -1,0 +1,164 @@
+* EvoSuite 1.2.0
+* Going to generate test cases for class: com.google.auto.common.SimpleAnnotationMirror
+* Starting Client-0
+* Connecting to master process on port 17618
+* Analyzing classpath: 
+  - /home/wtwhite/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/auto/auto-common/1.2.1/auto-common-1.2.1.jar
+  - t/dependency/asm-9.1.jar
+  - t/dependency/auto-common-0.11.jar
+  - t/dependency/auto-value-1.7.4.jar
+  - t/dependency/auto-value-annotations-1.8.1.jar
+  - t/dependency/checker-qual-3.12.0.jar
+  - t/dependency/compile-testing-0.19.jar
+  - t/dependency/ecj-3.25.0.jar
+  - t/dependency/error_prone_annotations-2.7.1.jar
+  - t/dependency/failureaccess-1.0.1.jar
+  - t/dependency/guava-31.0.1-jre.jar
+  - t/dependency/guava-testlib-31.0.1-jre.jar
+  - t/dependency/hamcrest-core-1.3.jar
+  - t/dependency/j2objc-annotations-1.3.jar
+  - t/dependency/javapoet-1.13.0.jar
+  - t/dependency/jsr305-3.0.2.jar
+  - t/dependency/junit-4.13.2.jar
+  - t/dependency/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar
+  - t/dependency/tools-1.8.0_382.jar
+  - t/dependency/truth-1.1.3.jar
+[MASTER] 02:27:21.263 [logback-2] ERROR ConcreteClassAnalyzer - Problem for com.google.auto.common.SimpleAnnotationMirror. Class not found: org.eclipse.jdt.internal.compiler.apt.model.ModuleElementImpl
+[MASTER] 02:27:21.263 [logback-2] ERROR ConcreteClassAnalyzer - Removing class from inheritance tree
+[MASTER] 02:27:21.266 [logback-2] ERROR ConcreteClassAnalyzer - Problem for com.google.auto.common.SimpleAnnotationMirror. Class not found: org.eclipse.jdt.internal.compiler.apt.model.RecordComponentElementImpl
+[MASTER] 02:27:21.266 [logback-2] ERROR ConcreteClassAnalyzer - Removing class from inheritance tree
+* Finished analyzing classpath
+* Generating tests for class com.google.auto.common.SimpleAnnotationMirror
+* Test criteria:
+  - Line Coverage
+  - Branch Coverage
+  - Exception
+  - Mutation testing (weak)
+  - Method-Output Coverage
+  - Top-Level Method Coverage
+  - No-Exception Top-Level Method Coverage
+  - Context Branch Coverage
+* Total number of test goals for DYNAMOSA: 158
+* Using seed 1729690038959
+* Starting evolution
+[Progress:>                             0%] [Cov:>                                  0%]* Initial Number of Goals in DynaMOSA = 68 / 158
+[MASTER] 02:27:26.357 [logback-1] WARN  TestCluster - Failed to check cache for com.google.common.collect.ImmutableSortedMap<K, V> : Type points to itself
+[MASTER] 02:27:28.269 [logback-1] WARN  TestCluster - Failed to check cache for java.util.Map<K, V>.Entry<K, V> : Type points to itself
+[MASTER] 02:27:51.823 [logback-1] WARN  TestCluster - Failed to check cache for java.util.Comparator<T> : Type points to itself
+[MASTER] 02:27:51.835 [logback-1] WARN  TestCluster - Failed to check cache for java.util.function.BiFunction<T, U, R> : Type points to itself
+[Progress:============>                 43%] [Cov:=====>                             15%][Progress:=============>                45%] [Cov:=========>                         27%][Progress:==============>               48%] [Cov:===========>                       34%][MASTER] 02:28:00.552 [logback-2] ERROR FunctionalMockStatement - Cannot use Mockito on class org.eclipse.jdt.internal.compiler.apt.model.TypeElementImpl due to IAE: 
+Mockito cannot mock this class: class org.eclipse.jdt.internal.compiler.apt.model.TypeElementImpl.
+
+Mockito can only mock non-private & non-final classes.
+If you're not sure why you're getting this error, please report to the mailing list.
+
+
+Java               : 1.8
+JVM vendor name    : Private Build
+JVM vendor version : 25.382-b05
+JVM name           : OpenJDK 64-Bit Server VM
+JVM version        : 1.8.0_382-8u382-ga-1~22.04.1-b05
+JVM info           : mixed mode
+OS name            : Linux
+OS version         : 5.15.0-87-generic
+
+
+Underlying exception : java.lang.TypeNotPresentException: Type javax.lang.model.element.RecordComponentElement not present
+[Progress:====================>         68%] [Cov:===============>                   43%][Progress:======================>       75%] [Cov:===============>                   43%][MASTER] 02:28:15.413 [logback-2] ERROR FunctionalMockStatement - Cannot use Mockito on class org.eclipse.jdt.internal.compiler.apt.model.ErrorTypeElement due to IAE: 
+Mockito cannot mock this class: class org.eclipse.jdt.internal.compiler.apt.model.ErrorTypeElement.
+
+Mockito can only mock non-private & non-final classes.
+If you're not sure why you're getting this error, please report to the mailing list.
+
+
+Java               : 1.8
+JVM vendor name    : Private Build
+JVM vendor version : 25.382-b05
+JVM name           : OpenJDK 64-Bit Server VM
+JVM version        : 1.8.0_382-8u382-ga-1~22.04.1-b05
+JVM info           : mixed mode
+OS name            : Linux
+OS version         : 5.15.0-87-generic
+
+
+Underlying exception : java.lang.TypeNotPresentException: Type javax.lang.model.element.RecordComponentElement not present
+[Progress:=========================>    85%] [Cov:===============>                   44%][Progress:===========================>  91%] [Cov:================>                  47%][Progress:==============================100%] [Cov:================>                  47%]
+* Search finished after 64s and 7 generations, 2377 statements, best individual has fitness: 94.0
+* Minimizing test suite
+* Going to analyze the coverage criteria
+* Coverage analysis for criterion LINE
+* Coverage of criterion LINE: 66%
+* Total number of goals: 38
+* Number of covered goals: 25
+* Coverage analysis for criterion BRANCH
+* Coverage of criterion BRANCH: 43%
+* Total number of goals: 23
+* Number of covered goals: 10
+* Coverage analysis for criterion EXCEPTION
+* Coverage of criterion EXCEPTION: 100%
+* Total number of goals: 6
+* Number of covered goals: 6
+* Coverage analysis for criterion WEAKMUTATION
+* Coverage of criterion WEAKMUTATION: 30%
+* Total number of goals: 43
+* Number of covered goals: 13
+* Coverage analysis for criterion OUTPUT
+* Coverage of criterion OUTPUT: 24%
+* Total number of goals: 17
+* Number of covered goals: 4
+* Coverage analysis for criterion METHOD
+* Coverage of criterion METHOD: 71%
+* Total number of goals: 7
+* Number of covered goals: 5
+* Coverage analysis for criterion METHODNOEXCEPTION
+* Coverage of criterion METHODNOEXCEPTION: 57%
+* Total number of goals: 7
+* Number of covered goals: 4
+* Coverage analysis for criterion CBRANCH
+* Coverage of criterion CBRANCH: 39%
+* Total number of goals: 23
+* Number of covered goals: 9
+* Generated 8 tests with total length 39
+* Resulting test suite's coverage: 48% (average coverage for all fitness functions)
+* Generating assertions
+* Resulting test suite's mutation score: 16%
+* Compiling and checking tests
+[MASTER] 02:28:35.382 [logback-1] WARN  JUnitAnalyzer - Found unstable test named test0 -> class org.junit.ComparisonFailure: expected:<@[]> but was:<@[aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa]>
+[MASTER] 02:28:35.382 [logback-1] WARN  JUnitAnalyzer - Failing test:
+ ElementKind elementKind0 = ElementKind.ANNOTATION_TYPE;
+Vector<VariableElementImpl> vector0 = new Vector<VariableElementImpl>();
+Name name0 = mock(Name.class, new ViolatedAssumptionAnswer());
+doReturn('a', 'a', 'a', 'a', 'a').when(name0).charAt(anyInt());
+doReturn(1891, 1891, (-1), (-1)).when(name0).length();
+Name name1 = mock(Name.class, new ViolatedAssumptionAnswer());
+doReturn(0, 0).when(name1).length();
+TypeElement typeElement0 = mock(TypeElement.class, new ViolatedAssumptionAnswer());
+doReturn(elementKind0).when(typeElement0).getKind();
+doReturn(vector0, vector0).when(typeElement0).getEnclosedElements();
+doReturn(name0, name0, name1).when(typeElement0).getQualifiedName();
+SimpleAnnotationMirror simpleAnnotationMirror0 = (SimpleAnnotationMirror)SimpleAnnotationMirror.of(typeElement0);
+String string0 = simpleAnnotationMirror0.toString();
+assertEquals("@", string0);
+
+
+[MASTER] 02:28:42.583 [logback-1] WARN  JUnitAnalyzer - Found unstable test named test0 -> class java.lang.AssertionError: Expecting exception: IndexOutOfBoundsException
+[MASTER] 02:28:42.584 [logback-1] WARN  JUnitAnalyzer - Failing test:
+ ElementKind elementKind0 = ElementKind.ANNOTATION_TYPE;
+Vector<VariableElementImpl> vector0 = new Vector<VariableElementImpl>();
+Name name0 = mock(Name.class, new ViolatedAssumptionAnswer());
+doReturn('G', 'G', 'a', '@', '#').when(name0).charAt(anyInt());
+doReturn(1891, 1891, (-1), (-1)).when(name0).length();
+Name name1 = mock(Name.class, new ViolatedAssumptionAnswer());
+doReturn(1891, (-1), 0).when(name1).length();
+TypeElement typeElement0 = mock(TypeElement.class, new ViolatedAssumptionAnswer());
+doReturn(elementKind0).when(typeElement0).getKind();
+doReturn(vector0, vector0).when(typeElement0).getEnclosedElements();
+doReturn(name0, name0, name1).when(typeElement0).getQualifiedName();
+SimpleAnnotationMirror simpleAnnotationMirror0 = (SimpleAnnotationMirror)SimpleAnnotationMirror.of(typeElement0);
+simpleAnnotationMirror0.toString();
+
+* Writing tests to file
+* Writing JUnit test case 'SimpleAnnotationMirror_ESTest' to evosuite-tests
+* Done!
+
+* Computation finished

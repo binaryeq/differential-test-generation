@@ -1,0 +1,111 @@
+277c277
+< int v5;
+---
+> int v12, v5;
+279c279
+< java.lang.String v10, v9;
+---
+> java.lang.String v10, v11, v13, v9;
+293c293
+< if v2 != v7 goto label2;
+---
+> if v2 != v7 goto label4;
+296,299c296,302
+< v9 = staticinvoke <com.google.common.collect.Range: java.lang.String toString(com.google.common.collect.Cut,com.google.common.collect.Cut)>(v1, v2);
+< v10 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v9) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Invalid range: \u0001");
+< specialinvoke v8.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(v10);
+< throw v8;
+---
+> v9 = "Invalid range: ";
+> v10 = staticinvoke <com.google.common.collect.Range: java.lang.String toString(com.google.common.collect.Cut,com.google.common.collect.Cut)>(v1, v2);
+> v11 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v10);
+> v12 = virtualinvoke v11.<java.lang.String: int length()>();
+> if v12 == 0 goto label2;
+> v13 = virtualinvoke v9.<java.lang.String: java.lang.String concat(java.lang.String)>(v11);
+> goto label3;
+300a304,309
+> v13 = new java.lang.String;
+> specialinvoke v13.<java.lang.String: void <init>(java.lang.String)>("Invalid range: ");
+> label3:
+> specialinvoke v8.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(v13);
+> throw v8;
+> label4:
+550,554c559,563
+< int v12, v4, v7;
+< java.lang.String v9;
+< boolean v13, v14;
+< com.google.common.collect.Cut v10, v11, v18, v19, v2, v3, v5, v6;
+< com.google.common.collect.Range v0, v1, v15, v16, v17, v20;
+---
+> int v12, v13, v15, v16, v20, v4, v7;
+> java.lang.String v10, v11, v14, v17, v9;
+> boolean v21, v22;
+> com.google.common.collect.Cut v18, v19, v2, v26, v27, v3, v5, v6;
+> com.google.common.collect.Range v0, v1, v23, v24, v25, v28;
+555a565
+> java.lang.StringBuilder v29;
+567,568c577,587
+< v9 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (com.google.common.collect.Range,com.google.common.collect.Range)>(v0, v1) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Ranges have a nonempty intersection: \u0001, \u0001");
+< specialinvoke v8.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(v9);
+---
+> v9 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v0);
+> v10 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v1);
+> v11 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v9);
+> v12 = virtualinvoke v11.<java.lang.String: int length()>();
+> v13 = 39 + v12;
+> v14 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v10);
+> v15 = virtualinvoke v14.<java.lang.String: int length()>();
+> v16 = v13 + v15;
+> specialinvoke v29.<java.lang.StringBuilder: void <init>(int)>(v16);
+> v17 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,java.lang.String)>(v9, v10) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Ranges have a nonempty intersection: \u0001, \u0001");
+> specialinvoke v8.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(v17);
+571,575c590,594
+< v10 = v0.<com.google.common.collect.Range: com.google.common.collect.Cut lowerBound>;
+< v11 = v1.<com.google.common.collect.Range: com.google.common.collect.Cut lowerBound>;
+< v12 = virtualinvoke v10.<com.google.common.collect.Cut: int compareTo(com.google.common.collect.Cut)>(v11);
+< if v12 >= 0 goto label2;
+< v13 = 1;
+---
+> v18 = v0.<com.google.common.collect.Range: com.google.common.collect.Cut lowerBound>;
+> v19 = v1.<com.google.common.collect.Range: com.google.common.collect.Cut lowerBound>;
+> v20 = virtualinvoke v18.<com.google.common.collect.Cut: int compareTo(com.google.common.collect.Cut)>(v19);
+> if v20 >= 0 goto label2;
+> v21 = 1;
+578c597
+< v13 = 0;
+---
+> v21 = 0;
+580,582c599,601
+< v14 = v13;
+< if v13 == 0 goto label4;
+< v15 = v0;
+---
+> v22 = v21;
+> if v21 == 0 goto label4;
+> v23 = v0;
+585c604
+< v15 = v1;
+---
+> v23 = v1;
+587,589c606,608
+< v16 = v15;
+< if v14 == 0 goto label6;
+< v17 = v1;
+---
+> v24 = v23;
+> if v22 == 0 goto label6;
+> v25 = v1;
+592c611
+< v17 = v0;
+---
+> v25 = v0;
+594,597c613,616
+< v18 = v16.<com.google.common.collect.Range: com.google.common.collect.Cut upperBound>;
+< v19 = v17.<com.google.common.collect.Range: com.google.common.collect.Cut lowerBound>;
+< v20 = staticinvoke <com.google.common.collect.Range: com.google.common.collect.Range create(com.google.common.collect.Cut,com.google.common.collect.Cut)>(v18, v19);
+< return v20;
+---
+> v26 = v24.<com.google.common.collect.Range: com.google.common.collect.Cut upperBound>;
+> v27 = v25.<com.google.common.collect.Range: com.google.common.collect.Cut lowerBound>;
+> v28 = staticinvoke <com.google.common.collect.Range: com.google.common.collect.Range create(com.google.common.collect.Cut,com.google.common.collect.Cut)>(v26, v27);
+> return v28;

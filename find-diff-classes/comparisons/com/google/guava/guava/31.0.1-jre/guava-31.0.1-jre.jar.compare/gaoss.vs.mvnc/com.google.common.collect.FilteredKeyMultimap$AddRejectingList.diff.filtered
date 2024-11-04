@@ -1,0 +1,40 @@
+26,28d25
+< int v1;
+< java.lang.Object v2, v4;
+< java.lang.String v5;
+29a27,30
+> int v1, v7, v8;
+> java.lang.Object v2, v4;
+> java.lang.StringBuilder v10;
+> java.lang.String v5, v6, v9;
+36,37c37,43
+< v5 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.Object)>(v4) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Key does not satisfy predicate: \u0001");
+< specialinvoke v3.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(v5);
+---
+> v5 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v4);
+> v6 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v5);
+> v7 = virtualinvoke v6.<java.lang.String: int length()>();
+> v8 = 32 + v7;
+> specialinvoke v10.<java.lang.StringBuilder: void <init>(int)>(v8);
+> v9 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v5) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Key does not satisfy predicate: \u0001");
+> specialinvoke v3.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(v9);
+53,55d58
+< int v1;
+< java.lang.Object v4;
+< java.lang.String v5;
+56a60,63
+> int v1, v7, v8;
+> java.lang.Object v4;
+> java.lang.StringBuilder v10;
+> java.lang.String v5, v6, v9;
+64,65c71,77
+< v5 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.Object)>(v4) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Key does not satisfy predicate: \u0001");
+< specialinvoke v3.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(v5);
+---
+> v5 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v4);
+> v6 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v5);
+> v7 = virtualinvoke v6.<java.lang.String: int length()>();
+> v8 = 32 + v7;
+> specialinvoke v10.<java.lang.StringBuilder: void <init>(int)>(v8);
+> v9 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v5) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Key does not satisfy predicate: \u0001");
+> specialinvoke v3.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(v9);

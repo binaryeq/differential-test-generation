@@ -1,0 +1,32 @@
+479,486c479,500
+< java.lang.String v0, v1, v2, v3;
+< java.util.regex.Pattern v4;
+< v0 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>("(?:\\d+#(?:\\.\\d*#)?|\\.\\d+#)") <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001(?:[eE][+-]?\\d+#)?[fFdD]?");
+< v1 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>("(?:[0-9a-fA-F]+#(?:\\.[0-9a-fA-F]*#)?|\\.[0-9a-fA-F]+#)") <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("0[xX]\u0001[pP][+-]?\\d+#[fFdD]?");
+< v2 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,java.lang.String)>(v0, v1) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("[+-]?(?:NaN|Infinity|\u0001|\u0001)");
+< v3 = virtualinvoke v2.<java.lang.String: java.lang.String replace(java.lang.CharSequence,java.lang.CharSequence)>("#", "+");
+< v4 = staticinvoke <java.util.regex.Pattern: java.util.regex.Pattern compile(java.lang.String)>(v3);
+< return v4;
+---
+> int v10, v11, v3, v4, v7, v8;
+> java.lang.String v0, v1, v12, v13, v2, v5, v6, v9;
+> java.lang.StringBuilder v15, v16;
+> java.util.regex.Pattern v14;
+> v0 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>("(?:\\d+#(?:\\.\\d*#)?|\\.\\d+#)");
+> v1 = virtualinvoke v0.<java.lang.String: java.lang.String concat(java.lang.String)>("(?:[eE][+-]?\\d+#)?[fFdD]?");
+> v2 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>("(?:[0-9a-fA-F]+#(?:\\.[0-9a-fA-F]*#)?|\\.[0-9a-fA-F]+#)");
+> v3 = virtualinvoke v2.<java.lang.String: int length()>();
+> v4 = 25 + v3;
+> specialinvoke v15.<java.lang.StringBuilder: void <init>(int)>(v4);
+> v5 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>("(?:[0-9a-fA-F]+#(?:\\.[0-9a-fA-F]*#)?|\\.[0-9a-fA-F]+#)") <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("0[xX]\u0001[pP][+-]?\\d+#[fFdD]?");
+> v6 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v1);
+> v7 = virtualinvoke v6.<java.lang.String: int length()>();
+> v8 = 23 + v7;
+> v9 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v5);
+> v10 = virtualinvoke v9.<java.lang.String: int length()>();
+> v11 = v8 + v10;
+> specialinvoke v16.<java.lang.StringBuilder: void <init>(int)>(v11);
+> v12 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,java.lang.String)>(v1, v5) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("[+-]?(?:NaN|Infinity|\u0001|\u0001)");
+> v13 = virtualinvoke v12.<java.lang.String: java.lang.String replace(java.lang.CharSequence,java.lang.CharSequence)>("#", "+");
+> v14 = staticinvoke <java.util.regex.Pattern: java.util.regex.Pattern compile(java.lang.String)>(v13);
+> return v14;

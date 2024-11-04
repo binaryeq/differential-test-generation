@@ -1,0 +1,19 @@
+97a98
+> int v10, v11;
+99a101
+> java.lang.StringBuilder v13;
+101c103
+< java.lang.String v8;
+---
+> java.lang.String v12, v8, v9;
+114,115c116,122
+< v8 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.Class)>(v7) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("invalid element for attribute \'acl:acl\': should be List<AclEntry>, found element of type \u0001");
+< specialinvoke v6.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(v8);
+---
+> v8 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v7);
+> v9 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v8);
+> v10 = virtualinvoke v9.<java.lang.String: int length()>();
+> v11 = 89 + v10;
+> specialinvoke v13.<java.lang.StringBuilder: void <init>(int)>(v11);
+> v12 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v8) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("invalid element for attribute \'acl:acl\': should be List<AclEntry>, found element of type \u0001");
+> specialinvoke v6.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(v12);

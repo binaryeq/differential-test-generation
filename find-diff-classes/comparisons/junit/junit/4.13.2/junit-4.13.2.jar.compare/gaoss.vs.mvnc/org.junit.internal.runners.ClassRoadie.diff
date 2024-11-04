@@ -1,0 +1,20 @@
+62c62
+< goto label5;
+---
+> goto label6;
+65,66d64
+< specialinvoke v0.<org.junit.internal.runners.ClassRoadie: void runAfters()>();
+< goto label5;
+67a66,68
+> specialinvoke v0.<org.junit.internal.runners.ClassRoadie: void runAfters()>();
+> goto label6;
+> label5:
+71c72
+< label5:
+---
+> label6:
+74c75,76
+< catch java.lang.Throwable from label1 to label2 with label4;
+---
+> catch java.lang.Throwable from label1 to label2 with label5;
+> catch java.lang.Throwable from label3 to label4 with label5;

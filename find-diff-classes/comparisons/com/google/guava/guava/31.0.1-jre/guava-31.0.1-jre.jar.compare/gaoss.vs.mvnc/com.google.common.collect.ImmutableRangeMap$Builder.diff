@@ -1,0 +1,58 @@
+78,81c78
+< com.google.common.collect.ImmutableRangeMap v28;
+< com.google.common.collect.ImmutableList v29, v30;
+< int v10, v12, v17, v6, v9;
+< java.lang.String v24;
+---
+> com.google.common.collect.ImmutableRangeMap v36;
+83a81,86
+> java.util.List v1, v11, v13, v16, v33, v5, v8;
+> java.lang.StringBuilder v39;
+> com.google.common.collect.ImmutableList$Builder v4, v7;
+> com.google.common.collect.ImmutableList v37, v38;
+> int v10, v12, v17, v27, v28, v30, v31, v6, v9;
+> java.lang.String v24, v25, v26, v29, v32;
+86d88
+< java.util.List v1, v11, v13, v16, v25, v5, v8;
+88,89c90
+< java.lang.Object v14, v15, v18, v19, v26, v27;
+< com.google.common.collect.ImmutableList$Builder v4, v7;
+---
+> java.lang.Object v14, v15, v18, v19, v34, v35;
+122,123c123,133
+< v24 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (com.google.common.collect.Range,com.google.common.collect.Range)>(v19, v15) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Overlapping ranges: range \u0001 overlaps with entry \u0001");
+< specialinvoke v23.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(v24);
+---
+> v24 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v19);
+> v25 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v15);
+> v26 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v24);
+> v27 = virtualinvoke v26.<java.lang.String: int length()>();
+> v28 = 47 + v27;
+> v29 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v25);
+> v30 = virtualinvoke v29.<java.lang.String: int length()>();
+> v31 = v28 + v30;
+> specialinvoke v39.<java.lang.StringBuilder: void <init>(int)>(v31);
+> v32 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,java.lang.String)>(v24, v25) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Overlapping ranges: range \u0001 overlaps with entry \u0001");
+> specialinvoke v23.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(v32);
+127,130c137,140
+< v25 = v0.<com.google.common.collect.ImmutableRangeMap$Builder: java.util.List entries>;
+< v26 = interfaceinvoke v25.<java.util.List: java.lang.Object get(int)>(v10);
+< v27 = interfaceinvoke v26.<java.util.Map$Entry: java.lang.Object getValue()>();
+< virtualinvoke v7.<com.google.common.collect.ImmutableList$Builder: com.google.common.collect.ImmutableList$Builder add(java.lang.Object)>(v27);
+---
+> v33 = v0.<com.google.common.collect.ImmutableRangeMap$Builder: java.util.List entries>;
+> v34 = interfaceinvoke v33.<java.util.List: java.lang.Object get(int)>(v10);
+> v35 = interfaceinvoke v34.<java.util.Map$Entry: java.lang.Object getValue()>();
+> virtualinvoke v7.<com.google.common.collect.ImmutableList$Builder: com.google.common.collect.ImmutableList$Builder add(java.lang.Object)>(v35);
+134,138c144,148
+< v28 = new com.google.common.collect.ImmutableRangeMap;
+< v29 = virtualinvoke v4.<com.google.common.collect.ImmutableList$Builder: com.google.common.collect.ImmutableList build()>();
+< v30 = virtualinvoke v7.<com.google.common.collect.ImmutableList$Builder: com.google.common.collect.ImmutableList build()>();
+< specialinvoke v28.<com.google.common.collect.ImmutableRangeMap: void <init>(com.google.common.collect.ImmutableList,com.google.common.collect.ImmutableList)>(v29, v30);
+< return v28;
+---
+> v36 = new com.google.common.collect.ImmutableRangeMap;
+> v37 = virtualinvoke v4.<com.google.common.collect.ImmutableList$Builder: com.google.common.collect.ImmutableList build()>();
+> v38 = virtualinvoke v7.<com.google.common.collect.ImmutableList$Builder: com.google.common.collect.ImmutableList build()>();
+> specialinvoke v36.<com.google.common.collect.ImmutableRangeMap: void <init>(com.google.common.collect.ImmutableList,com.google.common.collect.ImmutableList)>(v37, v38);
+> return v36;

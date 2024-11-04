@@ -1,0 +1,450 @@
+* EvoSuite 1.2.0
+* Going to generate test cases for class: com.google.common.collect.ImmutableSetMultimap
+* Starting Client-0
+* Connecting to master process on port 3793
+* Analyzing classpath: 
+  - /home/wtwhite/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/guava/guava/31.0.1-jre/guava-31.0.1-jre.jar
+  - t/dependency/checker-qual-3.12.0.jar
+  - t/dependency/error_prone_annotations-2.7.1.jar
+  - t/dependency/failureaccess-1.0.1.jar
+  - t/dependency/j2objc-annotations-1.3.jar
+  - t/dependency/jsr305-3.0.2.jar
+  - t/dependency/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar
+* Finished analyzing classpath
+* Generating tests for class com.google.common.collect.ImmutableSetMultimap
+* Test criteria:
+  - Line Coverage
+  - Branch Coverage
+  - Exception
+  - Mutation testing (weak)
+  - Method-Output Coverage
+  - Top-Level Method Coverage
+  - No-Exception Top-Level Method Coverage
+  - Context Branch Coverage
+[Progress:>                             0%] [Cov:>                                  0%]* Total number of test goals for DYNAMOSA: 772
+* Using seed 1729696482682
+* Starting evolution
+* Initial Number of Goals in DynaMOSA = 441 / 772
+[MASTER] 04:14:46.875 [logback-1] WARN  CastClassManager - Nothing is assignable after adding java.lang.Comparable<T> for type Variable E with bounds [java.lang.Comparable<? super E>] of declaration ImmutableSortedSet#copyOf. The owner var map is {E=class java.lang.Object, E=class java.lang.Object, E=class java.lang.Object, E=class java.lang.Object, E=class java.lang.Object, E=class java.lang.Object, E=class java.lang.Object, E=com.google.common.collect.ImmutableSetMultimap<java.lang.Comparable<T>, java.util.AbstractMap<K, V>.SimpleImmutableEntry<K, V>>.Builder<com.google.common.collect.ImmutableSetMultimap<K, V>.Builder<K, V>, java.lang.Object>, E=java.util.AbstractMap<java.io.InvalidObjectException, com.google.common.collect.RegularImmutableSortedSet<E>>.SimpleImmutableEntry<com.google.common.collect.RegularImmutableSortedSet<E>, java.lang.Comparable<T>>, E=com.google.common.collect.RegularImmutableSortedSet<java.lang.Object>, E=class java.io.InvalidObjectException, E=java.util.AbstractMap<java.io.InvalidObjectException, java.lang.Object>.SimpleImmutableEntry<com.google.common.collect.RegularImmutableSortedSet<E>, com.google.common.collect.ImmutableSetMultimap<K, V>.Builder<K, V>>, E=java.util.AbstractMap<java.lang.Object, java.io.InvalidObjectException>.SimpleImmutableEntry<java.lang.Object, java.util.AbstractMap<K, V>.SimpleImmutableEntry<K, V>>, E=java.lang.Comparable<java.lang.Comparable<T>>, E=class java.io.InvalidObjectException, E=class java.io.InvalidObjectException, E=class java.lang.Object, E=java.util.AbstractMap<java.io.InvalidObjectException, java.io.InvalidObjectException>.SimpleImmutableEntry<java.io.InvalidObjectException, java.io.InvalidObjectException>, E=class java.lang.Object}
+[MASTER] 04:14:52.832 [logback-1] WARN  TestCluster - Failed to check cache for com.google.common.collect.ImmutableSortedSet<java.io.InvalidObjectException> : Type points to itself
+[MASTER] 04:14:54.608 [logback-1] WARN  TestCluster - Failed to check cache for java.util.Collection<java.io.InvalidObjectException> : Type points to itself
+[MASTER] 04:15:03.391 [logback-1] WARN  TestCluster - Failed to check cache for com.google.common.collect.ImmutableSortedSet<java.util.Map<java.io.InvalidObjectException, java.io.InvalidObjectException>.Entry<java.io.InvalidObjectException, java.io.InvalidObjectException>> : Type points to itself
+[MASTER] 04:15:05.631 [logback-1] WARN  TestCluster - Failed to check cache for com.google.common.collect.RegularImmutableSortedSet<E> : Type points to itself
+[MASTER] 04:15:05.632 [logback-1] WARN  TestCluster - Failed to check cache for java.lang.Comparable<T> : Type points to itself
+[MASTER] 04:15:05.632 [logback-1] WARN  TestCluster - Failed to check cache for java.util.AbstractMap<K, V>.SimpleImmutableEntry<K, V> : Type points to itself
+[MASTER] 04:15:05.633 [logback-1] WARN  TestCluster - Failed to check cache for java.util.Map<K, V>.Entry<K, V> : Type points to itself
+[MASTER] 04:15:07.813 [logback-1] WARN  TestCluster - Failed to check cache for java.lang.Iterable<java.util.Map<java.io.InvalidObjectException, java.lang.Object>.Entry<java.io.InvalidObjectException, java.lang.Object>> : Type points to itself
+[MASTER] 04:15:10.903 [logback-1] WARN  TestCluster - Failed to check cache for java.lang.Iterable<java.util.Map<java.util.Locale$Category, java.io.InvalidObjectException>.Entry<java.io.InvalidObjectException, java.util.Locale$Category>> : Type points to itself
+[MASTER] 04:15:14.191 [logback-1] WARN  TestCluster - Failed to check cache for com.google.common.collect.ImmutableSortedSet<java.util.Map<java.util.Locale$Category, java.io.InvalidObjectException>.Entry<java.io.InvalidObjectException, java.util.Locale$Category>> : Type points to itself
+[MASTER] 04:15:16.866 [logback-1] WARN  TestCluster - Failed to check cache for java.lang.Iterable<java.util.Map<java.io.InvalidObjectException, java.lang.Integer>.Entry<java.io.InvalidObjectException, java.io.InvalidObjectException>> : Type points to itself
+[MASTER] 04:15:33.524 [logback-1] WARN  TestCluster - Failed to check cache for com.google.common.collect.DiscreteDomain<java.util.Locale$FilteringMode> : Type points to itself
+[MASTER] 04:15:39.001 [logback-1] WARN  TestCluster - Failed to check cache for com.google.common.collect.ImmutableMultimap<K, V>.Builder<K, V> : Type points to itself
+[MASTER] 04:15:41.811 [logback-1] WARN  TestCluster - Failed to check cache for com.google.common.collect.ImmutableSetMultimap<K, V>.Builder<K, V> : Type points to itself
+[MASTER] 04:15:42.444 [logback-1] WARN  TestCluster - Failed to check cache for java.util.stream.Collector<T, A, R>.Characteristics : Type points to itself
+[Progress:==============================100%] [Cov:>                                  0%][MASTER] 04:15:53.504 [logback-1] WARN  TestCluster - Failed to check cache for java.util.Comparator<T> : Type points to itself
+[Progress:==============================100%] [Cov:=======>                           20%]
+* Search finished after 68s and 0 generations, 60 statements, best individual has fitness: 696.0
+[MASTER] 04:15:54.009 [logback-1] WARN  TimeController - Phase SEARCH lasted too long, 8 seconds more than allowed.
+* Minimizing test suite
+* Going to analyze the coverage criteria
+* Coverage analysis for criterion LINE
+* Coverage of criterion LINE: 34%
+* Total number of goals: 152
+* Number of covered goals: 51
+* Coverage analysis for criterion BRANCH
+* Coverage of criterion BRANCH: 32%
+* Total number of goals: 76
+* Number of covered goals: 24
+* Coverage analysis for criterion EXCEPTION
+* Coverage of criterion EXCEPTION: 100%
+* Total number of goals: 1
+* Number of covered goals: 1
+* Coverage analysis for criterion WEAKMUTATION
+* Coverage of criterion WEAKMUTATION: 10%
+* Total number of goals: 334
+* Number of covered goals: 32
+* Coverage analysis for criterion OUTPUT
+* Coverage of criterion OUTPUT: 6%
+* Total number of goals: 64
+* Number of covered goals: 4
+* Coverage analysis for criterion METHOD
+* Coverage of criterion METHOD: 29%
+* Total number of goals: 35
+* Number of covered goals: 10
+* Coverage analysis for criterion METHODNOEXCEPTION
+* Coverage of criterion METHODNOEXCEPTION: 26%
+* Total number of goals: 35
+* Number of covered goals: 9
+* Coverage analysis for criterion CBRANCH
+* Coverage of criterion CBRANCH: 29%
+* Total number of goals: 76
+* Number of covered goals: 22
+* Generated 6 tests with total length 27
+* Resulting test suite's coverage: 20% (average coverage for all fitness functions)
+* Generating assertions
+* Resulting test suite's mutation score: 7%
+* Compiling and checking tests
+[MASTER] 04:15:56.642 [logback-2] ERROR JUnitAnalyzer - Compilation failed on compilation units: [RegularFileObject[/tmp/EvoSuite_2_1729696556582/com/google/common/collect/ImmutableSetMultimap_2_tmp__ESTest.java], RegularFileObject[/tmp/EvoSuite_2_1729696556582/com/google/common/collect/ImmutableSetMultimap_2_tmp__ESTest_scaffolding.java]]
+[MASTER] 04:15:56.642 [logback-2] ERROR JUnitAnalyzer - Classpath: /home/wtwhite/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/guava/guava/31.0.1-jre/guava-31.0.1-jre.jar:t/dependency/checker-qual-3.12.0.jar:t/dependency/error_prone_annotations-2.7.1.jar:t/dependency/failureaccess-1.0.1.jar:t/dependency/j2objc-annotations-1.3.jar:t/dependency/jsr305-3.0.2.jar:t/dependency/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/home/wtwhite/code/regression-test-generation/evosuite/evosuite-1.2.0.jar:/home/wtwhite/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/guava/guava/31.0.1-jre/guava-31.0.1-jre.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/checker-qual-3.12.0.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/error_prone_annotations-2.7.1.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/failureaccess-1.0.1.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/j2objc-annotations-1.3.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/jsr305-3.0.2.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar
+[MASTER] 04:15:56.642 [logback-2] ERROR JUnitAnalyzer - evosuiteCP: /home/wtwhite/code/regression-test-generation/evosuite/evosuite-1.2.0.jar:/home/wtwhite/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/guava/guava/31.0.1-jre/guava-31.0.1-jre.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/checker-qual-3.12.0.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/error_prone_annotations-2.7.1.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/failureaccess-1.0.1.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/j2objc-annotations-1.3.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/jsr305-3.0.2.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar
+[MASTER] 04:15:56.645 [logback-2] ERROR JUnitAnalyzer - Diagnostic: incompatible types: java.lang.Comparable<java.io.InvalidObjectException> cannot be converted to java.lang.Comparable<com.google.common.collect.RegularImmutableSortedSet>: 26
+[MASTER] 04:15:56.645 [logback-2] ERROR JUnitAnalyzer - Diagnostic: incompatible types: java.lang.Comparable<java.io.InvalidObjectException> cannot be converted to java.lang.Comparable<com.google.common.collect.RegularImmutableSortedSet>: 26
+[MASTER] 04:15:56.645 [logback-2] ERROR JUnitAnalyzer - Diagnostic: incompatible types: java.lang.Comparable<java.io.InvalidObjectException> cannot be converted to java.lang.Comparable<com.google.common.collect.RegularImmutableSortedSet>: 26
+[MASTER] 04:15:56.646 [logback-2] ERROR JUnitAnalyzer - Diagnostic: incompatible types: java.lang.Comparable<java.io.InvalidObjectException> cannot be converted to java.lang.Comparable<com.google.common.collect.RegularImmutableSortedSet>: 26
+[MASTER] 04:15:56.646 [logback-2] ERROR JUnitAnalyzer - Diagnostic: /tmp/EvoSuite_2_1729696556582/com/google/common/collect/ImmutableSetMultimap_2_tmp__ESTest.java uses unchecked or unsafe operations.: -1
+[MASTER] 04:15:56.646 [logback-2] ERROR JUnitAnalyzer - Diagnostic: Recompile with -Xlint:unchecked for details.: -1
+[MASTER] 04:15:56.647 [logback-2] ERROR JUnitAnalyzer - RegularFileObject[/tmp/EvoSuite_2_1729696556582/com/google/common/collect/ImmutableSetMultimap_2_tmp__ESTest.java]
+1: /*
+2:  * This file was automatically generated by EvoSuite
+3:  * Wed Oct 23 15:15:56 GMT 2024
+4:  */
+5: 
+6: package com.google.common.collect;
+7: 
+8: import org.junit.Test;
+9: import static org.junit.Assert.*;
+10: import static org.evosuite.shaded.org.mockito.Mockito.*;
+11: import com.google.common.collect.ImmutableSetMultimap;
+12: import com.google.common.collect.RegularImmutableSortedSet;
+13: import java.io.InvalidObjectException;
+14: import org.evosuite.runtime.EvoRunner;
+15: import org.evosuite.runtime.EvoRunnerParameters;
+16: import org.evosuite.runtime.ViolatedAssumptionAnswer;
+17: import org.junit.runner.RunWith;
+18: 
+19: @RunWith(EvoRunner.class) @EvoRunnerParameters(mockJVMNonDeterminism = true, useVFS = true, useVNET = true, resetStaticState = true) 
+20: public class ImmutableSetMultimap_2_tmp__ESTest extends ImmutableSetMultimap_2_tmp__ESTest_scaffolding {
+21: 
+22:   @Test(timeout = 4000)
+23:   public void test0()  throws Throwable  {
+24:       Comparable<InvalidObjectException> comparable0 = (Comparable<InvalidObjectException>) mock(Comparable.class, new ViolatedAssumptionAnswer());
+25:       Comparable<InvalidObjectException> comparable1 = (Comparable<InvalidObjectException>) mock(Comparable.class, new ViolatedAssumptionAnswer());
+26:       ImmutableSetMultimap<Comparable<RegularImmutableSortedSet>, Comparable<RegularImmutableSortedSet>> immutableSetMultimap0 = ImmutableSetMultimap.of((Comparable<RegularImmutableSortedSet>) comparable0, (Comparable<RegularImmutableSortedSet>) comparable0, (Comparable<RegularImmutableSortedSet>) comparable1, (Comparable<RegularImmutableSortedSet>) comparable0);
+27:       assertEquals(2, immutableSetMultimap0.size());
+28:   }
+29: }
+RegularFileObject[/tmp/EvoSuite_2_1729696556582/com/google/common/collect/ImmutableSetMultimap_2_tmp__ESTest.java]
+1: /**
+2:  * Scaffolding file used to store all the setups needed to run 
+3:  * tests automatically generated by EvoSuite
+4:  * Wed Oct 23 15:15:56 GMT 2024
+5:  */
+6: 
+7: package com.google.common.collect;
+8: 
+9: import org.evosuite.runtime.annotation.EvoSuiteClassExclude;
+10: import org.junit.BeforeClass;
+11: import org.junit.Before;
+12: import org.junit.After;
+13: import org.junit.AfterClass;
+14: import org.evosuite.runtime.sandbox.Sandbox;
+15: import org.evosuite.runtime.sandbox.Sandbox.SandboxMode;
+16: 
+17: import static org.evosuite.shaded.org.mockito.Mockito.*;
+18: @EvoSuiteClassExclude
+19: public class ImmutableSetMultimap_2_tmp__ESTest_scaffolding {
+20: 
+21:   @org.junit.Rule
+22:   public org.evosuite.runtime.vnet.NonFunctionalRequirementRule nfr = new org.evosuite.runtime.vnet.NonFunctionalRequirementRule();
+23: 
+24:   private static final java.util.Properties defaultProperties = (java.util.Properties) java.lang.System.getProperties().clone(); 
+25: 
+26:   private org.evosuite.runtime.thread.ThreadStopper threadStopper =  new org.evosuite.runtime.thread.ThreadStopper (org.evosuite.runtime.thread.KillSwitchHandler.getInstance(), 3000);
+27: 
+28: 
+29:   @BeforeClass
+30:   public static void initEvoSuiteFramework() { 
+31:     org.evosuite.runtime.RuntimeSettings.className = "com.google.common.collect.ImmutableSetMultimap"; 
+32:     org.evosuite.runtime.GuiSupport.initialize(); 
+33:     org.evosuite.runtime.RuntimeSettings.maxNumberOfThreads = 100; 
+34:     org.evosuite.runtime.RuntimeSettings.maxNumberOfIterationsPerLoop = 10000; 
+35:     org.evosuite.runtime.RuntimeSettings.mockSystemIn = true; 
+36:     org.evosuite.runtime.RuntimeSettings.sandboxMode = org.evosuite.runtime.sandbox.Sandbox.SandboxMode.RECOMMENDED; 
+37:     org.evosuite.runtime.sandbox.Sandbox.initializeSecurityManagerForSUT(); 
+38:     org.evosuite.runtime.classhandling.JDKClassResetter.init();
+39:     setSystemProperties();
+40:     initializeClasses();
+41:     org.evosuite.runtime.Runtime.getInstance().resetRuntime(); 
+42:     try { initMocksToAvoidTimeoutsInTheTests(); } catch(ClassNotFoundException e) {} 
+43:   } 
+44: 
+45:   @AfterClass
+46:   public static void clearEvoSuiteFramework(){ 
+47:     Sandbox.resetDefaultSecurityManager(); 
+48:     java.lang.System.setProperties((java.util.Properties) defaultProperties.clone()); 
+49:   } 
+50: 
+51:   @Before
+52:   public void initTestCase(){ 
+53:     threadStopper.storeCurrentThreads();
+54:     threadStopper.startRecordingTime();
+55:     org.evosuite.runtime.jvm.ShutdownHookHandler.getInstance().initHandler(); 
+56:     org.evosuite.runtime.sandbox.Sandbox.goingToExecuteSUTCode(); 
+57:     setSystemProperties(); 
+58:     org.evosuite.runtime.GuiSupport.setHeadless(); 
+59:     org.evosuite.runtime.Runtime.getInstance().resetRuntime(); 
+60:     org.evosuite.runtime.agent.InstrumentingAgent.activate(); 
+61:   } 
+62: 
+63:   @After
+64:   public void doneWithTestCase(){ 
+65:     threadStopper.killAndJoinClientThreads();
+66:     org.evosuite.runtime.jvm.ShutdownHookHandler.getInstance().safeExecuteAddedHooks(); 
+67:     org.evosuite.runtime.classhandling.JDKClassResetter.reset(); 
+68:     resetClasses(); 
+69:     org.evosuite.runtime.sandbox.Sandbox.doneWithExecutingSUTCode(); 
+70:     org.evosuite.runtime.agent.InstrumentingAgent.deactivate(); 
+71:     org.evosuite.runtime.GuiSupport.restoreHeadlessMode(); 
+72:   } 
+73: 
+74:   public static void setSystemProperties() {
+75:  
+76:     java.lang.System.setProperties((java.util.Properties) defaultProperties.clone()); 
+77:     java.lang.System.setProperty("user.dir", "/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre"); 
+78:     java.lang.System.setProperty("java.io.tmpdir", "/tmp"); 
+79:   }
+80: 
+81:   private static void initializeClasses() {
+82:     org.evosuite.runtime.classhandling.ClassStateSupport.initializeClasses(ImmutableSetMultimap_2_tmp__ESTest_scaffolding.class.getClassLoader() ,
+83:       "com.google.common.collect.ImmutableSet$SetBuilderImpl",
+84:       "com.google.common.collect.AllEqualOrdering",
+85:       "com.google.common.math.IntMath$1",
+86:       "com.google.common.collect.Hashing",
+87:       "com.google.common.collect.ImmutableList$SubList",
+88:       "com.google.common.collect.ListMultimap",
+89:       "com.google.common.collect.AbstractMapBasedMultimap$AsMap$AsMapEntries",
+90:       "com.google.common.collect.AbstractMapBasedMultimap$WrappedCollection",
+91:       "com.google.common.collect.PeekingIterator",
+92:       "com.google.common.collect.RegularImmutableList",
+93:       "com.google.common.math.IntMath",
+94:       "com.google.common.collect.LinkedHashMultimap$ValueSetLink",
+95:       "com.google.common.collect.Sets$2",
+96:       "com.google.common.collect.Iterators$ArrayItr",
+97:       "com.google.common.collect.RegularImmutableMap$KeySet",
+98:       "com.google.common.collect.Sets$3",
+99:       "com.google.common.collect.LinkedHashMultimap",
+100:       "com.google.common.collect.Sets$1",
+101:       "com.google.common.collect.Platform",
+102:       "com.google.common.collect.NullsLastOrdering",
+103:       "com.google.common.collect.BaseImmutableMultimap",
+104:       "com.google.common.collect.RegularImmutableBiMap",
+105:       "com.google.common.collect.RegularImmutableMap",
+106:       "com.google.common.collect.ImmutableMultimap$Values",
+107:       "com.google.common.collect.ByFunctionOrdering",
+108:       "com.google.common.collect.SortedMapDifference",
+109:       "com.google.common.collect.RegularImmutableSet",
+110:       "com.google.common.collect.Iterators$10",
+111:       "com.google.common.collect.AbstractMapEntry",
+112:       "com.google.common.collect.ImmutableMap$IteratorBasedImmutableMap",
+113:       "com.google.common.collect.LinkedHashMultimap$ValueEntry",
+114:       "com.google.common.collect.LexicographicalOrdering",
+115:       "com.google.common.collect.ImmutableListMultimap",
+116:       "com.google.common.collect.ImmutableMultimap$1",
+117:       "com.google.common.collect.ImmutableMultimap$2",
+118:       "com.google.common.collect.LinkedHashMultimapGwtSerializationDependencies",
+119:       "com.google.common.collect.NullsFirstOrdering",
+120:       "com.google.common.collect.ImmutableAsList",
+121:       "com.google.common.collect.ImmutableMapEntrySet$RegularEntrySet",
+122:       "com.google.common.collect.ImmutableSet$Builder",
+123:       "com.google.common.collect.Sets$SetView",
+124:       "com.google.common.collect.ImmutableSet$CachingAsList",
+125:       "com.google.common.collect.RegularImmutableAsList",
+126:       "com.google.common.collect.SingletonImmutableSet",
+127:       "com.google.common.collect.ImmutableSetMultimap$Builder",
+128:       "com.google.common.collect.ImmutableMapEntrySet",
+129:       "com.google.common.collect.AbstractMapBasedMultimap",
+130:       "com.google.common.math.MathPreconditions",
+131:       "com.google.common.collect.ImmutableMultiset",
+132:       "com.google.common.collect.UnmodifiableListIterator",
+133:       "com.google.common.collect.UsingToStringOrdering",
+134:       "com.google.common.collect.ImmutableMultimap$Keys",
+135:       "com.google.common.collect.AbstractMapBasedMultimap$AsMap$AsMapIterator",
+136:       "com.google.common.collect.ImmutableMultimap",
+137:       "com.google.common.collect.LinkedHashMultimap$ValueSet",
+138:       "com.google.common.collect.ImmutableSortedSet",
+139:       "com.google.common.collect.AbstractMapBasedMultimap$AsMap",
+140:       "com.google.common.collect.Sets$4",
+141:       "com.google.common.collect.Maps$BiMapConverter",
+142:       "com.google.common.collect.AbstractIterator",
+143:       "com.google.common.collect.ImmutableSortedSet$Builder",
+144:       "com.google.common.collect.IndexedImmutableSet$1",
+145:       "com.google.common.collect.ImmutableList$1",
+146:       "com.google.common.collect.MapDifference",
+147:       "com.google.common.collect.SortedIterable",
+148:       "com.google.common.collect.ImmutableMap$MapViewOfValuesAsSingletonSets",
+149:       "com.google.common.collect.Sets$ImprovedAbstractSet",
+150:       "com.google.common.collect.ImmutableMapEntry$NonTerminalImmutableMapEntry",
+151:       "com.google.common.base.Preconditions",
+152:       "com.google.common.collect.UnmodifiableIterator",
+153:       "com.google.common.collect.ImmutableSortedSetFauxverideShim",
+154:       "com.google.common.collect.AbstractMapBasedMultimap$RandomAccessWrappedList",
+155:       "com.google.common.collect.ImmutableEntry",
+156:       "com.google.common.collect.EmptyImmutableSetMultimap",
+157:       "com.google.common.collect.AbstractMapBasedMultimap$WrappedSet",
+158:       "com.google.common.collect.ImmutableCollection",
+159:       "com.google.common.collect.ImmutableEnumMap",
+160:       "com.google.common.collect.AbstractMapBasedMultimap$WrappedCollection$WrappedIterator",
+161:       "com.google.common.collect.ImmutableEnumSet",
+162:       "com.google.common.collect.AbstractMapBasedMultimap$WrappedList",
+163:       "com.google.common.collect.ImmutableMultisetGwtSerializationDependencies",
+164:       "com.google.common.collect.ImmutableList$ReverseImmutableList",
+165:       "com.google.common.collect.SingletonImmutableList",
+166:       "com.google.common.collect.ImmutableSetMultimap",
+167:       "com.google.common.collect.ImmutableCollection$Builder",
+168:       "com.google.common.base.Converter",
+169:       "com.google.errorprone.annotations.DoNotMock",
+170:       "com.google.common.collect.ImmutableSet$JdkBackedSetBuilderImpl",
+171:       "com.google.common.collect.Maps$8",
+172:       "com.google.common.collect.BiMap",
+173:       "com.google.common.collect.AbstractSetMultimap",
+174:       "com.google.common.collect.IndexedImmutableSet",
+175:       "com.google.common.collect.ImmutableSet",
+176:       "com.google.common.base.Function",
+177:       "com.google.common.collect.Iterators$9",
+178:       "com.google.common.collect.ImmutableMap",
+179:       "com.google.common.collect.ImmutableMapEntry",
+180:       "com.google.common.collect.ComparatorOrdering",
+181:       "com.google.common.collect.AbstractIndexedListIterator",
+182:       "com.google.common.collect.ImmutableSortedAsList",
+183:       "com.google.common.collect.CollectPreconditions",
+184:       "com.google.common.collect.Iterators$1",
+185:       "com.google.common.collect.Sets",
+186:       "com.google.common.collect.Iterators$4",
+187:       "com.google.common.collect.Iterators$5",
+188:       "com.google.common.collect.ImmutableMultimap$EntryCollection",
+189:       "com.google.common.collect.ExplicitOrdering",
+190:       "com.google.common.collect.Maps$ViewCachingAbstractMap",
+191:       "com.google.common.collect.ImmutableMap$1",
+192:       "com.google.common.collect.Maps$EntrySet",
+193:       "com.google.common.collect.ImmutableMultimap$Builder",
+194:       "com.google.common.collect.Multiset",
+195:       "com.google.common.collect.ImmutableSetMultimap$EntrySet",
+196:       "com.google.common.collect.AbstractMultimap",
+197:       "com.google.common.collect.Multimap",
+198:       "com.google.common.collect.Iterators",
+199:       "com.google.common.collect.CompoundOrdering",
+200:       "com.google.common.collect.ImmutableBiMap",
+201:       "com.google.common.collect.ImmutableList",
+202:       "com.google.common.collect.SingletonImmutableBiMap",
+203:       "com.google.common.collect.ReverseOrdering",
+204:       "com.google.common.collect.ImmutableBiMapFauxverideShim",
+205:       "com.google.common.collect.LinkedHashMultimap$ValueSet$1",
+206:       "com.google.common.collect.ReverseNaturalOrdering",
+207:       "com.google.common.collect.Maps",
+208:       "com.google.common.collect.ImmutableMap$Builder",
+209:       "com.google.common.collect.SetMultimap",
+210:       "com.google.common.collect.ImmutableSetMultimap$SetFieldSettersHolder",
+211:       "com.google.common.collect.Maps$EntryTransformer",
+212:       "com.google.common.collect.ImmutableSet$RegularSetBuilderImpl",
+213:       "com.google.common.collect.Ordering",
+214:       "com.google.common.collect.NaturalOrdering",
+215:       "com.google.common.collect.ElementTypesAreNonnullByDefault",
+216:       "com.google.common.collect.Iterators$MergingIterator",
+217:       "com.google.common.collect.RegularImmutableMap$Values",
+218:       "com.google.common.collect.RegularImmutableSortedSet"
+219:     );
+220:   } 
+221:   private static void initMocksToAvoidTimeoutsInTheTests() throws ClassNotFoundException { 
+222:     mock(Class.forName("java.lang.Comparable", false, ImmutableSetMultimap_2_tmp__ESTest_scaffolding.class.getClassLoader()));
+223:   }
+224: 
+225:   private static void resetClasses() {
+226:     org.evosuite.runtime.classhandling.ClassResetter.getInstance().setClassLoader(ImmutableSetMultimap_2_tmp__ESTest_scaffolding.class.getClassLoader()); 
+227: 
+228:     org.evosuite.runtime.classhandling.ClassStateSupport.resetClasses(
+229:       "com.google.common.collect.AbstractMultimap",
+230:       "com.google.common.collect.BaseImmutableMultimap",
+231:       "com.google.common.collect.ImmutableMultimap",
+232:       "com.google.common.collect.ImmutableSetMultimap",
+233:       "com.google.common.collect.ImmutableMultimap$Builder",
+234:       "com.google.common.collect.ImmutableSetMultimap$Builder",
+235:       "com.google.common.collect.ImmutableCollection",
+236:       "com.google.common.collect.ImmutableSet",
+237:       "com.google.common.collect.ImmutableSetMultimap$EntrySet",
+238:       "com.google.common.collect.ImmutableMap",
+239:       "com.google.common.collect.RegularImmutableMap",
+240:       "com.google.common.collect.ImmutableSet$CachingAsList",
+241:       "com.google.common.collect.RegularImmutableSet",
+242:       "com.google.common.collect.EmptyImmutableSetMultimap",
+243:       "com.google.common.math.IntMath$1",
+244:       "com.google.common.collect.Ordering",
+245:       "com.google.common.collect.NaturalOrdering",
+246:       "com.google.common.collect.ImmutableList",
+247:       "com.google.common.collect.RegularImmutableList",
+248:       "com.google.common.collect.ImmutableSortedSetFauxverideShim",
+249:       "com.google.common.collect.ImmutableSortedSet",
+250:       "com.google.common.collect.RegularImmutableSortedSet",
+251:       "com.google.common.collect.Serialization",
+252:       "com.google.common.collect.Serialization$FieldSetter",
+253:       "com.google.common.collect.ImmutableMultimap$FieldSettersHolder",
+254:       "com.google.common.collect.ImmutableSetMultimap$SetFieldSettersHolder",
+255:       "com.google.common.collect.ObjectArrays",
+256:       "com.google.common.base.Preconditions",
+257:       "com.google.common.collect.SortedIterables",
+258:       "com.google.common.collect.ImmutableAsList",
+259:       "com.google.common.collect.RegularImmutableAsList",
+260:       "com.google.common.collect.ImmutableSortedAsList",
+261:       "com.google.common.collect.Platform",
+262:       "com.google.common.collect.Maps",
+263:       "com.google.common.collect.Sets",
+264:       "com.google.common.collect.CollectPreconditions",
+265:       "com.google.common.collect.ImmutableMap$Builder",
+266:       "com.google.common.collect.SingletonImmutableSet",
+267:       "com.google.common.collect.Hashing",
+268:       "com.google.common.collect.AbstractMapEntry",
+269:       "com.google.common.collect.ImmutableEntry",
+270:       "com.google.common.collect.ImmutableMapEntry",
+271:       "com.google.common.collect.Iterators",
+272:       "com.google.common.collect.UnmodifiableIterator",
+273:       "com.google.common.collect.UnmodifiableListIterator",
+274:       "com.google.common.collect.AbstractIndexedListIterator",
+275:       "com.google.common.collect.Iterators$ArrayItr",
+276:       "com.google.common.collect.ImmutableBiMapFauxverideShim",
+277:       "com.google.common.collect.ImmutableBiMap",
+278:       "com.google.common.collect.SingletonImmutableBiMap",
+279:       "com.google.common.collect.ImmutableMultimap$2",
+280:       "com.google.common.collect.Iterators$9",
+281:       "com.google.common.collect.AbstractMapBasedMultimap",
+282:       "com.google.common.collect.AbstractSetMultimap",
+283:       "com.google.common.collect.LinkedHashMultimapGwtSerializationDependencies",
+284:       "com.google.common.collect.LinkedHashMultimap",
+285:       "com.google.common.collect.LinkedHashMultimap$ValueEntry",
+286:       "com.google.common.collect.ImmutableMultimap$1",
+287:       "com.google.common.collect.Sets$ImprovedAbstractSet",
+288:       "com.google.common.collect.LinkedHashMultimap$ValueSet",
+289:       "com.google.common.collect.AbstractMultimap$Values",
+290:       "com.google.common.collect.Maps$ViewCachingAbstractMap",
+291:       "com.google.common.collect.AbstractMapBasedMultimap$AsMap",
+292:       "com.google.common.collect.Maps$EntrySet",
+293:       "com.google.common.collect.AbstractMapBasedMultimap$AsMap$AsMapEntries",
+294:       "com.google.common.collect.AbstractMapBasedMultimap$AsMap$AsMapIterator",
+295:       "com.google.common.collect.AbstractMapBasedMultimap$WrappedCollection",
+296:       "com.google.common.collect.AbstractMapBasedMultimap$WrappedSet",
+297:       "com.google.common.collect.AbstractMapBasedMultimap$WrappedCollection$WrappedIterator",
+298:       "com.google.common.collect.LinkedHashMultimap$ValueSet$1",
+299:       "com.google.common.collect.ComparatorOrdering",
+300:       "com.google.common.collect.IndexedImmutableSet",
+301:       "com.google.common.collect.RegularImmutableMap$KeySet",
+302:       "com.google.common.collect.ImmutableMapEntrySet",
+303:       "com.google.common.collect.ImmutableMapEntrySet$RegularEntrySet",
+304:       "com.google.common.collect.ImmutableMapEntry$NonTerminalImmutableMapEntry",
+305:       "com.google.common.collect.ImmutableSet$SetBuilderImpl",
+306:       "com.google.common.collect.ImmutableSet$RegularSetBuilderImpl",
+307:       "com.google.common.math.IntMath",
+308:       "com.google.common.math.MathPreconditions"
+309:     );
+310:   }
+311: }
+
+[MASTER] 04:15:56.647 [logback-2] ERROR JUnitAnalyzer - Failed to compile test case:
+Comparable<InvalidObjectException> comparable0 = (Comparable<InvalidObjectException>) mock(Comparable.class, new ViolatedAssumptionAnswer());
+Comparable<InvalidObjectException> comparable1 = (Comparable<InvalidObjectException>) mock(Comparable.class, new ViolatedAssumptionAnswer());
+ImmutableSetMultimap<Comparable<RegularImmutableSortedSet>, Comparable<RegularImmutableSortedSet>> immutableSetMultimap0 = ImmutableSetMultimap.of((Comparable<RegularImmutableSortedSet>) comparable0, (Comparable<RegularImmutableSortedSet>) comparable0, (Comparable<RegularImmutableSortedSet>) comparable1, (Comparable<RegularImmutableSortedSet>) comparable0);
+assertEquals(2, immutableSetMultimap0.size());
+
+
+* Writing tests to file
+* Writing JUnit test case 'ImmutableSetMultimap_ESTest' to evosuite-tests
+* Done!
+
+* Computation finished

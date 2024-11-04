@@ -1,0 +1,17 @@
+90c90,92
+< java.lang.String v3;
+---
+> int v5, v6;
+> java.lang.StringBuilder v8;
+> java.lang.String v3, v4, v7;
+94,95c96,102
+< v3 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (com.google.common.collect.ImmutableSet)>(v2) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Ordering.explicit(\u0001)");
+< return v3;
+---
+> v3 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v2);
+> v4 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v3);
+> v5 = virtualinvoke v4.<java.lang.String: int length()>();
+> v6 = 19 + v5;
+> specialinvoke v8.<java.lang.StringBuilder: void <init>(int)>(v6);
+> v7 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v3) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Ordering.explicit(\u0001)");
+> return v7;

@@ -1,0 +1,33 @@
+5d4
+< final com.google.common.util.concurrent.AbstractService this$0;
+16d14
+< v0.<com.google.common.util.concurrent.AbstractService$5: com.google.common.util.concurrent.AbstractService this$0> = v1;
+37,38c35
+< java.lang.Throwable v2;
+< com.google.common.util.concurrent.Service$State v1;
+---
+> java.lang.Throwable v3;
+40c37,40
+< java.lang.String v3;
+---
+> com.google.common.util.concurrent.Service$State v1;
+> int v10, v6, v7, v9;
+> java.lang.StringBuilder v12;
+> java.lang.String v11, v2, v4, v5, v8;
+43,45c43,54
+< v2 = v0.<com.google.common.util.concurrent.AbstractService$5: java.lang.Throwable val$cause>;
+< v3 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (com.google.common.util.concurrent.Service$State,java.lang.Throwable)>(v1, v2) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("failed({from = \u0001, cause = \u0001})");
+< return v3;
+---
+> v2 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v1);
+> v3 = v0.<com.google.common.util.concurrent.AbstractService$5: java.lang.Throwable val$cause>;
+> v4 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v3);
+> v5 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v2);
+> v6 = virtualinvoke v5.<java.lang.String: int length()>();
+> v7 = 27 + v6;
+> v8 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v4);
+> v9 = virtualinvoke v8.<java.lang.String: int length()>();
+> v10 = v7 + v9;
+> specialinvoke v12.<java.lang.StringBuilder: void <init>(int)>(v10);
+> v11 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,java.lang.String)>(v2, v4) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("failed({from = \u0001, cause = \u0001})");
+> return v11;

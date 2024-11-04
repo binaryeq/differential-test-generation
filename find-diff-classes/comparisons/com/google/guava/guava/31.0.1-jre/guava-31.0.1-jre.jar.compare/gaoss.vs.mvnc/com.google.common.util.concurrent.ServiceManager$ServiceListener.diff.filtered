@@ -1,0 +1,38 @@
+119c119
+< com.google.common.util.concurrent.Service$State v1, v17, v9;
+---
+> com.google.common.util.concurrent.Service$State v1, v25, v9;
+121c121,122
+< java.lang.String v15;
+---
+> int v18, v19, v21, v22;
+> java.lang.String v15, v16, v17, v20, v23;
+125c126
+< com.google.common.util.concurrent.Service v14, v16, v5;
+---
+> com.google.common.util.concurrent.Service v14, v24, v5;
+126a128
+> java.lang.StringBuilder v26;
+154,155c156,166
+< v15 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (com.google.common.util.concurrent.Service,com.google.common.util.concurrent.Service$State)>(v14, v1) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Service \u0001 has failed in the \u0001 state.");
+< virtualinvoke v12.<java.util.logging.Logger: void log(java.util.logging.Level,java.lang.String,java.lang.Throwable)>(v13, v15, v2);
+---
+> v15 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v14);
+> v16 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v1);
+> v17 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v15);
+> v18 = virtualinvoke v17.<java.lang.String: int length()>();
+> v19 = 34 + v18;
+> v20 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v16);
+> v21 = virtualinvoke v20.<java.lang.String: int length()>();
+> v22 = v19 + v21;
+> specialinvoke v26.<java.lang.StringBuilder: void <init>(int)>(v22);
+> v23 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,java.lang.String)>(v15, v16) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Service \u0001 has failed in the \u0001 state.");
+> virtualinvoke v12.<java.util.logging.Logger: void log(java.util.logging.Level,java.lang.String,java.lang.Throwable)>(v13, v23, v2);
+157,159c168,170
+< v16 = v0.<com.google.common.util.concurrent.ServiceManager$ServiceListener: com.google.common.util.concurrent.Service service>;
+< v17 = <com.google.common.util.concurrent.Service$State: com.google.common.util.concurrent.Service$State FAILED>;
+< virtualinvoke v4.<com.google.common.util.concurrent.ServiceManager$ServiceManagerState: void transitionService(com.google.common.util.concurrent.Service,com.google.common.util.concurrent.Service$State,com.google.common.util.concurrent.Service$State)>(v16, v1, v17);
+---
+> v24 = v0.<com.google.common.util.concurrent.ServiceManager$ServiceListener: com.google.common.util.concurrent.Service service>;
+> v25 = <com.google.common.util.concurrent.Service$State: com.google.common.util.concurrent.Service$State FAILED>;
+> virtualinvoke v4.<com.google.common.util.concurrent.ServiceManager$ServiceManagerState: void transitionService(com.google.common.util.concurrent.Service,com.google.common.util.concurrent.Service$State,com.google.common.util.concurrent.Service$State)>(v24, v1, v25);

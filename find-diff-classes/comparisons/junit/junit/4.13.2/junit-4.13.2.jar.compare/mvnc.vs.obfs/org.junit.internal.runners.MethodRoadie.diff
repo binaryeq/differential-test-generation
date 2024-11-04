@@ -1,0 +1,27 @@
+109c109
+< goto label7;
+---
+> goto label6;
+112d111
+< label4:
+114,115c113,114
+< goto label7;
+< label5:
+---
+> goto label6;
+> label4:
+120c119
+< label6:
+---
+> label5:
+124c123
+< label7:
+---
+> label6:
+127,129c126,127
+< catch java.lang.Exception from label1 to label2 with label5;
+< catch java.lang.Throwable from label1 to label2 with label6;
+< catch java.lang.Throwable from label3 to label4 with label6;
+---
+> catch java.lang.Exception from label1 to label2 with label4;
+> catch java.lang.Throwable from label1 to label2 with label5;

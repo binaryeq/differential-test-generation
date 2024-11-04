@@ -1,0 +1,16 @@
+33c33
+< v6 = virtualinvoke v1.<java.lang.Object: java.lang.Class getClass()>();
+---
+> v6 = interfaceinvoke v1.<org.redisson.api.RObject: java.lang.Class getClass()>();
+115c115
+< v4 = staticinvoke <org.redisson.mapreduce.MapReduceExecutor$lambda_executeAsync_0__393: java.util.function.Function bootstrap$(org.redisson.mapreduce.MapReduceExecutor,java.util.concurrent.atomic.AtomicReference)>(v0, v1);
+---
+> v4 = staticinvoke <org.redisson.mapreduce.MapReduceExecutor$lambda_executeAsync_0__472: java.util.function.Function bootstrap$(org.redisson.mapreduce.MapReduceExecutor,java.util.concurrent.atomic.AtomicReference)>(v0, v1);
+118c118
+< v7 = staticinvoke <org.redisson.mapreduce.MapReduceExecutor$lambda_executeAsync_1__394: java.util.function.BiConsumer bootstrap$(java.util.concurrent.CompletableFuture,java.util.concurrent.atomic.AtomicReference,org.redisson.api.RFuture)>(v6, v1, v3);
+---
+> v7 = staticinvoke <org.redisson.mapreduce.MapReduceExecutor$lambda_executeAsync_1__473: java.util.function.BiConsumer bootstrap$(java.util.concurrent.CompletableFuture,java.util.concurrent.atomic.AtomicReference,org.redisson.api.RFuture)>(v6, v1, v3);
+125c125
+< v12 = staticinvoke <org.redisson.mapreduce.MapReduceExecutor$lambda_executeAsync_2__395: io.netty.util.TimerTask bootstrap$(java.util.concurrent.CompletableFuture)>(v6);
+---
+> v12 = staticinvoke <org.redisson.mapreduce.MapReduceExecutor$lambda_executeAsync_2__474: io.netty.util.TimerTask bootstrap$(java.util.concurrent.CompletableFuture)>(v6);

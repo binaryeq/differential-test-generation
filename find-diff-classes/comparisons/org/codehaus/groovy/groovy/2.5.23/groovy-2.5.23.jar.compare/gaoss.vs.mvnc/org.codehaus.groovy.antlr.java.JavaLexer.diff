@@ -1,0 +1,3459 @@
+1c1
+< public class org.codehaus.groovy.antlr.java.JavaLexer extends antlr.CharScanner implements org.codehaus.groovy.antlr.java.JavaTokenTypes, antlr.TokenStream
+---
+> public class org.codehaus.groovy.antlr.java.JavaLexer extends groovyjarjarantlr.CharScanner implements org.codehaus.groovy.antlr.java.JavaTokenTypes, groovyjarjarantlr.TokenStream
+16,21c16,21
+< public static final antlr.collections.impl.BitSet _tokenSet_0;
+< public static final antlr.collections.impl.BitSet _tokenSet_1;
+< public static final antlr.collections.impl.BitSet _tokenSet_2;
+< public static final antlr.collections.impl.BitSet _tokenSet_3;
+< public static final antlr.collections.impl.BitSet _tokenSet_4;
+< public static final antlr.collections.impl.BitSet _tokenSet_5;
+---
+> public static final groovyjarjarantlr.collections.impl.BitSet _tokenSet_0;
+> public static final groovyjarjarantlr.collections.impl.BitSet _tokenSet_1;
+> public static final groovyjarjarantlr.collections.impl.BitSet _tokenSet_2;
+> public static final groovyjarjarantlr.collections.impl.BitSet _tokenSet_3;
+> public static final groovyjarjarantlr.collections.impl.BitSet _tokenSet_4;
+> public static final groovyjarjarantlr.collections.impl.BitSet _tokenSet_5;
+56c56
+< public antlr.TokenStream plumb()
+---
+> public groovyjarjarantlr.TokenStream plumb()
+67c67
+< antlr.ByteBuffer v2;
+---
+> groovyjarjarantlr.ByteBuffer v2;
+72,74c72,74
+< v2 = new antlr.ByteBuffer;
+< specialinvoke v2.<antlr.ByteBuffer: void <init>(java.io.InputStream)>(v1);
+< specialinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: void <init>(antlr.InputBuffer)>(v2);
+---
+> v2 = new groovyjarjarantlr.ByteBuffer;
+> specialinvoke v2.<groovyjarjarantlr.ByteBuffer: void <init>(java.io.InputStream)>(v1);
+> specialinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: void <init>(groovyjarjarantlr.InputBuffer)>(v2);
+79c79
+< antlr.CharBuffer v2;
+---
+> groovyjarjarantlr.CharBuffer v2;
+84,86c84,86
+< v2 = new antlr.CharBuffer;
+< specialinvoke v2.<antlr.CharBuffer: void <init>(java.io.Reader)>(v1);
+< specialinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: void <init>(antlr.InputBuffer)>(v2);
+---
+> v2 = new groovyjarjarantlr.CharBuffer;
+> specialinvoke v2.<groovyjarjarantlr.CharBuffer: void <init>(java.io.Reader)>(v1);
+> specialinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: void <init>(groovyjarjarantlr.InputBuffer)>(v2);
+89c89
+< public void <init>(antlr.InputBuffer)
+---
+> public void <init>(groovyjarjarantlr.InputBuffer)
+90a91
+> groovyjarjarantlr.LexerSharedInputState v2;
+92,93c93
+< antlr.InputBuffer v1;
+< antlr.LexerSharedInputState v2;
+---
+> groovyjarjarantlr.InputBuffer v1;
+95,98c95,98
+< v1 := @parameter0: antlr.InputBuffer;
+< v2 = new antlr.LexerSharedInputState;
+< specialinvoke v2.<antlr.LexerSharedInputState: void <init>(antlr.InputBuffer)>(v1);
+< specialinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: void <init>(antlr.LexerSharedInputState)>(v2);
+---
+> v1 := @parameter0: groovyjarjarantlr.InputBuffer;
+> v2 = new groovyjarjarantlr.LexerSharedInputState;
+> specialinvoke v2.<groovyjarjarantlr.LexerSharedInputState: void <init>(groovyjarjarantlr.InputBuffer)>(v1);
+> specialinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: void <init>(groovyjarjarantlr.LexerSharedInputState)>(v2);
+101c101
+< public void <init>(antlr.LexerSharedInputState)
+---
+> public void <init>(groovyjarjarantlr.LexerSharedInputState)
+104d103
+< antlr.ANTLRHashString v10, v100, v103, v106, v109, v112, v115, v118, v121, v124, v127, v13, v130, v133, v136, v139, v142, v145, v148, v151, v154, v157, v16, v19, v22, v25, v28, v31, v34, v37, v4, v40, v43, v46, v49, v52, v55, v58, v61, v64, v67, v7, v70, v73, v76, v79, v82, v85, v88, v91, v94, v97;
+106c105,106
+< antlr.LexerSharedInputState v1;
+---
+> groovyjarjarantlr.ANTLRHashString v10, v100, v103, v106, v109, v112, v115, v118, v121, v124, v127, v13, v130, v133, v136, v139, v142, v145, v148, v151, v154, v157, v16, v19, v22, v25, v28, v31, v34, v37, v4, v40, v43, v46, v49, v52, v55, v58, v61, v64, v67, v7, v70, v73, v76, v79, v82, v85, v88, v91, v94, v97;
+> groovyjarjarantlr.LexerSharedInputState v1;
+109,110c109,110
+< v1 := @parameter0: antlr.LexerSharedInputState;
+< specialinvoke v0.<antlr.CharScanner: void <init>(antlr.LexerSharedInputState)>(v1);
+---
+> v1 := @parameter0: groovyjarjarantlr.LexerSharedInputState;
+> specialinvoke v0.<groovyjarjarantlr.CharScanner: void <init>(groovyjarjarantlr.LexerSharedInputState)>(v1);
+122,123c122,123
+< v4 = new antlr.ANTLRHashString;
+< specialinvoke v4.<antlr.ANTLRHashString: void <init>(java.lang.String,antlr.CharScanner)>("byte", v0);
+---
+> v4 = new groovyjarjarantlr.ANTLRHashString;
+> specialinvoke v4.<groovyjarjarantlr.ANTLRHashString: void <init>(java.lang.String,groovyjarjarantlr.CharScanner)>("byte", v0);
+128,129c128,129
+< v7 = new antlr.ANTLRHashString;
+< specialinvoke v7.<antlr.ANTLRHashString: void <init>(java.lang.String,antlr.CharScanner)>("public", v0);
+---
+> v7 = new groovyjarjarantlr.ANTLRHashString;
+> specialinvoke v7.<groovyjarjarantlr.ANTLRHashString: void <init>(java.lang.String,groovyjarjarantlr.CharScanner)>("public", v0);
+134,135c134,135
+< v10 = new antlr.ANTLRHashString;
+< specialinvoke v10.<antlr.ANTLRHashString: void <init>(java.lang.String,antlr.CharScanner)>("case", v0);
+---
+> v10 = new groovyjarjarantlr.ANTLRHashString;
+> specialinvoke v10.<groovyjarjarantlr.ANTLRHashString: void <init>(java.lang.String,groovyjarjarantlr.CharScanner)>("case", v0);
+140,141c140,141
+< v13 = new antlr.ANTLRHashString;
+< specialinvoke v13.<antlr.ANTLRHashString: void <init>(java.lang.String,antlr.CharScanner)>("short", v0);
+---
+> v13 = new groovyjarjarantlr.ANTLRHashString;
+> specialinvoke v13.<groovyjarjarantlr.ANTLRHashString: void <init>(java.lang.String,groovyjarjarantlr.CharScanner)>("short", v0);
+146,147c146,147
+< v16 = new antlr.ANTLRHashString;
+< specialinvoke v16.<antlr.ANTLRHashString: void <init>(java.lang.String,antlr.CharScanner)>("break", v0);
+---
+> v16 = new groovyjarjarantlr.ANTLRHashString;
+> specialinvoke v16.<groovyjarjarantlr.ANTLRHashString: void <init>(java.lang.String,groovyjarjarantlr.CharScanner)>("break", v0);
+152,153c152,153
+< v19 = new antlr.ANTLRHashString;
+< specialinvoke v19.<antlr.ANTLRHashString: void <init>(java.lang.String,antlr.CharScanner)>("while", v0);
+---
+> v19 = new groovyjarjarantlr.ANTLRHashString;
+> specialinvoke v19.<groovyjarjarantlr.ANTLRHashString: void <init>(java.lang.String,groovyjarjarantlr.CharScanner)>("while", v0);
+158,159c158,159
+< v22 = new antlr.ANTLRHashString;
+< specialinvoke v22.<antlr.ANTLRHashString: void <init>(java.lang.String,antlr.CharScanner)>("new", v0);
+---
+> v22 = new groovyjarjarantlr.ANTLRHashString;
+> specialinvoke v22.<groovyjarjarantlr.ANTLRHashString: void <init>(java.lang.String,groovyjarjarantlr.CharScanner)>("new", v0);
+164,165c164,165
+< v25 = new antlr.ANTLRHashString;
+< specialinvoke v25.<antlr.ANTLRHashString: void <init>(java.lang.String,antlr.CharScanner)>("instanceof", v0);
+---
+> v25 = new groovyjarjarantlr.ANTLRHashString;
+> specialinvoke v25.<groovyjarjarantlr.ANTLRHashString: void <init>(java.lang.String,groovyjarjarantlr.CharScanner)>("instanceof", v0);
+170,171c170,171
+< v28 = new antlr.ANTLRHashString;
+< specialinvoke v28.<antlr.ANTLRHashString: void <init>(java.lang.String,antlr.CharScanner)>("implements", v0);
+---
+> v28 = new groovyjarjarantlr.ANTLRHashString;
+> specialinvoke v28.<groovyjarjarantlr.ANTLRHashString: void <init>(java.lang.String,groovyjarjarantlr.CharScanner)>("implements", v0);
+176,177c176,177
+< v31 = new antlr.ANTLRHashString;
+< specialinvoke v31.<antlr.ANTLRHashString: void <init>(java.lang.String,antlr.CharScanner)>("synchronized", v0);
+---
+> v31 = new groovyjarjarantlr.ANTLRHashString;
+> specialinvoke v31.<groovyjarjarantlr.ANTLRHashString: void <init>(java.lang.String,groovyjarjarantlr.CharScanner)>("synchronized", v0);
+182,183c182,183
+< v34 = new antlr.ANTLRHashString;
+< specialinvoke v34.<antlr.ANTLRHashString: void <init>(java.lang.String,antlr.CharScanner)>("float", v0);
+---
+> v34 = new groovyjarjarantlr.ANTLRHashString;
+> specialinvoke v34.<groovyjarjarantlr.ANTLRHashString: void <init>(java.lang.String,groovyjarjarantlr.CharScanner)>("float", v0);
+188,189c188,189
+< v37 = new antlr.ANTLRHashString;
+< specialinvoke v37.<antlr.ANTLRHashString: void <init>(java.lang.String,antlr.CharScanner)>("package", v0);
+---
+> v37 = new groovyjarjarantlr.ANTLRHashString;
+> specialinvoke v37.<groovyjarjarantlr.ANTLRHashString: void <init>(java.lang.String,groovyjarjarantlr.CharScanner)>("package", v0);
+194,195c194,195
+< v40 = new antlr.ANTLRHashString;
+< specialinvoke v40.<antlr.ANTLRHashString: void <init>(java.lang.String,antlr.CharScanner)>("return", v0);
+---
+> v40 = new groovyjarjarantlr.ANTLRHashString;
+> specialinvoke v40.<groovyjarjarantlr.ANTLRHashString: void <init>(java.lang.String,groovyjarjarantlr.CharScanner)>("return", v0);
+200,201c200,201
+< v43 = new antlr.ANTLRHashString;
+< specialinvoke v43.<antlr.ANTLRHashString: void <init>(java.lang.String,antlr.CharScanner)>("throw", v0);
+---
+> v43 = new groovyjarjarantlr.ANTLRHashString;
+> specialinvoke v43.<groovyjarjarantlr.ANTLRHashString: void <init>(java.lang.String,groovyjarjarantlr.CharScanner)>("throw", v0);
+206,207c206,207
+< v46 = new antlr.ANTLRHashString;
+< specialinvoke v46.<antlr.ANTLRHashString: void <init>(java.lang.String,antlr.CharScanner)>("null", v0);
+---
+> v46 = new groovyjarjarantlr.ANTLRHashString;
+> specialinvoke v46.<groovyjarjarantlr.ANTLRHashString: void <init>(java.lang.String,groovyjarjarantlr.CharScanner)>("null", v0);
+212,213c212,213
+< v49 = new antlr.ANTLRHashString;
+< specialinvoke v49.<antlr.ANTLRHashString: void <init>(java.lang.String,antlr.CharScanner)>("threadsafe", v0);
+---
+> v49 = new groovyjarjarantlr.ANTLRHashString;
+> specialinvoke v49.<groovyjarjarantlr.ANTLRHashString: void <init>(java.lang.String,groovyjarjarantlr.CharScanner)>("threadsafe", v0);
+218,219c218,219
+< v52 = new antlr.ANTLRHashString;
+< specialinvoke v52.<antlr.ANTLRHashString: void <init>(java.lang.String,antlr.CharScanner)>("protected", v0);
+---
+> v52 = new groovyjarjarantlr.ANTLRHashString;
+> specialinvoke v52.<groovyjarjarantlr.ANTLRHashString: void <init>(java.lang.String,groovyjarjarantlr.CharScanner)>("protected", v0);
+224,225c224,225
+< v55 = new antlr.ANTLRHashString;
+< specialinvoke v55.<antlr.ANTLRHashString: void <init>(java.lang.String,antlr.CharScanner)>("class", v0);
+---
+> v55 = new groovyjarjarantlr.ANTLRHashString;
+> specialinvoke v55.<groovyjarjarantlr.ANTLRHashString: void <init>(java.lang.String,groovyjarjarantlr.CharScanner)>("class", v0);
+230,231c230,231
+< v58 = new antlr.ANTLRHashString;
+< specialinvoke v58.<antlr.ANTLRHashString: void <init>(java.lang.String,antlr.CharScanner)>("throws", v0);
+---
+> v58 = new groovyjarjarantlr.ANTLRHashString;
+> specialinvoke v58.<groovyjarjarantlr.ANTLRHashString: void <init>(java.lang.String,groovyjarjarantlr.CharScanner)>("throws", v0);
+236,237c236,237
+< v61 = new antlr.ANTLRHashString;
+< specialinvoke v61.<antlr.ANTLRHashString: void <init>(java.lang.String,antlr.CharScanner)>("do", v0);
+---
+> v61 = new groovyjarjarantlr.ANTLRHashString;
+> specialinvoke v61.<groovyjarjarantlr.ANTLRHashString: void <init>(java.lang.String,groovyjarjarantlr.CharScanner)>("do", v0);
+242,243c242,243
+< v64 = new antlr.ANTLRHashString;
+< specialinvoke v64.<antlr.ANTLRHashString: void <init>(java.lang.String,antlr.CharScanner)>("strictfp", v0);
+---
+> v64 = new groovyjarjarantlr.ANTLRHashString;
+> specialinvoke v64.<groovyjarjarantlr.ANTLRHashString: void <init>(java.lang.String,groovyjarjarantlr.CharScanner)>("strictfp", v0);
+248,249c248,249
+< v67 = new antlr.ANTLRHashString;
+< specialinvoke v67.<antlr.ANTLRHashString: void <init>(java.lang.String,antlr.CharScanner)>("super", v0);
+---
+> v67 = new groovyjarjarantlr.ANTLRHashString;
+> specialinvoke v67.<groovyjarjarantlr.ANTLRHashString: void <init>(java.lang.String,groovyjarjarantlr.CharScanner)>("super", v0);
+254,255c254,255
+< v70 = new antlr.ANTLRHashString;
+< specialinvoke v70.<antlr.ANTLRHashString: void <init>(java.lang.String,antlr.CharScanner)>("transient", v0);
+---
+> v70 = new groovyjarjarantlr.ANTLRHashString;
+> specialinvoke v70.<groovyjarjarantlr.ANTLRHashString: void <init>(java.lang.String,groovyjarjarantlr.CharScanner)>("transient", v0);
+260,261c260,261
+< v73 = new antlr.ANTLRHashString;
+< specialinvoke v73.<antlr.ANTLRHashString: void <init>(java.lang.String,antlr.CharScanner)>("native", v0);
+---
+> v73 = new groovyjarjarantlr.ANTLRHashString;
+> specialinvoke v73.<groovyjarjarantlr.ANTLRHashString: void <init>(java.lang.String,groovyjarjarantlr.CharScanner)>("native", v0);
+266,267c266,267
+< v76 = new antlr.ANTLRHashString;
+< specialinvoke v76.<antlr.ANTLRHashString: void <init>(java.lang.String,antlr.CharScanner)>("interface", v0);
+---
+> v76 = new groovyjarjarantlr.ANTLRHashString;
+> specialinvoke v76.<groovyjarjarantlr.ANTLRHashString: void <init>(java.lang.String,groovyjarjarantlr.CharScanner)>("interface", v0);
+272,273c272,273
+< v79 = new antlr.ANTLRHashString;
+< specialinvoke v79.<antlr.ANTLRHashString: void <init>(java.lang.String,antlr.CharScanner)>("final", v0);
+---
+> v79 = new groovyjarjarantlr.ANTLRHashString;
+> specialinvoke v79.<groovyjarjarantlr.ANTLRHashString: void <init>(java.lang.String,groovyjarjarantlr.CharScanner)>("final", v0);
+278,279c278,279
+< v82 = new antlr.ANTLRHashString;
+< specialinvoke v82.<antlr.ANTLRHashString: void <init>(java.lang.String,antlr.CharScanner)>("if", v0);
+---
+> v82 = new groovyjarjarantlr.ANTLRHashString;
+> specialinvoke v82.<groovyjarjarantlr.ANTLRHashString: void <init>(java.lang.String,groovyjarjarantlr.CharScanner)>("if", v0);
+284,285c284,285
+< v85 = new antlr.ANTLRHashString;
+< specialinvoke v85.<antlr.ANTLRHashString: void <init>(java.lang.String,antlr.CharScanner)>("double", v0);
+---
+> v85 = new groovyjarjarantlr.ANTLRHashString;
+> specialinvoke v85.<groovyjarjarantlr.ANTLRHashString: void <init>(java.lang.String,groovyjarjarantlr.CharScanner)>("double", v0);
+290,291c290,291
+< v88 = new antlr.ANTLRHashString;
+< specialinvoke v88.<antlr.ANTLRHashString: void <init>(java.lang.String,antlr.CharScanner)>("volatile", v0);
+---
+> v88 = new groovyjarjarantlr.ANTLRHashString;
+> specialinvoke v88.<groovyjarjarantlr.ANTLRHashString: void <init>(java.lang.String,groovyjarjarantlr.CharScanner)>("volatile", v0);
+296,297c296,297
+< v91 = new antlr.ANTLRHashString;
+< specialinvoke v91.<antlr.ANTLRHashString: void <init>(java.lang.String,antlr.CharScanner)>("assert", v0);
+---
+> v91 = new groovyjarjarantlr.ANTLRHashString;
+> specialinvoke v91.<groovyjarjarantlr.ANTLRHashString: void <init>(java.lang.String,groovyjarjarantlr.CharScanner)>("assert", v0);
+302,303c302,303
+< v94 = new antlr.ANTLRHashString;
+< specialinvoke v94.<antlr.ANTLRHashString: void <init>(java.lang.String,antlr.CharScanner)>("catch", v0);
+---
+> v94 = new groovyjarjarantlr.ANTLRHashString;
+> specialinvoke v94.<groovyjarjarantlr.ANTLRHashString: void <init>(java.lang.String,groovyjarjarantlr.CharScanner)>("catch", v0);
+308,309c308,309
+< v97 = new antlr.ANTLRHashString;
+< specialinvoke v97.<antlr.ANTLRHashString: void <init>(java.lang.String,antlr.CharScanner)>("try", v0);
+---
+> v97 = new groovyjarjarantlr.ANTLRHashString;
+> specialinvoke v97.<groovyjarjarantlr.ANTLRHashString: void <init>(java.lang.String,groovyjarjarantlr.CharScanner)>("try", v0);
+314,315c314,315
+< v100 = new antlr.ANTLRHashString;
+< specialinvoke v100.<antlr.ANTLRHashString: void <init>(java.lang.String,antlr.CharScanner)>("enum", v0);
+---
+> v100 = new groovyjarjarantlr.ANTLRHashString;
+> specialinvoke v100.<groovyjarjarantlr.ANTLRHashString: void <init>(java.lang.String,groovyjarjarantlr.CharScanner)>("enum", v0);
+320,321c320,321
+< v103 = new antlr.ANTLRHashString;
+< specialinvoke v103.<antlr.ANTLRHashString: void <init>(java.lang.String,antlr.CharScanner)>("int", v0);
+---
+> v103 = new groovyjarjarantlr.ANTLRHashString;
+> specialinvoke v103.<groovyjarjarantlr.ANTLRHashString: void <init>(java.lang.String,groovyjarjarantlr.CharScanner)>("int", v0);
+326,327c326,327
+< v106 = new antlr.ANTLRHashString;
+< specialinvoke v106.<antlr.ANTLRHashString: void <init>(java.lang.String,antlr.CharScanner)>("for", v0);
+---
+> v106 = new groovyjarjarantlr.ANTLRHashString;
+> specialinvoke v106.<groovyjarjarantlr.ANTLRHashString: void <init>(java.lang.String,groovyjarjarantlr.CharScanner)>("for", v0);
+332,333c332,333
+< v109 = new antlr.ANTLRHashString;
+< specialinvoke v109.<antlr.ANTLRHashString: void <init>(java.lang.String,antlr.CharScanner)>("extends", v0);
+---
+> v109 = new groovyjarjarantlr.ANTLRHashString;
+> specialinvoke v109.<groovyjarjarantlr.ANTLRHashString: void <init>(java.lang.String,groovyjarjarantlr.CharScanner)>("extends", v0);
+338,339c338,339
+< v112 = new antlr.ANTLRHashString;
+< specialinvoke v112.<antlr.ANTLRHashString: void <init>(java.lang.String,antlr.CharScanner)>("boolean", v0);
+---
+> v112 = new groovyjarjarantlr.ANTLRHashString;
+> specialinvoke v112.<groovyjarjarantlr.ANTLRHashString: void <init>(java.lang.String,groovyjarjarantlr.CharScanner)>("boolean", v0);
+344,345c344,345
+< v115 = new antlr.ANTLRHashString;
+< specialinvoke v115.<antlr.ANTLRHashString: void <init>(java.lang.String,antlr.CharScanner)>("char", v0);
+---
+> v115 = new groovyjarjarantlr.ANTLRHashString;
+> specialinvoke v115.<groovyjarjarantlr.ANTLRHashString: void <init>(java.lang.String,groovyjarjarantlr.CharScanner)>("char", v0);
+350,351c350,351
+< v118 = new antlr.ANTLRHashString;
+< specialinvoke v118.<antlr.ANTLRHashString: void <init>(java.lang.String,antlr.CharScanner)>("private", v0);
+---
+> v118 = new groovyjarjarantlr.ANTLRHashString;
+> specialinvoke v118.<groovyjarjarantlr.ANTLRHashString: void <init>(java.lang.String,groovyjarjarantlr.CharScanner)>("private", v0);
+356,357c356,357
+< v121 = new antlr.ANTLRHashString;
+< specialinvoke v121.<antlr.ANTLRHashString: void <init>(java.lang.String,antlr.CharScanner)>("default", v0);
+---
+> v121 = new groovyjarjarantlr.ANTLRHashString;
+> specialinvoke v121.<groovyjarjarantlr.ANTLRHashString: void <init>(java.lang.String,groovyjarjarantlr.CharScanner)>("default", v0);
+362,363c362,363
+< v124 = new antlr.ANTLRHashString;
+< specialinvoke v124.<antlr.ANTLRHashString: void <init>(java.lang.String,antlr.CharScanner)>("false", v0);
+---
+> v124 = new groovyjarjarantlr.ANTLRHashString;
+> specialinvoke v124.<groovyjarjarantlr.ANTLRHashString: void <init>(java.lang.String,groovyjarjarantlr.CharScanner)>("false", v0);
+368,369c368,369
+< v127 = new antlr.ANTLRHashString;
+< specialinvoke v127.<antlr.ANTLRHashString: void <init>(java.lang.String,antlr.CharScanner)>("this", v0);
+---
+> v127 = new groovyjarjarantlr.ANTLRHashString;
+> specialinvoke v127.<groovyjarjarantlr.ANTLRHashString: void <init>(java.lang.String,groovyjarjarantlr.CharScanner)>("this", v0);
+374,375c374,375
+< v130 = new antlr.ANTLRHashString;
+< specialinvoke v130.<antlr.ANTLRHashString: void <init>(java.lang.String,antlr.CharScanner)>("static", v0);
+---
+> v130 = new groovyjarjarantlr.ANTLRHashString;
+> specialinvoke v130.<groovyjarjarantlr.ANTLRHashString: void <init>(java.lang.String,groovyjarjarantlr.CharScanner)>("static", v0);
+380,381c380,381
+< v133 = new antlr.ANTLRHashString;
+< specialinvoke v133.<antlr.ANTLRHashString: void <init>(java.lang.String,antlr.CharScanner)>("abstract", v0);
+---
+> v133 = new groovyjarjarantlr.ANTLRHashString;
+> specialinvoke v133.<groovyjarjarantlr.ANTLRHashString: void <init>(java.lang.String,groovyjarjarantlr.CharScanner)>("abstract", v0);
+386,387c386,387
+< v136 = new antlr.ANTLRHashString;
+< specialinvoke v136.<antlr.ANTLRHashString: void <init>(java.lang.String,antlr.CharScanner)>("continue", v0);
+---
+> v136 = new groovyjarjarantlr.ANTLRHashString;
+> specialinvoke v136.<groovyjarjarantlr.ANTLRHashString: void <init>(java.lang.String,groovyjarjarantlr.CharScanner)>("continue", v0);
+392,393c392,393
+< v139 = new antlr.ANTLRHashString;
+< specialinvoke v139.<antlr.ANTLRHashString: void <init>(java.lang.String,antlr.CharScanner)>("finally", v0);
+---
+> v139 = new groovyjarjarantlr.ANTLRHashString;
+> specialinvoke v139.<groovyjarjarantlr.ANTLRHashString: void <init>(java.lang.String,groovyjarjarantlr.CharScanner)>("finally", v0);
+398,399c398,399
+< v142 = new antlr.ANTLRHashString;
+< specialinvoke v142.<antlr.ANTLRHashString: void <init>(java.lang.String,antlr.CharScanner)>("else", v0);
+---
+> v142 = new groovyjarjarantlr.ANTLRHashString;
+> specialinvoke v142.<groovyjarjarantlr.ANTLRHashString: void <init>(java.lang.String,groovyjarjarantlr.CharScanner)>("else", v0);
+404,405c404,405
+< v145 = new antlr.ANTLRHashString;
+< specialinvoke v145.<antlr.ANTLRHashString: void <init>(java.lang.String,antlr.CharScanner)>("import", v0);
+---
+> v145 = new groovyjarjarantlr.ANTLRHashString;
+> specialinvoke v145.<groovyjarjarantlr.ANTLRHashString: void <init>(java.lang.String,groovyjarjarantlr.CharScanner)>("import", v0);
+410,411c410,411
+< v148 = new antlr.ANTLRHashString;
+< specialinvoke v148.<antlr.ANTLRHashString: void <init>(java.lang.String,antlr.CharScanner)>("void", v0);
+---
+> v148 = new groovyjarjarantlr.ANTLRHashString;
+> specialinvoke v148.<groovyjarjarantlr.ANTLRHashString: void <init>(java.lang.String,groovyjarjarantlr.CharScanner)>("void", v0);
+416,417c416,417
+< v151 = new antlr.ANTLRHashString;
+< specialinvoke v151.<antlr.ANTLRHashString: void <init>(java.lang.String,antlr.CharScanner)>("switch", v0);
+---
+> v151 = new groovyjarjarantlr.ANTLRHashString;
+> specialinvoke v151.<groovyjarjarantlr.ANTLRHashString: void <init>(java.lang.String,groovyjarjarantlr.CharScanner)>("switch", v0);
+422,423c422,423
+< v154 = new antlr.ANTLRHashString;
+< specialinvoke v154.<antlr.ANTLRHashString: void <init>(java.lang.String,antlr.CharScanner)>("true", v0);
+---
+> v154 = new groovyjarjarantlr.ANTLRHashString;
+> specialinvoke v154.<groovyjarjarantlr.ANTLRHashString: void <init>(java.lang.String,groovyjarjarantlr.CharScanner)>("true", v0);
+428,429c428,429
+< v157 = new antlr.ANTLRHashString;
+< specialinvoke v157.<antlr.ANTLRHashString: void <init>(java.lang.String,antlr.CharScanner)>("long", v0);
+---
+> v157 = new groovyjarjarantlr.ANTLRHashString;
+> specialinvoke v157.<groovyjarjarantlr.ANTLRHashString: void <init>(java.lang.String,groovyjarjarantlr.CharScanner)>("long", v0);
+435c435
+< public antlr.Token nextToken() throws antlr.TokenStreamException
+---
+> public groovyjarjarantlr.Token nextToken() throws groovyjarjarantlr.TokenStreamException
+437,441c437
+< antlr.TokenStreamException v86;
+< java.lang.Throwable v80, v82;
+< antlr.Token v69, v75, v76, v78, v79;
+< antlr.TokenStreamRecognitionException v81;
+< antlr.TokenStreamIOException v84;
+---
+> groovyjarjarantlr.TokenStreamRecognitionException v81;
+445c441,442
+< antlr.NoViableAltForCharException v70;
+---
+> groovyjarjarantlr.TokenStreamIOException v84;
+> groovyjarjarantlr.Token v69, v75, v76, v78, v79;
+446a444,445
+> groovyjarjarantlr.CharStreamException v82;
+> groovyjarjarantlr.RecognitionException v80;
+448a448,449
+> groovyjarjarantlr.NoViableAltForCharException v70;
+> groovyjarjarantlr.TokenStreamException v86;
+870,871c871,872
+< v69 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token makeToken(int)>(1);
+< v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token _returnToken> = v69;
+---
+> v69 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token makeToken(int)>(1);
+> v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token _returnToken> = v69;
+874c875
+< v70 = new antlr.NoViableAltForCharException;
+---
+> v70 = new groovyjarjarantlr.NoViableAltForCharException;
+879c880
+< specialinvoke v70.<antlr.NoViableAltForCharException: void <init>(char,java.lang.String,int,int)>(v71, v72, v73, v74);
+---
+> specialinvoke v70.<groovyjarjarantlr.NoViableAltForCharException: void <init>(char,java.lang.String,int,int)>(v71, v72, v73, v74);
+882c883
+< v75 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token _returnToken>;
+---
+> v75 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token _returnToken>;
+885,889c886,890
+< v76 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token _returnToken>;
+< v77 = virtualinvoke v76.<antlr.Token: int getType()>();
+< v78 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token _returnToken>;
+< virtualinvoke v78.<antlr.Token: void setType(int)>(v77);
+< v79 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token _returnToken>;
+---
+> v76 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token _returnToken>;
+> v77 = virtualinvoke v76.<groovyjarjarantlr.Token: int getType()>();
+> v78 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token _returnToken>;
+> virtualinvoke v78.<groovyjarjarantlr.Token: void setType(int)>(v77);
+> v79 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token _returnToken>;
+894,895c895,896
+< v81 = new antlr.TokenStreamRecognitionException;
+< specialinvoke v81.<antlr.TokenStreamRecognitionException: void <init>(antlr.RecognitionException)>(v80);
+---
+> v81 = new groovyjarjarantlr.TokenStreamRecognitionException;
+> specialinvoke v81.<groovyjarjarantlr.TokenStreamRecognitionException: void <init>(groovyjarjarantlr.RecognitionException)>(v80);
+899c900
+< v83 = v82 instanceof antlr.CharStreamIOException;
+---
+> v83 = v82 instanceof groovyjarjarantlr.CharStreamIOException;
+901,903c902,904
+< v84 = new antlr.TokenStreamIOException;
+< v85 = v82.<antlr.CharStreamIOException: java.io.IOException io>;
+< specialinvoke v84.<antlr.TokenStreamIOException: void <init>(java.io.IOException)>(v85);
+---
+> v84 = new groovyjarjarantlr.TokenStreamIOException;
+> v85 = v82.<groovyjarjarantlr.CharStreamIOException: java.io.IOException io>;
+> specialinvoke v84.<groovyjarjarantlr.TokenStreamIOException: void <init>(java.io.IOException)>(v85);
+906,908c907,909
+< v86 = new antlr.TokenStreamException;
+< v87 = virtualinvoke v82.<antlr.CharStreamException: java.lang.String getMessage()>();
+< specialinvoke v86.<antlr.TokenStreamException: void <init>(java.lang.String)>(v87);
+---
+> v86 = new groovyjarjarantlr.TokenStreamException;
+> v87 = virtualinvoke v82.<groovyjarjarantlr.CharStreamException: java.lang.String getMessage()>();
+> specialinvoke v86.<groovyjarjarantlr.TokenStreamException: void <init>(java.lang.String)>(v87);
+910,913c911,914
+< catch antlr.RecognitionException from label02 to label59 with label61;
+< catch antlr.RecognitionException from label59 to label60 with label61;
+< catch antlr.CharStreamException from label02 to label59 with label62;
+< catch antlr.CharStreamException from label59 to label60 with label62;
+---
+> catch groovyjarjarantlr.RecognitionException from label02 to label59 with label61;
+> catch groovyjarjarantlr.RecognitionException from label59 to label60 with label61;
+> catch groovyjarjarantlr.CharStreamException from label02 to label59 with label62;
+> catch groovyjarjarantlr.CharStreamException from label59 to label60 with label62;
+915c916
+< public final void mQUESTION(boolean) throws antlr.RecognitionException, antlr.CharStreamException, antlr.TokenStreamException
+---
+> public final void mQUESTION(boolean) throws groovyjarjarantlr.RecognitionException, groovyjarjarantlr.CharStreamException, groovyjarjarantlr.TokenStreamException
+917,918c918
+< antlr.Token v2;
+< antlr.ANTLRStringBuffer v3, v7, v9;
+---
+> groovyjarjarantlr.ANTLRStringBuffer v3, v7, v9;
+922a923
+> groovyjarjarantlr.Token v2;
+927,928c928,929
+< v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v4 = virtualinvoke v3.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v4 = virtualinvoke v3.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+933c934
+< v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token makeToken(int)>(69);
+---
+> v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token makeToken(int)>(69);
+935,938c936,939
+< v7 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v8 = virtualinvoke v7.<antlr.ANTLRStringBuffer: char[] getBuffer()>();
+< v9 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v10 = virtualinvoke v9.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v7 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v8 = virtualinvoke v7.<groovyjarjarantlr.ANTLRStringBuffer: char[] getBuffer()>();
+> v9 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v10 = virtualinvoke v9.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+941c942
+< virtualinvoke v2.<antlr.Token: void setText(java.lang.String)>(v6);
+---
+> virtualinvoke v2.<groovyjarjarantlr.Token: void setText(java.lang.String)>(v6);
+943c944
+< v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token _returnToken> = v2;
+---
+> v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token _returnToken> = v2;
+946c947
+< public final void mLPAREN(boolean) throws antlr.RecognitionException, antlr.CharStreamException, antlr.TokenStreamException
+---
+> public final void mLPAREN(boolean) throws groovyjarjarantlr.RecognitionException, groovyjarjarantlr.CharStreamException, groovyjarjarantlr.TokenStreamException
+948,949c949
+< antlr.Token v2;
+< antlr.ANTLRStringBuffer v3, v7, v9;
+---
+> groovyjarjarantlr.ANTLRStringBuffer v3, v7, v9;
+953a954
+> groovyjarjarantlr.Token v2;
+958,959c959,960
+< v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v4 = virtualinvoke v3.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v4 = virtualinvoke v3.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+964c965
+< v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token makeToken(int)>(96);
+---
+> v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token makeToken(int)>(96);
+966,969c967,970
+< v7 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v8 = virtualinvoke v7.<antlr.ANTLRStringBuffer: char[] getBuffer()>();
+< v9 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v10 = virtualinvoke v9.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v7 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v8 = virtualinvoke v7.<groovyjarjarantlr.ANTLRStringBuffer: char[] getBuffer()>();
+> v9 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v10 = virtualinvoke v9.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+972c973
+< virtualinvoke v2.<antlr.Token: void setText(java.lang.String)>(v6);
+---
+> virtualinvoke v2.<groovyjarjarantlr.Token: void setText(java.lang.String)>(v6);
+974c975
+< v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token _returnToken> = v2;
+---
+> v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token _returnToken> = v2;
+977c978
+< public final void mRPAREN(boolean) throws antlr.RecognitionException, antlr.CharStreamException, antlr.TokenStreamException
+---
+> public final void mRPAREN(boolean) throws groovyjarjarantlr.RecognitionException, groovyjarjarantlr.CharStreamException, groovyjarjarantlr.TokenStreamException
+979,980c980
+< antlr.Token v2;
+< antlr.ANTLRStringBuffer v3, v7, v9;
+---
+> groovyjarjarantlr.ANTLRStringBuffer v3, v7, v9;
+984a985
+> groovyjarjarantlr.Token v2;
+989,990c990,991
+< v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v4 = virtualinvoke v3.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v4 = virtualinvoke v3.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+995c996
+< v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token makeToken(int)>(97);
+---
+> v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token makeToken(int)>(97);
+997,1000c998,1001
+< v7 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v8 = virtualinvoke v7.<antlr.ANTLRStringBuffer: char[] getBuffer()>();
+< v9 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v10 = virtualinvoke v9.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v7 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v8 = virtualinvoke v7.<groovyjarjarantlr.ANTLRStringBuffer: char[] getBuffer()>();
+> v9 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v10 = virtualinvoke v9.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+1003c1004
+< virtualinvoke v2.<antlr.Token: void setText(java.lang.String)>(v6);
+---
+> virtualinvoke v2.<groovyjarjarantlr.Token: void setText(java.lang.String)>(v6);
+1005c1006
+< v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token _returnToken> = v2;
+---
+> v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token _returnToken> = v2;
+1008c1009
+< public final void mLBRACK(boolean) throws antlr.RecognitionException, antlr.CharStreamException, antlr.TokenStreamException
+---
+> public final void mLBRACK(boolean) throws groovyjarjarantlr.RecognitionException, groovyjarjarantlr.CharStreamException, groovyjarjarantlr.TokenStreamException
+1010,1011c1011
+< antlr.Token v2;
+< antlr.ANTLRStringBuffer v3, v7, v9;
+---
+> groovyjarjarantlr.ANTLRStringBuffer v3, v7, v9;
+1015a1016
+> groovyjarjarantlr.Token v2;
+1020,1021c1021,1022
+< v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v4 = virtualinvoke v3.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v4 = virtualinvoke v3.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+1026c1027
+< v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token makeToken(int)>(65);
+---
+> v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token makeToken(int)>(65);
+1028,1031c1029,1032
+< v7 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v8 = virtualinvoke v7.<antlr.ANTLRStringBuffer: char[] getBuffer()>();
+< v9 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v10 = virtualinvoke v9.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v7 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v8 = virtualinvoke v7.<groovyjarjarantlr.ANTLRStringBuffer: char[] getBuffer()>();
+> v9 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v10 = virtualinvoke v9.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+1034c1035
+< virtualinvoke v2.<antlr.Token: void setText(java.lang.String)>(v6);
+---
+> virtualinvoke v2.<groovyjarjarantlr.Token: void setText(java.lang.String)>(v6);
+1036c1037
+< v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token _returnToken> = v2;
+---
+> v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token _returnToken> = v2;
+1039c1040
+< public final void mRBRACK(boolean) throws antlr.RecognitionException, antlr.CharStreamException, antlr.TokenStreamException
+---
+> public final void mRBRACK(boolean) throws groovyjarjarantlr.RecognitionException, groovyjarjarantlr.CharStreamException, groovyjarjarantlr.TokenStreamException
+1041,1042c1042
+< antlr.Token v2;
+< antlr.ANTLRStringBuffer v3, v7, v9;
+---
+> groovyjarjarantlr.ANTLRStringBuffer v3, v7, v9;
+1046a1047
+> groovyjarjarantlr.Token v2;
+1051,1052c1052,1053
+< v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v4 = virtualinvoke v3.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v4 = virtualinvoke v3.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+1057c1058
+< v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token makeToken(int)>(66);
+---
+> v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token makeToken(int)>(66);
+1059,1062c1060,1063
+< v7 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v8 = virtualinvoke v7.<antlr.ANTLRStringBuffer: char[] getBuffer()>();
+< v9 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v10 = virtualinvoke v9.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v7 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v8 = virtualinvoke v7.<groovyjarjarantlr.ANTLRStringBuffer: char[] getBuffer()>();
+> v9 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v10 = virtualinvoke v9.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+1065c1066
+< virtualinvoke v2.<antlr.Token: void setText(java.lang.String)>(v6);
+---
+> virtualinvoke v2.<groovyjarjarantlr.Token: void setText(java.lang.String)>(v6);
+1067c1068
+< v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token _returnToken> = v2;
+---
+> v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token _returnToken> = v2;
+1070c1071
+< public final void mLCURLY(boolean) throws antlr.RecognitionException, antlr.CharStreamException, antlr.TokenStreamException
+---
+> public final void mLCURLY(boolean) throws groovyjarjarantlr.RecognitionException, groovyjarjarantlr.CharStreamException, groovyjarjarantlr.TokenStreamException
+1072,1073c1073
+< antlr.Token v2;
+< antlr.ANTLRStringBuffer v3, v7, v9;
+---
+> groovyjarjarantlr.ANTLRStringBuffer v3, v7, v9;
+1077a1078
+> groovyjarjarantlr.Token v2;
+1082,1083c1083,1084
+< v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v4 = virtualinvoke v3.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v4 = virtualinvoke v3.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+1088c1089
+< v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token makeToken(int)>(99);
+---
+> v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token makeToken(int)>(99);
+1090,1093c1091,1094
+< v7 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v8 = virtualinvoke v7.<antlr.ANTLRStringBuffer: char[] getBuffer()>();
+< v9 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v10 = virtualinvoke v9.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v7 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v8 = virtualinvoke v7.<groovyjarjarantlr.ANTLRStringBuffer: char[] getBuffer()>();
+> v9 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v10 = virtualinvoke v9.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+1096c1097
+< virtualinvoke v2.<antlr.Token: void setText(java.lang.String)>(v6);
+---
+> virtualinvoke v2.<groovyjarjarantlr.Token: void setText(java.lang.String)>(v6);
+1098c1099
+< v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token _returnToken> = v2;
+---
+> v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token _returnToken> = v2;
+1101c1102
+< public final void mRCURLY(boolean) throws antlr.RecognitionException, antlr.CharStreamException, antlr.TokenStreamException
+---
+> public final void mRCURLY(boolean) throws groovyjarjarantlr.RecognitionException, groovyjarjarantlr.CharStreamException, groovyjarjarantlr.TokenStreamException
+1103,1104c1104
+< antlr.Token v2;
+< antlr.ANTLRStringBuffer v3, v7, v9;
+---
+> groovyjarjarantlr.ANTLRStringBuffer v3, v7, v9;
+1108a1109
+> groovyjarjarantlr.Token v2;
+1113,1114c1114,1115
+< v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v4 = virtualinvoke v3.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v4 = virtualinvoke v3.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+1119c1120
+< v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token makeToken(int)>(100);
+---
+> v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token makeToken(int)>(100);
+1121,1124c1122,1125
+< v7 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v8 = virtualinvoke v7.<antlr.ANTLRStringBuffer: char[] getBuffer()>();
+< v9 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v10 = virtualinvoke v9.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v7 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v8 = virtualinvoke v7.<groovyjarjarantlr.ANTLRStringBuffer: char[] getBuffer()>();
+> v9 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v10 = virtualinvoke v9.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+1127c1128
+< virtualinvoke v2.<antlr.Token: void setText(java.lang.String)>(v6);
+---
+> virtualinvoke v2.<groovyjarjarantlr.Token: void setText(java.lang.String)>(v6);
+1129c1130
+< v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token _returnToken> = v2;
+---
+> v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token _returnToken> = v2;
+1132c1133
+< public final void mCOLON(boolean) throws antlr.RecognitionException, antlr.CharStreamException, antlr.TokenStreamException
+---
+> public final void mCOLON(boolean) throws groovyjarjarantlr.RecognitionException, groovyjarjarantlr.CharStreamException, groovyjarjarantlr.TokenStreamException
+1134,1135c1135
+< antlr.Token v2;
+< antlr.ANTLRStringBuffer v3, v7, v9;
+---
+> groovyjarjarantlr.ANTLRStringBuffer v3, v7, v9;
+1139a1140
+> groovyjarjarantlr.Token v2;
+1144,1145c1145,1146
+< v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v4 = virtualinvoke v3.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v4 = virtualinvoke v3.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+1150c1151
+< v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token makeToken(int)>(110);
+---
+> v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token makeToken(int)>(110);
+1152,1155c1153,1156
+< v7 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v8 = virtualinvoke v7.<antlr.ANTLRStringBuffer: char[] getBuffer()>();
+< v9 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v10 = virtualinvoke v9.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v7 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v8 = virtualinvoke v7.<groovyjarjarantlr.ANTLRStringBuffer: char[] getBuffer()>();
+> v9 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v10 = virtualinvoke v9.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+1158c1159
+< virtualinvoke v2.<antlr.Token: void setText(java.lang.String)>(v6);
+---
+> virtualinvoke v2.<groovyjarjarantlr.Token: void setText(java.lang.String)>(v6);
+1160c1161
+< v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token _returnToken> = v2;
+---
+> v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token _returnToken> = v2;
+1163c1164
+< public final void mCOMMA(boolean) throws antlr.RecognitionException, antlr.CharStreamException, antlr.TokenStreamException
+---
+> public final void mCOMMA(boolean) throws groovyjarjarantlr.RecognitionException, groovyjarjarantlr.CharStreamException, groovyjarjarantlr.TokenStreamException
+1165,1166c1166
+< antlr.Token v2;
+< antlr.ANTLRStringBuffer v3, v7, v9;
+---
+> groovyjarjarantlr.ANTLRStringBuffer v3, v7, v9;
+1170a1171
+> groovyjarjarantlr.Token v2;
+1175,1176c1176,1177
+< v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v4 = virtualinvoke v3.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v4 = virtualinvoke v3.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+1181c1182
+< v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token makeToken(int)>(74);
+---
+> v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token makeToken(int)>(74);
+1183,1186c1184,1187
+< v7 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v8 = virtualinvoke v7.<antlr.ANTLRStringBuffer: char[] getBuffer()>();
+< v9 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v10 = virtualinvoke v9.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v7 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v8 = virtualinvoke v7.<groovyjarjarantlr.ANTLRStringBuffer: char[] getBuffer()>();
+> v9 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v10 = virtualinvoke v9.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+1189c1190
+< virtualinvoke v2.<antlr.Token: void setText(java.lang.String)>(v6);
+---
+> virtualinvoke v2.<groovyjarjarantlr.Token: void setText(java.lang.String)>(v6);
+1191c1192
+< v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token _returnToken> = v2;
+---
+> v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token _returnToken> = v2;
+1194c1195
+< public final void mASSIGN(boolean) throws antlr.RecognitionException, antlr.CharStreamException, antlr.TokenStreamException
+---
+> public final void mASSIGN(boolean) throws groovyjarjarantlr.RecognitionException, groovyjarjarantlr.CharStreamException, groovyjarjarantlr.TokenStreamException
+1196,1197c1197
+< antlr.Token v2;
+< antlr.ANTLRStringBuffer v3, v7, v9;
+---
+> groovyjarjarantlr.ANTLRStringBuffer v3, v7, v9;
+1201a1202
+> groovyjarjarantlr.Token v2;
+1206,1207c1207,1208
+< v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v4 = virtualinvoke v3.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v4 = virtualinvoke v3.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+1212c1213
+< v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token makeToken(int)>(98);
+---
+> v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token makeToken(int)>(98);
+1214,1217c1215,1218
+< v7 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v8 = virtualinvoke v7.<antlr.ANTLRStringBuffer: char[] getBuffer()>();
+< v9 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v10 = virtualinvoke v9.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v7 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v8 = virtualinvoke v7.<groovyjarjarantlr.ANTLRStringBuffer: char[] getBuffer()>();
+> v9 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v10 = virtualinvoke v9.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+1220c1221
+< virtualinvoke v2.<antlr.Token: void setText(java.lang.String)>(v6);
+---
+> virtualinvoke v2.<groovyjarjarantlr.Token: void setText(java.lang.String)>(v6);
+1222c1223
+< v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token _returnToken> = v2;
+---
+> v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token _returnToken> = v2;
+1225c1226
+< public final void mEQUAL(boolean) throws antlr.RecognitionException, antlr.CharStreamException, antlr.TokenStreamException
+---
+> public final void mEQUAL(boolean) throws groovyjarjarantlr.RecognitionException, groovyjarjarantlr.CharStreamException, groovyjarjarantlr.TokenStreamException
+1227,1228c1228
+< antlr.Token v2;
+< antlr.ANTLRStringBuffer v3, v7, v9;
+---
+> groovyjarjarantlr.ANTLRStringBuffer v3, v7, v9;
+1232a1233
+> groovyjarjarantlr.Token v2;
+1237,1238c1238,1239
+< v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v4 = virtualinvoke v3.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v4 = virtualinvoke v3.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+1243c1244
+< v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token makeToken(int)>(142);
+---
+> v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token makeToken(int)>(142);
+1245,1248c1246,1249
+< v7 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v8 = virtualinvoke v7.<antlr.ANTLRStringBuffer: char[] getBuffer()>();
+< v9 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v10 = virtualinvoke v9.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v7 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v8 = virtualinvoke v7.<groovyjarjarantlr.ANTLRStringBuffer: char[] getBuffer()>();
+> v9 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v10 = virtualinvoke v9.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+1251c1252
+< virtualinvoke v2.<antlr.Token: void setText(java.lang.String)>(v6);
+---
+> virtualinvoke v2.<groovyjarjarantlr.Token: void setText(java.lang.String)>(v6);
+1253c1254
+< v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token _returnToken> = v2;
+---
+> v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token _returnToken> = v2;
+1256c1257
+< public final void mLNOT(boolean) throws antlr.RecognitionException, antlr.CharStreamException, antlr.TokenStreamException
+---
+> public final void mLNOT(boolean) throws groovyjarjarantlr.RecognitionException, groovyjarjarantlr.CharStreamException, groovyjarjarantlr.TokenStreamException
+1258,1259c1259
+< antlr.Token v2;
+< antlr.ANTLRStringBuffer v3, v7, v9;
+---
+> groovyjarjarantlr.ANTLRStringBuffer v3, v7, v9;
+1263a1264
+> groovyjarjarantlr.Token v2;
+1268,1269c1269,1270
+< v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v4 = virtualinvoke v3.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v4 = virtualinvoke v3.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+1274c1275
+< v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token makeToken(int)>(154);
+---
+> v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token makeToken(int)>(154);
+1276,1279c1277,1280
+< v7 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v8 = virtualinvoke v7.<antlr.ANTLRStringBuffer: char[] getBuffer()>();
+< v9 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v10 = virtualinvoke v9.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v7 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v8 = virtualinvoke v7.<groovyjarjarantlr.ANTLRStringBuffer: char[] getBuffer()>();
+> v9 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v10 = virtualinvoke v9.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+1282c1283
+< virtualinvoke v2.<antlr.Token: void setText(java.lang.String)>(v6);
+---
+> virtualinvoke v2.<groovyjarjarantlr.Token: void setText(java.lang.String)>(v6);
+1284c1285
+< v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token _returnToken> = v2;
+---
+> v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token _returnToken> = v2;
+1287c1288
+< public final void mBNOT(boolean) throws antlr.RecognitionException, antlr.CharStreamException, antlr.TokenStreamException
+---
+> public final void mBNOT(boolean) throws groovyjarjarantlr.RecognitionException, groovyjarjarantlr.CharStreamException, groovyjarjarantlr.TokenStreamException
+1289,1290c1290
+< antlr.Token v2;
+< antlr.ANTLRStringBuffer v3, v7, v9;
+---
+> groovyjarjarantlr.ANTLRStringBuffer v3, v7, v9;
+1294a1295
+> groovyjarjarantlr.Token v2;
+1299,1300c1300,1301
+< v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v4 = virtualinvoke v3.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v4 = virtualinvoke v3.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+1305c1306
+< v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token makeToken(int)>(153);
+---
+> v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token makeToken(int)>(153);
+1307,1310c1308,1311
+< v7 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v8 = virtualinvoke v7.<antlr.ANTLRStringBuffer: char[] getBuffer()>();
+< v9 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v10 = virtualinvoke v9.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v7 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v8 = virtualinvoke v7.<groovyjarjarantlr.ANTLRStringBuffer: char[] getBuffer()>();
+> v9 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v10 = virtualinvoke v9.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+1313c1314
+< virtualinvoke v2.<antlr.Token: void setText(java.lang.String)>(v6);
+---
+> virtualinvoke v2.<groovyjarjarantlr.Token: void setText(java.lang.String)>(v6);
+1315c1316
+< v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token _returnToken> = v2;
+---
+> v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token _returnToken> = v2;
+1318c1319
+< public final void mNOT_EQUAL(boolean) throws antlr.RecognitionException, antlr.CharStreamException, antlr.TokenStreamException
+---
+> public final void mNOT_EQUAL(boolean) throws groovyjarjarantlr.RecognitionException, groovyjarjarantlr.CharStreamException, groovyjarjarantlr.TokenStreamException
+1320,1321c1321
+< antlr.Token v2;
+< antlr.ANTLRStringBuffer v3, v7, v9;
+---
+> groovyjarjarantlr.ANTLRStringBuffer v3, v7, v9;
+1325a1326
+> groovyjarjarantlr.Token v2;
+1330,1331c1331,1332
+< v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v4 = virtualinvoke v3.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v4 = virtualinvoke v3.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+1336c1337
+< v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token makeToken(int)>(141);
+---
+> v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token makeToken(int)>(141);
+1338,1341c1339,1342
+< v7 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v8 = virtualinvoke v7.<antlr.ANTLRStringBuffer: char[] getBuffer()>();
+< v9 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v10 = virtualinvoke v9.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v7 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v8 = virtualinvoke v7.<groovyjarjarantlr.ANTLRStringBuffer: char[] getBuffer()>();
+> v9 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v10 = virtualinvoke v9.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+1344c1345
+< virtualinvoke v2.<antlr.Token: void setText(java.lang.String)>(v6);
+---
+> virtualinvoke v2.<groovyjarjarantlr.Token: void setText(java.lang.String)>(v6);
+1346c1347
+< v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token _returnToken> = v2;
+---
+> v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token _returnToken> = v2;
+1349c1350
+< public final void mDIV(boolean) throws antlr.RecognitionException, antlr.CharStreamException, antlr.TokenStreamException
+---
+> public final void mDIV(boolean) throws groovyjarjarantlr.RecognitionException, groovyjarjarantlr.CharStreamException, groovyjarjarantlr.TokenStreamException
+1351,1352c1352
+< antlr.Token v2;
+< antlr.ANTLRStringBuffer v3, v7, v9;
+---
+> groovyjarjarantlr.ANTLRStringBuffer v3, v7, v9;
+1356a1357
+> groovyjarjarantlr.Token v2;
+1361,1362c1362,1363
+< v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v4 = virtualinvoke v3.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v4 = virtualinvoke v3.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+1367c1368
+< v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token makeToken(int)>(149);
+---
+> v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token makeToken(int)>(149);
+1369,1372c1370,1373
+< v7 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v8 = virtualinvoke v7.<antlr.ANTLRStringBuffer: char[] getBuffer()>();
+< v9 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v10 = virtualinvoke v9.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v7 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v8 = virtualinvoke v7.<groovyjarjarantlr.ANTLRStringBuffer: char[] getBuffer()>();
+> v9 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v10 = virtualinvoke v9.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+1375c1376
+< virtualinvoke v2.<antlr.Token: void setText(java.lang.String)>(v6);
+---
+> virtualinvoke v2.<groovyjarjarantlr.Token: void setText(java.lang.String)>(v6);
+1377c1378
+< v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token _returnToken> = v2;
+---
+> v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token _returnToken> = v2;
+1380c1381
+< public final void mDIV_ASSIGN(boolean) throws antlr.RecognitionException, antlr.CharStreamException, antlr.TokenStreamException
+---
+> public final void mDIV_ASSIGN(boolean) throws groovyjarjarantlr.RecognitionException, groovyjarjarantlr.CharStreamException, groovyjarjarantlr.TokenStreamException
+1382,1383c1383
+< antlr.Token v2;
+< antlr.ANTLRStringBuffer v3, v7, v9;
+---
+> groovyjarjarantlr.ANTLRStringBuffer v3, v7, v9;
+1387a1388
+> groovyjarjarantlr.Token v2;
+1392,1393c1393,1394
+< v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v4 = virtualinvoke v3.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v4 = virtualinvoke v3.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+1398c1399
+< v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token makeToken(int)>(130);
+---
+> v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token makeToken(int)>(130);
+1400,1403c1401,1404
+< v7 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v8 = virtualinvoke v7.<antlr.ANTLRStringBuffer: char[] getBuffer()>();
+< v9 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v10 = virtualinvoke v9.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v7 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v8 = virtualinvoke v7.<groovyjarjarantlr.ANTLRStringBuffer: char[] getBuffer()>();
+> v9 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v10 = virtualinvoke v9.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+1406c1407
+< virtualinvoke v2.<antlr.Token: void setText(java.lang.String)>(v6);
+---
+> virtualinvoke v2.<groovyjarjarantlr.Token: void setText(java.lang.String)>(v6);
+1408c1409
+< v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token _returnToken> = v2;
+---
+> v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token _returnToken> = v2;
+1411c1412
+< public final void mPLUS(boolean) throws antlr.RecognitionException, antlr.CharStreamException, antlr.TokenStreamException
+---
+> public final void mPLUS(boolean) throws groovyjarjarantlr.RecognitionException, groovyjarjarantlr.CharStreamException, groovyjarjarantlr.TokenStreamException
+1413,1414c1414
+< antlr.Token v2;
+< antlr.ANTLRStringBuffer v3, v7, v9;
+---
+> groovyjarjarantlr.ANTLRStringBuffer v3, v7, v9;
+1418a1419
+> groovyjarjarantlr.Token v2;
+1423,1424c1424,1425
+< v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v4 = virtualinvoke v3.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v4 = virtualinvoke v3.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+1429c1430
+< v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token makeToken(int)>(147);
+---
+> v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token makeToken(int)>(147);
+1431,1434c1432,1435
+< v7 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v8 = virtualinvoke v7.<antlr.ANTLRStringBuffer: char[] getBuffer()>();
+< v9 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v10 = virtualinvoke v9.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v7 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v8 = virtualinvoke v7.<groovyjarjarantlr.ANTLRStringBuffer: char[] getBuffer()>();
+> v9 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v10 = virtualinvoke v9.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+1437c1438
+< virtualinvoke v2.<antlr.Token: void setText(java.lang.String)>(v6);
+---
+> virtualinvoke v2.<groovyjarjarantlr.Token: void setText(java.lang.String)>(v6);
+1439c1440
+< v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token _returnToken> = v2;
+---
+> v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token _returnToken> = v2;
+1442c1443
+< public final void mPLUS_ASSIGN(boolean) throws antlr.RecognitionException, antlr.CharStreamException, antlr.TokenStreamException
+---
+> public final void mPLUS_ASSIGN(boolean) throws groovyjarjarantlr.RecognitionException, groovyjarjarantlr.CharStreamException, groovyjarjarantlr.TokenStreamException
+1444,1445c1445
+< antlr.Token v2;
+< antlr.ANTLRStringBuffer v3, v7, v9;
+---
+> groovyjarjarantlr.ANTLRStringBuffer v3, v7, v9;
+1449a1450
+> groovyjarjarantlr.Token v2;
+1454,1455c1455,1456
+< v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v4 = virtualinvoke v3.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v4 = virtualinvoke v3.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+1460c1461
+< v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token makeToken(int)>(127);
+---
+> v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token makeToken(int)>(127);
+1462,1465c1463,1466
+< v7 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v8 = virtualinvoke v7.<antlr.ANTLRStringBuffer: char[] getBuffer()>();
+< v9 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v10 = virtualinvoke v9.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v7 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v8 = virtualinvoke v7.<groovyjarjarantlr.ANTLRStringBuffer: char[] getBuffer()>();
+> v9 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v10 = virtualinvoke v9.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+1468c1469
+< virtualinvoke v2.<antlr.Token: void setText(java.lang.String)>(v6);
+---
+> virtualinvoke v2.<groovyjarjarantlr.Token: void setText(java.lang.String)>(v6);
+1470c1471
+< v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token _returnToken> = v2;
+---
+> v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token _returnToken> = v2;
+1473c1474
+< public final void mINC(boolean) throws antlr.RecognitionException, antlr.CharStreamException, antlr.TokenStreamException
+---
+> public final void mINC(boolean) throws groovyjarjarantlr.RecognitionException, groovyjarjarantlr.CharStreamException, groovyjarjarantlr.TokenStreamException
+1475,1476c1476
+< antlr.Token v2;
+< antlr.ANTLRStringBuffer v3, v7, v9;
+---
+> groovyjarjarantlr.ANTLRStringBuffer v3, v7, v9;
+1480a1481
+> groovyjarjarantlr.Token v2;
+1485,1486c1486,1487
+< v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v4 = virtualinvoke v3.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v4 = virtualinvoke v3.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+1491c1492
+< v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token makeToken(int)>(151);
+---
+> v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token makeToken(int)>(151);
+1493,1496c1494,1497
+< v7 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v8 = virtualinvoke v7.<antlr.ANTLRStringBuffer: char[] getBuffer()>();
+< v9 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v10 = virtualinvoke v9.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v7 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v8 = virtualinvoke v7.<groovyjarjarantlr.ANTLRStringBuffer: char[] getBuffer()>();
+> v9 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v10 = virtualinvoke v9.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+1499c1500
+< virtualinvoke v2.<antlr.Token: void setText(java.lang.String)>(v6);
+---
+> virtualinvoke v2.<groovyjarjarantlr.Token: void setText(java.lang.String)>(v6);
+1501c1502
+< v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token _returnToken> = v2;
+---
+> v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token _returnToken> = v2;
+1504c1505
+< public final void mMINUS(boolean) throws antlr.RecognitionException, antlr.CharStreamException, antlr.TokenStreamException
+---
+> public final void mMINUS(boolean) throws groovyjarjarantlr.RecognitionException, groovyjarjarantlr.CharStreamException, groovyjarjarantlr.TokenStreamException
+1506,1507c1507
+< antlr.Token v2;
+< antlr.ANTLRStringBuffer v3, v7, v9;
+---
+> groovyjarjarantlr.ANTLRStringBuffer v3, v7, v9;
+1511a1512
+> groovyjarjarantlr.Token v2;
+1516,1517c1517,1518
+< v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v4 = virtualinvoke v3.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v4 = virtualinvoke v3.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+1522c1523
+< v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token makeToken(int)>(148);
+---
+> v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token makeToken(int)>(148);
+1524,1527c1525,1528
+< v7 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v8 = virtualinvoke v7.<antlr.ANTLRStringBuffer: char[] getBuffer()>();
+< v9 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v10 = virtualinvoke v9.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v7 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v8 = virtualinvoke v7.<groovyjarjarantlr.ANTLRStringBuffer: char[] getBuffer()>();
+> v9 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v10 = virtualinvoke v9.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+1530c1531
+< virtualinvoke v2.<antlr.Token: void setText(java.lang.String)>(v6);
+---
+> virtualinvoke v2.<groovyjarjarantlr.Token: void setText(java.lang.String)>(v6);
+1532c1533
+< v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token _returnToken> = v2;
+---
+> v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token _returnToken> = v2;
+1535c1536
+< public final void mMINUS_ASSIGN(boolean) throws antlr.RecognitionException, antlr.CharStreamException, antlr.TokenStreamException
+---
+> public final void mMINUS_ASSIGN(boolean) throws groovyjarjarantlr.RecognitionException, groovyjarjarantlr.CharStreamException, groovyjarjarantlr.TokenStreamException
+1537,1538c1538
+< antlr.Token v2;
+< antlr.ANTLRStringBuffer v3, v7, v9;
+---
+> groovyjarjarantlr.ANTLRStringBuffer v3, v7, v9;
+1542a1543
+> groovyjarjarantlr.Token v2;
+1547,1548c1548,1549
+< v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v4 = virtualinvoke v3.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v4 = virtualinvoke v3.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+1553c1554
+< v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token makeToken(int)>(128);
+---
+> v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token makeToken(int)>(128);
+1555,1558c1556,1559
+< v7 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v8 = virtualinvoke v7.<antlr.ANTLRStringBuffer: char[] getBuffer()>();
+< v9 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v10 = virtualinvoke v9.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v7 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v8 = virtualinvoke v7.<groovyjarjarantlr.ANTLRStringBuffer: char[] getBuffer()>();
+> v9 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v10 = virtualinvoke v9.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+1561c1562
+< virtualinvoke v2.<antlr.Token: void setText(java.lang.String)>(v6);
+---
+> virtualinvoke v2.<groovyjarjarantlr.Token: void setText(java.lang.String)>(v6);
+1563c1564
+< v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token _returnToken> = v2;
+---
+> v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token _returnToken> = v2;
+1566c1567
+< public final void mDEC(boolean) throws antlr.RecognitionException, antlr.CharStreamException, antlr.TokenStreamException
+---
+> public final void mDEC(boolean) throws groovyjarjarantlr.RecognitionException, groovyjarjarantlr.CharStreamException, groovyjarjarantlr.TokenStreamException
+1568,1569c1569
+< antlr.Token v2;
+< antlr.ANTLRStringBuffer v3, v7, v9;
+---
+> groovyjarjarantlr.ANTLRStringBuffer v3, v7, v9;
+1573a1574
+> groovyjarjarantlr.Token v2;
+1578,1579c1579,1580
+< v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v4 = virtualinvoke v3.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v4 = virtualinvoke v3.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+1584c1585
+< v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token makeToken(int)>(152);
+---
+> v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token makeToken(int)>(152);
+1586,1589c1587,1590
+< v7 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v8 = virtualinvoke v7.<antlr.ANTLRStringBuffer: char[] getBuffer()>();
+< v9 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v10 = virtualinvoke v9.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v7 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v8 = virtualinvoke v7.<groovyjarjarantlr.ANTLRStringBuffer: char[] getBuffer()>();
+> v9 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v10 = virtualinvoke v9.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+1592c1593
+< virtualinvoke v2.<antlr.Token: void setText(java.lang.String)>(v6);
+---
+> virtualinvoke v2.<groovyjarjarantlr.Token: void setText(java.lang.String)>(v6);
+1594c1595
+< v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token _returnToken> = v2;
+---
+> v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token _returnToken> = v2;
+1597c1598
+< public final void mSTAR(boolean) throws antlr.RecognitionException, antlr.CharStreamException, antlr.TokenStreamException
+---
+> public final void mSTAR(boolean) throws groovyjarjarantlr.RecognitionException, groovyjarjarantlr.CharStreamException, groovyjarjarantlr.TokenStreamException
+1599,1600c1600
+< antlr.Token v2;
+< antlr.ANTLRStringBuffer v3, v7, v9;
+---
+> groovyjarjarantlr.ANTLRStringBuffer v3, v7, v9;
+1604a1605
+> groovyjarjarantlr.Token v2;
+1609,1610c1610,1611
+< v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v4 = virtualinvoke v3.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v4 = virtualinvoke v3.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+1615c1616
+< v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token makeToken(int)>(86);
+---
+> v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token makeToken(int)>(86);
+1617,1620c1618,1621
+< v7 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v8 = virtualinvoke v7.<antlr.ANTLRStringBuffer: char[] getBuffer()>();
+< v9 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v10 = virtualinvoke v9.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v7 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v8 = virtualinvoke v7.<groovyjarjarantlr.ANTLRStringBuffer: char[] getBuffer()>();
+> v9 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v10 = virtualinvoke v9.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+1623c1624
+< virtualinvoke v2.<antlr.Token: void setText(java.lang.String)>(v6);
+---
+> virtualinvoke v2.<groovyjarjarantlr.Token: void setText(java.lang.String)>(v6);
+1625c1626
+< v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token _returnToken> = v2;
+---
+> v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token _returnToken> = v2;
+1628c1629
+< public final void mSTAR_ASSIGN(boolean) throws antlr.RecognitionException, antlr.CharStreamException, antlr.TokenStreamException
+---
+> public final void mSTAR_ASSIGN(boolean) throws groovyjarjarantlr.RecognitionException, groovyjarjarantlr.CharStreamException, groovyjarjarantlr.TokenStreamException
+1630,1631c1631
+< antlr.Token v2;
+< antlr.ANTLRStringBuffer v3, v7, v9;
+---
+> groovyjarjarantlr.ANTLRStringBuffer v3, v7, v9;
+1635a1636
+> groovyjarjarantlr.Token v2;
+1640,1641c1641,1642
+< v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v4 = virtualinvoke v3.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v4 = virtualinvoke v3.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+1646c1647
+< v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token makeToken(int)>(129);
+---
+> v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token makeToken(int)>(129);
+1648,1651c1649,1652
+< v7 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v8 = virtualinvoke v7.<antlr.ANTLRStringBuffer: char[] getBuffer()>();
+< v9 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v10 = virtualinvoke v9.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v7 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v8 = virtualinvoke v7.<groovyjarjarantlr.ANTLRStringBuffer: char[] getBuffer()>();
+> v9 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v10 = virtualinvoke v9.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+1654c1655
+< virtualinvoke v2.<antlr.Token: void setText(java.lang.String)>(v6);
+---
+> virtualinvoke v2.<groovyjarjarantlr.Token: void setText(java.lang.String)>(v6);
+1656c1657
+< v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token _returnToken> = v2;
+---
+> v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token _returnToken> = v2;
+1659c1660
+< public final void mMOD(boolean) throws antlr.RecognitionException, antlr.CharStreamException, antlr.TokenStreamException
+---
+> public final void mMOD(boolean) throws groovyjarjarantlr.RecognitionException, groovyjarjarantlr.CharStreamException, groovyjarjarantlr.TokenStreamException
+1661,1662c1662
+< antlr.Token v2;
+< antlr.ANTLRStringBuffer v3, v7, v9;
+---
+> groovyjarjarantlr.ANTLRStringBuffer v3, v7, v9;
+1666a1667
+> groovyjarjarantlr.Token v2;
+1671,1672c1672,1673
+< v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v4 = virtualinvoke v3.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v4 = virtualinvoke v3.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+1677c1678
+< v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token makeToken(int)>(150);
+---
+> v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token makeToken(int)>(150);
+1679,1682c1680,1683
+< v7 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v8 = virtualinvoke v7.<antlr.ANTLRStringBuffer: char[] getBuffer()>();
+< v9 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v10 = virtualinvoke v9.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v7 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v8 = virtualinvoke v7.<groovyjarjarantlr.ANTLRStringBuffer: char[] getBuffer()>();
+> v9 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v10 = virtualinvoke v9.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+1685c1686
+< virtualinvoke v2.<antlr.Token: void setText(java.lang.String)>(v6);
+---
+> virtualinvoke v2.<groovyjarjarantlr.Token: void setText(java.lang.String)>(v6);
+1687c1688
+< v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token _returnToken> = v2;
+---
+> v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token _returnToken> = v2;
+1690c1691
+< public final void mMOD_ASSIGN(boolean) throws antlr.RecognitionException, antlr.CharStreamException, antlr.TokenStreamException
+---
+> public final void mMOD_ASSIGN(boolean) throws groovyjarjarantlr.RecognitionException, groovyjarjarantlr.CharStreamException, groovyjarjarantlr.TokenStreamException
+1692,1693c1693
+< antlr.Token v2;
+< antlr.ANTLRStringBuffer v3, v7, v9;
+---
+> groovyjarjarantlr.ANTLRStringBuffer v3, v7, v9;
+1697a1698
+> groovyjarjarantlr.Token v2;
+1702,1703c1703,1704
+< v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v4 = virtualinvoke v3.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v4 = virtualinvoke v3.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+1708c1709
+< v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token makeToken(int)>(131);
+---
+> v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token makeToken(int)>(131);
+1710,1713c1711,1714
+< v7 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v8 = virtualinvoke v7.<antlr.ANTLRStringBuffer: char[] getBuffer()>();
+< v9 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v10 = virtualinvoke v9.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v7 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v8 = virtualinvoke v7.<groovyjarjarantlr.ANTLRStringBuffer: char[] getBuffer()>();
+> v9 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v10 = virtualinvoke v9.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+1716c1717
+< virtualinvoke v2.<antlr.Token: void setText(java.lang.String)>(v6);
+---
+> virtualinvoke v2.<groovyjarjarantlr.Token: void setText(java.lang.String)>(v6);
+1718c1719
+< v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token _returnToken> = v2;
+---
+> v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token _returnToken> = v2;
+1721c1722
+< public final void mSR(boolean) throws antlr.RecognitionException, antlr.CharStreamException, antlr.TokenStreamException
+---
+> public final void mSR(boolean) throws groovyjarjarantlr.RecognitionException, groovyjarjarantlr.CharStreamException, groovyjarjarantlr.TokenStreamException
+1723,1724c1724
+< antlr.Token v2;
+< antlr.ANTLRStringBuffer v3, v7, v9;
+---
+> groovyjarjarantlr.ANTLRStringBuffer v3, v7, v9;
+1728a1729
+> groovyjarjarantlr.Token v2;
+1733,1734c1734,1735
+< v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v4 = virtualinvoke v3.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v4 = virtualinvoke v3.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+1739c1740
+< v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token makeToken(int)>(75);
+---
+> v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token makeToken(int)>(75);
+1741,1744c1742,1745
+< v7 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v8 = virtualinvoke v7.<antlr.ANTLRStringBuffer: char[] getBuffer()>();
+< v9 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v10 = virtualinvoke v9.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v7 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v8 = virtualinvoke v7.<groovyjarjarantlr.ANTLRStringBuffer: char[] getBuffer()>();
+> v9 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v10 = virtualinvoke v9.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+1747c1748
+< virtualinvoke v2.<antlr.Token: void setText(java.lang.String)>(v6);
+---
+> virtualinvoke v2.<groovyjarjarantlr.Token: void setText(java.lang.String)>(v6);
+1749c1750
+< v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token _returnToken> = v2;
+---
+> v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token _returnToken> = v2;
+1752c1753
+< public final void mSR_ASSIGN(boolean) throws antlr.RecognitionException, antlr.CharStreamException, antlr.TokenStreamException
+---
+> public final void mSR_ASSIGN(boolean) throws groovyjarjarantlr.RecognitionException, groovyjarjarantlr.CharStreamException, groovyjarjarantlr.TokenStreamException
+1754,1755c1755
+< antlr.Token v2;
+< antlr.ANTLRStringBuffer v3, v7, v9;
+---
+> groovyjarjarantlr.ANTLRStringBuffer v3, v7, v9;
+1759a1760
+> groovyjarjarantlr.Token v2;
+1764,1765c1765,1766
+< v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v4 = virtualinvoke v3.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v4 = virtualinvoke v3.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+1770c1771
+< v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token makeToken(int)>(132);
+---
+> v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token makeToken(int)>(132);
+1772,1775c1773,1776
+< v7 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v8 = virtualinvoke v7.<antlr.ANTLRStringBuffer: char[] getBuffer()>();
+< v9 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v10 = virtualinvoke v9.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v7 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v8 = virtualinvoke v7.<groovyjarjarantlr.ANTLRStringBuffer: char[] getBuffer()>();
+> v9 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v10 = virtualinvoke v9.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+1778c1779
+< virtualinvoke v2.<antlr.Token: void setText(java.lang.String)>(v6);
+---
+> virtualinvoke v2.<groovyjarjarantlr.Token: void setText(java.lang.String)>(v6);
+1780c1781
+< v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token _returnToken> = v2;
+---
+> v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token _returnToken> = v2;
+1783c1784
+< public final void mBSR(boolean) throws antlr.RecognitionException, antlr.CharStreamException, antlr.TokenStreamException
+---
+> public final void mBSR(boolean) throws groovyjarjarantlr.RecognitionException, groovyjarjarantlr.CharStreamException, groovyjarjarantlr.TokenStreamException
+1785,1786c1786
+< antlr.Token v2;
+< antlr.ANTLRStringBuffer v3, v7, v9;
+---
+> groovyjarjarantlr.ANTLRStringBuffer v3, v7, v9;
+1790a1791
+> groovyjarjarantlr.Token v2;
+1795,1796c1796,1797
+< v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v4 = virtualinvoke v3.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v4 = virtualinvoke v3.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+1801c1802
+< v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token makeToken(int)>(76);
+---
+> v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token makeToken(int)>(76);
+1803,1806c1804,1807
+< v7 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v8 = virtualinvoke v7.<antlr.ANTLRStringBuffer: char[] getBuffer()>();
+< v9 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v10 = virtualinvoke v9.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v7 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v8 = virtualinvoke v7.<groovyjarjarantlr.ANTLRStringBuffer: char[] getBuffer()>();
+> v9 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v10 = virtualinvoke v9.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+1809c1810
+< virtualinvoke v2.<antlr.Token: void setText(java.lang.String)>(v6);
+---
+> virtualinvoke v2.<groovyjarjarantlr.Token: void setText(java.lang.String)>(v6);
+1811c1812
+< v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token _returnToken> = v2;
+---
+> v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token _returnToken> = v2;
+1814c1815
+< public final void mBSR_ASSIGN(boolean) throws antlr.RecognitionException, antlr.CharStreamException, antlr.TokenStreamException
+---
+> public final void mBSR_ASSIGN(boolean) throws groovyjarjarantlr.RecognitionException, groovyjarjarantlr.CharStreamException, groovyjarjarantlr.TokenStreamException
+1816,1817c1817
+< antlr.Token v2;
+< antlr.ANTLRStringBuffer v3, v7, v9;
+---
+> groovyjarjarantlr.ANTLRStringBuffer v3, v7, v9;
+1821a1822
+> groovyjarjarantlr.Token v2;
+1826,1827c1827,1828
+< v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v4 = virtualinvoke v3.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v4 = virtualinvoke v3.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+1832c1833
+< v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token makeToken(int)>(133);
+---
+> v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token makeToken(int)>(133);
+1834,1837c1835,1838
+< v7 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v8 = virtualinvoke v7.<antlr.ANTLRStringBuffer: char[] getBuffer()>();
+< v9 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v10 = virtualinvoke v9.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v7 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v8 = virtualinvoke v7.<groovyjarjarantlr.ANTLRStringBuffer: char[] getBuffer()>();
+> v9 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v10 = virtualinvoke v9.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+1840c1841
+< virtualinvoke v2.<antlr.Token: void setText(java.lang.String)>(v6);
+---
+> virtualinvoke v2.<groovyjarjarantlr.Token: void setText(java.lang.String)>(v6);
+1842c1843
+< v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token _returnToken> = v2;
+---
+> v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token _returnToken> = v2;
+1845c1846
+< public final void mGE(boolean) throws antlr.RecognitionException, antlr.CharStreamException, antlr.TokenStreamException
+---
+> public final void mGE(boolean) throws groovyjarjarantlr.RecognitionException, groovyjarjarantlr.CharStreamException, groovyjarjarantlr.TokenStreamException
+1847,1848c1848
+< antlr.Token v2;
+< antlr.ANTLRStringBuffer v3, v7, v9;
+---
+> groovyjarjarantlr.ANTLRStringBuffer v3, v7, v9;
+1852a1853
+> groovyjarjarantlr.Token v2;
+1857,1858c1858,1859
+< v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v4 = virtualinvoke v3.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v4 = virtualinvoke v3.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+1863c1864
+< v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token makeToken(int)>(144);
+---
+> v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token makeToken(int)>(144);
+1865,1868c1866,1869
+< v7 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v8 = virtualinvoke v7.<antlr.ANTLRStringBuffer: char[] getBuffer()>();
+< v9 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v10 = virtualinvoke v9.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v7 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v8 = virtualinvoke v7.<groovyjarjarantlr.ANTLRStringBuffer: char[] getBuffer()>();
+> v9 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v10 = virtualinvoke v9.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+1871c1872
+< virtualinvoke v2.<antlr.Token: void setText(java.lang.String)>(v6);
+---
+> virtualinvoke v2.<groovyjarjarantlr.Token: void setText(java.lang.String)>(v6);
+1873c1874
+< v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token _returnToken> = v2;
+---
+> v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token _returnToken> = v2;
+1876c1877
+< public final void mGT(boolean) throws antlr.RecognitionException, antlr.CharStreamException, antlr.TokenStreamException
+---
+> public final void mGT(boolean) throws groovyjarjarantlr.RecognitionException, groovyjarjarantlr.CharStreamException, groovyjarjarantlr.TokenStreamException
+1878,1879c1879
+< antlr.Token v2;
+< antlr.ANTLRStringBuffer v3, v7, v9;
+---
+> groovyjarjarantlr.ANTLRStringBuffer v3, v7, v9;
+1883a1884
+> groovyjarjarantlr.Token v2;
+1888,1889c1889,1890
+< v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v4 = virtualinvoke v3.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v4 = virtualinvoke v3.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+1894c1895
+< v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token makeToken(int)>(73);
+---
+> v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token makeToken(int)>(73);
+1896,1899c1897,1900
+< v7 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v8 = virtualinvoke v7.<antlr.ANTLRStringBuffer: char[] getBuffer()>();
+< v9 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v10 = virtualinvoke v9.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v7 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v8 = virtualinvoke v7.<groovyjarjarantlr.ANTLRStringBuffer: char[] getBuffer()>();
+> v9 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v10 = virtualinvoke v9.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+1902c1903
+< virtualinvoke v2.<antlr.Token: void setText(java.lang.String)>(v6);
+---
+> virtualinvoke v2.<groovyjarjarantlr.Token: void setText(java.lang.String)>(v6);
+1904c1905
+< v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token _returnToken> = v2;
+---
+> v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token _returnToken> = v2;
+1907c1908
+< public final void mSL(boolean) throws antlr.RecognitionException, antlr.CharStreamException, antlr.TokenStreamException
+---
+> public final void mSL(boolean) throws groovyjarjarantlr.RecognitionException, groovyjarjarantlr.CharStreamException, groovyjarjarantlr.TokenStreamException
+1909,1910c1910
+< antlr.Token v2;
+< antlr.ANTLRStringBuffer v3, v7, v9;
+---
+> groovyjarjarantlr.ANTLRStringBuffer v3, v7, v9;
+1914a1915
+> groovyjarjarantlr.Token v2;
+1919,1920c1920,1921
+< v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v4 = virtualinvoke v3.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v4 = virtualinvoke v3.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+1925c1926
+< v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token makeToken(int)>(146);
+---
+> v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token makeToken(int)>(146);
+1927,1930c1928,1931
+< v7 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v8 = virtualinvoke v7.<antlr.ANTLRStringBuffer: char[] getBuffer()>();
+< v9 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v10 = virtualinvoke v9.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v7 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v8 = virtualinvoke v7.<groovyjarjarantlr.ANTLRStringBuffer: char[] getBuffer()>();
+> v9 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v10 = virtualinvoke v9.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+1933c1934
+< virtualinvoke v2.<antlr.Token: void setText(java.lang.String)>(v6);
+---
+> virtualinvoke v2.<groovyjarjarantlr.Token: void setText(java.lang.String)>(v6);
+1935c1936
+< v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token _returnToken> = v2;
+---
+> v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token _returnToken> = v2;
+1938c1939
+< public final void mSL_ASSIGN(boolean) throws antlr.RecognitionException, antlr.CharStreamException, antlr.TokenStreamException
+---
+> public final void mSL_ASSIGN(boolean) throws groovyjarjarantlr.RecognitionException, groovyjarjarantlr.CharStreamException, groovyjarjarantlr.TokenStreamException
+1940,1941c1941
+< antlr.Token v2;
+< antlr.ANTLRStringBuffer v3, v7, v9;
+---
+> groovyjarjarantlr.ANTLRStringBuffer v3, v7, v9;
+1945a1946
+> groovyjarjarantlr.Token v2;
+1950,1951c1951,1952
+< v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v4 = virtualinvoke v3.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v4 = virtualinvoke v3.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+1956c1957
+< v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token makeToken(int)>(134);
+---
+> v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token makeToken(int)>(134);
+1958,1961c1959,1962
+< v7 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v8 = virtualinvoke v7.<antlr.ANTLRStringBuffer: char[] getBuffer()>();
+< v9 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v10 = virtualinvoke v9.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v7 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v8 = virtualinvoke v7.<groovyjarjarantlr.ANTLRStringBuffer: char[] getBuffer()>();
+> v9 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v10 = virtualinvoke v9.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+1964c1965
+< virtualinvoke v2.<antlr.Token: void setText(java.lang.String)>(v6);
+---
+> virtualinvoke v2.<groovyjarjarantlr.Token: void setText(java.lang.String)>(v6);
+1966c1967
+< v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token _returnToken> = v2;
+---
+> v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token _returnToken> = v2;
+1969c1970
+< public final void mLE(boolean) throws antlr.RecognitionException, antlr.CharStreamException, antlr.TokenStreamException
+---
+> public final void mLE(boolean) throws groovyjarjarantlr.RecognitionException, groovyjarjarantlr.CharStreamException, groovyjarjarantlr.TokenStreamException
+1971,1972c1972
+< antlr.Token v2;
+< antlr.ANTLRStringBuffer v3, v7, v9;
+---
+> groovyjarjarantlr.ANTLRStringBuffer v3, v7, v9;
+1976a1977
+> groovyjarjarantlr.Token v2;
+1981,1982c1982,1983
+< v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v4 = virtualinvoke v3.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v4 = virtualinvoke v3.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+1987c1988
+< v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token makeToken(int)>(143);
+---
+> v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token makeToken(int)>(143);
+1989,1992c1990,1993
+< v7 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v8 = virtualinvoke v7.<antlr.ANTLRStringBuffer: char[] getBuffer()>();
+< v9 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v10 = virtualinvoke v9.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v7 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v8 = virtualinvoke v7.<groovyjarjarantlr.ANTLRStringBuffer: char[] getBuffer()>();
+> v9 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v10 = virtualinvoke v9.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+1995c1996
+< virtualinvoke v2.<antlr.Token: void setText(java.lang.String)>(v6);
+---
+> virtualinvoke v2.<groovyjarjarantlr.Token: void setText(java.lang.String)>(v6);
+1997c1998
+< v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token _returnToken> = v2;
+---
+> v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token _returnToken> = v2;
+2000c2001
+< public final void mLT(boolean) throws antlr.RecognitionException, antlr.CharStreamException, antlr.TokenStreamException
+---
+> public final void mLT(boolean) throws groovyjarjarantlr.RecognitionException, groovyjarjarantlr.CharStreamException, groovyjarjarantlr.TokenStreamException
+2002,2003c2003
+< antlr.Token v2;
+< antlr.ANTLRStringBuffer v3, v7, v9;
+---
+> groovyjarjarantlr.ANTLRStringBuffer v3, v7, v9;
+2007a2008
+> groovyjarjarantlr.Token v2;
+2012,2013c2013,2014
+< v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v4 = virtualinvoke v3.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v4 = virtualinvoke v3.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+2018c2019
+< v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token makeToken(int)>(72);
+---
+> v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token makeToken(int)>(72);
+2020,2023c2021,2024
+< v7 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v8 = virtualinvoke v7.<antlr.ANTLRStringBuffer: char[] getBuffer()>();
+< v9 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v10 = virtualinvoke v9.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v7 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v8 = virtualinvoke v7.<groovyjarjarantlr.ANTLRStringBuffer: char[] getBuffer()>();
+> v9 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v10 = virtualinvoke v9.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+2026c2027
+< virtualinvoke v2.<antlr.Token: void setText(java.lang.String)>(v6);
+---
+> virtualinvoke v2.<groovyjarjarantlr.Token: void setText(java.lang.String)>(v6);
+2028c2029
+< v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token _returnToken> = v2;
+---
+> v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token _returnToken> = v2;
+2031c2032
+< public final void mBXOR(boolean) throws antlr.RecognitionException, antlr.CharStreamException, antlr.TokenStreamException
+---
+> public final void mBXOR(boolean) throws groovyjarjarantlr.RecognitionException, groovyjarjarantlr.CharStreamException, groovyjarjarantlr.TokenStreamException
+2033,2034c2034
+< antlr.Token v2;
+< antlr.ANTLRStringBuffer v3, v7, v9;
+---
+> groovyjarjarantlr.ANTLRStringBuffer v3, v7, v9;
+2038a2039
+> groovyjarjarantlr.Token v2;
+2043,2044c2044,2045
+< v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v4 = virtualinvoke v3.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v4 = virtualinvoke v3.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+2049c2050
+< v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token makeToken(int)>(140);
+---
+> v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token makeToken(int)>(140);
+2051,2054c2052,2055
+< v7 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v8 = virtualinvoke v7.<antlr.ANTLRStringBuffer: char[] getBuffer()>();
+< v9 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v10 = virtualinvoke v9.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v7 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v8 = virtualinvoke v7.<groovyjarjarantlr.ANTLRStringBuffer: char[] getBuffer()>();
+> v9 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v10 = virtualinvoke v9.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+2057c2058
+< virtualinvoke v2.<antlr.Token: void setText(java.lang.String)>(v6);
+---
+> virtualinvoke v2.<groovyjarjarantlr.Token: void setText(java.lang.String)>(v6);
+2059c2060
+< v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token _returnToken> = v2;
+---
+> v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token _returnToken> = v2;
+2062c2063
+< public final void mBXOR_ASSIGN(boolean) throws antlr.RecognitionException, antlr.CharStreamException, antlr.TokenStreamException
+---
+> public final void mBXOR_ASSIGN(boolean) throws groovyjarjarantlr.RecognitionException, groovyjarjarantlr.CharStreamException, groovyjarjarantlr.TokenStreamException
+2064,2065c2065
+< antlr.Token v2;
+< antlr.ANTLRStringBuffer v3, v7, v9;
+---
+> groovyjarjarantlr.ANTLRStringBuffer v3, v7, v9;
+2069a2070
+> groovyjarjarantlr.Token v2;
+2074,2075c2075,2076
+< v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v4 = virtualinvoke v3.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v4 = virtualinvoke v3.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+2080c2081
+< v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token makeToken(int)>(136);
+---
+> v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token makeToken(int)>(136);
+2082,2085c2083,2086
+< v7 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v8 = virtualinvoke v7.<antlr.ANTLRStringBuffer: char[] getBuffer()>();
+< v9 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v10 = virtualinvoke v9.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v7 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v8 = virtualinvoke v7.<groovyjarjarantlr.ANTLRStringBuffer: char[] getBuffer()>();
+> v9 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v10 = virtualinvoke v9.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+2088c2089
+< virtualinvoke v2.<antlr.Token: void setText(java.lang.String)>(v6);
+---
+> virtualinvoke v2.<groovyjarjarantlr.Token: void setText(java.lang.String)>(v6);
+2090c2091
+< v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token _returnToken> = v2;
+---
+> v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token _returnToken> = v2;
+2093c2094
+< public final void mBOR(boolean) throws antlr.RecognitionException, antlr.CharStreamException, antlr.TokenStreamException
+---
+> public final void mBOR(boolean) throws groovyjarjarantlr.RecognitionException, groovyjarjarantlr.CharStreamException, groovyjarjarantlr.TokenStreamException
+2095,2096c2096
+< antlr.Token v2;
+< antlr.ANTLRStringBuffer v3, v7, v9;
+---
+> groovyjarjarantlr.ANTLRStringBuffer v3, v7, v9;
+2100a2101
+> groovyjarjarantlr.Token v2;
+2105,2106c2106,2107
+< v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v4 = virtualinvoke v3.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v4 = virtualinvoke v3.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+2111c2112
+< v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token makeToken(int)>(126);
+---
+> v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token makeToken(int)>(126);
+2113,2116c2114,2117
+< v7 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v8 = virtualinvoke v7.<antlr.ANTLRStringBuffer: char[] getBuffer()>();
+< v9 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v10 = virtualinvoke v9.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v7 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v8 = virtualinvoke v7.<groovyjarjarantlr.ANTLRStringBuffer: char[] getBuffer()>();
+> v9 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v10 = virtualinvoke v9.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+2119c2120
+< virtualinvoke v2.<antlr.Token: void setText(java.lang.String)>(v6);
+---
+> virtualinvoke v2.<groovyjarjarantlr.Token: void setText(java.lang.String)>(v6);
+2121c2122
+< v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token _returnToken> = v2;
+---
+> v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token _returnToken> = v2;
+2124c2125
+< public final void mBOR_ASSIGN(boolean) throws antlr.RecognitionException, antlr.CharStreamException, antlr.TokenStreamException
+---
+> public final void mBOR_ASSIGN(boolean) throws groovyjarjarantlr.RecognitionException, groovyjarjarantlr.CharStreamException, groovyjarjarantlr.TokenStreamException
+2126,2127c2127
+< antlr.Token v2;
+< antlr.ANTLRStringBuffer v3, v7, v9;
+---
+> groovyjarjarantlr.ANTLRStringBuffer v3, v7, v9;
+2131a2132
+> groovyjarjarantlr.Token v2;
+2136,2137c2137,2138
+< v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v4 = virtualinvoke v3.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v4 = virtualinvoke v3.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+2142c2143
+< v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token makeToken(int)>(137);
+---
+> v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token makeToken(int)>(137);
+2144,2147c2145,2148
+< v7 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v8 = virtualinvoke v7.<antlr.ANTLRStringBuffer: char[] getBuffer()>();
+< v9 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v10 = virtualinvoke v9.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v7 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v8 = virtualinvoke v7.<groovyjarjarantlr.ANTLRStringBuffer: char[] getBuffer()>();
+> v9 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v10 = virtualinvoke v9.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+2150c2151
+< virtualinvoke v2.<antlr.Token: void setText(java.lang.String)>(v6);
+---
+> virtualinvoke v2.<groovyjarjarantlr.Token: void setText(java.lang.String)>(v6);
+2152c2153
+< v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token _returnToken> = v2;
+---
+> v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token _returnToken> = v2;
+2155c2156
+< public final void mLOR(boolean) throws antlr.RecognitionException, antlr.CharStreamException, antlr.TokenStreamException
+---
+> public final void mLOR(boolean) throws groovyjarjarantlr.RecognitionException, groovyjarjarantlr.CharStreamException, groovyjarjarantlr.TokenStreamException
+2157,2158c2158
+< antlr.Token v2;
+< antlr.ANTLRStringBuffer v3, v7, v9;
+---
+> groovyjarjarantlr.ANTLRStringBuffer v3, v7, v9;
+2162a2163
+> groovyjarjarantlr.Token v2;
+2167,2168c2168,2169
+< v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v4 = virtualinvoke v3.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v4 = virtualinvoke v3.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+2173c2174
+< v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token makeToken(int)>(138);
+---
+> v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token makeToken(int)>(138);
+2175,2178c2176,2179
+< v7 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v8 = virtualinvoke v7.<antlr.ANTLRStringBuffer: char[] getBuffer()>();
+< v9 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v10 = virtualinvoke v9.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v7 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v8 = virtualinvoke v7.<groovyjarjarantlr.ANTLRStringBuffer: char[] getBuffer()>();
+> v9 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v10 = virtualinvoke v9.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+2181c2182
+< virtualinvoke v2.<antlr.Token: void setText(java.lang.String)>(v6);
+---
+> virtualinvoke v2.<groovyjarjarantlr.Token: void setText(java.lang.String)>(v6);
+2183c2184
+< v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token _returnToken> = v2;
+---
+> v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token _returnToken> = v2;
+2186c2187
+< public final void mBAND(boolean) throws antlr.RecognitionException, antlr.CharStreamException, antlr.TokenStreamException
+---
+> public final void mBAND(boolean) throws groovyjarjarantlr.RecognitionException, groovyjarjarantlr.CharStreamException, groovyjarjarantlr.TokenStreamException
+2188,2189c2189
+< antlr.Token v2;
+< antlr.ANTLRStringBuffer v3, v7, v9;
+---
+> groovyjarjarantlr.ANTLRStringBuffer v3, v7, v9;
+2193a2194
+> groovyjarjarantlr.Token v2;
+2198,2199c2199,2200
+< v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v4 = virtualinvoke v3.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v4 = virtualinvoke v3.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+2204c2205
+< v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token makeToken(int)>(104);
+---
+> v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token makeToken(int)>(104);
+2206,2209c2207,2210
+< v7 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v8 = virtualinvoke v7.<antlr.ANTLRStringBuffer: char[] getBuffer()>();
+< v9 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v10 = virtualinvoke v9.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v7 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v8 = virtualinvoke v7.<groovyjarjarantlr.ANTLRStringBuffer: char[] getBuffer()>();
+> v9 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v10 = virtualinvoke v9.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+2212c2213
+< virtualinvoke v2.<antlr.Token: void setText(java.lang.String)>(v6);
+---
+> virtualinvoke v2.<groovyjarjarantlr.Token: void setText(java.lang.String)>(v6);
+2214c2215
+< v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token _returnToken> = v2;
+---
+> v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token _returnToken> = v2;
+2217c2218
+< public final void mBAND_ASSIGN(boolean) throws antlr.RecognitionException, antlr.CharStreamException, antlr.TokenStreamException
+---
+> public final void mBAND_ASSIGN(boolean) throws groovyjarjarantlr.RecognitionException, groovyjarjarantlr.CharStreamException, groovyjarjarantlr.TokenStreamException
+2219,2220c2220
+< antlr.Token v2;
+< antlr.ANTLRStringBuffer v3, v7, v9;
+---
+> groovyjarjarantlr.ANTLRStringBuffer v3, v7, v9;
+2224a2225
+> groovyjarjarantlr.Token v2;
+2229,2230c2230,2231
+< v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v4 = virtualinvoke v3.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v4 = virtualinvoke v3.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+2235c2236
+< v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token makeToken(int)>(135);
+---
+> v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token makeToken(int)>(135);
+2237,2240c2238,2241
+< v7 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v8 = virtualinvoke v7.<antlr.ANTLRStringBuffer: char[] getBuffer()>();
+< v9 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v10 = virtualinvoke v9.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v7 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v8 = virtualinvoke v7.<groovyjarjarantlr.ANTLRStringBuffer: char[] getBuffer()>();
+> v9 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v10 = virtualinvoke v9.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+2243c2244
+< virtualinvoke v2.<antlr.Token: void setText(java.lang.String)>(v6);
+---
+> virtualinvoke v2.<groovyjarjarantlr.Token: void setText(java.lang.String)>(v6);
+2245c2246
+< v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token _returnToken> = v2;
+---
+> v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token _returnToken> = v2;
+2248c2249
+< public final void mLAND(boolean) throws antlr.RecognitionException, antlr.CharStreamException, antlr.TokenStreamException
+---
+> public final void mLAND(boolean) throws groovyjarjarantlr.RecognitionException, groovyjarjarantlr.CharStreamException, groovyjarjarantlr.TokenStreamException
+2250,2251c2251
+< antlr.Token v2;
+< antlr.ANTLRStringBuffer v3, v7, v9;
+---
+> groovyjarjarantlr.ANTLRStringBuffer v3, v7, v9;
+2255a2256
+> groovyjarjarantlr.Token v2;
+2260,2261c2261,2262
+< v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v4 = virtualinvoke v3.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v4 = virtualinvoke v3.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+2266c2267
+< v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token makeToken(int)>(139);
+---
+> v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token makeToken(int)>(139);
+2268,2271c2269,2272
+< v7 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v8 = virtualinvoke v7.<antlr.ANTLRStringBuffer: char[] getBuffer()>();
+< v9 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v10 = virtualinvoke v9.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v7 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v8 = virtualinvoke v7.<groovyjarjarantlr.ANTLRStringBuffer: char[] getBuffer()>();
+> v9 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v10 = virtualinvoke v9.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+2274c2275
+< virtualinvoke v2.<antlr.Token: void setText(java.lang.String)>(v6);
+---
+> virtualinvoke v2.<groovyjarjarantlr.Token: void setText(java.lang.String)>(v6);
+2276c2277
+< v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token _returnToken> = v2;
+---
+> v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token _returnToken> = v2;
+2279c2280
+< public final void mSEMI(boolean) throws antlr.RecognitionException, antlr.CharStreamException, antlr.TokenStreamException
+---
+> public final void mSEMI(boolean) throws groovyjarjarantlr.RecognitionException, groovyjarjarantlr.CharStreamException, groovyjarjarantlr.TokenStreamException
+2281,2282c2282
+< antlr.Token v2;
+< antlr.ANTLRStringBuffer v3, v7, v9;
+---
+> groovyjarjarantlr.ANTLRStringBuffer v3, v7, v9;
+2286a2287
+> groovyjarjarantlr.Token v2;
+2291,2292c2292,2293
+< v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v4 = virtualinvoke v3.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v4 = virtualinvoke v3.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+2297c2298
+< v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token makeToken(int)>(62);
+---
+> v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token makeToken(int)>(62);
+2299,2302c2300,2303
+< v7 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v8 = virtualinvoke v7.<antlr.ANTLRStringBuffer: char[] getBuffer()>();
+< v9 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v10 = virtualinvoke v9.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v7 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v8 = virtualinvoke v7.<groovyjarjarantlr.ANTLRStringBuffer: char[] getBuffer()>();
+> v9 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v10 = virtualinvoke v9.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+2305c2306
+< virtualinvoke v2.<antlr.Token: void setText(java.lang.String)>(v6);
+---
+> virtualinvoke v2.<groovyjarjarantlr.Token: void setText(java.lang.String)>(v6);
+2307c2308
+< v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token _returnToken> = v2;
+---
+> v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token _returnToken> = v2;
+2310c2311
+< public final void mWS(boolean) throws antlr.RecognitionException, antlr.CharStreamException, antlr.TokenStreamException
+---
+> public final void mWS(boolean) throws groovyjarjarantlr.RecognitionException, groovyjarjarantlr.CharStreamException, groovyjarjarantlr.TokenStreamException
+2312,2313c2313
+< antlr.LexerSharedInputState v17, v24;
+< antlr.NoViableAltForCharException v12, v19;
+---
+> groovyjarjarantlr.Token v2;
+2315,2316c2315
+< antlr.ANTLRStringBuffer v28, v3, v30;
+< antlr.Token v2;
+---
+> groovyjarjarantlr.LexerSharedInputState v17, v24;
+2319a2319
+> groovyjarjarantlr.ANTLRStringBuffer v28, v3, v30;
+2320a2321
+> groovyjarjarantlr.NoViableAltForCharException v12, v19;
+2326,2327c2327,2328
+< v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v4 = virtualinvoke v3.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v4 = virtualinvoke v3.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+2368c2369
+< v12 = new antlr.NoViableAltForCharException;
+---
+> v12 = new groovyjarjarantlr.NoViableAltForCharException;
+2373c2374
+< specialinvoke v12.<antlr.NoViableAltForCharException: void <init>(char,java.lang.String,int,int)>(v13, v14, v15, v16);
+---
+> specialinvoke v12.<groovyjarjarantlr.NoViableAltForCharException: void <init>(char,java.lang.String,int,int)>(v13, v14, v15, v16);
+2376,2377c2377,2378
+< v17 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.LexerSharedInputState inputState>;
+< v18 = v17.<antlr.LexerSharedInputState: int guessing>;
+---
+> v17 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.LexerSharedInputState inputState>;
+> v18 = v17.<groovyjarjarantlr.LexerSharedInputState: int guessing>;
+2383c2384
+< v19 = new antlr.NoViableAltForCharException;
+---
+> v19 = new groovyjarjarantlr.NoViableAltForCharException;
+2388c2389
+< specialinvoke v19.<antlr.NoViableAltForCharException: void <init>(char,java.lang.String,int,int)>(v20, v21, v22, v23);
+---
+> specialinvoke v19.<groovyjarjarantlr.NoViableAltForCharException: void <init>(char,java.lang.String,int,int)>(v20, v21, v22, v23);
+2394,2395c2395,2396
+< v24 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.LexerSharedInputState inputState>;
+< v25 = v24.<antlr.LexerSharedInputState: int guessing>;
+---
+> v24 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.LexerSharedInputState inputState>;
+> v25 = v24.<groovyjarjarantlr.LexerSharedInputState: int guessing>;
+2402c2403
+< v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token makeToken(int)>(v5);
+---
+> v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token makeToken(int)>(v5);
+2404,2407c2405,2408
+< v28 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v29 = virtualinvoke v28.<antlr.ANTLRStringBuffer: char[] getBuffer()>();
+< v30 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v31 = virtualinvoke v30.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v28 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v29 = virtualinvoke v28.<groovyjarjarantlr.ANTLRStringBuffer: char[] getBuffer()>();
+> v30 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v31 = virtualinvoke v30.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+2410c2411
+< virtualinvoke v2.<antlr.Token: void setText(java.lang.String)>(v27);
+---
+> virtualinvoke v2.<groovyjarjarantlr.Token: void setText(java.lang.String)>(v27);
+2412c2413
+< v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token _returnToken> = v2;
+---
+> v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token _returnToken> = v2;
+2415c2416
+< public final void mSL_COMMENT(boolean) throws antlr.RecognitionException, antlr.CharStreamException, antlr.TokenStreamException
+---
+> public final void mSL_COMMENT(boolean) throws groovyjarjarantlr.RecognitionException, groovyjarjarantlr.CharStreamException, groovyjarjarantlr.TokenStreamException
+2417,2418c2418
+< antlr.collections.impl.BitSet v6, v9;
+< antlr.Token v2;
+---
+> groovyjarjarantlr.LexerSharedInputState v10;
+2420d2419
+< antlr.LexerSharedInputState v10;
+2422a2422
+> groovyjarjarantlr.Token v2;
+2423a2424
+> groovyjarjarantlr.ANTLRStringBuffer v14, v16, v3;
+2425c2426
+< antlr.ANTLRStringBuffer v14, v16, v3;
+---
+> groovyjarjarantlr.collections.impl.BitSet v6, v9;
+2431,2432c2432,2433
+< v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v4 = virtualinvoke v3.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v4 = virtualinvoke v3.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+2436c2437
+< v6 = <org.codehaus.groovy.antlr.java.JavaLexer: antlr.collections.impl.BitSet _tokenSet_0>;
+---
+> v6 = <org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.collections.impl.BitSet _tokenSet_0>;
+2438c2439
+< v8 = virtualinvoke v6.<antlr.collections.impl.BitSet: boolean member(int)>(v7);
+---
+> v8 = virtualinvoke v6.<groovyjarjarantlr.collections.impl.BitSet: boolean member(int)>(v7);
+2440,2441c2441,2442
+< v9 = <org.codehaus.groovy.antlr.java.JavaLexer: antlr.collections.impl.BitSet _tokenSet_0>;
+< virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: void match(antlr.collections.impl.BitSet)>(v9);
+---
+> v9 = <org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.collections.impl.BitSet _tokenSet_0>;
+> virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: void match(groovyjarjarantlr.collections.impl.BitSet)>(v9);
+2444,2445c2445,2446
+< v10 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.LexerSharedInputState inputState>;
+< v11 = v10.<antlr.LexerSharedInputState: int guessing>;
+---
+> v10 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.LexerSharedInputState inputState>;
+> v11 = v10.<groovyjarjarantlr.LexerSharedInputState: int guessing>;
+2452c2453
+< v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token makeToken(int)>(v5);
+---
+> v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token makeToken(int)>(v5);
+2454,2457c2455,2458
+< v14 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v15 = virtualinvoke v14.<antlr.ANTLRStringBuffer: char[] getBuffer()>();
+< v16 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v17 = virtualinvoke v16.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v14 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v15 = virtualinvoke v14.<groovyjarjarantlr.ANTLRStringBuffer: char[] getBuffer()>();
+> v16 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v17 = virtualinvoke v16.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+2460c2461
+< virtualinvoke v2.<antlr.Token: void setText(java.lang.String)>(v13);
+---
+> virtualinvoke v2.<groovyjarjarantlr.Token: void setText(java.lang.String)>(v13);
+2462c2463
+< v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token _returnToken> = v2;
+---
+> v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token _returnToken> = v2;
+2465c2466
+< public final void mML_COMMENT(boolean) throws antlr.RecognitionException, antlr.CharStreamException, antlr.TokenStreamException
+---
+> public final void mML_COMMENT(boolean) throws groovyjarjarantlr.RecognitionException, groovyjarjarantlr.CharStreamException, groovyjarjarantlr.TokenStreamException
+2467c2468
+< antlr.LexerSharedInputState v14, v31, v34, v40;
+---
+> groovyjarjarantlr.Token v2;
+2469,2471c2470,2471
+< antlr.ANTLRStringBuffer v3, v44, v46;
+< antlr.collections.impl.BitSet v36, v39;
+< antlr.Token v2;
+---
+> groovyjarjarantlr.collections.impl.BitSet v36, v39;
+> groovyjarjarantlr.LexerSharedInputState v14, v31, v34, v40;
+2474a2475
+> groovyjarjarantlr.ANTLRStringBuffer v3, v44, v46;
+2481,2482c2482,2483
+< v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v4 = virtualinvoke v3.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v4 = virtualinvoke v3.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+2502,2503c2503,2504
+< v14 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.LexerSharedInputState inputState>;
+< v15 = v14.<antlr.LexerSharedInputState: int guessing>;
+---
+> v14 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.LexerSharedInputState inputState>;
+> v15 = v14.<groovyjarjarantlr.LexerSharedInputState: int guessing>;
+2538,2539c2539,2540
+< v31 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.LexerSharedInputState inputState>;
+< v32 = v31.<antlr.LexerSharedInputState: int guessing>;
+---
+> v31 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.LexerSharedInputState inputState>;
+> v32 = v31.<groovyjarjarantlr.LexerSharedInputState: int guessing>;
+2547,2548c2548,2549
+< v34 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.LexerSharedInputState inputState>;
+< v35 = v34.<antlr.LexerSharedInputState: int guessing>;
+---
+> v34 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.LexerSharedInputState inputState>;
+> v35 = v34.<groovyjarjarantlr.LexerSharedInputState: int guessing>;
+2553c2554
+< v36 = <org.codehaus.groovy.antlr.java.JavaLexer: antlr.collections.impl.BitSet _tokenSet_1>;
+---
+> v36 = <org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.collections.impl.BitSet _tokenSet_1>;
+2555c2556
+< v38 = virtualinvoke v36.<antlr.collections.impl.BitSet: boolean member(int)>(v37);
+---
+> v38 = virtualinvoke v36.<groovyjarjarantlr.collections.impl.BitSet: boolean member(int)>(v37);
+2557,2558c2558,2559
+< v39 = <org.codehaus.groovy.antlr.java.JavaLexer: antlr.collections.impl.BitSet _tokenSet_1>;
+< virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: void match(antlr.collections.impl.BitSet)>(v39);
+---
+> v39 = <org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.collections.impl.BitSet _tokenSet_1>;
+> virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: void match(groovyjarjarantlr.collections.impl.BitSet)>(v39);
+2562,2563c2563,2564
+< v40 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.LexerSharedInputState inputState>;
+< v41 = v40.<antlr.LexerSharedInputState: int guessing>;
+---
+> v40 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.LexerSharedInputState inputState>;
+> v41 = v40.<groovyjarjarantlr.LexerSharedInputState: int guessing>;
+2570c2571
+< v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token makeToken(int)>(v5);
+---
+> v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token makeToken(int)>(v5);
+2572,2575c2573,2576
+< v44 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v45 = virtualinvoke v44.<antlr.ANTLRStringBuffer: char[] getBuffer()>();
+< v46 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v47 = virtualinvoke v46.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v44 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v45 = virtualinvoke v44.<groovyjarjarantlr.ANTLRStringBuffer: char[] getBuffer()>();
+> v46 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v47 = virtualinvoke v46.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+2578c2579
+< virtualinvoke v2.<antlr.Token: void setText(java.lang.String)>(v43);
+---
+> virtualinvoke v2.<groovyjarjarantlr.Token: void setText(java.lang.String)>(v43);
+2580c2581
+< v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token _returnToken> = v2;
+---
+> v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token _returnToken> = v2;
+2583c2584
+< public final void mCHAR_LITERAL(boolean) throws antlr.RecognitionException, antlr.CharStreamException, antlr.TokenStreamException
+---
+> public final void mCHAR_LITERAL(boolean) throws groovyjarjarantlr.RecognitionException, groovyjarjarantlr.CharStreamException, groovyjarjarantlr.TokenStreamException
+2585,2587d2585
+< antlr.collections.impl.BitSet v6, v9;
+< antlr.Token v2;
+< antlr.NoViableAltForCharException v10;
+2589a2588
+> groovyjarjarantlr.Token v2;
+2590a2590
+> groovyjarjarantlr.ANTLRStringBuffer v17, v19, v3;
+2592c2592,2593
+< antlr.ANTLRStringBuffer v17, v19, v3;
+---
+> groovyjarjarantlr.NoViableAltForCharException v10;
+> groovyjarjarantlr.collections.impl.BitSet v6, v9;
+2598,2599c2599,2600
+< v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v4 = virtualinvoke v3.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v4 = virtualinvoke v3.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+2606c2607
+< v6 = <org.codehaus.groovy.antlr.java.JavaLexer: antlr.collections.impl.BitSet _tokenSet_2>;
+---
+> v6 = <org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.collections.impl.BitSet _tokenSet_2>;
+2608c2609
+< v8 = virtualinvoke v6.<antlr.collections.impl.BitSet: boolean member(int)>(v7);
+---
+> v8 = virtualinvoke v6.<groovyjarjarantlr.collections.impl.BitSet: boolean member(int)>(v7);
+2610,2611c2611,2612
+< v9 = <org.codehaus.groovy.antlr.java.JavaLexer: antlr.collections.impl.BitSet _tokenSet_2>;
+< virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: void match(antlr.collections.impl.BitSet)>(v9);
+---
+> v9 = <org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.collections.impl.BitSet _tokenSet_2>;
+> virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: void match(groovyjarjarantlr.collections.impl.BitSet)>(v9);
+2614c2615
+< v10 = new antlr.NoViableAltForCharException;
+---
+> v10 = new groovyjarjarantlr.NoViableAltForCharException;
+2619c2620
+< specialinvoke v10.<antlr.NoViableAltForCharException: void <init>(char,java.lang.String,int,int)>(v11, v12, v13, v14);
+---
+> specialinvoke v10.<groovyjarjarantlr.NoViableAltForCharException: void <init>(char,java.lang.String,int,int)>(v11, v12, v13, v14);
+2626c2627
+< v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token makeToken(int)>(160);
+---
+> v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token makeToken(int)>(160);
+2628,2631c2629,2632
+< v17 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v18 = virtualinvoke v17.<antlr.ANTLRStringBuffer: char[] getBuffer()>();
+< v19 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v20 = virtualinvoke v19.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v17 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v18 = virtualinvoke v17.<groovyjarjarantlr.ANTLRStringBuffer: char[] getBuffer()>();
+> v19 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v20 = virtualinvoke v19.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+2634c2635
+< virtualinvoke v2.<antlr.Token: void setText(java.lang.String)>(v16);
+---
+> virtualinvoke v2.<groovyjarjarantlr.Token: void setText(java.lang.String)>(v16);
+2636c2637
+< v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token _returnToken> = v2;
+---
+> v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token _returnToken> = v2;
+2639c2640
+< protected final void mESC(boolean) throws antlr.RecognitionException, antlr.CharStreamException, antlr.TokenStreamException
+---
+> protected final void mESC(boolean) throws groovyjarjarantlr.RecognitionException, groovyjarjarantlr.CharStreamException, groovyjarjarantlr.TokenStreamException
+2641,2643d2641
+< antlr.ANTLRStringBuffer v3, v59, v61;
+< antlr.collections.impl.BitSet v15, v20, v23, v31, v41, v44;
+< antlr.Token v2;
+2644a2643
+> groovyjarjarantlr.ANTLRStringBuffer v3, v59, v61;
+2647c2646
+< antlr.NoViableAltForCharException v26, v34, v47, v52, v8;
+---
+> groovyjarjarantlr.Token v2;
+2648a2648
+> groovyjarjarantlr.collections.impl.BitSet v15, v20, v23, v31, v41, v44;
+2650a2651
+> groovyjarjarantlr.NoViableAltForCharException v26, v34, v47, v52, v8;
+2654,2655c2655,2656
+< v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v4 = virtualinvoke v3.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v4 = virtualinvoke v3.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+2712c2713
+< v8 = new antlr.NoViableAltForCharException;
+---
+> v8 = new groovyjarjarantlr.NoViableAltForCharException;
+2717c2718
+< specialinvoke v8.<antlr.NoViableAltForCharException: void <init>(char,java.lang.String,int,int)>(v9, v10, v11, v12);
+---
+> specialinvoke v8.<groovyjarjarantlr.NoViableAltForCharException: void <init>(char,java.lang.String,int,int)>(v9, v10, v11, v12);
+2734c2735
+< v15 = <org.codehaus.groovy.antlr.java.JavaLexer: antlr.collections.impl.BitSet _tokenSet_3>;
+---
+> v15 = <org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.collections.impl.BitSet _tokenSet_3>;
+2736c2737
+< v17 = virtualinvoke v15.<antlr.collections.impl.BitSet: boolean member(int)>(v16);
+---
+> v17 = virtualinvoke v15.<groovyjarjarantlr.collections.impl.BitSet: boolean member(int)>(v16);
+2743c2744
+< v20 = <org.codehaus.groovy.antlr.java.JavaLexer: antlr.collections.impl.BitSet _tokenSet_3>;
+---
+> v20 = <org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.collections.impl.BitSet _tokenSet_3>;
+2745c2746
+< v22 = virtualinvoke v20.<antlr.collections.impl.BitSet: boolean member(int)>(v21);
+---
+> v22 = virtualinvoke v20.<groovyjarjarantlr.collections.impl.BitSet: boolean member(int)>(v21);
+2750c2751
+< v23 = <org.codehaus.groovy.antlr.java.JavaLexer: antlr.collections.impl.BitSet _tokenSet_3>;
+---
+> v23 = <org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.collections.impl.BitSet _tokenSet_3>;
+2752c2753
+< v25 = virtualinvoke v23.<antlr.collections.impl.BitSet: boolean member(int)>(v24);
+---
+> v25 = virtualinvoke v23.<groovyjarjarantlr.collections.impl.BitSet: boolean member(int)>(v24);
+2754c2755
+< v26 = new antlr.NoViableAltForCharException;
+---
+> v26 = new groovyjarjarantlr.NoViableAltForCharException;
+2759c2760
+< specialinvoke v26.<antlr.NoViableAltForCharException: void <init>(char,java.lang.String,int,int)>(v27, v28, v29, v30);
+---
+> specialinvoke v26.<groovyjarjarantlr.NoViableAltForCharException: void <init>(char,java.lang.String,int,int)>(v27, v28, v29, v30);
+2762c2763
+< v31 = <org.codehaus.groovy.antlr.java.JavaLexer: antlr.collections.impl.BitSet _tokenSet_3>;
+---
+> v31 = <org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.collections.impl.BitSet _tokenSet_3>;
+2764c2765
+< v33 = virtualinvoke v31.<antlr.collections.impl.BitSet: boolean member(int)>(v32);
+---
+> v33 = virtualinvoke v31.<groovyjarjarantlr.collections.impl.BitSet: boolean member(int)>(v32);
+2766c2767
+< v34 = new antlr.NoViableAltForCharException;
+---
+> v34 = new groovyjarjarantlr.NoViableAltForCharException;
+2771c2772
+< specialinvoke v34.<antlr.NoViableAltForCharException: void <init>(char,java.lang.String,int,int)>(v35, v36, v37, v38);
+---
+> specialinvoke v34.<groovyjarjarantlr.NoViableAltForCharException: void <init>(char,java.lang.String,int,int)>(v35, v36, v37, v38);
+2779c2780
+< v41 = <org.codehaus.groovy.antlr.java.JavaLexer: antlr.collections.impl.BitSet _tokenSet_3>;
+---
+> v41 = <org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.collections.impl.BitSet _tokenSet_3>;
+2781c2782
+< v43 = virtualinvoke v41.<antlr.collections.impl.BitSet: boolean member(int)>(v42);
+---
+> v43 = virtualinvoke v41.<groovyjarjarantlr.collections.impl.BitSet: boolean member(int)>(v42);
+2786c2787
+< v44 = <org.codehaus.groovy.antlr.java.JavaLexer: antlr.collections.impl.BitSet _tokenSet_3>;
+---
+> v44 = <org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.collections.impl.BitSet _tokenSet_3>;
+2788c2789
+< v46 = virtualinvoke v44.<antlr.collections.impl.BitSet: boolean member(int)>(v45);
+---
+> v46 = virtualinvoke v44.<groovyjarjarantlr.collections.impl.BitSet: boolean member(int)>(v45);
+2790c2791
+< v47 = new antlr.NoViableAltForCharException;
+---
+> v47 = new groovyjarjarantlr.NoViableAltForCharException;
+2795c2796
+< specialinvoke v47.<antlr.NoViableAltForCharException: void <init>(char,java.lang.String,int,int)>(v48, v49, v50, v51);
+---
+> specialinvoke v47.<groovyjarjarantlr.NoViableAltForCharException: void <init>(char,java.lang.String,int,int)>(v48, v49, v50, v51);
+2798c2799
+< v52 = new antlr.NoViableAltForCharException;
+---
+> v52 = new groovyjarjarantlr.NoViableAltForCharException;
+2803c2804
+< specialinvoke v52.<antlr.NoViableAltForCharException: void <init>(char,java.lang.String,int,int)>(v53, v54, v55, v56);
+---
+> specialinvoke v52.<groovyjarjarantlr.NoViableAltForCharException: void <init>(char,java.lang.String,int,int)>(v53, v54, v55, v56);
+2809c2810
+< v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token makeToken(int)>(168);
+---
+> v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token makeToken(int)>(168);
+2811,2814c2812,2815
+< v59 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v60 = virtualinvoke v59.<antlr.ANTLRStringBuffer: char[] getBuffer()>();
+< v61 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v62 = virtualinvoke v61.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v59 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v60 = virtualinvoke v59.<groovyjarjarantlr.ANTLRStringBuffer: char[] getBuffer()>();
+> v61 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v62 = virtualinvoke v61.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+2817c2818
+< virtualinvoke v2.<antlr.Token: void setText(java.lang.String)>(v58);
+---
+> virtualinvoke v2.<groovyjarjarantlr.Token: void setText(java.lang.String)>(v58);
+2819c2820
+< v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token _returnToken> = v2;
+---
+> v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token _returnToken> = v2;
+2822c2823
+< public final void mSTRING_LITERAL(boolean) throws antlr.RecognitionException, antlr.CharStreamException, antlr.TokenStreamException
+---
+> public final void mSTRING_LITERAL(boolean) throws groovyjarjarantlr.RecognitionException, groovyjarjarantlr.CharStreamException, groovyjarjarantlr.TokenStreamException
+2824,2825d2824
+< antlr.collections.impl.BitSet v6, v9;
+< antlr.Token v2;
+2827a2827
+> groovyjarjarantlr.Token v2;
+2828a2829
+> groovyjarjarantlr.ANTLRStringBuffer v12, v14, v3;
+2830c2831
+< antlr.ANTLRStringBuffer v12, v14, v3;
+---
+> groovyjarjarantlr.collections.impl.BitSet v6, v9;
+2836,2837c2837,2838
+< v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v4 = virtualinvoke v3.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v4 = virtualinvoke v3.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+2845c2846
+< v6 = <org.codehaus.groovy.antlr.java.JavaLexer: antlr.collections.impl.BitSet _tokenSet_4>;
+---
+> v6 = <org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.collections.impl.BitSet _tokenSet_4>;
+2847c2848
+< v8 = virtualinvoke v6.<antlr.collections.impl.BitSet: boolean member(int)>(v7);
+---
+> v8 = virtualinvoke v6.<groovyjarjarantlr.collections.impl.BitSet: boolean member(int)>(v7);
+2849,2850c2850,2851
+< v9 = <org.codehaus.groovy.antlr.java.JavaLexer: antlr.collections.impl.BitSet _tokenSet_4>;
+< virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: void match(antlr.collections.impl.BitSet)>(v9);
+---
+> v9 = <org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.collections.impl.BitSet _tokenSet_4>;
+> virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: void match(groovyjarjarantlr.collections.impl.BitSet)>(v9);
+2857c2858
+< v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token makeToken(int)>(161);
+---
+> v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token makeToken(int)>(161);
+2859,2862c2860,2863
+< v12 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v13 = virtualinvoke v12.<antlr.ANTLRStringBuffer: char[] getBuffer()>();
+< v14 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v15 = virtualinvoke v14.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v12 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v13 = virtualinvoke v12.<groovyjarjarantlr.ANTLRStringBuffer: char[] getBuffer()>();
+> v14 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v15 = virtualinvoke v14.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+2865c2866
+< virtualinvoke v2.<antlr.Token: void setText(java.lang.String)>(v11);
+---
+> virtualinvoke v2.<groovyjarjarantlr.Token: void setText(java.lang.String)>(v11);
+2867c2868
+< v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token _returnToken> = v2;
+---
+> v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token _returnToken> = v2;
+2870c2871
+< protected final void mHEX_DIGIT(boolean) throws antlr.RecognitionException, antlr.CharStreamException, antlr.TokenStreamException
+---
+> protected final void mHEX_DIGIT(boolean) throws groovyjarjarantlr.RecognitionException, groovyjarjarantlr.CharStreamException, groovyjarjarantlr.TokenStreamException
+2872,2873d2872
+< antlr.Token v2;
+< antlr.NoViableAltForCharException v6;
+2875a2875
+> groovyjarjarantlr.Token v2;
+2876a2877
+> groovyjarjarantlr.ANTLRStringBuffer v13, v15, v3;
+2878c2879
+< antlr.ANTLRStringBuffer v13, v15, v3;
+---
+> groovyjarjarantlr.NoViableAltForCharException v6;
+2884,2885c2885,2886
+< v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v4 = virtualinvoke v3.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v4 = virtualinvoke v3.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+2956c2957
+< v6 = new antlr.NoViableAltForCharException;
+---
+> v6 = new groovyjarjarantlr.NoViableAltForCharException;
+2961c2962
+< specialinvoke v6.<antlr.NoViableAltForCharException: void <init>(char,java.lang.String,int,int)>(v7, v8, v9, v10);
+---
+> specialinvoke v6.<groovyjarjarantlr.NoViableAltForCharException: void <init>(char,java.lang.String,int,int)>(v7, v8, v9, v10);
+2967c2968
+< v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token makeToken(int)>(169);
+---
+> v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token makeToken(int)>(169);
+2969,2972c2970,2973
+< v13 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v14 = virtualinvoke v13.<antlr.ANTLRStringBuffer: char[] getBuffer()>();
+< v15 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v16 = virtualinvoke v15.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v13 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v14 = virtualinvoke v13.<groovyjarjarantlr.ANTLRStringBuffer: char[] getBuffer()>();
+> v15 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v16 = virtualinvoke v15.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+2975c2976
+< virtualinvoke v2.<antlr.Token: void setText(java.lang.String)>(v12);
+---
+> virtualinvoke v2.<groovyjarjarantlr.Token: void setText(java.lang.String)>(v12);
+2977c2978
+< v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token _returnToken> = v2;
+---
+> v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token _returnToken> = v2;
+2980c2981
+< protected final void mVOCAB(boolean) throws antlr.RecognitionException, antlr.CharStreamException, antlr.TokenStreamException
+---
+> protected final void mVOCAB(boolean) throws groovyjarjarantlr.RecognitionException, groovyjarjarantlr.CharStreamException, groovyjarjarantlr.TokenStreamException
+2982,2983c2983
+< antlr.Token v2;
+< antlr.ANTLRStringBuffer v3, v7, v9;
+---
+> groovyjarjarantlr.ANTLRStringBuffer v3, v7, v9;
+2987a2988
+> groovyjarjarantlr.Token v2;
+2992,2993c2993,2994
+< v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v4 = virtualinvoke v3.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v4 = virtualinvoke v3.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+2998c2999
+< v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token makeToken(int)>(170);
+---
+> v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token makeToken(int)>(170);
+3000,3003c3001,3004
+< v7 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v8 = virtualinvoke v7.<antlr.ANTLRStringBuffer: char[] getBuffer()>();
+< v9 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v10 = virtualinvoke v9.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v7 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v8 = virtualinvoke v7.<groovyjarjarantlr.ANTLRStringBuffer: char[] getBuffer()>();
+> v9 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v10 = virtualinvoke v9.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+3006c3007
+< virtualinvoke v2.<antlr.Token: void setText(java.lang.String)>(v6);
+---
+> virtualinvoke v2.<groovyjarjarantlr.Token: void setText(java.lang.String)>(v6);
+3008c3009
+< v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token _returnToken> = v2;
+---
+> v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token _returnToken> = v2;
+3011c3012
+< public final void mIDENT(boolean) throws antlr.RecognitionException, antlr.CharStreamException, antlr.TokenStreamException
+---
+> public final void mIDENT(boolean) throws groovyjarjarantlr.RecognitionException, groovyjarjarantlr.CharStreamException, groovyjarjarantlr.TokenStreamException
+3014,3015c3015
+< antlr.LexerSharedInputState v13;
+< antlr.NoViableAltForCharException v7;
+---
+> groovyjarjarantlr.Token v2;
+3017,3018c3017
+< antlr.ANTLRStringBuffer v18, v20, v27, v29, v3, v36, v38;
+< antlr.Token v2;
+---
+> groovyjarjarantlr.LexerSharedInputState v13;
+3020a3020
+> groovyjarjarantlr.ANTLRStringBuffer v18, v20, v27, v29, v3, v36, v38;
+3021a3022
+> groovyjarjarantlr.NoViableAltForCharException v7;
+3027,3028c3028,3029
+< v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v4 = virtualinvoke v3.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v4 = virtualinvoke v3.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+3135c3136
+< v7 = new antlr.NoViableAltForCharException;
+---
+> v7 = new groovyjarjarantlr.NoViableAltForCharException;
+3140c3141
+< specialinvoke v7.<antlr.NoViableAltForCharException: void <init>(char,java.lang.String,int,int)>(v8, v9, v10, v11);
+---
+> specialinvoke v7.<groovyjarjarantlr.NoViableAltForCharException: void <init>(char,java.lang.String,int,int)>(v8, v9, v10, v11);
+3251,3252c3252,3253
+< v13 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.LexerSharedInputState inputState>;
+< v14 = v13.<antlr.LexerSharedInputState: int guessing>;
+---
+> v13 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.LexerSharedInputState inputState>;
+> v14 = v13.<groovyjarjarantlr.LexerSharedInputState: int guessing>;
+3258,3261c3259,3262
+< v18 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v19 = virtualinvoke v18.<antlr.ANTLRStringBuffer: char[] getBuffer()>();
+< v20 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v21 = virtualinvoke v20.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v18 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v19 = virtualinvoke v18.<groovyjarjarantlr.ANTLRStringBuffer: char[] getBuffer()>();
+> v20 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v21 = virtualinvoke v20.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+3272,3275c3273,3276
+< v27 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v28 = virtualinvoke v27.<antlr.ANTLRStringBuffer: char[] getBuffer()>();
+< v29 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v30 = virtualinvoke v29.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v27 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v28 = virtualinvoke v27.<groovyjarjarantlr.ANTLRStringBuffer: char[] getBuffer()>();
+> v29 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v30 = virtualinvoke v29.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+3286c3287
+< v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token makeToken(int)>(v33);
+---
+> v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token makeToken(int)>(v33);
+3288,3291c3289,3292
+< v36 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v37 = virtualinvoke v36.<antlr.ANTLRStringBuffer: char[] getBuffer()>();
+< v38 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v39 = virtualinvoke v38.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v36 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v37 = virtualinvoke v36.<groovyjarjarantlr.ANTLRStringBuffer: char[] getBuffer()>();
+> v38 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v39 = virtualinvoke v38.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+3294c3295
+< virtualinvoke v2.<antlr.Token: void setText(java.lang.String)>(v35);
+---
+> virtualinvoke v2.<groovyjarjarantlr.Token: void setText(java.lang.String)>(v35);
+3296c3297
+< v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token _returnToken> = v2;
+---
+> v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token _returnToken> = v2;
+3299c3300
+< protected final void mDIGIT(boolean) throws antlr.RecognitionException, antlr.CharStreamException, antlr.TokenStreamException
+---
+> protected final void mDIGIT(boolean) throws groovyjarjarantlr.RecognitionException, groovyjarjarantlr.CharStreamException, groovyjarjarantlr.TokenStreamException
+3301,3302c3302
+< antlr.Token v2;
+< antlr.ANTLRStringBuffer v3, v7, v9;
+---
+> groovyjarjarantlr.ANTLRStringBuffer v3, v7, v9;
+3306a3307
+> groovyjarjarantlr.Token v2;
+3311,3312c3312,3313
+< v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v4 = virtualinvoke v3.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v4 = virtualinvoke v3.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+3317c3318
+< v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token makeToken(int)>(171);
+---
+> v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token makeToken(int)>(171);
+3319,3322c3320,3323
+< v7 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v8 = virtualinvoke v7.<antlr.ANTLRStringBuffer: char[] getBuffer()>();
+< v9 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v10 = virtualinvoke v9.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v7 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v8 = virtualinvoke v7.<groovyjarjarantlr.ANTLRStringBuffer: char[] getBuffer()>();
+> v9 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v10 = virtualinvoke v9.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+3325c3326
+< virtualinvoke v2.<antlr.Token: void setText(java.lang.String)>(v6);
+---
+> virtualinvoke v2.<groovyjarjarantlr.Token: void setText(java.lang.String)>(v6);
+3327c3328
+< v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token _returnToken> = v2;
+---
+> v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token _returnToken> = v2;
+3330c3331
+< protected final void mDIGITS_WITH_UNDERSCORE(boolean) throws antlr.RecognitionException, antlr.CharStreamException, antlr.TokenStreamException
+---
+> protected final void mDIGITS_WITH_UNDERSCORE(boolean) throws groovyjarjarantlr.RecognitionException, groovyjarjarantlr.CharStreamException, groovyjarjarantlr.TokenStreamException
+3332d3332
+< antlr.Token v2;
+3334a3335
+> groovyjarjarantlr.Token v2;
+3335a3337
+> groovyjarjarantlr.ANTLRStringBuffer v18, v20, v3;
+3337d3338
+< antlr.ANTLRStringBuffer v18, v20, v3;
+3343,3344c3344,3345
+< v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v4 = virtualinvoke v3.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v4 = virtualinvoke v3.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+3374c3375
+< v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token makeToken(int)>(172);
+---
+> v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token makeToken(int)>(172);
+3376,3379c3377,3380
+< v18 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v19 = virtualinvoke v18.<antlr.ANTLRStringBuffer: char[] getBuffer()>();
+< v20 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v21 = virtualinvoke v20.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v18 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v19 = virtualinvoke v18.<groovyjarjarantlr.ANTLRStringBuffer: char[] getBuffer()>();
+> v20 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v21 = virtualinvoke v20.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+3382c3383
+< virtualinvoke v2.<antlr.Token: void setText(java.lang.String)>(v17);
+---
+> virtualinvoke v2.<groovyjarjarantlr.Token: void setText(java.lang.String)>(v17);
+3384c3385
+< v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token _returnToken> = v2;
+---
+> v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token _returnToken> = v2;
+3387c3388
+< protected final void mDIGITS_WITH_UNDERSCORE_OPT(boolean) throws antlr.RecognitionException, antlr.CharStreamException, antlr.TokenStreamException
+---
+> protected final void mDIGITS_WITH_UNDERSCORE_OPT(boolean) throws groovyjarjarantlr.RecognitionException, groovyjarjarantlr.CharStreamException, groovyjarjarantlr.TokenStreamException
+3389d3389
+< antlr.Token v2;
+3391a3392
+> groovyjarjarantlr.Token v2;
+3392a3394
+> groovyjarjarantlr.ANTLRStringBuffer v21, v23, v3;
+3394d3395
+< antlr.ANTLRStringBuffer v21, v23, v3;
+3400,3401c3401,3402
+< v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v4 = virtualinvoke v3.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v4 = virtualinvoke v3.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+3442c3443
+< v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token makeToken(int)>(173);
+---
+> v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token makeToken(int)>(173);
+3444,3447c3445,3448
+< v21 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v22 = virtualinvoke v21.<antlr.ANTLRStringBuffer: char[] getBuffer()>();
+< v23 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v24 = virtualinvoke v23.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v21 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v22 = virtualinvoke v21.<groovyjarjarantlr.ANTLRStringBuffer: char[] getBuffer()>();
+> v23 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v24 = virtualinvoke v23.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+3450c3451
+< virtualinvoke v2.<antlr.Token: void setText(java.lang.String)>(v20);
+---
+> virtualinvoke v2.<groovyjarjarantlr.Token: void setText(java.lang.String)>(v20);
+3452c3453
+< v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token _returnToken> = v2;
+---
+> v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token _returnToken> = v2;
+3455c3456
+< public final void mNUM_INT(boolean) throws antlr.RecognitionException, antlr.CharStreamException, antlr.TokenStreamException
+---
+> public final void mNUM_INT(boolean) throws groovyjarjarantlr.RecognitionException, groovyjarjarantlr.CharStreamException, groovyjarjarantlr.TokenStreamException
+3457,3458d3457
+< antlr.collections.impl.BitSet v48;
+< antlr.Token v125, v132, v135, v2, v26, v7;
+3459a3459
+> groovyjarjarantlr.ANTLRStringBuffer v155, v157, v3;
+3460a3461
+> groovyjarjarantlr.Token v125, v132, v135, v2, v26, v7;
+3462,3463c3463
+< antlr.ANTLRStringBuffer v155, v157, v3;
+< java.lang.Throwable v69;
+---
+> groovyjarjarantlr.NoViableAltForCharException v104, v138, v148, v15, v42, v51, v64, v78, v96;
+3466,3467d3465
+< antlr.LexerSharedInputState v109, v126, v133, v136, v143, v27, v29, v34, v37, v60, v70, v9, v94;
+< antlr.NoViableAltForCharException v104, v138, v148, v15, v42, v51, v64, v78, v96;
+3468a3467,3469
+> groovyjarjarantlr.collections.impl.BitSet v48;
+> groovyjarjarantlr.RecognitionException v69;
+> groovyjarjarantlr.LexerSharedInputState v109, v126, v133, v136, v143, v27, v29, v34, v37, v60, v70, v9, v94;
+3473,3474c3474,3475
+< v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v4 = virtualinvoke v3.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v4 = virtualinvoke v3.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+3497,3498c3498,3499
+< v9 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.LexerSharedInputState inputState>;
+< v10 = v9.<antlr.LexerSharedInputState: int guessing>;
+---
+> v9 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.LexerSharedInputState inputState>;
+> v10 = v9.<groovyjarjarantlr.LexerSharedInputState: int guessing>;
+3530c3531
+< v15 = new antlr.NoViableAltForCharException;
+---
+> v15 = new groovyjarjarantlr.NoViableAltForCharException;
+3535c3536
+< specialinvoke v15.<antlr.NoViableAltForCharException: void <init>(char,java.lang.String,int,int)>(v16, v17, v18, v19);
+---
+> specialinvoke v15.<groovyjarjarantlr.NoViableAltForCharException: void <init>(char,java.lang.String,int,int)>(v16, v17, v18, v19);
+3558,3560c3559,3561
+< v26 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token _returnToken>;
+< v27 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.LexerSharedInputState inputState>;
+< v28 = v27.<antlr.LexerSharedInputState: int guessing>;
+---
+> v26 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token _returnToken>;
+> v27 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.LexerSharedInputState inputState>;
+> v28 = v27.<groovyjarjarantlr.LexerSharedInputState: int guessing>;
+3564,3565c3565,3566
+< v29 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.LexerSharedInputState inputState>;
+< v30 = v29.<antlr.LexerSharedInputState: int guessing>;
+---
+> v29 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.LexerSharedInputState inputState>;
+> v30 = v29.<groovyjarjarantlr.LexerSharedInputState: int guessing>;
+3568c3569
+< v31 = virtualinvoke v7.<antlr.Token: java.lang.String getText()>();
+---
+> v31 = virtualinvoke v7.<groovyjarjarantlr.Token: java.lang.String getText()>();
+3579,3580c3580,3581
+< v34 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.LexerSharedInputState inputState>;
+< v35 = v34.<antlr.LexerSharedInputState: int guessing>;
+---
+> v34 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.LexerSharedInputState inputState>;
+> v35 = v34.<groovyjarjarantlr.LexerSharedInputState: int guessing>;
+3602,3603c3603,3604
+< v37 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.LexerSharedInputState inputState>;
+< v38 = v37.<antlr.LexerSharedInputState: int guessing>;
+---
+> v37 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.LexerSharedInputState inputState>;
+> v38 = v37.<groovyjarjarantlr.LexerSharedInputState: int guessing>;
+3626c3627
+< v42 = new antlr.NoViableAltForCharException;
+---
+> v42 = new groovyjarjarantlr.NoViableAltForCharException;
+3631c3632
+< specialinvoke v42.<antlr.NoViableAltForCharException: void <init>(char,java.lang.String,int,int)>(v43, v44, v45, v46);
+---
+> specialinvoke v42.<groovyjarjarantlr.NoViableAltForCharException: void <init>(char,java.lang.String,int,int)>(v43, v44, v45, v46);
+3636c3637
+< v48 = <org.codehaus.groovy.antlr.java.JavaLexer: antlr.collections.impl.BitSet _tokenSet_5>;
+---
+> v48 = <org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.collections.impl.BitSet _tokenSet_5>;
+3638c3639
+< v50 = virtualinvoke v48.<antlr.collections.impl.BitSet: boolean member(int)>(v49);
+---
+> v50 = virtualinvoke v48.<groovyjarjarantlr.collections.impl.BitSet: boolean member(int)>(v49);
+3644c3645
+< v51 = new antlr.NoViableAltForCharException;
+---
+> v51 = new groovyjarjarantlr.NoViableAltForCharException;
+3649c3650
+< specialinvoke v51.<antlr.NoViableAltForCharException: void <init>(char,java.lang.String,int,int)>(v52, v53, v54, v55);
+---
+> specialinvoke v51.<groovyjarjarantlr.NoViableAltForCharException: void <init>(char,java.lang.String,int,int)>(v52, v53, v54, v55);
+3662,3663c3663,3664
+< v60 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.LexerSharedInputState inputState>;
+< v61 = v60.<antlr.LexerSharedInputState: int guessing>;
+---
+> v60 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.LexerSharedInputState inputState>;
+> v61 = v60.<groovyjarjarantlr.LexerSharedInputState: int guessing>;
+3665c3666
+< v60.<antlr.LexerSharedInputState: int guessing> = v62;
+---
+> v60.<groovyjarjarantlr.LexerSharedInputState: int guessing> = v62;
+3691c3692
+< v64 = new antlr.NoViableAltForCharException;
+---
+> v64 = new groovyjarjarantlr.NoViableAltForCharException;
+3696c3697
+< specialinvoke v64.<antlr.NoViableAltForCharException: void <init>(char,java.lang.String,int,int)>(v65, v66, v67, v68);
+---
+> specialinvoke v64.<groovyjarjarantlr.NoViableAltForCharException: void <init>(char,java.lang.String,int,int)>(v65, v66, v67, v68);
+3703,3704c3704,3705
+< v70 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.LexerSharedInputState inputState>;
+< v71 = v70.<antlr.LexerSharedInputState: int guessing>;
+---
+> v70 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.LexerSharedInputState inputState>;
+> v71 = v70.<groovyjarjarantlr.LexerSharedInputState: int guessing>;
+3706c3707
+< v70.<antlr.LexerSharedInputState: int guessing> = v72;
+---
+> v70.<groovyjarjarantlr.LexerSharedInputState: int guessing> = v72;
+3726c3727
+< v78 = new antlr.NoViableAltForCharException;
+---
+> v78 = new groovyjarjarantlr.NoViableAltForCharException;
+3731c3732
+< specialinvoke v78.<antlr.NoViableAltForCharException: void <init>(char,java.lang.String,int,int)>(v79, v80, v81, v82);
+---
+> specialinvoke v78.<groovyjarjarantlr.NoViableAltForCharException: void <init>(char,java.lang.String,int,int)>(v79, v80, v81, v82);
+3763,3764c3764,3765
+< v94 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.LexerSharedInputState inputState>;
+< v95 = v94.<antlr.LexerSharedInputState: int guessing>;
+---
+> v94 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.LexerSharedInputState inputState>;
+> v95 = v94.<groovyjarjarantlr.LexerSharedInputState: int guessing>;
+3769c3770
+< v96 = new antlr.NoViableAltForCharException;
+---
+> v96 = new groovyjarjarantlr.NoViableAltForCharException;
+3774c3775
+< specialinvoke v96.<antlr.NoViableAltForCharException: void <init>(char,java.lang.String,int,int)>(v97, v98, v99, v100);
+---
+> specialinvoke v96.<groovyjarjarantlr.NoViableAltForCharException: void <init>(char,java.lang.String,int,int)>(v97, v98, v99, v100);
+3796c3797
+< v104 = new antlr.NoViableAltForCharException;
+---
+> v104 = new groovyjarjarantlr.NoViableAltForCharException;
+3801c3802
+< specialinvoke v104.<antlr.NoViableAltForCharException: void <init>(char,java.lang.String,int,int)>(v105, v106, v107, v108);
+---
+> specialinvoke v104.<groovyjarjarantlr.NoViableAltForCharException: void <init>(char,java.lang.String,int,int)>(v105, v106, v107, v108);
+3804,3805c3805,3806
+< v109 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.LexerSharedInputState inputState>;
+< v110 = v109.<antlr.LexerSharedInputState: int guessing>;
+---
+> v109 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.LexerSharedInputState inputState>;
+> v110 = v109.<groovyjarjarantlr.LexerSharedInputState: int guessing>;
+3858,3860c3859,3861
+< v125 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token _returnToken>;
+< v126 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.LexerSharedInputState inputState>;
+< v127 = v126.<antlr.LexerSharedInputState: int guessing>;
+---
+> v125 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token _returnToken>;
+> v126 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.LexerSharedInputState inputState>;
+> v127 = v126.<groovyjarjarantlr.LexerSharedInputState: int guessing>;
+3876,3878c3877,3879
+< v132 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token _returnToken>;
+< v133 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.LexerSharedInputState inputState>;
+< v134 = v133.<antlr.LexerSharedInputState: int guessing>;
+---
+> v132 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token _returnToken>;
+> v133 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.LexerSharedInputState inputState>;
+> v134 = v133.<groovyjarjarantlr.LexerSharedInputState: int guessing>;
+3884,3886c3885,3887
+< v135 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token _returnToken>;
+< v136 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.LexerSharedInputState inputState>;
+< v137 = v136.<antlr.LexerSharedInputState: int guessing>;
+---
+> v135 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token _returnToken>;
+> v136 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.LexerSharedInputState inputState>;
+> v137 = v136.<groovyjarjarantlr.LexerSharedInputState: int guessing>;
+3891c3892
+< v138 = new antlr.NoViableAltForCharException;
+---
+> v138 = new groovyjarjarantlr.NoViableAltForCharException;
+3896c3897
+< specialinvoke v138.<antlr.NoViableAltForCharException: void <init>(char,java.lang.String,int,int)>(v139, v140, v141, v142);
+---
+> specialinvoke v138.<groovyjarjarantlr.NoViableAltForCharException: void <init>(char,java.lang.String,int,int)>(v139, v140, v141, v142);
+3899,3900c3900,3901
+< v143 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.LexerSharedInputState inputState>;
+< v144 = v143.<antlr.LexerSharedInputState: int guessing>;
+---
+> v143 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.LexerSharedInputState inputState>;
+> v144 = v143.<groovyjarjarantlr.LexerSharedInputState: int guessing>;
+3903c3904
+< v145 = virtualinvoke v7.<antlr.Token: java.lang.String getText()>();
+---
+> v145 = virtualinvoke v7.<groovyjarjarantlr.Token: java.lang.String getText()>();
+3913c3914
+< v148 = new antlr.NoViableAltForCharException;
+---
+> v148 = new groovyjarjarantlr.NoViableAltForCharException;
+3918c3919
+< specialinvoke v148.<antlr.NoViableAltForCharException: void <init>(char,java.lang.String,int,int)>(v149, v150, v151, v152);
+---
+> specialinvoke v148.<groovyjarjarantlr.NoViableAltForCharException: void <init>(char,java.lang.String,int,int)>(v149, v150, v151, v152);
+3924c3925
+< v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token makeToken(int)>(v5);
+---
+> v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token makeToken(int)>(v5);
+3926,3929c3927,3930
+< v155 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v156 = virtualinvoke v155.<antlr.ANTLRStringBuffer: char[] getBuffer()>();
+< v157 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v158 = virtualinvoke v157.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v155 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v156 = virtualinvoke v155.<groovyjarjarantlr.ANTLRStringBuffer: char[] getBuffer()>();
+> v157 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v158 = virtualinvoke v157.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+3932c3933
+< virtualinvoke v2.<antlr.Token: void setText(java.lang.String)>(v154);
+---
+> virtualinvoke v2.<groovyjarjarantlr.Token: void setText(java.lang.String)>(v154);
+3934c3935
+< v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token _returnToken> = v2;
+---
+> v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token _returnToken> = v2;
+3936c3937
+< catch antlr.RecognitionException from label26 to label31 with label31;
+---
+> catch groovyjarjarantlr.RecognitionException from label26 to label31 with label31;
+3938c3939
+< protected final void mEXPONENT(boolean) throws antlr.RecognitionException, antlr.CharStreamException, antlr.TokenStreamException
+---
+> protected final void mEXPONENT(boolean) throws groovyjarjarantlr.RecognitionException, groovyjarjarantlr.CharStreamException, groovyjarjarantlr.TokenStreamException
+3940c3941
+< antlr.NoViableAltForCharException v12, v20, v6;
+---
+> groovyjarjarantlr.Token v2;
+3942,3943d3942
+< antlr.ANTLRStringBuffer v27, v29, v3;
+< antlr.Token v2;
+3945a3945
+> groovyjarjarantlr.ANTLRStringBuffer v27, v29, v3;
+3946a3947
+> groovyjarjarantlr.NoViableAltForCharException v12, v20, v6;
+3952,3953c3953,3954
+< v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v4 = virtualinvoke v3.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v4 = virtualinvoke v3.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+3968c3969
+< v6 = new antlr.NoViableAltForCharException;
+---
+> v6 = new groovyjarjarantlr.NoViableAltForCharException;
+3973c3974
+< specialinvoke v6.<antlr.NoViableAltForCharException: void <init>(char,java.lang.String,int,int)>(v7, v8, v9, v10);
+---
+> specialinvoke v6.<groovyjarjarantlr.NoViableAltForCharException: void <init>(char,java.lang.String,int,int)>(v7, v8, v9, v10);
+4003c4004
+< v12 = new antlr.NoViableAltForCharException;
+---
+> v12 = new groovyjarjarantlr.NoViableAltForCharException;
+4008c4009
+< specialinvoke v12.<antlr.NoViableAltForCharException: void <init>(char,java.lang.String,int,int)>(v13, v14, v15, v16);
+---
+> specialinvoke v12.<groovyjarjarantlr.NoViableAltForCharException: void <init>(char,java.lang.String,int,int)>(v13, v14, v15, v16);
+4021c4022
+< v20 = new antlr.NoViableAltForCharException;
+---
+> v20 = new groovyjarjarantlr.NoViableAltForCharException;
+4026c4027
+< specialinvoke v20.<antlr.NoViableAltForCharException: void <init>(char,java.lang.String,int,int)>(v21, v22, v23, v24);
+---
+> specialinvoke v20.<groovyjarjarantlr.NoViableAltForCharException: void <init>(char,java.lang.String,int,int)>(v21, v22, v23, v24);
+4035c4036
+< v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token makeToken(int)>(174);
+---
+> v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token makeToken(int)>(174);
+4037,4040c4038,4041
+< v27 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v28 = virtualinvoke v27.<antlr.ANTLRStringBuffer: char[] getBuffer()>();
+< v29 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v30 = virtualinvoke v29.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v27 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v28 = virtualinvoke v27.<groovyjarjarantlr.ANTLRStringBuffer: char[] getBuffer()>();
+> v29 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v30 = virtualinvoke v29.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+4043c4044
+< virtualinvoke v2.<antlr.Token: void setText(java.lang.String)>(v26);
+---
+> virtualinvoke v2.<groovyjarjarantlr.Token: void setText(java.lang.String)>(v26);
+4045c4046
+< v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token _returnToken> = v2;
+---
+> v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token _returnToken> = v2;
+4048c4049
+< protected final void mFLOAT_SUFFIX(boolean) throws antlr.RecognitionException, antlr.CharStreamException, antlr.TokenStreamException
+---
+> protected final void mFLOAT_SUFFIX(boolean) throws groovyjarjarantlr.RecognitionException, groovyjarjarantlr.CharStreamException, groovyjarjarantlr.TokenStreamException
+4050,4051d4050
+< antlr.Token v2;
+< antlr.NoViableAltForCharException v6;
+4053a4053
+> groovyjarjarantlr.Token v2;
+4054a4055
+> groovyjarjarantlr.ANTLRStringBuffer v13, v15, v3;
+4056c4057
+< antlr.ANTLRStringBuffer v13, v15, v3;
+---
+> groovyjarjarantlr.NoViableAltForCharException v6;
+4062,4063c4063,4064
+< v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v4 = virtualinvoke v3.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v4 = virtualinvoke v3.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+4086c4087
+< v6 = new antlr.NoViableAltForCharException;
+---
+> v6 = new groovyjarjarantlr.NoViableAltForCharException;
+4091c4092
+< specialinvoke v6.<antlr.NoViableAltForCharException: void <init>(char,java.lang.String,int,int)>(v7, v8, v9, v10);
+---
+> specialinvoke v6.<groovyjarjarantlr.NoViableAltForCharException: void <init>(char,java.lang.String,int,int)>(v7, v8, v9, v10);
+4097c4098
+< v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token makeToken(int)>(175);
+---
+> v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token makeToken(int)>(175);
+4099,4102c4100,4103
+< v13 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v14 = virtualinvoke v13.<antlr.ANTLRStringBuffer: char[] getBuffer()>();
+< v15 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v16 = virtualinvoke v15.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v13 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v14 = virtualinvoke v13.<groovyjarjarantlr.ANTLRStringBuffer: char[] getBuffer()>();
+> v15 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v16 = virtualinvoke v15.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+4105c4106
+< virtualinvoke v2.<antlr.Token: void setText(java.lang.String)>(v12);
+---
+> virtualinvoke v2.<groovyjarjarantlr.Token: void setText(java.lang.String)>(v12);
+4107c4108
+< v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token _returnToken> = v2;
+---
+> v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token _returnToken> = v2;
+4110c4111
+< public final void mAT(boolean) throws antlr.RecognitionException, antlr.CharStreamException, antlr.TokenStreamException
+---
+> public final void mAT(boolean) throws groovyjarjarantlr.RecognitionException, groovyjarjarantlr.CharStreamException, groovyjarjarantlr.TokenStreamException
+4112,4113c4113
+< antlr.Token v2;
+< antlr.ANTLRStringBuffer v3, v7, v9;
+---
+> groovyjarjarantlr.ANTLRStringBuffer v3, v7, v9;
+4117a4118
+> groovyjarjarantlr.Token v2;
+4122,4123c4123,4124
+< v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v4 = virtualinvoke v3.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v3 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v4 = virtualinvoke v3.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+4128c4129
+< v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token makeToken(int)>(95);
+---
+> v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token makeToken(int)>(95);
+4130,4133c4131,4134
+< v7 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v8 = virtualinvoke v7.<antlr.ANTLRStringBuffer: char[] getBuffer()>();
+< v9 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.ANTLRStringBuffer text>;
+< v10 = virtualinvoke v9.<antlr.ANTLRStringBuffer: int length()>();
+---
+> v7 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v8 = virtualinvoke v7.<groovyjarjarantlr.ANTLRStringBuffer: char[] getBuffer()>();
+> v9 = v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.ANTLRStringBuffer text>;
+> v10 = virtualinvoke v9.<groovyjarjarantlr.ANTLRStringBuffer: int length()>();
+4136c4137
+< virtualinvoke v2.<antlr.Token: void setText(java.lang.String)>(v6);
+---
+> virtualinvoke v2.<groovyjarjarantlr.Token: void setText(java.lang.String)>(v6);
+4138c4139
+< v0.<org.codehaus.groovy.antlr.java.JavaLexer: antlr.Token _returnToken> = v2;
+---
+> v0.<org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.Token _returnToken> = v2;
+4229c4230
+< antlr.collections.impl.BitSet v0, v10, v2, v4, v6, v8;
+---
+> groovyjarjarantlr.collections.impl.BitSet v0, v10, v2, v4, v6, v8;
+4231c4232
+< v0 = new antlr.collections.impl.BitSet;
+---
+> v0 = new groovyjarjarantlr.collections.impl.BitSet;
+4233,4235c4234,4236
+< specialinvoke v0.<antlr.collections.impl.BitSet: void <init>(long[])>(v1);
+< <org.codehaus.groovy.antlr.java.JavaLexer: antlr.collections.impl.BitSet _tokenSet_0> = v0;
+< v2 = new antlr.collections.impl.BitSet;
+---
+> specialinvoke v0.<groovyjarjarantlr.collections.impl.BitSet: void <init>(long[])>(v1);
+> <org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.collections.impl.BitSet _tokenSet_0> = v0;
+> v2 = new groovyjarjarantlr.collections.impl.BitSet;
+4237,4239c4238,4240
+< specialinvoke v2.<antlr.collections.impl.BitSet: void <init>(long[])>(v3);
+< <org.codehaus.groovy.antlr.java.JavaLexer: antlr.collections.impl.BitSet _tokenSet_1> = v2;
+< v4 = new antlr.collections.impl.BitSet;
+---
+> specialinvoke v2.<groovyjarjarantlr.collections.impl.BitSet: void <init>(long[])>(v3);
+> <org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.collections.impl.BitSet _tokenSet_1> = v2;
+> v4 = new groovyjarjarantlr.collections.impl.BitSet;
+4241,4243c4242,4244
+< specialinvoke v4.<antlr.collections.impl.BitSet: void <init>(long[])>(v5);
+< <org.codehaus.groovy.antlr.java.JavaLexer: antlr.collections.impl.BitSet _tokenSet_2> = v4;
+< v6 = new antlr.collections.impl.BitSet;
+---
+> specialinvoke v4.<groovyjarjarantlr.collections.impl.BitSet: void <init>(long[])>(v5);
+> <org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.collections.impl.BitSet _tokenSet_2> = v4;
+> v6 = new groovyjarjarantlr.collections.impl.BitSet;
+4245,4247c4246,4248
+< specialinvoke v6.<antlr.collections.impl.BitSet: void <init>(long[])>(v7);
+< <org.codehaus.groovy.antlr.java.JavaLexer: antlr.collections.impl.BitSet _tokenSet_3> = v6;
+< v8 = new antlr.collections.impl.BitSet;
+---
+> specialinvoke v6.<groovyjarjarantlr.collections.impl.BitSet: void <init>(long[])>(v7);
+> <org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.collections.impl.BitSet _tokenSet_3> = v6;
+> v8 = new groovyjarjarantlr.collections.impl.BitSet;
+4249,4251c4250,4252
+< specialinvoke v8.<antlr.collections.impl.BitSet: void <init>(long[])>(v9);
+< <org.codehaus.groovy.antlr.java.JavaLexer: antlr.collections.impl.BitSet _tokenSet_4> = v8;
+< v10 = new antlr.collections.impl.BitSet;
+---
+> specialinvoke v8.<groovyjarjarantlr.collections.impl.BitSet: void <init>(long[])>(v9);
+> <org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.collections.impl.BitSet _tokenSet_4> = v8;
+> v10 = new groovyjarjarantlr.collections.impl.BitSet;
+4253,4254c4254,4255
+< specialinvoke v10.<antlr.collections.impl.BitSet: void <init>(long[])>(v11);
+< <org.codehaus.groovy.antlr.java.JavaLexer: antlr.collections.impl.BitSet _tokenSet_5> = v10;
+---
+> specialinvoke v10.<groovyjarjarantlr.collections.impl.BitSet: void <init>(long[])>(v11);
+> <org.codehaus.groovy.antlr.java.JavaLexer: groovyjarjarantlr.collections.impl.BitSet _tokenSet_5> = v10;

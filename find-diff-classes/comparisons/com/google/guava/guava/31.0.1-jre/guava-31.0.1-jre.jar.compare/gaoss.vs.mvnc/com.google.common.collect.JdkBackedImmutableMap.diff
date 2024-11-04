@@ -1,0 +1,43 @@
+8,10c8,10
+< com.google.common.collect.ImmutableList v18;
+< int v0, v3;
+< java.lang.String v15;
+---
+> com.google.common.collect.ImmutableList v26;
+> int v0, v18, v19, v21, v22, v3;
+> java.lang.String v15, v16, v17, v20, v23;
+14,15c14,15
+< com.google.common.collect.JdkBackedImmutableMap v17;
+< java.lang.IllegalArgumentException v16;
+---
+> com.google.common.collect.JdkBackedImmutableMap v25;
+> java.lang.IllegalArgumentException v24;
+16a17
+> java.lang.StringBuilder v27;
+36,38c37,48
+< v15 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.Object,java.lang.Object)>(v14, v11) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001=\u0001");
+< v16 = staticinvoke <com.google.common.collect.JdkBackedImmutableMap: java.lang.IllegalArgumentException conflictException(java.lang.String,java.lang.Object,java.lang.Object)>("key", v12, v15);
+< throw v16;
+---
+> v15 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v14);
+> v16 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v11);
+> v17 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v15);
+> v18 = virtualinvoke v17.<java.lang.String: int length()>();
+> v19 = 1 + v18;
+> v20 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v16);
+> v21 = virtualinvoke v20.<java.lang.String: int length()>();
+> v22 = v19 + v21;
+> specialinvoke v27.<java.lang.StringBuilder: void <init>(int)>(v22);
+> v23 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,java.lang.String)>(v15, v16) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001=\u0001");
+> v24 = staticinvoke <com.google.common.collect.JdkBackedImmutableMap: java.lang.IllegalArgumentException conflictException(java.lang.String,java.lang.Object,java.lang.Object)>("key", v12, v23);
+> throw v24;
+43,46c53,56
+< v17 = new com.google.common.collect.JdkBackedImmutableMap;
+< v18 = staticinvoke <com.google.common.collect.ImmutableList: com.google.common.collect.ImmutableList asImmutableList(java.lang.Object[],int)>(v1, v0);
+< specialinvoke v17.<com.google.common.collect.JdkBackedImmutableMap: void <init>(java.util.Map,com.google.common.collect.ImmutableList)>(v2, v18);
+< return v17;
+---
+> v25 = new com.google.common.collect.JdkBackedImmutableMap;
+> v26 = staticinvoke <com.google.common.collect.ImmutableList: com.google.common.collect.ImmutableList asImmutableList(java.lang.Object[],int)>(v1, v0);
+> specialinvoke v25.<com.google.common.collect.JdkBackedImmutableMap: void <init>(java.util.Map,com.google.common.collect.ImmutableList)>(v2, v26);
+> return v25;

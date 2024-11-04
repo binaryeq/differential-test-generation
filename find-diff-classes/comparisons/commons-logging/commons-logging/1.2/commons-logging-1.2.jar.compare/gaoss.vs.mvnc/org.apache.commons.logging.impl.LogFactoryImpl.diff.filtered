@@ -1,0 +1,250 @@
+780c780
+< java.lang.ClassLoader v117, v13;
+---
+> java.lang.ClassLoader v118, v13;
+784,785c784,785
+< java.lang.StringBuffer v100, v101, v102, v105, v106, v107, v108, v110, v111, v113, v114, v115, v116, v119, v120, v14, v15, v16, v17, v19, v22, v24, v25, v28, v29, v30, v32, v33, v34, v35, v36, v37, v39, v40, v41, v42, v43, v44, v49, v5, v50, v51, v52, v54, v55, v57, v6, v61, v62, v63, v64, v66, v7, v73, v74, v75, v76, v78, v79, v8, v81, v85, v86, v87, v88, v90, v91, v93, v99;
+< java.lang.String v1, v103, v109, v112, v118, v121, v18, v2, v20, v23, v26, v31, v38, v45, v48, v53, v56, v58, v60, v65, v67, v72, v77, v80, v82, v84, v89, v9, v92, v94;
+---
+> java.lang.StringBuffer v100, v101, v102, v105, v106, v107, v108, v110, v111, v112, v114, v115, v116, v117, v120, v121, v14, v15, v16, v17, v19, v22, v24, v25, v28, v29, v30, v32, v33, v34, v35, v36, v37, v39, v40, v41, v42, v43, v44, v49, v5, v50, v51, v52, v54, v55, v57, v6, v61, v62, v63, v64, v66, v7, v73, v74, v75, v76, v78, v79, v8, v81, v85, v86, v87, v88, v90, v91, v93, v99;
+> java.lang.String v1, v103, v109, v113, v119, v122, v18, v2, v20, v23, v26, v31, v38, v45, v48, v53, v56, v58, v60, v65, v67, v72, v77, v80, v82, v84, v89, v9, v92, v94;
+989,991c989,992
+< v111 = virtualinvoke v110.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>(" does not declare optional method setLogFactory(LogFactory)");
+< v112 = virtualinvoke v111.<java.lang.StringBuffer: java.lang.String toString()>();
+< virtualinvoke v0.<org.apache.commons.logging.impl.LogFactoryImpl: void logDiagnostic(java.lang.String)>(v112);
+---
+> v111 = virtualinvoke v110.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>(" does not declare optional method ");
+> v112 = virtualinvoke v111.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>("setLogFactory(LogFactory)");
+> v113 = virtualinvoke v112.<java.lang.StringBuffer: java.lang.String toString()>();
+> virtualinvoke v0.<org.apache.commons.logging.impl.LogFactoryImpl: void logDiagnostic(java.lang.String)>(v113);
+993,1003c994,1004
+< v113 = new java.lang.StringBuffer;
+< specialinvoke v113.<java.lang.StringBuffer: void <init>()>();
+< v114 = virtualinvoke v113.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>("Log adapter \'");
+< v115 = virtualinvoke v114.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>(v1);
+< v116 = virtualinvoke v115.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>("\' from classloader ");
+< v117 = virtualinvoke v12.<java.lang.Class: java.lang.ClassLoader getClassLoader()>();
+< v118 = staticinvoke <org.apache.commons.logging.impl.LogFactoryImpl: java.lang.String objectId(java.lang.Object)>(v117);
+< v119 = virtualinvoke v116.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>(v118);
+< v120 = virtualinvoke v119.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>(" has been selected for use.");
+< v121 = virtualinvoke v120.<java.lang.StringBuffer: java.lang.String toString()>();
+< virtualinvoke v0.<org.apache.commons.logging.impl.LogFactoryImpl: void logDiagnostic(java.lang.String)>(v121);
+---
+> v114 = new java.lang.StringBuffer;
+> specialinvoke v114.<java.lang.StringBuffer: void <init>()>();
+> v115 = virtualinvoke v114.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>("Log adapter \'");
+> v116 = virtualinvoke v115.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>(v1);
+> v117 = virtualinvoke v116.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>("\' from classloader ");
+> v118 = virtualinvoke v12.<java.lang.Class: java.lang.ClassLoader getClassLoader()>();
+> v119 = staticinvoke <org.apache.commons.logging.impl.LogFactoryImpl: java.lang.String objectId(java.lang.Object)>(v118);
+> v120 = virtualinvoke v117.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>(v119);
+> v121 = virtualinvoke v120.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>(" has been selected for use.");
+> v122 = virtualinvoke v121.<java.lang.StringBuffer: java.lang.String toString()>();
+> virtualinvoke v0.<org.apache.commons.logging.impl.LogFactoryImpl: void logDiagnostic(java.lang.String)>(v122);
+1178c1179
+< boolean v12, v13, v3, v34, v39, v43, v49, v52, v56;
+---
+> boolean v12, v13, v3, v35, v40, v44, v50, v53, v57;
+1180c1181
+< java.lang.Throwable v28;
+---
+> java.lang.Throwable v29;
+1182c1183
+< java.lang.StringBuffer v17, v18, v20, v21, v23, v24, v26, v29, v30, v31, v32, v35, v44, v50, v57;
+---
+> java.lang.StringBuffer v17, v18, v20, v21, v23, v24, v25, v27, v30, v31, v32, v33, v36, v45, v51, v58;
+1184c1185
+< java.lang.String v11, v19, v22, v25, v27, v33, v38, v40, v42, v47, v48, v51, v53, v55, v58, v59, v6;
+---
+> java.lang.String v11, v19, v22, v26, v28, v34, v39, v41, v43, v48, v49, v52, v54, v56, v59, v6, v60;
+1186,1187c1187,1188
+< java.lang.Class v10, v14, v15, v2, v36, v37, v4, v45, v46, v5;
+< org.apache.commons.logging.LogConfigurationException v41, v54;
+---
+> java.lang.Class v10, v14, v15, v2, v37, v38, v4, v46, v47, v5;
+> org.apache.commons.logging.LogConfigurationException v42, v55;
+1237,1241c1238,1243
+< v24 = virtualinvoke v23.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>(". It is bound to a Log interface which is not the one loaded from classloader ");
+< v25 = staticinvoke <org.apache.commons.logging.impl.LogFactoryImpl: java.lang.String objectId(java.lang.Object)>(v16);
+< v26 = virtualinvoke v24.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>(v25);
+< v27 = virtualinvoke v26.<java.lang.StringBuffer: java.lang.String toString()>();
+< virtualinvoke v0.<org.apache.commons.logging.impl.LogFactoryImpl: void logDiagnostic(java.lang.String)>(v27);
+---
+> v24 = virtualinvoke v23.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>(". It is bound to a Log interface which is not");
+> v25 = virtualinvoke v24.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>(" the one loaded from classloader ");
+> v26 = staticinvoke <org.apache.commons.logging.impl.LogFactoryImpl: java.lang.String objectId(java.lang.Object)>(v16);
+> v27 = virtualinvoke v25.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>(v26);
+> v28 = virtualinvoke v27.<java.lang.StringBuffer: java.lang.String toString()>();
+> virtualinvoke v0.<org.apache.commons.logging.impl.LogFactoryImpl: void logDiagnostic(java.lang.String)>(v28);
+1245,1253c1247,1255
+< v28 := @caughtexception;
+< staticinvoke <org.apache.commons.logging.impl.LogFactoryImpl: void handleThrowable(java.lang.Throwable)>(v28);
+< v29 = new java.lang.StringBuffer;
+< specialinvoke v29.<java.lang.StringBuffer: void <init>()>();
+< v30 = virtualinvoke v29.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>("Error while trying to output diagnostics about bad class \'");
+< v31 = virtualinvoke v30.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(v2);
+< v32 = virtualinvoke v31.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>("\'");
+< v33 = virtualinvoke v32.<java.lang.StringBuffer: java.lang.String toString()>();
+< virtualinvoke v0.<org.apache.commons.logging.impl.LogFactoryImpl: void logDiagnostic(java.lang.String)>(v33);
+---
+> v29 := @caughtexception;
+> staticinvoke <org.apache.commons.logging.impl.LogFactoryImpl: void handleThrowable(java.lang.Throwable)>(v29);
+> v30 = new java.lang.StringBuffer;
+> specialinvoke v30.<java.lang.StringBuffer: void <init>()>();
+> v31 = virtualinvoke v30.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>("Error while trying to output diagnostics about bad class \'");
+> v32 = virtualinvoke v31.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(v2);
+> v33 = virtualinvoke v32.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>("\'");
+> v34 = virtualinvoke v33.<java.lang.StringBuffer: java.lang.String toString()>();
+> virtualinvoke v0.<org.apache.commons.logging.impl.LogFactoryImpl: void logDiagnostic(java.lang.String)>(v34);
+1255,1265c1257,1267
+< v34 = v0.<org.apache.commons.logging.impl.LogFactoryImpl: boolean allowFlawedHierarchy>;
+< if v34 != 0 goto label15;
+< v35 = new java.lang.StringBuffer;
+< specialinvoke v35.<java.lang.StringBuffer: void <init>()>();
+< virtualinvoke v35.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>("Terminating logging for this context ");
+< virtualinvoke v35.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>("due to bad log hierarchy. ");
+< virtualinvoke v35.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>("You have more than one version of \'");
+< v36 = <org.apache.commons.logging.impl.LogFactoryImpl: java.lang.Class class$org$apache$commons$logging$Log>;
+< if v36 != null goto label12;
+< v37 = staticinvoke <org.apache.commons.logging.impl.LogFactoryImpl: java.lang.Class class$(java.lang.String)>("org.apache.commons.logging.Log");
+< <org.apache.commons.logging.impl.LogFactoryImpl: java.lang.Class class$org$apache$commons$logging$Log> = v37;
+---
+> v35 = v0.<org.apache.commons.logging.impl.LogFactoryImpl: boolean allowFlawedHierarchy>;
+> if v35 != 0 goto label15;
+> v36 = new java.lang.StringBuffer;
+> specialinvoke v36.<java.lang.StringBuffer: void <init>()>();
+> virtualinvoke v36.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>("Terminating logging for this context ");
+> virtualinvoke v36.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>("due to bad log hierarchy. ");
+> virtualinvoke v36.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>("You have more than one version of \'");
+> v37 = <org.apache.commons.logging.impl.LogFactoryImpl: java.lang.Class class$org$apache$commons$logging$Log>;
+> if v37 != null goto label12;
+> v38 = staticinvoke <org.apache.commons.logging.impl.LogFactoryImpl: java.lang.Class class$(java.lang.String)>("org.apache.commons.logging.Log");
+> <org.apache.commons.logging.impl.LogFactoryImpl: java.lang.Class class$org$apache$commons$logging$Log> = v38;
+1268c1270
+< v37 = <org.apache.commons.logging.impl.LogFactoryImpl: java.lang.Class class$org$apache$commons$logging$Log>;
+---
+> v38 = <org.apache.commons.logging.impl.LogFactoryImpl: java.lang.Class class$org$apache$commons$logging$Log>;
+1270,1276c1272,1278
+< v38 = virtualinvoke v37.<java.lang.Class: java.lang.String getName()>();
+< virtualinvoke v35.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>(v38);
+< virtualinvoke v35.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>("\' visible.");
+< v39 = staticinvoke <org.apache.commons.logging.impl.LogFactoryImpl: boolean isDiagnosticsEnabled()>();
+< if v39 == 0 goto label14;
+< v40 = virtualinvoke v35.<java.lang.StringBuffer: java.lang.String toString()>();
+< virtualinvoke v0.<org.apache.commons.logging.impl.LogFactoryImpl: void logDiagnostic(java.lang.String)>(v40);
+---
+> v39 = virtualinvoke v38.<java.lang.Class: java.lang.String getName()>();
+> virtualinvoke v36.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>(v39);
+> virtualinvoke v36.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>("\' visible.");
+> v40 = staticinvoke <org.apache.commons.logging.impl.LogFactoryImpl: boolean isDiagnosticsEnabled()>();
+> if v40 == 0 goto label14;
+> v41 = virtualinvoke v36.<java.lang.StringBuffer: java.lang.String toString()>();
+> virtualinvoke v0.<org.apache.commons.logging.impl.LogFactoryImpl: void logDiagnostic(java.lang.String)>(v41);
+1278,1281c1280,1283
+< v41 = new org.apache.commons.logging.LogConfigurationException;
+< v42 = virtualinvoke v35.<java.lang.StringBuffer: java.lang.String toString()>();
+< specialinvoke v41.<org.apache.commons.logging.LogConfigurationException: void <init>(java.lang.String)>(v42);
+< throw v41;
+---
+> v42 = new org.apache.commons.logging.LogConfigurationException;
+> v43 = virtualinvoke v36.<java.lang.StringBuffer: java.lang.String toString()>();
+> specialinvoke v42.<org.apache.commons.logging.LogConfigurationException: void <init>(java.lang.String)>(v43);
+> throw v42;
+1283,1292c1285,1294
+< v43 = staticinvoke <org.apache.commons.logging.impl.LogFactoryImpl: boolean isDiagnosticsEnabled()>();
+< if v43 == 0 goto label21;
+< v44 = new java.lang.StringBuffer;
+< specialinvoke v44.<java.lang.StringBuffer: void <init>()>();
+< virtualinvoke v44.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>("Warning: bad log hierarchy. ");
+< virtualinvoke v44.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>("You have more than one version of \'");
+< v45 = <org.apache.commons.logging.impl.LogFactoryImpl: java.lang.Class class$org$apache$commons$logging$Log>;
+< if v45 != null goto label16;
+< v46 = staticinvoke <org.apache.commons.logging.impl.LogFactoryImpl: java.lang.Class class$(java.lang.String)>("org.apache.commons.logging.Log");
+< <org.apache.commons.logging.impl.LogFactoryImpl: java.lang.Class class$org$apache$commons$logging$Log> = v46;
+---
+> v44 = staticinvoke <org.apache.commons.logging.impl.LogFactoryImpl: boolean isDiagnosticsEnabled()>();
+> if v44 == 0 goto label21;
+> v45 = new java.lang.StringBuffer;
+> specialinvoke v45.<java.lang.StringBuffer: void <init>()>();
+> virtualinvoke v45.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>("Warning: bad log hierarchy. ");
+> virtualinvoke v45.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>("You have more than one version of \'");
+> v46 = <org.apache.commons.logging.impl.LogFactoryImpl: java.lang.Class class$org$apache$commons$logging$Log>;
+> if v46 != null goto label16;
+> v47 = staticinvoke <org.apache.commons.logging.impl.LogFactoryImpl: java.lang.Class class$(java.lang.String)>("org.apache.commons.logging.Log");
+> <org.apache.commons.logging.impl.LogFactoryImpl: java.lang.Class class$org$apache$commons$logging$Log> = v47;
+1295c1297
+< v46 = <org.apache.commons.logging.impl.LogFactoryImpl: java.lang.Class class$org$apache$commons$logging$Log>;
+---
+> v47 = <org.apache.commons.logging.impl.LogFactoryImpl: java.lang.Class class$org$apache$commons$logging$Log>;
+1297,1301c1299,1303
+< v47 = virtualinvoke v46.<java.lang.Class: java.lang.String getName()>();
+< virtualinvoke v44.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>(v47);
+< virtualinvoke v44.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>("\' visible.");
+< v48 = virtualinvoke v44.<java.lang.StringBuffer: java.lang.String toString()>();
+< virtualinvoke v0.<org.apache.commons.logging.impl.LogFactoryImpl: void logDiagnostic(java.lang.String)>(v48);
+---
+> v48 = virtualinvoke v47.<java.lang.Class: java.lang.String getName()>();
+> virtualinvoke v45.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>(v48);
+> virtualinvoke v45.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>("\' visible.");
+> v49 = virtualinvoke v45.<java.lang.StringBuffer: java.lang.String toString()>();
+> virtualinvoke v0.<org.apache.commons.logging.impl.LogFactoryImpl: void logDiagnostic(java.lang.String)>(v49);
+1304,1316c1306,1318
+< v49 = v0.<org.apache.commons.logging.impl.LogFactoryImpl: boolean allowFlawedDiscovery>;
+< if v49 != 0 goto label20;
+< v50 = new java.lang.StringBuffer;
+< specialinvoke v50.<java.lang.StringBuffer: void <init>()>();
+< virtualinvoke v50.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>("Terminating logging for this context. ");
+< virtualinvoke v50.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>("Log class \'");
+< v51 = virtualinvoke v2.<java.lang.Class: java.lang.String getName()>();
+< virtualinvoke v50.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>(v51);
+< virtualinvoke v50.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>("\' does not implement the Log interface.");
+< v52 = staticinvoke <org.apache.commons.logging.impl.LogFactoryImpl: boolean isDiagnosticsEnabled()>();
+< if v52 == 0 goto label19;
+< v53 = virtualinvoke v50.<java.lang.StringBuffer: java.lang.String toString()>();
+< virtualinvoke v0.<org.apache.commons.logging.impl.LogFactoryImpl: void logDiagnostic(java.lang.String)>(v53);
+---
+> v50 = v0.<org.apache.commons.logging.impl.LogFactoryImpl: boolean allowFlawedDiscovery>;
+> if v50 != 0 goto label20;
+> v51 = new java.lang.StringBuffer;
+> specialinvoke v51.<java.lang.StringBuffer: void <init>()>();
+> virtualinvoke v51.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>("Terminating logging for this context. ");
+> virtualinvoke v51.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>("Log class \'");
+> v52 = virtualinvoke v2.<java.lang.Class: java.lang.String getName()>();
+> virtualinvoke v51.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>(v52);
+> virtualinvoke v51.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>("\' does not implement the Log interface.");
+> v53 = staticinvoke <org.apache.commons.logging.impl.LogFactoryImpl: boolean isDiagnosticsEnabled()>();
+> if v53 == 0 goto label19;
+> v54 = virtualinvoke v51.<java.lang.StringBuffer: java.lang.String toString()>();
+> virtualinvoke v0.<org.apache.commons.logging.impl.LogFactoryImpl: void logDiagnostic(java.lang.String)>(v54);
+1318,1321c1320,1323
+< v54 = new org.apache.commons.logging.LogConfigurationException;
+< v55 = virtualinvoke v50.<java.lang.StringBuffer: java.lang.String toString()>();
+< specialinvoke v54.<org.apache.commons.logging.LogConfigurationException: void <init>(java.lang.String)>(v55);
+< throw v54;
+---
+> v55 = new org.apache.commons.logging.LogConfigurationException;
+> v56 = virtualinvoke v51.<java.lang.StringBuffer: java.lang.String toString()>();
+> specialinvoke v55.<org.apache.commons.logging.LogConfigurationException: void <init>(java.lang.String)>(v56);
+> throw v55;
+1323,1332c1325,1334
+< v56 = staticinvoke <org.apache.commons.logging.impl.LogFactoryImpl: boolean isDiagnosticsEnabled()>();
+< if v56 == 0 goto label21;
+< v57 = new java.lang.StringBuffer;
+< specialinvoke v57.<java.lang.StringBuffer: void <init>()>();
+< virtualinvoke v57.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>("[WARNING] Log class \'");
+< v58 = virtualinvoke v2.<java.lang.Class: java.lang.String getName()>();
+< virtualinvoke v57.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>(v58);
+< virtualinvoke v57.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>("\' does not implement the Log interface.");
+< v59 = virtualinvoke v57.<java.lang.StringBuffer: java.lang.String toString()>();
+< virtualinvoke v0.<org.apache.commons.logging.impl.LogFactoryImpl: void logDiagnostic(java.lang.String)>(v59);
+---
+> v57 = staticinvoke <org.apache.commons.logging.impl.LogFactoryImpl: boolean isDiagnosticsEnabled()>();
+> if v57 == 0 goto label21;
+> v58 = new java.lang.StringBuffer;
+> specialinvoke v58.<java.lang.StringBuffer: void <init>()>();
+> virtualinvoke v58.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>("[WARNING] Log class \'");
+> v59 = virtualinvoke v2.<java.lang.Class: java.lang.String getName()>();
+> virtualinvoke v58.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>(v59);
+> virtualinvoke v58.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>("\' does not implement the Log interface.");
+> v60 = virtualinvoke v58.<java.lang.StringBuffer: java.lang.String toString()>();
+> virtualinvoke v0.<org.apache.commons.logging.impl.LogFactoryImpl: void logDiagnostic(java.lang.String)>(v60);

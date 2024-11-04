@@ -1,0 +1,958 @@
+* EvoSuite 1.2.0
+* Going to generate test cases for class: com.google.common.collect.CompactHashMap
+* Starting Client-0
+* Connecting to master process on port 5959
+* Analyzing classpath: 
+  - /home/wtwhite/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/guava/guava/31.0.1-jre/guava-31.0.1-jre.jar
+  - t/dependency/checker-qual-3.12.0.jar
+  - t/dependency/error_prone_annotations-2.7.1.jar
+  - t/dependency/failureaccess-1.0.1.jar
+  - t/dependency/j2objc-annotations-1.3.jar
+  - t/dependency/jsr305-3.0.2.jar
+  - t/dependency/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar
+* Finished analyzing classpath
+* Generating tests for class com.google.common.collect.CompactHashMap
+* Test criteria:
+  - Line Coverage
+  - Branch Coverage
+  - Exception
+  - Mutation testing (weak)
+  - Method-Output Coverage
+  - Top-Level Method Coverage
+  - No-Exception Top-Level Method Coverage
+  - Context Branch Coverage
+* Total number of test goals for DYNAMOSA: 1676
+* Using seed 1729694465454
+* Starting evolution
+[Progress:>                             0%] [Cov:>                                  0%]* Initial Number of Goals in DynaMOSA = 600 / 1676
+[MASTER] 03:41:08.779 [logback-1] WARN  TestCluster - Failed to check cache for java.util.HashMap<K, V> : Type points to itself
+[MASTER] 03:41:10.330 [logback-1] WARN  TestCluster - Failed to check cache for java.lang.Comparable<T> : Type points to itself
+[MASTER] 03:41:10.998 [logback-1] WARN  TestCluster - Failed to check cache for java.util.function.Function<java.lang.Object, java.lang.Object> : Type points to itself
+[MASTER] 03:41:12.024 [logback-1] WARN  CastClassManager - Nothing is assignable after adding com.google.common.collect.UnmodifiableSortedMultiset<E> for wildcard ? extends E
+[MASTER] 03:41:13.123 [logback-1] WARN  TestCluster - Failed to check cache for com.google.common.collect.UnmodifiableSortedMultiset<E> : Type points to itself
+[MASTER] 03:41:18.960 [logback-1] WARN  TestCluster - Failed to check cache for com.google.common.collect.ImmutableSortedSet<E> : Type points to itself
+[MASTER] 03:41:19.870 [logback-1] WARN  TestCluster - Failed to check cache for java.util.function.Function<java.lang.Object, java.lang.Integer> : Type points to itself
+[MASTER] 03:41:20.901 [logback-1] WARN  TestCluster - Failed to check cache for java.util.function.Function<java.util.Locale$Category, java.lang.Integer> : Type points to itself
+[MASTER] 03:41:20.920 [logback-1] WARN  TestCluster - Failed to check cache for com.google.common.base.Function<java.util.Locale$Category, java.lang.Integer> : Type points to itself
+[MASTER] 03:41:25.539 [logback-1] WARN  TestCluster - Failed to check cache for java.util.Comparator<T> : Type points to itself
+[MASTER] 03:41:27.789 [logback-1] WARN  TestCluster - Failed to check cache for com.google.common.collect.DiscreteDomain<C> : Type points to itself
+[MASTER] 03:41:28.253 [logback-1] WARN  TestCluster - Failed to check cache for java.util.function.BiFunction<T, U, R> : Type points to itself
+[Progress:=========>                    33%] [Cov:=============>                     39%][Progress:============>                 40%] [Cov:==============>                    41%][MASTER] 03:41:33.845 [logback-1] WARN  TestCluster - Failed to check cache for com.google.common.base.Function<F, T> : Type points to itself
+[Progress:============>                 43%] [Cov:==============>                    40%][MASTER] 03:41:36.871 [logback-1] WARN  TestCluster - Failed to check cache for java.util.Map<K, V>.Entry<K, V> : Type points to itself
+[Progress:===============>              50%] [Cov:==============>                    42%][Progress:================>             55%] [Cov:===============>                   43%][MASTER] 03:41:44.404 [logback-1] WARN  TestCluster - Failed to check cache for java.util.function.Function<java.lang.Integer, java.lang.Object> : Type points to itself
+[Progress:==================>           60%] [Cov:=================>                 49%][Progress:==================>           63%] [Cov:=================>                 49%][MASTER] 03:41:49.989 [logback-1] WARN  TestCluster - Failed to check cache for com.google.common.collect.RegularImmutableSet<E> : Type points to itself
+[Progress:=====================>        70%] [Cov:=================>                 49%][Progress:=====================>        70%] [Cov:=================>                 49%][Progress:=====================>        71%] [Cov:=================>                 50%][Progress:======================>       75%] [Cov:=================>                 51%][MASTER] 03:41:54.799 [logback-1] WARN  TestCluster - Failed to check cache for java.util.Collection<java.util.Map<java.lang.Integer, java.lang.Integer>.Entry<java.util.Locale$Category, java.util.Locale$Category>> : Type points to itself
+[Progress:=======================>      78%] [Cov:=================>                 51%][Progress:========================>     80%] [Cov:==================>                53%][MASTER] 03:41:59.012 [logback-1] WARN  TestCluster - Failed to check cache for com.google.common.base.Function<java.lang.Object, java.lang.Integer> : Type points to itself
+[Progress:========================>     83%] [Cov:===================>               56%][MASTER] 03:41:59.971 [logback-1] WARN  TestCluster - Failed to check cache for com.google.common.collect.EmptyContiguousSet<C> : Type points to itself
+[Progress:=========================>    85%] [Cov:===================>               56%][Progress:===========================>  90%] [Cov:===================>               56%][MASTER] 03:42:04.008 [logback-1] WARN  CastClassManager - Nothing is assignable after adding com.google.common.collect.UnmodifiableSortedMultiset<E> for wildcard ? extends E
+[Progress:============================> 95%] [Cov:===================>               57%][MASTER] 03:42:06.629 [logback-1] WARN  CastClassManager - Nothing is assignable after adding com.google.common.collect.UnmodifiableSortedMultiset<E> for wildcard ? extends E
+[MASTER] 03:42:07.522 [logback-1] WARN  TestCluster - Failed to check cache for com.google.common.collect.ContiguousSet<C> : Type points to itself
+[MASTER] 03:42:07.787 [logback-1] WARN  TestCluster - Failed to check cache for com.google.common.collect.RegularImmutableSortedSet<E> : Type points to itself
+[Progress:=============================>98%] [Cov:====================>              58%][MASTER] 03:42:08.687 [logback-1] WARN  TestCluster - Failed to check cache for java.util.Collection<java.lang.Object> : Type points to itself
+[Progress:==============================100%] [Cov:====================>              58%]
+* Search finished after 62s and 18 generations, 10125 statements, best individual has fitness: 639.0
+* Minimizing test suite
+* Going to analyze the coverage criteria
+* Coverage analysis for criterion LINE
+* Coverage of criterion LINE: 69%
+* Total number of goals: 462
+* Number of covered goals: 320
+* Coverage analysis for criterion BRANCH
+* Coverage of criterion BRANCH: 66%
+* Total number of goals: 248
+* Number of covered goals: 163
+* Coverage analysis for criterion EXCEPTION
+* Coverage of criterion EXCEPTION: 100%
+* Total number of goals: 12
+* Number of covered goals: 12
+* Coverage analysis for criterion WEAKMUTATION
+* Coverage of criterion WEAKMUTATION: 59%
+* Total number of goals: 495
+* Number of covered goals: 292
+* Coverage analysis for criterion OUTPUT
+* Coverage of criterion OUTPUT: 38%
+* Total number of goals: 93
+* Number of covered goals: 35
+* Coverage analysis for criterion METHOD
+* Coverage of criterion METHOD: 86%
+* Total number of goals: 65
+* Number of covered goals: 56
+* Coverage analysis for criterion METHODNOEXCEPTION
+* Coverage of criterion METHODNOEXCEPTION: 82%
+* Total number of goals: 65
+* Number of covered goals: 53
+* Coverage analysis for criterion CBRANCH
+* Coverage of criterion CBRANCH: 65%
+* Total number of goals: 248
+* Number of covered goals: 161
+* Generated 86 tests with total length 303
+* Resulting test suite's coverage: 59% (average coverage for all fitness functions)
+* Generating assertions
+* Resulting test suite's mutation score: 21%
+* Compiling and checking tests
+[MASTER] 03:42:32.730 [logback-2] ERROR JUnitAnalyzer - Compilation failed on compilation units: [RegularFileObject[/tmp/EvoSuite_22_1729694552706/com/google/common/collect/CompactHashMap_22_tmp__ESTest.java], RegularFileObject[/tmp/EvoSuite_22_1729694552706/com/google/common/collect/CompactHashMap_22_tmp__ESTest_scaffolding.java]]
+[MASTER] 03:42:32.730 [logback-2] ERROR JUnitAnalyzer - Classpath: /home/wtwhite/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/guava/guava/31.0.1-jre/guava-31.0.1-jre.jar:t/dependency/checker-qual-3.12.0.jar:t/dependency/error_prone_annotations-2.7.1.jar:t/dependency/failureaccess-1.0.1.jar:t/dependency/j2objc-annotations-1.3.jar:t/dependency/jsr305-3.0.2.jar:t/dependency/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/home/wtwhite/code/regression-test-generation/evosuite/evosuite-1.2.0.jar:/home/wtwhite/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/guava/guava/31.0.1-jre/guava-31.0.1-jre.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/checker-qual-3.12.0.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/error_prone_annotations-2.7.1.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/failureaccess-1.0.1.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/j2objc-annotations-1.3.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/jsr305-3.0.2.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar
+[MASTER] 03:42:32.730 [logback-2] ERROR JUnitAnalyzer - evosuiteCP: /home/wtwhite/code/regression-test-generation/evosuite/evosuite-1.2.0.jar:/home/wtwhite/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/guava/guava/31.0.1-jre/guava-31.0.1-jre.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/checker-qual-3.12.0.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/error_prone_annotations-2.7.1.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/failureaccess-1.0.1.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/j2objc-annotations-1.3.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/jsr305-3.0.2.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar
+[MASTER] 03:42:32.732 [logback-2] ERROR JUnitAnalyzer - Diagnostic: incompatible types: java.lang.Object[] cannot be converted to java.lang.Integer[]: 24
+[MASTER] 03:42:32.732 [logback-2] ERROR JUnitAnalyzer - Diagnostic: /tmp/EvoSuite_22_1729694552706/com/google/common/collect/CompactHashMap_22_tmp__ESTest.java uses unchecked or unsafe operations.: -1
+[MASTER] 03:42:32.732 [logback-2] ERROR JUnitAnalyzer - Diagnostic: Recompile with -Xlint:unchecked for details.: -1
+[MASTER] 03:42:32.733 [logback-2] ERROR JUnitAnalyzer - RegularFileObject[/tmp/EvoSuite_22_1729694552706/com/google/common/collect/CompactHashMap_22_tmp__ESTest.java]
+1: /*
+2:  * This file was automatically generated by EvoSuite
+3:  * Wed Oct 23 14:42:32 GMT 2024
+4:  */
+5: 
+6: package com.google.common.collect;
+7: 
+8: import org.junit.Test;
+9: import static org.junit.Assert.*;
+10: import com.google.common.collect.CompactHashMap;
+11: import org.evosuite.runtime.EvoRunner;
+12: import org.evosuite.runtime.EvoRunnerParameters;
+13: import org.junit.runner.RunWith;
+14: 
+15: @RunWith(EvoRunner.class) @EvoRunnerParameters(mockJVMNonDeterminism = true, useVFS = true, useVNET = true, resetStaticState = true) 
+16: public class CompactHashMap_22_tmp__ESTest extends CompactHashMap_22_tmp__ESTest_scaffolding {
+17: 
+18:   @Test(timeout = 4000)
+19:   public void test0()  throws Throwable  {
+20:       CompactHashMap<Integer, Integer> compactHashMap0 = new CompactHashMap<Integer, Integer>();
+21:       compactHashMap0.allocArrays();
+22:       CompactHashMap.KeySetView compactHashMap_KeySetView0 = compactHashMap0.new KeySetView();
+23:       Integer[] integerArray0 = new Integer[4];
+24:       Integer[] integerArray1 = compactHashMap_KeySetView0.toArray(integerArray0);
+25:       assertSame(integerArray0, integerArray1);
+26:   }
+27: }
+RegularFileObject[/tmp/EvoSuite_22_1729694552706/com/google/common/collect/CompactHashMap_22_tmp__ESTest.java]
+1: /**
+2:  * Scaffolding file used to store all the setups needed to run 
+3:  * tests automatically generated by EvoSuite
+4:  * Wed Oct 23 14:42:32 GMT 2024
+5:  */
+6: 
+7: package com.google.common.collect;
+8: 
+9: import org.evosuite.runtime.annotation.EvoSuiteClassExclude;
+10: import org.junit.BeforeClass;
+11: import org.junit.Before;
+12: import org.junit.After;
+13: import org.junit.AfterClass;
+14: import org.evosuite.runtime.sandbox.Sandbox;
+15: import org.evosuite.runtime.sandbox.Sandbox.SandboxMode;
+16: 
+17: @EvoSuiteClassExclude
+18: public class CompactHashMap_22_tmp__ESTest_scaffolding {
+19: 
+20:   @org.junit.Rule
+21:   public org.evosuite.runtime.vnet.NonFunctionalRequirementRule nfr = new org.evosuite.runtime.vnet.NonFunctionalRequirementRule();
+22: 
+23:   private static final java.util.Properties defaultProperties = (java.util.Properties) java.lang.System.getProperties().clone(); 
+24: 
+25:   private org.evosuite.runtime.thread.ThreadStopper threadStopper =  new org.evosuite.runtime.thread.ThreadStopper (org.evosuite.runtime.thread.KillSwitchHandler.getInstance(), 3000);
+26: 
+27: 
+28:   @BeforeClass
+29:   public static void initEvoSuiteFramework() { 
+30:     org.evosuite.runtime.RuntimeSettings.className = "com.google.common.collect.CompactHashMap"; 
+31:     org.evosuite.runtime.GuiSupport.initialize(); 
+32:     org.evosuite.runtime.RuntimeSettings.maxNumberOfThreads = 100; 
+33:     org.evosuite.runtime.RuntimeSettings.maxNumberOfIterationsPerLoop = 10000; 
+34:     org.evosuite.runtime.RuntimeSettings.mockSystemIn = true; 
+35:     org.evosuite.runtime.RuntimeSettings.sandboxMode = org.evosuite.runtime.sandbox.Sandbox.SandboxMode.RECOMMENDED; 
+36:     org.evosuite.runtime.sandbox.Sandbox.initializeSecurityManagerForSUT(); 
+37:     org.evosuite.runtime.classhandling.JDKClassResetter.init();
+38:     setSystemProperties();
+39:     initializeClasses();
+40:     org.evosuite.runtime.Runtime.getInstance().resetRuntime(); 
+41:   } 
+42: 
+43:   @AfterClass
+44:   public static void clearEvoSuiteFramework(){ 
+45:     Sandbox.resetDefaultSecurityManager(); 
+46:     java.lang.System.setProperties((java.util.Properties) defaultProperties.clone()); 
+47:   } 
+48: 
+49:   @Before
+50:   public void initTestCase(){ 
+51:     threadStopper.storeCurrentThreads();
+52:     threadStopper.startRecordingTime();
+53:     org.evosuite.runtime.jvm.ShutdownHookHandler.getInstance().initHandler(); 
+54:     org.evosuite.runtime.sandbox.Sandbox.goingToExecuteSUTCode(); 
+55:     setSystemProperties(); 
+56:     org.evosuite.runtime.GuiSupport.setHeadless(); 
+57:     org.evosuite.runtime.Runtime.getInstance().resetRuntime(); 
+58:     org.evosuite.runtime.agent.InstrumentingAgent.activate(); 
+59:   } 
+60: 
+61:   @After
+62:   public void doneWithTestCase(){ 
+63:     threadStopper.killAndJoinClientThreads();
+64:     org.evosuite.runtime.jvm.ShutdownHookHandler.getInstance().safeExecuteAddedHooks(); 
+65:     org.evosuite.runtime.classhandling.JDKClassResetter.reset(); 
+66:     resetClasses(); 
+67:     org.evosuite.runtime.sandbox.Sandbox.doneWithExecutingSUTCode(); 
+68:     org.evosuite.runtime.agent.InstrumentingAgent.deactivate(); 
+69:     org.evosuite.runtime.GuiSupport.restoreHeadlessMode(); 
+70:   } 
+71: 
+72:   public static void setSystemProperties() {
+73:  
+74:     java.lang.System.setProperties((java.util.Properties) defaultProperties.clone()); 
+75:     java.lang.System.setProperty("user.dir", "/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre"); 
+76:     java.lang.System.setProperty("java.io.tmpdir", "/tmp"); 
+77:   }
+78: 
+79:   private static void initializeClasses() {
+80:     org.evosuite.runtime.classhandling.ClassStateSupport.initializeClasses(CompactHashMap_22_tmp__ESTest_scaffolding.class.getClassLoader() ,
+81:       "com.google.common.collect.Hashing",
+82:       "com.google.common.collect.Sets$CartesianSet",
+83:       "com.google.common.collect.Sets$SubSet",
+84:       "com.google.common.collect.ImmutableCollection",
+85:       "com.google.common.collect.CompactHashMap$ValuesView",
+86:       "com.google.common.collect.ForwardingMultiset",
+87:       "com.google.common.collect.ImmutableSet$Indexed",
+88:       "com.google.common.collect.Sets$FilteredSet",
+89:       "com.google.common.collect.Maps$NavigableKeySet",
+90:       "com.google.common.collect.CollectSpliterators$1WithCharacteristics",
+91:       "com.google.common.collect.SortedMultiset",
+92:       "com.google.common.collect.ForwardingNavigableSet",
+93:       "com.google.common.collect.ImmutableMultisetGwtSerializationDependencies",
+94:       "com.google.common.collect.CompactHashMap$Itr",
+95:       "com.google.common.base.Objects",
+96:       "com.google.common.collect.Maps$KeySet",
+97:       "com.google.common.base.Converter",
+98:       "com.google.common.collect.CompactHashMap$1",
+99:       "com.google.common.collect.ImmutableSet",
+100:       "com.google.common.base.Function",
+101:       "com.google.common.collect.Maps$Values",
+102:       "com.google.common.collect.Maps$SortedKeySet",
+103:       "com.google.common.collect.CompactHashMap$MapEntry",
+104:       "com.google.common.collect.CollectPreconditions",
+105:       "com.google.common.collect.CompactHashMap",
+106:       "com.google.common.collect.Sets$DescendingSet",
+107:       "com.google.common.primitives.Ints$IntConverter",
+108:       "com.google.common.collect.Sets",
+109:       "com.google.common.collect.CompactHashMap$2",
+110:       "com.google.common.collect.RegularImmutableSet",
+111:       "com.google.common.collect.CompactHashMap$3",
+112:       "com.google.common.collect.AbstractMapEntry",
+113:       "com.google.common.collect.ForwardingMap",
+114:       "com.google.common.collect.ForwardingSet",
+115:       "com.google.common.collect.ForwardingSortedSet",
+116:       "com.google.common.base.ExtraObjectsMethodsForWeb",
+117:       "com.google.common.collect.Sets$PowerSet",
+118:       "com.google.common.collect.BoundType",
+119:       "com.google.common.collect.Maps$DescendingMap",
+120:       "com.google.common.collect.CompactHashMap$EntrySetView",
+121:       "com.google.common.collect.Maps$EntrySet",
+122:       "com.google.common.collect.CompactHashMap$KeySetView",
+123:       "com.google.common.collect.ImmutableMultiset$ElementSet",
+124:       "com.google.common.collect.ContiguousSet",
+125:       "com.google.common.collect.ForwardingObject",
+126:       "com.google.common.collect.Multiset",
+127:       "com.google.common.collect.Sets$SetView",
+128:       "com.google.common.collect.ImmutableSet$CachingAsList",
+129:       "com.google.common.collect.Collections2$FilteredCollection",
+130:       "com.google.common.collect.ImmutableMultiset$SerializedForm",
+131:       "com.google.common.collect.Multisets$UnmodifiableMultiset",
+132:       "com.google.common.base.Strings",
+133:       "com.google.common.collect.ImmutableMultiset",
+134:       "com.google.common.collect.CompactHashing",
+135:       "com.google.common.collect.ForwardingCollection",
+136:       "com.google.common.collect.ImmutableSortedSet",
+137:       "com.google.common.primitives.IntsMethodsForWeb",
+138:       "com.google.common.collect.SortedMultisetBridge",
+139:       "com.google.common.collect.ObjectArrays",
+140:       "com.google.common.collect.Sets$UnmodifiableNavigableSet",
+141:       "com.google.common.collect.Sets$FilteredNavigableSet",
+142:       "com.google.common.collect.UnmodifiableSortedMultiset",
+143:       "com.google.common.primitives.Ints",
+144:       "com.google.common.collect.Maps",
+145:       "com.google.common.collect.CollectSpliterators",
+146:       "com.google.common.collect.Sets$FilteredSortedSet",
+147:       "com.google.common.collect.SortedIterable",
+148:       "com.google.common.collect.Sets$ImprovedAbstractSet",
+149:       "com.google.common.base.Preconditions",
+150:       "com.google.common.collect.ElementTypesAreNonnullByDefault",
+151:       "com.google.common.collect.ImmutableSortedSetFauxverideShim"
+152:     );
+153:   } 
+154: 
+155:   private static void resetClasses() {
+156:     org.evosuite.runtime.classhandling.ClassResetter.getInstance().setClassLoader(CompactHashMap_22_tmp__ESTest_scaffolding.class.getClassLoader()); 
+157: 
+158:     org.evosuite.runtime.classhandling.ClassStateSupport.resetClasses(
+159:       "com.google.common.collect.CompactHashMap",
+160:       "com.google.common.collect.Sets$ImprovedAbstractSet",
+161:       "com.google.common.collect.Maps$KeySet",
+162:       "com.google.common.collect.CompactHashMap$KeySetView",
+163:       "com.google.common.collect.CompactHashMap$Itr",
+164:       "com.google.common.collect.CompactHashMap$1",
+165:       "com.google.common.collect.Maps$EntrySet",
+166:       "com.google.common.collect.CompactHashMap$EntrySetView",
+167:       "com.google.common.collect.CompactHashMap$2",
+168:       "com.google.common.collect.Maps$Values",
+169:       "com.google.common.collect.CompactHashMap$ValuesView",
+170:       "com.google.common.collect.CompactHashMap$3",
+171:       "com.google.common.base.Preconditions",
+172:       "com.google.common.primitives.IntsMethodsForWeb",
+173:       "com.google.common.primitives.Ints",
+174:       "com.google.common.collect.DiscreteDomain",
+175:       "com.google.common.collect.DiscreteDomain$IntegerDomain",
+176:       "com.google.common.collect.ImmutableCollection",
+177:       "com.google.common.collect.ImmutableSet",
+178:       "com.google.common.collect.ImmutableSet$CachingAsList",
+179:       "com.google.common.collect.ImmutableSortedSetFauxverideShim",
+180:       "com.google.common.collect.ImmutableSortedSet",
+181:       "com.google.common.collect.ContiguousSet",
+182:       "com.google.common.collect.EmptyContiguousSet",
+183:       "com.google.common.collect.Ordering",
+184:       "com.google.common.collect.NaturalOrdering",
+185:       "com.google.common.collect.AbstractMapEntry",
+186:       "com.google.common.collect.ImmutableEntry",
+187:       "com.google.common.collect.ImmutableMapEntry",
+188:       "com.google.common.collect.CollectPreconditions",
+189:       "com.google.common.collect.ImmutableMap",
+190:       "com.google.common.collect.RegularImmutableMap",
+191:       "com.google.common.collect.ImmutableBiMapFauxverideShim",
+192:       "com.google.common.collect.ImmutableBiMap",
+193:       "com.google.common.collect.RegularImmutableBiMap",
+194:       "com.google.common.collect.Hashing",
+195:       "com.google.common.collect.RegularImmutableSet",
+196:       "com.google.common.collect.Iterators",
+197:       "com.google.common.collect.UnmodifiableIterator",
+198:       "com.google.common.collect.UnmodifiableListIterator",
+199:       "com.google.common.collect.AbstractIndexedListIterator",
+200:       "com.google.common.collect.Iterators$ArrayItr",
+201:       "com.google.common.collect.CompactHashMap$MapEntry",
+202:       "com.google.common.collect.CompactHashing",
+203:       "com.google.common.base.Converter",
+204:       "com.google.common.base.Converter$IdentityConverter",
+205:       "com.google.common.base.Converter$FunctionBasedConverter",
+206:       "com.google.common.base.Converter$ReverseConverter",
+207:       "com.google.common.base.Converter$ConverterComposition",
+208:       "com.google.common.collect.ImmutableList",
+209:       "com.google.common.collect.RegularImmutableList",
+210:       "com.google.common.collect.RegularImmutableSortedSet",
+211:       "com.google.common.collect.CollectSpliterators",
+212:       "com.google.common.collect.CollectSpliterators$1WithCharacteristics",
+213:       "com.google.common.base.Strings",
+214:       "com.google.common.hash.BloomFilter",
+215:       "com.google.common.hash.BloomFilterStrategies",
+216:       "com.google.common.collect.ImmutableSet$SetBuilderImpl",
+217:       "com.google.common.collect.ImmutableSet$RegularSetBuilderImpl",
+218:       "com.google.common.math.IntMath",
+219:       "com.google.common.math.MathPreconditions",
+220:       "com.google.common.math.IntMath$1",
+221:       "com.google.common.collect.ImmutableAsList",
+222:       "com.google.common.collect.RegularImmutableAsList",
+223:       "com.google.common.base.ExtraObjectsMethodsForWeb",
+224:       "com.google.common.base.Objects",
+225:       "com.google.common.collect.ImmutableMultisetGwtSerializationDependencies",
+226:       "com.google.common.collect.ImmutableMultiset",
+227:       "com.google.common.collect.ImmutableSortedMultisetFauxverideShim",
+228:       "com.google.common.collect.ImmutableSortedMultiset",
+229:       "com.google.common.collect.RegularImmutableSortedMultiset",
+230:       "com.google.common.collect.ObjectArrays",
+231:       "com.google.common.collect.RangeGwtSerializationDependencies",
+232:       "com.google.common.collect.Cut",
+233:       "com.google.common.collect.Cut$BelowAll",
+234:       "com.google.common.collect.Cut$AboveAll",
+235:       "com.google.common.collect.Range",
+236:       "com.google.common.collect.Range$1",
+237:       "com.google.common.collect.Cut$BelowValue",
+238:       "com.google.common.collect.RegularContiguousSet",
+239:       "com.google.common.collect.Cut$AboveValue",
+240:       "com.google.common.primitives.Booleans"
+241:     );
+242:   }
+243: }
+
+[MASTER] 03:42:32.733 [logback-2] ERROR JUnitAnalyzer - Failed to compile test case:
+CompactHashMap<Integer, Integer> compactHashMap0 = new CompactHashMap<Integer, Integer>();
+compactHashMap0.allocArrays();
+CompactHashMap.KeySetView compactHashMap_KeySetView0 = compactHashMap0.new KeySetView();
+Integer[] integerArray0 = new Integer[4];
+Integer[] integerArray1 = compactHashMap_KeySetView0.toArray(integerArray0);
+assertSame(integerArray0, integerArray1);
+
+
+[MASTER] 03:42:32.759 [logback-2] ERROR JUnitAnalyzer - Compilation failed on compilation units: [RegularFileObject[/tmp/EvoSuite_23_1729694552734/com/google/common/collect/CompactHashMap_23_tmp__ESTest.java], RegularFileObject[/tmp/EvoSuite_23_1729694552734/com/google/common/collect/CompactHashMap_23_tmp__ESTest_scaffolding.java]]
+[MASTER] 03:42:32.759 [logback-2] ERROR JUnitAnalyzer - Classpath: /home/wtwhite/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/guava/guava/31.0.1-jre/guava-31.0.1-jre.jar:t/dependency/checker-qual-3.12.0.jar:t/dependency/error_prone_annotations-2.7.1.jar:t/dependency/failureaccess-1.0.1.jar:t/dependency/j2objc-annotations-1.3.jar:t/dependency/jsr305-3.0.2.jar:t/dependency/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/home/wtwhite/code/regression-test-generation/evosuite/evosuite-1.2.0.jar:/home/wtwhite/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/guava/guava/31.0.1-jre/guava-31.0.1-jre.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/checker-qual-3.12.0.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/error_prone_annotations-2.7.1.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/failureaccess-1.0.1.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/j2objc-annotations-1.3.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/jsr305-3.0.2.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar
+[MASTER] 03:42:32.759 [logback-2] ERROR JUnitAnalyzer - evosuiteCP: /home/wtwhite/code/regression-test-generation/evosuite/evosuite-1.2.0.jar:/home/wtwhite/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/guava/guava/31.0.1-jre/guava-31.0.1-jre.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/checker-qual-3.12.0.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/error_prone_annotations-2.7.1.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/failureaccess-1.0.1.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/j2objc-annotations-1.3.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/jsr305-3.0.2.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar
+[MASTER] 03:42:32.760 [logback-2] ERROR JUnitAnalyzer - Diagnostic: incompatible types: java.lang.Object[] cannot be converted to java.lang.Integer[]: 23
+[MASTER] 03:42:32.760 [logback-2] ERROR JUnitAnalyzer - Diagnostic: /tmp/EvoSuite_23_1729694552734/com/google/common/collect/CompactHashMap_23_tmp__ESTest.java uses unchecked or unsafe operations.: -1
+[MASTER] 03:42:32.760 [logback-2] ERROR JUnitAnalyzer - Diagnostic: Recompile with -Xlint:unchecked for details.: -1
+[MASTER] 03:42:32.760 [logback-2] ERROR JUnitAnalyzer - RegularFileObject[/tmp/EvoSuite_23_1729694552734/com/google/common/collect/CompactHashMap_23_tmp__ESTest.java]
+1: /*
+2:  * This file was automatically generated by EvoSuite
+3:  * Wed Oct 23 14:42:32 GMT 2024
+4:  */
+5: 
+6: package com.google.common.collect;
+7: 
+8: import org.junit.Test;
+9: import static org.junit.Assert.*;
+10: import com.google.common.collect.CompactHashMap;
+11: import org.evosuite.runtime.EvoRunner;
+12: import org.evosuite.runtime.EvoRunnerParameters;
+13: import org.junit.runner.RunWith;
+14: 
+15: @RunWith(EvoRunner.class) @EvoRunnerParameters(mockJVMNonDeterminism = true, useVFS = true, useVNET = true, resetStaticState = true) 
+16: public class CompactHashMap_23_tmp__ESTest extends CompactHashMap_23_tmp__ESTest_scaffolding {
+17: 
+18:   @Test(timeout = 4000)
+19:   public void test0()  throws Throwable  {
+20:       CompactHashMap<Comparable<Integer>, Object> compactHashMap0 = new CompactHashMap<Comparable<Integer>, Object>(121);
+21:       CompactHashMap.KeySetView compactHashMap_KeySetView0 = compactHashMap0.new KeySetView();
+22:       Integer[] integerArray0 = new Integer[1];
+23:       Integer[] integerArray1 = compactHashMap_KeySetView0.toArray(integerArray0);
+24:       assertEquals(1, integerArray1.length);
+25:   }
+26: }
+RegularFileObject[/tmp/EvoSuite_23_1729694552734/com/google/common/collect/CompactHashMap_23_tmp__ESTest.java]
+1: /**
+2:  * Scaffolding file used to store all the setups needed to run 
+3:  * tests automatically generated by EvoSuite
+4:  * Wed Oct 23 14:42:32 GMT 2024
+5:  */
+6: 
+7: package com.google.common.collect;
+8: 
+9: import org.evosuite.runtime.annotation.EvoSuiteClassExclude;
+10: import org.junit.BeforeClass;
+11: import org.junit.Before;
+12: import org.junit.After;
+13: import org.junit.AfterClass;
+14: import org.evosuite.runtime.sandbox.Sandbox;
+15: import org.evosuite.runtime.sandbox.Sandbox.SandboxMode;
+16: 
+17: @EvoSuiteClassExclude
+18: public class CompactHashMap_23_tmp__ESTest_scaffolding {
+19: 
+20:   @org.junit.Rule
+21:   public org.evosuite.runtime.vnet.NonFunctionalRequirementRule nfr = new org.evosuite.runtime.vnet.NonFunctionalRequirementRule();
+22: 
+23:   private static final java.util.Properties defaultProperties = (java.util.Properties) java.lang.System.getProperties().clone(); 
+24: 
+25:   private org.evosuite.runtime.thread.ThreadStopper threadStopper =  new org.evosuite.runtime.thread.ThreadStopper (org.evosuite.runtime.thread.KillSwitchHandler.getInstance(), 3000);
+26: 
+27: 
+28:   @BeforeClass
+29:   public static void initEvoSuiteFramework() { 
+30:     org.evosuite.runtime.RuntimeSettings.className = "com.google.common.collect.CompactHashMap"; 
+31:     org.evosuite.runtime.GuiSupport.initialize(); 
+32:     org.evosuite.runtime.RuntimeSettings.maxNumberOfThreads = 100; 
+33:     org.evosuite.runtime.RuntimeSettings.maxNumberOfIterationsPerLoop = 10000; 
+34:     org.evosuite.runtime.RuntimeSettings.mockSystemIn = true; 
+35:     org.evosuite.runtime.RuntimeSettings.sandboxMode = org.evosuite.runtime.sandbox.Sandbox.SandboxMode.RECOMMENDED; 
+36:     org.evosuite.runtime.sandbox.Sandbox.initializeSecurityManagerForSUT(); 
+37:     org.evosuite.runtime.classhandling.JDKClassResetter.init();
+38:     setSystemProperties();
+39:     initializeClasses();
+40:     org.evosuite.runtime.Runtime.getInstance().resetRuntime(); 
+41:   } 
+42: 
+43:   @AfterClass
+44:   public static void clearEvoSuiteFramework(){ 
+45:     Sandbox.resetDefaultSecurityManager(); 
+46:     java.lang.System.setProperties((java.util.Properties) defaultProperties.clone()); 
+47:   } 
+48: 
+49:   @Before
+50:   public void initTestCase(){ 
+51:     threadStopper.storeCurrentThreads();
+52:     threadStopper.startRecordingTime();
+53:     org.evosuite.runtime.jvm.ShutdownHookHandler.getInstance().initHandler(); 
+54:     org.evosuite.runtime.sandbox.Sandbox.goingToExecuteSUTCode(); 
+55:     setSystemProperties(); 
+56:     org.evosuite.runtime.GuiSupport.setHeadless(); 
+57:     org.evosuite.runtime.Runtime.getInstance().resetRuntime(); 
+58:     org.evosuite.runtime.agent.InstrumentingAgent.activate(); 
+59:   } 
+60: 
+61:   @After
+62:   public void doneWithTestCase(){ 
+63:     threadStopper.killAndJoinClientThreads();
+64:     org.evosuite.runtime.jvm.ShutdownHookHandler.getInstance().safeExecuteAddedHooks(); 
+65:     org.evosuite.runtime.classhandling.JDKClassResetter.reset(); 
+66:     resetClasses(); 
+67:     org.evosuite.runtime.sandbox.Sandbox.doneWithExecutingSUTCode(); 
+68:     org.evosuite.runtime.agent.InstrumentingAgent.deactivate(); 
+69:     org.evosuite.runtime.GuiSupport.restoreHeadlessMode(); 
+70:   } 
+71: 
+72:   public static void setSystemProperties() {
+73:  
+74:     java.lang.System.setProperties((java.util.Properties) defaultProperties.clone()); 
+75:     java.lang.System.setProperty("user.dir", "/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre"); 
+76:     java.lang.System.setProperty("java.io.tmpdir", "/tmp"); 
+77:   }
+78: 
+79:   private static void initializeClasses() {
+80:     org.evosuite.runtime.classhandling.ClassStateSupport.initializeClasses(CompactHashMap_23_tmp__ESTest_scaffolding.class.getClassLoader() ,
+81:       "com.google.common.collect.Hashing",
+82:       "com.google.common.collect.Sets$CartesianSet",
+83:       "com.google.common.collect.Sets$SubSet",
+84:       "com.google.common.collect.ImmutableCollection",
+85:       "com.google.common.collect.CompactHashMap$ValuesView",
+86:       "com.google.common.collect.ForwardingMultiset",
+87:       "com.google.common.collect.ImmutableSet$Indexed",
+88:       "com.google.common.collect.Sets$FilteredSet",
+89:       "com.google.common.collect.Maps$NavigableKeySet",
+90:       "com.google.common.collect.CollectSpliterators$1WithCharacteristics",
+91:       "com.google.common.collect.SortedMultiset",
+92:       "com.google.common.collect.ForwardingNavigableSet",
+93:       "com.google.common.collect.ImmutableMultisetGwtSerializationDependencies",
+94:       "com.google.common.collect.CompactHashMap$Itr",
+95:       "com.google.common.base.Objects",
+96:       "com.google.common.collect.Maps$KeySet",
+97:       "com.google.common.base.Converter",
+98:       "com.google.common.collect.CompactHashMap$1",
+99:       "com.google.common.collect.ImmutableSet",
+100:       "com.google.common.base.Function",
+101:       "com.google.common.collect.Maps$Values",
+102:       "com.google.common.collect.Maps$SortedKeySet",
+103:       "com.google.common.collect.CompactHashMap$MapEntry",
+104:       "com.google.common.collect.CollectPreconditions",
+105:       "com.google.common.collect.CompactHashMap",
+106:       "com.google.common.collect.Sets$DescendingSet",
+107:       "com.google.common.primitives.Ints$IntConverter",
+108:       "com.google.common.collect.Sets",
+109:       "com.google.common.collect.CompactHashMap$2",
+110:       "com.google.common.collect.RegularImmutableSet",
+111:       "com.google.common.collect.CompactHashMap$3",
+112:       "com.google.common.collect.AbstractMapEntry",
+113:       "com.google.common.collect.ForwardingMap",
+114:       "com.google.common.collect.ForwardingSet",
+115:       "com.google.common.collect.ForwardingSortedSet",
+116:       "com.google.common.base.ExtraObjectsMethodsForWeb",
+117:       "com.google.common.collect.Sets$PowerSet",
+118:       "com.google.common.collect.BoundType",
+119:       "com.google.common.collect.Maps$DescendingMap",
+120:       "com.google.common.collect.CompactHashMap$EntrySetView",
+121:       "com.google.common.collect.Maps$EntrySet",
+122:       "com.google.common.collect.CompactHashMap$KeySetView",
+123:       "com.google.common.collect.ImmutableMultiset$ElementSet",
+124:       "com.google.common.collect.ContiguousSet",
+125:       "com.google.common.collect.ForwardingObject",
+126:       "com.google.common.collect.Multiset",
+127:       "com.google.common.collect.Sets$SetView",
+128:       "com.google.common.collect.ImmutableSet$CachingAsList",
+129:       "com.google.common.collect.Collections2$FilteredCollection",
+130:       "com.google.common.collect.ImmutableMultiset$SerializedForm",
+131:       "com.google.common.collect.Multisets$UnmodifiableMultiset",
+132:       "com.google.common.base.Strings",
+133:       "com.google.common.collect.ImmutableMultiset",
+134:       "com.google.common.collect.CompactHashing",
+135:       "com.google.common.collect.ForwardingCollection",
+136:       "com.google.common.collect.ImmutableSortedSet",
+137:       "com.google.common.primitives.IntsMethodsForWeb",
+138:       "com.google.common.collect.SortedMultisetBridge",
+139:       "com.google.common.collect.ObjectArrays",
+140:       "com.google.common.collect.Sets$UnmodifiableNavigableSet",
+141:       "com.google.common.collect.Sets$FilteredNavigableSet",
+142:       "com.google.common.collect.UnmodifiableSortedMultiset",
+143:       "com.google.common.primitives.Ints",
+144:       "com.google.common.collect.Maps",
+145:       "com.google.common.collect.CollectSpliterators",
+146:       "com.google.common.collect.Sets$FilteredSortedSet",
+147:       "com.google.common.collect.SortedIterable",
+148:       "com.google.common.collect.Sets$ImprovedAbstractSet",
+149:       "com.google.common.base.Preconditions",
+150:       "com.google.common.collect.ElementTypesAreNonnullByDefault",
+151:       "com.google.common.collect.ImmutableSortedSetFauxverideShim"
+152:     );
+153:   } 
+154: 
+155:   private static void resetClasses() {
+156:     org.evosuite.runtime.classhandling.ClassResetter.getInstance().setClassLoader(CompactHashMap_23_tmp__ESTest_scaffolding.class.getClassLoader()); 
+157: 
+158:     org.evosuite.runtime.classhandling.ClassStateSupport.resetClasses(
+159:       "com.google.common.collect.CompactHashMap",
+160:       "com.google.common.collect.Sets$ImprovedAbstractSet",
+161:       "com.google.common.collect.Maps$KeySet",
+162:       "com.google.common.collect.CompactHashMap$KeySetView",
+163:       "com.google.common.collect.CompactHashMap$Itr",
+164:       "com.google.common.collect.CompactHashMap$1",
+165:       "com.google.common.collect.Maps$EntrySet",
+166:       "com.google.common.collect.CompactHashMap$EntrySetView",
+167:       "com.google.common.collect.CompactHashMap$2",
+168:       "com.google.common.collect.Maps$Values",
+169:       "com.google.common.collect.CompactHashMap$ValuesView",
+170:       "com.google.common.collect.CompactHashMap$3",
+171:       "com.google.common.base.Preconditions",
+172:       "com.google.common.primitives.IntsMethodsForWeb",
+173:       "com.google.common.primitives.Ints",
+174:       "com.google.common.collect.DiscreteDomain",
+175:       "com.google.common.collect.DiscreteDomain$IntegerDomain",
+176:       "com.google.common.collect.ImmutableCollection",
+177:       "com.google.common.collect.ImmutableSet",
+178:       "com.google.common.collect.ImmutableSet$CachingAsList",
+179:       "com.google.common.collect.ImmutableSortedSetFauxverideShim",
+180:       "com.google.common.collect.ImmutableSortedSet",
+181:       "com.google.common.collect.ContiguousSet",
+182:       "com.google.common.collect.EmptyContiguousSet",
+183:       "com.google.common.collect.Ordering",
+184:       "com.google.common.collect.NaturalOrdering",
+185:       "com.google.common.collect.AbstractMapEntry",
+186:       "com.google.common.collect.ImmutableEntry",
+187:       "com.google.common.collect.ImmutableMapEntry",
+188:       "com.google.common.collect.CollectPreconditions",
+189:       "com.google.common.collect.ImmutableMap",
+190:       "com.google.common.collect.RegularImmutableMap",
+191:       "com.google.common.collect.ImmutableBiMapFauxverideShim",
+192:       "com.google.common.collect.ImmutableBiMap",
+193:       "com.google.common.collect.RegularImmutableBiMap",
+194:       "com.google.common.collect.Hashing",
+195:       "com.google.common.collect.RegularImmutableSet",
+196:       "com.google.common.collect.Iterators",
+197:       "com.google.common.collect.UnmodifiableIterator",
+198:       "com.google.common.collect.UnmodifiableListIterator",
+199:       "com.google.common.collect.AbstractIndexedListIterator",
+200:       "com.google.common.collect.Iterators$ArrayItr",
+201:       "com.google.common.collect.CompactHashMap$MapEntry",
+202:       "com.google.common.collect.CompactHashing",
+203:       "com.google.common.base.Converter",
+204:       "com.google.common.base.Converter$IdentityConverter",
+205:       "com.google.common.base.Converter$FunctionBasedConverter",
+206:       "com.google.common.base.Converter$ReverseConverter",
+207:       "com.google.common.base.Converter$ConverterComposition",
+208:       "com.google.common.collect.ImmutableList",
+209:       "com.google.common.collect.RegularImmutableList",
+210:       "com.google.common.collect.RegularImmutableSortedSet",
+211:       "com.google.common.collect.CollectSpliterators",
+212:       "com.google.common.collect.CollectSpliterators$1WithCharacteristics",
+213:       "com.google.common.base.Strings",
+214:       "com.google.common.hash.BloomFilter",
+215:       "com.google.common.hash.BloomFilterStrategies",
+216:       "com.google.common.collect.ImmutableSet$SetBuilderImpl",
+217:       "com.google.common.collect.ImmutableSet$RegularSetBuilderImpl",
+218:       "com.google.common.math.IntMath",
+219:       "com.google.common.math.MathPreconditions",
+220:       "com.google.common.math.IntMath$1",
+221:       "com.google.common.collect.ImmutableAsList",
+222:       "com.google.common.collect.RegularImmutableAsList",
+223:       "com.google.common.base.ExtraObjectsMethodsForWeb",
+224:       "com.google.common.base.Objects",
+225:       "com.google.common.collect.ImmutableMultisetGwtSerializationDependencies",
+226:       "com.google.common.collect.ImmutableMultiset",
+227:       "com.google.common.collect.ImmutableSortedMultisetFauxverideShim",
+228:       "com.google.common.collect.ImmutableSortedMultiset",
+229:       "com.google.common.collect.RegularImmutableSortedMultiset",
+230:       "com.google.common.collect.ObjectArrays",
+231:       "com.google.common.collect.RangeGwtSerializationDependencies",
+232:       "com.google.common.collect.Cut",
+233:       "com.google.common.collect.Cut$BelowAll",
+234:       "com.google.common.collect.Cut$AboveAll",
+235:       "com.google.common.collect.Range",
+236:       "com.google.common.collect.Range$1",
+237:       "com.google.common.collect.Cut$BelowValue",
+238:       "com.google.common.collect.RegularContiguousSet",
+239:       "com.google.common.collect.Cut$AboveValue",
+240:       "com.google.common.primitives.Booleans"
+241:     );
+242:   }
+243: }
+
+[MASTER] 03:42:32.760 [logback-2] ERROR JUnitAnalyzer - Failed to compile test case:
+CompactHashMap<Comparable<Integer>, Object> compactHashMap0 = new CompactHashMap<Comparable<Integer>, Object>(121);
+CompactHashMap.KeySetView compactHashMap_KeySetView0 = compactHashMap0.new KeySetView();
+Integer[] integerArray0 = new Integer[1];
+Integer[] integerArray1 = compactHashMap_KeySetView0.toArray(integerArray0);
+assertEquals(1, integerArray1.length);
+
+
+[MASTER] 03:42:32.791 [logback-2] ERROR JUnitAnalyzer - Compilation failed on compilation units: [RegularFileObject[/tmp/EvoSuite_24_1729694552761/com/google/common/collect/CompactHashMap_24_tmp__ESTest.java], RegularFileObject[/tmp/EvoSuite_24_1729694552761/com/google/common/collect/CompactHashMap_24_tmp__ESTest_scaffolding.java]]
+[MASTER] 03:42:32.792 [logback-2] ERROR JUnitAnalyzer - Classpath: /home/wtwhite/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/guava/guava/31.0.1-jre/guava-31.0.1-jre.jar:t/dependency/checker-qual-3.12.0.jar:t/dependency/error_prone_annotations-2.7.1.jar:t/dependency/failureaccess-1.0.1.jar:t/dependency/j2objc-annotations-1.3.jar:t/dependency/jsr305-3.0.2.jar:t/dependency/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/home/wtwhite/code/regression-test-generation/evosuite/evosuite-1.2.0.jar:/home/wtwhite/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/guava/guava/31.0.1-jre/guava-31.0.1-jre.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/checker-qual-3.12.0.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/error_prone_annotations-2.7.1.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/failureaccess-1.0.1.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/j2objc-annotations-1.3.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/jsr305-3.0.2.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar
+[MASTER] 03:42:32.792 [logback-2] ERROR JUnitAnalyzer - evosuiteCP: /home/wtwhite/code/regression-test-generation/evosuite/evosuite-1.2.0.jar:/home/wtwhite/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/guava/guava/31.0.1-jre/guava-31.0.1-jre.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/checker-qual-3.12.0.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/error_prone_annotations-2.7.1.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/failureaccess-1.0.1.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/j2objc-annotations-1.3.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/jsr305-3.0.2.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar
+[MASTER] 03:42:32.792 [logback-2] ERROR JUnitAnalyzer - Diagnostic: incompatible types: java.lang.Object[] cannot be converted to java.lang.Integer[]: 24
+[MASTER] 03:42:32.793 [logback-2] ERROR JUnitAnalyzer - Diagnostic: /tmp/EvoSuite_24_1729694552761/com/google/common/collect/CompactHashMap_24_tmp__ESTest.java uses unchecked or unsafe operations.: -1
+[MASTER] 03:42:32.793 [logback-2] ERROR JUnitAnalyzer - Diagnostic: Recompile with -Xlint:unchecked for details.: -1
+[MASTER] 03:42:32.793 [logback-2] ERROR JUnitAnalyzer - RegularFileObject[/tmp/EvoSuite_24_1729694552761/com/google/common/collect/CompactHashMap_24_tmp__ESTest.java]
+1: /*
+2:  * This file was automatically generated by EvoSuite
+3:  * Wed Oct 23 14:42:32 GMT 2024
+4:  */
+5: 
+6: package com.google.common.collect;
+7: 
+8: import org.junit.Test;
+9: import static org.junit.Assert.*;
+10: import com.google.common.collect.CompactHashMap;
+11: import java.util.HashMap;
+12: import org.evosuite.runtime.EvoRunner;
+13: import org.evosuite.runtime.EvoRunnerParameters;
+14: import org.junit.runner.RunWith;
+15: 
+16: @RunWith(EvoRunner.class) @EvoRunnerParameters(mockJVMNonDeterminism = true, useVFS = true, useVNET = true, resetStaticState = true) 
+17: public class CompactHashMap_24_tmp__ESTest extends CompactHashMap_24_tmp__ESTest_scaffolding {
+18: 
+19:   @Test(timeout = 4000)
+20:   public void test0()  throws Throwable  {
+21:       CompactHashMap<Object, HashMap<Object, Integer>> compactHashMap0 = CompactHashMap.createWithExpectedSize(1);
+22:       CompactHashMap.KeySetView compactHashMap_KeySetView0 = compactHashMap0.new KeySetView();
+23:       Integer[] integerArray0 = new Integer[0];
+24:       Integer[] integerArray1 = compactHashMap_KeySetView0.toArray(integerArray0);
+25:       assertEquals(0, integerArray1.length);
+26:   }
+27: }
+RegularFileObject[/tmp/EvoSuite_24_1729694552761/com/google/common/collect/CompactHashMap_24_tmp__ESTest.java]
+1: /**
+2:  * Scaffolding file used to store all the setups needed to run 
+3:  * tests automatically generated by EvoSuite
+4:  * Wed Oct 23 14:42:32 GMT 2024
+5:  */
+6: 
+7: package com.google.common.collect;
+8: 
+9: import org.evosuite.runtime.annotation.EvoSuiteClassExclude;
+10: import org.junit.BeforeClass;
+11: import org.junit.Before;
+12: import org.junit.After;
+13: import org.junit.AfterClass;
+14: import org.evosuite.runtime.sandbox.Sandbox;
+15: import org.evosuite.runtime.sandbox.Sandbox.SandboxMode;
+16: 
+17: @EvoSuiteClassExclude
+18: public class CompactHashMap_24_tmp__ESTest_scaffolding {
+19: 
+20:   @org.junit.Rule
+21:   public org.evosuite.runtime.vnet.NonFunctionalRequirementRule nfr = new org.evosuite.runtime.vnet.NonFunctionalRequirementRule();
+22: 
+23:   private static final java.util.Properties defaultProperties = (java.util.Properties) java.lang.System.getProperties().clone(); 
+24: 
+25:   private org.evosuite.runtime.thread.ThreadStopper threadStopper =  new org.evosuite.runtime.thread.ThreadStopper (org.evosuite.runtime.thread.KillSwitchHandler.getInstance(), 3000);
+26: 
+27: 
+28:   @BeforeClass
+29:   public static void initEvoSuiteFramework() { 
+30:     org.evosuite.runtime.RuntimeSettings.className = "com.google.common.collect.CompactHashMap"; 
+31:     org.evosuite.runtime.GuiSupport.initialize(); 
+32:     org.evosuite.runtime.RuntimeSettings.maxNumberOfThreads = 100; 
+33:     org.evosuite.runtime.RuntimeSettings.maxNumberOfIterationsPerLoop = 10000; 
+34:     org.evosuite.runtime.RuntimeSettings.mockSystemIn = true; 
+35:     org.evosuite.runtime.RuntimeSettings.sandboxMode = org.evosuite.runtime.sandbox.Sandbox.SandboxMode.RECOMMENDED; 
+36:     org.evosuite.runtime.sandbox.Sandbox.initializeSecurityManagerForSUT(); 
+37:     org.evosuite.runtime.classhandling.JDKClassResetter.init();
+38:     setSystemProperties();
+39:     initializeClasses();
+40:     org.evosuite.runtime.Runtime.getInstance().resetRuntime(); 
+41:   } 
+42: 
+43:   @AfterClass
+44:   public static void clearEvoSuiteFramework(){ 
+45:     Sandbox.resetDefaultSecurityManager(); 
+46:     java.lang.System.setProperties((java.util.Properties) defaultProperties.clone()); 
+47:   } 
+48: 
+49:   @Before
+50:   public void initTestCase(){ 
+51:     threadStopper.storeCurrentThreads();
+52:     threadStopper.startRecordingTime();
+53:     org.evosuite.runtime.jvm.ShutdownHookHandler.getInstance().initHandler(); 
+54:     org.evosuite.runtime.sandbox.Sandbox.goingToExecuteSUTCode(); 
+55:     setSystemProperties(); 
+56:     org.evosuite.runtime.GuiSupport.setHeadless(); 
+57:     org.evosuite.runtime.Runtime.getInstance().resetRuntime(); 
+58:     org.evosuite.runtime.agent.InstrumentingAgent.activate(); 
+59:   } 
+60: 
+61:   @After
+62:   public void doneWithTestCase(){ 
+63:     threadStopper.killAndJoinClientThreads();
+64:     org.evosuite.runtime.jvm.ShutdownHookHandler.getInstance().safeExecuteAddedHooks(); 
+65:     org.evosuite.runtime.classhandling.JDKClassResetter.reset(); 
+66:     resetClasses(); 
+67:     org.evosuite.runtime.sandbox.Sandbox.doneWithExecutingSUTCode(); 
+68:     org.evosuite.runtime.agent.InstrumentingAgent.deactivate(); 
+69:     org.evosuite.runtime.GuiSupport.restoreHeadlessMode(); 
+70:   } 
+71: 
+72:   public static void setSystemProperties() {
+73:  
+74:     java.lang.System.setProperties((java.util.Properties) defaultProperties.clone()); 
+75:     java.lang.System.setProperty("user.dir", "/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre"); 
+76:     java.lang.System.setProperty("java.io.tmpdir", "/tmp"); 
+77:   }
+78: 
+79:   private static void initializeClasses() {
+80:     org.evosuite.runtime.classhandling.ClassStateSupport.initializeClasses(CompactHashMap_24_tmp__ESTest_scaffolding.class.getClassLoader() ,
+81:       "com.google.common.collect.Hashing",
+82:       "com.google.common.collect.Sets$CartesianSet",
+83:       "com.google.common.collect.Sets$SubSet",
+84:       "com.google.common.collect.ImmutableCollection",
+85:       "com.google.common.collect.CompactHashMap$ValuesView",
+86:       "com.google.common.collect.ForwardingMultiset",
+87:       "com.google.common.collect.ImmutableSet$Indexed",
+88:       "com.google.common.collect.Sets$FilteredSet",
+89:       "com.google.common.collect.Maps$NavigableKeySet",
+90:       "com.google.common.collect.CollectSpliterators$1WithCharacteristics",
+91:       "com.google.common.collect.SortedMultiset",
+92:       "com.google.common.collect.ForwardingNavigableSet",
+93:       "com.google.common.collect.ImmutableMultisetGwtSerializationDependencies",
+94:       "com.google.common.collect.CompactHashMap$Itr",
+95:       "com.google.common.base.Objects",
+96:       "com.google.common.collect.Maps$KeySet",
+97:       "com.google.common.base.Converter",
+98:       "com.google.common.collect.CompactHashMap$1",
+99:       "com.google.common.collect.ImmutableSet",
+100:       "com.google.common.base.Function",
+101:       "com.google.common.collect.Maps$Values",
+102:       "com.google.common.collect.Maps$SortedKeySet",
+103:       "com.google.common.collect.CompactHashMap$MapEntry",
+104:       "com.google.common.collect.CollectPreconditions",
+105:       "com.google.common.collect.CompactHashMap",
+106:       "com.google.common.collect.Sets$DescendingSet",
+107:       "com.google.common.primitives.Ints$IntConverter",
+108:       "com.google.common.collect.Sets",
+109:       "com.google.common.collect.CompactHashMap$2",
+110:       "com.google.common.collect.RegularImmutableSet",
+111:       "com.google.common.collect.CompactHashMap$3",
+112:       "com.google.common.collect.AbstractMapEntry",
+113:       "com.google.common.collect.ForwardingMap",
+114:       "com.google.common.collect.ForwardingSet",
+115:       "com.google.common.collect.ForwardingSortedSet",
+116:       "com.google.common.base.ExtraObjectsMethodsForWeb",
+117:       "com.google.common.collect.Sets$PowerSet",
+118:       "com.google.common.collect.BoundType",
+119:       "com.google.common.collect.Maps$DescendingMap",
+120:       "com.google.common.collect.CompactHashMap$EntrySetView",
+121:       "com.google.common.collect.Maps$EntrySet",
+122:       "com.google.common.collect.CompactHashMap$KeySetView",
+123:       "com.google.common.collect.ImmutableMultiset$ElementSet",
+124:       "com.google.common.collect.ContiguousSet",
+125:       "com.google.common.collect.ForwardingObject",
+126:       "com.google.common.collect.Multiset",
+127:       "com.google.common.collect.Sets$SetView",
+128:       "com.google.common.collect.ImmutableSet$CachingAsList",
+129:       "com.google.common.collect.Collections2$FilteredCollection",
+130:       "com.google.common.collect.ImmutableMultiset$SerializedForm",
+131:       "com.google.common.collect.Multisets$UnmodifiableMultiset",
+132:       "com.google.common.base.Strings",
+133:       "com.google.common.collect.ImmutableMultiset",
+134:       "com.google.common.collect.CompactHashing",
+135:       "com.google.common.collect.ForwardingCollection",
+136:       "com.google.common.collect.ImmutableSortedSet",
+137:       "com.google.common.primitives.IntsMethodsForWeb",
+138:       "com.google.common.collect.SortedMultisetBridge",
+139:       "com.google.common.collect.ObjectArrays",
+140:       "com.google.common.collect.Sets$UnmodifiableNavigableSet",
+141:       "com.google.common.collect.Sets$FilteredNavigableSet",
+142:       "com.google.common.collect.UnmodifiableSortedMultiset",
+143:       "com.google.common.primitives.Ints",
+144:       "com.google.common.collect.Maps",
+145:       "com.google.common.collect.CollectSpliterators",
+146:       "com.google.common.collect.Sets$FilteredSortedSet",
+147:       "com.google.common.collect.SortedIterable",
+148:       "com.google.common.collect.Sets$ImprovedAbstractSet",
+149:       "com.google.common.base.Preconditions",
+150:       "com.google.common.collect.ElementTypesAreNonnullByDefault",
+151:       "com.google.common.collect.ImmutableSortedSetFauxverideShim"
+152:     );
+153:   } 
+154: 
+155:   private static void resetClasses() {
+156:     org.evosuite.runtime.classhandling.ClassResetter.getInstance().setClassLoader(CompactHashMap_24_tmp__ESTest_scaffolding.class.getClassLoader()); 
+157: 
+158:     org.evosuite.runtime.classhandling.ClassStateSupport.resetClasses(
+159:       "com.google.common.collect.CompactHashMap",
+160:       "com.google.common.collect.Sets$ImprovedAbstractSet",
+161:       "com.google.common.collect.Maps$KeySet",
+162:       "com.google.common.collect.CompactHashMap$KeySetView",
+163:       "com.google.common.collect.CompactHashMap$Itr",
+164:       "com.google.common.collect.CompactHashMap$1",
+165:       "com.google.common.collect.Maps$EntrySet",
+166:       "com.google.common.collect.CompactHashMap$EntrySetView",
+167:       "com.google.common.collect.CompactHashMap$2",
+168:       "com.google.common.collect.Maps$Values",
+169:       "com.google.common.collect.CompactHashMap$ValuesView",
+170:       "com.google.common.collect.CompactHashMap$3",
+171:       "com.google.common.base.Preconditions",
+172:       "com.google.common.primitives.IntsMethodsForWeb",
+173:       "com.google.common.primitives.Ints",
+174:       "com.google.common.collect.DiscreteDomain",
+175:       "com.google.common.collect.DiscreteDomain$IntegerDomain",
+176:       "com.google.common.collect.ImmutableCollection",
+177:       "com.google.common.collect.ImmutableSet",
+178:       "com.google.common.collect.ImmutableSet$CachingAsList",
+179:       "com.google.common.collect.ImmutableSortedSetFauxverideShim",
+180:       "com.google.common.collect.ImmutableSortedSet",
+181:       "com.google.common.collect.ContiguousSet",
+182:       "com.google.common.collect.EmptyContiguousSet",
+183:       "com.google.common.collect.Ordering",
+184:       "com.google.common.collect.NaturalOrdering",
+185:       "com.google.common.collect.AbstractMapEntry",
+186:       "com.google.common.collect.ImmutableEntry",
+187:       "com.google.common.collect.ImmutableMapEntry",
+188:       "com.google.common.collect.CollectPreconditions",
+189:       "com.google.common.collect.ImmutableMap",
+190:       "com.google.common.collect.RegularImmutableMap",
+191:       "com.google.common.collect.ImmutableBiMapFauxverideShim",
+192:       "com.google.common.collect.ImmutableBiMap",
+193:       "com.google.common.collect.RegularImmutableBiMap",
+194:       "com.google.common.collect.Hashing",
+195:       "com.google.common.collect.RegularImmutableSet",
+196:       "com.google.common.collect.Iterators",
+197:       "com.google.common.collect.UnmodifiableIterator",
+198:       "com.google.common.collect.UnmodifiableListIterator",
+199:       "com.google.common.collect.AbstractIndexedListIterator",
+200:       "com.google.common.collect.Iterators$ArrayItr",
+201:       "com.google.common.collect.CompactHashMap$MapEntry",
+202:       "com.google.common.collect.CompactHashing",
+203:       "com.google.common.base.Converter",
+204:       "com.google.common.base.Converter$IdentityConverter",
+205:       "com.google.common.base.Converter$FunctionBasedConverter",
+206:       "com.google.common.base.Converter$ReverseConverter",
+207:       "com.google.common.base.Converter$ConverterComposition",
+208:       "com.google.common.collect.ImmutableList",
+209:       "com.google.common.collect.RegularImmutableList",
+210:       "com.google.common.collect.RegularImmutableSortedSet",
+211:       "com.google.common.collect.CollectSpliterators",
+212:       "com.google.common.collect.CollectSpliterators$1WithCharacteristics",
+213:       "com.google.common.base.Strings",
+214:       "com.google.common.hash.BloomFilter",
+215:       "com.google.common.hash.BloomFilterStrategies",
+216:       "com.google.common.collect.ImmutableSet$SetBuilderImpl",
+217:       "com.google.common.collect.ImmutableSet$RegularSetBuilderImpl",
+218:       "com.google.common.math.IntMath",
+219:       "com.google.common.math.MathPreconditions",
+220:       "com.google.common.math.IntMath$1",
+221:       "com.google.common.collect.ImmutableAsList",
+222:       "com.google.common.collect.RegularImmutableAsList",
+223:       "com.google.common.base.ExtraObjectsMethodsForWeb",
+224:       "com.google.common.base.Objects",
+225:       "com.google.common.collect.ImmutableMultisetGwtSerializationDependencies",
+226:       "com.google.common.collect.ImmutableMultiset",
+227:       "com.google.common.collect.ImmutableSortedMultisetFauxverideShim",
+228:       "com.google.common.collect.ImmutableSortedMultiset",
+229:       "com.google.common.collect.RegularImmutableSortedMultiset",
+230:       "com.google.common.collect.ObjectArrays",
+231:       "com.google.common.collect.RangeGwtSerializationDependencies",
+232:       "com.google.common.collect.Cut",
+233:       "com.google.common.collect.Cut$BelowAll",
+234:       "com.google.common.collect.Cut$AboveAll",
+235:       "com.google.common.collect.Range",
+236:       "com.google.common.collect.Range$1",
+237:       "com.google.common.collect.Cut$BelowValue",
+238:       "com.google.common.collect.RegularContiguousSet",
+239:       "com.google.common.collect.Cut$AboveValue",
+240:       "com.google.common.primitives.Booleans"
+241:     );
+242:   }
+243: }
+
+[MASTER] 03:42:32.794 [logback-2] ERROR JUnitAnalyzer - Failed to compile test case:
+CompactHashMap<Object, HashMap<Object, Integer>> compactHashMap0 = CompactHashMap.createWithExpectedSize(1);
+CompactHashMap.KeySetView compactHashMap_KeySetView0 = compactHashMap0.new KeySetView();
+Integer[] integerArray0 = new Integer[0];
+Integer[] integerArray1 = compactHashMap_KeySetView0.toArray(integerArray0);
+assertEquals(0, integerArray1.length);
+
+
+* Writing tests to file
+* Writing JUnit test case 'CompactHashMap_ESTest' to evosuite-tests
+* Done!
+
+* Computation finished

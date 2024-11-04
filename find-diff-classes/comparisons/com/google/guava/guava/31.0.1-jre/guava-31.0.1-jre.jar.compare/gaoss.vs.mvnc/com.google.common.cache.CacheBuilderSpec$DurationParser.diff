@@ -1,0 +1,105 @@
+13,14c13,14
+< java.lang.Object[] v12, v20;
+< long v17;
+---
+> java.lang.Object[] v15, v23;
+> long v20;
+16,17c16,17
+< int v14, v15, v7, v8;
+< java.lang.String v13, v16, v2, v21, v3, v6;
+---
+> int v10, v11, v17, v18, v7, v8;
+> java.lang.String v16, v19, v2, v24, v3, v6, v9;
+19,22c19,23
+< char v9;
+< java.lang.NumberFormatException v18;
+< java.lang.IllegalArgumentException v11, v19, v5;
+< java.util.concurrent.TimeUnit v10;
+---
+> char v12;
+> java.lang.NumberFormatException v21;
+> java.lang.IllegalArgumentException v14, v22, v5;
+> java.util.concurrent.TimeUnit v13;
+> java.lang.StringBuilder v25;
+31,32c32,37
+< v6 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v2) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("value of key \u0001 omitted");
+< specialinvoke v5.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(v6);
+---
+> v6 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v2);
+> v7 = virtualinvoke v6.<java.lang.String: int length()>();
+> v8 = 21 + v7;
+> specialinvoke v25.<java.lang.StringBuilder: void <init>(int)>(v8);
+> v9 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v2) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("value of key \u0001 omitted");
+> specialinvoke v5.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(v9);
+35,38c40,43
+< v7 = virtualinvoke v3.<java.lang.String: int length()>();
+< v8 = v7 - 1;
+< v9 = virtualinvoke v3.<java.lang.String: char charAt(int)>(v8);
+< lookupswitch(v9)
+---
+> v10 = virtualinvoke v3.<java.lang.String: int length()>();
+> v11 = v10 - 1;
+> v12 = virtualinvoke v3.<java.lang.String: char charAt(int)>(v11);
+> lookupswitch(v12)
+47c52
+< v10 = <java.util.concurrent.TimeUnit: java.util.concurrent.TimeUnit DAYS>;
+---
+> v13 = <java.util.concurrent.TimeUnit: java.util.concurrent.TimeUnit DAYS>;
+50c55
+< v10 = <java.util.concurrent.TimeUnit: java.util.concurrent.TimeUnit HOURS>;
+---
+> v13 = <java.util.concurrent.TimeUnit: java.util.concurrent.TimeUnit HOURS>;
+53c58
+< v10 = <java.util.concurrent.TimeUnit: java.util.concurrent.TimeUnit MINUTES>;
+---
+> v13 = <java.util.concurrent.TimeUnit: java.util.concurrent.TimeUnit MINUTES>;
+56c61
+< v10 = <java.util.concurrent.TimeUnit: java.util.concurrent.TimeUnit SECONDS>;
+---
+> v13 = <java.util.concurrent.TimeUnit: java.util.concurrent.TimeUnit SECONDS>;
+59,65c64,70
+< v11 = new java.lang.IllegalArgumentException;
+< v12 = newarray (java.lang.Object)[2];
+< v12[0] = v2;
+< v12[1] = v3;
+< v13 = staticinvoke <com.google.common.cache.CacheBuilderSpec: java.lang.String format(java.lang.String,java.lang.Object[])>("key %s invalid unit: was %s, must end with one of [dhms]", v12);
+< specialinvoke v11.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(v13);
+< throw v11;
+---
+> v14 = new java.lang.IllegalArgumentException;
+> v15 = newarray (java.lang.Object)[2];
+> v15[0] = v2;
+> v15[1] = v3;
+> v16 = staticinvoke <com.google.common.cache.CacheBuilderSpec: java.lang.String format(java.lang.String,java.lang.Object[])>("key %s invalid unit: was %s, must end with one of [dhms]", v15);
+> specialinvoke v14.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(v16);
+> throw v14;
+67,71c72,76
+< v14 = virtualinvoke v3.<java.lang.String: int length()>();
+< v15 = v14 - 1;
+< v16 = virtualinvoke v3.<java.lang.String: java.lang.String substring(int,int)>(0, v15);
+< v17 = staticinvoke <java.lang.Long: long parseLong(java.lang.String)>(v16);
+< virtualinvoke v0.<com.google.common.cache.CacheBuilderSpec$DurationParser: void parseDuration(com.google.common.cache.CacheBuilderSpec,long,java.util.concurrent.TimeUnit)>(v1, v17, v10);
+---
+> v17 = virtualinvoke v3.<java.lang.String: int length()>();
+> v18 = v17 - 1;
+> v19 = virtualinvoke v3.<java.lang.String: java.lang.String substring(int,int)>(0, v18);
+> v20 = staticinvoke <java.lang.Long: long parseLong(java.lang.String)>(v19);
+> virtualinvoke v0.<com.google.common.cache.CacheBuilderSpec$DurationParser: void parseDuration(com.google.common.cache.CacheBuilderSpec,long,java.util.concurrent.TimeUnit)>(v1, v20, v13);
+75,82c80,87
+< v18 := @caughtexception;
+< v19 = new java.lang.IllegalArgumentException;
+< v20 = newarray (java.lang.Object)[2];
+< v20[0] = v2;
+< v20[1] = v3;
+< v21 = staticinvoke <com.google.common.cache.CacheBuilderSpec: java.lang.String format(java.lang.String,java.lang.Object[])>("key %s value set to %s, must be integer", v20);
+< specialinvoke v19.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(v21);
+< throw v19;
+---
+> v21 := @caughtexception;
+> v22 = new java.lang.IllegalArgumentException;
+> v23 = newarray (java.lang.Object)[2];
+> v23[0] = v2;
+> v23[1] = v3;
+> v24 = staticinvoke <com.google.common.cache.CacheBuilderSpec: java.lang.String format(java.lang.String,java.lang.Object[])>("key %s value set to %s, must be integer", v23);
+> specialinvoke v22.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(v24);
+> throw v22;

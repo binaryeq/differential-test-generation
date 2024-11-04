@@ -1,0 +1,26 @@
+1c1
+< abstract class org.codehaus.groovy.ast.decompiled.TypeSignatureParser extends org.objectweb.asm.signature.SignatureVisitor
+---
+> abstract class org.codehaus.groovy.ast.decompiled.TypeSignatureParser extends groovyjarjarasm.asm.signature.SignatureVisitor
+13c13
+< specialinvoke v0.<org.objectweb.asm.signature.SignatureVisitor: void <init>(int)>(589824);
+---
+> specialinvoke v0.<groovyjarjarasm.asm.signature.SignatureVisitor: void <init>(int)>(589824);
+35a36
+> groovyjarjarasm.asm.Type v4;
+39d39
+< org.objectweb.asm.Type v4;
+44,45c44,45
+< v4 = staticinvoke <org.objectweb.asm.Type: org.objectweb.asm.Type getType(java.lang.String)>(v3);
+< v5 = virtualinvoke v2.<org.codehaus.groovy.ast.decompiled.AsmReferenceResolver: org.codehaus.groovy.ast.ClassNode resolveType(org.objectweb.asm.Type)>(v4);
+---
+> v4 = staticinvoke <groovyjarjarasm.asm.Type: groovyjarjarasm.asm.Type getType(java.lang.String)>(v3);
+> v5 = virtualinvoke v2.<org.codehaus.groovy.ast.decompiled.AsmReferenceResolver: org.codehaus.groovy.ast.ClassNode resolveType(groovyjarjarasm.asm.Type)>(v4);
+49c49
+< public org.objectweb.asm.signature.SignatureVisitor visitArrayType()
+---
+> public groovyjarjarasm.asm.signature.SignatureVisitor visitArrayType()
+81c81
+< public org.objectweb.asm.signature.SignatureVisitor visitTypeArgument(char)
+---
+> public groovyjarjarasm.asm.signature.SignatureVisitor visitTypeArgument(char)

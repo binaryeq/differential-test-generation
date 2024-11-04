@@ -1,0 +1,29 @@
+386,387c386,387
+< int v12, v13, v15, v16;
+< java.lang.String v21;
+---
+> int v12, v13, v15, v16, v23, v24;
+> java.lang.String v21, v22, v25;
+395c395
+< javax.lang.model.type.TypeMirror v22, v8;
+---
+> javax.lang.model.type.TypeMirror v26, v8;
+396a397
+> java.lang.StringBuilder v27;
+433,434c434,440
+< v21 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (javax.lang.model.element.VariableElement)>(v2) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Could not find variable: \u0001");
+< specialinvoke v20.<java.lang.IllegalStateException: void <init>(java.lang.String)>(v21);
+---
+> v21 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v2);
+> v22 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v21);
+> v23 = virtualinvoke v22.<java.lang.String: int length()>();
+> v24 = 25 + v23;
+> specialinvoke v27.<java.lang.StringBuilder: void <init>(int)>(v24);
+> v25 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v21) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Could not find variable: \u0001");
+> specialinvoke v20.<java.lang.IllegalStateException: void <init>(java.lang.String)>(v25);
+437,438c443,444
+< v22 = interfaceinvoke v0.<javax.lang.model.util.Types: javax.lang.model.type.TypeMirror asMemberOf(javax.lang.model.type.DeclaredType,javax.lang.model.element.Element)>(v1, v2);
+< return v22;
+---
+> v26 = interfaceinvoke v0.<javax.lang.model.util.Types: javax.lang.model.type.TypeMirror asMemberOf(javax.lang.model.type.DeclaredType,javax.lang.model.element.Element)>(v1, v2);
+> return v26;

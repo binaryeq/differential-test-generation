@@ -1,0 +1,544 @@
+* EvoSuite 1.2.0
+* Going to generate test cases for class: com.google.common.collect.ImmutableMultiset
+* Starting Client-0
+* Connecting to master process on port 9160
+* Analyzing classpath: 
+  - /home/wtwhite/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/guava/guava/31.0.1-jre/guava-31.0.1-jre.jar
+  - t/dependency/checker-qual-3.12.0.jar
+  - t/dependency/error_prone_annotations-2.7.1.jar
+  - t/dependency/failureaccess-1.0.1.jar
+  - t/dependency/j2objc-annotations-1.3.jar
+  - t/dependency/jsr305-3.0.2.jar
+  - t/dependency/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar
+* Finished analyzing classpath
+* Generating tests for class com.google.common.collect.ImmutableMultiset
+* Test criteria:
+  - Line Coverage
+  - Branch Coverage
+  - Exception
+  - Mutation testing (weak)
+  - Method-Output Coverage
+  - Top-Level Method Coverage
+  - No-Exception Top-Level Method Coverage
+  - Context Branch Coverage
+[Progress:>                             0%] [Cov:>                                  0%]* Total number of test goals for DYNAMOSA: 725
+* Using seed 1729696326467
+* Starting evolution
+* Initial Number of Goals in DynaMOSA = 427 / 725
+[MASTER] 04:12:25.164 [logback-1] WARN  TestCluster - Failed to check cache for com.google.common.collect.FilteredEntryMultimap<K, V>.Keys : Type points to itself
+[MASTER] 04:12:25.164 [logback-1] WARN  TestCluster - Failed to check cache for com.google.common.collect.ImmutableSortedMultiset<E> : Type points to itself
+[MASTER] 04:12:25.222 [logback-1] WARN  TestCluster - Failed to check cache for java.lang.Comparable<T> : Type points to itself
+[MASTER] 04:12:25.224 [logback-1] WARN  TestCluster - Failed to check cache for com.google.common.collect.Multimaps.Keys<K, V> : Type points to itself
+[MASTER] 04:12:25.224 [logback-1] WARN  TestCluster - Failed to check cache for com.google.common.collect.ImmutableMapValues<K, V> : Type points to itself
+[MASTER] 04:12:33.321 [logback-1] WARN  TestCluster - Failed to check cache for java.util.Collection<com.google.common.collect.Multimaps.Keys<java.lang.Object, java.lang.Object>> : Type points to itself
+[MASTER] 04:12:41.430 [logback-1] WARN  TestCluster - Failed to check cache for java.util.Map<K, V>.Entry<K, V> : Type points to itself
+[MASTER] 04:12:46.441 [logback-1] WARN  TestCluster - Failed to check cache for java.lang.Iterable<com.google.common.collect.Multimaps.Keys<java.lang.Object, java.lang.Object>> : Type points to itself
+[MASTER] 04:12:53.586 [logback-1] WARN  CastClassManager - Nothing is assignable after adding java.lang.Comparable<T> for type Variable E with bounds [java.lang.Comparable<? super E>] of declaration ImmutableSortedSet#copyOf. The owner var map is {E=java.lang.Comparable<java.lang.Object>, E=java.lang.Comparable<java.lang.Object>, E=java.lang.Comparable<java.lang.Object>, E=java.lang.Comparable<java.lang.Object>, E=java.lang.Comparable<java.lang.Object>, E=java.lang.Comparable<java.lang.Object>, E=java.lang.Comparable<java.lang.Object>, E=com.google.common.collect.ImmutableSortedMultiset<java.util.Map<K, V>.Entry<K, V>>, E=com.google.common.collect.ImmutableSortedMultiset<java.lang.Object>, E=java.lang.Comparable<java.lang.Object>, E=class java.lang.Object, E=class java.lang.Object, E=class java.lang.Object, E=com.google.common.collect.ImmutableSortedMultiset<java.lang.Object>, E=com.google.common.collect.ImmutableSortedMultiset<java.lang.Object>, E=com.google.common.collect.ImmutableSortedMultiset<com.google.common.collect.ImmutableSortedMultiset<E>>, E=java.util.Map<java.lang.Comparable<T>, java.lang.Comparable<T>>.Entry<java.lang.Object, java.lang.Comparable<T>>, E=com.google.common.collect.ImmutableSortedMultiset<java.lang.Comparable<T>>, E=class java.lang.Object}
+[MASTER] 04:12:55.475 [logback-1] WARN  CastClassManager - Nothing is assignable after adding com.google.common.collect.SingletonImmutableSet<E> for type Variable K with bounds [class java.lang.Object] of declaration FilteredEntryMultimap. The owner var map is {E=com.google.common.collect.FilteredEntryMultimap<java.lang.Object, java.lang.Object>.Keys, T=? extends E, E=com.google.common.collect.FilteredEntryMultimap<java.lang.Object, java.lang.Object>.Keys, E=com.google.common.collect.FilteredEntryMultimap<java.lang.Object, java.lang.Object>.Keys, E=com.google.common.collect.FilteredEntryMultimap<java.lang.Object, java.lang.Object>.Keys, E=com.google.common.collect.FilteredEntryMultimap<java.lang.Object, java.lang.Object>.Keys, E=com.google.common.collect.FilteredEntryMultimap<java.lang.Object, java.lang.Object>.Keys, E=com.google.common.collect.FilteredEntryMultimap<java.lang.Object, java.lang.Object>.Keys, E=com.google.common.collect.FilteredEntryMultimap<java.lang.Object, java.lang.Object>.Keys, E=com.google.common.collect.FilteredEntryMultimap<java.lang.Object, java.lang.Object>.Keys, E=com.google.common.collect.FilteredEntryMultimap<java.lang.Object, java.lang.Object>.Keys, E=com.google.common.collect.FilteredEntryMultimap<java.lang.Object, java.lang.Object>.Keys, E=com.google.common.collect.FilteredEntryMultimap<java.lang.Object, java.lang.Object>.Keys, E=com.google.common.collect.FilteredEntryMultimap<java.lang.Object, java.lang.Object>.Keys, E=com.google.common.collect.FilteredEntryMultimap<java.lang.Object, java.lang.Object>.Keys, E=com.google.common.collect.FilteredEntryMultimap<java.lang.Object, java.lang.Object>.Keys, E=com.google.common.collect.FilteredEntryMultimap<java.lang.Object, java.lang.Object>.Keys, E=com.google.common.collect.FilteredEntryMultimap<java.lang.Object, java.lang.Object>.Keys, E=com.google.common.collect.FilteredEntryMultimap<java.lang.Object, java.lang.Object>.Keys, E=com.google.common.collect.FilteredEntryMultimap<java.lang.Object, java.lang.Object>.Keys, E=com.google.common.collect.FilteredEntryMultimap<java.lang.Object, java.lang.Object>.Keys, E=com.google.common.collect.FilteredEntryMultimap<java.lang.Object, java.lang.Object>.Keys, E=com.google.common.collect.FilteredEntryMultimap<java.lang.Object, java.lang.Object>.Keys, E=com.google.common.collect.FilteredEntryMultimap<java.lang.Object, java.lang.Object>.Keys, E=com.google.common.collect.FilteredEntryMultimap<java.lang.Object, java.lang.Object>.Keys, E=com.google.common.collect.FilteredEntryMultimap<java.lang.Object, java.lang.Object>.Keys, E=com.google.common.collect.FilteredEntryMultimap<java.lang.Object, java.lang.Object>.Keys, E=com.google.common.collect.FilteredEntryMultimap<java.lang.Object, java.lang.Object>.Keys, E=com.google.common.collect.FilteredEntryMultimap<java.lang.Object, java.lang.Object>.Keys, E=com.google.common.collect.FilteredEntryMultimap<java.lang.Object, java.lang.Object>.Keys, E=com.google.common.collect.FilteredEntryMultimap<java.lang.Object, java.lang.Object>.Keys, E=com.google.common.collect.FilteredEntryMultimap<java.lang.Object, java.lang.Object>.Keys, E=com.google.common.collect.FilteredEntryMultimap<java.lang.Object, java.lang.Object>.Keys, E=com.google.common.collect.FilteredEntryMultimap<java.lang.Object, java.lang.Object>.Keys, E=com.google.common.collect.FilteredEntryMultimap<java.lang.Object, java.lang.Object>.Keys, E=com.google.common.collect.FilteredEntryMultimap<java.lang.Object, java.lang.Object>.Keys, E=com.google.common.collect.FilteredEntryMultimap<java.lang.Object, java.lang.Object>.Keys, E=com.google.common.collect.FilteredEntryMultimap<java.lang.Object, java.lang.Object>.Keys, E=com.google.common.collect.FilteredEntryMultimap<java.lang.Object, java.lang.Object>.Keys, E=com.google.common.collect.FilteredEntryMultimap<java.lang.Object, java.lang.Object>.Keys, E=com.google.common.collect.FilteredEntryMultimap<java.lang.Object, java.lang.Object>.Keys, E=com.google.common.collect.FilteredEntryMultimap<java.lang.Object, java.lang.Object>.Keys, E=com.google.common.collect.FilteredEntryMultimap<java.lang.Object, java.lang.Object>.Keys, E=com.google.common.collect.FilteredEntryMultimap<java.lang.Object, java.lang.Object>.Keys, E=com.google.common.collect.FilteredEntryMultimap<java.lang.Object, java.lang.Object>.Keys, E=com.google.common.collect.FilteredEntryMultimap<java.lang.Object, java.lang.Object>.Keys, E=com.google.common.collect.FilteredEntryMultimap<java.lang.Object, java.lang.Object>.Keys, E=com.google.common.collect.FilteredEntryMultimap<java.lang.Object, java.lang.Object>.Keys, E=com.google.common.collect.FilteredEntryMultimap<java.lang.Object, java.lang.Object>.Keys, E=com.google.common.collect.FilteredEntryMultimap<java.lang.Object, java.lang.Object>.Keys, E=com.google.common.collect.FilteredEntryMultimap<java.lang.Object, java.lang.Object>.Keys, E=com.google.common.collect.FilteredEntryMultimap<java.lang.Object, java.lang.Object>.Keys, E=com.google.common.collect.FilteredEntryMultimap<java.lang.Object, java.lang.Object>.Keys, E=com.google.common.collect.FilteredEntryMultimap<java.lang.Object, java.lang.Object>.Keys, E=com.google.common.collect.FilteredEntryMultimap<java.lang.Object, java.lang.Object>.Keys, E=com.google.common.collect.FilteredEntryMultimap<java.lang.Object, java.lang.Object>.Keys, E=com.google.common.collect.FilteredEntryMultimap<java.lang.Object, java.lang.Object>.Keys, E=com.google.common.collect.FilteredEntryMultimap<java.lang.Object, java.lang.Object>.Keys, E=com.google.common.collect.FilteredEntryMultimap<java.lang.Object, java.lang.Object>.Keys, E=com.google.common.collect.FilteredEntryMultimap<java.lang.Object, java.lang.Object>.Keys, E=com.google.common.collect.FilteredEntryMultimap<java.lang.Object, java.lang.Object>.Keys, E=com.google.common.collect.FilteredEntryMultimap<java.lang.Object, java.lang.Object>.Keys, E=com.google.common.collect.FilteredEntryMultimap<java.lang.Object, java.lang.Object>.Keys, E=com.google.common.collect.FilteredEntryMultimap<java.lang.Object, java.lang.Object>.Keys, E=com.google.common.collect.FilteredEntryMultimap<java.lang.Object, java.lang.Object>.Keys, E=com.google.common.collect.FilteredEntryMultimap<java.lang.Object, java.lang.Object>.Keys, E=com.google.common.collect.FilteredEntryMultimap<java.lang.Object, java.lang.Object>.Keys, E=com.google.common.collect.FilteredEntryMultimap<java.lang.Object, java.lang.Object>.Keys, E=com.google.common.collect.FilteredEntryMultimap<java.lang.Object, java.lang.Object>.Keys, E=com.google.common.collect.FilteredEntryMultimap<java.lang.Object, java.lang.Object>.Keys, E=com.google.common.collect.FilteredEntryMultimap<java.lang.Object, java.lang.Object>.Keys, E=com.google.common.collect.FilteredEntryMultimap<java.lang.Object, java.lang.Object>.Keys, E=com.google.common.collect.FilteredEntryMultimap<java.lang.Object, java.lang.Object>.Keys, E=com.google.common.collect.FilteredEntryMultimap<java.lang.Object, java.lang.Object>.Keys, E=com.google.common.collect.FilteredEntryMultimap<java.lang.Object, java.lang.Object>.Keys, E=com.google.common.collect.FilteredEntryMultimap<java.lang.Object, java.lang.Object>.Keys, E=com.google.common.collect.FilteredEntryMultimap<java.lang.Object, java.lang.Object>.Keys, E=com.google.common.collect.FilteredEntryMultimap<java.lang.Object, java.lang.Object>.Keys, E=com.google.common.collect.FilteredEntryMultimap<java.lang.Object, java.lang.Object>.Keys, E=com.google.common.collect.FilteredEntryMultimap<java.lang.Object, java.lang.Object>.Keys, E=com.google.common.collect.FilteredEntryMultimap<java.lang.Object, java.lang.Object>.Keys, E=com.google.common.collect.FilteredEntryMultimap<java.lang.Object, java.lang.Object>.Keys, E=com.google.common.collect.FilteredEntryMultimap<java.lang.Object, java.lang.Object>.Keys, E=com.google.common.collect.FilteredEntryMultimap<java.lang.Object, java.lang.Object>.Keys, E=com.google.common.collect.FilteredEntryMultimap<java.lang.Object, java.lang.Object>.Keys, E=com.google.common.collect.FilteredEntryMultimap<java.lang.Object, java.lang.Object>.Keys, E=com.google.common.collect.FilteredEntryMultimap<java.lang.Object, java.lang.Object>.Keys, E=com.google.common.collect.FilteredEntryMultimap<java.lang.Object, java.lang.Object>.Keys, E=com.google.common.collect.FilteredEntryMultimap<java.lang.Object, java.lang.Object>.Keys, E=com.google.common.collect.FilteredEntryMultimap<java.lang.Object, java.lang.Object>.Keys, E=com.google.common.collect.FilteredEntryMultimap<java.lang.Object, java.lang.Object>.Keys, E=com.google.common.collect.FilteredEntryMultimap<java.lang.Object, java.lang.Object>.Keys, E=com.google.common.collect.FilteredEntryMultimap<java.lang.Object, java.lang.Object>.Keys, E=com.google.common.collect.FilteredEntryMultimap<java.lang.Object, java.lang.Object>.Keys, E=com.google.common.collect.FilteredEntryMultimap<java.lang.Object, java.lang.Object>.Keys, E=com.google.common.collect.FilteredEntryMultimap<java.lang.Object, java.lang.Object>.Keys, E=com.google.common.collect.FilteredEntryMultimap<java.lang.Object, java.lang.Object>.Keys, E=com.google.common.collect.FilteredEntryMultimap<java.lang.Object, java.lang.Object>.Keys}
+[MASTER] 04:13:05.863 [logback-1] WARN  TestCluster - Failed to check cache for com.google.common.collect.Multiset<E>.Entry<E> : Type points to itself
+[MASTER] 04:13:06.820 [logback-1] WARN  TestCluster - Failed to check cache for com.google.common.collect.FilteredKeyListMultimap<K, V> : Type points to itself
+[MASTER] 04:13:08.906 [logback-1] WARN  TestCluster - Failed to check cache for java.util.Collection<com.google.common.collect.ImmutableSortedMultiset<java.lang.Object>> : Type points to itself
+[MASTER] 04:13:10.446 [logback-1] WARN  TestCluster - Failed to check cache for java.lang.Iterable<com.google.common.collect.FilteredKeyListMultimap<java.util.Locale$Category, java.util.Locale$Category>> : Type points to itself
+[Progress:==============================100%] [Cov:>                                  0%][MASTER] 04:13:11.158 [logback-1] WARN  TestCluster - Failed to check cache for java.util.Comparator<T> : Type points to itself
+[MASTER] 04:13:12.502 [logback-1] WARN  CoverageArchive - A solution with a timeout/exception result has been added to the archive. The covered goal was com.google.common.collect.ImmutableMultiset$Builder.build()Lcom/google/common/collect/ImmutableMultiset;: Line 574
+[MASTER] 04:13:14.166 [logback-1] WARN  CoverageArchive - A solution with a timeout/exception result has been added to the archive. The covered goal was com.google.common.collect.ImmutableMultiset$Builder.build()Lcom/google/common/collect/ImmutableMultiset;: root-Branch
+[Progress:==============================100%] [Cov:========>                          25%]
+* Search finished after 65s and 0 generations, 347 statements, best individual has fitness: 595.0
+* Minimizing test suite
+* Going to analyze the coverage criteria
+* Coverage analysis for criterion LINE
+* Coverage of criterion LINE: 49%
+* Total number of goals: 122
+* Number of covered goals: 60
+* Coverage analysis for criterion BRANCH
+* Coverage of criterion BRANCH: 39%
+* Total number of goals: 84
+* Number of covered goals: 33
+* Coverage analysis for criterion EXCEPTION
+* Coverage of criterion EXCEPTION: 100%
+* Total number of goals: 1
+* Number of covered goals: 1
+* Coverage analysis for criterion WEAKMUTATION
+* Coverage of criterion WEAKMUTATION: 27%
+* Total number of goals: 266
+* Number of covered goals: 71
+* Coverage analysis for criterion OUTPUT
+* Coverage of criterion OUTPUT: 8%
+* Total number of goals: 65
+* Number of covered goals: 5
+* Coverage analysis for criterion METHOD
+* Coverage of criterion METHOD: 21%
+* Total number of goals: 52
+* Number of covered goals: 11
+* Coverage analysis for criterion METHODNOEXCEPTION
+* Coverage of criterion METHODNOEXCEPTION: 17%
+* Total number of goals: 52
+* Number of covered goals: 9
+* Coverage analysis for criterion CBRANCH
+* Coverage of criterion CBRANCH: 33%
+* Total number of goals: 84
+* Number of covered goals: 28
+* Generated 10 tests with total length 42
+* Resulting test suite's coverage: 25% (average coverage for all fitness functions)
+* Generating assertions
+* Resulting test suite's mutation score: 13%
+* Compiling and checking tests
+[MASTER] 04:13:17.085 [logback-2] ERROR JUnitAnalyzer - Compilation failed on compilation units: [RegularFileObject[/tmp/EvoSuite_8_1729696397040/com/google/common/collect/ImmutableMultiset_8_tmp__ESTest.java], RegularFileObject[/tmp/EvoSuite_8_1729696397040/com/google/common/collect/ImmutableMultiset_8_tmp__ESTest_scaffolding.java]]
+[MASTER] 04:13:17.085 [logback-2] ERROR JUnitAnalyzer - Classpath: /home/wtwhite/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/guava/guava/31.0.1-jre/guava-31.0.1-jre.jar:t/dependency/checker-qual-3.12.0.jar:t/dependency/error_prone_annotations-2.7.1.jar:t/dependency/failureaccess-1.0.1.jar:t/dependency/j2objc-annotations-1.3.jar:t/dependency/jsr305-3.0.2.jar:t/dependency/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/home/wtwhite/code/regression-test-generation/evosuite/evosuite-1.2.0.jar:/home/wtwhite/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/guava/guava/31.0.1-jre/guava-31.0.1-jre.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/checker-qual-3.12.0.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/error_prone_annotations-2.7.1.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/failureaccess-1.0.1.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/j2objc-annotations-1.3.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/jsr305-3.0.2.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar
+[MASTER] 04:13:17.085 [logback-2] ERROR JUnitAnalyzer - evosuiteCP: /home/wtwhite/code/regression-test-generation/evosuite/evosuite-1.2.0.jar:/home/wtwhite/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/guava/guava/31.0.1-jre/guava-31.0.1-jre.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/checker-qual-3.12.0.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/error_prone_annotations-2.7.1.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/failureaccess-1.0.1.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/j2objc-annotations-1.3.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/jsr305-3.0.2.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar
+[MASTER] 04:13:17.089 [logback-2] ERROR JUnitAnalyzer - Diagnostic: incompatible types: com.google.common.collect.ImmutableSortedMultiset<java.util.Locale.FilteringMode> cannot be converted to com.google.common.collect.SortedMultiset<java.util.Map.Entry<java.util.Map.Entry,java.util.Locale.FilteringMode>>: 33
+[MASTER] 04:13:17.089 [logback-2] ERROR JUnitAnalyzer - RegularFileObject[/tmp/EvoSuite_8_1729696397040/com/google/common/collect/ImmutableMultiset_8_tmp__ESTest.java]
+1: /*
+2:  * This file was automatically generated by EvoSuite
+3:  * Wed Oct 23 15:13:17 GMT 2024
+4:  */
+5: 
+6: package com.google.common.collect;
+7: 
+8: import org.junit.Test;
+9: import static org.junit.Assert.*;
+10: import com.google.common.collect.ImmutableSortedMultiset;
+11: import com.google.common.collect.SortedMultiset;
+12: import java.util.Locale;
+13: import java.util.Map;
+14: import org.evosuite.runtime.EvoRunner;
+15: import org.evosuite.runtime.EvoRunnerParameters;
+16: import org.junit.runner.RunWith;
+17: 
+18: @RunWith(EvoRunner.class) @EvoRunnerParameters(mockJVMNonDeterminism = true, useVFS = true, useVNET = true, resetStaticState = true) 
+19: public class ImmutableMultiset_8_tmp__ESTest extends ImmutableMultiset_8_tmp__ESTest_scaffolding {
+20: 
+21:   @Test(timeout = 4000)
+22:   public void test0()  throws Throwable  {
+23:       Locale.FilteringMode[] locale_FilteringModeArray0 = new Locale.FilteringMode[7];
+24:       Locale.FilteringMode locale_FilteringMode0 = Locale.FilteringMode.REJECT_EXTENDED_RANGES;
+25:       locale_FilteringModeArray0[0] = locale_FilteringMode0;
+26:       locale_FilteringModeArray0[1] = locale_FilteringMode0;
+27:       locale_FilteringModeArray0[2] = locale_FilteringModeArray0[0];
+28:       locale_FilteringModeArray0[3] = locale_FilteringMode0;
+29:       locale_FilteringModeArray0[4] = locale_FilteringMode0;
+30:       locale_FilteringModeArray0[5] = locale_FilteringModeArray0[1];
+31:       locale_FilteringModeArray0[6] = locale_FilteringMode0;
+32:       ImmutableSortedMultiset<Locale.FilteringMode> immutableSortedMultiset0 = ImmutableSortedMultiset.copyOf(locale_FilteringModeArray0);
+33:       ImmutableSortedMultiset<Map.Entry<Map.Entry, Locale.FilteringMode>> immutableSortedMultiset1 = ImmutableSortedMultiset.copyOfSorted((SortedMultiset<Map.Entry<Map.Entry, Locale.FilteringMode>>) immutableSortedMultiset0);
+34:       assertNotNull(immutableSortedMultiset1);
+35:   }
+36: }
+RegularFileObject[/tmp/EvoSuite_8_1729696397040/com/google/common/collect/ImmutableMultiset_8_tmp__ESTest.java]
+1: /**
+2:  * Scaffolding file used to store all the setups needed to run 
+3:  * tests automatically generated by EvoSuite
+4:  * Wed Oct 23 15:13:17 GMT 2024
+5:  */
+6: 
+7: package com.google.common.collect;
+8: 
+9: import org.evosuite.runtime.annotation.EvoSuiteClassExclude;
+10: import org.junit.BeforeClass;
+11: import org.junit.Before;
+12: import org.junit.After;
+13: import org.junit.AfterClass;
+14: import org.evosuite.runtime.sandbox.Sandbox;
+15: import org.evosuite.runtime.sandbox.Sandbox.SandboxMode;
+16: 
+17: @EvoSuiteClassExclude
+18: public class ImmutableMultiset_8_tmp__ESTest_scaffolding {
+19: 
+20:   @org.junit.Rule
+21:   public org.evosuite.runtime.vnet.NonFunctionalRequirementRule nfr = new org.evosuite.runtime.vnet.NonFunctionalRequirementRule();
+22: 
+23:   private static final java.util.Properties defaultProperties = (java.util.Properties) java.lang.System.getProperties().clone(); 
+24: 
+25:   private org.evosuite.runtime.thread.ThreadStopper threadStopper =  new org.evosuite.runtime.thread.ThreadStopper (org.evosuite.runtime.thread.KillSwitchHandler.getInstance(), 3000);
+26: 
+27: 
+28:   @BeforeClass
+29:   public static void initEvoSuiteFramework() { 
+30:     org.evosuite.runtime.RuntimeSettings.className = "com.google.common.collect.ImmutableMultiset"; 
+31:     org.evosuite.runtime.GuiSupport.initialize(); 
+32:     org.evosuite.runtime.RuntimeSettings.maxNumberOfThreads = 100; 
+33:     org.evosuite.runtime.RuntimeSettings.maxNumberOfIterationsPerLoop = 10000; 
+34:     org.evosuite.runtime.RuntimeSettings.mockSystemIn = true; 
+35:     org.evosuite.runtime.RuntimeSettings.sandboxMode = org.evosuite.runtime.sandbox.Sandbox.SandboxMode.RECOMMENDED; 
+36:     org.evosuite.runtime.sandbox.Sandbox.initializeSecurityManagerForSUT(); 
+37:     org.evosuite.runtime.classhandling.JDKClassResetter.init();
+38:     setSystemProperties();
+39:     initializeClasses();
+40:     org.evosuite.runtime.Runtime.getInstance().resetRuntime(); 
+41:   } 
+42: 
+43:   @AfterClass
+44:   public static void clearEvoSuiteFramework(){ 
+45:     Sandbox.resetDefaultSecurityManager(); 
+46:     java.lang.System.setProperties((java.util.Properties) defaultProperties.clone()); 
+47:   } 
+48: 
+49:   @Before
+50:   public void initTestCase(){ 
+51:     threadStopper.storeCurrentThreads();
+52:     threadStopper.startRecordingTime();
+53:     org.evosuite.runtime.jvm.ShutdownHookHandler.getInstance().initHandler(); 
+54:     org.evosuite.runtime.sandbox.Sandbox.goingToExecuteSUTCode(); 
+55:     setSystemProperties(); 
+56:     org.evosuite.runtime.GuiSupport.setHeadless(); 
+57:     org.evosuite.runtime.Runtime.getInstance().resetRuntime(); 
+58:     org.evosuite.runtime.agent.InstrumentingAgent.activate(); 
+59:   } 
+60: 
+61:   @After
+62:   public void doneWithTestCase(){ 
+63:     threadStopper.killAndJoinClientThreads();
+64:     org.evosuite.runtime.jvm.ShutdownHookHandler.getInstance().safeExecuteAddedHooks(); 
+65:     org.evosuite.runtime.classhandling.JDKClassResetter.reset(); 
+66:     resetClasses(); 
+67:     org.evosuite.runtime.sandbox.Sandbox.doneWithExecutingSUTCode(); 
+68:     org.evosuite.runtime.agent.InstrumentingAgent.deactivate(); 
+69:     org.evosuite.runtime.GuiSupport.restoreHeadlessMode(); 
+70:   } 
+71: 
+72:   public static void setSystemProperties() {
+73:  
+74:     java.lang.System.setProperties((java.util.Properties) defaultProperties.clone()); 
+75:     java.lang.System.setProperty("user.dir", "/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre"); 
+76:     java.lang.System.setProperty("java.io.tmpdir", "/tmp"); 
+77:   }
+78: 
+79:   private static void initializeClasses() {
+80:     org.evosuite.runtime.classhandling.ClassStateSupport.initializeClasses(ImmutableMultiset_8_tmp__ESTest_scaffolding.class.getClassLoader() ,
+81:       "com.google.common.collect.ImmutableSet$SetBuilderImpl",
+82:       "com.google.common.collect.AllEqualOrdering",
+83:       "com.google.common.collect.Hashing",
+84:       "com.google.common.collect.ImmutableList$SubList",
+85:       "com.google.common.collect.ListMultimap",
+86:       "com.google.common.collect.Lists$RandomAccessPartition",
+87:       "com.google.common.collect.RegularImmutableSortedMultiset",
+88:       "com.google.common.collect.PeekingIterator",
+89:       "com.google.common.collect.ImmutableSet$Indexed",
+90:       "com.google.common.collect.Multimaps$AsMap",
+91:       "com.google.common.collect.RegularImmutableList",
+92:       "com.google.common.collect.SortedMultiset",
+93:       "com.google.common.collect.LinkedHashMultiset",
+94:       "com.google.common.collect.Lists$TransformingRandomAccessList",
+95:       "com.google.common.collect.AbstractMapBasedMultiset$2",
+96:       "com.google.common.collect.Iterators$ArrayItr",
+97:       "com.google.common.collect.RegularImmutableMap$KeySet",
+98:       "com.google.common.collect.Sets$2",
+99:       "com.google.common.collect.DescendingImmutableSortedMultiset",
+100:       "com.google.common.collect.Sets$3",
+101:       "com.google.common.collect.Sets$1",
+102:       "com.google.common.collect.NullsLastOrdering",
+103:       "com.google.common.collect.Platform",
+104:       "com.google.common.collect.RegularImmutableMultiset",
+105:       "com.google.common.collect.BaseImmutableMultimap",
+106:       "com.google.common.collect.RegularImmutableMap",
+107:       "com.google.common.collect.ImmutableMultimap$Values",
+108:       "com.google.common.collect.Multisets",
+109:       "com.google.common.collect.ByFunctionOrdering",
+110:       "com.google.common.collect.SortedMapDifference",
+111:       "com.google.common.collect.AbstractSortedMultiset",
+112:       "com.google.common.collect.RegularImmutableSet",
+113:       "com.google.common.collect.Iterators$10",
+114:       "com.google.common.collect.AbstractMapEntry",
+115:       "com.google.common.collect.ImmutableMap$IteratorBasedImmutableMap",
+116:       "com.google.common.collect.LexicographicalOrdering",
+117:       "com.google.common.collect.ImmutableListMultimap",
+118:       "com.google.common.collect.ImmutableMultimap$1",
+119:       "com.google.common.collect.FilteredMultimap",
+120:       "com.google.common.collect.ImmutableSet$Indexed$1",
+121:       "com.google.common.collect.ImmutableMultimap$2",
+122:       "com.google.common.collect.ImmutableMultiset$ElementSet",
+123:       "com.google.common.collect.GeneralRange",
+124:       "com.google.common.collect.Iterables",
+125:       "com.google.common.collect.NullsFirstOrdering",
+126:       "com.google.common.collect.ImmutableAsList",
+127:       "com.google.common.collect.ImmutableMapEntrySet$RegularEntrySet",
+128:       "com.google.common.collect.ImmutableSet$Builder",
+129:       "com.google.common.collect.Sets$SetView",
+130:       "com.google.common.collect.ImmutableSet$CachingAsList",
+131:       "com.google.common.collect.RegularImmutableAsList",
+132:       "com.google.common.collect.SingletonImmutableSet",
+133:       "com.google.common.collect.ImmutableSetMultimap$Builder",
+134:       "com.google.common.collect.ImmutableList$SerializedForm",
+135:       "com.google.common.collect.Multimaps",
+136:       "com.google.common.collect.RegularImmutableMultiset$NonTerminalEntry",
+137:       "com.google.common.collect.ImmutableMapEntrySet",
+138:       "com.google.common.base.Strings",
+139:       "com.google.common.collect.Lists$Partition",
+140:       "com.google.common.collect.AbstractMapBasedMultiset$2$1",
+141:       "com.google.common.collect.Lists",
+142:       "com.google.common.collect.ImmutableMultiset",
+143:       "com.google.common.collect.Multisets$ImmutableEntry",
+144:       "com.google.common.collect.UnmodifiableListIterator",
+145:       "com.google.common.collect.UsingToStringOrdering",
+146:       "com.google.common.collect.TreeMultiset$1",
+147:       "com.google.common.collect.ImmutableMultimap$Keys",
+148:       "com.google.common.collect.Count",
+149:       "com.google.common.collect.Multisets$AbstractEntry",
+150:       "com.google.common.collect.TreeMultiset$AvlNode",
+151:       "com.google.common.collect.ImmutableMultimap",
+152:       "com.google.common.collect.Lists$TransformingSequentialList",
+153:       "com.google.common.collect.TreeMultiset$2",
+154:       "com.google.common.collect.ImmutableSortedSet",
+155:       "com.google.common.primitives.IntsMethodsForWeb",
+156:       "com.google.common.collect.Sets$4",
+157:       "com.google.common.collect.ObjectArrays",
+158:       "com.google.common.collect.FilteredEntryMultimap$Keys",
+159:       "com.google.common.collect.Maps$BiMapConverter",
+160:       "com.google.common.collect.Multimaps$Keys",
+161:       "com.google.common.collect.AbstractIterator",
+162:       "com.google.common.collect.ImmutableSortedSet$Builder",
+163:       "com.google.common.collect.IndexedImmutableSet$1",
+164:       "com.google.common.collect.ImmutableList$1",
+165:       "com.google.common.collect.MapDifference",
+166:       "com.google.common.collect.SortedIterable",
+167:       "com.google.common.collect.AbstractMultiset$EntrySet",
+168:       "com.google.common.collect.ImmutableMap$MapViewOfValuesAsSingletonSets",
+169:       "com.google.common.collect.Sets$ImprovedAbstractSet",
+170:       "com.google.common.collect.ImmutableMapEntry$NonTerminalImmutableMapEntry",
+171:       "com.google.common.base.Preconditions",
+172:       "com.google.common.collect.UnmodifiableIterator",
+173:       "com.google.common.collect.ImmutableSortedSetFauxverideShim",
+174:       "com.google.common.collect.ImmutableSortedMultiset",
+175:       "com.google.common.collect.ImmutableEntry",
+176:       "com.google.common.collect.FilteredEntryMultimap",
+177:       "com.google.common.collect.EmptyImmutableSetMultimap",
+178:       "com.google.common.collect.TreeMultiset$Aggregate",
+179:       "com.google.common.collect.ImmutableCollection",
+180:       "com.google.common.collect.ImmutableEnumMap",
+181:       "com.google.common.collect.Lists$RandomAccessListWrapper",
+182:       "com.google.common.collect.ImmutableEnumSet",
+183:       "com.google.common.collect.TreeMultiset",
+184:       "com.google.common.collect.ImmutableMultiset$EntrySet",
+185:       "com.google.common.collect.ImmutableMultisetGwtSerializationDependencies",
+186:       "com.google.common.collect.ImmutableList$ReverseImmutableList",
+187:       "com.google.common.base.Objects",
+188:       "com.google.common.collect.SingletonImmutableList",
+189:       "com.google.common.collect.ImmutableCollection$Builder",
+190:       "com.google.common.collect.ImmutableSetMultimap",
+191:       "com.google.common.base.Converter",
+192:       "com.google.errorprone.annotations.DoNotMock",
+193:       "com.google.common.collect.Maps$8",
+194:       "com.google.common.collect.BiMap",
+195:       "com.google.common.collect.IndexedImmutableSet",
+196:       "com.google.common.collect.ImmutableSet",
+197:       "com.google.common.base.Function",
+198:       "com.google.common.collect.Iterators$9",
+199:       "com.google.common.collect.Lists$AbstractListWrapper",
+200:       "com.google.common.collect.ImmutableMap",
+201:       "com.google.common.collect.ImmutableMapEntry",
+202:       "com.google.common.collect.ComparatorOrdering",
+203:       "com.google.common.collect.AbstractIndexedListIterator",
+204:       "com.google.common.collect.ImmutableSortedAsList",
+205:       "com.google.common.collect.AbstractMapBasedMultiset",
+206:       "com.google.common.collect.CollectPreconditions",
+207:       "com.google.common.collect.Iterators$1",
+208:       "com.google.common.collect.Multiset$Entry",
+209:       "com.google.common.primitives.Ints$IntConverter",
+210:       "com.google.common.collect.Iterators$4",
+211:       "com.google.common.collect.Sets",
+212:       "com.google.common.collect.Iterators$5",
+213:       "com.google.common.collect.ImmutableSortedMultiset$Builder",
+214:       "com.google.common.collect.AbstractMultiset$ElementSet",
+215:       "com.google.common.collect.ImmutableMultimap$EntryCollection",
+216:       "com.google.common.base.ExtraObjectsMethodsForWeb",
+217:       "com.google.common.collect.BoundType",
+218:       "com.google.common.collect.ExplicitOrdering",
+219:       "com.google.common.collect.Lists$StringAsImmutableList",
+220:       "com.google.common.collect.Multisets$ElementSet",
+221:       "com.google.common.collect.Lists$2",
+222:       "com.google.common.collect.Maps$ViewCachingAbstractMap",
+223:       "com.google.common.collect.TreeMultiset$Reference",
+224:       "com.google.common.collect.ImmutableList$Builder",
+225:       "com.google.common.collect.Lists$1",
+226:       "com.google.common.collect.ImmutableMap$1",
+227:       "com.google.common.collect.ImmutableMultimap$Builder",
+228:       "com.google.common.collect.Multiset",
+229:       "com.google.common.collect.ImmutableSetMultimap$EntrySet",
+230:       "com.google.common.collect.Multimaps$Entries",
+231:       "com.google.common.collect.AbstractMultimap",
+232:       "com.google.common.collect.AbstractMultiset",
+233:       "com.google.common.collect.ImmutableMultimap$KeysSerializedForm",
+234:       "com.google.common.collect.ImmutableSortedMultisetFauxverideShim",
+235:       "com.google.common.collect.Multimap",
+236:       "com.google.common.collect.ImmutableMultiset$SerializedForm",
+237:       "com.google.common.collect.Iterators",
+238:       "com.google.common.collect.CompoundOrdering",
+239:       "com.google.common.collect.ImmutableBiMap",
+240:       "com.google.common.collect.ImmutableMultiset$Builder",
+241:       "com.google.common.collect.ImmutableList",
+242:       "com.google.common.collect.ReverseOrdering",
+243:       "com.google.common.collect.Multisets$EntrySet",
+244:       "com.google.common.collect.ImmutableMultiset$1",
+245:       "com.google.common.collect.ImmutableBiMapFauxverideShim",
+246:       "com.google.common.collect.NullnessCasts",
+247:       "com.google.common.collect.SortedMultisetBridge",
+248:       "com.google.common.collect.ReverseNaturalOrdering",
+249:       "com.google.common.primitives.Ints",
+250:       "com.google.common.collect.Maps",
+251:       "com.google.common.collect.SetMultimap",
+252:       "com.google.common.collect.ImmutableSet$RegularSetBuilderImpl",
+253:       "com.google.common.collect.Maps$EntryTransformer",
+254:       "com.google.common.collect.Ordering",
+255:       "com.google.common.collect.NaturalOrdering",
+256:       "com.google.common.collect.ElementTypesAreNonnullByDefault",
+257:       "com.google.common.collect.Iterators$MergingIterator",
+258:       "com.google.common.collect.RegularImmutableMap$Values",
+259:       "com.google.common.collect.RegularImmutableSortedSet",
+260:       "com.google.common.collect.TreeMultiset$Aggregate$2",
+261:       "com.google.common.collect.TreeMultiset$Aggregate$1"
+262:     );
+263:   } 
+264: 
+265:   private static void resetClasses() {
+266:     org.evosuite.runtime.classhandling.ClassResetter.getInstance().setClassLoader(ImmutableMultiset_8_tmp__ESTest_scaffolding.class.getClassLoader()); 
+267: 
+268:     org.evosuite.runtime.classhandling.ClassStateSupport.resetClasses(
+269:       "com.google.common.collect.ImmutableCollection",
+270:       "com.google.common.collect.ImmutableMultisetGwtSerializationDependencies",
+271:       "com.google.common.collect.ImmutableMultiset",
+272:       "com.google.common.collect.ImmutableCollection$Builder",
+273:       "com.google.common.collect.ImmutableMultiset$Builder",
+274:       "com.google.common.collect.ImmutableSet",
+275:       "com.google.common.collect.ImmutableSet$CachingAsList",
+276:       "com.google.common.collect.IndexedImmutableSet",
+277:       "com.google.common.collect.ImmutableMultiset$EntrySet",
+278:       "com.google.common.collect.UnmodifiableIterator",
+279:       "com.google.common.collect.ImmutableMultiset$1",
+280:       "com.google.common.collect.ImmutableMultiset$SerializedForm",
+281:       "com.google.common.collect.ImmutableList",
+282:       "com.google.common.collect.RegularImmutableList",
+283:       "com.google.common.collect.RegularImmutableSet",
+284:       "com.google.common.collect.RegularImmutableMultiset",
+285:       "com.google.common.collect.ImmutableSortedMultisetFauxverideShim",
+286:       "com.google.common.collect.ImmutableSortedMultiset",
+287:       "com.google.common.collect.Ordering",
+288:       "com.google.common.collect.NaturalOrdering",
+289:       "com.google.common.collect.ImmutableSortedSetFauxverideShim",
+290:       "com.google.common.collect.ImmutableSortedSet",
+291:       "com.google.common.collect.RegularImmutableSortedSet",
+292:       "com.google.common.collect.RegularImmutableSortedMultiset",
+293:       "com.google.common.collect.Lists",
+294:       "com.google.common.base.Preconditions",
+295:       "com.google.common.collect.AbstractMultiset",
+296:       "com.google.common.collect.AbstractSortedMultiset",
+297:       "com.google.common.collect.TreeMultiset",
+298:       "com.google.common.collect.GeneralRange",
+299:       "com.google.common.collect.TreeMultiset$AvlNode",
+300:       "com.google.common.collect.TreeMultiset$Reference",
+301:       "com.google.common.collect.Iterables",
+302:       "com.google.common.collect.Multisets",
+303:       "com.google.common.collect.Iterators",
+304:       "com.google.common.collect.CollectPreconditions",
+305:       "com.google.common.collect.NullnessCasts",
+306:       "com.google.common.collect.Sets$ImprovedAbstractSet",
+307:       "com.google.common.collect.Multisets$EntrySet",
+308:       "com.google.common.collect.AbstractMultiset$EntrySet",
+309:       "com.google.common.collect.TreeMultiset$Aggregate",
+310:       "com.google.common.primitives.IntsMethodsForWeb",
+311:       "com.google.common.primitives.Ints",
+312:       "com.google.common.collect.ImmutableList$Builder",
+313:       "com.google.common.collect.TreeMultiset$2",
+314:       "com.google.common.collect.Multisets$AbstractEntry",
+315:       "com.google.common.collect.TreeMultiset$1",
+316:       "com.google.common.base.Strings",
+317:       "com.google.common.collect.DescendingImmutableSortedMultiset",
+318:       "com.google.common.collect.ComparatorOrdering",
+319:       "com.google.common.collect.ReverseOrdering",
+320:       "com.google.common.collect.AbstractMultimap",
+321:       "com.google.common.collect.BaseImmutableMultimap",
+322:       "com.google.common.collect.ImmutableMultimap",
+323:       "com.google.common.collect.ImmutableListMultimap",
+324:       "com.google.common.collect.ImmutableMultimap$Builder",
+325:       "com.google.common.collect.ImmutableListMultimap$Builder",
+326:       "com.google.common.collect.Platform",
+327:       "com.google.common.collect.Maps",
+328:       "com.google.common.collect.ImmutableMap$Builder",
+329:       "com.google.common.collect.ObjectArrays",
+330:       "com.google.common.collect.ImmutableMap",
+331:       "com.google.common.collect.RegularImmutableMap",
+332:       "com.google.common.collect.Hashing",
+333:       "com.google.common.collect.AbstractMapEntry",
+334:       "com.google.common.collect.ImmutableEntry",
+335:       "com.google.common.collect.ImmutableMapEntry",
+336:       "com.google.common.collect.ImmutableMapEntry$NonTerminalImmutableMapEntry",
+337:       "com.google.common.collect.ImmutableMultimap$Keys",
+338:       "com.google.common.collect.ImmutableSortedMultiset$Builder",
+339:       "com.google.common.collect.ReverseNaturalOrdering",
+340:       "com.google.common.collect.ConcurrentHashMultiset",
+341:       "com.google.common.collect.ImmutableSortedMultiset$SerializedForm",
+342:       "com.google.common.collect.UnmodifiableListIterator",
+343:       "com.google.common.collect.AbstractIndexedListIterator",
+344:       "com.google.common.collect.Iterators$ArrayItr",
+345:       "com.google.common.collect.AbstractMapBasedMultiset",
+346:       "com.google.common.collect.LinkedHashMultiset",
+347:       "com.google.common.collect.ImmutableSetMultimap",
+348:       "com.google.common.collect.EmptyImmutableSetMultimap",
+349:       "com.google.common.collect.Count",
+350:       "com.google.common.collect.ImmutableSet$Indexed",
+351:       "com.google.common.collect.ImmutableMultiset$ElementSet",
+352:       "com.google.common.collect.Multimaps$Keys",
+353:       "com.google.common.collect.ImmutableAsList",
+354:       "com.google.common.collect.IndexedImmutableSet$1",
+355:       "com.google.common.collect.ImmutableList$1",
+356:       "com.google.common.collect.RegularImmutableAsList",
+357:       "com.google.common.collect.ImmutableSortedAsList",
+358:       "com.google.common.collect.Multisets$ImmutableEntry",
+359:       "com.google.common.collect.Sets",
+360:       "com.google.common.collect.EmptyImmutableListMultimap",
+361:       "com.google.common.collect.SingletonImmutableList",
+362:       "com.google.common.collect.ConcurrentHashMultiset$EntrySet",
+363:       "com.google.common.collect.AbstractIterator",
+364:       "com.google.common.collect.ConcurrentHashMultiset$2",
+365:       "com.google.common.collect.AbstractIterator$State",
+366:       "com.google.common.collect.ForwardingObject",
+367:       "com.google.common.collect.ForwardingIterator",
+368:       "com.google.common.collect.ConcurrentHashMultiset$3",
+369:       "com.google.common.collect.AbstractIterator$1",
+370:       "com.google.common.collect.SortedIterables",
+371:       "com.google.common.collect.AbstractMapBasedMultimap",
+372:       "com.google.common.collect.AbstractSetMultimap",
+373:       "com.google.common.collect.HashMultimapGwtSerializationDependencies",
+374:       "com.google.common.collect.HashMultimap",
+375:       "com.google.common.collect.Maps$ViewCachingAbstractMap",
+376:       "com.google.common.collect.AbstractMapBasedMultimap$AsMap",
+377:       "com.google.common.collect.TransformedIterator",
+378:       "com.google.common.collect.Multimaps$Keys$1",
+379:       "com.google.common.collect.Maps$EntrySet",
+380:       "com.google.common.collect.AbstractMapBasedMultimap$AsMap$AsMapEntries",
+381:       "com.google.common.collect.AbstractMapBasedMultimap$AsMap$AsMapIterator",
+382:       "com.google.common.collect.AbstractMapBasedMultiset$2",
+383:       "com.google.common.collect.AbstractMapBasedMultiset$2$1",
+384:       "com.google.common.collect.ImmutableList$SubList",
+385:       "com.google.common.collect.ForwardingCollection",
+386:       "com.google.common.collect.ForwardingMultiset",
+387:       "com.google.common.collect.Multisets$UnmodifiableMultiset",
+388:       "com.google.common.collect.UnmodifiableSortedMultiset",
+389:       "com.google.common.base.ExtraObjectsMethodsForWeb",
+390:       "com.google.common.base.Objects",
+391:       "com.google.common.collect.Multisets$ElementSet",
+392:       "com.google.common.collect.AbstractMultiset$ElementSet",
+393:       "com.google.common.collect.RegularImmutableMap$KeySet"
+394:     );
+395:   }
+396: }
+
+[MASTER] 04:13:17.090 [logback-2] ERROR JUnitAnalyzer - Failed to compile test case:
+Locale.FilteringMode[] locale_FilteringModeArray0 = new Locale.FilteringMode[7];
+Locale.FilteringMode locale_FilteringMode0 = Locale.FilteringMode.REJECT_EXTENDED_RANGES;
+locale_FilteringModeArray0[0] = locale_FilteringMode0;
+locale_FilteringModeArray0[1] = locale_FilteringMode0;
+locale_FilteringModeArray0[2] = locale_FilteringModeArray0[0];
+locale_FilteringModeArray0[3] = locale_FilteringMode0;
+locale_FilteringModeArray0[4] = locale_FilteringMode0;
+locale_FilteringModeArray0[5] = locale_FilteringModeArray0[1];
+locale_FilteringModeArray0[6] = locale_FilteringMode0;
+ImmutableSortedMultiset<Locale.FilteringMode> immutableSortedMultiset0 = ImmutableSortedMultiset.copyOf(locale_FilteringModeArray0);
+ImmutableSortedMultiset<Map.Entry<Map.Entry, Locale.FilteringMode>> immutableSortedMultiset1 = ImmutableSortedMultiset.copyOfSorted((SortedMultiset<Map.Entry<Map.Entry, Locale.FilteringMode>>) immutableSortedMultiset0);
+assertNotNull(immutableSortedMultiset1);
+
+
+* Writing tests to file
+* Writing JUnit test case 'ImmutableMultiset_ESTest' to evosuite-tests
+* Done!
+
+* Computation finished

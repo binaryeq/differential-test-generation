@@ -1,0 +1,30 @@
+181,184c181,182
+< java.lang.reflect.Type v2, v5;
+< java.lang.Class v1;
+< java.lang.String v6;
+< java.lang.IllegalArgumentException v4;
+---
+> int v10, v12, v13, v9;
+> java.lang.String v11, v14, v5, v7, v8;
+185a184,187
+> java.lang.IllegalArgumentException v4;
+> java.lang.reflect.Type v2, v6;
+> java.lang.Class v1;
+> java.lang.StringBuilder v15;
+194,196c196,207
+< v5 = v0.<com.google.common.reflect.TypeResolver$1: java.lang.reflect.Type val$to>;
+< v6 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.Class,java.lang.reflect.Type)>(v1, v5) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("No type mapping from \u0001 to \u0001");
+< specialinvoke v4.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(v6);
+---
+> v5 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v1);
+> v6 = v0.<com.google.common.reflect.TypeResolver$1: java.lang.reflect.Type val$to>;
+> v7 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v6);
+> v8 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v5);
+> v9 = virtualinvoke v8.<java.lang.String: int length()>();
+> v10 = 25 + v9;
+> v11 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v7);
+> v12 = virtualinvoke v11.<java.lang.String: int length()>();
+> v13 = v10 + v12;
+> specialinvoke v15.<java.lang.StringBuilder: void <init>(int)>(v13);
+> v14 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,java.lang.String)>(v5, v7) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("No type mapping from \u0001 to \u0001");
+> specialinvoke v4.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(v14);

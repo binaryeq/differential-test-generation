@@ -1,0 +1,99 @@
+82,87c82,88
+< java.util.Map v16, v6;
+< java.lang.String v4, v5;
+< boolean v12, v14, v9;
+< java.util.Iterator v11, v8;
+< java.util.Collection v13;
+< java.lang.Object v1, v10, v15, v7;
+---
+> java.util.Map v19, v9;
+> int v7;
+> java.lang.String v4, v5, v6, v8;
+> boolean v12, v15, v17;
+> java.util.Iterator v11, v14;
+> java.util.Collection v16;
+> java.lang.Object v1, v10, v13, v18;
+91c92
+< if v1 != null goto label1;
+---
+> if v1 != null goto label3;
+93,96c94,100
+< v4 = staticinvoke <com.google.common.collect.Iterables: java.lang.String toString(java.lang.Iterable)>(v2);
+< v5 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v4) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("null key in entry: null=\u0001");
+< specialinvoke v3.<java.lang.NullPointerException: void <init>(java.lang.String)>(v5);
+< throw v3;
+---
+> v4 = "null key in entry: null=";
+> v5 = staticinvoke <com.google.common.collect.Iterables: java.lang.String toString(java.lang.Iterable)>(v2);
+> v6 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v5);
+> v7 = virtualinvoke v6.<java.lang.String: int length()>();
+> if v7 == 0 goto label1;
+> v8 = virtualinvoke v4.<java.lang.String: java.lang.String concat(java.lang.String)>(v6);
+> goto label2;
+98,101c102,103
+< v6 = v0.<com.google.common.collect.ImmutableMultimap$Builder: java.util.Map builderMap>;
+< v7 = interfaceinvoke v6.<java.util.Map: java.lang.Object get(java.lang.Object)>(v1);
+< if v7 == null goto label4;
+< v8 = interfaceinvoke v2.<java.lang.Iterable: java.util.Iterator iterator()>();
+---
+> v8 = new java.lang.String;
+> specialinvoke v8.<java.lang.String: void <init>(java.lang.String)>("null key in entry: null=");
+103,108c105,106
+< v9 = interfaceinvoke v8.<java.util.Iterator: boolean hasNext()>();
+< if v9 == 0 goto label3;
+< v10 = interfaceinvoke v8.<java.util.Iterator: java.lang.Object next()>();
+< staticinvoke <com.google.common.collect.CollectPreconditions: void checkEntryNotNull(java.lang.Object,java.lang.Object)>(v1, v10);
+< interfaceinvoke v7.<java.util.Collection: boolean add(java.lang.Object)>(v10);
+< goto label2;
+---
+> specialinvoke v3.<java.lang.NullPointerException: void <init>(java.lang.String)>(v8);
+> throw v3;
+110,111c108,110
+< return v0;
+< label4:
+---
+> v9 = v0.<com.google.common.collect.ImmutableMultimap$Builder: java.util.Map builderMap>;
+> v10 = interfaceinvoke v9.<java.util.Map: java.lang.Object get(java.lang.Object)>(v1);
+> if v10 == null goto label6;
+112a112
+> label4:
+114,115c114,118
+< if v12 != 0 goto label5;
+< return v0;
+---
+> if v12 == 0 goto label5;
+> v13 = interfaceinvoke v11.<java.util.Iterator: java.lang.Object next()>();
+> staticinvoke <com.google.common.collect.CollectPreconditions: void checkEntryNotNull(java.lang.Object,java.lang.Object)>(v1, v13);
+> interfaceinvoke v10.<java.util.Collection: boolean add(java.lang.Object)>(v13);
+> goto label4;
+117c120
+< v13 = virtualinvoke v0.<com.google.common.collect.ImmutableMultimap$Builder: java.util.Collection newMutableValueCollection()>();
+---
+> return v0;
+119,124c122,125
+< v14 = interfaceinvoke v11.<java.util.Iterator: boolean hasNext()>();
+< if v14 == 0 goto label7;
+< v15 = interfaceinvoke v11.<java.util.Iterator: java.lang.Object next()>();
+< staticinvoke <com.google.common.collect.CollectPreconditions: void checkEntryNotNull(java.lang.Object,java.lang.Object)>(v1, v15);
+< interfaceinvoke v13.<java.util.Collection: boolean add(java.lang.Object)>(v15);
+< goto label6;
+---
+> v14 = interfaceinvoke v2.<java.lang.Iterable: java.util.Iterator iterator()>();
+> v15 = interfaceinvoke v14.<java.util.Iterator: boolean hasNext()>();
+> if v15 != 0 goto label7;
+> return v0;
+126,127c127,137
+< v16 = v0.<com.google.common.collect.ImmutableMultimap$Builder: java.util.Map builderMap>;
+< interfaceinvoke v16.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>(v1, v13);
+---
+> v16 = virtualinvoke v0.<com.google.common.collect.ImmutableMultimap$Builder: java.util.Collection newMutableValueCollection()>();
+> label8:
+> v17 = interfaceinvoke v14.<java.util.Iterator: boolean hasNext()>();
+> if v17 == 0 goto label9;
+> v18 = interfaceinvoke v14.<java.util.Iterator: java.lang.Object next()>();
+> staticinvoke <com.google.common.collect.CollectPreconditions: void checkEntryNotNull(java.lang.Object,java.lang.Object)>(v1, v18);
+> interfaceinvoke v16.<java.util.Collection: boolean add(java.lang.Object)>(v18);
+> goto label8;
+> label9:
+> v19 = v0.<com.google.common.collect.ImmutableMultimap$Builder: java.util.Map builderMap>;
+> interfaceinvoke v19.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>(v1, v16);

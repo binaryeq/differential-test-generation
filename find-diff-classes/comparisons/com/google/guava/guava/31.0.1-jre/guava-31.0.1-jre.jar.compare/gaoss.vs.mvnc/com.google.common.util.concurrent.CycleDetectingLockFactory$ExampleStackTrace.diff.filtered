@@ -1,0 +1,82 @@
+7c7
+< java.lang.Object[] v19;
+---
+> java.lang.Object[] v25;
+9,13c9,13
+< int v7, v8;
+< java.lang.StackTraceElement v11, v16;
+< java.lang.String v10, v12, v17, v3, v4, v5;
+< boolean v13, v18;
+< com.google.common.collect.ImmutableSet v15;
+---
+> int v10, v13, v14, v6, v7, v9;
+> java.lang.StackTraceElement v17, v22;
+> java.lang.String v11, v16, v18, v23, v3, v4, v5, v8;
+> boolean v19, v24;
+> com.google.common.collect.ImmutableSet v21;
+15,16c15,17
+< java.lang.StackTraceElement[] v14, v6;
+< java.lang.Class v9;
+---
+> java.lang.StackTraceElement[] v12, v20;
+> java.lang.Class v15;
+> java.lang.StringBuilder v26;
+22,26c23,34
+< v5 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,java.lang.String)>(v3, v4) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001 -> \u0001");
+< specialinvoke v0.<java.lang.IllegalStateException: void <init>(java.lang.String)>(v5);
+< v6 = virtualinvoke v0.<com.google.common.util.concurrent.CycleDetectingLockFactory$ExampleStackTrace: java.lang.StackTraceElement[] getStackTrace()>();
+< v7 = 0;
+< v8 = lengthof v6;
+---
+> v5 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v3);
+> v6 = virtualinvoke v5.<java.lang.String: int length()>();
+> v7 = 4 + v6;
+> v8 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v4);
+> v9 = virtualinvoke v8.<java.lang.String: int length()>();
+> v10 = v7 + v9;
+> specialinvoke v26.<java.lang.StringBuilder: void <init>(int)>(v10);
+> v11 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,java.lang.String)>(v3, v4) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001 -> \u0001");
+> specialinvoke v0.<java.lang.IllegalStateException: void <init>(java.lang.String)>(v11);
+> v12 = virtualinvoke v0.<com.google.common.util.concurrent.CycleDetectingLockFactory$ExampleStackTrace: java.lang.StackTraceElement[] getStackTrace()>();
+> v13 = 0;
+> v14 = lengthof v12;
+28,36c36,44
+< if v7 >= v8 goto label4;
+< v9 = class "Lcom/google/common/util/concurrent/CycleDetectingLockFactory$WithExplicitOrdering;";
+< v10 = virtualinvoke v9.<java.lang.Class: java.lang.String getName()>();
+< v11 = v6[v7];
+< v12 = virtualinvoke v11.<java.lang.StackTraceElement: java.lang.String getClassName()>();
+< v13 = virtualinvoke v10.<java.lang.String: boolean equals(java.lang.Object)>(v12);
+< if v13 == 0 goto label2;
+< v14 = <com.google.common.util.concurrent.CycleDetectingLockFactory$ExampleStackTrace: java.lang.StackTraceElement[] EMPTY_STACK_TRACE>;
+< virtualinvoke v0.<com.google.common.util.concurrent.CycleDetectingLockFactory$ExampleStackTrace: void setStackTrace(java.lang.StackTraceElement[])>(v14);
+---
+> if v13 >= v14 goto label4;
+> v15 = class "Lcom/google/common/util/concurrent/CycleDetectingLockFactory$WithExplicitOrdering;";
+> v16 = virtualinvoke v15.<java.lang.Class: java.lang.String getName()>();
+> v17 = v12[v13];
+> v18 = virtualinvoke v17.<java.lang.StackTraceElement: java.lang.String getClassName()>();
+> v19 = virtualinvoke v16.<java.lang.String: boolean equals(java.lang.Object)>(v18);
+> if v19 == 0 goto label2;
+> v20 = <com.google.common.util.concurrent.CycleDetectingLockFactory$ExampleStackTrace: java.lang.StackTraceElement[] EMPTY_STACK_TRACE>;
+> virtualinvoke v0.<com.google.common.util.concurrent.CycleDetectingLockFactory$ExampleStackTrace: void setStackTrace(java.lang.StackTraceElement[])>(v20);
+39,45c47,53
+< v15 = <com.google.common.util.concurrent.CycleDetectingLockFactory$ExampleStackTrace: com.google.common.collect.ImmutableSet EXCLUDED_CLASS_NAMES>;
+< v16 = v6[v7];
+< v17 = virtualinvoke v16.<java.lang.StackTraceElement: java.lang.String getClassName()>();
+< v18 = virtualinvoke v15.<com.google.common.collect.ImmutableSet: boolean contains(java.lang.Object)>(v17);
+< if v18 != 0 goto label3;
+< v19 = staticinvoke <java.util.Arrays: java.lang.Object[] copyOfRange(java.lang.Object[],int,int)>(v6, v7, v8);
+< virtualinvoke v0.<com.google.common.util.concurrent.CycleDetectingLockFactory$ExampleStackTrace: void setStackTrace(java.lang.StackTraceElement[])>(v19);
+---
+> v21 = <com.google.common.util.concurrent.CycleDetectingLockFactory$ExampleStackTrace: com.google.common.collect.ImmutableSet EXCLUDED_CLASS_NAMES>;
+> v22 = v12[v13];
+> v23 = virtualinvoke v22.<java.lang.StackTraceElement: java.lang.String getClassName()>();
+> v24 = virtualinvoke v21.<com.google.common.collect.ImmutableSet: boolean contains(java.lang.Object)>(v23);
+> if v24 != 0 goto label3;
+> v25 = staticinvoke <java.util.Arrays: java.lang.Object[] copyOfRange(java.lang.Object[],int,int)>(v12, v13, v14);
+> virtualinvoke v0.<com.google.common.util.concurrent.CycleDetectingLockFactory$ExampleStackTrace: void setStackTrace(java.lang.StackTraceElement[])>(v25);
+48c56
+< v7 = v7 + 1;
+---
+> v13 = v13 + 1;

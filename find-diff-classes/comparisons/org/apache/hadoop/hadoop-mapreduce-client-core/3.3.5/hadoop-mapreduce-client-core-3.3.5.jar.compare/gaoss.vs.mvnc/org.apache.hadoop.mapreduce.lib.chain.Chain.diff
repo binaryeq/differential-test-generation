@@ -1,0 +1,98 @@
+418c418,421
+< java.lang.Throwable v6, v7;
+---
+> java.lang.Throwable v6;
+> java.util.Iterator v10;
+> java.io.IOException v7;
+> java.lang.RuntimeException v8;
+420c423,424
+< org.apache.hadoop.conf.Configuration v0, v10;
+---
+> org.apache.hadoop.conf.Configuration v0, v9;
+> java.lang.Object v12, v13, v14, v5;
+422,426c426
+< boolean v12;
+< java.util.Iterator v11;
+< java.io.IOException v8;
+< java.lang.RuntimeException v9;
+< java.lang.Object v13, v14, v15, v5;
+---
+> boolean v11;
+429c429
+< label01:
+---
+> label1:
+432c432
+< label02:
+---
+> label2:
+434c434
+< if v3 == null goto label03;
+---
+> if v3 == null goto label3;
+437c437
+< label03:
+---
+> label3:
+439,440c439,440
+< goto label10;
+< label04:
+---
+> goto label6;
+> label4:
+442,449d441
+< label05:
+< interfaceinvoke v2.<org.apache.hadoop.io.Stringifier: void close()>();
+< label06:
+< goto label08;
+< label07:
+< v7 := @caughtexception;
+< virtualinvoke v6.<java.lang.Throwable: void addSuppressed(java.lang.Throwable)>(v7);
+< label08:
+451,473c443,464
+< label09:
+< v8 := @caughtexception;
+< v9 = new java.lang.RuntimeException;
+< specialinvoke v9.<java.lang.RuntimeException: void <init>(java.lang.Throwable)>(v8);
+< throw v9;
+< label10:
+< v10 = new org.apache.hadoop.conf.Configuration;
+< specialinvoke v10.<org.apache.hadoop.conf.Configuration: void <init>(org.apache.hadoop.conf.Configuration)>(v0);
+< if v5 == null goto label12;
+< v11 = virtualinvoke v5.<org.apache.hadoop.conf.Configuration: java.util.Iterator iterator()>();
+< label11:
+< v12 = interfaceinvoke v11.<java.util.Iterator: boolean hasNext()>();
+< if v12 == 0 goto label12;
+< v13 = interfaceinvoke v11.<java.util.Iterator: java.lang.Object next()>();
+< v14 = interfaceinvoke v13.<java.util.Map$Entry: java.lang.Object getKey()>();
+< v15 = interfaceinvoke v13.<java.util.Map$Entry: java.lang.Object getValue()>();
+< virtualinvoke v10.<org.apache.hadoop.conf.Configuration: void set(java.lang.String,java.lang.String)>(v14, v15);
+< goto label11;
+< label12:
+< return v10;
+< catch java.lang.Throwable from label02 to label03 with label04;
+< catch java.lang.Throwable from label05 to label06 with label07;
+< catch java.io.IOException from label01 to label09 with label09;
+---
+> label5:
+> v7 := @caughtexception;
+> v8 = new java.lang.RuntimeException;
+> specialinvoke v8.<java.lang.RuntimeException: void <init>(java.lang.Throwable)>(v7);
+> throw v8;
+> label6:
+> v9 = new org.apache.hadoop.conf.Configuration;
+> specialinvoke v9.<org.apache.hadoop.conf.Configuration: void <init>(org.apache.hadoop.conf.Configuration)>(v0);
+> if v5 == null goto label8;
+> v10 = virtualinvoke v5.<org.apache.hadoop.conf.Configuration: java.util.Iterator iterator()>();
+> label7:
+> v11 = interfaceinvoke v10.<java.util.Iterator: boolean hasNext()>();
+> if v11 == 0 goto label8;
+> v12 = interfaceinvoke v10.<java.util.Iterator: java.lang.Object next()>();
+> v13 = interfaceinvoke v12.<java.util.Map$Entry: java.lang.Object getKey()>();
+> v14 = interfaceinvoke v12.<java.util.Map$Entry: java.lang.Object getValue()>();
+> virtualinvoke v9.<org.apache.hadoop.conf.Configuration: void set(java.lang.String,java.lang.String)>(v13, v14);
+> goto label7;
+> label8:
+> return v9;
+> catch java.lang.Throwable from label2 to label3 with label4;
+> catch java.io.IOException from label1 to label5 with label5;

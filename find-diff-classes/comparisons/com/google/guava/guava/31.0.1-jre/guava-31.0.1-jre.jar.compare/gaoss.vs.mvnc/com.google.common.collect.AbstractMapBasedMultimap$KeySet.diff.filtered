@@ -1,0 +1,33 @@
+45,46c45
+< com.google.common.collect.AbstractMapBasedMultimap$KeySet v0;
+< com.google.common.collect.AbstractMapBasedMultimap v5, v6;
+---
+> com.google.common.collect.AbstractMapBasedMultimap v5;
+48c47
+< int v2, v7, v8;
+---
+> int v2;
+50c49,50
+< boolean v9;
+---
+> com.google.common.collect.AbstractMapBasedMultimap$KeySet v0;
+> boolean v6;
+60,63c60
+< v6 = v0.<com.google.common.collect.AbstractMapBasedMultimap$KeySet: com.google.common.collect.AbstractMapBasedMultimap this$0>;
+< v7 = v6.<com.google.common.collect.AbstractMapBasedMultimap: int totalSize>;
+< v8 = v7 - v2;
+< v5.<com.google.common.collect.AbstractMapBasedMultimap: int totalSize> = v8;
+---
+> v5.<com.google.common.collect.AbstractMapBasedMultimap: int totalSize> = v2;
+66c63
+< v9 = 1;
+---
+> v6 = 1;
+69c66
+< v9 = 0;
+---
+> v6 = 0;
+71c68
+< return v9;
+---
+> return v6;

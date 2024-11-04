@@ -1,0 +1,48 @@
+* EvoSuite 1.2.0
+* Going to generate test cases for class: org.jgrapht.alg.planar.BoyerMyrvoldPlanarityInspector
+* Starting Client-0
+* Connecting to master process on port 2558
+* Analyzing classpath: 
+  - /home/wtwhite/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/jgrapht/jgrapht-core/1.5.1/jgrapht-core-1.5.1.jar
+  - t/dependency/commons-io-2.4.jar
+  - t/dependency/commons-math3-3.2.jar
+  - t/dependency/hamcrest-core-1.3.jar
+  - t/dependency/hamcrest-library-1.3.jar
+  - t/dependency/jheaps-0.13.jar
+  - t/dependency/jmh-core-1.23.jar
+  - t/dependency/jmh-generator-annprocess-1.23.jar
+  - t/dependency/jopt-simple-4.6.jar
+  - t/dependency/junit-4.13.1.jar
+  - t/dependency/junit-toolbox-2.4.jar
+  - t/dependency/mockito-core-1.9.5.jar
+  - t/dependency/objenesis-1.0.jar
+* Error while initializing target class: org/jgrapht/alg/planar/BoyerMyrvoldPlanarityInspector has been compiled by a more recent version of the Java Runtime (class file version 55.0), this version of the Java Runtime only recognizes class file versions up to 52.0
+[MASTER] 11:23:34.954 [logback-2] ERROR TestSuiteGenerator - Problem for org.jgrapht.alg.planar.BoyerMyrvoldPlanarityInspector. Full stack:
+java.lang.ClassNotFoundException: org/jgrapht/alg/planar/BoyerMyrvoldPlanarityInspector has been compiled by a more recent version of the Java Runtime (class file version 55.0), this version of the Java Runtime only recognizes class file versions up to 52.0
+	at org.evosuite.instrumentation.InstrumentingClassLoader.instrumentClass(InstrumentingClassLoader.java:158)
+	at org.evosuite.instrumentation.InstrumentingClassLoader.loadClass(InstrumentingClassLoader.java:126)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:348)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.evosuite.testcase.statements.MethodStatement$1.execute(MethodStatement.java:256)
+	at org.evosuite.testcase.statements.AbstractStatement.exceptionHandler(AbstractStatement.java:165)
+	at org.evosuite.testcase.statements.MethodStatement.execute(MethodStatement.java:219)
+	at org.evosuite.testcase.execution.TestRunnable.executeStatements(TestRunnable.java:286)
+	at org.evosuite.testcase.execution.TestRunnable.call(TestRunnable.java:192)
+	at org.evosuite.testcase.execution.TestRunnable.call(TestRunnable.java:49)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+Caused by: java.lang.UnsupportedClassVersionError: org/jgrapht/alg/planar/BoyerMyrvoldPlanarityInspector has been compiled by a more recent version of the Java Runtime (class file version 55.0), this version of the Java Runtime only recognizes class file versions up to 52.0
+	at java.lang.ClassLoader.defineClass1(Native Method)
+	at java.lang.ClassLoader.defineClass(ClassLoader.java:756)
+	at java.lang.ClassLoader.defineClass(ClassLoader.java:635)
+	at org.evosuite.instrumentation.InstrumentingClassLoader.instrumentClass(InstrumentingClassLoader.java:151)
+	... 17 common frames omitted
+* Computation finished
+[MASTER] 11:23:35.134 [main] ERROR SearchStatistics - No statistics has been saved because EvoSuite failed to generate any test case
+[MASTER] 11:23:35.235 [main] ERROR TestGeneration - failed to write statistics data

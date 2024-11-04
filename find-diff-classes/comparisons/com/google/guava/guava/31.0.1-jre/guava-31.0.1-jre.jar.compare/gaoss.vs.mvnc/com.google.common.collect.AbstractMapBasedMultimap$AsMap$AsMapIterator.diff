@@ -1,0 +1,28 @@
+52c52
+< com.google.common.collect.AbstractMapBasedMultimap$AsMap v4, v6;
+---
+> com.google.common.collect.AbstractMapBasedMultimap$AsMap v4;
+54,56c54,56
+< java.util.Collection v1, v12, v9;
+< com.google.common.collect.AbstractMapBasedMultimap v5, v7;
+< int v10, v11, v8;
+---
+> java.util.Collection v1, v6, v8;
+> com.google.common.collect.AbstractMapBasedMultimap v5;
+> int v7;
+72,80c72,76
+< v6 = v0.<com.google.common.collect.AbstractMapBasedMultimap$AsMap$AsMapIterator: com.google.common.collect.AbstractMapBasedMultimap$AsMap this$1>;
+< v7 = v6.<com.google.common.collect.AbstractMapBasedMultimap$AsMap: com.google.common.collect.AbstractMapBasedMultimap this$0>;
+< v8 = v7.<com.google.common.collect.AbstractMapBasedMultimap: int totalSize>;
+< v9 = v0.<com.google.common.collect.AbstractMapBasedMultimap$AsMap$AsMapIterator: java.util.Collection collection>;
+< v10 = interfaceinvoke v9.<java.util.Collection: int size()>();
+< v11 = v8 - v10;
+< v5.<com.google.common.collect.AbstractMapBasedMultimap: int totalSize> = v11;
+< v12 = v0.<com.google.common.collect.AbstractMapBasedMultimap$AsMap$AsMapIterator: java.util.Collection collection>;
+< interfaceinvoke v12.<java.util.Collection: void clear()>();
+---
+> v6 = v0.<com.google.common.collect.AbstractMapBasedMultimap$AsMap$AsMapIterator: java.util.Collection collection>;
+> v7 = interfaceinvoke v6.<java.util.Collection: int size()>();
+> v5.<com.google.common.collect.AbstractMapBasedMultimap: int totalSize> = v7;
+> v8 = v0.<com.google.common.collect.AbstractMapBasedMultimap$AsMap$AsMapIterator: java.util.Collection collection>;
+> interfaceinvoke v8.<java.util.Collection: void clear()>();

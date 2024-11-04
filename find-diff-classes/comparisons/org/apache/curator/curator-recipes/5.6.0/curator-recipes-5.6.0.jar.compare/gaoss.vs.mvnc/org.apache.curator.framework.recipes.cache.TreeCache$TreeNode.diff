@@ -1,0 +1,42 @@
+128a129
+> org.apache.curator.framework.api.GetDataWatchBackgroundStatable v17;
+131,134c132,135
+< org.apache.curator.framework.api.Pathable v11, v16;
+< org.apache.curator.framework.WatcherRemoveCuratorFramework v14, v8;
+< org.apache.curator.framework.recipes.cache.TreeCache v1, v13, v5, v7;
+< java.lang.String v12, v17;
+---
+> org.apache.curator.framework.api.Pathable v10, v15;
+> org.apache.curator.framework.WatcherRemoveCuratorFramework v13, v8;
+> org.apache.curator.framework.recipes.cache.TreeCache v1, v12, v5, v7;
+> java.lang.String v11, v16;
+136,137c137,138
+< org.apache.curator.framework.api.GetDataBuilder v15, v9;
+< java.lang.Object v10, v3;
+---
+> org.apache.curator.framework.api.GetDataBuilder v14, v9;
+> java.lang.Object v3;
+151,154c152,155
+< v10 = interfaceinvoke v9.<org.apache.curator.framework.api.GetDataBuilder: java.lang.Object decompressed()>();
+< v11 = specialinvoke v0.<org.apache.curator.framework.recipes.cache.TreeCache$TreeNode: org.apache.curator.framework.api.Pathable maybeWatch(org.apache.curator.framework.api.Watchable)>(v10);
+< v12 = v0.<org.apache.curator.framework.recipes.cache.TreeCache$TreeNode: java.lang.String path>;
+< interfaceinvoke v11.<org.apache.curator.framework.api.Pathable: java.lang.Object forPath(java.lang.String)>(v12);
+---
+> interfaceinvoke v9.<org.apache.curator.framework.api.GetDataBuilder: java.lang.Object decompressed()>();
+> v10 = specialinvoke v0.<org.apache.curator.framework.recipes.cache.TreeCache$TreeNode: org.apache.curator.framework.api.Pathable maybeWatch(org.apache.curator.framework.api.Watchable)>(v17);
+> v11 = v0.<org.apache.curator.framework.recipes.cache.TreeCache$TreeNode: java.lang.String path>;
+> interfaceinvoke v10.<org.apache.curator.framework.api.Pathable: java.lang.Object forPath(java.lang.String)>(v11);
+157,162c158,163
+< v13 = v0.<org.apache.curator.framework.recipes.cache.TreeCache$TreeNode: org.apache.curator.framework.recipes.cache.TreeCache this$0>;
+< v14 = v13.<org.apache.curator.framework.recipes.cache.TreeCache: org.apache.curator.framework.WatcherRemoveCuratorFramework client>;
+< v15 = interfaceinvoke v14.<org.apache.curator.framework.WatcherRemoveCuratorFramework: org.apache.curator.framework.api.GetDataBuilder getData()>();
+< v16 = specialinvoke v0.<org.apache.curator.framework.recipes.cache.TreeCache$TreeNode: org.apache.curator.framework.api.Pathable maybeWatch(org.apache.curator.framework.api.Watchable)>(v15);
+< v17 = v0.<org.apache.curator.framework.recipes.cache.TreeCache$TreeNode: java.lang.String path>;
+< interfaceinvoke v16.<org.apache.curator.framework.api.Pathable: java.lang.Object forPath(java.lang.String)>(v17);
+---
+> v12 = v0.<org.apache.curator.framework.recipes.cache.TreeCache$TreeNode: org.apache.curator.framework.recipes.cache.TreeCache this$0>;
+> v13 = v12.<org.apache.curator.framework.recipes.cache.TreeCache: org.apache.curator.framework.WatcherRemoveCuratorFramework client>;
+> v14 = interfaceinvoke v13.<org.apache.curator.framework.WatcherRemoveCuratorFramework: org.apache.curator.framework.api.GetDataBuilder getData()>();
+> v15 = specialinvoke v0.<org.apache.curator.framework.recipes.cache.TreeCache$TreeNode: org.apache.curator.framework.api.Pathable maybeWatch(org.apache.curator.framework.api.Watchable)>(v14);
+> v16 = v0.<org.apache.curator.framework.recipes.cache.TreeCache$TreeNode: java.lang.String path>;
+> interfaceinvoke v15.<org.apache.curator.framework.api.Pathable: java.lang.Object forPath(java.lang.String)>(v16);

@@ -1,0 +1,1265 @@
+{
+        "jar1": {
+            "file": "~/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar",
+            "classcount": 551,
+            "md5": "45500ab1fd34ff9a77108d4fecada0f9",
+            "sha1": "2c7086602775f1e622b8da1845e3541282f71aea",
+            "size": "858 KB",
+            "manifest": {
+                "Manifest-Version": "1.0",
+                "Bundle-Description": "Flyway: Database Migrations Made Easy.",
+                "Automatic-Module-Name": "org.flywaydb.core",
+                "Bundle-License": "https://flywaydb.org/licenses/flyway-community",
+                "Bundle-SymbolicName": "org.flywaydb.core",
+                "Bnd-LastModified": "1697895971143",
+                "Bundle-ManifestVersion": "2",
+                "Import-Package": "javax.sql,org.apache.commons.logging;version=\"[1.1,2)\";resolution:=optional,org.apache.logging.log4j;version=\"[2.17.1,3)\";resolution:=optional,org.jboss.vfs;version=\"[3.1.0,4)\";resolution:=optional,org.osgi.framework;version=\"1.3.0\";resolution:=mandatory,org.slf4j;version=\"[1.6,2)\";resolution:=optional,org.apache.logging.log4j.util;version=\"[2.17.1,3)\";resolution:=optional,org.postgresql.copy;version=\"[9.3.1102,100.0)\";resolution:=optional,org.postgresql.core;version=\"[9.3.1102,100.0)\";resolution:=optional",
+                "Require-Capability": "osgi.ee;filter:=\"(&(osgi.ee=JavaSE)(version=1.8))\"",
+                "Tool": "Bnd-6.3.1.202206071316",
+                "Export-Package": "org.flywaydb.core;version=\"9.22.1\";uses:=\"org.flywaydb.core.api,org.flywaydb.core.api.configuration,org.flywaydb.core.api.output\",org.flywaydb.core.api;version=\"9.22.1\";uses:=\"org.flywaydb.core.api.resource\",org.flywaydb.core.api.callback;version=\"9.22.1\";uses:=\"org.flywaydb.core.api,org.flywaydb.core.api.configuration,org.flywaydb.core.api.output\",org.flywaydb.core.api.configuration;version=\"9.22.1\";uses:=\"javax.sql,org.flywaydb.core,org.flywaydb.core.api,org.flywaydb.core.api.callback,org.flywaydb.core.api.migration,org.flywaydb.core.api.pattern,org.flywaydb.core.api.resolver\",org.flywaydb.core.api.exception;version=\"9.22.1\";uses:=\"org.flywaydb.core.api\",org.flywaydb.core.api.executor;version=\"9.22.1\";uses:=\"org.flywaydb.core.api.configuration\",org.flywaydb.core.api.logging;version=\"9.22.1\";uses:=\"org.flywaydb.core.api.configuration\",org.flywaydb.core.api.migration;version=\"9.22.1\";uses:=\"org.flywaydb.core.api,org.flywaydb.core.api.configuration,org.flywaydb.core.api.resolver\",org.flywaydb.core.api.migration.baseline;version=\"9.22.1\";uses:=\"org.flywaydb.core.api,org.flywaydb.core.api.configuration,org.flywaydb.core.api.executor,org.flywaydb.core.api.migration,org.flywaydb.core.api.resolver\",org.flywaydb.core.api.output;version=\"9.22.1\";uses:=\"org.flywaydb.core.api,org.flywaydb.core.api.configuration,org.flywaydb.core.api.resolver\",org.flywaydb.core.api.pattern;version=\"9.22.1\";uses:=\"org.flywaydb.core.api\",org.flywaydb.core.api.resolver;version=\"9.22.1\";uses:=\"org.flywaydb.core.api,org.flywaydb.core.api.configuration,org.flywaydb.core.api.executor\",org.flywaydb.core.api.resource;version=\"9.22.1\"",
+                "Bundle-Name": "flyway-core",
+                "Bundle-Version": "9.22.1",
+                "Build-Jdk-Spec": "1.8",
+                "Created-By": "Apache Maven Bundle Plugin 5.1.8"
+            },
+            "services": {"org.flywaydb.core.extensibility.Plugin": [
+                "org.flywaydb.core.internal.database.cockroachdb.CockroachDBDatabaseType",
+                "org.flywaydb.core.internal.database.redshift.RedshiftDatabaseType",
+                "org.flywaydb.core.internal.database.db2.DB2DatabaseType",
+                "org.flywaydb.core.internal.database.derby.DerbyDatabaseType",
+                "org.flywaydb.core.internal.database.h2.H2DatabaseType",
+                "org.flywaydb.core.internal.database.hsqldb.HSQLDBDatabaseType",
+                "org.flywaydb.core.internal.database.informix.InformixDatabaseType",
+                "org.flywaydb.core.internal.database.postgresql.PostgreSQLDatabaseType",
+                "org.flywaydb.core.internal.database.saphana.SAPHANADatabaseType",
+                "org.flywaydb.core.internal.database.snowflake.SnowflakeDatabaseType",
+                "org.flywaydb.core.internal.database.sqlite.SQLiteDatabaseType",
+                "org.flywaydb.core.internal.database.sybasease.SybaseASEJConnectDatabaseType",
+                "org.flywaydb.core.internal.database.sybasease.SybaseASEJTDSDatabaseType",
+                "org.flywaydb.core.internal.database.base.TestContainersDatabaseType",
+                "org.flywaydb.core.internal.schemahistory.BaseAppliedMigration",
+                "org.flywaydb.core.internal.resource.CoreResourceTypeProvider",
+                "org.flywaydb.core.internal.database.postgresql.PostgreSQLConfigurationExtension",
+                "org.flywaydb.core.internal.command.clean.CleanModeConfigurationExtension",
+                "org.flywaydb.core.internal.configuration.resolvers.EnvironmentVariableResolver",
+                "org.flywaydb.core.internal.proprietaryStubs.CommandExtensionStub",
+                "org.flywaydb.core.api.output.InfoHtmlRenderer",
+                "org.flywaydb.core.internal.reports.json.InfoResultDeserializer",
+                "org.flywaydb.core.api.output.MigrateHtmlRenderer",
+                "org.flywaydb.core.internal.reports.json.MigrateResultDeserializer",
+                "org.flywaydb.core.api.output.HoldingRenderer",
+                "org.flywaydb.core.api.output.DashboardRenderer",
+                "org.flywaydb.core.extensibility.LicenseRgDomainChecker",
+                "org.flywaydb.core.api.migration.baseline.BaselineAppliedMigration",
+                "org.flywaydb.core.api.migration.baseline.BaselineMigrationConfigurationExtension",
+                "org.flywaydb.core.api.migration.baseline.BaselineMigrationResolver",
+                "org.flywaydb.core.api.migration.baseline.BaselineResourceTypeProvider"
+            ]}
+        },
+        "jar2": {
+            "file": "~/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar",
+            "classcount": 551,
+            "md5": "ea532d5fe719af8b79df7e0ef851079a",
+            "sha1": "0760fc8759fdeaddba6601c0805ca1c3002f7fa5",
+            "size": "863 KB",
+            "manifest": {
+                "Manifest-Version": "1.0",
+                "Created-By": "Apache Maven Bundle Plugin 5.1.8",
+                "Build-Jdk-Spec": "17",
+                "Automatic-Module-Name": "org.flywaydb.core",
+                "Bnd-LastModified": "1694514807823",
+                "Bundle-Description": "Flyway: Database Migrations Made Easy.",
+                "Bundle-License": "https://flywaydb.org/licenses/flyway-community",
+                "Bundle-ManifestVersion": "2",
+                "Bundle-Name": "flyway-core",
+                "Bundle-SymbolicName": "org.flywaydb.core",
+                "Bundle-Version": "9.22.1",
+                "Export-Package": "org.flywaydb.core;version=\"9.22.1\";uses:=\"org.flywaydb.core.api,org.flywaydb.core.api.configuration,org.flywaydb.core.api.output\",org.flywaydb.core.api;version=\"9.22.1\";uses:=\"org.flywaydb.core.api.resource\",org.flywaydb.core.api.callback;version=\"9.22.1\";uses:=\"org.flywaydb.core.api,org.flywaydb.core.api.configuration,org.flywaydb.core.api.output\",org.flywaydb.core.api.configuration;version=\"9.22.1\";uses:=\"javax.sql,org.flywaydb.core,org.flywaydb.core.api,org.flywaydb.core.api.callback,org.flywaydb.core.api.migration,org.flywaydb.core.api.pattern,org.flywaydb.core.api.resolver\",org.flywaydb.core.api.exception;version=\"9.22.1\";uses:=\"org.flywaydb.core.api\",org.flywaydb.core.api.executor;version=\"9.22.1\";uses:=\"org.flywaydb.core.api.configuration\",org.flywaydb.core.api.logging;version=\"9.22.1\";uses:=\"org.flywaydb.core.api.configuration\",org.flywaydb.core.api.migration;version=\"9.22.1\";uses:=\"org.flywaydb.core.api,org.flywaydb.core.api.configuration,org.flywaydb.core.api.resolver\",org.flywaydb.core.api.migration.baseline;version=\"9.22.1\";uses:=\"org.flywaydb.core.api,org.flywaydb.core.api.configuration,org.flywaydb.core.api.executor,org.flywaydb.core.api.migration,org.flywaydb.core.api.resolver\",org.flywaydb.core.api.output;version=\"9.22.1\";uses:=\"org.flywaydb.core.api,org.flywaydb.core.api.configuration,org.flywaydb.core.api.resolver\",org.flywaydb.core.api.pattern;version=\"9.22.1\";uses:=\"org.flywaydb.core.api\",org.flywaydb.core.api.resolver;version=\"9.22.1\";uses:=\"org.flywaydb.core.api,org.flywaydb.core.api.configuration,org.flywaydb.core.api.executor\",org.flywaydb.core.api.resource;version=\"9.22.1\"",
+                "Import-Package": "javax.sql,org.apache.commons.logging;resolution:=optional;version=\"[1.1,2)\",org.apache.logging.log4j;resolution:=optional;version=\"[2.17.1,3)\",org.jboss.vfs;resolution:=optional;version=\"[3.1.0,4)\",org.osgi.framework;resolution:=mandatory;version=\"1.3.0\",org.slf4j;resolution:=optional;version=\"[1.6,2)\",org.apache.logging.log4j.util;version=\"[2.17.1,3)\";resolution:=optional,org.postgresql.copy;version=\"[9.3.1102,100.0)\";resolution:=optional,org.postgresql.core;version=\"[9.3.1102,100.0)\";resolution:=optional",
+                "Originally-Created-By": "Apache Maven Bundle Plugin 5.1.8",
+                "Require-Capability": "osgi.ee;filter:=\"(&(osgi.ee=JavaSE)(version=1.8))\"",
+                "Tool": "Bnd-6.3.1.202206071316"
+            },
+            "services": {"org.flywaydb.core.extensibility.Plugin": [
+                "org.flywaydb.core.internal.database.cockroachdb.CockroachDBDatabaseType",
+                "org.flywaydb.core.internal.database.redshift.RedshiftDatabaseType",
+                "org.flywaydb.core.internal.database.db2.DB2DatabaseType",
+                "org.flywaydb.core.internal.database.derby.DerbyDatabaseType",
+                "org.flywaydb.core.internal.database.h2.H2DatabaseType",
+                "org.flywaydb.core.internal.database.hsqldb.HSQLDBDatabaseType",
+                "org.flywaydb.core.internal.database.informix.InformixDatabaseType",
+                "org.flywaydb.core.internal.database.postgresql.PostgreSQLDatabaseType",
+                "org.flywaydb.core.internal.database.saphana.SAPHANADatabaseType",
+                "org.flywaydb.core.internal.database.snowflake.SnowflakeDatabaseType",
+                "org.flywaydb.core.internal.database.sqlite.SQLiteDatabaseType",
+                "org.flywaydb.core.internal.database.sybasease.SybaseASEJConnectDatabaseType",
+                "org.flywaydb.core.internal.database.sybasease.SybaseASEJTDSDatabaseType",
+                "org.flywaydb.core.internal.database.base.TestContainersDatabaseType",
+                "org.flywaydb.core.internal.schemahistory.BaseAppliedMigration",
+                "org.flywaydb.core.internal.resource.CoreResourceTypeProvider",
+                "org.flywaydb.core.internal.database.postgresql.PostgreSQLConfigurationExtension",
+                "org.flywaydb.core.internal.command.clean.CleanModeConfigurationExtension",
+                "org.flywaydb.core.internal.configuration.resolvers.EnvironmentVariableResolver",
+                "org.flywaydb.core.internal.proprietaryStubs.CommandExtensionStub",
+                "org.flywaydb.core.api.output.InfoHtmlRenderer",
+                "org.flywaydb.core.internal.reports.json.InfoResultDeserializer",
+                "org.flywaydb.core.api.output.MigrateHtmlRenderer",
+                "org.flywaydb.core.internal.reports.json.MigrateResultDeserializer",
+                "org.flywaydb.core.api.output.HoldingRenderer",
+                "org.flywaydb.core.api.output.DashboardRenderer",
+                "org.flywaydb.core.extensibility.LicenseRgDomainChecker",
+                "org.flywaydb.core.api.migration.baseline.BaselineAppliedMigration",
+                "org.flywaydb.core.api.migration.baseline.BaselineMigrationConfigurationExtension",
+                "org.flywaydb.core.api.migration.baseline.BaselineMigrationResolver",
+                "org.flywaydb.core.api.migration.baseline.BaselineResourceTypeProvider"
+            ]}
+        },
+        "contentset-comparisons": [
+            {
+                "content-type": "sources",
+                "jar1.count": 0,
+                "jar2.count": 0,
+                "intersection": 0,
+                "union": 0,
+                "jar1-jar2": [],
+                "jar2-jar1": []
+            },
+            {
+                "content-type": "bytecode",
+                "jar1.count": 421,
+                "jar2.count": 421,
+                "intersection": 421,
+                "union": 421,
+                "jar1-jar2": [],
+                "jar2-jar1": []
+            },
+            {
+                "content-type": "metadata",
+                "jar1.count": 11,
+                "jar2.count": 11,
+                "intersection": 11,
+                "union": 11,
+                "jar1-jar2": [],
+                "jar2-jar1": []
+            },
+            {
+                "content-type": "other",
+                "jar1.count": 119,
+                "jar2.count": 119,
+                "intersection": 119,
+                "union": 119,
+                "jar1-jar2": [],
+                "jar2-jar1": []
+            }
+        ],
+        "content-pairwise-comparisons": [{
+            "equivalence": {
+                "class": "io.github.bineq.equivalences.bytecode.JNormEquivalence2",
+                "name": "jnorm2"
+            },
+            "summary": {
+                "description": "comparison results of jar/folder content (pairwise comparison of content in both jars/folders)",
+                "equivalent": 357,
+                "non-equivalent": 52,
+                "errors": 12
+            },
+            "details": {
+                "non-equivalent": [
+                    {
+                        "class": "org/flywaydb/core/internal/resolver/CompositeMigrationResolver.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.resolver.CompositeMigrationResolver.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.resolver.CompositeMigrationResolver.jimple",
+                            "transformed-class1": {
+                                "value": "public class org.flywaydb.core.internal.resolver.CompositeMigrationResolver extends java.lang.Object ..  [abbreviated, 15864 chars]",
+                                "sha1": "2540517577848c23b587c738f40b7dc2b4909ed5",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.resolver.CompositeMigrationResolver.jimple",
+                                "md5": "bb857a58eb2683d3cbae5937307074cc"
+                            },
+                            "transformed-class2": {
+                                "value": "public class org.flywaydb.core.internal.resolver.CompositeMigrationResolver extends java.lang.Object ..  [abbreviated, 15864 chars]",
+                                "sha1": "137cb4ec46b57592fe7e3e3db133f54526e71022",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.resolver.CompositeMigrationResolver.jimple",
+                                "md5": "c8cb787e20ca069098ba3c1619f40c7b"
+                            }
+                        }
+                    },
+                    {
+                        "class": "org/flywaydb/core/internal/configuration/models/FlywayModel.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.configuration.models.FlywayModel.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.configuration.models.FlywayModel.jimple",
+                            "transformed-class1": {
+                                "value": "public class org.flywaydb.core.internal.configuration.models.FlywayModel extends java.lang.Object\n{\n ..  [abbreviated, 76273 chars]",
+                                "sha1": "b306219d4101dd56cb5eb7cbfedf7738436c59f6",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.configuration.models.FlywayModel.jimple",
+                                "md5": "ef002e7378bc7b41cf23221f1d674a5a"
+                            },
+                            "transformed-class2": {
+                                "value": "public class org.flywaydb.core.internal.configuration.models.FlywayModel extends java.lang.Object\n{\n ..  [abbreviated, 76273 chars]",
+                                "sha1": "e300f2c0be2f234a049a09579f8252be3f4efb20",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.configuration.models.FlywayModel.jimple",
+                                "md5": "57fc1fcb2cfc1360e1d72b899bc90ca4"
+                            }
+                        }
+                    },
+                    {
+                        "class": "org/flywaydb/core/internal/database/cockroachdb/CockroachDBTable.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.database.cockroachdb.CockroachDBTable.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.database.cockroachdb.CockroachDBTable.jimple",
+                            "transformed-class1": {
+                                "value": "public class org.flywaydb.core.internal.database.cockroachdb.CockroachDBTable extends org.flywaydb.c ..  [abbreviated, 13208 chars]",
+                                "sha1": "cd541c7fafe905c3dad7a75dcf3d5f2a85157ce6",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.database.cockroachdb.CockroachDBTable.jimple",
+                                "md5": "1bb4336e53bc0d02884cba966b3c5617"
+                            },
+                            "transformed-class2": {
+                                "value": "public class org.flywaydb.core.internal.database.cockroachdb.CockroachDBTable extends org.flywaydb.c ..  [abbreviated, 13206 chars]",
+                                "sha1": "58cf457485a77ee085d7fed8a79a9e6ca076c3f8",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.database.cockroachdb.CockroachDBTable.jimple",
+                                "md5": "16f40283d0358717afe45cc745f685fe"
+                            }
+                        }
+                    },
+                    {
+                        "class": "org/flywaydb/core/internal/parser/Parser.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.parser.Parser.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.parser.Parser.jimple",
+                            "transformed-class1": {
+                                "value": "public abstract class org.flywaydb.core.internal.parser.Parser extends java.lang.Object\n{\nprivate st ..  [abbreviated, 77687 chars]",
+                                "sha1": "9db46cefed5e82f16445b5cac36f8910f767c1ce",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.parser.Parser.jimple",
+                                "md5": "fbab13014398f7cdb167463367aaec34"
+                            },
+                            "transformed-class2": {
+                                "value": "public abstract class org.flywaydb.core.internal.parser.Parser extends java.lang.Object\n{\nprivate st ..  [abbreviated, 77687 chars]",
+                                "sha1": "45ad6747fe503ec544fc6827209acb4c6599d3e5",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.parser.Parser.jimple",
+                                "md5": "52eadfd9e1afe766de5ebcb3d8dec194"
+                            }
+                        }
+                    },
+                    {
+                        "class": "org/flywaydb/core/FlywayExecutor.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.FlywayExecutor.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.FlywayExecutor.jimple",
+                            "transformed-class1": {
+                                "value": "public class org.flywaydb.core.FlywayExecutor extends java.lang.Object\n{\nprivate static final org.fl ..  [abbreviated, 32946 chars]",
+                                "sha1": "006c6eac8fab1d4622dedd39d7946f08b48f9d5c",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.FlywayExecutor.jimple",
+                                "md5": "1fd9eaf83e782a00b51d04312b2e843f"
+                            },
+                            "transformed-class2": {
+                                "value": "public class org.flywaydb.core.FlywayExecutor extends java.lang.Object\n{\nprivate static final org.fl ..  [abbreviated, 32948 chars]",
+                                "sha1": "f7e3a296a60150151127de3c6dc83346727db9f0",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.FlywayExecutor.jimple",
+                                "md5": "ba377bef854f2991f83564eebed48c0f"
+                            }
+                        }
+                    },
+                    {
+                        "class": "org/flywaydb/core/internal/resource/ResourceNameParser.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.resource.ResourceNameParser.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.resource.ResourceNameParser.jimple",
+                            "transformed-class1": {
+                                "value": "public class org.flywaydb.core.internal.resource.ResourceNameParser extends java.lang.Object\n{\npriva ..  [abbreviated, 14339 chars]",
+                                "sha1": "3b60c1628d2a9d2e2356754efd284ad751c77488",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.resource.ResourceNameParser.jimple",
+                                "md5": "614a4ec5005fa1e4bb2f6eb641fdbe43"
+                            },
+                            "transformed-class2": {
+                                "value": "public class org.flywaydb.core.internal.resource.ResourceNameParser extends java.lang.Object\n{\npriva ..  [abbreviated, 14337 chars]",
+                                "sha1": "0f6a46c60d146568ea430b4c392b1a73900c03c2",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.resource.ResourceNameParser.jimple",
+                                "md5": "1e931b54ffdb054898df6e19705f3d70"
+                            }
+                        }
+                    },
+                    {
+                        "class": "org/flywaydb/core/internal/command/DbSchemas.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.command.DbSchemas.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.command.DbSchemas.jimple",
+                            "transformed-class1": {
+                                "value": "public class org.flywaydb.core.internal.command.DbSchemas extends java.lang.Object\n{\nprivate static  ..  [abbreviated, 5105 chars]",
+                                "sha1": "fc37964c6b96a73a02019108f698076062c5bc4e",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.command.DbSchemas.jimple",
+                                "md5": "d1f8dc5ae3d16dab7ccd6d4bf3e03f35"
+                            },
+                            "transformed-class2": {
+                                "value": "public class org.flywaydb.core.internal.command.DbSchemas extends java.lang.Object\n{\nprivate static  ..  [abbreviated, 5105 chars]",
+                                "sha1": "c564652401cfdbdf1752cfb8fff626242a1416be",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.command.DbSchemas.jimple",
+                                "md5": "aab21d45d47701cd786bd23774e612bf"
+                            }
+                        }
+                    },
+                    {
+                        "class": "org/flywaydb/core/internal/resolver/java/JavaMigrationExecutor.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.resolver.java.JavaMigrationExecutor.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.resolver.java.JavaMigrationExecutor.jimple",
+                            "transformed-class1": {
+                                "value": "public class org.flywaydb.core.internal.resolver.java.JavaMigrationExecutor extends java.lang.Object ..  [abbreviated, 5720 chars]",
+                                "sha1": "259ef2505f7916df3f4b854e821dba063871a001",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.resolver.java.JavaMigrationExecutor.jimple",
+                                "md5": "dd72043e1283cfe8ca21efe9839a5924"
+                            },
+                            "transformed-class2": {
+                                "value": "public class org.flywaydb.core.internal.resolver.java.JavaMigrationExecutor extends java.lang.Object ..  [abbreviated, 5720 chars]",
+                                "sha1": "c24381d5c3fd8a824b23b4f0e1f3f948a75cc626",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.resolver.java.JavaMigrationExecutor.jimple",
+                                "md5": "b54f15abe67db37a4123e36c0ba56871"
+                            }
+                        }
+                    },
+                    {
+                        "class": "org/flywaydb/core/internal/util/ValidatePatternUtils.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.util.ValidatePatternUtils.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.util.ValidatePatternUtils.jimple",
+                            "transformed-class1": {
+                                "value": "public class org.flywaydb.core.internal.util.ValidatePatternUtils extends java.lang.Object\n{\npublic  ..  [abbreviated, 6709 chars]",
+                                "sha1": "59fb348cb49b37e3a3de0a18fdff7314a0244957",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.util.ValidatePatternUtils.jimple",
+                                "md5": "bac5d76f231dde542b4d93bd934acece"
+                            },
+                            "transformed-class2": {
+                                "value": "public class org.flywaydb.core.internal.util.ValidatePatternUtils extends java.lang.Object\n{\npublic  ..  [abbreviated, 6705 chars]",
+                                "sha1": "045d5f72fe18cb5b2eae6fc3776c3b94f1f5de65",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.util.ValidatePatternUtils.jimple",
+                                "md5": "fdc1ff62e8a172e8cf61686dc4fc3b5c"
+                            }
+                        }
+                    },
+                    {
+                        "class": "org/flywaydb/core/api/migration/baseline/BaselineMigrationResolver.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.api.migration.baseline.BaselineMigrationResolver.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.api.migration.baseline.BaselineMigrationResolver.jimple",
+                            "transformed-class1": {
+                                "value": "public class org.flywaydb.core.api.migration.baseline.BaselineMigrationResolver extends java.lang.Ob ..  [abbreviated, 14093 chars]",
+                                "sha1": "48d8d82dde379ff95e1e248eb28217bf21396cd8",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.api.migration.baseline.BaselineMigrationResolver.jimple",
+                                "md5": "b50a36b87211c47d6e1f37cae738d23b"
+                            },
+                            "transformed-class2": {
+                                "value": "public class org.flywaydb.core.api.migration.baseline.BaselineMigrationResolver extends java.lang.Ob ..  [abbreviated, 14094 chars]",
+                                "sha1": "edc5a16b88c7b1aee03b52c528e7742d4c0dba83",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.api.migration.baseline.BaselineMigrationResolver.jimple",
+                                "md5": "2d391e418cf4ac0518ba57781e12fa94"
+                            }
+                        }
+                    },
+                    {
+                        "class": "org/flywaydb/core/internal/configuration/ConfigUtils.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.configuration.ConfigUtils.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.configuration.ConfigUtils.jimple",
+                            "transformed-class1": {
+                                "value": "public class org.flywaydb.core.internal.configuration.ConfigUtils extends java.lang.Object\n{\nprivate ..  [abbreviated, 50884 chars]",
+                                "sha1": "3d0308313eb332e219f68d79d427927cc71715da",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.configuration.ConfigUtils.jimple",
+                                "md5": "2fb5c810f9c421cc78f996fccc1b8db9"
+                            },
+                            "transformed-class2": {
+                                "value": "public class org.flywaydb.core.internal.configuration.ConfigUtils extends java.lang.Object\n{\nprivate ..  [abbreviated, 50884 chars]",
+                                "sha1": "e773d547f3885e82163dfb20c5903ef18ed992b0",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.configuration.ConfigUtils.jimple",
+                                "md5": "06cf399c54b48fc7fba424787c6d9177"
+                            }
+                        }
+                    },
+                    {
+                        "class": "org/flywaydb/core/internal/command/DbRepair.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.command.DbRepair.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.command.DbRepair.jimple",
+                            "transformed-class1": {
+                                "value": "public class org.flywaydb.core.internal.command.DbRepair extends java.lang.Object\n{\nprivate static f ..  [abbreviated, 25021 chars]",
+                                "sha1": "df163348fb4d00dc53a2d9b7a000659f4506819f",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.command.DbRepair.jimple",
+                                "md5": "abfc803af942309b4533f2852a820717"
+                            },
+                            "transformed-class2": {
+                                "value": "public class org.flywaydb.core.internal.command.DbRepair extends java.lang.Object\n{\nprivate static f ..  [abbreviated, 25021 chars]",
+                                "sha1": "edfa0c166e63fc6fc8d07168b4e0308ee0cdd419",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.command.DbRepair.jimple",
+                                "md5": "488d096bb5b7d05ab8707f8f41f2a389"
+                            }
+                        }
+                    },
+                    {
+                        "class": "org/flywaydb/core/internal/configuration/TomlUtils.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.configuration.TomlUtils.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.configuration.TomlUtils.jimple",
+                            "transformed-class1": {
+                                "value": "public class org.flywaydb.core.internal.configuration.TomlUtils extends java.lang.Object\n{\nprivate s ..  [abbreviated, 12081 chars]",
+                                "sha1": "25f5558a1499b073d7867f1915c663ed745c9385",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.configuration.TomlUtils.jimple",
+                                "md5": "45ef4acc7d60301fbffb1e05ddcfd200"
+                            },
+                            "transformed-class2": {
+                                "value": "public class org.flywaydb.core.internal.configuration.TomlUtils extends java.lang.Object\n{\nprivate s ..  [abbreviated, 12081 chars]",
+                                "sha1": "e22981170adf736e3d81a2f679609f1b46679564",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.configuration.TomlUtils.jimple",
+                                "md5": "29e1bf40cfc7588ffeb2cab9616ef3ad"
+                            }
+                        }
+                    },
+                    {
+                        "class": "org/flywaydb/core/internal/scanner/Scanner.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.scanner.Scanner.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.scanner.Scanner.jimple",
+                            "transformed-class1": {
+                                "value": "public class org.flywaydb.core.internal.scanner.Scanner extends java.lang.Object implements org.flyw ..  [abbreviated, 13182 chars]",
+                                "sha1": "fdd29ddb648190e7b2d2339fd83c876169852a47",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.scanner.Scanner.jimple",
+                                "md5": "c142c59cda518f05720da5346583d0fa"
+                            },
+                            "transformed-class2": {
+                                "value": "public class org.flywaydb.core.internal.scanner.Scanner extends java.lang.Object implements org.flyw ..  [abbreviated, 13182 chars]",
+                                "sha1": "a38254caa4bdecd22a26b64fb489ba1196e7ffbb",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.scanner.Scanner.jimple",
+                                "md5": "011ab4991306bd24120a2e821bb682cb"
+                            }
+                        }
+                    },
+                    {
+                        "class": "org/flywaydb/core/internal/database/cockroachdb/CockroachDBSchema.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.database.cockroachdb.CockroachDBSchema.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.database.cockroachdb.CockroachDBSchema.jimple",
+                            "transformed-class1": {
+                                "value": "public class org.flywaydb.core.internal.database.cockroachdb.CockroachDBSchema extends org.flywaydb. ..  [abbreviated, 28683 chars]",
+                                "sha1": "8b86f7b218d51be8ac376e00e1a62afcf734e829",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.database.cockroachdb.CockroachDBSchema.jimple",
+                                "md5": "7810d2dd8ae861fe0bbeed6f990fca27"
+                            },
+                            "transformed-class2": {
+                                "value": "public class org.flywaydb.core.internal.database.cockroachdb.CockroachDBSchema extends org.flywaydb. ..  [abbreviated, 28678 chars]",
+                                "sha1": "97e7f6f82eb539dba01c3ac8fd05ece809effa75",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.database.cockroachdb.CockroachDBSchema.jimple",
+                                "md5": "b755e618318ff7eb71dd74920cca9ec2"
+                            }
+                        }
+                    },
+                    {
+                        "class": "org/flywaydb/core/internal/callback/DefaultCallbackExecutor.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.callback.DefaultCallbackExecutor.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.callback.DefaultCallbackExecutor.jimple",
+                            "transformed-class1": {
+                                "value": "public class org.flywaydb.core.internal.callback.DefaultCallbackExecutor extends java.lang.Object im ..  [abbreviated, 16787 chars]",
+                                "sha1": "078ce780b0ee4bd1575bf3c54a6aed5ae4c2a94e",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.callback.DefaultCallbackExecutor.jimple",
+                                "md5": "c2d3fc79d2720d4dfa3a14c5584b1542"
+                            },
+                            "transformed-class2": {
+                                "value": "public class org.flywaydb.core.internal.callback.DefaultCallbackExecutor extends java.lang.Object im ..  [abbreviated, 16784 chars]",
+                                "sha1": "cf3e3ea66767fdcfbd38f70672122c0ef0a7c79c",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.callback.DefaultCallbackExecutor.jimple",
+                                "md5": "22367ee95e5823cbed3e0a0fbf4cb9f5"
+                            }
+                        }
+                    },
+                    {
+                        "class": "org/flywaydb/core/internal/command/DbValidate.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.command.DbValidate.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.command.DbValidate.jimple",
+                            "transformed-class1": {
+                                "value": "public class org.flywaydb.core.internal.command.DbValidate extends java.lang.Object\n{\nprivate static ..  [abbreviated, 13589 chars]",
+                                "sha1": "11d6028db92720f3638b067a31331af1efa688ab",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.command.DbValidate.jimple",
+                                "md5": "e8c9edee347ec04976c082409283f8d2"
+                            },
+                            "transformed-class2": {
+                                "value": "public class org.flywaydb.core.internal.command.DbValidate extends java.lang.Object\n{\nprivate static ..  [abbreviated, 13589 chars]",
+                                "sha1": "d84fb95279202f25c9dda599bfef4b888d908ffe",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.command.DbValidate.jimple",
+                                "md5": "f912533439fcef587f5a593316af1fe7"
+                            }
+                        }
+                    },
+                    {
+                        "class": "org/flywaydb/core/internal/util/Locations.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.util.Locations.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.util.Locations.jimple",
+                            "transformed-class1": {
+                                "value": "public class org.flywaydb.core.internal.util.Locations extends java.lang.Object\n{\nprivate static fin ..  [abbreviated, 6062 chars]",
+                                "sha1": "dee9d723dcad3a1362f322de00e3cede72625799",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.util.Locations.jimple",
+                                "md5": "d9d604a16dd8f6055aa4d716dfce1269"
+                            },
+                            "transformed-class2": {
+                                "value": "public class org.flywaydb.core.internal.util.Locations extends java.lang.Object\n{\nprivate static fin ..  [abbreviated, 6062 chars]",
+                                "sha1": "ae5683038ca668c274bb4b42db94636e33918a3d",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.util.Locations.jimple",
+                                "md5": "181497ddd206b7b59748109a32310e5e"
+                            }
+                        }
+                    },
+                    {
+                        "class": "org/flywaydb/core/api/output/MigrateResult.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.api.output.MigrateResult.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.api.output.MigrateResult.jimple",
+                            "transformed-class1": {
+                                "value": "public class org.flywaydb.core.api.output.MigrateResult extends org.flywaydb.core.api.output.HtmlRes ..  [abbreviated, 5984 chars]",
+                                "sha1": "a1e1540a78d3a8db0fffe070432aa9cadab290b5",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.api.output.MigrateResult.jimple",
+                                "md5": "5a7dd0e19c8d3becacaf74da5e23aa2b"
+                            },
+                            "transformed-class2": {
+                                "value": "public class org.flywaydb.core.api.output.MigrateResult extends org.flywaydb.core.api.output.HtmlRes ..  [abbreviated, 5986 chars]",
+                                "sha1": "23bdedc72b3560e35f1ac500bdfae5c48ce6d27c",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.api.output.MigrateResult.jimple",
+                                "md5": "514108aa6f410e07231fab0eae3f68fc"
+                            }
+                        }
+                    },
+                    {
+                        "class": "org/flywaydb/core/extensibility/PluginMetadata.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.extensibility.PluginMetadata.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.extensibility.PluginMetadata.jimple",
+                            "transformed-class1": {
+                                "value": "public interface  org.flywaydb.core.extensibility.PluginMetadata extends java.lang.Object implements ..  [abbreviated, 8263 chars]",
+                                "sha1": "42a8e4e2913e1dba3bf7d046b129ac9db5dd7d8e",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.extensibility.PluginMetadata.jimple",
+                                "md5": "03a8b068e492c4ef81f957c5b2beb8c6"
+                            },
+                            "transformed-class2": {
+                                "value": "public interface  org.flywaydb.core.extensibility.PluginMetadata extends java.lang.Object implements ..  [abbreviated, 8259 chars]",
+                                "sha1": "11358df62b7cffcf377692570fcf0ff4a2d30df2",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.extensibility.PluginMetadata.jimple",
+                                "md5": "60be1f6c674300cf5f6cb5f812ac434e"
+                            }
+                        }
+                    },
+                    {
+                        "class": "org/flywaydb/core/internal/configuration/models/EnvironmentModel.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.configuration.models.EnvironmentModel.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.configuration.models.EnvironmentModel.jimple",
+                            "transformed-class1": {
+                                "value": "public class org.flywaydb.core.internal.configuration.models.EnvironmentModel extends java.lang.Obje ..  [abbreviated, 15026 chars]",
+                                "sha1": "0044bc8cf0d560f1426d9bf359a053ca32194d7c",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.configuration.models.EnvironmentModel.jimple",
+                                "md5": "acc5c01948e8b24114b126b138ec012a"
+                            },
+                            "transformed-class2": {
+                                "value": "public class org.flywaydb.core.internal.configuration.models.EnvironmentModel extends java.lang.Obje ..  [abbreviated, 15026 chars]",
+                                "sha1": "0de85392cb9312ca6722248461d3efe6da43deb5",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.configuration.models.EnvironmentModel.jimple",
+                                "md5": "da0376136e5474aaae572a0b58d79f0c"
+                            }
+                        }
+                    },
+                    {
+                        "class": "org/flywaydb/core/api/configuration/ClassicConfiguration.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.api.configuration.ClassicConfiguration.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.api.configuration.ClassicConfiguration.jimple",
+                            "transformed-class1": {
+                                "value": "public class org.flywaydb.core.api.configuration.ClassicConfiguration extends java.lang.Object imple ..  [abbreviated, 197955 chars]",
+                                "sha1": "2a7d7559f6a0569894032cf8b577cd0f949085d9",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.api.configuration.ClassicConfiguration.jimple",
+                                "md5": "c2b592ec626963d6464d04ec70d90c5c"
+                            },
+                            "transformed-class2": {
+                                "value": "public class org.flywaydb.core.api.configuration.ClassicConfiguration extends java.lang.Object imple ..  [abbreviated, 197972 chars]",
+                                "sha1": "be6bfcb255acdb1356117fd413baaabbf429fa1e",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.api.configuration.ClassicConfiguration.jimple",
+                                "md5": "a44760b9db1f5f3aae1884972559f164"
+                            }
+                        }
+                    },
+                    {
+                        "class": "org/flywaydb/core/internal/util/ClassUtils.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.util.ClassUtils.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.util.ClassUtils.jimple",
+                            "transformed-class1": {
+                                "value": "public class org.flywaydb.core.internal.util.ClassUtils extends java.lang.Object\n{\npublic static jav ..  [abbreviated, 18221 chars]",
+                                "sha1": "f6a861cb72a9ce69a0947b54086b2f3ae1d198c7",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.util.ClassUtils.jimple",
+                                "md5": "12e893c2b5a44e8c0172d93051e231a9"
+                            },
+                            "transformed-class2": {
+                                "value": "public class org.flywaydb.core.internal.util.ClassUtils extends java.lang.Object\n{\npublic static jav ..  [abbreviated, 18221 chars]",
+                                "sha1": "100fc57f199f5b829768bec1b59be35da331a29d",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.util.ClassUtils.jimple",
+                                "md5": "8243053d4259824734f7ac6cbda7d762"
+                            }
+                        }
+                    },
+                    {
+                        "class": "org/flywaydb/core/api/logging/LogFactory.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.api.logging.LogFactory.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.api.logging.LogFactory.jimple",
+                            "transformed-class1": {
+                                "value": "public class org.flywaydb.core.api.logging.LogFactory extends java.lang.Object\n{\nprivate static fina ..  [abbreviated, 9697 chars]",
+                                "sha1": "87c05888a8417a2530db6dbeb783d1c5a74bdcb8",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.api.logging.LogFactory.jimple",
+                                "md5": "9c53a0ebf43cc26650233bddf20ed6ce"
+                            },
+                            "transformed-class2": {
+                                "value": "public class org.flywaydb.core.api.logging.LogFactory extends java.lang.Object\n{\nprivate static fina ..  [abbreviated, 9698 chars]",
+                                "sha1": "955e74c5aa0b97a0b53fd7c02881390cd9853535",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.api.logging.LogFactory.jimple",
+                                "md5": "f157631d9325b9e91e056cab6cb6cf25"
+                            }
+                        }
+                    },
+                    {
+                        "class": "org/flywaydb/core/internal/util/StringUtils.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.util.StringUtils.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.util.StringUtils.jimple",
+                            "transformed-class1": {
+                                "value": "public class org.flywaydb.core.internal.util.StringUtils extends java.lang.Object\n{\nprivate static f ..  [abbreviated, 18058 chars]",
+                                "sha1": "4538201ede8a06ce86a9831a7a643dc62e8ba22c",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.util.StringUtils.jimple",
+                                "md5": "e5c2331630ac628aad3d5a988380f634"
+                            },
+                            "transformed-class2": {
+                                "value": "public class org.flywaydb.core.internal.util.StringUtils extends java.lang.Object\n{\nprivate static f ..  [abbreviated, 18058 chars]",
+                                "sha1": "f4740b5ebc5c345b8a636d69730a8692c56d2b9e",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.util.StringUtils.jimple",
+                                "md5": "2c01d28b7f329df6fd3bf28be983237f"
+                            }
+                        }
+                    },
+                    {
+                        "class": "org/flywaydb/core/internal/command/clean/DbClean.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.command.clean.DbClean.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.command.clean.DbClean.jimple",
+                            "transformed-class1": {
+                                "value": "public class org.flywaydb.core.internal.command.clean.DbClean extends java.lang.Object\n{\nprivate sta ..  [abbreviated, 11841 chars]",
+                                "sha1": "7bed25b024644504eb1f7265912009b8f0ca3ea6",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.command.clean.DbClean.jimple",
+                                "md5": "f5f421857f76e133c9a7718c0563a68e"
+                            },
+                            "transformed-class2": {
+                                "value": "public class org.flywaydb.core.internal.command.clean.DbClean extends java.lang.Object\n{\nprivate sta ..  [abbreviated, 11841 chars]",
+                                "sha1": "a37ba055ec07c937f664092355584a1c2145c5b9",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.command.clean.DbClean.jimple",
+                                "md5": "438ce154b848c462ec88a81f92f17d69"
+                            }
+                        }
+                    },
+                    {
+                        "class": "org/flywaydb/core/internal/database/base/BaseDatabaseType.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.database.base.BaseDatabaseType.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.database.base.BaseDatabaseType.jimple",
+                            "transformed-class1": {
+                                "value": "public abstract class org.flywaydb.core.internal.database.base.BaseDatabaseType extends java.lang.Ob ..  [abbreviated, 12359 chars]",
+                                "sha1": "4be7f3c757b41f0fcaa478597011dd48247272ff",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.database.base.BaseDatabaseType.jimple",
+                                "md5": "2ba09bdd4216a3b9e9f2e01504a563c4"
+                            },
+                            "transformed-class2": {
+                                "value": "public abstract class org.flywaydb.core.internal.database.base.BaseDatabaseType extends java.lang.Ob ..  [abbreviated, 12359 chars]",
+                                "sha1": "2571d832b2489d074f249e1c3620041a95179013",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.database.base.BaseDatabaseType.jimple",
+                                "md5": "5ff85115bcc170bfb9c043947bf7a1b5"
+                            }
+                        }
+                    },
+                    {
+                        "class": "org/flywaydb/core/internal/database/snowflake/SnowflakeSchema.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.database.snowflake.SnowflakeSchema.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.database.snowflake.SnowflakeSchema.jimple",
+                            "transformed-class1": {
+                                "value": "public class org.flywaydb.core.internal.database.snowflake.SnowflakeSchema extends org.flywaydb.core ..  [abbreviated, 21727 chars]",
+                                "sha1": "8fdbb1b051d2a4b4377253d9457beb90aee46f4b",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.database.snowflake.SnowflakeSchema.jimple",
+                                "md5": "5be4dbe7d9001a8a2dc977c88216b2fd"
+                            },
+                            "transformed-class2": {
+                                "value": "public class org.flywaydb.core.internal.database.snowflake.SnowflakeSchema extends org.flywaydb.core ..  [abbreviated, 21723 chars]",
+                                "sha1": "dd2c638b8c3abf96790d7a926aeda6641b6d6945",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.database.snowflake.SnowflakeSchema.jimple",
+                                "md5": "c3e0131c2a82592a294957c5b750ab41"
+                            }
+                        }
+                    },
+                    {
+                        "class": "org/flywaydb/core/internal/info/MigrationInfoServiceImpl.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.info.MigrationInfoServiceImpl.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.info.MigrationInfoServiceImpl.jimple",
+                            "transformed-class1": {
+                                "value": "public class org.flywaydb.core.internal.info.MigrationInfoServiceImpl extends java.lang.Object imple ..  [abbreviated, 63256 chars]",
+                                "sha1": "7b87025285fb29b36835e02b6878204b332b2f14",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.info.MigrationInfoServiceImpl.jimple",
+                                "md5": "aae090c29c10691be06b7715bd256cda"
+                            },
+                            "transformed-class2": {
+                                "value": "public class org.flywaydb.core.internal.info.MigrationInfoServiceImpl extends java.lang.Object imple ..  [abbreviated, 63256 chars]",
+                                "sha1": "4f7eb42b5324dd62f5b7c3c9129771dfb3bbb115",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.info.MigrationInfoServiceImpl.jimple",
+                                "md5": "ef6bde01f1ac3192a1c1e5fe87002497"
+                            }
+                        }
+                    },
+                    {
+                        "class": "org/flywaydb/core/internal/command/clean/CleanExecutor.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.command.clean.CleanExecutor.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.command.clean.CleanExecutor.jimple",
+                            "transformed-class1": {
+                                "value": "public class org.flywaydb.core.internal.command.clean.CleanExecutor extends java.lang.Object\n{\npriva ..  [abbreviated, 26353 chars]",
+                                "sha1": "8677de673e3e6347c6e34f113abff0e7778d5a6b",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.command.clean.CleanExecutor.jimple",
+                                "md5": "5ad816d9c6682a275d84c56d5988ab94"
+                            },
+                            "transformed-class2": {
+                                "value": "public class org.flywaydb.core.internal.command.clean.CleanExecutor extends java.lang.Object\n{\npriva ..  [abbreviated, 26353 chars]",
+                                "sha1": "ffee2ca4f4d70134acf53c27fa047304f1f63a8c",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.command.clean.CleanExecutor.jimple",
+                                "md5": "de420946f201b1bccbfdba519b004173"
+                            }
+                        }
+                    },
+                    {
+                        "class": "org/flywaydb/core/internal/command/DbMigrate.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.command.DbMigrate.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.command.DbMigrate.jimple",
+                            "transformed-class1": {
+                                "value": "public class org.flywaydb.core.internal.command.DbMigrate extends java.lang.Object\n{\nprivate static  ..  [abbreviated, 60878 chars]",
+                                "sha1": "1cf2072935cc8df0f4d200a046b94cb098c93688",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.command.DbMigrate.jimple",
+                                "md5": "5d20a0d509f749e3d833586c8592de2d"
+                            },
+                            "transformed-class2": {
+                                "value": "public class org.flywaydb.core.internal.command.DbMigrate extends java.lang.Object\n{\nprivate static  ..  [abbreviated, 60878 chars]",
+                                "sha1": "4ddfb6538553dcbb8396f46cad8d227e0c382b3c",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.command.DbMigrate.jimple",
+                                "md5": "f94835683eb95e33b0f72a70f405b4bd"
+                            }
+                        }
+                    },
+                    {
+                        "class": "org/flywaydb/core/internal/configuration/models/ConfigurationModel.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.configuration.models.ConfigurationModel.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.configuration.models.ConfigurationModel.jimple",
+                            "transformed-class1": {
+                                "value": "public class org.flywaydb.core.internal.configuration.models.ConfigurationModel extends java.lang.Ob ..  [abbreviated, 9864 chars]",
+                                "sha1": "ce4b8baf700fb4994440358dae4e34a873d78725",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.configuration.models.ConfigurationModel.jimple",
+                                "md5": "d9fdda24d2d21a4fc18201ca9d7354fd"
+                            },
+                            "transformed-class2": {
+                                "value": "public class org.flywaydb.core.internal.configuration.models.ConfigurationModel extends java.lang.Ob ..  [abbreviated, 9864 chars]",
+                                "sha1": "2b078305a50168cb7c2038aa75edead25b31937f",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.configuration.models.ConfigurationModel.jimple",
+                                "md5": "a398b3c44b0ef3c61a5731c441dec6ce"
+                            }
+                        }
+                    },
+                    {
+                        "class": "org/flywaydb/core/Flyway.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.Flyway.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.Flyway.jimple",
+                            "transformed-class1": {
+                                "value": "public class org.flywaydb.core.Flyway extends java.lang.Object\n{\nprivate static final org.flywaydb.c ..  [abbreviated, 22631 chars]",
+                                "sha1": "df8b1dcb1f94199983603b151ad579eb7205c2c6",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.Flyway.jimple",
+                                "md5": "ce231432b0cd5fa9f2776d4e388acd24"
+                            },
+                            "transformed-class2": {
+                                "value": "public class org.flywaydb.core.Flyway extends java.lang.Object\n{\nprivate static final org.flywaydb.c ..  [abbreviated, 22631 chars]",
+                                "sha1": "a2a54ffabe4a7187f675bd39e9d020e574fbcbcf",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.Flyway.jimple",
+                                "md5": "c90e7c47eb79df9866c050a46becdaca"
+                            }
+                        }
+                    },
+                    {
+                        "class": "org/flywaydb/core/internal/plugin/PluginRegister.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.plugin.PluginRegister.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.plugin.PluginRegister.jimple",
+                            "transformed-class1": {
+                                "value": "public class org.flywaydb.core.internal.plugin.PluginRegister extends java.lang.Object\n{\nprivate sta ..  [abbreviated, 7243 chars]",
+                                "sha1": "e89f0440c743dbd6ae1e958aff089266c77dccf4",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.plugin.PluginRegister.jimple",
+                                "md5": "aaf75a46897570e77575778cfec9b9af"
+                            },
+                            "transformed-class2": {
+                                "value": "public class org.flywaydb.core.internal.plugin.PluginRegister extends java.lang.Object\n{\nprivate sta ..  [abbreviated, 7239 chars]",
+                                "sha1": "806ab4d2a3ec43494ba0cfb40c8cd574b3325a4d",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.plugin.PluginRegister.jimple",
+                                "md5": "769a90b53f9af9be7443339798a7a798"
+                            }
+                        }
+                    },
+                    {
+                        "class": "org/flywaydb/core/internal/database/base/Connection.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.database.base.Connection.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.database.base.Connection.jimple",
+                            "transformed-class1": {
+                                "value": "public abstract class org.flywaydb.core.internal.database.base.Connection extends java.lang.Object i ..  [abbreviated, 12843 chars]",
+                                "sha1": "ae389fdac5f6ec71557f17cf69198a5cd42fbc69",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.database.base.Connection.jimple",
+                                "md5": "4419816e5743b31abced45fa1d3911aa"
+                            },
+                            "transformed-class2": {
+                                "value": "public abstract class org.flywaydb.core.internal.database.base.Connection extends java.lang.Object i ..  [abbreviated, 12843 chars]",
+                                "sha1": "b266e5de7bc8bdb2fafcdbc221dcfe0868105330",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.database.base.Connection.jimple",
+                                "md5": "d6adc31c722035af1bde2f9f6245ee79"
+                            }
+                        }
+                    },
+                    {
+                        "class": "org/flywaydb/core/internal/info/MigrationInfoDumper.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.info.MigrationInfoDumper.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.info.MigrationInfoDumper.jimple",
+                            "transformed-class1": {
+                                "value": "public class org.flywaydb.core.internal.info.MigrationInfoDumper extends java.lang.Object\n{\npublic s ..  [abbreviated, 10939 chars]",
+                                "sha1": "9eb1ccd07d742cc9cedfc377d19aa6072ebbfdc0",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.info.MigrationInfoDumper.jimple",
+                                "md5": "42dddf3895c70ec188f56b7091fbd138"
+                            },
+                            "transformed-class2": {
+                                "value": "public class org.flywaydb.core.internal.info.MigrationInfoDumper extends java.lang.Object\n{\npublic s ..  [abbreviated, 10939 chars]",
+                                "sha1": "b9291242c364bd6632f6bdb2026940894c0d44ac",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.info.MigrationInfoDumper.jimple",
+                                "md5": "200042b20f4e12c91782173ac5db4b88"
+                            }
+                        }
+                    },
+                    {
+                        "class": "org/flywaydb/core/internal/resolver/sql/SqlMigrationExecutor.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.resolver.sql.SqlMigrationExecutor.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.resolver.sql.SqlMigrationExecutor.jimple",
+                            "transformed-class1": {
+                                "value": "public class org.flywaydb.core.internal.resolver.sql.SqlMigrationExecutor extends java.lang.Object i ..  [abbreviated, 5545 chars]",
+                                "sha1": "32c5c983aeffc96983e544e5b1d1a5cd27774b3b",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.resolver.sql.SqlMigrationExecutor.jimple",
+                                "md5": "aceec2e7d4aee18ecff131795a302fa9"
+                            },
+                            "transformed-class2": {
+                                "value": "public class org.flywaydb.core.internal.resolver.sql.SqlMigrationExecutor extends java.lang.Object i ..  [abbreviated, 5545 chars]",
+                                "sha1": "70dce51062d50c425066fe8d5437040a4f19b3ad",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.resolver.sql.SqlMigrationExecutor.jimple",
+                                "md5": "957d15e095f5792b1918c1e6ff95b04b"
+                            }
+                        }
+                    },
+                    {
+                        "class": "org/flywaydb/core/internal/reports/html/HtmlReportGenerator.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.reports.html.HtmlReportGenerator.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.reports.html.HtmlReportGenerator.jimple",
+                            "transformed-class1": {
+                                "value": "public class org.flywaydb.core.internal.reports.html.HtmlReportGenerator extends java.lang.Object\n{\n ..  [abbreviated, 45817 chars]",
+                                "sha1": "e62bf0416f7c9580d9fb04d4c8b59ba94905857e",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.reports.html.HtmlReportGenerator.jimple",
+                                "md5": "2792733715537a6c6f84a8c7ef4a7ee7"
+                            },
+                            "transformed-class2": {
+                                "value": "public class org.flywaydb.core.internal.reports.html.HtmlReportGenerator extends java.lang.Object\n{\n ..  [abbreviated, 45812 chars]",
+                                "sha1": "20e56d5f72df99b5554143720c47d7bfaca708a3",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.reports.html.HtmlReportGenerator.jimple",
+                                "md5": "34870c821eb0a5ed895fabbf7f7521cc"
+                            }
+                        }
+                    },
+                    {
+                        "class": "org/flywaydb/core/api/output/CommandResultFactory.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.api.output.CommandResultFactory.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.api.output.CommandResultFactory.jimple",
+                            "transformed-class1": {
+                                "value": "public class org.flywaydb.core.api.output.CommandResultFactory extends java.lang.Object\n{\npublic voi ..  [abbreviated, 28303 chars]",
+                                "sha1": "1581ed18b18bf8d364fd2ac308bb575e51b480a7",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.api.output.CommandResultFactory.jimple",
+                                "md5": "d8500cb0899a9b6526ab8d7a25052c44"
+                            },
+                            "transformed-class2": {
+                                "value": "public class org.flywaydb.core.api.output.CommandResultFactory extends java.lang.Object\n{\npublic voi ..  [abbreviated, 28309 chars]",
+                                "sha1": "a7b313466677ebd8350ce00e0b1cd98ad224cb65",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.api.output.CommandResultFactory.jimple",
+                                "md5": "66ea10b6d0dc2691d30b8ade99531282"
+                            }
+                        }
+                    },
+                    {
+                        "class": "org/flywaydb/core/api/output/ValidateResult.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.api.output.ValidateResult.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.api.output.ValidateResult.jimple",
+                            "transformed-class1": {
+                                "value": "public class org.flywaydb.core.api.output.ValidateResult extends org.flywaydb.core.api.output.Operat ..  [abbreviated, 2723 chars]",
+                                "sha1": "f314148fdb8e96cb2b5f98d2d63d195cccc1aaf6",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.api.output.ValidateResult.jimple",
+                                "md5": "e35e318875b4bb9195401c326540c9ac"
+                            },
+                            "transformed-class2": {
+                                "value": "public class org.flywaydb.core.api.output.ValidateResult extends org.flywaydb.core.api.output.Operat ..  [abbreviated, 2724 chars]",
+                                "sha1": "6c9d815a7076bfc6217fb07e9543afee130abba0",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.api.output.ValidateResult.jimple",
+                                "md5": "2465d37ae637869b241c9db7445f0de5"
+                            }
+                        }
+                    },
+                    {
+                        "class": "org/flywaydb/core/internal/schemahistory/SchemaHistory.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.schemahistory.SchemaHistory.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.schemahistory.SchemaHistory.jimple",
+                            "transformed-class1": {
+                                "value": "public abstract class org.flywaydb.core.internal.schemahistory.SchemaHistory extends java.lang.Objec ..  [abbreviated, 10264 chars]",
+                                "sha1": "6ef37af80acf5e48f871e3286ae4832ced269b50",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.schemahistory.SchemaHistory.jimple",
+                                "md5": "f476e510f46307fed4774027dc6b1668"
+                            },
+                            "transformed-class2": {
+                                "value": "public abstract class org.flywaydb.core.internal.schemahistory.SchemaHistory extends java.lang.Objec ..  [abbreviated, 10264 chars]",
+                                "sha1": "a65a91ef17f77f01fdaf22a6fbd307b4b15cc8ad",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.schemahistory.SchemaHistory.jimple",
+                                "md5": "3782132d0e4ded90752b78e8e5847b4d"
+                            }
+                        }
+                    },
+                    {
+                        "class": "org/flywaydb/core/internal/schemahistory/JdbcTableSchemaHistory.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory.jimple",
+                            "transformed-class1": {
+                                "value": "class org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory extends org.flywaydb.core.inte ..  [abbreviated, 44577 chars]",
+                                "sha1": "98b2dc007050a28763e638b24244eda10373d427",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory.jimple",
+                                "md5": "290dfd5c5fc0e846f7d98c17801dde9b"
+                            },
+                            "transformed-class2": {
+                                "value": "class org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory extends org.flywaydb.core.inte ..  [abbreviated, 44577 chars]",
+                                "sha1": "984a78eb59fab8024735b063aa4aceb0fef8f9d4",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory.jimple",
+                                "md5": "7da982fae001b0e5d02590c7a5e7769d"
+                            }
+                        }
+                    },
+                    {
+                        "class": "org/flywaydb/core/internal/database/InsertRowLock.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.database.InsertRowLock.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.database.InsertRowLock.jimple",
+                            "transformed-class1": {
+                                "value": "public class org.flywaydb.core.internal.database.InsertRowLock extends java.lang.Object\n{\nprivate st ..  [abbreviated, 12219 chars]",
+                                "sha1": "241647dbfe5caeca661b89df358c078f7e2b0fa0",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.database.InsertRowLock.jimple",
+                                "md5": "38e089a7ab4cc92acdb04dc596ac2f31"
+                            },
+                            "transformed-class2": {
+                                "value": "public class org.flywaydb.core.internal.database.InsertRowLock extends java.lang.Object\n{\nprivate st ..  [abbreviated, 12219 chars]",
+                                "sha1": "43a31f05fba891b22f1feb39a64a79f1fa66f847",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.database.InsertRowLock.jimple",
+                                "md5": "e7956443f7625a747e64e858f4dd2018"
+                            }
+                        }
+                    },
+                    {
+                        "class": "org/flywaydb/core/internal/reports/json/CompositeResultDeserializer.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.reports.json.CompositeResultDeserializer.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.reports.json.CompositeResultDeserializer.jimple",
+                            "transformed-class1": {
+                                "value": "public class org.flywaydb.core.internal.reports.json.CompositeResultDeserializer extends java.lang.O ..  [abbreviated, 3673 chars]",
+                                "sha1": "6f328fe576f8711c1bed42ea79ed15e05a03c3f4",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.reports.json.CompositeResultDeserializer.jimple",
+                                "md5": "19493e284955dd0537a7b14c7a5e7f12"
+                            },
+                            "transformed-class2": {
+                                "value": "public class org.flywaydb.core.internal.reports.json.CompositeResultDeserializer extends java.lang.O ..  [abbreviated, 3671 chars]",
+                                "sha1": "abb94c5fb2aebb5f639a4a56be30e8ca2a2d5427",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.reports.json.CompositeResultDeserializer.jimple",
+                                "md5": "f5f9a60059d6fd17839247a2fe33c80c"
+                            }
+                        }
+                    },
+                    {
+                        "class": "org/flywaydb/core/internal/info/MigrationInfoImpl.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.info.MigrationInfoImpl.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.info.MigrationInfoImpl.jimple",
+                            "transformed-class1": {
+                                "value": "public class org.flywaydb.core.internal.info.MigrationInfoImpl extends java.lang.Object implements o ..  [abbreviated, 54015 chars]",
+                                "sha1": "83b5704fc1423a1a7825f3e2b1862d78ee0bdce6",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.info.MigrationInfoImpl.jimple",
+                                "md5": "c34da4ccdbb42b3c6db757e350818a51"
+                            },
+                            "transformed-class2": {
+                                "value": "public class org.flywaydb.core.internal.info.MigrationInfoImpl extends java.lang.Object implements o ..  [abbreviated, 54015 chars]",
+                                "sha1": "c0692706adeeef3d5d4e0869818a21599774e80e",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.info.MigrationInfoImpl.jimple",
+                                "md5": "9827fe500ed6f2b3e9ad65e5b5837caf"
+                            }
+                        }
+                    },
+                    {
+                        "class": "org/flywaydb/core/internal/schemahistory/BaseAppliedMigration.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.schemahistory.BaseAppliedMigration.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.schemahistory.BaseAppliedMigration.jimple",
+                            "transformed-class1": {
+                                "value": "public class org.flywaydb.core.internal.schemahistory.BaseAppliedMigration extends java.lang.Object  ..  [abbreviated, 28530 chars]",
+                                "sha1": "2436fbdca47fdd9356239e735f31e3d63f20753f",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.schemahistory.BaseAppliedMigration.jimple",
+                                "md5": "7bdd8deb962eafabdd9cc4a0c5d26dbb"
+                            },
+                            "transformed-class2": {
+                                "value": "public class org.flywaydb.core.internal.schemahistory.BaseAppliedMigration extends java.lang.Object  ..  [abbreviated, 28530 chars]",
+                                "sha1": "e9048abec45b0f24e5d6e9712e3496aea2f3810c",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.schemahistory.BaseAppliedMigration.jimple",
+                                "md5": "b81e94615681bdcceb1137cba696c6b8"
+                            }
+                        }
+                    },
+                    {
+                        "class": "org/flywaydb/core/api/output/InfoHtmlRenderer.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.api.output.InfoHtmlRenderer.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.api.output.InfoHtmlRenderer.jimple",
+                            "transformed-class1": {
+                                "value": "public class org.flywaydb.core.api.output.InfoHtmlRenderer extends java.lang.Object implements org.f ..  [abbreviated, 6742 chars]",
+                                "sha1": "ea9d82d78f5c686af58972775267cfcd71feda15",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.api.output.InfoHtmlRenderer.jimple",
+                                "md5": "4a225f89461aafbd25112c256eb7f08a"
+                            },
+                            "transformed-class2": {
+                                "value": "public class org.flywaydb.core.api.output.InfoHtmlRenderer extends java.lang.Object implements org.f ..  [abbreviated, 6745 chars]",
+                                "sha1": "fb17b8b9ff7ac2577caad1f95841c6d605160109",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.api.output.InfoHtmlRenderer.jimple",
+                                "md5": "f7149f9f298f857b002a178248cc191b"
+                            }
+                        }
+                    },
+                    {
+                        "class": "org/flywaydb/core/internal/util/FeatureDetector.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.util.FeatureDetector.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.util.FeatureDetector.jimple",
+                            "transformed-class1": {
+                                "value": "public final class org.flywaydb.core.internal.util.FeatureDetector extends java.lang.Object\n{\nprivat ..  [abbreviated, 14799 chars]",
+                                "sha1": "4a59a7ee4719bff498681faa9b6d41bcb13328ad",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.util.FeatureDetector.jimple",
+                                "md5": "fa541097e2326fc4b91d4263364a457a"
+                            },
+                            "transformed-class2": {
+                                "value": "public final class org.flywaydb.core.internal.util.FeatureDetector extends java.lang.Object\n{\nprivat ..  [abbreviated, 14799 chars]",
+                                "sha1": "da8c0207b2b0e4fb53cacaacd7c997de764138c5",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.util.FeatureDetector.jimple",
+                                "md5": "6b935c2562d8430382e3c55c95a9707d"
+                            }
+                        }
+                    },
+                    {
+                        "class": "org/flywaydb/core/api/migration/baseline/BaselineAppliedMigration.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.api.migration.baseline.BaselineAppliedMigration.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.api.migration.baseline.BaselineAppliedMigration.jimple",
+                            "transformed-class1": {
+                                "value": "public class org.flywaydb.core.api.migration.baseline.BaselineAppliedMigration extends org.flywaydb. ..  [abbreviated, 6772 chars]",
+                                "sha1": "8f4eebfde52ec29e731872fb1e3fce16a3684916",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.api.migration.baseline.BaselineAppliedMigration.jimple",
+                                "md5": "aab00fe4904fd06ebaf4cf7573107616"
+                            },
+                            "transformed-class2": {
+                                "value": "public class org.flywaydb.core.api.migration.baseline.BaselineAppliedMigration extends org.flywaydb. ..  [abbreviated, 6774 chars]",
+                                "sha1": "1f11003cd5971f146f02217c25cd5f2767d432ca",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.api.migration.baseline.BaselineAppliedMigration.jimple",
+                                "md5": "f0e2aaecfa69336e8d130d34a55e13fe"
+                            }
+                        }
+                    },
+                    {
+                        "class": "org/flywaydb/core/api/output/MigrateHtmlRenderer.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.api.output.MigrateHtmlRenderer.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.api.output.MigrateHtmlRenderer.jimple",
+                            "transformed-class1": {
+                                "value": "public class org.flywaydb.core.api.output.MigrateHtmlRenderer extends java.lang.Object implements or ..  [abbreviated, 11156 chars]",
+                                "sha1": "c0883686b31894ed739c11bb88a44b783dd38a00",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.api.output.MigrateHtmlRenderer.jimple",
+                                "md5": "4a7767f1664ae1940df0ddc5f1fb1481"
+                            },
+                            "transformed-class2": {
+                                "value": "public class org.flywaydb.core.api.output.MigrateHtmlRenderer extends java.lang.Object implements or ..  [abbreviated, 11160 chars]",
+                                "sha1": "0343592f6ad1cc87e2e98499d30123379d8e4520",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.api.output.MigrateHtmlRenderer.jimple",
+                                "md5": "ac3280717f62a2b6417e08dff32bca72"
+                            }
+                        }
+                    },
+                    {
+                        "class": "org/flywaydb/core/internal/util/CommandExtensionUtils.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.util.CommandExtensionUtils.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.util.CommandExtensionUtils.jimple",
+                            "transformed-class1": {
+                                "value": "public class org.flywaydb.core.internal.util.CommandExtensionUtils extends java.lang.Object\n{\npublic ..  [abbreviated, 2904 chars]",
+                                "sha1": "8c31d8c0dd401e5e651d237ce9274798213e2458",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.util.CommandExtensionUtils.jimple",
+                                "md5": "454398a1fcc4e58629efbeaca91d0988"
+                            },
+                            "transformed-class2": {
+                                "value": "public class org.flywaydb.core.internal.util.CommandExtensionUtils extends java.lang.Object\n{\npublic ..  [abbreviated, 2904 chars]",
+                                "sha1": "ba057aa52f5a80bab2e146330e328da7ac361f36",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.util.CommandExtensionUtils.jimple",
+                                "md5": "0cd97defc3454d7adae3aa76ca970a0c"
+                            }
+                        }
+                    },
+                    {
+                        "class": "org/flywaydb/core/internal/database/postgresql/PostgreSQLAdvisoryLockTemplate.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.database.postgresql.PostgreSQLAdvisoryLockTemplate.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.database.postgresql.PostgreSQLAdvisoryLockTemplate.jimple",
+                            "transformed-class1": {
+                                "value": "public class org.flywaydb.core.internal.database.postgresql.PostgreSQLAdvisoryLockTemplate extends j ..  [abbreviated, 13990 chars]",
+                                "sha1": "abd574a873b0fadff2fa6fcc2dd0807237f7aeee",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.database.postgresql.PostgreSQLAdvisoryLockTemplate.jimple",
+                                "md5": "73e9c86e67877d3590bded772d818e7e"
+                            },
+                            "transformed-class2": {
+                                "value": "public class org.flywaydb.core.internal.database.postgresql.PostgreSQLAdvisoryLockTemplate extends j ..  [abbreviated, 13987 chars]",
+                                "sha1": "5a6fc9b5dc7852d099876baf380a025f78999477",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar/org.flywaydb.core.internal.database.postgresql.PostgreSQLAdvisoryLockTemplate.jimple",
+                                "md5": "9b8ce58c0b94b8b42744f10db4c09726"
+                            }
+                        }
+                    }
+                ],
+                "errors": [
+                    {
+                        "class": "org/flywaydb/core/internal/scanner/classpath/ClassPathLocationScanner.class",
+                        "error": {
+                            "type": "io.github.bineq.BytecodeTransformationException",
+                            "message": "error loading jnormed class: .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar::org/flywaydb/core/internal/scanner/classpath/ClassPathLocationScanner.class",
+                            "stacktrace": [
+                                "io.github.bineq.equivalences.bytecode.AbstractJNormEquivalence.transform(AbstractJNormEquivalence.java:64)",
+                                "io.github.bineq.equivalences.bytecode.AbstractJNormEquivalence.isEquivalent(AbstractJNormEquivalence.java:35)",
+                                "io.github.bineq.cli.CompareJars.compareContent(CompareJars.java:242)",
+                                "io.github.bineq.cli.CompareJars.main(CompareJars.java:133)"
+                            ]
+                        }
+                    },
+                    {
+                        "class": "org/flywaydb/core/internal/scanner/classpath/DefaultUrlResolver.class",
+                        "error": {
+                            "type": "io.github.bineq.BytecodeTransformationException",
+                            "message": "error loading jnormed class: .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar::org/flywaydb/core/internal/scanner/classpath/DefaultUrlResolver.class",
+                            "stacktrace": [
+                                "io.github.bineq.equivalences.bytecode.AbstractJNormEquivalence.transform(AbstractJNormEquivalence.java:64)",
+                                "io.github.bineq.equivalences.bytecode.AbstractJNormEquivalence.isEquivalent(AbstractJNormEquivalence.java:35)",
+                                "io.github.bineq.cli.CompareJars.compareContent(CompareJars.java:242)",
+                                "io.github.bineq.cli.CompareJars.main(CompareJars.java:133)"
+                            ]
+                        }
+                    },
+                    {
+                        "class": "org/flywaydb/core/internal/scanner/classpath/jboss/JBossVFSv3ClassPathLocationScanner.class",
+                        "error": {
+                            "type": "io.github.bineq.BytecodeTransformationException",
+                            "message": "error loading jnormed class: .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar::org/flywaydb/core/internal/scanner/classpath/jboss/JBossVFSv3ClassPathLocationScanner.class",
+                            "stacktrace": [
+                                "io.github.bineq.equivalences.bytecode.AbstractJNormEquivalence.transform(AbstractJNormEquivalence.java:64)",
+                                "io.github.bineq.equivalences.bytecode.AbstractJNormEquivalence.isEquivalent(AbstractJNormEquivalence.java:35)",
+                                "io.github.bineq.cli.CompareJars.compareContent(CompareJars.java:242)",
+                                "io.github.bineq.cli.CompareJars.main(CompareJars.java:133)"
+                            ]
+                        }
+                    },
+                    {
+                        "class": "org/flywaydb/core/internal/scanner/classpath/FileSystemClassPathLocationScanner.class",
+                        "error": {
+                            "type": "io.github.bineq.BytecodeTransformationException",
+                            "message": "error loading jnormed class: .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar::org/flywaydb/core/internal/scanner/classpath/FileSystemClassPathLocationScanner.class",
+                            "stacktrace": [
+                                "io.github.bineq.equivalences.bytecode.AbstractJNormEquivalence.transform(AbstractJNormEquivalence.java:64)",
+                                "io.github.bineq.equivalences.bytecode.AbstractJNormEquivalence.isEquivalent(AbstractJNormEquivalence.java:35)",
+                                "io.github.bineq.cli.CompareJars.compareContent(CompareJars.java:242)",
+                                "io.github.bineq.cli.CompareJars.main(CompareJars.java:133)"
+                            ]
+                        }
+                    },
+                    {
+                        "class": "org/flywaydb/core/internal/scanner/classpath/ResourceAndClassScanner.class",
+                        "error": {
+                            "type": "io.github.bineq.BytecodeTransformationException",
+                            "message": "error loading jnormed class: .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar::org/flywaydb/core/internal/scanner/classpath/ResourceAndClassScanner.class",
+                            "stacktrace": [
+                                "io.github.bineq.equivalences.bytecode.AbstractJNormEquivalence.transform(AbstractJNormEquivalence.java:64)",
+                                "io.github.bineq.equivalences.bytecode.AbstractJNormEquivalence.isEquivalent(AbstractJNormEquivalence.java:35)",
+                                "io.github.bineq.cli.CompareJars.compareContent(CompareJars.java:242)",
+                                "io.github.bineq.cli.CompareJars.main(CompareJars.java:133)"
+                            ]
+                        }
+                    },
+                    {
+                        "class": "org/flywaydb/core/internal/scanner/classpath/OsgiClassPathLocationScanner.class",
+                        "error": {
+                            "type": "io.github.bineq.BytecodeTransformationException",
+                            "message": "error loading jnormed class: .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar::org/flywaydb/core/internal/scanner/classpath/OsgiClassPathLocationScanner.class",
+                            "stacktrace": [
+                                "io.github.bineq.equivalences.bytecode.AbstractJNormEquivalence.transform(AbstractJNormEquivalence.java:64)",
+                                "io.github.bineq.equivalences.bytecode.AbstractJNormEquivalence.isEquivalent(AbstractJNormEquivalence.java:35)",
+                                "io.github.bineq.cli.CompareJars.compareContent(CompareJars.java:242)",
+                                "io.github.bineq.cli.CompareJars.main(CompareJars.java:133)"
+                            ]
+                        }
+                    },
+                    {
+                        "class": "org/flywaydb/core/internal/scanner/classpath/UrlResolver.class",
+                        "error": {
+                            "type": "io.github.bineq.BytecodeTransformationException",
+                            "message": "error loading jnormed class: .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar::org/flywaydb/core/internal/scanner/classpath/UrlResolver.class",
+                            "stacktrace": [
+                                "io.github.bineq.equivalences.bytecode.AbstractJNormEquivalence.transform(AbstractJNormEquivalence.java:64)",
+                                "io.github.bineq.equivalences.bytecode.AbstractJNormEquivalence.isEquivalent(AbstractJNormEquivalence.java:35)",
+                                "io.github.bineq.cli.CompareJars.compareContent(CompareJars.java:242)",
+                                "io.github.bineq.cli.CompareJars.main(CompareJars.java:133)"
+                            ]
+                        }
+                    },
+                    {
+                        "class": "org/flywaydb/core/internal/resource/classpath/ClassPathResource.class",
+                        "error": {
+                            "type": "io.github.bineq.BytecodeTransformationException",
+                            "message": "error loading jnormed class: .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar::org/flywaydb/core/internal/resource/classpath/ClassPathResource.class",
+                            "stacktrace": [
+                                "io.github.bineq.equivalences.bytecode.AbstractJNormEquivalence.transform(AbstractJNormEquivalence.java:64)",
+                                "io.github.bineq.equivalences.bytecode.AbstractJNormEquivalence.isEquivalent(AbstractJNormEquivalence.java:35)",
+                                "io.github.bineq.cli.CompareJars.compareContent(CompareJars.java:242)",
+                                "io.github.bineq.cli.CompareJars.main(CompareJars.java:133)"
+                            ]
+                        }
+                    },
+                    {
+                        "class": "org/flywaydb/core/internal/scanner/classpath/jboss/JBossVFSv2UrlResolver.class",
+                        "error": {
+                            "type": "io.github.bineq.BytecodeTransformationException",
+                            "message": "error loading jnormed class: .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar::org/flywaydb/core/internal/scanner/classpath/jboss/JBossVFSv2UrlResolver.class",
+                            "stacktrace": [
+                                "io.github.bineq.equivalences.bytecode.AbstractJNormEquivalence.transform(AbstractJNormEquivalence.java:64)",
+                                "io.github.bineq.equivalences.bytecode.AbstractJNormEquivalence.isEquivalent(AbstractJNormEquivalence.java:35)",
+                                "io.github.bineq.cli.CompareJars.compareContent(CompareJars.java:242)",
+                                "io.github.bineq.cli.CompareJars.main(CompareJars.java:133)"
+                            ]
+                        }
+                    },
+                    {
+                        "class": "org/flywaydb/core/internal/scanner/classpath/ClassPathScanner.class",
+                        "error": {
+                            "type": "io.github.bineq.BytecodeTransformationException",
+                            "message": "error loading jnormed class: .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar::org/flywaydb/core/internal/scanner/classpath/ClassPathScanner.class",
+                            "stacktrace": [
+                                "io.github.bineq.equivalences.bytecode.AbstractJNormEquivalence.transform(AbstractJNormEquivalence.java:64)",
+                                "io.github.bineq.equivalences.bytecode.AbstractJNormEquivalence.isEquivalent(AbstractJNormEquivalence.java:35)",
+                                "io.github.bineq.cli.CompareJars.compareContent(CompareJars.java:242)",
+                                "io.github.bineq.cli.CompareJars.main(CompareJars.java:133)"
+                            ]
+                        }
+                    },
+                    {
+                        "class": "org/flywaydb/core/internal/scanner/classpath/jboss/JBossVFSv3ClassPathLocationScanner$1.class",
+                        "error": {
+                            "type": "io.github.bineq.BytecodeTransformationException",
+                            "message": "error loading jnormed class: .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar::org/flywaydb/core/internal/scanner/classpath/jboss/JBossVFSv3ClassPathLocationScanner$1.class",
+                            "stacktrace": [
+                                "io.github.bineq.equivalences.bytecode.AbstractJNormEquivalence.transform(AbstractJNormEquivalence.java:64)",
+                                "io.github.bineq.equivalences.bytecode.AbstractJNormEquivalence.isEquivalent(AbstractJNormEquivalence.java:35)",
+                                "io.github.bineq.cli.CompareJars.compareContent(CompareJars.java:242)",
+                                "io.github.bineq.cli.CompareJars.main(CompareJars.java:133)"
+                            ]
+                        }
+                    },
+                    {
+                        "class": "org/flywaydb/core/internal/scanner/classpath/JarFileClassPathLocationScanner.class",
+                        "error": {
+                            "type": "io.github.bineq.BytecodeTransformationException",
+                            "message": "error loading jnormed class: .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.22.1/flyway-core-9.22.1.jar::org/flywaydb/core/internal/scanner/classpath/JarFileClassPathLocationScanner.class",
+                            "stacktrace": [
+                                "io.github.bineq.equivalences.bytecode.AbstractJNormEquivalence.transform(AbstractJNormEquivalence.java:64)",
+                                "io.github.bineq.equivalences.bytecode.AbstractJNormEquivalence.isEquivalent(AbstractJNormEquivalence.java:35)",
+                                "io.github.bineq.cli.CompareJars.compareContent(CompareJars.java:242)",
+                                "io.github.bineq.cli.CompareJars.main(CompareJars.java:133)"
+                            ]
+                        }
+                    }
+                ]
+            }
+        }]
+    }

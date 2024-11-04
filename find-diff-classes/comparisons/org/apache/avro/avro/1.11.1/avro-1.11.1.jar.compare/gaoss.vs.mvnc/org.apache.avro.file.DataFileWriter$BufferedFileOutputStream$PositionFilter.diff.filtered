@@ -1,0 +1,15 @@
+20,21c20
+< org.apache.avro.file.DataFileWriter$BufferedFileOutputStream v5;
+< int v2, v3;
+---
+> long v7, v8;
+22a22,23
+> org.apache.avro.file.DataFileWriter$BufferedFileOutputStream v5, v6;
+> int v2, v3;
+30c31,34
+< v5.<org.apache.avro.file.DataFileWriter$BufferedFileOutputStream: long position> = v3;
+---
+> v6 = v0.<org.apache.avro.file.DataFileWriter$BufferedFileOutputStream$PositionFilter: org.apache.avro.file.DataFileWriter$BufferedFileOutputStream this$1>;
+> v7 = v6.<org.apache.avro.file.DataFileWriter$BufferedFileOutputStream: long position>;
+> v8 = v7 + v3;
+> v5.<org.apache.avro.file.DataFileWriter$BufferedFileOutputStream: long position> = v8;

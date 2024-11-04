@@ -1,0 +1,48 @@
+53d52
+< java.lang.Throwable v11;
+55c54,56
+< picocli.CommandLine$Help$Ansi v8;
+---
+> groovyjarjarpicocli.CommandLine$Help$Ansi v8;
+> groovyjarjarpicocli.CommandLine$ParameterException v11;
+> groovyjarjarpicocli.CommandLine v13, v4, v5, v6;
+57d57
+< picocli.CommandLine v13, v4, v5, v6;
+68,71c68,71
+< v4 = new picocli.CommandLine;
+< specialinvoke v4.<picocli.CommandLine: void <init>(java.lang.Object)>(v3);
+< v5 = virtualinvoke v4.<picocli.CommandLine: picocli.CommandLine setUnmatchedArgumentsAllowed(boolean)>(1);
+< v6 = virtualinvoke v5.<picocli.CommandLine: picocli.CommandLine setStopAtUnmatched(boolean)>(1);
+---
+> v4 = new groovyjarjarpicocli.CommandLine;
+> specialinvoke v4.<groovyjarjarpicocli.CommandLine: void <init>(java.lang.Object)>(v3);
+> v5 = virtualinvoke v4.<groovyjarjarpicocli.CommandLine: groovyjarjarpicocli.CommandLine setUnmatchedArgumentsAllowed(boolean)>(1);
+> v6 = virtualinvoke v5.<groovyjarjarpicocli.CommandLine: groovyjarjarpicocli.CommandLine setStopAtUnmatched(boolean)>(1);
+73,75c73,75
+< v7 = virtualinvoke v6.<picocli.CommandLine: java.util.List parse(java.lang.String[])>(v0);
+< v8 = <picocli.CommandLine$Help$Ansi: picocli.CommandLine$Help$Ansi AUTO>;
+< v9 = staticinvoke <picocli.CommandLine: boolean printHelpIfRequested(java.util.List,java.io.PrintStream,java.io.PrintStream,picocli.CommandLine$Help$Ansi)>(v7, v1, v2, v8);
+---
+> v7 = virtualinvoke v6.<groovyjarjarpicocli.CommandLine: java.util.List parse(java.lang.String[])>(v0);
+> v8 = <groovyjarjarpicocli.CommandLine$Help$Ansi: groovyjarjarpicocli.CommandLine$Help$Ansi AUTO>;
+> v9 = staticinvoke <groovyjarjarpicocli.CommandLine: boolean printHelpIfRequested(java.util.List,java.io.PrintStream,java.io.PrintStream,groovyjarjarpicocli.CommandLine$Help$Ansi)>(v7, v1, v2, v8);
+80c80
+< v10 = virtualinvoke v3.<groovy.ui.GroovyMain$GroovyCommand: boolean process(picocli.CommandLine)>(v6);
+---
+> v10 = virtualinvoke v3.<groovy.ui.GroovyMain$GroovyCommand: boolean process(groovyjarjarpicocli.CommandLine)>(v6);
+87c87
+< v12 = virtualinvoke v11.<picocli.CommandLine$ParameterException: java.lang.String getMessage()>();
+---
+> v12 = virtualinvoke v11.<groovyjarjarpicocli.CommandLine$ParameterException: java.lang.String getMessage()>();
+89,90c89,90
+< v13 = virtualinvoke v11.<picocli.CommandLine$ParameterException: picocli.CommandLine getCommandLine()>();
+< virtualinvoke v13.<picocli.CommandLine: void usage(java.io.PrintStream)>(v2);
+---
+> v13 = virtualinvoke v11.<groovyjarjarpicocli.CommandLine$ParameterException: groovyjarjarpicocli.CommandLine getCommandLine()>();
+> virtualinvoke v13.<groovyjarjarpicocli.CommandLine: void usage(java.io.PrintStream)>(v2);
+99,100c99,100
+< catch picocli.CommandLine$ParameterException from label1 to label2 with label5;
+< catch picocli.CommandLine$ParameterException from label3 to label4 with label5;
+---
+> catch groovyjarjarpicocli.CommandLine$ParameterException from label1 to label2 with label5;
+> catch groovyjarjarpicocli.CommandLine$ParameterException from label3 to label4 with label5;

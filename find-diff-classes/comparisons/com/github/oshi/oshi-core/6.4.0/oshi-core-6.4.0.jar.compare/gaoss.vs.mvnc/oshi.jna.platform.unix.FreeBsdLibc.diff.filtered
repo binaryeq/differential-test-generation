@@ -1,0 +1,44 @@
+46c46
+< public int getrlimit(int, com.sun.jna.platform.unix.Resource$Rlimit)
+---
+> public int gethostname(byte[], int)
+48c48
+< com.sun.jna.platform.unix.Resource$Rlimit v2;
+---
+> byte[] v1;
+50c50
+< int v1;
+---
+> int v2;
+53,54c53,54
+< v1 := @parameter0: int;
+< v2 := @parameter1: com.sun.jna.platform.unix.Resource$Rlimit;
+---
+> v1 := @parameter0: byte[];
+> v2 := @parameter1: int;
+56c56
+< specialinvoke v3.<java.lang.Error: void <init>(java.lang.String)>("Unresolved compilation error: Method <oshi.jna.platform.unix.FreeBsdLibc: int getrlimit(int,com.sun.jna.platform.unix.Resource$Rlimit)> does not exist!");
+---
+> specialinvoke v3.<java.lang.Error: void <init>(java.lang.String)>("Unresolved compilation error: Method <oshi.jna.platform.unix.FreeBsdLibc: int gethostname(byte[],int)> does not exist!");
+59c59
+< public int gethostname(byte[], int)
+---
+> public int getrlimit(int, com.sun.jna.platform.unix.Resource$Rlimit)
+61c61
+< byte[] v1;
+---
+> com.sun.jna.platform.unix.Resource$Rlimit v2;
+63c63
+< int v2;
+---
+> int v1;
+66,67c66,67
+< v1 := @parameter0: byte[];
+< v2 := @parameter1: int;
+---
+> v1 := @parameter0: int;
+> v2 := @parameter1: com.sun.jna.platform.unix.Resource$Rlimit;
+69c69
+< specialinvoke v3.<java.lang.Error: void <init>(java.lang.String)>("Unresolved compilation error: Method <oshi.jna.platform.unix.FreeBsdLibc: int gethostname(byte[],int)> does not exist!");
+---
+> specialinvoke v3.<java.lang.Error: void <init>(java.lang.String)>("Unresolved compilation error: Method <oshi.jna.platform.unix.FreeBsdLibc: int getrlimit(int,com.sun.jna.platform.unix.Resource$Rlimit)> does not exist!");

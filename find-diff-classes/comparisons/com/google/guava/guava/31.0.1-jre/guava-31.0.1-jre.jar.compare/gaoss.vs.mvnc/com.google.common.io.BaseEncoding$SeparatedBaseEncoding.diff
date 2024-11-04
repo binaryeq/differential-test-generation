@@ -1,0 +1,27 @@
+267c267
+< int v3;
+---
+> int v10, v4, v6, v7, v9;
+269c269,270
+< java.lang.String v2, v4;
+---
+> java.lang.StringBuilder v12;
+> java.lang.String v11, v2, v3, v5, v8;
+272,275c273,284
+< v2 = v0.<com.google.common.io.BaseEncoding$SeparatedBaseEncoding: java.lang.String separator>;
+< v3 = v0.<com.google.common.io.BaseEncoding$SeparatedBaseEncoding: int afterEveryChars>;
+< v4 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (com.google.common.io.BaseEncoding,java.lang.String,int)>(v1, v2, v3) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001.withSeparator(\"\u0001\", \u0001)");
+< return v4;
+---
+> v2 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v1);
+> v3 = v0.<com.google.common.io.BaseEncoding$SeparatedBaseEncoding: java.lang.String separator>;
+> v4 = v0.<com.google.common.io.BaseEncoding$SeparatedBaseEncoding: int afterEveryChars>;
+> v5 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v2);
+> v6 = virtualinvoke v5.<java.lang.String: int length()>();
+> v7 = 31 + v6;
+> v8 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v3);
+> v9 = virtualinvoke v8.<java.lang.String: int length()>();
+> v10 = v7 + v9;
+> specialinvoke v12.<java.lang.StringBuilder: void <init>(int)>(v10);
+> v11 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,java.lang.String,int)>(v2, v3, v4) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001.withSeparator(\"\u0001\", \u0001)");
+> return v11;

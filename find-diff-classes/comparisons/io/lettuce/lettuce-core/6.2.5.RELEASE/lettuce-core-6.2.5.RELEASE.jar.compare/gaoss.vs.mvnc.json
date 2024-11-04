@@ -1,0 +1,113 @@
+{
+        "jar1": {
+            "file": "~/code/craw-redhat-oss/wget/crawl/google-aoss/io/lettuce/lettuce-core/6.2.5.RELEASE/lettuce-core-6.2.5.RELEASE.jar",
+            "classcount": 1394,
+            "md5": "c7e8d16348926f1dfa64d8a986972acd",
+            "sha1": "7de262fb8bd825c5c1295e171776a70849e8b58c",
+            "size": "1 MB",
+            "manifest": {
+                "Manifest-Version": "1.0",
+                "Implementation-Title": "Lettuce",
+                "Automatic-Module-Name": "lettuce.core",
+                "Implementation-Version": "6.2.5.RELEASE",
+                "Specification-Vendor": "lettuce.io",
+                "Specification-Title": "Lettuce",
+                "Build-Jdk-Spec": "1.8",
+                "Created-By": "Maven JAR Plugin 3.3.0",
+                "Specification-Version": "6.2",
+                "Implementation-Vendor": "lettuce.io"
+            },
+            "services": {"javax.enterprise.inject.spi.Extension": ["io.lettuce.core.support.LettuceCdiExtension"]}
+        },
+        "jar2": {
+            "file": "~/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/io/lettuce/lettuce-core/6.2.5.RELEASE/lettuce-core-6.2.5.RELEASE.jar",
+            "classcount": 1394,
+            "md5": "d17715922130f45092b59bbd236e31f2",
+            "sha1": "e7a1681fcb608c2f3eabc9886d7853c029831a5d",
+            "size": "1 MB",
+            "manifest": {
+                "Manifest-Version": "1.0",
+                "Implementation-Title": "Lettuce",
+                "Automatic-Module-Name": "lettuce.core",
+                "Implementation-Version": "6.2.5.RELEASE",
+                "Specification-Vendor": "lettuce.io",
+                "Specification-Title": "Lettuce",
+                "Build-Jdk-Spec": "1.8",
+                "Created-By": "Maven JAR Plugin 3.3.0",
+                "Specification-Version": "6.2",
+                "Implementation-Vendor": "lettuce.io"
+            },
+            "services": {"javax.enterprise.inject.spi.Extension": ["io.lettuce.core.support.LettuceCdiExtension"]}
+        },
+        "contentset-comparisons": [
+            {
+                "content-type": "sources",
+                "jar1.count": 0,
+                "jar2.count": 0,
+                "intersection": 0,
+                "union": 0,
+                "jar1-jar2": [],
+                "jar2-jar1": []
+            },
+            {
+                "content-type": "bytecode",
+                "jar1.count": 1308,
+                "jar2.count": 1308,
+                "intersection": 1308,
+                "union": 1308,
+                "jar1-jar2": [],
+                "jar2-jar1": []
+            },
+            {
+                "content-type": "metadata",
+                "jar1.count": 18,
+                "jar2.count": 18,
+                "intersection": 18,
+                "union": 18,
+                "jar1-jar2": [],
+                "jar2-jar1": []
+            },
+            {
+                "content-type": "other",
+                "jar1.count": 68,
+                "jar2.count": 68,
+                "intersection": 68,
+                "union": 68,
+                "jar1-jar2": [],
+                "jar2-jar1": []
+            }
+        ],
+        "content-pairwise-comparisons": [{
+            "equivalence": {
+                "class": "io.github.bineq.equivalences.bytecode.JNormEquivalence2",
+                "name": "jnorm2"
+            },
+            "summary": {
+                "description": "comparison results of jar/folder content (pairwise comparison of content in both jars/folders)",
+                "equivalent": 1307,
+                "non-equivalent": 1,
+                "errors": 0
+            },
+            "details": {
+                "non-equivalent": [{
+                    "class": "io/lettuce/core/dynamic/RedisCommandFactory.class",
+                    "provenance": {
+                        "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/io/lettuce/lettuce-core/6.2.5.RELEASE/lettuce-core-6.2.5.RELEASE.jar/io.lettuce.core.dynamic.RedisCommandFactory.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/io/lettuce/lettuce-core/6.2.5.RELEASE/lettuce-core-6.2.5.RELEASE.jar/io.lettuce.core.dynamic.RedisCommandFactory.jimple",
+                        "transformed-class1": {
+                            "value": "public class io.lettuce.core.dynamic.RedisCommandFactory extends java.lang.Object\n{\nprivate final io ..  [abbreviated, 10510 chars]",
+                            "sha1": "a23bbe44887940a8ca20516110681c7fc615608f",
+                            "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/io/lettuce/lettuce-core/6.2.5.RELEASE/lettuce-core-6.2.5.RELEASE.jar/io.lettuce.core.dynamic.RedisCommandFactory.jimple",
+                            "md5": "482635b7591c5ff24b2490db3f6220a1"
+                        },
+                        "transformed-class2": {
+                            "value": "public class io.lettuce.core.dynamic.RedisCommandFactory extends java.lang.Object\n{\nprivate final io ..  [abbreviated, 10522 chars]",
+                            "sha1": "aedd9b04cf01e538025a8ab57fb4ce684cf6318a",
+                            "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/io/lettuce/lettuce-core/6.2.5.RELEASE/lettuce-core-6.2.5.RELEASE.jar/io.lettuce.core.dynamic.RedisCommandFactory.jimple",
+                            "md5": "85b81d4526095aaec4dc39d8af4abf59"
+                        }
+                    }
+                }],
+                "errors": []
+            }
+        }]
+    }

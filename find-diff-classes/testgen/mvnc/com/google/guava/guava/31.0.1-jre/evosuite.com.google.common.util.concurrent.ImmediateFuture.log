@@ -1,0 +1,88 @@
+* EvoSuite 1.2.0
+* Going to generate test cases for class: com.google.common.util.concurrent.ImmediateFuture
+* Starting Client-0
+* Connecting to master process on port 17064
+* Analyzing classpath: 
+  - /home/wtwhite/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/guava/guava/31.0.1-jre/guava-31.0.1-jre.jar
+  - t/dependency/checker-qual-3.12.0.jar
+  - t/dependency/error_prone_annotations-2.7.1.jar
+  - t/dependency/failureaccess-1.0.1.jar
+  - t/dependency/j2objc-annotations-1.3.jar
+  - t/dependency/jsr305-3.0.2.jar
+  - t/dependency/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar
+* Finished analyzing classpath
+* Generating tests for class com.google.common.util.concurrent.ImmediateFuture
+* Test criteria:
+  - Line Coverage
+  - Branch Coverage
+  - Exception
+  - Mutation testing (weak)
+  - Method-Output Coverage
+  - Top-Level Method Coverage
+  - No-Exception Top-Level Method Coverage
+  - Context Branch Coverage
+* Total number of test goals for DYNAMOSA: 112
+* Using seed 1729705235583
+* Starting evolution
+[Progress:>                             0%] [Cov:>                                  0%]* Initial Number of Goals in DynaMOSA = 82 / 112
+[Progress:=======>                      25%] [Cov:==========================>        77%][Progress:=====================>        71%] [Cov:=============================>     83%][MASTER] 06:41:35.739 [logback-1] WARN  TestChromosome - Functional mock problem: org.evosuite.ga.ConstructionFailedException: Have no generator for com.google.common.util.concurrent.ImmediateFuture<java.lang.Integer> canUseFunctionalMocks=false, canBeMocked: false
+[Progress:==============================100%] [Cov:==========================>        77%]
+* Search finished after 66s and 2 generations, 1773 statements, best individual has fitness: 27.0
+[MASTER] 06:41:43.947 [logback-1] WARN  TimeController - Phase SEARCH lasted too long, 6 seconds more than allowed.
+* Minimizing test suite
+* Going to analyze the coverage criteria
+* Coverage analysis for criterion LINE
+* Coverage of criterion LINE: 91%
+* Total number of goals: 23
+* Number of covered goals: 21
+* Coverage analysis for criterion BRANCH
+* Coverage of criterion BRANCH: 90%
+* Total number of goals: 10
+* Number of covered goals: 9
+* Coverage analysis for criterion EXCEPTION
+* Coverage of criterion EXCEPTION: 100%
+* Total number of goals: 1
+* Number of covered goals: 1
+* Coverage analysis for criterion WEAKMUTATION
+* Coverage of criterion WEAKMUTATION: 58%
+* Total number of goals: 36
+* Number of covered goals: 21
+* Coverage analysis for criterion OUTPUT
+* Coverage of criterion OUTPUT: 62%
+* Total number of goals: 13
+* Number of covered goals: 8
+* Coverage analysis for criterion METHOD
+* Coverage of criterion METHOD: 100%
+* Total number of goals: 10
+* Number of covered goals: 10
+* Coverage analysis for criterion METHODNOEXCEPTION
+* Coverage of criterion METHODNOEXCEPTION: 100%
+* Total number of goals: 10
+* Number of covered goals: 10
+* Coverage analysis for criterion CBRANCH
+* Coverage of criterion CBRANCH: 100%
+* Total number of goals: 10
+* Number of covered goals: 10
+* Generated 10 tests with total length 48
+* Resulting test suite's coverage: 78% (average coverage for all fitness functions)
+* Generating assertions
+* Resulting test suite's mutation score: 11%
+* Compiling and checking tests
+[MASTER] 06:42:55.427 [logback-1] WARN  JUnitAnalyzer - Found unstable test named test0 -> class java.lang.AssertionError: null
+[MASTER] 06:42:55.427 [logback-1] WARN  JUnitAnalyzer - Failing test:
+ SQLTransactionRollbackException sQLTransactionRollbackException0 = new SQLTransactionRollbackException();
+ImmediateFuture<SQLTransactionRollbackException> immediateFuture0 = new ImmediateFuture<SQLTransactionRollbackException>(sQLTransactionRollbackException0);
+Thread thread0 = MockThread.currentThread();
+ForkJoinPool.ForkJoinWorkerThreadFactory forkJoinPool_ForkJoinWorkerThreadFactory0 = ForkJoinPool.defaultForkJoinWorkerThreadFactory;
+MockThread mockThread0 = new MockThread();
+Thread.UncaughtExceptionHandler thread_UncaughtExceptionHandler0 = mockThread0.getUncaughtExceptionHandler();
+ForkJoinPool forkJoinPool0 = new ForkJoinPool(406, forkJoinPool_ForkJoinWorkerThreadFactory0, thread_UncaughtExceptionHandler0, true);
+immediateFuture0.addListener(thread0, forkJoinPool0);
+assertFalse(mockThread0.isDaemon());
+
+
+* Writing tests to file
+* Writing JUnit test case 'ImmediateFuture_ESTest' to evosuite-tests
+* Done!
+
+* Computation finished

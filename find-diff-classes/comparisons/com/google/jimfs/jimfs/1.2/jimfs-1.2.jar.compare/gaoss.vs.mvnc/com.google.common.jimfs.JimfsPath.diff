@@ -1,0 +1,33 @@
+710c710
+< com.google.common.jimfs.AbstractWatchService$Key v7;
+---
+> com.google.common.jimfs.AbstractWatchService$Key v11;
+714c714,715
+< java.util.List v6;
+---
+> java.util.List v10;
+> int v7, v8;
+716c717,718
+< java.lang.String v5;
+---
+> java.lang.StringBuilder v12;
+> java.lang.String v5, v6, v9;
+726,727c728,734
+< v5 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.nio.file.WatchService)>(v1) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("watcher (\u0001) is not associated with this file system");
+< specialinvoke v4.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(v5);
+---
+> v5 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v1);
+> v6 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v5);
+> v7 = virtualinvoke v6.<java.lang.String: int length()>();
+> v8 = 50 + v7;
+> specialinvoke v12.<java.lang.StringBuilder: void <init>(int)>(v8);
+> v9 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v5) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("watcher (\u0001) is not associated with this file system");
+> specialinvoke v4.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(v9);
+730,732c737,739
+< v6 = staticinvoke <java.util.Arrays: java.util.List asList(java.lang.Object[])>(v2);
+< v7 = virtualinvoke v1.<com.google.common.jimfs.AbstractWatchService: com.google.common.jimfs.AbstractWatchService$Key register(java.nio.file.Watchable,java.lang.Iterable)>(v0, v6);
+< return v7;
+---
+> v10 = staticinvoke <java.util.Arrays: java.util.List asList(java.lang.Object[])>(v2);
+> v11 = virtualinvoke v1.<com.google.common.jimfs.AbstractWatchService: com.google.common.jimfs.AbstractWatchService$Key register(java.nio.file.Watchable,java.lang.Iterable)>(v0, v10);
+> return v11;

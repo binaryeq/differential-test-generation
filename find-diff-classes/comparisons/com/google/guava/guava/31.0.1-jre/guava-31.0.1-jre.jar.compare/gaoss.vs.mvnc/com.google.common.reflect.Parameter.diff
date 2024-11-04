@@ -1,0 +1,21 @@
+198d197
+< int v2;
+200c199,201
+< java.lang.String v3;
+---
+> int v3, v5, v6;
+> java.lang.StringBuilder v8;
+> java.lang.String v2, v4, v7;
+203,205c204,211
+< v2 = v0.<com.google.common.reflect.Parameter: int position>;
+< v3 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (com.google.common.reflect.TypeToken,int)>(v1, v2) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001 arg\u0001");
+< return v3;
+---
+> v2 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v1);
+> v3 = v0.<com.google.common.reflect.Parameter: int position>;
+> v4 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v2);
+> v5 = virtualinvoke v4.<java.lang.String: int length()>();
+> v6 = 15 + v5;
+> specialinvoke v8.<java.lang.StringBuilder: void <init>(int)>(v6);
+> v7 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,int)>(v2, v3) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001 arg\u0001");
+> return v7;

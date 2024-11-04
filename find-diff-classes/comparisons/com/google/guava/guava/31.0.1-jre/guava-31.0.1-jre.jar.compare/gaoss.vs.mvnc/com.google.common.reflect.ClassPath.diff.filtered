@@ -1,0 +1,155 @@
+122,125c122,127
+< com.google.common.collect.ImmutableSet v10, v4;
+< com.google.common.collect.ImmutableSet$Builder v3;
+< java.lang.Object v7;
+< com.google.common.collect.UnmodifiableIterator v5;
+---
+> com.google.common.collect.ImmutableSet v13, v7;
+> com.google.common.collect.ImmutableSet$Builder v6;
+> int v3, v4;
+> java.lang.Object v10;
+> java.lang.StringBuilder v14;
+> com.google.common.collect.UnmodifiableIterator v8;
+127,128c129,130
+< java.lang.String v1, v2, v8;
+< boolean v6, v9;
+---
+> java.lang.String v1, v11, v2, v5;
+> boolean v12, v9;
+132,135c134,141
+< v2 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v1) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001.");
+< v3 = staticinvoke <com.google.common.collect.ImmutableSet: com.google.common.collect.ImmutableSet$Builder builder()>();
+< v4 = virtualinvoke v0.<com.google.common.reflect.ClassPath: com.google.common.collect.ImmutableSet getTopLevelClasses()>();
+< v5 = virtualinvoke v4.<com.google.common.collect.ImmutableSet: com.google.common.collect.UnmodifiableIterator iterator()>();
+---
+> v2 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v1);
+> v3 = virtualinvoke v2.<java.lang.String: int length()>();
+> v4 = 1 + v3;
+> specialinvoke v14.<java.lang.StringBuilder: void <init>(int)>(v4);
+> v5 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v1) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001.");
+> v6 = staticinvoke <com.google.common.collect.ImmutableSet: com.google.common.collect.ImmutableSet$Builder builder()>();
+> v7 = virtualinvoke v0.<com.google.common.reflect.ClassPath: com.google.common.collect.ImmutableSet getTopLevelClasses()>();
+> v8 = virtualinvoke v7.<com.google.common.collect.ImmutableSet: com.google.common.collect.UnmodifiableIterator iterator()>();
+137,143c143,149
+< v6 = interfaceinvoke v5.<java.util.Iterator: boolean hasNext()>();
+< if v6 == 0 goto label2;
+< v7 = interfaceinvoke v5.<java.util.Iterator: java.lang.Object next()>();
+< v8 = virtualinvoke v7.<com.google.common.reflect.ClassPath$ClassInfo: java.lang.String getName()>();
+< v9 = virtualinvoke v8.<java.lang.String: boolean startsWith(java.lang.String)>(v2);
+< if v9 == 0 goto label1;
+< virtualinvoke v3.<com.google.common.collect.ImmutableSet$Builder: com.google.common.collect.ImmutableSet$Builder add(java.lang.Object)>(v7);
+---
+> v9 = interfaceinvoke v8.<java.util.Iterator: boolean hasNext()>();
+> if v9 == 0 goto label2;
+> v10 = interfaceinvoke v8.<java.util.Iterator: java.lang.Object next()>();
+> v11 = virtualinvoke v10.<com.google.common.reflect.ClassPath$ClassInfo: java.lang.String getName()>();
+> v12 = virtualinvoke v11.<java.lang.String: boolean startsWith(java.lang.String)>(v5);
+> if v12 == 0 goto label1;
+> virtualinvoke v6.<com.google.common.collect.ImmutableSet$Builder: com.google.common.collect.ImmutableSet$Builder add(java.lang.Object)>(v10);
+146,147c152,153
+< v10 = virtualinvoke v3.<com.google.common.collect.ImmutableSet$Builder: com.google.common.collect.ImmutableSet build()>();
+< return v10;
+---
+> v13 = virtualinvoke v6.<com.google.common.collect.ImmutableSet$Builder: com.google.common.collect.ImmutableSet build()>();
+> return v13;
+183a190
+> int v18;
+185c192
+< java.lang.String v16, v17, v6, v7;
+---
+> java.lang.String v16, v17, v19, v20, v6, v7;
+187,188c194,195
+< boolean v11, v18;
+< com.google.common.collect.ImmutableSet v2, v20;
+---
+> boolean v11, v21;
+> com.google.common.collect.ImmutableSet v2, v23;
+193c200
+< java.io.File v0, v19;
+---
+> java.io.File v0, v22;
+206c213
+< if v7 == null goto label7;
+---
+> if v7 == null goto label9;
+212c219
+< if v11 == 0 goto label7;
+---
+> if v11 == 0 goto label9;
+217c224
+< goto label6;
+---
+> goto label8;
+221,223c228,233
+< v16 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v12) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Invalid Class-Path entry: \u0001");
+< virtualinvoke v15.<java.util.logging.Logger: void warning(java.lang.String)>(v16);
+< goto label2;
+---
+> v16 = "Invalid Class-Path entry: ";
+> v17 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v12);
+> v18 = virtualinvoke v17.<java.lang.String: int length()>();
+> if v18 == 0 goto label6;
+> v19 = virtualinvoke v16.<java.lang.String: java.lang.String concat(java.lang.String)>(v17);
+> goto label7;
+225,230c235,236
+< v17 = virtualinvoke v13.<java.net.URL: java.lang.String getProtocol()>();
+< v18 = virtualinvoke v17.<java.lang.String: boolean equals(java.lang.Object)>("file");
+< if v18 == 0 goto label2;
+< v19 = staticinvoke <com.google.common.reflect.ClassPath: java.io.File toFile(java.net.URL)>(v13);
+< virtualinvoke v3.<com.google.common.collect.ImmutableSet$Builder: com.google.common.collect.ImmutableSet$Builder add(java.lang.Object)>(v19);
+< goto label2;
+---
+> v19 = new java.lang.String;
+> specialinvoke v19.<java.lang.String: void <init>(java.lang.String)>("Invalid Class-Path entry: ");
+232,233c238,249
+< v20 = virtualinvoke v3.<com.google.common.collect.ImmutableSet$Builder: com.google.common.collect.ImmutableSet build()>();
+< return v20;
+---
+> virtualinvoke v15.<java.util.logging.Logger: void warning(java.lang.String)>(v19);
+> goto label2;
+> label8:
+> v20 = virtualinvoke v13.<java.net.URL: java.lang.String getProtocol()>();
+> v21 = virtualinvoke v20.<java.lang.String: boolean equals(java.lang.Object)>("file");
+> if v21 == 0 goto label2;
+> v22 = staticinvoke <com.google.common.reflect.ClassPath: java.io.File toFile(java.net.URL)>(v13);
+> virtualinvoke v3.<com.google.common.collect.ImmutableSet$Builder: com.google.common.collect.ImmutableSet$Builder add(java.lang.Object)>(v22);
+> goto label2;
+> label9:
+> v23 = virtualinvoke v3.<com.google.common.collect.ImmutableSet$Builder: com.google.common.collect.ImmutableSet build()>();
+> return v23;
+300c316,317
+< com.google.common.collect.ImmutableList v21;
+---
+> com.google.common.collect.ImmutableList v24;
+> int v22;
+302c319
+< java.lang.String v16, v2, v20, v5;
+---
+> java.lang.String v16, v2, v20, v21, v23, v5;
+322c339
+< if v8 == 0 goto label7;
+---
+> if v8 == 0 goto label9;
+346,348c363,368
+< v20 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v9) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("malformed classpath entry: \u0001");
+< virtualinvoke v18.<java.util.logging.Logger: void log(java.util.logging.Level,java.lang.String,java.lang.Throwable)>(v19, v20, v17);
+< goto label1;
+---
+> v20 = "malformed classpath entry: ";
+> v21 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v9);
+> v22 = virtualinvoke v21.<java.lang.String: int length()>();
+> if v22 == 0 goto label7;
+> v23 = virtualinvoke v20.<java.lang.String: java.lang.String concat(java.lang.String)>(v21);
+> goto label8;
+350,351c370,377
+< v21 = virtualinvoke v0.<com.google.common.collect.ImmutableList$Builder: com.google.common.collect.ImmutableList build()>();
+< return v21;
+---
+> v23 = new java.lang.String;
+> specialinvoke v23.<java.lang.String: void <init>(java.lang.String)>("malformed classpath entry: ");
+> label8:
+> virtualinvoke v18.<java.util.logging.Logger: void log(java.util.logging.Level,java.lang.String,java.lang.Throwable)>(v19, v23, v17);
+> goto label1;
+> label9:
+> v24 = virtualinvoke v0.<com.google.common.collect.ImmutableList$Builder: com.google.common.collect.ImmutableList build()>();
+> return v24;

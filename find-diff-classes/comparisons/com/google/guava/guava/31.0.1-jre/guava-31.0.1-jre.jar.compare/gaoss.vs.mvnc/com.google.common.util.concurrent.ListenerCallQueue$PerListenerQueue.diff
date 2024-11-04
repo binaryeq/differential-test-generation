@@ -1,0 +1,74 @@
+46d45
+< java.util.concurrent.Executor v10, v4;
+47a47,51
+> java.util.logging.Level v8;
+> int v14, v15, v17, v18;
+> java.lang.String v10, v12, v13, v16, v19;
+> boolean v1, v2;
+> java.util.concurrent.Executor v11, v4;
+50d53
+< java.util.logging.Level v8;
+52,53c55
+< java.lang.String v11;
+< boolean v1, v2;
+---
+> java.lang.StringBuilder v20;
+93,95c95,106
+< v10 = v0.<com.google.common.util.concurrent.ListenerCallQueue$PerListenerQueue: java.util.concurrent.Executor executor>;
+< v11 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.Object,java.util.concurrent.Executor)>(v9, v10) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Exception while running callbacks for \u0001 on \u0001");
+< virtualinvoke v7.<java.util.logging.Logger: void log(java.util.logging.Level,java.lang.String,java.lang.Throwable)>(v8, v11, v5);
+---
+> v10 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v9);
+> v11 = v0.<com.google.common.util.concurrent.ListenerCallQueue$PerListenerQueue: java.util.concurrent.Executor executor>;
+> v12 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v11);
+> v13 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v10);
+> v14 = virtualinvoke v13.<java.lang.String: int length()>();
+> v15 = 42 + v14;
+> v16 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v12);
+> v17 = virtualinvoke v16.<java.lang.String: int length()>();
+> v18 = v15 + v17;
+> specialinvoke v20.<java.lang.StringBuilder: void <init>(int)>(v18);
+> v19 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,java.lang.String)>(v10, v12) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Exception while running callbacks for \u0001 on \u0001");
+> virtualinvoke v7.<java.util.logging.Logger: void log(java.util.logging.Level,java.lang.String,java.lang.Throwable)>(v8, v19, v5);
+105c116
+< java.lang.Throwable v14, v15, v7;
+---
+> java.lang.Throwable v22, v23, v7;
+108c119,120
+< java.lang.String v13;
+---
+> int v16, v17, v19, v20;
+> java.lang.String v13, v14, v15, v18, v21;
+112a125
+> java.lang.StringBuilder v24;
+149,150c162,172
+< v13 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.Object,java.lang.Object)>(v12, v6) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Exception while executing callback: \u0001 \u0001");
+< virtualinvoke v10.<java.util.logging.Logger: void log(java.util.logging.Level,java.lang.String,java.lang.Throwable)>(v11, v13, v9);
+---
+> v13 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v12);
+> v14 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v6);
+> v15 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v13);
+> v16 = virtualinvoke v15.<java.lang.String: int length()>();
+> v17 = 37 + v16;
+> v18 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v14);
+> v19 = virtualinvoke v18.<java.lang.String: int length()>();
+> v20 = v17 + v19;
+> specialinvoke v24.<java.lang.StringBuilder: void <init>(int)>(v20);
+> v21 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,java.lang.String)>(v13, v14) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Exception while executing callback: \u0001 \u0001");
+> virtualinvoke v10.<java.util.logging.Logger: void log(java.util.logging.Level,java.lang.String,java.lang.Throwable)>(v11, v21, v9);
+153c175
+< v14 := @caughtexception;
+---
+> v22 := @caughtexception;
+162c184
+< v15 := @caughtexception;
+---
+> v23 := @caughtexception;
+164c186
+< throw v15;
+---
+> throw v23;
+166c188
+< throw v14;
+---
+> throw v22;

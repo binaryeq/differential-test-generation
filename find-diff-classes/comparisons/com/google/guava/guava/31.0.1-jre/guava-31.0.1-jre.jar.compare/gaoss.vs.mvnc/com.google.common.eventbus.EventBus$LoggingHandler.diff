@@ -1,0 +1,61 @@
+35d34
+< com.google.common.eventbus.EventBus v3;
+36a36,38
+> java.util.logging.Logger v12;
+> com.google.common.eventbus.EventBus v3;
+> int v10, v6, v7, v9;
+38,39c40,41
+< java.lang.String v2, v4, v5;
+< java.util.logging.Logger v6;
+---
+> java.lang.StringBuilder v13;
+> java.lang.String v11, v2, v4, v5, v8;
+45,47c47,56
+< v5 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,java.lang.String)>(v2, v4) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001.\u0001");
+< v6 = staticinvoke <java.util.logging.Logger: java.util.logging.Logger getLogger(java.lang.String)>(v5);
+< return v6;
+---
+> v5 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v2);
+> v6 = virtualinvoke v5.<java.lang.String: int length()>();
+> v7 = 1 + v6;
+> v8 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v4);
+> v9 = virtualinvoke v8.<java.lang.String: int length()>();
+> v10 = v7 + v9;
+> specialinvoke v13.<java.lang.StringBuilder: void <init>(int)>(v10);
+> v11 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,java.lang.String)>(v2, v4) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001.\u0001");
+> v12 = staticinvoke <java.util.logging.Logger: java.util.logging.Logger getLogger(java.lang.String)>(v11);
+> return v12;
+50a60,62
+> int v11, v12, v14, v15, v17, v18, v20, v21;
+> java.lang.String v10, v13, v16, v19, v2, v22, v5, v7, v9;
+> java.lang.reflect.Method v1;
+54,56c66,67
+< java.lang.Object v6, v7;
+< java.lang.String v2, v5, v8;
+< java.lang.reflect.Method v1;
+---
+> java.lang.Object v6, v8;
+> java.lang.StringBuilder v23;
+64,66c75,92
+< v7 = virtualinvoke v0.<com.google.common.eventbus.SubscriberExceptionContext: java.lang.Object getEvent()>();
+< v8 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,java.lang.String,java.lang.Object,java.lang.Object)>(v2, v5, v6, v7) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Exception thrown by subscriber method \u0001(\u0001) on subscriber \u0001 when dispatching event: \u0001");
+< return v8;
+---
+> v7 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v6);
+> v8 = virtualinvoke v0.<com.google.common.eventbus.SubscriberExceptionContext: java.lang.Object getEvent()>();
+> v9 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v8);
+> v10 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v2);
+> v11 = virtualinvoke v10.<java.lang.String: int length()>();
+> v12 = 80 + v11;
+> v13 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v5);
+> v14 = virtualinvoke v13.<java.lang.String: int length()>();
+> v15 = v12 + v14;
+> v16 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v7);
+> v17 = virtualinvoke v16.<java.lang.String: int length()>();
+> v18 = v15 + v17;
+> v19 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v9);
+> v20 = virtualinvoke v19.<java.lang.String: int length()>();
+> v21 = v18 + v20;
+> specialinvoke v23.<java.lang.StringBuilder: void <init>(int)>(v21);
+> v22 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,java.lang.String,java.lang.String,java.lang.String)>(v2, v5, v7, v9) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Exception thrown by subscriber method \u0001(\u0001) on subscriber \u0001 when dispatching event: \u0001");
+> return v22;

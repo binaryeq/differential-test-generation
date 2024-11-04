@@ -1,0 +1,104 @@
+53a54
+> groovyjarjarpicocli.CommandLine v2;
+55d55
+< picocli.CommandLine v2;
+60,61c60,61
+< v2 = staticinvoke <org.codehaus.groovy.tools.FileSystemCompiler: picocli.CommandLine configureParser(org.codehaus.groovy.tools.FileSystemCompiler$CompilationOptions)>(v1);
+< virtualinvoke v2.<picocli.CommandLine: void usage(java.io.PrintWriter)>(v0);
+---
+> v2 = staticinvoke <org.codehaus.groovy.tools.FileSystemCompiler: groovyjarjarpicocli.CommandLine configureParser(org.codehaus.groovy.tools.FileSystemCompiler$CompilationOptions)>(v1);
+> virtualinvoke v2.<groovyjarjarpicocli.CommandLine: void usage(java.io.PrintWriter)>(v0);
+157a158
+> groovyjarjarpicocli.CommandLine$ParseResult v4;
+160a162
+> groovyjarjarpicocli.CommandLine v3;
+162,163d163
+< picocli.CommandLine$ParseResult v4;
+< picocli.CommandLine v3;
+169,171c169,171
+< v3 = staticinvoke <org.codehaus.groovy.tools.FileSystemCompiler: picocli.CommandLine configureParser(org.codehaus.groovy.tools.FileSystemCompiler$CompilationOptions)>(v2);
+< v4 = virtualinvoke v3.<picocli.CommandLine: picocli.CommandLine$ParseResult parseArgs(java.lang.String[])>(v0);
+< v5 = staticinvoke <picocli.CommandLine: boolean printHelpIfRequested(picocli.CommandLine$ParseResult)>(v4);
+---
+> v3 = staticinvoke <org.codehaus.groovy.tools.FileSystemCompiler: groovyjarjarpicocli.CommandLine configureParser(org.codehaus.groovy.tools.FileSystemCompiler$CompilationOptions)>(v2);
+> v4 = virtualinvoke v3.<groovyjarjarpicocli.CommandLine: groovyjarjarpicocli.CommandLine$ParseResult parseArgs(java.lang.String[])>(v0);
+> v5 = staticinvoke <groovyjarjarpicocli.CommandLine: boolean printHelpIfRequested(groovyjarjarpicocli.CommandLine$ParseResult)>(v4);
+190c190
+< virtualinvoke v3.<picocli.CommandLine: void usage(java.io.PrintStream)>(v12);
+---
+> virtualinvoke v3.<groovyjarjarpicocli.CommandLine: void usage(java.io.PrintStream)>(v12);
+206c206
+< public static picocli.CommandLine configureParser(org.codehaus.groovy.tools.FileSystemCompiler$CompilationOptions)
+---
+> public static groovyjarjarpicocli.CommandLine configureParser(org.codehaus.groovy.tools.FileSystemCompiler$CompilationOptions)
+208c208,210
+< picocli.CommandLine$Model$CommandSpec v2;
+---
+> groovyjarjarpicocli.CommandLine v1;
+> groovyjarjarpicocli.CommandLine$Model$CommandSpec v2;
+> groovyjarjarpicocli.CommandLine$Model$ParserSpec v3, v4, v5, v6;
+210,211d211
+< picocli.CommandLine$Model$ParserSpec v3, v4, v5, v6;
+< picocli.CommandLine v1;
+213,220c213,220
+< v1 = new picocli.CommandLine;
+< specialinvoke v1.<picocli.CommandLine: void <init>(java.lang.Object)>(v0);
+< v2 = virtualinvoke v1.<picocli.CommandLine: picocli.CommandLine$Model$CommandSpec getCommandSpec()>();
+< v3 = virtualinvoke v2.<picocli.CommandLine$Model$CommandSpec: picocli.CommandLine$Model$ParserSpec parser()>();
+< v4 = virtualinvoke v3.<picocli.CommandLine$Model$ParserSpec: picocli.CommandLine$Model$ParserSpec unmatchedArgumentsAllowed(boolean)>(1);
+< v5 = virtualinvoke v4.<picocli.CommandLine$Model$ParserSpec: picocli.CommandLine$Model$ParserSpec unmatchedOptionsArePositionalParams(boolean)>(1);
+< v6 = virtualinvoke v5.<picocli.CommandLine$Model$ParserSpec: picocli.CommandLine$Model$ParserSpec expandAtFiles(boolean)>(0);
+< virtualinvoke v6.<picocli.CommandLine$Model$ParserSpec: picocli.CommandLine$Model$ParserSpec toggleBooleanFlags(boolean)>(0);
+---
+> v1 = new groovyjarjarpicocli.CommandLine;
+> specialinvoke v1.<groovyjarjarpicocli.CommandLine: void <init>(java.lang.Object)>(v0);
+> v2 = virtualinvoke v1.<groovyjarjarpicocli.CommandLine: groovyjarjarpicocli.CommandLine$Model$CommandSpec getCommandSpec()>();
+> v3 = virtualinvoke v2.<groovyjarjarpicocli.CommandLine$Model$CommandSpec: groovyjarjarpicocli.CommandLine$Model$ParserSpec parser()>();
+> v4 = virtualinvoke v3.<groovyjarjarpicocli.CommandLine$Model$ParserSpec: groovyjarjarpicocli.CommandLine$Model$ParserSpec unmatchedArgumentsAllowed(boolean)>(1);
+> v5 = virtualinvoke v4.<groovyjarjarpicocli.CommandLine$Model$ParserSpec: groovyjarjarpicocli.CommandLine$Model$ParserSpec unmatchedOptionsArePositionalParams(boolean)>(1);
+> v6 = virtualinvoke v5.<groovyjarjarpicocli.CommandLine$Model$ParserSpec: groovyjarjarpicocli.CommandLine$Model$ParserSpec expandAtFiles(boolean)>(0);
+> virtualinvoke v6.<groovyjarjarpicocli.CommandLine$Model$ParserSpec: groovyjarjarpicocli.CommandLine$Model$ParserSpec toggleBooleanFlags(boolean)>(0);
+483c483
+< public static void displayHelp(org.apache.commons.cli.Options)
+---
+> public static void displayHelp(groovyjarjarcommonscli.Options)
+485,490c485,490
+< org.apache.commons.cli.Options v0;
+< org.apache.commons.cli.HelpFormatter v1;
+< v0 := @parameter0: org.apache.commons.cli.Options;
+< v1 = new org.apache.commons.cli.HelpFormatter;
+< specialinvoke v1.<org.apache.commons.cli.HelpFormatter: void <init>()>();
+< virtualinvoke v1.<org.apache.commons.cli.HelpFormatter: void printHelp(int,java.lang.String,java.lang.String,org.apache.commons.cli.Options,java.lang.String)>(80, "groovyc [options] <source-files>", "options:", v0, "");
+---
+> groovyjarjarcommonscli.HelpFormatter v1;
+> groovyjarjarcommonscli.Options v0;
+> v0 := @parameter0: groovyjarjarcommonscli.Options;
+> v1 = new groovyjarjarcommonscli.HelpFormatter;
+> specialinvoke v1.<groovyjarjarcommonscli.HelpFormatter: void <init>()>();
+> virtualinvoke v1.<groovyjarjarcommonscli.HelpFormatter: void printHelp(int,java.lang.String,java.lang.String,groovyjarjarcommonscli.Options,java.lang.String)>(80, "groovyc [options] <source-files>", "options:", v0, "");
+493c493
+< public static org.codehaus.groovy.control.CompilerConfiguration generateCompilerConfigurationFromOptions(org.apache.commons.cli.CommandLine)
+---
+> public static org.codehaus.groovy.control.CompilerConfiguration generateCompilerConfigurationFromOptions(groovyjarjarcommonscli.CommandLine)
+495d494
+< org.apache.commons.cli.CommandLine v0;
+497c496,497
+< v0 := @parameter0: org.apache.commons.cli.CommandLine;
+---
+> groovyjarjarcommonscli.CommandLine v0;
+> v0 := @parameter0: groovyjarjarcommonscli.CommandLine;
+502c502
+< public static java.lang.String[] generateFileNamesFromOptions(org.apache.commons.cli.CommandLine)
+---
+> public static java.lang.String[] generateFileNamesFromOptions(groovyjarjarcommonscli.CommandLine)
+504d503
+< org.apache.commons.cli.CommandLine v0;
+506c505,506
+< v0 := @parameter0: org.apache.commons.cli.CommandLine;
+---
+> groovyjarjarcommonscli.CommandLine v0;
+> v0 := @parameter0: groovyjarjarcommonscli.CommandLine;
+511c511
+< public static org.apache.commons.cli.Options createCompilationOptions()
+---
+> public static groovyjarjarcommonscli.Options createCompilationOptions()

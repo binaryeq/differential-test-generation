@@ -1,0 +1,46 @@
+875c875
+< java.lang.Throwable v8;
+---
+> java.lang.Throwable v7;
+882c882
+< boolean v6, v7;
+---
+> boolean v6;
+898,899d897
+< v7 = v6;
+< label4:
+901,905c899,903
+< return v7;
+< label5:
+< v8 := @caughtexception;
+< throw v8;
+< catch java.lang.Throwable from label1 to label4 with label5;
+---
+> return v6;
+> label4:
+> v7 := @caughtexception;
+> throw v7;
+> catch java.lang.Throwable from label1 to label3 with label4;
+915c913
+< java.lang.Throwable v7;
+---
+> java.lang.Throwable v6;
+920c918
+< boolean v1, v5, v6;
+---
+> boolean v1, v5;
+938,939d935
+< v6 = v5;
+< label5:
+941,945c937,941
+< return v6;
+< label6:
+< v7 := @caughtexception;
+< throw v7;
+< catch java.lang.Throwable from label2 to label5 with label6;
+---
+> return v5;
+> label5:
+> v6 := @caughtexception;
+> throw v6;
+> catch java.lang.Throwable from label2 to label4 with label5;

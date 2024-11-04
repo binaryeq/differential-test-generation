@@ -1,0 +1,21 @@
+62c62
+< goto label6;
+---
+> goto label5;
+65d64
+< label4:
+67,68c66,67
+< goto label6;
+< label5:
+---
+> goto label5;
+> label4:
+72c71
+< label6:
+---
+> label5:
+75,76c74
+< catch java.lang.Throwable from label1 to label2 with label5;
+< catch java.lang.Throwable from label3 to label4 with label5;
+---
+> catch java.lang.Throwable from label1 to label2 with label4;

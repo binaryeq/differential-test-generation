@@ -1,0 +1,17 @@
+19,20c19,20
+< long v2, v7, v8;
+< com.squareup.okhttp.internal.framed.NameValueBlockReader v10, v3, v5;
+---
+> long v13, v2, v7, v8;
+> com.squareup.okhttp.internal.framed.NameValueBlockReader v10, v11, v3, v5;
+22c22
+< int v4, v6;
+---
+> int v12, v4, v6;
+41c41,44
+< v10.<com.squareup.okhttp.internal.framed.NameValueBlockReader: int compressedLimit> = v8;
+---
+> v11 = v0.<com.squareup.okhttp.internal.framed.NameValueBlockReader$1: com.squareup.okhttp.internal.framed.NameValueBlockReader this$0>;
+> v12 = v11.<com.squareup.okhttp.internal.framed.NameValueBlockReader: int compressedLimit>;
+> v13 = v12 - v8;
+> v10.<com.squareup.okhttp.internal.framed.NameValueBlockReader: int compressedLimit> = v13;

@@ -1,0 +1,55 @@
+52,53c52,55
+< java.io.PrintStream v5, v6, v7;
+< java.lang.IllegalArgumentException v8;
+---
+> java.io.PrintStream v3, v4, v5;
+> int v2;
+> org.slf4j.simple.OutputChoice$OutputChoiceType v1;
+> java.lang.IllegalArgumentException v6;
+55,57d56
+< int[] v1;
+< int v3, v4;
+< org.slf4j.simple.OutputChoice$OutputChoiceType v2;
+59,63c58,60
+< v1 = <org.slf4j.simple.OutputChoice$1: int[] $SwitchMap$org$slf4j$simple$OutputChoice$OutputChoiceType>;
+< v2 = v0.<org.slf4j.simple.OutputChoice: org.slf4j.simple.OutputChoice$OutputChoiceType outputChoiceType>;
+< v3 = virtualinvoke v2.<org.slf4j.simple.OutputChoice$OutputChoiceType: int ordinal()>();
+< v4 = v1[v3];
+< tableswitch(v4)
+---
+> v1 = v0.<org.slf4j.simple.OutputChoice: org.slf4j.simple.OutputChoice$OutputChoiceType outputChoiceType>;
+> v2 = virtualinvoke v1.<org.slf4j.simple.OutputChoice$OutputChoiceType: int ordinal()>();
+> tableswitch(v2)
+65c62,63
+< case 1: goto label1;
+---
+> case 0: goto label1;
+> case 1: goto label3;
+69d66
+< case 5: goto label3;
+73,74c70,71
+< v5 = <java.lang.System: java.io.PrintStream out>;
+< return v5;
+---
+> v3 = <java.lang.System: java.io.PrintStream out>;
+> return v3;
+76,77c73,74
+< v6 = <java.lang.System: java.io.PrintStream err>;
+< return v6;
+---
+> v4 = <java.lang.System: java.io.PrintStream err>;
+> return v4;
+79,80c76,77
+< v7 = v0.<org.slf4j.simple.OutputChoice: java.io.PrintStream targetPrintStream>;
+< return v7;
+---
+> v5 = v0.<org.slf4j.simple.OutputChoice: java.io.PrintStream targetPrintStream>;
+> return v5;
+82,84c79,81
+< v8 = new java.lang.IllegalArgumentException;
+< specialinvoke v8.<java.lang.IllegalArgumentException: void <init>()>();
+< throw v8;
+---
+> v6 = new java.lang.IllegalArgumentException;
+> specialinvoke v6.<java.lang.IllegalArgumentException: void <init>()>();
+> throw v6;

@@ -1,0 +1,27 @@
+403,404c403,404
+< java.lang.Object v1, v2;
+< java.lang.String v0, v4;
+---
+> int v10, v11, v13, v14, v7, v8;
+> java.lang.String v0, v12, v15, v4, v5, v6, v9;
+405a406,407
+> java.lang.Object v1, v2;
+> java.lang.StringBuilder v16;
+410,411c412,425
+< v4 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,java.lang.Object,java.lang.Object)>(v0, v1, v2) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Multiple entries with same \u0001: \u0001 and \u0001");
+< specialinvoke v3.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(v4);
+---
+> v4 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v1);
+> v5 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v2);
+> v6 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v0);
+> v7 = virtualinvoke v6.<java.lang.String: int length()>();
+> v8 = 34 + v7;
+> v9 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v4);
+> v10 = virtualinvoke v9.<java.lang.String: int length()>();
+> v11 = v8 + v10;
+> v12 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v5);
+> v13 = virtualinvoke v12.<java.lang.String: int length()>();
+> v14 = v11 + v13;
+> specialinvoke v16.<java.lang.StringBuilder: void <init>(int)>(v14);
+> v15 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,java.lang.String,java.lang.String)>(v0, v4, v5) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Multiple entries with same \u0001: \u0001 and \u0001");
+> specialinvoke v3.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(v15);

@@ -1,0 +1,69 @@
+68c68
+< java.lang.Throwable v13, v15;
+---
+> java.lang.Throwable v21, v23;
+70,71c70,72
+< java.lang.Error v10, v7;
+< java.lang.String v11, v8;
+---
+> java.lang.Error v14, v7;
+> int v10, v11, v17, v18;
+> java.lang.String v12, v15, v16, v19, v8, v9;
+73,74c74,75
+< boolean v14;
+< java.lang.IllegalAccessException v9;
+---
+> boolean v22;
+> java.lang.IllegalAccessException v13;
+77c78
+< java.lang.reflect.InvocationTargetException v12;
+---
+> java.lang.reflect.InvocationTargetException v20;
+78a80
+> java.lang.StringBuilder v24, v25;
+93,94c95,101
+< v8 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.Object)>(v1) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Method rejected target/argument: \u0001");
+< specialinvoke v7.<java.lang.Error: void <init>(java.lang.String,java.lang.Throwable)>(v8, v6);
+---
+> v8 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v1);
+> v9 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v8);
+> v10 = virtualinvoke v9.<java.lang.String: int length()>();
+> v11 = 33 + v10;
+> specialinvoke v25.<java.lang.StringBuilder: void <init>(int)>(v11);
+> v12 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v8) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Method rejected target/argument: \u0001");
+> specialinvoke v7.<java.lang.Error: void <init>(java.lang.String,java.lang.Throwable)>(v12, v6);
+97,101c104,113
+< v9 := @caughtexception;
+< v10 = new java.lang.Error;
+< v11 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.Object)>(v1) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Method became inaccessible: \u0001");
+< specialinvoke v10.<java.lang.Error: void <init>(java.lang.String,java.lang.Throwable)>(v11, v9);
+< throw v10;
+---
+> v13 := @caughtexception;
+> v14 = new java.lang.Error;
+> v15 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v1);
+> v16 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v15);
+> v17 = virtualinvoke v16.<java.lang.String: int length()>();
+> v18 = 28 + v17;
+> specialinvoke v24.<java.lang.StringBuilder: void <init>(int)>(v18);
+> v19 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v15) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Method became inaccessible: \u0001");
+> specialinvoke v14.<java.lang.Error: void <init>(java.lang.String,java.lang.Throwable)>(v19, v13);
+> throw v14;
+103,108c115,120
+< v12 := @caughtexception;
+< v13 = virtualinvoke v12.<java.lang.reflect.InvocationTargetException: java.lang.Throwable getCause()>();
+< v14 = v13 instanceof java.lang.Error;
+< if v14 == 0 goto label6;
+< v15 = virtualinvoke v12.<java.lang.reflect.InvocationTargetException: java.lang.Throwable getCause()>();
+< throw v15;
+---
+> v20 := @caughtexception;
+> v21 = virtualinvoke v20.<java.lang.reflect.InvocationTargetException: java.lang.Throwable getCause()>();
+> v22 = v21 instanceof java.lang.Error;
+> if v22 == 0 goto label6;
+> v23 = virtualinvoke v20.<java.lang.reflect.InvocationTargetException: java.lang.Throwable getCause()>();
+> throw v23;
+110c122
+< throw v12;
+---
+> throw v20;

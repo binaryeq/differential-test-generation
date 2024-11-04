@@ -1,0 +1,112 @@
+43c43
+< v3 = staticinvoke <oshi.software.os.linux.LinuxOSProcess$queryBitness__250: java.util.function.Supplier bootstrap$(oshi.software.os.linux.LinuxOSProcess)>(v0);
+---
+> v3 = staticinvoke <oshi.software.os.linux.LinuxOSProcess$queryBitness__277: java.util.function.Supplier bootstrap$(oshi.software.os.linux.LinuxOSProcess)>(v0);
+46c46
+< v5 = staticinvoke <oshi.software.os.linux.LinuxOSProcess$queryCommandLine__251: java.util.function.Supplier bootstrap$(oshi.software.os.linux.LinuxOSProcess)>(v0);
+---
+> v5 = staticinvoke <oshi.software.os.linux.LinuxOSProcess$queryCommandLine__278: java.util.function.Supplier bootstrap$(oshi.software.os.linux.LinuxOSProcess)>(v0);
+49c49
+< v7 = staticinvoke <oshi.software.os.linux.LinuxOSProcess$queryArguments__252: java.util.function.Supplier bootstrap$(oshi.software.os.linux.LinuxOSProcess)>(v0);
+---
+> v7 = staticinvoke <oshi.software.os.linux.LinuxOSProcess$queryArguments__279: java.util.function.Supplier bootstrap$(oshi.software.os.linux.LinuxOSProcess)>(v0);
+52c52
+< v9 = staticinvoke <oshi.software.os.linux.LinuxOSProcess$queryEnvironmentVariables__253: java.util.function.Supplier bootstrap$(oshi.software.os.linux.LinuxOSProcess)>(v0);
+---
+> v9 = staticinvoke <oshi.software.os.linux.LinuxOSProcess$queryEnvironmentVariables__280: java.util.function.Supplier bootstrap$(oshi.software.os.linux.LinuxOSProcess)>(v0);
+358c358
+< v5 = staticinvoke <oshi.software.os.linux.LinuxOSProcess$lambda_getThreadDetails_0__254: java.util.function.Function bootstrap$(oshi.software.os.linux.LinuxOSProcess)>(v0);
+---
+> v5 = staticinvoke <oshi.software.os.linux.LinuxOSProcess$lambda_getThreadDetails_0__281: java.util.function.Function bootstrap$(oshi.software.os.linux.LinuxOSProcess)>(v0);
+463c463
+< java.lang.Throwable v11;
+---
+> java.lang.Throwable v10;
+465c465
+< org.slf4j.Logger v13;
+---
+> org.slf4j.Logger v12;
+467c467
+< java.io.IOException v12;
+---
+> java.io.IOException v11;
+469c469
+< byte v10, v8, v9;
+---
+> byte v8, v9;
+471c471
+< java.lang.String v14, v2, v5;
+---
+> java.lang.String v13, v2, v5;
+477,478c477,478
+< if v3 != 0 goto label10;
+< label01:
+---
+> if v3 != 0 goto label9;
+> label1:
+482c482
+< label02:
+---
+> label2:
+485c485
+< if v6 != v7 goto label07;
+---
+> if v6 != v7 goto label6;
+487c487
+< if v8 != 1 goto label03;
+---
+> if v8 != 1 goto label3;
+489,490c489,490
+< goto label04;
+< label03:
+---
+> goto label4;
+> label3:
+492,494c492
+< label04:
+< v10 = v9;
+< label05:
+---
+> label4:
+496,498c494,496
+< label06:
+< return v10;
+< label07:
+---
+> label5:
+> return v9;
+> label6:
+500,501c498,502
+< goto label10;
+< label08:
+---
+> goto label9;
+> label7:
+> v10 := @caughtexception;
+> throw v10;
+> label8:
+503,509c504,507
+< throw v11;
+< label09:
+< v12 := @caughtexception;
+< v13 = <oshi.software.os.linux.LinuxOSProcess: org.slf4j.Logger LOG>;
+< v14 = v0.<oshi.software.os.linux.LinuxOSProcess: java.lang.String path>;
+< interfaceinvoke v13.<org.slf4j.Logger: void warn(java.lang.String,java.lang.Object)>("Failed to read process file: {}", v14);
+< label10:
+---
+> v12 = <oshi.software.os.linux.LinuxOSProcess: org.slf4j.Logger LOG>;
+> v13 = v0.<oshi.software.os.linux.LinuxOSProcess: java.lang.String path>;
+> interfaceinvoke v12.<org.slf4j.Logger: void warn(java.lang.String,java.lang.Object)>("Failed to read process file: {}", v13);
+> label9:
+511,513c509,511
+< catch java.lang.Throwable from label02 to label05 with label08;
+< catch java.io.IOException from label01 to label06 with label09;
+< catch java.io.IOException from label07 to label09 with label09;
+---
+> catch java.lang.Throwable from label2 to label4 with label7;
+> catch java.io.IOException from label1 to label5 with label8;
+> catch java.io.IOException from label6 to label8 with label8;
+803c801
+< v12 = staticinvoke <oshi.software.os.linux.LinuxOSProcess$lambda_getProcessOpenFileLimit_1__255: java.util.function.Predicate bootstrap$()>();
+---
+> v12 = staticinvoke <oshi.software.os.linux.LinuxOSProcess$lambda_getProcessOpenFileLimit_1__282: java.util.function.Predicate bootstrap$()>();

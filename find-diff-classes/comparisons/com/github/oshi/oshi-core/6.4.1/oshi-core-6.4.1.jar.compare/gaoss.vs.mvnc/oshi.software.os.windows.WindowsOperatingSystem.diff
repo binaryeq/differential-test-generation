@@ -1,0 +1,74 @@
+21c21
+< v1 = staticinvoke <oshi.software.os.windows.WindowsOperatingSystem$queryProcessMapFromRegistry__266: java.util.function.Supplier bootstrap$()>();
+---
+> v1 = staticinvoke <oshi.software.os.windows.WindowsOperatingSystem$queryProcessMapFromRegistry__292: java.util.function.Supplier bootstrap$()>();
+25c25
+< v4 = staticinvoke <oshi.software.os.windows.WindowsOperatingSystem$queryProcessMapFromPerfCounters__267: java.util.function.Supplier bootstrap$()>();
+---
+> v4 = staticinvoke <oshi.software.os.windows.WindowsOperatingSystem$queryProcessMapFromPerfCounters__293: java.util.function.Supplier bootstrap$()>();
+29c29
+< v7 = staticinvoke <oshi.software.os.windows.WindowsOperatingSystem$queryThreadMapFromRegistry__268: java.util.function.Supplier bootstrap$()>();
+---
+> v7 = staticinvoke <oshi.software.os.windows.WindowsOperatingSystem$queryThreadMapFromRegistry__294: java.util.function.Supplier bootstrap$()>();
+33c33
+< v10 = staticinvoke <oshi.software.os.windows.WindowsOperatingSystem$queryThreadMapFromPerfCounters__269: java.util.function.Supplier bootstrap$()>();
+---
+> v10 = staticinvoke <oshi.software.os.windows.WindowsOperatingSystem$queryThreadMapFromPerfCounters__295: java.util.function.Supplier bootstrap$()>();
+391c391
+< v19 = staticinvoke <oshi.software.os.windows.WindowsOperatingSystem$lambda_processMapToList_0__270: java.util.function.Function bootstrap$(oshi.software.os.windows.WindowsOperatingSystem,java.util.Map,java.util.Map,java.util.Map)>(v0, v3, v13, v9);
+---
+> v19 = staticinvoke <oshi.software.os.windows.WindowsOperatingSystem$lambda_processMapToList_0__296: java.util.function.Function bootstrap$(oshi.software.os.windows.WindowsOperatingSystem,java.util.Map,java.util.Map,java.util.Map)>(v0, v3, v13, v9);
+499c499
+< v5 = staticinvoke <oshi.software.os.windows.WindowsOperatingSystem$lambda_getCurrentThread_1__271: java.util.function.Predicate bootstrap$(int)>(v2);
+---
+> v5 = staticinvoke <oshi.software.os.windows.WindowsOperatingSystem$lambda_getCurrentThread_1__297: java.util.function.Predicate bootstrap$(int)>(v2);
+875c875
+< java.lang.Throwable v8;
+---
+> java.lang.Throwable v7;
+882c882
+< boolean v6, v7;
+---
+> boolean v6;
+898,899d897
+< v7 = v6;
+< label4:
+901,905c899,903
+< return v7;
+< label5:
+< v8 := @caughtexception;
+< throw v8;
+< catch java.lang.Throwable from label1 to label4 with label5;
+---
+> return v6;
+> label4:
+> v7 := @caughtexception;
+> throw v7;
+> catch java.lang.Throwable from label1 to label3 with label4;
+915c913
+< java.lang.Throwable v7;
+---
+> java.lang.Throwable v6;
+920c918
+< boolean v1, v5, v6;
+---
+> boolean v1, v5;
+938,939d935
+< v6 = v5;
+< label5:
+941,945c937,941
+< return v6;
+< label6:
+< v7 := @caughtexception;
+< throw v7;
+< catch java.lang.Throwable from label2 to label5 with label6;
+---
+> return v5;
+> label5:
+> v6 := @caughtexception;
+> throw v6;
+> catch java.lang.Throwable from label2 to label4 with label5;
+979c975
+< v3 = staticinvoke <oshi.software.os.windows.WindowsOperatingSystem$querySystemLog__272: java.util.function.Supplier bootstrap$()>();
+---
+> v3 = staticinvoke <oshi.software.os.windows.WindowsOperatingSystem$querySystemLog__298: java.util.function.Supplier bootstrap$()>();

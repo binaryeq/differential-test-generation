@@ -1,0 +1,87 @@
+520,523c520,526
+< char v11, v4;
+< com.google.common.collect.BoundType v10, v2, v3, v9;
+< java.lang.Object v6, v8;
+< java.lang.String v12;
+---
+> int v17, v18, v20, v21, v23, v24;
+> java.lang.String v12, v16, v19, v2, v22, v25, v9;
+> boolean v10, v7;
+> char v15, v5, v6;
+> com.google.common.collect.BoundType v13, v14, v3, v4;
+> java.lang.Object v11, v8;
+> java.lang.StringBuilder v26;
+525d527
+< boolean v5, v7;
+528,531c530,534
+< v2 = v0.<com.google.common.collect.GeneralRange: com.google.common.collect.BoundType lowerBoundType>;
+< v3 = <com.google.common.collect.BoundType: com.google.common.collect.BoundType CLOSED>;
+< if v2 != v3 goto label1;
+< v4 = 91;
+---
+> v2 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v1);
+> v3 = v0.<com.google.common.collect.GeneralRange: com.google.common.collect.BoundType lowerBoundType>;
+> v4 = <com.google.common.collect.BoundType: com.google.common.collect.BoundType CLOSED>;
+> if v3 != v4 goto label1;
+> v5 = 91;
+534c537
+< v4 = 40;
+---
+> v5 = 40;
+536,538c539,542
+< v5 = v0.<com.google.common.collect.GeneralRange: boolean hasLowerBound>;
+< if v5 == 0 goto label3;
+< v6 = v0.<com.google.common.collect.GeneralRange: java.lang.Object lowerEndpoint>;
+---
+> v6 = v5;
+> v7 = v0.<com.google.common.collect.GeneralRange: boolean hasLowerBound>;
+> if v7 == 0 goto label3;
+> v8 = v0.<com.google.common.collect.GeneralRange: java.lang.Object lowerEndpoint>;
+541c545
+< v6 = "-\u221e";
+---
+> v8 = "-\u221e";
+543,545c547,550
+< v7 = v0.<com.google.common.collect.GeneralRange: boolean hasUpperBound>;
+< if v7 == 0 goto label5;
+< v8 = v0.<com.google.common.collect.GeneralRange: java.lang.Object upperEndpoint>;
+---
+> v9 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v8);
+> v10 = v0.<com.google.common.collect.GeneralRange: boolean hasUpperBound>;
+> if v10 == 0 goto label5;
+> v11 = v0.<com.google.common.collect.GeneralRange: java.lang.Object upperEndpoint>;
+548c553
+< v8 = "\u221e";
+---
+> v11 = "\u221e";
+550,553c555,559
+< v9 = v0.<com.google.common.collect.GeneralRange: com.google.common.collect.BoundType upperBoundType>;
+< v10 = <com.google.common.collect.BoundType: com.google.common.collect.BoundType CLOSED>;
+< if v9 != v10 goto label7;
+< v11 = 93;
+---
+> v12 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v11);
+> v13 = v0.<com.google.common.collect.GeneralRange: com.google.common.collect.BoundType upperBoundType>;
+> v14 = <com.google.common.collect.BoundType: com.google.common.collect.BoundType CLOSED>;
+> if v13 != v14 goto label7;
+> v15 = 93;
+556c562
+< v11 = 41;
+---
+> v15 = 41;
+558,559c564,575
+< v12 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.util.Comparator,char,java.lang.Object,java.lang.Object,char)>(v1, v4, v6, v8, v11) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001:\u0001\u0001,\u0001\u0001");
+< return v12;
+---
+> v16 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v2);
+> v17 = virtualinvoke v16.<java.lang.String: int length()>();
+> v18 = 4 + v17;
+> v19 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v9);
+> v20 = virtualinvoke v19.<java.lang.String: int length()>();
+> v21 = v18 + v20;
+> v22 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v12);
+> v23 = virtualinvoke v22.<java.lang.String: int length()>();
+> v24 = v21 + v23;
+> specialinvoke v26.<java.lang.StringBuilder: void <init>(int)>(v24);
+> v25 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,char,java.lang.String,java.lang.String,char)>(v2, v6, v9, v12, v15) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001:\u0001\u0001,\u0001\u0001");
+> return v25;

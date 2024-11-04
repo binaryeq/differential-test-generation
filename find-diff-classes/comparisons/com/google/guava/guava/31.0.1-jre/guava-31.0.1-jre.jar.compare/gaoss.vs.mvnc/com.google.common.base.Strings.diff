@@ -1,0 +1,70 @@
+89d88
+< java.lang.ArrayIndexOutOfBoundsException v7;
+92d90
+< char[] v9;
+94a93,95
+> java.lang.ArrayIndexOutOfBoundsException v7;
+> char[] v9;
+> java.lang.StringBuilder v15;
+118a120
+> specialinvoke v15.<java.lang.StringBuilder: void <init>(int)>(51);
+323c325,328
+< java.util.logging.Logger v8;
+---
+> java.util.logging.Level v15;
+> int v11, v12, v18, v23, v24, v26, v27, v5, v8, v9;
+> java.lang.String v1, v10, v13, v16, v17, v19, v21, v22, v25, v28, v4, v6, v7;
+> java.util.logging.Logger v14;
+325,327c330
+< java.util.logging.Level v9;
+< int v5;
+< java.lang.Class v11, v3;
+---
+> java.lang.Class v20, v3;
+329c332
+< java.lang.String v1, v10, v12, v13, v4, v6, v7;
+---
+> java.lang.StringBuilder v29, v30;
+343,351c346,377
+< v7 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,java.lang.String)>(v4, v6) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001@\u0001");
+< v8 = staticinvoke <java.util.logging.Logger: java.util.logging.Logger getLogger(java.lang.String)>("com.google.common.base.Strings");
+< v9 = <java.util.logging.Level: java.util.logging.Level WARNING>;
+< v10 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v7) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Exception during lenientFormat for \u0001");
+< virtualinvoke v8.<java.util.logging.Logger: void log(java.util.logging.Level,java.lang.String,java.lang.Throwable)>(v9, v10, v2);
+< v11 = virtualinvoke v2.<java.lang.Object: java.lang.Class getClass()>();
+< v12 = virtualinvoke v11.<java.lang.Class: java.lang.String getName()>();
+< v13 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,java.lang.String)>(v7, v12) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("<\u0001 threw \u0001>");
+< return v13;
+---
+> v7 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v4);
+> v8 = virtualinvoke v7.<java.lang.String: int length()>();
+> v9 = 1 + v8;
+> v10 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v6);
+> v11 = virtualinvoke v10.<java.lang.String: int length()>();
+> v12 = v9 + v11;
+> specialinvoke v29.<java.lang.StringBuilder: void <init>(int)>(v12);
+> v13 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,java.lang.String)>(v4, v6) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001@\u0001");
+> v14 = staticinvoke <java.util.logging.Logger: java.util.logging.Logger getLogger(java.lang.String)>("com.google.common.base.Strings");
+> v15 = <java.util.logging.Level: java.util.logging.Level WARNING>;
+> v16 = "Exception during lenientFormat for ";
+> v17 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v13);
+> v18 = virtualinvoke v17.<java.lang.String: int length()>();
+> if v18 == 0 goto label4;
+> v19 = virtualinvoke v16.<java.lang.String: java.lang.String concat(java.lang.String)>(v17);
+> goto label5;
+> label4:
+> v19 = new java.lang.String;
+> specialinvoke v19.<java.lang.String: void <init>(java.lang.String)>("Exception during lenientFormat for ");
+> label5:
+> virtualinvoke v14.<java.util.logging.Logger: void log(java.util.logging.Level,java.lang.String,java.lang.Throwable)>(v15, v19, v2);
+> v20 = virtualinvoke v2.<java.lang.Object: java.lang.Class getClass()>();
+> v21 = virtualinvoke v20.<java.lang.Class: java.lang.String getName()>();
+> v22 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v13);
+> v23 = virtualinvoke v22.<java.lang.String: int length()>();
+> v24 = 9 + v23;
+> v25 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v21);
+> v26 = virtualinvoke v25.<java.lang.String: int length()>();
+> v27 = v24 + v26;
+> specialinvoke v30.<java.lang.StringBuilder: void <init>(int)>(v27);
+> v28 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,java.lang.String)>(v13, v21) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("<\u0001 threw \u0001>");
+> return v28;

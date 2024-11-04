@@ -1,0 +1,45 @@
+43d42
+< java.util.concurrent.TimeUnit v4;
+45d43
+< byte v6;
+47,48c45
+< long v5;
+< java.lang.String v3;
+---
+> long v9;
+49a47,51
+> byte v10;
+> int v13, v14, v5, v6;
+> java.lang.String v11, v12, v3, v4, v7;
+> java.util.concurrent.TimeUnit v8;
+> java.lang.StringBuilder v15, v16;
+54c56,61
+< v3 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (com.google.common.util.concurrent.ListenableFuture)>(v1) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("inputFuture=[\u0001]");
+---
+> v3 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v1);
+> v4 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v3);
+> v5 = virtualinvoke v4.<java.lang.String: int length()>();
+> v6 = 14 + v5;
+> specialinvoke v15.<java.lang.StringBuilder: void <init>(int)>(v6);
+> v7 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v3) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("inputFuture=[\u0001]");
+56,60c63,72
+< v4 = <java.util.concurrent.TimeUnit: java.util.concurrent.TimeUnit MILLISECONDS>;
+< v5 = interfaceinvoke v2.<java.util.concurrent.ScheduledFuture: long getDelay(java.util.concurrent.TimeUnit)>(v4);
+< v6 = v5 cmp 0L;
+< if v6 <= 0 goto label1;
+< v3 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,long)>(v3, v5) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001, remaining delay=[\u0001 ms]");
+---
+> v8 = <java.util.concurrent.TimeUnit: java.util.concurrent.TimeUnit MILLISECONDS>;
+> v9 = interfaceinvoke v2.<java.util.concurrent.ScheduledFuture: long getDelay(java.util.concurrent.TimeUnit)>(v8);
+> v10 = v9 cmp 0L;
+> if v10 <= 0 goto label1;
+> v11 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v7);
+> v12 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v11);
+> v13 = virtualinvoke v12.<java.lang.String: int length()>();
+> v14 = 43 + v13;
+> specialinvoke v16.<java.lang.StringBuilder: void <init>(int)>(v14);
+> v7 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,long)>(v11, v9) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001, remaining delay=[\u0001 ms]");
+62c74
+< return v3;
+---
+> return v7;

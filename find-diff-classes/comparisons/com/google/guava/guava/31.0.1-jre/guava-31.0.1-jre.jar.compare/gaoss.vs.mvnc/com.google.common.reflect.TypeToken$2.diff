@@ -1,0 +1,33 @@
+65,66d64
+< com.google.common.reflect.TypeToken$2 v0;
+< java.lang.reflect.Type[] v3;
+68,69c66,71
+< java.lang.String v4, v5;
+< com.google.common.base.Joiner v2;
+---
+> com.google.common.reflect.TypeToken$2 v0;
+> int v10, v11, v7, v8;
+> java.lang.reflect.Type[] v4;
+> java.lang.StringBuilder v13;
+> java.lang.String v12, v2, v5, v6, v9;
+> com.google.common.base.Joiner v3;
+72,76c74,86
+< v2 = staticinvoke <com.google.common.base.Joiner: com.google.common.base.Joiner on(java.lang.String)>(", ");
+< v3 = virtualinvoke v0.<com.google.common.reflect.TypeToken$2: java.lang.reflect.Type[] getGenericParameterTypes()>();
+< v4 = virtualinvoke v2.<com.google.common.base.Joiner: java.lang.String join(java.lang.Object[])>(v3);
+< v5 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (com.google.common.reflect.TypeToken,java.lang.String)>(v1, v4) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001(\u0001)");
+< return v5;
+---
+> v2 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v1);
+> v3 = staticinvoke <com.google.common.base.Joiner: com.google.common.base.Joiner on(java.lang.String)>(", ");
+> v4 = virtualinvoke v0.<com.google.common.reflect.TypeToken$2: java.lang.reflect.Type[] getGenericParameterTypes()>();
+> v5 = virtualinvoke v3.<com.google.common.base.Joiner: java.lang.String join(java.lang.Object[])>(v4);
+> v6 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v2);
+> v7 = virtualinvoke v6.<java.lang.String: int length()>();
+> v8 = 2 + v7;
+> v9 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v5);
+> v10 = virtualinvoke v9.<java.lang.String: int length()>();
+> v11 = v8 + v10;
+> specialinvoke v13.<java.lang.StringBuilder: void <init>(int)>(v11);
+> v12 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,java.lang.String)>(v2, v5) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001(\u0001)");
+> return v12;

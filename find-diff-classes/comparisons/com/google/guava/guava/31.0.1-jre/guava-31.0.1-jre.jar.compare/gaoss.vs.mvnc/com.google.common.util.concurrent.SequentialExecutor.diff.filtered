@@ -1,0 +1,19 @@
+163d162
+< int v1;
+165c164,166
+< java.lang.String v3;
+---
+> int v1, v5, v6;
+> java.lang.StringBuilder v8;
+> java.lang.String v3, v4, v7;
+169,170c170,176
+< v3 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (int,java.util.concurrent.Executor)>(v1, v2) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("SequentialExecutor@\u0001{\u0001}");
+< return v3;
+---
+> v3 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v2);
+> v4 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v3);
+> v5 = virtualinvoke v4.<java.lang.String: int length()>();
+> v6 = 32 + v5;
+> specialinvoke v8.<java.lang.StringBuilder: void <init>(int)>(v6);
+> v7 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (int,java.lang.String)>(v1, v3) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("SequentialExecutor@\u0001{\u0001}");
+> return v7;

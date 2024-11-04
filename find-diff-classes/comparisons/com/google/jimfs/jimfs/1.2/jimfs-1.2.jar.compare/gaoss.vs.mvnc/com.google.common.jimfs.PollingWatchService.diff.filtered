@@ -1,0 +1,19 @@
+102,103d101
+< java.nio.file.Watchable v1;
+< java.lang.String v5;
+105a104,107
+> int v7, v8;
+> java.nio.file.Watchable v1;
+> java.lang.StringBuilder v10;
+> java.lang.String v5, v6, v9;
+115,116c117,123
+< v5 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.nio.file.Watchable)>(v1) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("watchable (\u0001) must be a Path associated with the same file system as this watch service");
+< specialinvoke v4.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(v5);
+---
+> v5 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v1);
+> v6 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v5);
+> v7 = virtualinvoke v6.<java.lang.String: int length()>();
+> v8 = 86 + v7;
+> specialinvoke v10.<java.lang.StringBuilder: void <init>(int)>(v8);
+> v9 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v5) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("watchable (\u0001) must be a Path associated with the same file system as this watch service");
+> specialinvoke v4.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(v9);

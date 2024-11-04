@@ -1,0 +1,30 @@
+40c40
+< boolean process(picocli.CommandLine) throws picocli.CommandLine$ParameterException, java.io.IOException
+---
+> boolean process(groovyjarjarpicocli.CommandLine) throws groovyjarjarpicocli.CommandLine$ParameterException, java.io.IOException
+41a42
+> groovyjarjarpicocli.CommandLine v1;
+44a46
+> groovyjarjarpicocli.CommandLine$ParameterException v37, v42;
+47d48
+< picocli.CommandLine v1;
+54d54
+< picocli.CommandLine$ParameterException v37, v42;
+57c57
+< v1 := @parameter0: picocli.CommandLine;
+---
+> v1 := @parameter0: groovyjarjarpicocli.CommandLine;
+141,142c141,142
+< v37 = new picocli.CommandLine$ParameterException;
+< specialinvoke v37.<picocli.CommandLine$ParameterException: void <init>(picocli.CommandLine,java.lang.String)>(v1, "error: neither -e or filename provided");
+---
+> v37 = new groovyjarjarpicocli.CommandLine$ParameterException;
+> specialinvoke v37.<groovyjarjarpicocli.CommandLine$ParameterException: void <init>(groovyjarjarpicocli.CommandLine,java.lang.String)>(v1, "error: neither -e or filename provided");
+151c151
+< v42 = new picocli.CommandLine$ParameterException;
+---
+> v42 = new groovyjarjarpicocli.CommandLine$ParameterException;
+154c154
+< specialinvoke v42.<picocli.CommandLine$ParameterException: void <init>(picocli.CommandLine,java.lang.String)>(v1, v44);
+---
+> specialinvoke v42.<groovyjarjarpicocli.CommandLine$ParameterException: void <init>(groovyjarjarpicocli.CommandLine,java.lang.String)>(v1, v44);
