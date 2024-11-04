@@ -1,0 +1,93 @@
+* EvoSuite 1.2.0
+* Going to generate test cases for class: com.google.common.util.concurrent.ExecutionList
+* Starting Client-0
+* Connecting to master process on port 18689
+* Analyzing classpath: 
+  - /home/wtwhite/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/guava/guava/31.0.1-jre/guava-31.0.1-jre.jar
+  - t/dependency/checker-qual-3.12.0.jar
+  - t/dependency/error_prone_annotations-2.7.1.jar
+  - t/dependency/failureaccess-1.0.1.jar
+  - t/dependency/j2objc-annotations-1.3.jar
+  - t/dependency/jsr305-3.0.2.jar
+  - t/dependency/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar
+* Finished analyzing classpath
+* Generating tests for class com.google.common.util.concurrent.ExecutionList
+* Test criteria:
+  - Line Coverage
+  - Branch Coverage
+  - Exception
+  - Mutation testing (weak)
+  - Method-Output Coverage
+  - Top-Level Method Coverage
+  - No-Exception Top-Level Method Coverage
+  - Context Branch Coverage
+[Progress:>                             0%] [Cov:>                                  0%]* Total number of test goals for DYNAMOSA: 108
+* Using seed 1729704294968
+* Starting evolution
+* Initial Number of Goals in DynaMOSA = 50 / 108
+[MASTER] 06:24:56.845 [logback-1] WARN  TestCluster - Failed to check cache for java.util.concurrent.ForkJoinTask<V> : Type points to itself
+[Progress:============>                 40%] [Cov:================================>  93%][Progress:==============================100%] [Cov:================================>  93%]
+* Search finished after 65s and 1 generations, 1306 statements, best individual has fitness: 2.0
+* Minimizing test suite
+[MASTER] 06:27:13.592 [logback-1] WARN  TestSuiteMinimizer - Minimization timeout. Roll back to original test suite
+* Going to analyze the coverage criteria
+* Coverage analysis for criterion LINE
+* Coverage of criterion LINE: 100%
+* Total number of goals: 38
+* Number of covered goals: 38
+* Coverage analysis for criterion BRANCH
+* Coverage of criterion BRANCH: 100%
+* Total number of goals: 11
+* Number of covered goals: 11
+* Coverage analysis for criterion EXCEPTION
+* Coverage of criterion EXCEPTION: 100%
+* Total number of goals: 1
+* Number of covered goals: 1
+* Coverage analysis for criterion WEAKMUTATION
+* Coverage of criterion WEAKMUTATION: 98%
+* Total number of goals: 42
+* Number of covered goals: 41
+* Coverage analysis for criterion OUTPUT
+* Coverage of criterion OUTPUT: 100% (no goals)
+* Coverage analysis for criterion METHOD
+* Coverage of criterion METHOD: 100%
+* Total number of goals: 3
+* Number of covered goals: 3
+* Coverage analysis for criterion METHODNOEXCEPTION
+* Coverage of criterion METHODNOEXCEPTION: 100%
+* Total number of goals: 3
+* Number of covered goals: 3
+* Coverage analysis for criterion CBRANCH
+* Coverage of criterion CBRANCH: 100%
+* Total number of goals: 11
+* Number of covered goals: 11
+* Generated 9 tests with total length 123
+* Resulting test suite's coverage: 93% (average coverage for all fitness functions)
+* Generating assertions
+* Resulting test suite's mutation score: 10%
+[MASTER] 06:30:06.942 [logback-1] WARN  SimpleMutationAssertionGenerator - Reached maximum time to generate assertions, aborting assertion generation
+* Compiling and checking tests
+[MASTER] 06:30:24.252 [logback-2] ERROR ClientNodeImpl - Error when generating tests for: com.google.common.util.concurrent.ExecutionList with seed 1729704294968. Configuration id : null
+java.lang.NoClassDefFoundError: jdk.internal.misc.TerminatingThreadLocal
+	at sun.nio.fs.NativeBuffers.<clinit>(NativeBuffers.java:41)
+	at sun.nio.fs.UnixNativeDispatcher.copyToNativeBuffer(UnixNativeDispatcher.java:42)
+	at sun.nio.fs.UnixNativeDispatcher.lstat(UnixNativeDispatcher.java:303)
+	at sun.nio.fs.UnixFileAttributes.get(UnixFileAttributes.java:72)
+	at sun.nio.fs.UnixFileAttributeViews$Basic.readAttributes(UnixFileAttributeViews.java:52)
+	at sun.nio.fs.UnixFileSystemProvider.readAttributes(UnixFileSystemProvider.java:144)
+	at sun.nio.fs.LinuxFileSystemProvider.readAttributes(LinuxFileSystemProvider.java:99)
+	at java.nio.file.Files.readAttributes(Files.java:1737)
+	at java.nio.file.Files.isSymbolicLink(Files.java:2153)
+	at org.evosuite.shaded.org.apache.commons.io.FileUtils.isSymlink(FileUtils.java:1879)
+	at org.evosuite.shaded.org.apache.commons.io.FileUtils.deleteDirectory(FileUtils.java:1191)
+	at org.evosuite.junit.JUnitAnalyzer.removeTestsThatDoNotCompile(JUnitAnalyzer.java:124)
+	at org.evosuite.TestSuiteGenerator.compileAndCheckTests(TestSuiteGenerator.java:559)
+	at org.evosuite.TestSuiteGenerator.postProcessTests(TestSuiteGenerator.java:516)
+	at org.evosuite.TestSuiteGenerator.generateTestSuite(TestSuiteGenerator.java:218)
+	at org.evosuite.rmi.service.ClientNodeImpl.lambda$startNewSearch$0(ClientNodeImpl.java:140)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+* Computation finished

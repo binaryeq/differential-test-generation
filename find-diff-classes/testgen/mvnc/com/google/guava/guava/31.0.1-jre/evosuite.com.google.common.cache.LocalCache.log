@@ -1,0 +1,553 @@
+* EvoSuite 1.2.0
+* Going to generate test cases for class: com.google.common.cache.LocalCache
+* Starting Client-0
+* Connecting to master process on port 11377
+* Analyzing classpath: 
+  - /home/wtwhite/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/guava/guava/31.0.1-jre/guava-31.0.1-jre.jar
+  - t/dependency/checker-qual-3.12.0.jar
+  - t/dependency/error_prone_annotations-2.7.1.jar
+  - t/dependency/failureaccess-1.0.1.jar
+  - t/dependency/j2objc-annotations-1.3.jar
+  - t/dependency/jsr305-3.0.2.jar
+  - t/dependency/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar
+* Finished analyzing classpath
+* Generating tests for class com.google.common.cache.LocalCache
+* Test criteria:
+  - Line Coverage
+  - Branch Coverage
+  - Exception
+  - Mutation testing (weak)
+  - Method-Output Coverage
+  - Top-Level Method Coverage
+  - No-Exception Top-Level Method Coverage
+  - Context Branch Coverage
+* Total number of test goals for DYNAMOSA: 5611
+* Using seed 1729693469948
+* Starting evolution
+[Progress:>                             0%] [Cov:>                                  0%]* Initial Number of Goals in DynaMOSA = 2105 / 5611
+[MASTER] 03:24:34.882 [logback-1] WARN  TestCluster - Failed to check cache for com.google.common.cache.AbstractCache<K, V>.SimpleStatsCounter : Type points to itself
+[MASTER] 03:24:34.883 [logback-1] WARN  TestCluster - Failed to check cache for com.google.common.cache.LocalCache<K, V>.StrongAccessEntry<K, V> : Type points to itself
+[MASTER] 03:24:48.636 [logback-1] WARN  TestCluster - Failed to check cache for java.util.concurrent.ForkJoinTask<V> : Type points to itself
+[MASTER] 03:25:01.744 [logback-1] WARN  TestCluster - Failed to check cache for com.google.common.base.Supplier<T> : Type points to itself
+[Progress:==============================100%] [Cov:=====>                             15%][MASTER] 03:25:57.662 [logback-1] WARN  CoverageArchive - A solution with a timeout/exception result has been added to the archive. The covered goal was com.google.common.cache.LocalCache$WriteQueue$1.getNextInWriteQueue()Lcom/google/common/cache/ReferenceEntry;: root-Branch
+[MASTER] 03:25:57.676 [logback-1] WARN  CoverageArchive - A solution with a timeout/exception result has been added to the archive. The covered goal was com.google.common.cache.LocalCache$StrongAccessWriteEntry.setPreviousInWriteQueue(Lcom/google/common/cache/ReferenceEntry;)V: Line 1158
+[MASTER] 03:25:57.676 [logback-1] WARN  CoverageArchive - A solution with a timeout/exception result has been added to the archive. The covered goal was com.google.common.cache.LocalCache$StrongAccessWriteEntry.setPreviousInWriteQueue(Lcom/google/common/cache/ReferenceEntry;)V: Line 1159
+[MASTER] 03:25:57.699 [logback-1] WARN  CoverageArchive - A solution with a timeout/exception result has been added to the archive. The covered goal was com.google.common.cache.LocalCache$StrongAccessWriteEntry.getPreviousInAccessQueue()Lcom/google/common/cache/ReferenceEntry;: Line 1113
+[MASTER] 03:25:57.701 [logback-1] WARN  CoverageArchive - A solution with a timeout/exception result has been added to the archive. The covered goal was com.google.common.cache.LocalCache$WriteQueue.clear()V: I11 Branch 312 IF_ACMPEQ L3740 - true
+[MASTER] 03:25:57.707 [logback-1] WARN  CoverageArchive - A solution with a timeout/exception result has been added to the archive. The covered goal was com.google.common.cache.LocalCache$WriteQueue$1.setNextInWriteQueue(Lcom/google/common/cache/ReferenceEntry;)V: Line 3655
+[MASTER] 03:25:57.708 [logback-1] WARN  CoverageArchive - A solution with a timeout/exception result has been added to the archive. The covered goal was com.google.common.cache.LocalCache$WriteQueue$1.setNextInWriteQueue(Lcom/google/common/cache/ReferenceEntry;)V: Line 3656
+[MASTER] 03:25:57.711 [logback-1] WARN  CoverageArchive - A solution with a timeout/exception result has been added to the archive. The covered goal was com.google.common.cache.LocalCache$WeakWriteEntry.<init>(Ljava/lang/ref/ReferenceQueue;Ljava/lang/Object;ILcom/google/common/cache/ReferenceEntry;)V: Line 1337
+[MASTER] 03:25:57.712 [logback-1] WARN  CoverageArchive - A solution with a timeout/exception result has been added to the archive. The covered goal was com.google.common.cache.LocalCache$WeakWriteEntry.<init>(Ljava/lang/ref/ReferenceQueue;Ljava/lang/Object;ILcom/google/common/cache/ReferenceEntry;)V: Line 1350
+[MASTER] 03:25:57.714 [logback-1] WARN  CoverageArchive - A solution with a timeout/exception result has been added to the archive. The covered goal was com.google.common.cache.LocalCache$WeakWriteEntry.<init>(Ljava/lang/ref/ReferenceQueue;Ljava/lang/Object;ILcom/google/common/cache/ReferenceEntry;)V: Line 1320
+[MASTER] 03:25:57.715 [logback-1] WARN  CoverageArchive - A solution with a timeout/exception result has been added to the archive. The covered goal was com.google.common.cache.LocalCache$WeakWriteEntry.<init>(Ljava/lang/ref/ReferenceQueue;Ljava/lang/Object;ILcom/google/common/cache/ReferenceEntry;)V: Line 1319
+[MASTER] 03:25:57.715 [logback-1] WARN  CoverageArchive - A solution with a timeout/exception result has been added to the archive. The covered goal was com.google.common.cache.LocalCache$WeakWriteEntry.<init>(Ljava/lang/ref/ReferenceQueue;Ljava/lang/Object;ILcom/google/common/cache/ReferenceEntry;)V: Line 1324
+[MASTER] 03:25:57.719 [logback-1] WARN  CoverageArchive - A solution with a timeout/exception result has been added to the archive. The covered goal was com.google.common.cache.LocalCache$WeakAccessWriteEntry.getWriteTime()J: root-Branch
+[MASTER] 03:25:57.726 [logback-1] WARN  CoverageArchive - A solution with a timeout/exception result has been added to the archive. The covered goal was Weak Mutation 3625: com.google.common.cache.LocalCache$WriteQueue.isEmpty()Z:3723 - ReplaceComparisonOperator != -> ==
+[MASTER] 03:25:57.727 [logback-1] WARN  CoverageArchive - A solution with a timeout/exception result has been added to the archive. The covered goal was Weak Mutation 3662: com.google.common.cache.LocalCache$AccessQueue.poll()Lcom/google/common/cache/ReferenceEntry;:3833 - ReplaceComparisonOperator != -> ==
+[MASTER] 03:25:57.730 [logback-1] WARN  CoverageArchive - A solution with a timeout/exception result has been added to the archive. The covered goal was Weak Mutation 3687: com.google.common.cache.LocalCache$AccessQueue.isEmpty()Z:3862 - ReplaceComparisonOperator != -> ==
+[MASTER] 03:25:57.732 [logback-1] WARN  CoverageArchive - A solution with a timeout/exception result has been added to the archive. The covered goal was com.google.common.cache.LocalCache$StrongAccessEntry.setAccessTime(J)V: Line 1001
+[MASTER] 03:25:57.732 [logback-1] WARN  CoverageArchive - A solution with a timeout/exception result has been added to the archive. The covered goal was com.google.common.cache.LocalCache$StrongAccessEntry.setAccessTime(J)V: Line 1000
+[MASTER] 03:25:57.733 [logback-1] WARN  CoverageArchive - A solution with a timeout/exception result has been added to the archive. The covered goal was com.google.common.cache.LocalCache$WriteQueue$1.setPreviousInWriteQueue(Lcom/google/common/cache/ReferenceEntry;)V: Line 3667
+[MASTER] 03:25:57.734 [logback-1] WARN  CoverageArchive - A solution with a timeout/exception result has been added to the archive. The covered goal was com.google.common.cache.LocalCache$WriteQueue$1.setPreviousInWriteQueue(Lcom/google/common/cache/ReferenceEntry;)V: Line 3668
+[MASTER] 03:25:57.737 [logback-1] WARN  CoverageArchive - A solution with a timeout/exception result has been added to the archive. The covered goal was com.google.common.cache.LocalCache$WeakEntry.<init>(Ljava/lang/ref/ReferenceQueue;Ljava/lang/Object;ILcom/google/common/cache/ReferenceEntry;)V: root-Branch
+[MASTER] 03:25:57.738 [logback-1] WARN  CoverageArchive - A solution with a timeout/exception result has been added to the archive. The covered goal was com.google.common.cache.LocalCache$AccessQueue.isEmpty()Z: Line 3862
+[MASTER] 03:25:57.745 [logback-1] WARN  CoverageArchive - A solution with a timeout/exception result has been added to the archive. The covered goal was com.google.common.cache.LocalCache$StrongAccessWriteEntry.<init>(Ljava/lang/Object;ILcom/google/common/cache/ReferenceEntry;)V: root-Branch
+[MASTER] 03:25:57.746 [logback-1] WARN  CoverageArchive - A solution with a timeout/exception result has been added to the archive. The covered goal was com.google.common.cache.LocalCache$WriteQueue$1.setNextInWriteQueue(Lcom/google/common/cache/ReferenceEntry;)V: root-Branch
+[MASTER] 03:25:57.751 [logback-1] WARN  CoverageArchive - A solution with a timeout/exception result has been added to the archive. The covered goal was com.google.common.cache.LocalCache$WriteQueue$1.<init>(Lcom/google/common/cache/LocalCache$WriteQueue;)V: root-Branch
+[MASTER] 03:25:57.752 [logback-1] WARN  CoverageArchive - A solution with a timeout/exception result has been added to the archive. The covered goal was com.google.common.cache.LocalCache$WriteQueue.<init>()V: Line 3635
+[MASTER] 03:25:57.752 [logback-1] WARN  CoverageArchive - A solution with a timeout/exception result has been added to the archive. The covered goal was com.google.common.cache.LocalCache$WriteQueue.<init>()V: Line 3634
+[MASTER] 03:25:57.753 [logback-1] WARN  CoverageArchive - A solution with a timeout/exception result has been added to the archive. The covered goal was com.google.common.cache.LocalCache$WeakAccessWriteEntry.<init>(Ljava/lang/ref/ReferenceQueue;Ljava/lang/Object;ILcom/google/common/cache/ReferenceEntry;)V: root-Branch
+[MASTER] 03:25:57.766 [logback-1] WARN  CoverageArchive - A solution with a timeout/exception result has been added to the archive. The covered goal was com.google.common.cache.LocalCache$AccessQueue.isEmpty()Z: I7 Branch 317 IF_ACMPNE L3862 - false
+[MASTER] 03:25:57.774 [logback-1] WARN  CoverageArchive - A solution with a timeout/exception result has been added to the archive. The covered goal was com.google.common.cache.LocalCache$WriteQueue$1.getNextInWriteQueue()Lcom/google/common/cache/ReferenceEntry;: Line 3650
+[MASTER] 03:25:57.779 [logback-1] WARN  CoverageArchive - A solution with a timeout/exception result has been added to the archive. The covered goal was com.google.common.cache.LocalCache$WriteQueue.<init>()V: root-Branch
+[MASTER] 03:25:57.783 [logback-1] WARN  CoverageArchive - A solution with a timeout/exception result has been added to the archive. The covered goal was com.google.common.cache.LocalCache$WriteQueue.clear()V: Line 3747
+[MASTER] 03:25:57.783 [logback-1] WARN  CoverageArchive - A solution with a timeout/exception result has been added to the archive. The covered goal was com.google.common.cache.LocalCache$WriteQueue.clear()V: Line 3746
+[MASTER] 03:25:57.784 [logback-1] WARN  CoverageArchive - A solution with a timeout/exception result has been added to the archive. The covered goal was com.google.common.cache.LocalCache$WriteQueue.clear()V: Line 3748
+[MASTER] 03:25:57.786 [logback-1] WARN  CoverageArchive - A solution with a timeout/exception result has been added to the archive. The covered goal was com.google.common.cache.LocalCache$WriteQueue.clear()V: Line 3739
+[MASTER] 03:25:57.792 [logback-1] WARN  CoverageArchive - A solution with a timeout/exception result has been added to the archive. The covered goal was com.google.common.cache.LocalCache$WeakAccessWriteEntry.getWriteTime()J: Line 1415
+[MASTER] 03:25:57.797 [logback-1] WARN  CoverageArchive - A solution with a timeout/exception result has been added to the archive. The covered goal was com.google.common.cache.LocalCache$WeakWriteEntry.getWriteTime()J: root-Branch
+[MASTER] 03:25:57.800 [logback-1] WARN  CoverageArchive - A solution with a timeout/exception result has been added to the archive. The covered goal was [Output]: com.google.common.cache.LocalCache.nullEntry()Lcom/google/common/cache/ReferenceEntry;:NonNull
+[MASTER] 03:25:57.801 [logback-1] WARN  CoverageArchive - A solution with a timeout/exception result has been added to the archive. The covered goal was com.google.common.cache.LocalCache$WriteQueue.isEmpty()Z: Line 3723
+[MASTER] 03:25:57.805 [logback-1] WARN  CoverageArchive - A solution with a timeout/exception result has been added to the archive. The covered goal was com.google.common.cache.LocalCache$WeakWriteEntry.<init>(Ljava/lang/ref/ReferenceQueue;Ljava/lang/Object;ILcom/google/common/cache/ReferenceEntry;)V: root-Branch
+[MASTER] 03:25:57.805 [logback-1] WARN  CoverageArchive - A solution with a timeout/exception result has been added to the archive. The covered goal was com.google.common.cache.LocalCache$WeakEntry.<init>(Ljava/lang/ref/ReferenceQueue;Ljava/lang/Object;ILcom/google/common/cache/ReferenceEntry;)V: Line 1168
+[MASTER] 03:25:57.805 [logback-1] WARN  CoverageArchive - A solution with a timeout/exception result has been added to the archive. The covered goal was com.google.common.cache.LocalCache$WeakEntry.<init>(Ljava/lang/ref/ReferenceQueue;Ljava/lang/Object;ILcom/google/common/cache/ReferenceEntry;)V: Line 1166
+[MASTER] 03:25:57.805 [logback-1] WARN  CoverageArchive - A solution with a timeout/exception result has been added to the archive. The covered goal was com.google.common.cache.LocalCache$WeakEntry.<init>(Ljava/lang/ref/ReferenceQueue;Ljava/lang/Object;ILcom/google/common/cache/ReferenceEntry;)V: Line 1167
+[MASTER] 03:25:57.805 [logback-1] WARN  CoverageArchive - A solution with a timeout/exception result has been added to the archive. The covered goal was com.google.common.cache.LocalCache$WeakEntry.<init>(Ljava/lang/ref/ReferenceQueue;Ljava/lang/Object;ILcom/google/common/cache/ReferenceEntry;)V: Line 1165
+[MASTER] 03:25:57.808 [logback-1] WARN  CoverageArchive - A solution with a timeout/exception result has been added to the archive. The covered goal was com.google.common.cache.LocalCache$StrongAccessWriteEntry.setPreviousInWriteQueue(Lcom/google/common/cache/ReferenceEntry;)V: root-Branch
+[MASTER] 03:25:57.808 [logback-1] WARN  CoverageArchive - A solution with a timeout/exception result has been added to the archive. The covered goal was com.google.common.cache.LocalCache$WeakEntry.<init>(Ljava/lang/ref/ReferenceQueue;Ljava/lang/Object;ILcom/google/common/cache/ReferenceEntry;)V: Line 1248
+[MASTER] 03:25:57.812 [logback-1] WARN  CoverageArchive - A solution with a timeout/exception result has been added to the archive. The covered goal was [METHOD] com.google.common.cache.LocalCache.unset()Lcom/google/common/cache/LocalCache$ValueReference;
+[MASTER] 03:25:57.812 [logback-1] WARN  CoverageArchive - A solution with a timeout/exception result has been added to the archive. The covered goal was [METHODNOEX] com.google.common.cache.LocalCache.unset()Lcom/google/common/cache/LocalCache$ValueReference;
+[MASTER] 03:25:57.813 [logback-1] WARN  CoverageArchive - A solution with a timeout/exception result has been added to the archive. The covered goal was com.google.common.cache.LocalCache$AccessQueue.poll()Lcom/google/common/cache/ReferenceEntry;: I11 Branch 314 IF_ACMPNE L3833 - false
+[MASTER] 03:25:57.818 [logback-1] WARN  CoverageArchive - A solution with a timeout/exception result has been added to the archive. The covered goal was com.google.common.cache.LocalCache$StrongAccessWriteEntry.<init>(Ljava/lang/Object;ILcom/google/common/cache/ReferenceEntry;)V: Line 1096
+[MASTER] 03:25:57.818 [logback-1] WARN  CoverageArchive - A solution with a timeout/exception result has been added to the archive. The covered goal was com.google.common.cache.LocalCache$StrongAccessWriteEntry.<init>(Ljava/lang/Object;ILcom/google/common/cache/ReferenceEntry;)V: Line 1083
+[MASTER] 03:25:57.818 [logback-1] WARN  CoverageArchive - A solution with a timeout/exception result has been added to the archive. The covered goal was com.google.common.cache.LocalCache$StrongAccessWriteEntry.<init>(Ljava/lang/Object;ILcom/google/common/cache/ReferenceEntry;)V: Line 1078
+[MASTER] 03:25:57.818 [logback-1] WARN  CoverageArchive - A solution with a timeout/exception result has been added to the archive. The covered goal was com.google.common.cache.LocalCache$StrongAccessWriteEntry.<init>(Ljava/lang/Object;ILcom/google/common/cache/ReferenceEntry;)V: Line 1079
+[MASTER] 03:25:57.820 [logback-1] WARN  CoverageArchive - A solution with a timeout/exception result has been added to the archive. The covered goal was com.google.common.cache.LocalCache$StrongAccessWriteEntry.<init>(Ljava/lang/Object;ILcom/google/common/cache/ReferenceEntry;)V: Line 1136
+[MASTER] 03:25:57.820 [logback-1] WARN  CoverageArchive - A solution with a timeout/exception result has been added to the archive. The covered goal was com.google.common.cache.LocalCache$StrongAccessWriteEntry.<init>(Ljava/lang/Object;ILcom/google/common/cache/ReferenceEntry;)V: Line 1109
+[MASTER] 03:25:57.821 [logback-1] WARN  CoverageArchive - A solution with a timeout/exception result has been added to the archive. The covered goal was com.google.common.cache.LocalCache$StrongAccessWriteEntry.<init>(Ljava/lang/Object;ILcom/google/common/cache/ReferenceEntry;)V: Line 1123
+[MASTER] 03:25:57.827 [logback-1] WARN  CoverageArchive - A solution with a timeout/exception result has been added to the archive. The covered goal was com.google.common.cache.LocalCache$StrongAccessWriteEntry.<init>(Ljava/lang/Object;ILcom/google/common/cache/ReferenceEntry;)V: Line 1149
+[MASTER] 03:25:57.828 [logback-1] WARN  CoverageArchive - A solution with a timeout/exception result has been added to the archive. The covered goal was com.google.common.cache.LocalCache$WriteQueue.isEmpty()Z: I7 Branch 310 IF_ACMPNE L3723 - false
+[MASTER] 03:25:57.836 [logback-1] WARN  CoverageArchive - A solution with a timeout/exception result has been added to the archive. The covered goal was com.google.common.cache.LocalCache$WeakWriteEntry.getWriteTime()J: Line 1328
+[MASTER] 03:25:57.837 [logback-1] WARN  CoverageArchive - A solution with a timeout/exception result has been added to the archive. The covered goal was com.google.common.cache.LocalCache$StrongAccessEntry.setAccessTime(J)V: root-Branch
+[MASTER] 03:25:57.838 [logback-1] WARN  CoverageArchive - A solution with a timeout/exception result has been added to the archive. The covered goal was com.google.common.cache.LocalCache$StrongAccessWriteEntry.getPreviousInAccessQueue()Lcom/google/common/cache/ReferenceEntry;: root-Branch
+[MASTER] 03:25:57.842 [logback-1] WARN  CoverageArchive - A solution with a timeout/exception result has been added to the archive. The covered goal was com.google.common.cache.LocalCache$AccessQueue.poll()Lcom/google/common/cache/ReferenceEntry;: Line 3832
+[MASTER] 03:25:57.842 [logback-1] WARN  CoverageArchive - A solution with a timeout/exception result has been added to the archive. The covered goal was com.google.common.cache.LocalCache$AccessQueue.poll()Lcom/google/common/cache/ReferenceEntry;: Line 3833
+[MASTER] 03:25:57.856 [logback-1] WARN  CoverageArchive - A solution with a timeout/exception result has been added to the archive. The covered goal was com.google.common.cache.LocalCache$WriteQueue$1.setPreviousInWriteQueue(Lcom/google/common/cache/ReferenceEntry;)V: root-Branch
+[MASTER] 03:25:57.856 [logback-1] WARN  CoverageArchive - A solution with a timeout/exception result has been added to the archive. The covered goal was com.google.common.cache.LocalCache$WeakAccessWriteEntry.<init>(Ljava/lang/ref/ReferenceQueue;Ljava/lang/Object;ILcom/google/common/cache/ReferenceEntry;)V: Line 1384
+[MASTER] 03:25:57.857 [logback-1] WARN  CoverageArchive - A solution with a timeout/exception result has been added to the archive. The covered goal was com.google.common.cache.LocalCache$WeakAccessWriteEntry.<init>(Ljava/lang/ref/ReferenceQueue;Ljava/lang/Object;ILcom/google/common/cache/ReferenceEntry;)V: Line 1397
+[MASTER] 03:25:57.857 [logback-1] WARN  CoverageArchive - A solution with a timeout/exception result has been added to the archive. The covered goal was com.google.common.cache.LocalCache$WeakAccessWriteEntry.<init>(Ljava/lang/ref/ReferenceQueue;Ljava/lang/Object;ILcom/google/common/cache/ReferenceEntry;)V: Line 1366
+[MASTER] 03:25:57.857 [logback-1] WARN  CoverageArchive - A solution with a timeout/exception result has been added to the archive. The covered goal was com.google.common.cache.LocalCache$WeakAccessWriteEntry.<init>(Ljava/lang/ref/ReferenceQueue;Ljava/lang/Object;ILcom/google/common/cache/ReferenceEntry;)V: Line 1367
+[MASTER] 03:25:57.858 [logback-1] WARN  CoverageArchive - A solution with a timeout/exception result has been added to the archive. The covered goal was com.google.common.cache.LocalCache$WeakAccessWriteEntry.<init>(Ljava/lang/ref/ReferenceQueue;Ljava/lang/Object;ILcom/google/common/cache/ReferenceEntry;)V: Line 1371
+[MASTER] 03:25:57.861 [logback-1] WARN  CoverageArchive - A solution with a timeout/exception result has been added to the archive. The covered goal was com.google.common.cache.LocalCache$WeakAccessWriteEntry.<init>(Ljava/lang/ref/ReferenceQueue;Ljava/lang/Object;ILcom/google/common/cache/ReferenceEntry;)V: Line 1411
+[MASTER] 03:25:57.861 [logback-1] WARN  CoverageArchive - A solution with a timeout/exception result has been added to the archive. The covered goal was com.google.common.cache.LocalCache$WeakAccessWriteEntry.<init>(Ljava/lang/ref/ReferenceQueue;Ljava/lang/Object;ILcom/google/common/cache/ReferenceEntry;)V: Line 1424
+[MASTER] 03:25:57.862 [logback-1] WARN  CoverageArchive - A solution with a timeout/exception result has been added to the archive. The covered goal was com.google.common.cache.LocalCache$WeakAccessWriteEntry.<init>(Ljava/lang/ref/ReferenceQueue;Ljava/lang/Object;ILcom/google/common/cache/ReferenceEntry;)V: Line 1437
+[Progress:==============================100%] [Cov:=====>                             16%]
+* Search finished after 84s and 0 generations, 349 statements, best individual has fitness: 5209.0
+[MASTER] 03:25:58.380 [logback-1] WARN  TimeController - Phase SEARCH lasted too long, 23 seconds more than allowed.
+* Minimizing test suite
+* Going to analyze the coverage criteria
+* Coverage analysis for criterion LINE
+* Coverage of criterion LINE: 10%
+* Total number of goals: 1804
+* Number of covered goals: 177
+* Coverage analysis for criterion BRANCH
+* Coverage of criterion BRANCH: 8%
+* Total number of goals: 1056
+* Number of covered goals: 83
+* Coverage analysis for criterion EXCEPTION
+* Coverage of criterion EXCEPTION: 100%
+* Total number of goals: 2
+* Number of covered goals: 2
+* Coverage analysis for criterion WEAKMUTATION
+* Coverage of criterion WEAKMUTATION: 5%
+* Total number of goals: 768
+* Number of covered goals: 39
+* Coverage analysis for criterion OUTPUT
+* Coverage of criterion OUTPUT: 0%
+* Total number of goals: 147
+* Number of covered goals: 0
+* Coverage analysis for criterion METHOD
+* Coverage of criterion METHOD: 8%
+* Total number of goals: 390
+* Number of covered goals: 30
+* Coverage analysis for criterion METHODNOEXCEPTION
+* Coverage of criterion METHODNOEXCEPTION: 7%
+* Total number of goals: 390
+* Number of covered goals: 26
+* Coverage analysis for criterion CBRANCH
+* Coverage of criterion CBRANCH: 8%
+* Total number of goals: 1056
+* Number of covered goals: 83
+* Generated 20 tests with total length 67
+* Resulting test suite's coverage: 17% (average coverage for all fitness functions)
+* Generating assertions
+[MASTER] 03:27:43.917 [logback-1] WARN  SimpleMutationAssertionGenerator - Reached maximum time to generate assertions, aborting assertion generation
+* Resulting test suite's mutation score: 1%
+* Compiling and checking tests
+[MASTER] 03:27:47.638 [logback-2] ERROR JUnitAnalyzer - Compilation failed on compilation units: [RegularFileObject[/tmp/EvoSuite_7_1729693664590/com/google/common/cache/LocalCache_7_tmp__ESTest.java], RegularFileObject[/tmp/EvoSuite_7_1729693664590/com/google/common/cache/LocalCache_7_tmp__ESTest_scaffolding.java]]
+[MASTER] 03:27:47.638 [logback-2] ERROR JUnitAnalyzer - Classpath: /home/wtwhite/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/guava/guava/31.0.1-jre/guava-31.0.1-jre.jar:t/dependency/checker-qual-3.12.0.jar:t/dependency/error_prone_annotations-2.7.1.jar:t/dependency/failureaccess-1.0.1.jar:t/dependency/j2objc-annotations-1.3.jar:t/dependency/jsr305-3.0.2.jar:t/dependency/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/home/wtwhite/code/regression-test-generation/evosuite/evosuite-1.2.0.jar:/home/wtwhite/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/guava/guava/31.0.1-jre/guava-31.0.1-jre.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/checker-qual-3.12.0.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/error_prone_annotations-2.7.1.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/failureaccess-1.0.1.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/j2objc-annotations-1.3.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/jsr305-3.0.2.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar
+[MASTER] 03:27:47.638 [logback-2] ERROR JUnitAnalyzer - evosuiteCP: /home/wtwhite/code/regression-test-generation/evosuite/evosuite-1.2.0.jar:/home/wtwhite/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/guava/guava/31.0.1-jre/guava-31.0.1-jre.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/checker-qual-3.12.0.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/error_prone_annotations-2.7.1.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/failureaccess-1.0.1.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/j2objc-annotations-1.3.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/jsr305-3.0.2.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar
+[MASTER] 03:27:47.640 [logback-2] ERROR JUnitAnalyzer - Diagnostic: incompatible types: com.google.common.cache.LocalCache.WeakAccessWriteEntry<java.util.concurrent.ForkJoinTask<java.util.concurrent.Delayed>,com.google.common.cache.LocalCache.StrongAccessEntry<java.util.concurrent.Delayed,java.util.concurrent.Delayed>> cannot be converted to com.google.common.cache.ReferenceEntry<java.util.concurrent.Delayed,java.util.concurrent.ForkJoinTask<java.util.concurrent.ForkJoinTask>>: 37
+[MASTER] 03:27:47.640 [logback-2] ERROR JUnitAnalyzer - Diagnostic: /tmp/EvoSuite_7_1729693664590/com/google/common/cache/LocalCache_7_tmp__ESTest.java uses unchecked or unsafe operations.: -1
+[MASTER] 03:27:47.640 [logback-2] ERROR JUnitAnalyzer - Diagnostic: Recompile with -Xlint:unchecked for details.: -1
+[MASTER] 03:27:47.641 [logback-2] ERROR JUnitAnalyzer - RegularFileObject[/tmp/EvoSuite_7_1729693664590/com/google/common/cache/LocalCache_7_tmp__ESTest.java]
+1: /*
+2:  * This file was automatically generated by EvoSuite
+3:  * Wed Oct 23 14:27:47 GMT 2024
+4:  */
+5: 
+6: package com.google.common.cache;
+7: 
+8: import org.junit.Test;
+9: import static org.junit.Assert.*;
+10: import static org.evosuite.shaded.org.mockito.Mockito.*;
+11: import static org.evosuite.runtime.EvoAssertions.*;
+12: import com.google.common.cache.LocalCache;
+13: import com.google.common.cache.ReferenceEntry;
+14: import java.lang.ref.ReferenceQueue;
+15: import java.util.concurrent.Callable;
+16: import java.util.concurrent.Delayed;
+17: import java.util.concurrent.ForkJoinPool;
+18: import java.util.concurrent.ForkJoinTask;
+19: import org.evosuite.runtime.EvoRunner;
+20: import org.evosuite.runtime.EvoRunnerParameters;
+21: import org.evosuite.runtime.ViolatedAssumptionAnswer;
+22: import org.junit.runner.RunWith;
+23: 
+24: @RunWith(EvoRunner.class) @EvoRunnerParameters(mockJVMNonDeterminism = true, useVFS = true, useVNET = true, resetStaticState = true) 
+25: public class LocalCache_7_tmp__ESTest extends LocalCache_7_tmp__ESTest_scaffolding {
+26: 
+27:   @Test(timeout = 4000)
+28:   public void test0()  throws Throwable  {
+29:       ReferenceQueue<ForkJoinTask<Delayed>> referenceQueue0 = new ReferenceQueue<ForkJoinTask<Delayed>>();
+30:       ForkJoinPool forkJoinPool0 = new ForkJoinPool();
+31:       Callable<Delayed> callable0 = (Callable<Delayed>) mock(Callable.class, new ViolatedAssumptionAnswer());
+32:       doReturn((Object) null).when(callable0).call();
+33:       ForkJoinTask<Delayed> forkJoinTask0 = forkJoinPool0.submit(callable0);
+34:       LocalCache.WeakAccessWriteEntry<ForkJoinTask<Delayed>, LocalCache.StrongAccessEntry<Delayed, Delayed>> localCache_WeakAccessWriteEntry0 = new LocalCache.WeakAccessWriteEntry<ForkJoinTask<Delayed>, LocalCache.StrongAccessEntry<Delayed, Delayed>>(referenceQueue0, forkJoinTask0, 1073741824, (ReferenceEntry<ForkJoinTask<Delayed>, LocalCache.StrongAccessEntry<Delayed, Delayed>>) null);
+35:       // Undeclared exception!
+36:       try { 
+37:         LocalCache.connectWriteOrder((ReferenceEntry<Delayed, ForkJoinTask<ForkJoinTask>>) null, (ReferenceEntry<Delayed, ForkJoinTask<ForkJoinTask>>) localCache_WeakAccessWriteEntry0);
+38:         fail("Expecting exception: NullPointerException");
+39:       
+40:       } catch(NullPointerException e) {
+41:          //
+42:          // no message in exception (getMessage() returned null)
+43:          //
+44:          verifyException("com.google.common.cache.LocalCache", e);
+45:       }
+46:   }
+47: }
+RegularFileObject[/tmp/EvoSuite_7_1729693664590/com/google/common/cache/LocalCache_7_tmp__ESTest.java]
+1: /**
+2:  * Scaffolding file used to store all the setups needed to run 
+3:  * tests automatically generated by EvoSuite
+4:  * Wed Oct 23 14:27:47 GMT 2024
+5:  */
+6: 
+7: package com.google.common.cache;
+8: 
+9: import org.evosuite.runtime.annotation.EvoSuiteClassExclude;
+10: import org.junit.BeforeClass;
+11: import org.junit.Before;
+12: import org.junit.After;
+13: import org.junit.AfterClass;
+14: import org.evosuite.runtime.sandbox.Sandbox;
+15: import org.evosuite.runtime.sandbox.Sandbox.SandboxMode;
+16: 
+17: import static org.evosuite.shaded.org.mockito.Mockito.*;
+18: @EvoSuiteClassExclude
+19: public class LocalCache_7_tmp__ESTest_scaffolding {
+20: 
+21:   @org.junit.Rule
+22:   public org.evosuite.runtime.vnet.NonFunctionalRequirementRule nfr = new org.evosuite.runtime.vnet.NonFunctionalRequirementRule();
+23: 
+24:   private static final java.util.Properties defaultProperties = (java.util.Properties) java.lang.System.getProperties().clone(); 
+25: 
+26:   private org.evosuite.runtime.thread.ThreadStopper threadStopper =  new org.evosuite.runtime.thread.ThreadStopper (org.evosuite.runtime.thread.KillSwitchHandler.getInstance(), 3000);
+27: 
+28: 
+29:   @BeforeClass
+30:   public static void initEvoSuiteFramework() { 
+31:     org.evosuite.runtime.RuntimeSettings.className = "com.google.common.cache.LocalCache"; 
+32:     org.evosuite.runtime.GuiSupport.initialize(); 
+33:     org.evosuite.runtime.RuntimeSettings.maxNumberOfThreads = 100; 
+34:     org.evosuite.runtime.RuntimeSettings.maxNumberOfIterationsPerLoop = 10000; 
+35:     org.evosuite.runtime.RuntimeSettings.mockSystemIn = true; 
+36:     org.evosuite.runtime.RuntimeSettings.sandboxMode = org.evosuite.runtime.sandbox.Sandbox.SandboxMode.RECOMMENDED; 
+37:     org.evosuite.runtime.sandbox.Sandbox.initializeSecurityManagerForSUT(); 
+38:     org.evosuite.runtime.classhandling.JDKClassResetter.init();
+39:     setSystemProperties();
+40:     initializeClasses();
+41:     org.evosuite.runtime.Runtime.getInstance().resetRuntime(); 
+42:     try { initMocksToAvoidTimeoutsInTheTests(); } catch(ClassNotFoundException e) {} 
+43:   } 
+44: 
+45:   @AfterClass
+46:   public static void clearEvoSuiteFramework(){ 
+47:     Sandbox.resetDefaultSecurityManager(); 
+48:     java.lang.System.setProperties((java.util.Properties) defaultProperties.clone()); 
+49:   } 
+50: 
+51:   @Before
+52:   public void initTestCase(){ 
+53:     threadStopper.storeCurrentThreads();
+54:     threadStopper.startRecordingTime();
+55:     org.evosuite.runtime.jvm.ShutdownHookHandler.getInstance().initHandler(); 
+56:     org.evosuite.runtime.sandbox.Sandbox.goingToExecuteSUTCode(); 
+57:     setSystemProperties(); 
+58:     org.evosuite.runtime.GuiSupport.setHeadless(); 
+59:     org.evosuite.runtime.Runtime.getInstance().resetRuntime(); 
+60:     org.evosuite.runtime.agent.InstrumentingAgent.activate(); 
+61:   } 
+62: 
+63:   @After
+64:   public void doneWithTestCase(){ 
+65:     threadStopper.killAndJoinClientThreads();
+66:     org.evosuite.runtime.jvm.ShutdownHookHandler.getInstance().safeExecuteAddedHooks(); 
+67:     org.evosuite.runtime.classhandling.JDKClassResetter.reset(); 
+68:     resetClasses(); 
+69:     org.evosuite.runtime.sandbox.Sandbox.doneWithExecutingSUTCode(); 
+70:     org.evosuite.runtime.agent.InstrumentingAgent.deactivate(); 
+71:     org.evosuite.runtime.GuiSupport.restoreHeadlessMode(); 
+72:   } 
+73: 
+74:   public static void setSystemProperties() {
+75:  
+76:     java.lang.System.setProperties((java.util.Properties) defaultProperties.clone()); 
+77:     java.lang.System.setProperty("user.dir", "/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre"); 
+78:     java.lang.System.setProperty("java.io.tmpdir", "/tmp"); 
+79:   }
+80: 
+81:   private static void initializeClasses() {
+82:     org.evosuite.runtime.classhandling.ClassStateSupport.initializeClasses(LocalCache_7_tmp__ESTest_scaffolding.class.getClassLoader() ,
+83:       "com.google.common.collect.ImmutableSet$SetBuilderImpl",
+84:       "com.google.common.cache.LocalCache$WeightedStrongValueReference",
+85:       "com.google.common.cache.LoadingCache",
+86:       "com.google.common.base.Suppliers$SupplierOfInstance",
+87:       "com.google.common.base.FunctionalEquivalence",
+88:       "com.google.common.cache.AbstractCache$StatsCounter",
+89:       "com.google.common.collect.PeekingIterator",
+90:       "com.google.common.util.concurrent.AbstractFuture$SynchronizedHelper",
+91:       "com.google.common.cache.CacheLoader$1",
+92:       "com.google.common.util.concurrent.AbstractFuture$SafeAtomicHelper",
+93:       "com.google.common.cache.CacheBuilder$OneWeigher",
+94:       "com.google.common.cache.CacheLoader$UnsupportedLoadingOperationException",
+95:       "com.google.common.cache.LocalCache$EntryFactory",
+96:       "com.google.common.cache.LocalCache$WriteThroughEntry",
+97:       "com.google.common.cache.CacheLoader$InvalidCacheLoadException",
+98:       "com.google.common.collect.Iterators$ArrayItr",
+99:       "com.google.common.cache.LocalCache$Values",
+100:       "com.google.common.cache.LocalCache$WeakValueReference",
+101:       "com.google.common.cache.Weigher",
+102:       "com.google.common.base.Converter$IdentityConverter",
+103:       "com.google.common.cache.AbstractCache",
+104:       "com.google.common.base.Ticker",
+105:       "com.google.common.cache.LocalCache$EntryFactory$6",
+106:       "com.google.common.cache.LocalCache$EntryFactory$7",
+107:       "com.google.common.cache.LocalCache$EntryFactory$8",
+108:       "com.google.common.cache.LongAddables$1",
+109:       "com.google.common.collect.RegularImmutableSet",
+110:       "com.google.common.collect.Iterators$10",
+111:       "com.google.common.cache.LocalCache$EntryFactory$2",
+112:       "com.google.common.cache.LocalCache$StrongAccessWriteEntry",
+113:       "com.google.common.cache.LocalCache$EntryFactory$3",
+114:       "com.google.common.cache.LocalCache$EntryFactory$4",
+115:       "com.google.common.util.concurrent.AbstractFuture$Trusted",
+116:       "com.google.common.cache.LocalCache$LocalManualCache",
+117:       "com.google.common.cache.LocalCache$EntryFactory$5",
+118:       "com.google.common.util.concurrent.AbstractFuture$UnsafeAtomicHelper$1",
+119:       "com.google.common.base.Predicate",
+120:       "com.google.common.base.ParametricNullness",
+121:       "com.google.common.cache.LocalCache$EntryFactory$1",
+122:       "com.google.common.cache.CacheBuilderSpec",
+123:       "com.google.common.cache.CacheStats",
+124:       "com.google.common.cache.LocalCache$WeakWriteEntry",
+125:       "com.google.common.cache.LocalCache$KeyIterator",
+126:       "com.google.common.collect.ImmutableAsList",
+127:       "com.google.common.collect.ImmutableSet$CachingAsList",
+128:       "com.google.common.collect.RegularImmutableAsList",
+129:       "com.google.common.cache.LongAdder",
+130:       "com.google.common.cache.LocalCache$HashIterator",
+131:       "com.google.common.util.concurrent.ExecutionError",
+132:       "com.google.common.cache.LocalCache$ValueReference",
+133:       "com.google.common.collect.SingletonImmutableSet",
+134:       "com.google.common.cache.CacheLoader$SupplierToCacheLoader",
+135:       "com.google.common.cache.LocalCache",
+136:       "com.google.common.collect.UnmodifiableListIterator",
+137:       "com.google.common.cache.LocalCache$StrongAccessEntry",
+138:       "com.google.common.util.concurrent.AbstractFuture$Waiter",
+139:       "com.google.common.cache.LocalCache$LocalManualCache$1",
+140:       "com.google.common.cache.LocalCache$KeySet",
+141:       "com.google.common.cache.LocalCache$StrongValueReference",
+142:       "com.google.common.collect.AbstractIterator",
+143:       "com.google.common.base.MoreObjects",
+144:       "com.google.common.cache.LocalCache$WriteQueue",
+145:       "com.google.common.base.Equivalence$Equals",
+146:       "com.google.common.base.ElementTypesAreNonnullByDefault",
+147:       "com.google.common.cache.ForwardingCache",
+148:       "com.google.common.cache.RemovalListener",
+149:       "com.google.common.base.Preconditions",
+150:       "com.google.common.collect.UnmodifiableIterator",
+151:       "com.google.common.cache.Striped64$Cell",
+152:       "com.google.common.base.Converter$ConverterComposition",
+153:       "com.google.common.util.concurrent.AbstractFuture$TrustedFuture",
+154:       "com.google.common.collect.ImmutableCollection",
+155:       "com.google.common.cache.LocalCache$ManualSerializationProxy",
+156:       "com.google.common.util.concurrent.SettableFuture",
+157:       "com.google.common.cache.LocalCache$AccessQueue",
+158:       "com.google.common.cache.LocalCache$WeightedWeakValueReference",
+159:       "com.google.common.base.Converter",
+160:       "com.google.common.cache.LocalCache$EntrySet",
+161:       "com.google.common.cache.ReferenceEntry",
+162:       "com.google.common.base.Function",
+163:       "com.google.common.collect.ImmutableSet",
+164:       "com.google.common.collect.Iterators$9",
+165:       "com.google.common.collect.ImmutableMap",
+166:       "com.google.common.collect.AbstractIndexedListIterator",
+167:       "com.google.common.collect.Iterators$1",
+168:       "com.google.common.collect.Iterators$4",
+169:       "com.google.common.collect.Iterators$5",
+170:       "com.google.common.cache.CacheLoader",
+171:       "com.google.common.base.Converter$ReverseConverter",
+172:       "com.google.common.util.concurrent.internal.InternalFutureFailureAccess",
+173:       "com.google.common.util.concurrent.AbstractFuture$Listener",
+174:       "com.google.common.base.Ticker$1",
+175:       "com.google.common.cache.CacheBuilder",
+176:       "com.google.common.cache.LocalCache$SoftValueReference",
+177:       "com.google.common.cache.CacheLoader$FunctionToCacheLoader",
+178:       "com.google.common.cache.LocalCache$AccessQueue$1",
+179:       "com.google.common.util.concurrent.AbstractFuture$AtomicHelper",
+180:       "com.google.common.cache.LocalCache$Strength",
+181:       "com.google.common.cache.LocalCache$WeightedSoftValueReference",
+182:       "com.google.common.base.Equivalence$Identity",
+183:       "com.google.common.util.concurrent.ListenableFuture",
+184:       "com.google.common.cache.LocalCache$WeakAccessEntry",
+185:       "com.google.common.collect.ForwardingObject",
+186:       "com.google.common.cache.LocalCache$NullEntry",
+187:       "com.google.common.base.Stopwatch",
+188:       "com.google.common.base.Supplier",
+189:       "com.google.common.cache.LocalCache$WeakEntry",
+190:       "com.google.common.cache.LocalCache$LoadingSerializationProxy",
+191:       "com.google.common.collect.Iterators",
+192:       "com.google.common.collect.AbstractSequentialIterator",
+193:       "com.google.common.cache.AbstractCache$SimpleStatsCounter",
+194:       "com.google.common.cache.LocalCache$WeakAccessWriteEntry",
+195:       "com.google.common.cache.LocalCache$AbstractCacheSet",
+196:       "com.google.common.collect.ImmutableList",
+197:       "com.google.common.cache.LocalCache$LocalLoadingCache",
+198:       "com.google.common.util.concurrent.UncheckedExecutionException",
+199:       "com.google.common.base.PairwiseEquivalence",
+200:       "com.google.common.util.concurrent.AbstractFuture$UnsafeAtomicHelper",
+201:       "com.google.common.cache.LocalCache$2",
+202:       "com.google.common.base.Suppliers",
+203:       "com.google.common.cache.CacheBuilder$NullListener",
+204:       "com.google.common.cache.LocalCache$1",
+205:       "com.google.common.cache.LocalCache$AbstractReferenceEntry",
+206:       "com.google.common.cache.LocalCache$StrongEntry",
+207:       "com.google.common.base.Equivalence",
+208:       "com.google.common.cache.LocalCache$WriteQueue$1",
+209:       "com.google.common.cache.ElementTypesAreNonnullByDefault",
+210:       "com.google.common.cache.LocalCache$Strength$3",
+211:       "com.google.common.cache.Striped64$1",
+212:       "com.google.common.cache.LocalCache$Strength$2",
+213:       "com.google.common.cache.LocalCache$LoadingValueReference",
+214:       "com.google.common.cache.LocalCache$Strength$1",
+215:       "com.google.common.cache.LocalCache$WriteQueue$2",
+216:       "com.google.common.cache.LongAddables",
+217:       "com.google.common.cache.LocalCache$ValueIterator",
+218:       "com.google.common.cache.LocalCache$StrongWriteEntry",
+219:       "com.google.common.cache.LongAddable",
+220:       "com.google.common.cache.LocalCache$Segment",
+221:       "com.google.common.base.Converter$FunctionBasedConverter",
+222:       "com.google.common.cache.Striped64",
+223:       "com.google.common.collect.ImmutableSet$RegularSetBuilderImpl",
+224:       "com.google.common.cache.CacheBuilder$1",
+225:       "com.google.common.cache.CacheBuilder$3",
+226:       "com.google.common.collect.Iterators$MergingIterator",
+227:       "com.google.common.cache.CacheBuilder$2",
+228:       "com.google.common.cache.Cache",
+229:       "com.google.common.cache.LocalCache$ComputingValueReference",
+230:       "com.google.common.cache.LocalCache$EntryIterator",
+231:       "com.google.common.util.concurrent.AbstractFuture"
+232:     );
+233:   } 
+234:   private static void initMocksToAvoidTimeoutsInTheTests() throws ClassNotFoundException { 
+235:     mock(Class.forName("java.util.concurrent.Callable", false, LocalCache_7_tmp__ESTest_scaffolding.class.getClassLoader()));
+236:   }
+237: 
+238:   private static void resetClasses() {
+239:     org.evosuite.runtime.classhandling.ClassResetter.getInstance().setClassLoader(LocalCache_7_tmp__ESTest_scaffolding.class.getClassLoader()); 
+240: 
+241:     org.evosuite.runtime.classhandling.ClassStateSupport.resetClasses(
+242:       "com.google.common.cache.LocalCache$1",
+243:       "com.google.common.cache.LocalCache$2",
+244:       "com.google.common.cache.LocalCache",
+245:       "com.google.common.cache.LocalCache$Strength",
+246:       "com.google.common.cache.LocalCache$EntryFactory",
+247:       "com.google.common.cache.LocalCache$Segment",
+248:       "com.google.common.cache.LocalCache$WriteQueue",
+249:       "com.google.common.cache.LocalCache$AbstractReferenceEntry",
+250:       "com.google.common.cache.LocalCache$WriteQueue$1",
+251:       "com.google.common.cache.LocalCache$AccessQueue",
+252:       "com.google.common.cache.LocalCache$AccessQueue$1",
+253:       "com.google.common.cache.LocalCache$LoadingValueReference",
+254:       "com.google.common.cache.LocalCache$LoadingValueReference$1",
+255:       "com.google.common.cache.LocalCache$Segment$1",
+256:       "com.google.common.cache.LocalCache$ComputingValueReference",
+257:       "com.google.common.cache.LocalCache$AbstractCacheSet",
+258:       "com.google.common.cache.LocalCache$KeySet",
+259:       "com.google.common.cache.LocalCache$Values",
+260:       "com.google.common.cache.LocalCache$EntrySet",
+261:       "com.google.common.cache.LocalCache$NullEntry",
+262:       "com.google.common.cache.LocalCache$StrongEntry",
+263:       "com.google.common.cache.LocalCache$StrongAccessWriteEntry",
+264:       "com.google.common.cache.LocalCache$StrongWriteEntry",
+265:       "com.google.common.cache.LocalCache$WeakEntry",
+266:       "com.google.common.cache.LocalCache$WeakAccessWriteEntry",
+267:       "com.google.common.cache.LocalCache$WeakWriteEntry",
+268:       "com.google.common.cache.LocalCache$StrongValueReference",
+269:       "com.google.common.cache.LocalCache$StrongAccessEntry",
+270:       "com.google.common.cache.LocalCache$WeakAccessEntry",
+271:       "com.google.common.cache.LocalCache$SoftValueReference",
+272:       "com.google.common.cache.LocalCache$WeakValueReference",
+273:       "com.google.common.cache.LocalCache$WeightedSoftValueReference",
+274:       "com.google.common.cache.LocalCache$WeightedWeakValueReference",
+275:       "com.google.common.cache.LocalCache$WeightedStrongValueReference",
+276:       "com.google.common.cache.CacheLoader",
+277:       "com.google.common.cache.LocalCache$LocalManualCache$1",
+278:       "com.google.common.cache.CacheBuilder$NullListener",
+279:       "com.google.common.cache.CacheBuilder$OneWeigher",
+280:       "com.google.common.collect.ImmutableMap",
+281:       "com.google.common.collect.RegularImmutableMap",
+282:       "com.google.common.collect.ImmutableCollection",
+283:       "com.google.common.collect.ImmutableList",
+284:       "com.google.common.collect.RegularImmutableList",
+285:       "com.google.common.cache.CacheBuilder$1",
+286:       "com.google.common.base.Suppliers",
+287:       "com.google.common.base.Suppliers$SupplierOfInstance",
+288:       "com.google.common.cache.CacheStats",
+289:       "com.google.common.base.Preconditions",
+290:       "com.google.common.cache.CacheBuilder$2",
+291:       "com.google.common.base.Ticker$1",
+292:       "com.google.common.base.Ticker",
+293:       "com.google.common.cache.CacheBuilder$3",
+294:       "com.google.common.cache.CacheBuilder",
+295:       "com.google.common.base.MoreObjects",
+296:       "com.google.common.cache.CacheLoader$SupplierToCacheLoader",
+297:       "com.google.common.base.Equivalence",
+298:       "com.google.common.base.Equivalence$Equals",
+299:       "com.google.common.collect.ImmutableSet",
+300:       "com.google.common.collect.ImmutableSet$CachingAsList",
+301:       "com.google.common.collect.RegularImmutableSet",
+302:       "com.google.common.collect.Iterators",
+303:       "com.google.common.collect.UnmodifiableIterator",
+304:       "com.google.common.collect.UnmodifiableListIterator",
+305:       "com.google.common.collect.AbstractIndexedListIterator",
+306:       "com.google.common.collect.Iterators$ArrayItr",
+307:       "com.google.common.cache.AbstractCache$SimpleStatsCounter",
+308:       "com.google.common.cache.Striped64$1",
+309:       "com.google.common.cache.Striped64",
+310:       "com.google.common.cache.LongAdder",
+311:       "com.google.common.cache.LongAddables$1",
+312:       "com.google.common.cache.LongAddables",
+313:       "com.google.common.cache.LocalCache$LocalManualCache",
+314:       "com.google.common.cache.LocalCache$LocalLoadingCache",
+315:       "com.google.common.util.concurrent.internal.InternalFutureFailureAccess",
+316:       "com.google.common.util.concurrent.AbstractFuture$AtomicHelper",
+317:       "com.google.common.util.concurrent.AbstractFuture$UnsafeAtomicHelper$1",
+318:       "com.google.common.util.concurrent.AbstractFuture$UnsafeAtomicHelper",
+319:       "com.google.common.util.concurrent.AbstractFuture",
+320:       "com.google.common.util.concurrent.AbstractFuture$TrustedFuture",
+321:       "com.google.common.util.concurrent.SettableFuture",
+322:       "com.google.common.base.Stopwatch",
+323:       "com.google.common.util.concurrent.AbstractFuture$Waiter",
+324:       "com.google.common.util.concurrent.AbstractFuture$Listener",
+325:       "com.google.common.base.Converter",
+326:       "com.google.common.base.Converter$IdentityConverter",
+327:       "com.google.common.cache.CacheLoader$FunctionToCacheLoader",
+328:       "com.google.common.collect.AbstractSequentialIterator",
+329:       "com.google.common.cache.LocalCache$WriteQueue$2",
+330:       "com.google.common.collect.ForwardingObject",
+331:       "com.google.common.cache.ForwardingCache",
+332:       "com.google.common.cache.LocalCache$ManualSerializationProxy",
+333:       "com.google.common.cache.LocalCache$LoadingSerializationProxy",
+334:       "com.google.common.base.Converter$FunctionBasedConverter"
+335:     );
+336:   }
+337: }
+
+[MASTER] 03:27:47.642 [logback-2] ERROR JUnitAnalyzer - Failed to compile test case:
+ReferenceQueue<ForkJoinTask<Delayed>> referenceQueue0 = new ReferenceQueue<ForkJoinTask<Delayed>>();
+ForkJoinPool forkJoinPool0 = new ForkJoinPool();
+Callable<Delayed> callable0 = (Callable<Delayed>) mock(Callable.class, new ViolatedAssumptionAnswer());
+doReturn((Object) null).when(callable0).call();
+ForkJoinTask<Delayed> forkJoinTask0 = forkJoinPool0.submit(callable0);
+LocalCache.WeakAccessWriteEntry<ForkJoinTask<Delayed>, LocalCache.StrongAccessEntry<Delayed, Delayed>> localCache_WeakAccessWriteEntry0 = new LocalCache.WeakAccessWriteEntry<ForkJoinTask<Delayed>, LocalCache.StrongAccessEntry<Delayed, Delayed>>(referenceQueue0, forkJoinTask0, 1073741824, (ReferenceEntry<ForkJoinTask<Delayed>, LocalCache.StrongAccessEntry<Delayed, Delayed>>) null);
+LocalCache.connectWriteOrder((ReferenceEntry<Delayed, ForkJoinTask<ForkJoinTask>>) null, (ReferenceEntry<Delayed, ForkJoinTask<ForkJoinTask>>) localCache_WeakAccessWriteEntry0);
+
+* Writing tests to file
+* Writing JUnit test case 'LocalCache_ESTest' to evosuite-tests
+* Done!
+
+* Computation finished

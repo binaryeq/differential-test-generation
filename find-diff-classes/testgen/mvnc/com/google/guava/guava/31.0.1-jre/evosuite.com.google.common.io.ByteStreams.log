@@ -1,0 +1,100 @@
+* EvoSuite 1.2.0
+* Going to generate test cases for class: com.google.common.io.ByteStreams
+* Starting Client-0
+* Connecting to master process on port 12001
+* Analyzing classpath: 
+  - /home/wtwhite/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/guava/guava/31.0.1-jre/guava-31.0.1-jre.jar
+  - t/dependency/checker-qual-3.12.0.jar
+  - t/dependency/error_prone_annotations-2.7.1.jar
+  - t/dependency/failureaccess-1.0.1.jar
+  - t/dependency/j2objc-annotations-1.3.jar
+  - t/dependency/jsr305-3.0.2.jar
+  - t/dependency/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar
+* Finished analyzing classpath
+* Generating tests for class com.google.common.io.ByteStreams
+* Test criteria:
+  - Line Coverage
+  - Branch Coverage
+  - Exception
+  - Mutation testing (weak)
+  - Method-Output Coverage
+  - Top-Level Method Coverage
+  - No-Exception Top-Level Method Coverage
+  - Context Branch Coverage
+[Progress:>                             0%] [Cov:>                                  0%]* Total number of test goals for DYNAMOSA: 1548
+* Using seed 1729700725500
+* Starting evolution
+* Initial Number of Goals in DynaMOSA = 527 / 1548
+[MASTER] 05:25:37.910 [logback-1] WARN  TestCluster - Failed to check cache for java.util.Enumeration<E> : Type points to itself
+[Progress:====>                         16%] [Cov:========>                          24%][Progress:=====>                        18%] [Cov:========>                          25%][Progress:=====>                        18%] [Cov:==========>                        31%][Progress:=====>                        18%] [Cov:===========>                       32%][Progress:======>                       20%] [Cov:===========>                       32%][Progress:==========>                   36%] [Cov:============>                      36%][Progress:==========>                   36%] [Cov:=============>                     39%][Progress:===========>                  38%] [Cov:===============>                   43%][Progress:================>             55%] [Cov:================>                  48%][Progress:================>             56%] [Cov:=================>                 50%][Progress:===================>          65%] [Cov:=================>                 50%][Progress:===================>          65%] [Cov:=================>                 50%][Progress:===================>          66%] [Cov:=================>                 50%][Progress:===================>          66%] [Cov:=================>                 51%][Progress:======================>       75%] [Cov:=================>                 51%][Progress:======================>       75%] [Cov:=================>                 51%][Progress:======================>       76%] [Cov:=================>                 50%][Progress:=======================>      78%] [Cov:=================>                 51%][Progress:=========================>    86%] [Cov:=================>                 51%][Progress:=========================>    86%] [Cov:=================>                 51%][Progress:============================> 96%] [Cov:=================>                 51%][Progress:============================> 96%] [Cov:==================>                52%][Progress:============================> 96%] [Cov:==================>                52%][Progress:=============================>98%] [Cov:==================>                52%][Progress:==============================100%] [Cov:==================>                52%]
+* Search finished after 65s and 24 generations, 12853 statements, best individual has fitness: 570.0
+* Minimizing test suite
+* Going to analyze the coverage criteria
+* Coverage analysis for criterion LINE
+* Coverage of criterion LINE: 49%
+* Total number of goals: 309
+* Number of covered goals: 152
+* Coverage analysis for criterion BRANCH
+* Coverage of criterion BRANCH: 56%
+* Total number of goals: 124
+* Number of covered goals: 69
+* Coverage analysis for criterion EXCEPTION
+* Coverage of criterion EXCEPTION: 97%
+* Total number of goals: 38
+* Number of covered goals: 37
+* Coverage analysis for criterion WEAKMUTATION
+* Coverage of criterion WEAKMUTATION: 79%
+* Total number of goals: 837
+* Number of covered goals: 660
+* Coverage analysis for criterion OUTPUT
+* Coverage of criterion OUTPUT: 57%
+* Total number of goals: 42
+* Number of covered goals: 24
+* Coverage analysis for criterion METHOD
+* Coverage of criterion METHOD: 36%
+* Total number of goals: 56
+* Number of covered goals: 20
+* Coverage analysis for criterion METHODNOEXCEPTION
+* Coverage of criterion METHODNOEXCEPTION: 34%
+* Total number of goals: 56
+* Number of covered goals: 19
+* Coverage analysis for criterion CBRANCH
+* Coverage of criterion CBRANCH: 56%
+* Total number of goals: 124
+* Number of covered goals: 69
+* Generated 64 tests with total length 176
+* Resulting test suite's coverage: 53% (average coverage for all fitness functions)
+* Generating assertions
+* Resulting test suite's mutation score: 48%
+* Compiling and checking tests
+[MASTER] 05:26:45.755 [logback-1] WARN  JUnitAnalyzer - Found unstable test named test0 -> class java.lang.OutOfMemoryError: 9223372036854775807 bytes is too large to fit in a byte array
+[MASTER] 05:26:45.756 [logback-1] WARN  JUnitAnalyzer - Failing test:
+ byte[] byteArray0 = new byte[4];
+ByteArrayInputStream byteArrayInputStream0 = new ByteArrayInputStream(byteArray0, (byte)0, (byte)0);
+ByteStreams.toByteArray((InputStream) byteArrayInputStream0, 9223372036854775807L);
+
+[MASTER] 05:26:46.233 [logback-1] WARN  JUnitAnalyzer - Found unstable test named test0 -> class java.lang.AssertionError: expected:<DSYNC> but was:<null>
+[MASTER] 05:26:46.234 [logback-1] WARN  JUnitAnalyzer - Failing test:
+ byte[] byteArray0 = new byte[9];
+ByteArrayInputStream byteArrayInputStream0 = new ByteArrayInputStream(byteArray0, 1, 1);
+StandardOpenOption standardOpenOption0 = StandardOpenOption.DSYNC;
+ByteProcessor<Object> byteProcessor0 = (ByteProcessor<Object>) mock(ByteProcessor.class, new ViolatedAssumptionAnswer());
+doReturn((Object) null).when(byteProcessor0).getResult();
+doReturn(true).when(byteProcessor0).processBytes(any(byte[].class) , anyInt() , anyInt());
+Object object0 = ByteStreams.readBytes((InputStream) byteArrayInputStream0, byteProcessor0);
+assertEquals(StandardOpenOption.DSYNC, object0);
+
+
+* Permissions denied during test execution: 
+  - java.lang.RuntimePermission: 
+         writeFileDescriptor: 4
+  - java.net.SocketPermission: 
+         connect,resolve 200.42.42.0:2786: 1
+         connect,resolve 192.168.1.42:1239: 1
+         connect,resolve 200.42.42.0:1993: 1
+         and other 7 cases of action/name for this exception class
+* Writing tests to file
+* Writing JUnit test case 'ByteStreams_ESTest' to evosuite-tests
+* Done!
+
+* Computation finished

@@ -1,0 +1,125 @@
+* EvoSuite 1.2.0
+* Going to generate test cases for class: com.google.common.io.ByteSource
+* Starting Client-0
+* Connecting to master process on port 20777
+* Analyzing classpath: 
+  - /home/wtwhite/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/guava/guava/31.0.1-jre/guava-31.0.1-jre.jar
+  - t/dependency/checker-qual-3.12.0.jar
+  - t/dependency/error_prone_annotations-2.7.1.jar
+  - t/dependency/failureaccess-1.0.1.jar
+  - t/dependency/j2objc-annotations-1.3.jar
+  - t/dependency/jsr305-3.0.2.jar
+  - t/dependency/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar
+* Finished analyzing classpath
+* Generating tests for class com.google.common.io.ByteSource
+* Test criteria:
+  - Line Coverage
+  - Branch Coverage
+  - Exception
+  - Mutation testing (weak)
+  - Method-Output Coverage
+  - Top-Level Method Coverage
+  - No-Exception Top-Level Method Coverage
+  - Context Branch Coverage
+[Progress:>                             0%] [Cov:>                                  0%]* Total number of test goals for DYNAMOSA: 1026
+* Using seed 1729700535258
+* Starting evolution
+* Initial Number of Goals in DynaMOSA = 551 / 1026
+[MASTER] 05:22:18.137 [logback-1] WARN  TestCluster - Failed to check cache for java.util.Comparator<T> : Type points to itself
+[Progress:===>                          10%] [Cov:===============>                   43%][Progress:===>                          10%] [Cov:================>                  47%][Progress:===>                          10%] [Cov:=================>                 51%][Progress:====>                         16%] [Cov:==================>                53%][Progress:====>                         16%] [Cov:==================>                54%][Progress:====>                         16%] [Cov:==================>                54%][Progress:====>                         16%] [Cov:===================>               55%][Progress:=====>                        18%] [Cov:===================>               55%][Progress:=====>                        18%] [Cov:====================>              58%][Progress:======>                       20%] [Cov:====================>              58%][Progress:======>                       20%] [Cov:====================>              59%][Progress:======>                       20%] [Cov:====================>              58%][Progress:======>                       20%] [Cov:====================>              59%][Progress:========>                     28%] [Cov:====================>              59%][Progress:========>                     28%] [Cov:====================>              59%][Progress:========>                     28%] [Cov:====================>              58%][Progress:=========>                    30%] [Cov:====================>              59%][Progress:=========>                    30%] [Cov:=====================>             60%][Progress:==========>                   35%] [Cov:=====================>             60%][Progress:============>                 40%] [Cov:=====================>             60%][Progress:============>                 41%] [Cov:=====================>             60%][Progress:============>                 41%] [Cov:=====================>             60%][Progress:===============>              50%] [Cov:=====================>             60%][Progress:=================>            58%] [Cov:=====================>             60%][Progress:==================>           60%] [Cov:=====================>             60%][Progress:==================>           60%] [Cov:====================>              59%][Progress:======================>       76%] [Cov:====================>              59%][Progress:========================>     83%] [Cov:=====================>             60%][Progress:========================>     83%] [Cov:=====================>             60%][Progress:==========================>   88%] [Cov:=====================>             60%][Progress:==========================>   88%] [Cov:=====================>             60%][Progress:============================> 95%] [Cov:=====================>             60%][Progress:============================> 95%] [Cov:=====================>             60%][Progress:============================> 95%] [Cov:=====================>             60%][Progress:============================> 95%] [Cov:=====================>             60%][Progress:============================> 96%] [Cov:=====================>             60%][Progress:==============================100%] [Cov:=====================>             60%]
+* Search finished after 61s and 36 generations, 18533 statements, best individual has fitness: 330.0
+* Minimizing test suite
+[MASTER] 05:24:27.014 [logback-1] WARN  TestSuiteMinimizer - Minimization timeout. Roll back to original test suite
+* Going to analyze the coverage criteria
+* Coverage analysis for criterion LINE
+* Coverage of criterion LINE: 74%
+* Total number of goals: 203
+* Number of covered goals: 150
+* Coverage analysis for criterion BRANCH
+* Coverage of criterion BRANCH: 78%
+* Total number of goals: 102
+* Number of covered goals: 80
+* Coverage analysis for criterion EXCEPTION
+* Coverage of criterion EXCEPTION: 100%
+* Total number of goals: 21
+* Number of covered goals: 21
+* Coverage analysis for criterion WEAKMUTATION
+* Coverage of criterion WEAKMUTATION: 77%
+* Total number of goals: 483
+* Number of covered goals: 370
+* Coverage analysis for criterion OUTPUT
+* Coverage of criterion OUTPUT: 60%
+* Total number of goals: 40
+* Number of covered goals: 24
+* Coverage analysis for criterion METHOD
+* Coverage of criterion METHOD: 48%
+* Total number of goals: 48
+* Number of covered goals: 23
+* Coverage analysis for criterion METHODNOEXCEPTION
+* Coverage of criterion METHODNOEXCEPTION: 48%
+* Total number of goals: 48
+* Number of covered goals: 23
+* Coverage analysis for criterion CBRANCH
+* Coverage of criterion CBRANCH: 76%
+* Total number of goals: 102
+* Number of covered goals: 78
+* Generated 125 tests with total length 1386
+* Resulting test suite's coverage: 60% (average coverage for all fitness functions)
+* Generating assertions
+* Resulting test suite's mutation score: 36%
+* Compiling and checking tests
+[MASTER] 05:25:12.264 [logback-1] WARN  JUnitAnalyzer - Found unstable test named test0 -> class java.lang.StackOverflowError: null
+[MASTER] 05:25:12.264 [logback-1] WARN  JUnitAnalyzer - Failing test:
+ ByteSource.empty();
+ByteSource.empty();
+LinkedHashSet<ByteSource> linkedHashSet0 = new LinkedHashSet<ByteSource>();
+ByteSource byteSource0 = ByteSource.concat((Iterable<? extends ByteSource>) linkedHashSet0);
+linkedHashSet0.add(byteSource0);
+ByteSource.concat((Iterable<? extends ByteSource>) linkedHashSet0);
+ByteSource byteSource1 = ByteSource.concat((Iterable<? extends ByteSource>) linkedHashSet0);
+byteSource1.size();
+
+[MASTER] 05:25:17.771 [logback-1] WARN  JUnitAnalyzer - Found unstable test named test0 -> class java.lang.StackOverflowError: null
+[MASTER] 05:25:17.772 [logback-1] WARN  JUnitAnalyzer - Failing test:
+ ArrayList<ByteSource> arrayList0 = new ArrayList<ByteSource>();
+ByteSource byteSource0 = ByteSource.concat((Iterable<? extends ByteSource>) arrayList0);
+LinkedHashSet<ByteSource> linkedHashSet0 = new LinkedHashSet<ByteSource>();
+arrayList0.add(byteSource0);
+byteSource0.contentEquals(byteSource0);
+byteSource0.isEmpty();
+long long0 = (-2131L);
+ByteSource byteSource1 = byteSource0.slice(long0, long0);
+byteSource1.sizeIfKnown();
+byte[] byteArray0 = new byte[1];
+byte byte0 = (byte)50;
+byteArray0[0] = byte0;
+ByteSource byteSource2 = ByteSource.wrap(byteArray0);
+byteSource2.sizeIfKnown();
+byteSource2.sizeIfKnown();
+byteSource1.read();
+String string0 = "com.google.common.cache.ForwardingLoadingCache$SimpleForwardingLoadingCache";
+Charset charset0 = Charset.forName(string0);
+ByteSource.AsCharSource byteSource_AsCharSource0 = byteSource2.new AsCharSource(charset0);
+String string1 = "zcBEvi\"9[qNQX<+";
+Charset charset1 = Charset.forName(string1);
+byteSource_AsCharSource0.asByteSource(charset1);
+
+[MASTER] 05:25:23.686 [logback-1] WARN  JUnitAnalyzer - Found unstable test named test0 -> class java.lang.StackOverflowError: null
+[MASTER] 05:25:23.687 [logback-1] WARN  JUnitAnalyzer - Failing test:
+ LinkedHashSet<ByteSource> linkedHashSet0 = new LinkedHashSet<ByteSource>();
+ByteSource byteSource0 = ByteSource.concat((Iterable<? extends ByteSource>) linkedHashSet0);
+Charset charset0 = Charset.defaultCharset();
+linkedHashSet0.add(byteSource0);
+ByteSource.AsCharSource byteSource_AsCharSource0 = byteSource0.new AsCharSource(charset0);
+byteSource_AsCharSource0.asByteSource(charset0);
+byteSource0.sizeIfKnown();
+byteSource0.asCharSource(charset0);
+
+* Permissions denied during test execution: 
+  - java.lang.RuntimePermission: 
+         writeFileDescriptor: 4
+* Writing tests to file
+* Writing JUnit test case 'ByteSource_ESTest' to evosuite-tests
+* Done!
+
+* Computation finished

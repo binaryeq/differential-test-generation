@@ -1,0 +1,116 @@
+* EvoSuite 1.2.0
+* Going to generate test cases for class: com.google.common.collect.Multisets
+* Starting Client-0
+* Connecting to master process on port 13792
+* Analyzing classpath: 
+  - /home/wtwhite/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/guava/guava/31.0.1-jre/guava-31.0.1-jre.jar
+  - t/dependency/checker-qual-3.12.0.jar
+  - t/dependency/error_prone_annotations-2.7.1.jar
+  - t/dependency/failureaccess-1.0.1.jar
+  - t/dependency/j2objc-annotations-1.3.jar
+  - t/dependency/jsr305-3.0.2.jar
+  - t/dependency/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar
+[MASTER] 04:29:22.601 [logback-1] WARN  CastClassManager - Nothing is assignable after adding com.google.common.collect.HashMultimap<K, V> for type Variable E with bounds [class java.lang.Object] of declaration DescendingImmutableSortedMultiset. The owner var map is {E=E}
+[MASTER] 04:29:22.611 [logback-1] WARN  CastClassManager - Nothing is assignable after adding com.google.common.collect.HashMultiset<E> for type Variable K with bounds [class java.lang.Object] of declaration FilteredEntryMultimap. The owner var map is {E=E}
+[MASTER] 04:29:22.618 [logback-1] WARN  CastClassManager - Nothing is assignable after adding com.google.common.collect.ImmutableSortedSetFauxverideShim<E> for type Variable K with bounds [class java.lang.Object] of declaration FilteredEntryMultimap. The owner var map is {E=E}
+[MASTER] 04:29:22.629 [logback-1] WARN  CastClassManager - Nothing is assignable after adding com.google.common.collect.LinkedHashMultimap<K, V> for type Variable K with bounds [class java.lang.Object] of declaration FilteredEntryMultimap. The owner var map is {K=K, E=K, E=K, V=V}
+[MASTER] 04:29:22.637 [logback-1] WARN  CastClassManager - Nothing is assignable after adding java.util.ServiceLoader<S> for type Variable E with bounds [class java.lang.Object] of declaration DescendingImmutableSortedMultiset. The owner var map is {E=E}
+[MASTER] 04:29:22.643 [logback-1] WARN  CastClassManager - Nothing is assignable after adding com.google.common.collect.ImmutableMapEntry<K, V> for type Variable K with bounds [class java.lang.Object] of declaration Keys. The owner var map is {E=E}
+[MASTER] 04:29:22.646 [logback-1] WARN  CastClassManager - Nothing is assignable after adding java.util.Stack<E> for type Variable K with bounds [class java.lang.Object] of declaration FilteredEntryMultimap. The owner var map is {E=E}
+[MASTER] 04:29:22.648 [logback-1] WARN  CastClassManager - Nothing is assignable after adding java.util.LinkedHashSet<E> for type Variable K with bounds [class java.lang.Object] of declaration Keys. The owner var map is {E=E}
+* Finished analyzing classpath
+* Generating tests for class com.google.common.collect.Multisets
+* Test criteria:
+  - Line Coverage
+  - Branch Coverage
+  - Exception
+  - Mutation testing (weak)
+  - Method-Output Coverage
+  - Top-Level Method Coverage
+  - No-Exception Top-Level Method Coverage
+  - Context Branch Coverage
+* Total number of test goals for DYNAMOSA: 1519
+* Using seed 1729697360093
+[Progress:>                             0%] [Cov:>                                  0%]* Starting evolution
+* Initial Number of Goals in DynaMOSA = 638 / 1519
+[MASTER] 04:29:23.577 [logback-1] WARN  CastClassManager - Nothing is assignable after adding com.google.common.collect.FilteredEntryMultimap<K, V>.Keys for wildcard ? super E
+[MASTER] 04:29:23.582 [logback-1] WARN  CastClassManager - Nothing is assignable after adding com.google.common.collect.FilteredKeySetMultimap<K, V> for type Variable E with bounds [class java.lang.Object] of declaration LinkedHashSet. The owner var map is {E=com.google.common.collect.FilteredEntryMultimap<java.util.LinkedHashSet<E>, java.util.LinkedHashSet<E>>.Keys, E=E, E=E, E=E, K=java.util.LinkedHashSet<E>}
+[MASTER] 04:29:23.587 [logback-1] WARN  CastClassManager - Nothing is assignable after adding com.google.common.collect.Range<C>.LowerBoundFn for type Variable E with bounds [class java.lang.Object] of declaration LinkedHashSet. The owner var map is {E=com.google.common.collect.FilteredEntryMultimap<java.util.LinkedHashSet<E>, java.util.LinkedHashSet<E>>.Keys, E=E, E=E, E=E, K=java.util.LinkedHashSet<E>}
+[MASTER] 04:29:23.595 [logback-1] WARN  CastClassManager - Nothing is assignable after adding com.google.common.collect.DiscreteDomain<C> for type Variable E with bounds [class java.lang.Object] of declaration LinkedHashSet. The owner var map is {E=E, E=E, E=com.google.common.collect.FilteredEntryMultimap<java.util.LinkedHashSet<E>, java.util.LinkedHashSet<E>>.Keys, E=E, K=java.util.LinkedHashSet<E>}
+[MASTER] 04:29:23.602 [logback-1] WARN  CastClassManager - Nothing is assignable after adding com.google.common.collect.Multisets.MultisetIteratorImpl<E> for type Variable E with bounds [class java.lang.Object] of declaration LinkedHashSet. The owner var map is {E=E, E=E, E=com.google.common.collect.FilteredEntryMultimap<java.util.LinkedHashSet<E>, java.util.LinkedHashSet<E>>.Keys, E=E, K=java.util.LinkedHashSet<E>}
+[MASTER] 04:29:23.608 [logback-1] WARN  CastClassManager - Nothing is assignable after adding com.google.common.collect.JdkBackedImmutableSet<E> for type Variable E with bounds [class java.lang.Object] of declaration LinkedHashSet. The owner var map is {E=E, E=E, E=com.google.common.collect.FilteredEntryMultimap<java.util.LinkedHashSet<E>, java.util.LinkedHashSet<E>>.Keys, E=E, K=java.util.LinkedHashSet<E>}
+[MASTER] 04:29:25.186 [logback-1] WARN  TestCluster - Failed to check cache for com.google.common.collect.DescendingImmutableSortedMultiset<E> : Type points to itself
+[MASTER] 04:29:25.186 [logback-1] WARN  TestCluster - Failed to check cache for com.google.common.collect.TreeMultiset<E> : Type points to itself
+[MASTER] 04:29:25.193 [logback-1] WARN  TestCluster - Failed to check cache for com.google.common.collect.Multimaps.Keys<K, V> : Type points to itself
+[MASTER] 04:29:25.193 [logback-1] WARN  TestCluster - Failed to check cache for com.google.common.collect.FilteredKeySetMultimap<K, V> : Type points to itself
+[MASTER] 04:29:26.022 [logback-1] WARN  TestCluster - Failed to check cache for java.lang.Comparable<T> : Type points to itself
+[MASTER] 04:29:26.616 [logback-1] WARN  CastClassManager - Nothing is assignable after adding java.lang.Comparable<T> for type Variable E with bounds [java.lang.Comparable<? super E>] of declaration ImmutableSortedMultiset#copyOf. The owner var map is {E=java.lang.Comparable<java.lang.Object>, E=java.lang.Comparable<java.lang.Object>, E=java.lang.Comparable<java.lang.Object>, E=java.lang.Comparable<java.lang.Object>, E=java.lang.Comparable<java.lang.Object>, E=java.lang.Comparable<java.lang.Object>, E=com.google.common.collect.FilteredKeySetMultimap<com.google.common.collect.DescendingImmutableSortedMultiset<E>, java.lang.Comparable<T>>, E=com.google.common.collect.DescendingImmutableSortedMultiset<java.lang.Object>, E=class java.lang.Object, E=java.lang.Comparable<com.google.common.collect.DescendingImmutableSortedMultiset<E>>, E=java.lang.Comparable<com.google.common.collect.DescendingImmutableSortedMultiset<E>>, E=class java.lang.Object, E=com.google.common.collect.FilteredKeySetMultimap<com.google.common.collect.DescendingImmutableSortedMultiset<E>, java.lang.Object>, E=com.google.common.collect.DescendingImmutableSortedMultiset<com.google.common.collect.Multimaps.Keys<K, V>>, E=com.google.common.collect.DescendingImmutableSortedMultiset<java.lang.Object>, E=com.google.common.collect.Multimaps.Keys<java.lang.Object, java.lang.Comparable<T>>, E=com.google.common.collect.DescendingImmutableSortedMultiset<java.lang.Comparable<T>>, T=java.lang.Comparable<java.lang.Object>, E=com.google.common.collect.DescendingImmutableSortedMultiset<com.google.common.collect.DescendingImmutableSortedMultiset<E>>, T=com.google.common.collect.DescendingImmutableSortedMultiset<java.lang.Comparable<T>>, E=com.google.common.collect.FilteredKeySetMultimap<java.lang.Comparable<T>, java.lang.Comparable<T>>, E=com.google.common.collect.DescendingImmutableSortedMultiset<com.google.common.collect.FilteredKeySetMultimap<K, V>>, E=com.google.common.collect.DescendingImmutableSortedMultiset<com.google.common.collect.DescendingImmutableSortedMultiset<E>>, E=class java.lang.Object, E=class java.lang.Object}
+[MASTER] 04:29:26.639 [logback-1] WARN  CastClassManager - Nothing is assignable after adding java.lang.Comparable<T> for type Variable E with bounds [java.lang.Comparable<? super E>] of declaration ImmutableSortedMultiset#of. The owner var map is {E=java.lang.Comparable<java.lang.Object>, E=java.lang.Comparable<java.lang.Object>, E=java.lang.Comparable<java.lang.Object>, E=java.lang.Comparable<java.lang.Object>, E=java.lang.Comparable<java.lang.Object>, E=java.lang.Comparable<java.lang.Object>, E=com.google.common.collect.FilteredKeySetMultimap<com.google.common.collect.DescendingImmutableSortedMultiset<E>, java.lang.Comparable<T>>, E=com.google.common.collect.DescendingImmutableSortedMultiset<java.lang.Object>, E=class java.lang.Object, E=java.lang.Comparable<com.google.common.collect.DescendingImmutableSortedMultiset<E>>, E=java.lang.Comparable<com.google.common.collect.DescendingImmutableSortedMultiset<E>>, E=class java.lang.Object, E=com.google.common.collect.FilteredKeySetMultimap<com.google.common.collect.DescendingImmutableSortedMultiset<E>, java.lang.Object>, E=com.google.common.collect.DescendingImmutableSortedMultiset<com.google.common.collect.Multimaps.Keys<K, V>>, E=com.google.common.collect.DescendingImmutableSortedMultiset<java.lang.Object>, E=com.google.common.collect.Multimaps.Keys<java.lang.Object, java.lang.Comparable<T>>, E=com.google.common.collect.DescendingImmutableSortedMultiset<java.lang.Comparable<T>>, T=java.lang.Comparable<java.lang.Object>, E=com.google.common.collect.DescendingImmutableSortedMultiset<com.google.common.collect.DescendingImmutableSortedMultiset<E>>, T=com.google.common.collect.DescendingImmutableSortedMultiset<java.lang.Comparable<T>>, E=com.google.common.collect.FilteredKeySetMultimap<java.lang.Comparable<T>, java.lang.Comparable<T>>, E=com.google.common.collect.DescendingImmutableSortedMultiset<com.google.common.collect.FilteredKeySetMultimap<K, V>>, E=com.google.common.collect.DescendingImmutableSortedMultiset<com.google.common.collect.DescendingImmutableSortedMultiset<E>>, E=class java.lang.Object, E=class java.lang.Object, E=com.google.common.collect.DescendingImmutableSortedMultiset<com.google.common.collect.FilteredKeySetMultimap<K, V>>, E=com.google.common.collect.Multimaps.Keys<java.lang.Comparable<T>, java.lang.Object>, E=java.lang.Comparable<java.lang.Object>}
+[MASTER] 04:29:26.653 [logback-1] WARN  CastClassManager - Nothing is assignable after adding java.lang.Comparable<T> for type Variable E with bounds [java.lang.Comparable<? super E>] of declaration ImmutableSortedMultiset#of. The owner var map is {E=java.lang.Comparable<java.lang.Object>, E=java.lang.Comparable<java.lang.Object>, E=java.lang.Comparable<java.lang.Object>, E=java.lang.Comparable<java.lang.Object>, E=java.lang.Comparable<java.lang.Object>, E=java.lang.Comparable<java.lang.Object>, E=com.google.common.collect.FilteredKeySetMultimap<com.google.common.collect.DescendingImmutableSortedMultiset<E>, java.lang.Comparable<T>>, E=com.google.common.collect.DescendingImmutableSortedMultiset<java.lang.Object>, E=class java.lang.Object, E=java.lang.Comparable<com.google.common.collect.DescendingImmutableSortedMultiset<E>>, E=java.lang.Comparable<com.google.common.collect.DescendingImmutableSortedMultiset<E>>, E=class java.lang.Object, E=com.google.common.collect.FilteredKeySetMultimap<com.google.common.collect.DescendingImmutableSortedMultiset<E>, java.lang.Object>, E=com.google.common.collect.DescendingImmutableSortedMultiset<com.google.common.collect.Multimaps.Keys<K, V>>, E=com.google.common.collect.DescendingImmutableSortedMultiset<java.lang.Object>, E=com.google.common.collect.Multimaps.Keys<java.lang.Object, java.lang.Comparable<T>>, E=com.google.common.collect.DescendingImmutableSortedMultiset<java.lang.Comparable<T>>, T=java.lang.Comparable<java.lang.Object>, E=com.google.common.collect.DescendingImmutableSortedMultiset<com.google.common.collect.DescendingImmutableSortedMultiset<E>>, T=com.google.common.collect.DescendingImmutableSortedMultiset<java.lang.Comparable<T>>, E=com.google.common.collect.FilteredKeySetMultimap<java.lang.Comparable<T>, java.lang.Comparable<T>>, E=com.google.common.collect.DescendingImmutableSortedMultiset<com.google.common.collect.FilteredKeySetMultimap<K, V>>, E=com.google.common.collect.DescendingImmutableSortedMultiset<com.google.common.collect.DescendingImmutableSortedMultiset<E>>, E=class java.lang.Object, E=class java.lang.Object, E=com.google.common.collect.DescendingImmutableSortedMultiset<com.google.common.collect.FilteredKeySetMultimap<K, V>>, E=com.google.common.collect.Multimaps.Keys<java.lang.Comparable<T>, java.lang.Object>, E=java.lang.Comparable<java.lang.Object>}
+[MASTER] 04:29:31.018 [logback-1] WARN  TestCluster - Failed to check cache for java.lang.Iterable<java.lang.Object> : Type points to itself
+[MASTER] 04:29:37.928 [logback-1] WARN  TestCluster - Failed to check cache for com.google.common.collect.FilteredKeyMultimap<K, V> : Type points to itself
+[MASTER] 04:29:39.237 [logback-1] WARN  TestCluster - Failed to check cache for java.util.AbstractMap<K, V>.SimpleEntry<K, V> : Type points to itself
+[MASTER] 04:29:42.942 [logback-1] WARN  CastClassManager - Nothing is assignable after adding com.google.common.collect.RegularImmutableMultiset<E> for type Variable M with bounds [com.google.common.collect.Multiset<E>] of declaration Multisets#toMultiset. The owner var map is {T=java.lang.Comparable<java.util.AbstractMap<K, V>.SimpleEntry<K, V>>, E=java.util.AbstractMap<java.util.AbstractMap<K, V>.SimpleEntry<K, V>, java.lang.Comparable<T>>.SimpleEntry<java.lang.Comparable<T>, java.lang.Object>}
+[MASTER] 04:29:45.458 [logback-1] WARN  TestCluster - Failed to check cache for java.lang.Iterable<com.google.common.collect.RegularImmutableMultiset<com.google.common.collect.BoundType>> : Type points to itself
+[MASTER] 04:29:52.510 [logback-1] WARN  TestCluster - Failed to check cache for com.google.common.collect.ImmutableMultiset<E> : Type points to itself
+[MASTER] 04:29:57.259 [logback-1] WARN  TestCluster - Failed to check cache for java.util.Collection<com.google.common.collect.Multiset<java.lang.Object>.Entry<java.lang.Object>> : Type points to itself
+[MASTER] 04:29:59.093 [logback-1] WARN  TestCluster - Failed to check cache for java.util.function.Function<java.lang.Comparable<java.util.Locale$FilteringMode>, java.util.Locale$FilteringMode> : Type points to itself
+[MASTER] 04:30:05.036 [logback-1] WARN  TestCluster - Failed to check cache for java.util.Comparator<T> : Type points to itself
+[MASTER] 04:30:12.470 [logback-1] WARN  TestCluster - Failed to check cache for java.util.Iterator<E> : Type points to itself
+[Progress:==============================100%] [Cov:==========>                        30%][MASTER] 04:30:30.686 [logback-1] WARN  CoverageArchive - A solution with a timeout/exception result has been added to the archive. The covered goal was com.google.common.collect.Multisets.inferDistinctElements(Ljava/lang/Iterable;)I: I4 Branch 4 IFEQ L396 - true
+[MASTER] 04:30:30.692 [logback-1] WARN  CoverageArchive - A solution with a timeout/exception result has been added to the archive. The covered goal was Weak Mutation 280: com.google.common.collect.Multisets$AbstractEntry.toString()Ljava/lang/String;:872 - InsertUnaryOp Negation of n
+[MASTER] 04:30:30.692 [logback-1] WARN  CoverageArchive - A solution with a timeout/exception result has been added to the archive. The covered goal was Weak Mutation 281: com.google.common.collect.Multisets$AbstractEntry.toString()Ljava/lang/String;:872 - InsertUnaryOp IINC 1 n
+[MASTER] 04:30:30.692 [logback-1] WARN  CoverageArchive - A solution with a timeout/exception result has been added to the archive. The covered goal was Weak Mutation 282: com.google.common.collect.Multisets$AbstractEntry.toString()Ljava/lang/String;:872 - InsertUnaryOp IINC -1 n
+[MASTER] 04:30:30.692 [logback-1] WARN  CoverageArchive - A solution with a timeout/exception result has been added to the archive. The covered goal was Weak Mutation 283: com.google.common.collect.Multisets$AbstractEntry.toString()Ljava/lang/String;:872 - ReplaceConstant - 1 -> 0
+[MASTER] 04:30:30.692 [logback-1] WARN  CoverageArchive - A solution with a timeout/exception result has been added to the archive. The covered goal was Weak Mutation 284: com.google.common.collect.Multisets$AbstractEntry.toString()Ljava/lang/String;:872 - ReplaceComparisonOperator != -> ==
+[MASTER] 04:30:30.723 [logback-1] WARN  CoverageArchive - A solution with a timeout/exception result has been added to the archive. The covered goal was com.google.common.collect.Multisets$AbstractEntry.toString()Ljava/lang/String;: Line 872
+[MASTER] 04:30:30.723 [logback-1] WARN  CoverageArchive - A solution with a timeout/exception result has been added to the archive. The covered goal was com.google.common.collect.Multisets$AbstractEntry.toString()Ljava/lang/String;: Line 871
+[MASTER] 04:30:30.723 [logback-1] WARN  CoverageArchive - A solution with a timeout/exception result has been added to the archive. The covered goal was com.google.common.collect.Multisets$AbstractEntry.toString()Ljava/lang/String;: Line 870
+[MASTER] 04:30:30.725 [logback-1] WARN  CoverageArchive - A solution with a timeout/exception result has been added to the archive. The covered goal was com.google.common.collect.Multisets$AbstractEntry.toString()Ljava/lang/String;: I15 Branch 37 IF_ICMPNE L872 - true
+[Progress:==============================100%] [Cov:==========>                        31%]
+* Search finished after 68s and 0 generations, 288 statements, best individual has fitness: 1150.0
+[MASTER] 04:30:30.987 [logback-1] WARN  TimeController - Phase SEARCH lasted too long, 8 seconds more than allowed.
+* Minimizing test suite
+* Going to analyze the coverage criteria
+* Coverage analysis for criterion LINE
+* Coverage of criterion LINE: 34%
+* Total number of goals: 335
+* Number of covered goals: 113
+* Coverage analysis for criterion BRANCH
+* Coverage of criterion BRANCH: 26%
+* Total number of goals: 231
+* Number of covered goals: 61
+* Coverage analysis for criterion EXCEPTION
+* Coverage of criterion EXCEPTION: 100%
+* Total number of goals: 5
+* Number of covered goals: 5
+* Coverage analysis for criterion WEAKMUTATION
+* Coverage of criterion WEAKMUTATION: 20%
+* Total number of goals: 511
+* Number of covered goals: 104
+* Coverage analysis for criterion OUTPUT
+* Coverage of criterion OUTPUT: 19%
+* Total number of goals: 59
+* Number of covered goals: 11
+* Coverage analysis for criterion METHOD
+* Coverage of criterion METHOD: 32%
+* Total number of goals: 76
+* Number of covered goals: 24
+* Coverage analysis for criterion METHODNOEXCEPTION
+* Coverage of criterion METHODNOEXCEPTION: 21%
+* Total number of goals: 76
+* Number of covered goals: 16
+* Coverage analysis for criterion CBRANCH
+* Coverage of criterion CBRANCH: 26%
+* Total number of goals: 231
+* Number of covered goals: 61
+* Generated 25 tests with total length 97
+* Resulting test suite's coverage: 32% (average coverage for all fitness functions)
+* Generating assertions
+* Resulting test suite's mutation score: 9%
+* Compiling and checking tests
+* Writing tests to file
+* Writing JUnit test case 'Multisets_ESTest' to evosuite-tests
+* Done!
+
+* Computation finished

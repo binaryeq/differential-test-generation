@@ -1,0 +1,86 @@
+* EvoSuite 1.2.0
+* Going to generate test cases for class: org.apache.curator.framework.recipes.cache.TreeCache
+* Starting Client-0
+* Connecting to master process on port 8819
+* Analyzing classpath: 
+  - /home/wtwhite/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/curator/curator-recipes/5.6.0/curator-recipes-5.6.0.jar
+  - t/dependency/apiguardian-api-1.1.0.jar
+  - t/dependency/audience-annotations-0.12.0.jar
+  - t/dependency/awaitility-4.1.1.jar
+  - t/dependency/checker-qual-3.33.0.jar
+  - t/dependency/commons-math-2.2.jar
+  - t/dependency/curator-client-5.6.0.jar
+  - t/dependency/curator-framework-5.6.0.jar
+  - t/dependency/curator-framework-5.6.0-tests.jar
+  - t/dependency/curator-test-5.6.0.jar
+  - t/dependency/error_prone_annotations-2.18.0.jar
+  - t/dependency/failureaccess-1.0.1.jar
+  - t/dependency/guava-32.0.0-jre.jar
+  - t/dependency/hamcrest-2.1.jar
+  - t/dependency/j2objc-annotations-2.8.jar
+  - t/dependency/jsr305-3.0.2.jar
+  - t/dependency/junit-jupiter-api-5.6.2.jar
+  - t/dependency/junit-platform-commons-1.6.2.jar
+  - t/dependency/listenablefuture-1.0.jar
+  - t/dependency/log4j-1.2.17.jar
+  - t/dependency/metrics-core-3.2.5.jar
+  - t/dependency/netty-buffer-4.1.94.Final.jar
+  - t/dependency/netty-codec-4.1.94.Final.jar
+  - t/dependency/netty-common-4.1.94.Final.jar
+  - t/dependency/netty-handler-4.1.94.Final.jar
+  - t/dependency/netty-resolver-4.1.94.Final.jar
+  - t/dependency/netty-transport-4.1.94.Final.jar
+  - t/dependency/netty-transport-classes-epoll-4.1.94.Final.jar
+  - t/dependency/netty-transport-native-epoll-4.1.94.Final.jar
+  - t/dependency/netty-transport-native-unix-common-4.1.94.Final.jar
+  - t/dependency/opentest4j-1.2.0.jar
+  - t/dependency/slf4j-api-1.7.25.jar
+  - t/dependency/slf4j-log4j12-1.7.25.jar
+  - t/dependency/snappy-java-1.1.10.4.jar
+  - t/dependency/zookeeper-3.7.2.jar
+  - t/dependency/zookeeper-jute-3.7.2.jar
+* Finished analyzing classpath
+* Generating tests for class org.apache.curator.framework.recipes.cache.TreeCache
+* Test criteria:
+  - Line Coverage
+  - Branch Coverage
+  - Exception
+  - Mutation testing (weak)
+  - Method-Output Coverage
+  - Top-Level Method Coverage
+  - No-Exception Top-Level Method Coverage
+  - Context Branch Coverage
+[Progress:>                             0%] [Cov:>                                  0%]* Total number of test goals for DYNAMOSA: 981
+* Using seed 1729717412085
+* Starting evolution
+* Initial Number of Goals in DynaMOSA = 356 / 981
+[MASTER] 10:03:36.799 [logback-2] ERROR ClientNodeImpl - Error when generating tests for: org.apache.curator.framework.recipes.cache.TreeCache with seed 1729717412085. Configuration id : null
+java.lang.reflect.MalformedParametersException: Invalid parameter name ""
+	at java.lang.reflect.Executable.verifyParameters(Executable.java:386)
+	at java.lang.reflect.Executable.privateGetParameters(Executable.java:416)
+	at java.lang.reflect.Executable.getParameters(Executable.java:357)
+	at org.evosuite.testcase.TestFactory.addMethod(TestFactory.java:493)
+	at org.evosuite.testcase.TestFactory.insertRandomCall(TestFactory.java:2231)
+	at org.evosuite.testcase.mutation.RandomInsertion.insertStatement(RandomInsertion.java:131)
+	at org.evosuite.testcase.TestFactory.insertRandomStatement(TestFactory.java:2352)
+	at org.evosuite.testcase.factories.RandomLengthTestFactory.getRandomTestCase(RandomLengthTestFactory.java:75)
+	at org.evosuite.testcase.factories.RandomLengthTestFactory.getChromosome(RandomLengthTestFactory.java:94)
+	at org.evosuite.testcase.factories.RandomLengthTestFactory.getChromosome(RandomLengthTestFactory.java:38)
+	at org.evosuite.ga.metaheuristics.GeneticAlgorithm.getRandomPopulation(GeneticAlgorithm.java:403)
+	at org.evosuite.ga.metaheuristics.GeneticAlgorithm.generateRandomPopulation(GeneticAlgorithm.java:394)
+	at org.evosuite.ga.metaheuristics.GeneticAlgorithm.generateInitialPopulation(GeneticAlgorithm.java:343)
+	at org.evosuite.ga.metaheuristics.mosa.AbstractMOSA.initializePopulation(AbstractMOSA.java:356)
+	at org.evosuite.ga.metaheuristics.mosa.DynaMOSA.generateSolution(DynaMOSA.java:155)
+	at org.evosuite.ga.metaheuristics.TestSuiteAdapter.generateSolution(TestSuiteAdapter.java:136)
+	at org.evosuite.strategy.MOSuiteStrategy.generateTests(MOSuiteStrategy.java:122)
+	at org.evosuite.TestSuiteGenerator.generateTests(TestSuiteGenerator.java:630)
+	at org.evosuite.TestSuiteGenerator.generateTestSuite(TestSuiteGenerator.java:208)
+	at org.evosuite.rmi.service.ClientNodeImpl.lambda$startNewSearch$0(ClientNodeImpl.java:140)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+* Computation finished
+[MASTER] 10:03:36.912 [main] ERROR SearchStatistics - No statistics has been saved because EvoSuite failed to generate any test case
+[MASTER] 10:03:37.014 [main] ERROR TestGeneration - failed to write statistics data

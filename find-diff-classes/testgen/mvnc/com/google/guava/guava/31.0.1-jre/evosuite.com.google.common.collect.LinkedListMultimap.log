@@ -1,0 +1,93 @@
+* EvoSuite 1.2.0
+* Going to generate test cases for class: com.google.common.collect.LinkedListMultimap
+* Starting Client-0
+* Connecting to master process on port 12152
+* Analyzing classpath: 
+  - /home/wtwhite/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/guava/guava/31.0.1-jre/guava-31.0.1-jre.jar
+  - t/dependency/checker-qual-3.12.0.jar
+  - t/dependency/error_prone_annotations-2.7.1.jar
+  - t/dependency/failureaccess-1.0.1.jar
+  - t/dependency/j2objc-annotations-1.3.jar
+  - t/dependency/jsr305-3.0.2.jar
+  - t/dependency/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar
+[MASTER] 04:24:05.143 [logback-1] WARN  TestUsageChecker - class com.google.common.collect.LinkedListMultimap$1EntriesImpl looks like an anonymous class, ignoring it (although reflection says false) EntriesImpl
+[MASTER] 04:24:05.143 [logback-1] WARN  TestUsageChecker - class com.google.common.collect.LinkedListMultimap$1ValuesImpl looks like an anonymous class, ignoring it (although reflection says false) ValuesImpl
+[MASTER] 04:24:05.143 [logback-1] WARN  TestUsageChecker - class com.google.common.collect.LinkedListMultimap$1KeySetImpl looks like an anonymous class, ignoring it (although reflection says false) KeySetImpl
+* Finished analyzing classpath
+* Generating tests for class com.google.common.collect.LinkedListMultimap
+* Test criteria:
+  - Line Coverage
+  - Branch Coverage
+  - Exception
+  - Mutation testing (weak)
+  - Method-Output Coverage
+  - Top-Level Method Coverage
+  - No-Exception Top-Level Method Coverage
+  - Context Branch Coverage
+* Total number of test goals for DYNAMOSA: 1299
+* Using seed 1729697043184
+* Starting evolution
+[Progress:>                             0%] [Cov:>                                  0%]* Initial Number of Goals in DynaMOSA = 637 / 1299
+[MASTER] 04:24:06.534 [logback-1] WARN  TestCluster - Failed to check cache for java.util.LinkedList<E> : Type points to itself
+[MASTER] 04:24:06.534 [logback-1] WARN  TestCluster - Failed to check cache for java.util.AbstractMap<K, V>.SimpleImmutableEntry<K, V> : Type points to itself
+[MASTER] 04:24:07.540 [logback-1] WARN  CastClassManager - Nothing is assignable after adding com.google.common.collect.UnmodifiableSortedMultiset<E> for wildcard ? extends E
+[MASTER] 04:24:10.460 [logback-1] WARN  TestCluster - Failed to check cache for java.util.Collection<java.util.Map<java.lang.Object, java.lang.Object>.Entry<java.lang.Object, java.lang.Object>> : Type points to itself
+[MASTER] 04:24:13.045 [logback-1] WARN  CastClassManager - Nothing is assignable after adding com.google.common.collect.Multisets.UnmodifiableMultiset<E> for wildcard ? extends E
+[MASTER] 04:24:13.670 [logback-1] WARN  TestCluster - Failed to check cache for java.lang.Comparable<T> : Type points to itself
+[MASTER] 04:24:13.672 [logback-1] WARN  TestCluster - Failed to check cache for java.util.Map<K, V>.Entry<K, V> : Type points to itself
+[MASTER] 04:24:20.336 [logback-1] WARN  TestCluster - Failed to check cache for java.lang.Comparable<java.lang.Object> : Type points to itself
+[MASTER] 04:24:40.050 [logback-1] WARN  TestCluster - Failed to check cache for java.lang.Iterable<com.google.common.collect.Multiset<com.google.common.collect.BoundType>.Entry<java.lang.Object>> : Type points to itself
+[MASTER] 04:24:42.395 [logback-1] WARN  CastClassManager - Nothing is assignable after adding com.google.common.collect.UnmodifiableSortedMultiset<E> for wildcard ? extends E
+[MASTER] 04:24:44.450 [logback-1] WARN  TestCluster - Failed to check cache for java.lang.Iterable<com.google.common.collect.Multiset<java.lang.Object>.Entry<java.lang.Object>> : Type points to itself
+[MASTER] 04:24:48.048 [logback-1] WARN  TestCluster - Failed to check cache for java.lang.Iterable<java.util.LinkedList<java.lang.Object>> : Type points to itself
+[MASTER] 04:25:07.155 [logback-1] WARN  CastClassManager - Nothing is assignable after adding com.google.common.collect.UnmodifiableSortedMultiset<E> for wildcard ? extends E
+[MASTER] 04:25:07.433 [logback-1] WARN  TestCluster - Failed to check cache for com.google.common.collect.UnmodifiableSortedMultiset<E> : Type points to itself
+[Progress:==============================100%] [Cov:>                                  0%][MASTER] 04:25:08.421 [logback-1] WARN  TestCluster - Failed to check cache for com.google.common.collect.DiscreteDomain<C> : Type points to itself
+[MASTER] 04:25:08.422 [logback-1] WARN  TestCluster - Failed to check cache for java.util.Comparator<T> : Type points to itself
+[Progress:==============================100%] [Cov:========>                          24%]
+* Search finished after 67s and 0 generations, 181 statements, best individual has fitness: 1057.0
+[MASTER] 04:25:13.653 [logback-1] WARN  TimeController - Phase SEARCH lasted too long, 7 seconds more than allowed.
+* Minimizing test suite
+* Going to analyze the coverage criteria
+* Coverage analysis for criterion LINE
+* Coverage of criterion LINE: 42%
+* Total number of goals: 283
+* Number of covered goals: 118
+* Coverage analysis for criterion BRANCH
+* Coverage of criterion BRANCH: 33%
+* Total number of goals: 156
+* Number of covered goals: 52
+* Coverage analysis for criterion EXCEPTION
+* Coverage of criterion EXCEPTION: 100%
+* Total number of goals: 3
+* Number of covered goals: 3
+* Coverage analysis for criterion WEAKMUTATION
+* Coverage of criterion WEAKMUTATION: 27%
+* Total number of goals: 529
+* Number of covered goals: 144
+* Coverage analysis for criterion OUTPUT
+* Coverage of criterion OUTPUT: 15%
+* Total number of goals: 87
+* Number of covered goals: 13
+* Coverage analysis for criterion METHOD
+* Coverage of criterion METHOD: 43%
+* Total number of goals: 44
+* Number of covered goals: 19
+* Coverage analysis for criterion METHODNOEXCEPTION
+* Coverage of criterion METHODNOEXCEPTION: 41%
+* Total number of goals: 44
+* Number of covered goals: 18
+* Coverage analysis for criterion CBRANCH
+* Coverage of criterion CBRANCH: 33%
+* Total number of goals: 156
+* Number of covered goals: 51
+* Generated 19 tests with total length 51
+* Resulting test suite's coverage: 24% (average coverage for all fitness functions)
+* Generating assertions
+* Resulting test suite's mutation score: 11%
+* Compiling and checking tests
+* Writing tests to file
+* Writing JUnit test case 'LinkedListMultimap_ESTest' to evosuite-tests
+* Done!
+
+* Computation finished

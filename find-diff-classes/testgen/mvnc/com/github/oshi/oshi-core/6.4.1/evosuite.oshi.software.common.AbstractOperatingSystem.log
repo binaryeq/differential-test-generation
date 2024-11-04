@@ -1,0 +1,80 @@
+* EvoSuite 1.2.0
+* Going to generate test cases for class: oshi.software.common.AbstractOperatingSystem
+* Starting Client-0
+* Connecting to master process on port 8831
+* Analyzing classpath: 
+  - /home/wtwhite/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/github/oshi/oshi-core/6.4.1/oshi-core-6.4.1.jar
+  - t/dependency/apiguardian-api-1.1.2.jar
+  - t/dependency/hamcrest-2.2.jar
+  - t/dependency/jna-5.13.0.jar
+  - t/dependency/jna-platform-5.13.0.jar
+  - t/dependency/junit-jupiter-api-5.9.2.jar
+  - t/dependency/junit-platform-commons-1.9.2.jar
+  - t/dependency/opentest4j-1.2.0.jar
+  - t/dependency/slf4j-api-2.0.7.jar
+  - t/dependency/slf4j-simple-2.0.7.jar
+* Error while initializing target class: Unable to load library 'System':
+libSystem.so: cannot open shared object file: No such file or directory
+libSystem.so: cannot open shared object file: No such file or directory
+Native library (linux-x86-64/libSystem.so) not found in resource path ([file:/tmp/EvoSuite_pathingJar3457078967038304136.jar, file:/usr/lib/jvm/java-8-openjdk-amd64/jre/../lib/tools.jar])
+* Computation finished
+[MASTER] 02:14:06.136 [logback-2] ERROR TestSuiteGenerator - Problem for oshi.software.common.AbstractOperatingSystem. Full stack:
+java.lang.UnsatisfiedLinkError: Unable to load library 'System':
+libSystem.so: cannot open shared object file: No such file or directory
+libSystem.so: cannot open shared object file: No such file or directory
+Native library (linux-x86-64/libSystem.so) not found in resource path ([file:/tmp/EvoSuite_pathingJar3457078967038304136.jar, file:/usr/lib/jvm/java-8-openjdk-amd64/jre/../lib/tools.jar])
+	at com.sun.jna.NativeLibrary.loadLibrary(NativeLibrary.java:323)
+	at com.sun.jna.NativeLibrary.getInstance(NativeLibrary.java:483)
+	at com.sun.jna.Library$Handler.<init>(Library.java:197)
+	at com.sun.jna.Native.load(Native.java:622)
+	at com.sun.jna.Native.load(Native.java:596)
+	at com.sun.jna.platform.mac.SystemB.<clinit>(SystemB.java:40)
+	at sun.misc.Unsafe.ensureClassInitialized(Native Method)
+	at sun.reflect.UnsafeFieldAccessorFactory.newFieldAccessor(UnsafeFieldAccessorFactory.java:43)
+	at sun.reflect.ReflectionFactory.newFieldAccessor(ReflectionFactory.java:156)
+	at java.lang.reflect.Field.acquireFieldAccessor(Field.java:1088)
+	at java.lang.reflect.Field.getFieldAccessor(Field.java:1069)
+	at java.lang.reflect.Field.get(Field.java:393)
+	at com.sun.jna.Native.loadLibraryInstance(Native.java:694)
+	at com.sun.jna.Native.getLibraryOptions(Native.java:764)
+	at com.sun.jna.Native.getStructureAlignment(Native.java:856)
+	at com.sun.jna.Structure.setAlignType(Structure.java:291)
+	at com.sun.jna.Structure.<init>(Structure.java:208)
+	at com.sun.jna.Structure.<init>(Structure.java:204)
+	at com.sun.jna.Structure.<init>(Structure.java:191)
+	at com.sun.jna.Structure.<init>(Structure.java:183)
+	at com.sun.jna.platform.mac.SystemB$Timeval.<init>(SystemB.java:511)
+	at oshi.jna.Struct$CloseableTimeval.<init>(Struct.java:75)
+	at oshi.software.os.mac.MacOperatingSystem.<clinit>(MacOperatingSystem.java)
+	at sun.misc.Unsafe.ensureClassInitialized(Native Method)
+	at sun.reflect.UnsafeFieldAccessorFactory.newFieldAccessor(UnsafeFieldAccessorFactory.java:43)
+	at sun.reflect.ReflectionFactory.newFieldAccessor(ReflectionFactory.java:156)
+	at java.lang.reflect.Field.acquireFieldAccessor(Field.java:1088)
+	at java.lang.reflect.Field.getFieldAccessor(Field.java:1069)
+	at java.lang.reflect.Field.get(Field.java:393)
+	at org.evosuite.setup.TestClusterGenerator.initializeTargetMethods(TestClusterGenerator.java:546)
+	at org.evosuite.setup.TestClusterGenerator.generateCluster(TestClusterGenerator.java:119)
+	at org.evosuite.setup.DependencyAnalysis.analyze(DependencyAnalysis.java:120)
+	at org.evosuite.setup.DependencyAnalysis.analyzeClass(DependencyAnalysis.java:136)
+	at org.evosuite.TestSuiteGenerator.initializeTargetClass(TestSuiteGenerator.java:114)
+	at org.evosuite.TestSuiteGenerator.generateTestSuite(TestSuiteGenerator.java:135)
+	at org.evosuite.rmi.service.ClientNodeImpl.lambda$startNewSearch$0(ClientNodeImpl.java:140)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+	Suppressed: java.lang.UnsatisfiedLinkError: libSystem.so: cannot open shared object file: No such file or directory
+		at com.sun.jna.Native.open(Native Method)
+		at com.sun.jna.NativeLibrary.loadLibrary(NativeLibrary.java:211)
+		... 40 common frames omitted
+	Suppressed: java.lang.UnsatisfiedLinkError: libSystem.so: cannot open shared object file: No such file or directory
+		at com.sun.jna.Native.open(Native Method)
+		at com.sun.jna.NativeLibrary.loadLibrary(NativeLibrary.java:224)
+		... 40 common frames omitted
+	Suppressed: java.io.IOException: Native library (linux-x86-64/libSystem.so) not found in resource path ([file:/tmp/EvoSuite_pathingJar3457078967038304136.jar, file:/usr/lib/jvm/java-8-openjdk-amd64/jre/../lib/tools.jar])
+		at com.sun.jna.Native.extractFromResourcePath(Native.java:1145)
+		at com.sun.jna.NativeLibrary.loadLibrary(NativeLibrary.java:295)
+		... 40 common frames omitted
+[MASTER] 02:14:06.265 [main] ERROR SearchStatistics - No statistics has been saved because EvoSuite failed to generate any test case
+[MASTER] 02:14:06.367 [main] ERROR TestGeneration - failed to write statistics data

@@ -1,0 +1,730 @@
+* EvoSuite 1.2.0
+* Going to generate test cases for class: com.google.common.hash.Murmur3_32HashFunction
+* Starting Client-0
+* Connecting to master process on port 11222
+* Analyzing classpath: 
+  - /home/wtwhite/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/guava/guava/31.0.1-jre/guava-31.0.1-jre.jar
+  - t/dependency/checker-qual-3.12.0.jar
+  - t/dependency/error_prone_annotations-2.7.1.jar
+  - t/dependency/failureaccess-1.0.1.jar
+  - t/dependency/j2objc-annotations-1.3.jar
+  - t/dependency/jsr305-3.0.2.jar
+  - t/dependency/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar
+* Finished analyzing classpath
+* Generating tests for class com.google.common.hash.Murmur3_32HashFunction
+* Test criteria:
+  - Line Coverage
+  - Branch Coverage
+  - Exception
+  - Mutation testing (weak)
+  - Method-Output Coverage
+  - Top-Level Method Coverage
+  - No-Exception Top-Level Method Coverage
+  - Context Branch Coverage
+[Progress:>                             0%] [Cov:>                                  0%]* Total number of test goals for DYNAMOSA: 1208
+* Using seed 1729700161856
+* Starting evolution
+* Initial Number of Goals in DynaMOSA = 596 / 1208
+[Progress:>                             0%] [Cov:================>                  46%][Progress:>                             3%] [Cov:=================>                 49%][Progress:>                             3%] [Cov:=================>                 49%][Progress:>                             3%] [Cov:=================>                 49%][Progress:=>                            5%] [Cov:===================>               55%][Progress:=>                            5%] [Cov:===================>               55%][Progress:===>                          10%] [Cov:===================>               55%][Progress:====>                         15%] [Cov:====================>              58%][Progress:====>                         15%] [Cov:===================>               57%][Progress:====>                         15%] [Cov:====================>              58%][Progress:====>                         15%] [Cov:====================>              59%][Progress:====>                         16%] [Cov:====================>              59%][Progress:====>                         16%] [Cov:====================>              59%][Progress:====>                         16%] [Cov:====================>              59%][Progress:====>                         16%] [Cov:====================>              59%][Progress:====>                         16%] [Cov:====================>              59%][Progress:====>                         16%] [Cov:=====================>             61%][Progress:=====>                        18%] [Cov:=====================>             61%][Progress:=====>                        18%] [Cov:=====================>             61%][Progress:=====>                        18%] [Cov:=====================>             61%][Progress:=====>                        18%] [Cov:=====================>             61%][Progress:=====>                        18%] [Cov:=====================>             61%][Progress:=====>                        18%] [Cov:=====================>             61%][Progress:=====>                        18%] [Cov:====================>              59%][Progress:=====>                        18%] [Cov:====================>              59%][Progress:=====>                        18%] [Cov:====================>              59%][Progress:======>                       20%] [Cov:====================>              59%][Progress:======>                       20%] [Cov:====================>              59%][Progress:======>                       20%] [Cov:====================>              59%][Progress:======>                       20%] [Cov:=====================>             61%][Progress:======>                       20%] [Cov:====================>              59%][Progress:======>                       20%] [Cov:====================>              59%][Progress:======>                       20%] [Cov:====================>              59%][Progress:======>                       20%] [Cov:====================>              59%][Progress:======>                       20%] [Cov:====================>              59%][Progress:======>                       20%] [Cov:====================>              59%][Progress:======>                       21%] [Cov:====================>              59%][Progress:======>                       21%] [Cov:====================>              59%][Progress:======>                       21%] [Cov:====================>              59%][Progress:======>                       21%] [Cov:====================>              59%][Progress:======>                       21%] [Cov:====================>              59%][Progress:======>                       21%] [Cov:====================>              59%][Progress:======>                       21%] [Cov:====================>              59%][Progress:======>                       21%] [Cov:====================>              59%][Progress:======>                       21%] [Cov:====================>              59%][Progress:======>                       21%] [Cov:====================>              59%][Progress:======>                       23%] [Cov:====================>              59%][Progress:======>                       23%] [Cov:====================>              59%][Progress:======>                       23%] [Cov:====================>              59%][Progress:======>                       23%] [Cov:====================>              59%][Progress:======>                       23%] [Cov:====================>              59%][Progress:======>                       23%] [Cov:====================>              59%][Progress:======>                       23%] [Cov:====================>              59%][Progress:======>                       23%] [Cov:====================>              59%][Progress:======>                       23%] [Cov:====================>              59%][Progress:======>                       23%] [Cov:====================>              59%][Progress:=======>                      25%] [Cov:====================>              59%][Progress:=======>                      25%] [Cov:====================>              59%][Progress:=======>                      25%] [Cov:=====================>             60%][Progress:=======>                      25%] [Cov:=====================>             60%][Progress:=======>                      25%] [Cov:=====================>             60%][Progress:=======>                      25%] [Cov:=====================>             60%][Progress:=======>                      25%] [Cov:=====================>             60%][Progress:=======>                      26%] [Cov:=====================>             60%][Progress:=======>                      26%] [Cov:=====================>             60%][Progress:=======>                      26%] [Cov:=====================>             60%][Progress:=======>                      26%] [Cov:=====================>             60%][Progress:=======>                      26%] [Cov:====================>              59%][Progress:=======>                      26%] [Cov:====================>              59%][Progress:========>                     28%] [Cov:====================>              59%][Progress:========>                     28%] [Cov:====================>              59%][Progress:========>                     28%] [Cov:====================>              59%][Progress:========>                     28%] [Cov:====================>              59%][Progress:=========>                    30%] [Cov:=====================>             60%][Progress:=========>                    30%] [Cov:=====================>             60%][Progress:=========>                    30%] [Cov:=====================>             60%][Progress:=========>                    30%] [Cov:=====================>             60%][Progress:=========>                    30%] [Cov:=====================>             60%][Progress:=========>                    30%] [Cov:=====================>             60%][Progress:=========>                    30%] [Cov:=====================>             60%][Progress:=========>                    30%] [Cov:=====================>             60%][Progress:=========>                    31%] [Cov:=====================>             60%][Progress:=========>                    31%] [Cov:=====================>             60%][Progress:=========>                    31%] [Cov:=====================>             60%][Progress:=========>                    31%] [Cov:=====================>             60%][Progress:=========>                    31%] [Cov:=====================>             60%][Progress:=========>                    31%] [Cov:=====================>             60%][Progress:=========>                    31%] [Cov:=====================>             60%][Progress:=========>                    31%] [Cov:=====================>             60%][Progress:=========>                    31%] [Cov:=====================>             60%][Progress:=========>                    31%] [Cov:=====================>             60%][Progress:=========>                    31%] [Cov:=====================>             60%][Progress:=========>                    33%] [Cov:====================>              59%][Progress:=========>                    33%] [Cov:====================>              59%][Progress:=========>                    33%] [Cov:====================>              59%][Progress:=========>                    33%] [Cov:====================>              59%][Progress:=========>                    33%] [Cov:====================>              59%][Progress:=========>                    33%] [Cov:====================>              59%][Progress:=========>                    33%] [Cov:====================>              59%][Progress:=========>                    33%] [Cov:====================>              59%][Progress:==========>                   35%] [Cov:====================>              59%][Progress:==========>                   35%] [Cov:====================>              59%][Progress:==========>                   35%] [Cov:====================>              59%][Progress:==========>                   35%] [Cov:====================>              59%][Progress:==========>                   35%] [Cov:====================>              59%][Progress:==========>                   36%] [Cov:====================>              59%][Progress:==========>                   36%] [Cov:====================>              59%][Progress:==========>                   36%] [Cov:====================>              59%][Progress:==========>                   36%] [Cov:====================>              59%][Progress:==========>                   36%] [Cov:====================>              59%][Progress:==========>                   36%] [Cov:====================>              59%][Progress:==========>                   36%] [Cov:====================>              59%][Progress:===========>                  38%] [Cov:====================>              59%][Progress:===========>                  38%] [Cov:====================>              59%][Progress:===========>                  38%] [Cov:====================>              59%][Progress:===========>                  38%] [Cov:====================>              59%][Progress:===========>                  38%] [Cov:====================>              59%][Progress:===========>                  38%] [Cov:====================>              59%][Progress:===========>                  38%] [Cov:====================>              59%][Progress:===========>                  38%] [Cov:====================>              59%][Progress:===========>                  38%] [Cov:====================>              59%][Progress:===========>                  38%] [Cov:====================>              59%][Progress:===========>                  38%] [Cov:====================>              59%][Progress:============>                 40%] [Cov:=====================>             60%][Progress:============>                 40%] [Cov:=====================>             60%][Progress:============>                 40%] [Cov:=====================>             60%][Progress:============>                 40%] [Cov:=====================>             60%][Progress:============>                 40%] [Cov:====================>              59%][Progress:============>                 40%] [Cov:====================>              59%][Progress:============>                 40%] [Cov:====================>              59%][Progress:============>                 40%] [Cov:====================>              59%][Progress:============>                 40%] [Cov:====================>              59%][Progress:============>                 40%] [Cov:====================>              59%][Progress:============>                 40%] [Cov:====================>              59%][Progress:============>                 40%] [Cov:====================>              59%][Progress:============>                 40%] [Cov:====================>              59%][Progress:============>                 41%] [Cov:====================>              59%][Progress:============>                 41%] [Cov:====================>              59%][Progress:============>                 43%] [Cov:====================>              59%][Progress:============>                 43%] [Cov:====================>              59%][Progress:============>                 43%] [Cov:====================>              59%][Progress:============>                 43%] [Cov:====================>              59%][Progress:============>                 43%] [Cov:====================>              59%][Progress:============>                 43%] [Cov:====================>              59%][Progress:============>                 43%] [Cov:====================>              59%][Progress:============>                 43%] [Cov:====================>              59%][Progress:============>                 43%] [Cov:====================>              59%][Progress:============>                 43%] [Cov:=====================>             60%][Progress:=============>                45%] [Cov:=====================>             60%][Progress:=============>                45%] [Cov:=====================>             60%][Progress:=============>                45%] [Cov:=====================>             60%][Progress:=============>                45%] [Cov:=====================>             60%][Progress:=============>                45%] [Cov:=====================>             60%][Progress:=============>                45%] [Cov:=====================>             60%][Progress:=============>                45%] [Cov:=====================>             60%][Progress:=============>                45%] [Cov:=====================>             60%][Progress:=============>                45%] [Cov:=====================>             61%][Progress:=============>                45%] [Cov:=====================>             61%][Progress:=============>                45%] [Cov:=====================>             61%][Progress:=============>                45%] [Cov:=====================>             61%][Progress:==============>               48%] [Cov:=====================>             61%][Progress:==============>               48%] [Cov:=====================>             61%][Progress:==============>               48%] [Cov:=====================>             61%][Progress:==============>               48%] [Cov:=====================>             61%][Progress:==============>               48%] [Cov:=====================>             61%][Progress:==============>               48%] [Cov:=====================>             61%][Progress:==============>               48%] [Cov:=====================>             61%][Progress:==============>               48%] [Cov:=====================>             61%][Progress:===============>              50%] [Cov:=====================>             61%][Progress:===============>              50%] [Cov:=====================>             61%][Progress:===============>              50%] [Cov:=====================>             61%][Progress:===============>              50%] [Cov:=====================>             61%][Progress:===============>              50%] [Cov:=====================>             61%][Progress:===============>              50%] [Cov:=====================>             61%][Progress:===============>              51%] [Cov:=====================>             61%][Progress:===============>              51%] [Cov:=====================>             61%][Progress:===============>              51%] [Cov:=====================>             61%][Progress:===============>              51%] [Cov:=====================>             61%][Progress:===============>              51%] [Cov:=====================>             61%][Progress:===============>              51%] [Cov:=====================>             61%][Progress:===============>              53%] [Cov:=====================>             61%][Progress:===============>              53%] [Cov:=====================>             60%][Progress:===============>              53%] [Cov:=====================>             60%][Progress:===============>              53%] [Cov:=====================>             60%][Progress:================>             55%] [Cov:=====================>             60%][Progress:================>             55%] [Cov:=====================>             60%][Progress:================>             55%] [Cov:=====================>             60%][Progress:================>             55%] [Cov:=====================>             60%][Progress:=================>            58%] [Cov:=====================>             60%][Progress:==================>           60%] [Cov:=====================>             60%][Progress:==================>           60%] [Cov:=====================>             60%][Progress:==================>           60%] [Cov:=====================>             60%][Progress:==================>           60%] [Cov:=====================>             60%][Progress:==================>           60%] [Cov:=====================>             60%][Progress:==================>           60%] [Cov:=====================>             60%][Progress:==================>           61%] [Cov:=====================>             60%][Progress:==================>           63%] [Cov:=====================>             60%][Progress:====================>         68%] [Cov:=====================>             60%][Progress:====================>         68%] [Cov:=====================>             60%][Progress:====================>         68%] [Cov:=====================>             60%][Progress:====================>         68%] [Cov:=====================>             60%][Progress:====================>         68%] [Cov:=====================>             60%][Progress:====================>         68%] [Cov:=====================>             60%][Progress:====================>         68%] [Cov:=====================>             60%][Progress:=====================>        70%] [Cov:=====================>             60%][Progress:=====================>        70%] [Cov:=====================>             60%][Progress:=====================>        70%] [Cov:=====================>             60%][Progress:=====================>        70%] [Cov:=====================>             60%][Progress:=====================>        70%] [Cov:=====================>             60%][Progress:=====================>        70%] [Cov:=====================>             60%][Progress:=====================>        70%] [Cov:=====================>             60%][Progress:=====================>        70%] [Cov:=====================>             60%][Progress:=====================>        70%] [Cov:=====================>             60%][Progress:=====================>        70%] [Cov:=====================>             60%][Progress:=====================>        71%] [Cov:=====================>             60%][Progress:=====================>        71%] [Cov:=====================>             60%][Progress:=====================>        71%] [Cov:=====================>             60%][Progress:=====================>        71%] [Cov:=====================>             60%][Progress:=====================>        71%] [Cov:=====================>             60%][Progress:=====================>        71%] [Cov:=====================>             60%][Progress:=====================>        71%] [Cov:=====================>             60%][Progress:=====================>        71%] [Cov:=====================>             60%][Progress:=====================>        71%] [Cov:=====================>             60%][Progress:=====================>        71%] [Cov:=====================>             60%][Progress:=====================>        71%] [Cov:=====================>             60%][Progress:=====================>        73%] [Cov:=====================>             61%][Progress:=====================>        73%] [Cov:=====================>             61%][Progress:=====================>        73%] [Cov:=====================>             61%][Progress:======================>       75%] [Cov:=====================>             60%][Progress:======================>       76%] [Cov:=====================>             61%][Progress:=======================>      78%] [Cov:=====================>             61%][Progress:=======================>      78%] [Cov:=====================>             60%][Progress:=======================>      78%] [Cov:=====================>             60%][Progress:=======================>      78%] [Cov:=====================>             60%][Progress:=======================>      78%] [Cov:=====================>             60%][Progress:========================>     80%] [Cov:=====================>             60%][Progress:========================>     80%] [Cov:=====================>             60%][Progress:========================>     80%] [Cov:=====================>             60%][Progress:========================>     80%] [Cov:=====================>             60%][Progress:========================>     80%] [Cov:=====================>             60%][Progress:========================>     80%] [Cov:=====================>             60%][Progress:========================>     80%] [Cov:=====================>             60%][Progress:========================>     81%] [Cov:=====================>             61%][Progress:========================>     81%] [Cov:=====================>             61%][Progress:========================>     81%] [Cov:=====================>             61%][Progress:========================>     81%] [Cov:=====================>             61%][Progress:========================>     83%] [Cov:=====================>             61%][Progress:========================>     83%] [Cov:=====================>             61%][Progress:========================>     83%] [Cov:=====================>             60%][Progress:=========================>    86%] [Cov:=====================>             60%][Progress:=========================>    86%] [Cov:=====================>             60%][Progress:==========================>   88%] [Cov:=====================>             60%][Progress:==========================>   88%] [Cov:=====================>             60%][Progress:==========================>   88%] [Cov:=====================>             60%][Progress:==========================>   88%] [Cov:=====================>             60%][Progress:===========================>  90%] [Cov:=====================>             60%][Progress:===========================>  90%] [Cov:=====================>             60%][Progress:===========================>  90%] [Cov:=====================>             60%][Progress:===========================>  91%] [Cov:=====================>             60%][Progress:===========================>  91%] [Cov:=====================>             60%][Progress:===========================>  93%] [Cov:=====================>             60%][Progress:===========================>  93%] [Cov:=====================>             60%][Progress:===========================>  93%] [Cov:=====================>             60%][Progress:===========================>  93%] [Cov:=====================>             60%][Progress:===========================>  93%] [Cov:=====================>             60%][Progress:===========================>  93%] [Cov:=====================>             60%][Progress:===========================>  93%] [Cov:=====================>             60%][Progress:===========================>  93%] [Cov:=====================>             60%][Progress:===========================>  93%] [Cov:=====================>             60%][Progress:============================> 95%] [Cov:=====================>             60%][Progress:============================> 95%] [Cov:=====================>             60%][Progress:============================> 95%] [Cov:=====================>             60%][Progress:============================> 95%] [Cov:=====================>             60%][Progress:============================> 95%] [Cov:=====================>             60%][Progress:============================> 95%] [Cov:=====================>             60%][Progress:============================> 95%] [Cov:=====================>             60%][Progress:============================> 96%] [Cov:=====================>             60%][Progress:============================> 96%] [Cov:=====================>             60%][Progress:============================> 96%] [Cov:=====================>             60%][Progress:============================> 96%] [Cov:=====================>             60%][Progress:=============================>98%] [Cov:=====================>             60%][Progress:=============================>98%] [Cov:=====================>             60%][Progress:=============================>98%] [Cov:=====================>             60%][Progress:=============================>98%] [Cov:=====================>             60%][Progress:=============================>98%] [Cov:=====================>             60%][Progress:=============================>98%] [Cov:=====================>             60%][Progress:=============================>98%] [Cov:=====================>             60%][Progress:=============================>98%] [Cov:=====================>             60%][Progress:==============================100%] [Cov:=====================>             60%][Progress:==============================100%] [Cov:=====================>             60%][Progress:==============================100%] [Cov:=====================>             60%][Progress:==============================100%] [Cov:=====================>             60%][Progress:==============================100%] [Cov:=====================>             60%][Progress:==============================100%] [Cov:=====================>             60%][Progress:==============================100%] [Cov:=====================>             60%]
+* Search finished after 61s and 294 generations, 143091 statements, best individual has fitness: 444.0
+* Minimizing test suite
+* Going to analyze the coverage criteria
+* Coverage analysis for criterion LINE
+* Coverage of criterion LINE: 73%
+* Total number of goals: 179
+* Number of covered goals: 131
+* Coverage analysis for criterion BRANCH
+* Coverage of criterion BRANCH: 62%
+* Total number of goals: 97
+* Number of covered goals: 60
+* Coverage analysis for criterion EXCEPTION
+* Coverage of criterion EXCEPTION: 100%
+* Total number of goals: 12
+* Number of covered goals: 12
+* Coverage analysis for criterion WEAKMUTATION
+* Coverage of criterion WEAKMUTATION: 63%
+* Total number of goals: 777
+* Number of covered goals: 487
+* Coverage analysis for criterion OUTPUT
+* Coverage of criterion OUTPUT: 50%
+* Total number of goals: 20
+* Number of covered goals: 10
+* Coverage analysis for criterion METHOD
+* Coverage of criterion METHOD: 58%
+* Total number of goals: 19
+* Number of covered goals: 11
+* Coverage analysis for criterion METHODNOEXCEPTION
+* Coverage of criterion METHODNOEXCEPTION: 58%
+* Total number of goals: 19
+* Number of covered goals: 11
+* Coverage analysis for criterion CBRANCH
+* Coverage of criterion CBRANCH: 62%
+* Total number of goals: 97
+* Number of covered goals: 60
+* Generated 40 tests with total length 145
+* Resulting test suite's coverage: 61% (average coverage for all fitness functions)
+* Generating assertions
+[MASTER] 05:17:21.501 [logback-2] ERROR TestRunnable - Suppressed/ignored exception during test case execution on class com.google.common.hash.Murmur3_32HashFunction: Java heap space
+java.lang.OutOfMemoryError: Java heap space
+	at java.util.Arrays.copyOfRange(Arrays.java:3664)
+	at java.lang.String.<init>(String.java:207)
+	at java.lang.StringBuilder.toString(StringBuilder.java:412)
+	at org.evosuite.assertion.InspectorTraceObserver.visit(InspectorTraceObserver.java:89)
+	at org.evosuite.assertion.AssertionTraceObserver.visitDependencies(AssertionTraceObserver.java:90)
+	at org.evosuite.assertion.AssertionTraceObserver.afterStatement(AssertionTraceObserver.java:165)
+	at org.evosuite.testcase.execution.TestRunnable.lambda$informObservers_after$1(TestRunnable.java:143)
+	at org.evosuite.testcase.execution.TestRunnable$$Lambda$29/1528054499.accept(Unknown Source)
+	at java.lang.Iterable.forEach(Iterable.java:75)
+	at org.evosuite.testcase.execution.TestRunnable.informObservers_after(TestRunnable.java:143)
+	at org.evosuite.testcase.execution.TestRunnable.executeStatements(TestRunnable.java:341)
+	at org.evosuite.testcase.execution.TestRunnable.call(TestRunnable.java:192)
+	at org.evosuite.testcase.execution.TestRunnable.call(TestRunnable.java:49)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+[MASTER] 05:18:15.957 [logback-1] WARN  SimpleMutationAssertionGenerator - Reached maximum time to generate assertions, aborting assertion generation
+* Resulting test suite's mutation score: 6%
+* Compiling and checking tests
+[MASTER] 05:18:17.009 [logback-2] ERROR JUnitAnalyzer - Compilation failed on compilation units: [RegularFileObject[/tmp/EvoSuite_20_1729700296978/com/google/common/hash/Murmur3_32HashFunction_20_tmp__ESTest.java], RegularFileObject[/tmp/EvoSuite_20_1729700296978/com/google/common/hash/Murmur3_32HashFunction_20_tmp__ESTest_scaffolding.java]]
+[MASTER] 05:18:17.009 [logback-2] ERROR JUnitAnalyzer - Classpath: /home/wtwhite/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/guava/guava/31.0.1-jre/guava-31.0.1-jre.jar:t/dependency/checker-qual-3.12.0.jar:t/dependency/error_prone_annotations-2.7.1.jar:t/dependency/failureaccess-1.0.1.jar:t/dependency/j2objc-annotations-1.3.jar:t/dependency/jsr305-3.0.2.jar:t/dependency/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/home/wtwhite/code/regression-test-generation/evosuite/evosuite-1.2.0.jar:/home/wtwhite/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/guava/guava/31.0.1-jre/guava-31.0.1-jre.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/checker-qual-3.12.0.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/error_prone_annotations-2.7.1.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/failureaccess-1.0.1.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/j2objc-annotations-1.3.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/jsr305-3.0.2.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar
+[MASTER] 05:18:17.009 [logback-2] ERROR JUnitAnalyzer - evosuiteCP: /home/wtwhite/code/regression-test-generation/evosuite/evosuite-1.2.0.jar:/home/wtwhite/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/guava/guava/31.0.1-jre/guava-31.0.1-jre.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/checker-qual-3.12.0.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/error_prone_annotations-2.7.1.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/failureaccess-1.0.1.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/j2objc-annotations-1.3.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/jsr305-3.0.2.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar
+[MASTER] 05:18:17.015 [logback-2] ERROR JUnitAnalyzer - Diagnostic: incompatible types: com.google.common.hash.FarmHashFingerprint64 cannot be converted to com.google.common.hash.Murmur3_32HashFunction: 25
+[MASTER] 05:18:17.017 [logback-2] ERROR JUnitAnalyzer - RegularFileObject[/tmp/EvoSuite_20_1729700296978/com/google/common/hash/Murmur3_32HashFunction_20_tmp__ESTest.java]
+1: /*
+2:  * This file was automatically generated by EvoSuite
+3:  * Wed Oct 23 16:18:16 GMT 2024
+4:  */
+5: 
+6: package com.google.common.hash;
+7: 
+8: import org.junit.Test;
+9: import static org.junit.Assert.*;
+10: import static org.evosuite.runtime.EvoAssertions.*;
+11: import com.google.common.hash.FarmHashFingerprint64;
+12: import com.google.common.hash.Murmur3_32HashFunction;
+13: import org.evosuite.runtime.EvoRunner;
+14: import org.evosuite.runtime.EvoRunnerParameters;
+15: import org.junit.runner.RunWith;
+16: 
+17: @RunWith(EvoRunner.class) @EvoRunnerParameters(mockJVMNonDeterminism = true, useVFS = true, useVNET = true, resetStaticState = true) 
+18: public class Murmur3_32HashFunction_20_tmp__ESTest extends Murmur3_32HashFunction_20_tmp__ESTest_scaffolding {
+19: 
+20:   @Test(timeout = 4000)
+21:   public void test0()  throws Throwable  {
+22:       FarmHashFingerprint64 farmHashFingerprint64_0 = new FarmHashFingerprint64();
+23:       // Undeclared exception!
+24:       try { 
+25:         ((Murmur3_32HashFunction) farmHashFingerprint64_0).hashLong(104);
+26:         fail("Expecting exception: IllegalArgumentException");
+27:       
+28:       } catch(IllegalArgumentException e) {
+29:       }
+30:   }
+31: }
+RegularFileObject[/tmp/EvoSuite_20_1729700296978/com/google/common/hash/Murmur3_32HashFunction_20_tmp__ESTest.java]
+1: /**
+2:  * Scaffolding file used to store all the setups needed to run 
+3:  * tests automatically generated by EvoSuite
+4:  * Wed Oct 23 16:18:16 GMT 2024
+5:  */
+6: 
+7: package com.google.common.hash;
+8: 
+9: import org.evosuite.runtime.annotation.EvoSuiteClassExclude;
+10: import org.junit.BeforeClass;
+11: import org.junit.Before;
+12: import org.junit.After;
+13: import org.junit.AfterClass;
+14: import org.evosuite.runtime.sandbox.Sandbox;
+15: import org.evosuite.runtime.sandbox.Sandbox.SandboxMode;
+16: 
+17: @EvoSuiteClassExclude
+18: public class Murmur3_32HashFunction_20_tmp__ESTest_scaffolding {
+19: 
+20:   @org.junit.Rule
+21:   public org.evosuite.runtime.vnet.NonFunctionalRequirementRule nfr = new org.evosuite.runtime.vnet.NonFunctionalRequirementRule();
+22: 
+23:   private static final java.util.Properties defaultProperties = (java.util.Properties) java.lang.System.getProperties().clone(); 
+24: 
+25:   private org.evosuite.runtime.thread.ThreadStopper threadStopper =  new org.evosuite.runtime.thread.ThreadStopper (org.evosuite.runtime.thread.KillSwitchHandler.getInstance(), 3000);
+26: 
+27: 
+28:   @BeforeClass
+29:   public static void initEvoSuiteFramework() { 
+30:     org.evosuite.runtime.RuntimeSettings.className = "com.google.common.hash.Murmur3_32HashFunction"; 
+31:     org.evosuite.runtime.GuiSupport.initialize(); 
+32:     org.evosuite.runtime.RuntimeSettings.maxNumberOfThreads = 100; 
+33:     org.evosuite.runtime.RuntimeSettings.maxNumberOfIterationsPerLoop = 10000; 
+34:     org.evosuite.runtime.RuntimeSettings.mockSystemIn = true; 
+35:     org.evosuite.runtime.RuntimeSettings.sandboxMode = org.evosuite.runtime.sandbox.Sandbox.SandboxMode.RECOMMENDED; 
+36:     org.evosuite.runtime.sandbox.Sandbox.initializeSecurityManagerForSUT(); 
+37:     org.evosuite.runtime.classhandling.JDKClassResetter.init();
+38:     setSystemProperties();
+39:     initializeClasses();
+40:     org.evosuite.runtime.Runtime.getInstance().resetRuntime(); 
+41:   } 
+42: 
+43:   @AfterClass
+44:   public static void clearEvoSuiteFramework(){ 
+45:     Sandbox.resetDefaultSecurityManager(); 
+46:     java.lang.System.setProperties((java.util.Properties) defaultProperties.clone()); 
+47:   } 
+48: 
+49:   @Before
+50:   public void initTestCase(){ 
+51:     threadStopper.storeCurrentThreads();
+52:     threadStopper.startRecordingTime();
+53:     org.evosuite.runtime.jvm.ShutdownHookHandler.getInstance().initHandler(); 
+54:     org.evosuite.runtime.sandbox.Sandbox.goingToExecuteSUTCode(); 
+55:     setSystemProperties(); 
+56:     org.evosuite.runtime.GuiSupport.setHeadless(); 
+57:     org.evosuite.runtime.Runtime.getInstance().resetRuntime(); 
+58:     org.evosuite.runtime.agent.InstrumentingAgent.activate(); 
+59:   } 
+60: 
+61:   @After
+62:   public void doneWithTestCase(){ 
+63:     threadStopper.killAndJoinClientThreads();
+64:     org.evosuite.runtime.jvm.ShutdownHookHandler.getInstance().safeExecuteAddedHooks(); 
+65:     org.evosuite.runtime.classhandling.JDKClassResetter.reset(); 
+66:     resetClasses(); 
+67:     org.evosuite.runtime.sandbox.Sandbox.doneWithExecutingSUTCode(); 
+68:     org.evosuite.runtime.agent.InstrumentingAgent.deactivate(); 
+69:     org.evosuite.runtime.GuiSupport.restoreHeadlessMode(); 
+70:   } 
+71: 
+72:   public static void setSystemProperties() {
+73:  
+74:     java.lang.System.setProperties((java.util.Properties) defaultProperties.clone()); 
+75:     java.lang.System.setProperty("user.dir", "/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre"); 
+76:     java.lang.System.setProperty("java.io.tmpdir", "/tmp"); 
+77:   }
+78: 
+79:   private static void initializeClasses() {
+80:     org.evosuite.runtime.classhandling.ClassStateSupport.initializeClasses(Murmur3_32HashFunction_20_tmp__ESTest_scaffolding.class.getClassLoader() ,
+81:       "com.google.common.hash.HashCode$LongHashCode",
+82:       "com.google.common.hash.SipHashFunction",
+83:       "com.google.common.hash.Crc32cHashFunction",
+84:       "com.google.common.hash.Hashing",
+85:       "com.google.common.hash.BloomFilterStrategies",
+86:       "com.google.common.hash.Murmur3_32HashFunction",
+87:       "com.google.common.hash.BloomFilter$Strategy",
+88:       "com.google.common.base.Strings",
+89:       "com.google.common.hash.BloomFilterStrategies$1",
+90:       "com.google.common.hash.AbstractHashFunction",
+91:       "com.google.common.hash.Murmur3_128HashFunction",
+92:       "com.google.common.hash.BloomFilterStrategies$2",
+93:       "com.google.common.hash.AbstractNonStreamingHashFunction",
+94:       "com.google.errorprone.annotations.Immutable",
+95:       "com.google.common.hash.PrimitiveSink",
+96:       "com.google.common.hash.Hasher",
+97:       "com.google.common.base.Converter",
+98:       "com.google.common.primitives.IntsMethodsForWeb",
+99:       "com.google.common.primitives.UnsignedBytes",
+100:       "com.google.common.base.Charsets",
+101:       "com.google.common.hash.Murmur3_32HashFunction$Murmur3_32Hasher",
+102:       "com.google.common.base.Function",
+103:       "com.google.common.hash.HashCode",
+104:       "com.google.common.primitives.Ints",
+105:       "com.google.common.hash.HashCode$IntHashCode",
+106:       "com.google.common.hash.HashCode$BytesHashCode",
+107:       "com.google.common.primitives.Ints$IntConverter",
+108:       "com.google.common.hash.FarmHashFingerprint64",
+109:       "com.google.common.hash.Funnel",
+110:       "com.google.common.hash.AbstractHasher",
+111:       "com.google.common.hash.ElementTypesAreNonnullByDefault",
+112:       "com.google.common.base.Preconditions",
+113:       "com.google.common.hash.HashFunction"
+114:     );
+115:   } 
+116: 
+117:   private static void resetClasses() {
+118:     org.evosuite.runtime.classhandling.ClassResetter.getInstance().setClassLoader(Murmur3_32HashFunction_20_tmp__ESTest_scaffolding.class.getClassLoader()); 
+119: 
+120:     org.evosuite.runtime.classhandling.ClassStateSupport.resetClasses(
+121:       "com.google.common.hash.AbstractHashFunction",
+122:       "com.google.common.hash.Hashing",
+123:       "com.google.common.hash.Murmur3_32HashFunction",
+124:       "com.google.common.hash.AbstractHasher",
+125:       "com.google.common.hash.Murmur3_32HashFunction$Murmur3_32Hasher",
+126:       "com.google.common.base.Charsets",
+127:       "com.google.common.hash.HashCode",
+128:       "com.google.common.hash.HashCode$IntHashCode",
+129:       "com.google.common.hash.BloomFilterStrategies",
+130:       "com.google.common.base.Preconditions",
+131:       "com.google.common.base.Strings",
+132:       "com.google.common.primitives.IntsMethodsForWeb",
+133:       "com.google.common.primitives.Ints",
+134:       "com.google.common.primitives.UnsignedBytes",
+135:       "com.google.common.hash.BloomFilterStrategies$LockFreeBitArray",
+136:       "com.google.common.math.LongMath",
+137:       "com.google.common.math.LongMath$1",
+138:       "com.google.common.hash.Striped64$1",
+139:       "com.google.common.hash.Striped64",
+140:       "com.google.common.hash.LongAdder",
+141:       "com.google.common.hash.LongAddables$1",
+142:       "com.google.common.hash.LongAddables",
+143:       "com.google.common.hash.Murmur3_128HashFunction",
+144:       "com.google.common.hash.AbstractStreamingHasher",
+145:       "com.google.common.hash.Murmur3_128HashFunction$Murmur3_128Hasher",
+146:       "com.google.common.hash.Java8Compatibility",
+147:       "com.google.common.hash.HashCode$BytesHashCode",
+148:       "com.google.common.primitives.Longs",
+149:       "com.google.common.hash.SipHashFunction",
+150:       "com.google.common.hash.MacHashFunction",
+151:       "com.google.common.hash.AbstractNonStreamingHashFunction",
+152:       "com.google.common.hash.FarmHashFingerprint64",
+153:       "com.google.common.hash.MessageDigestHashFunction",
+154:       "com.google.common.hash.Crc32cHashFunction",
+155:       "com.google.common.hash.SipHashFunction$SipHasher",
+156:       "com.google.common.hash.HashCode$LongHashCode",
+157:       "com.google.common.hash.LittleEndianByteArray$JavaLittleEndianBytes",
+158:       "com.google.common.hash.LittleEndianByteArray$UnsafeByteArray$3",
+159:       "com.google.common.hash.LittleEndianByteArray$UnsafeByteArray",
+160:       "com.google.common.hash.LittleEndianByteArray",
+161:       "com.google.common.hash.Crc32cHashFunction$Crc32cHasher",
+162:       "com.google.common.hash.AbstractNonStreamingHashFunction$BufferingHasher",
+163:       "com.google.common.hash.AbstractNonStreamingHashFunction$ExposedByteArrayOutputStream"
+164:     );
+165:   }
+166: }
+
+[MASTER] 05:18:17.017 [logback-2] ERROR JUnitAnalyzer - Failed to compile test case:
+FarmHashFingerprint64 farmHashFingerprint64_0 = new FarmHashFingerprint64();
+((Murmur3_32HashFunction) farmHashFingerprint64_0).hashLong(104);
+
+[MASTER] 05:18:17.041 [logback-2] ERROR JUnitAnalyzer - Compilation failed on compilation units: [RegularFileObject[/tmp/EvoSuite_21_1729700297019/com/google/common/hash/Murmur3_32HashFunction_21_tmp__ESTest.java], RegularFileObject[/tmp/EvoSuite_21_1729700297019/com/google/common/hash/Murmur3_32HashFunction_21_tmp__ESTest_scaffolding.java]]
+[MASTER] 05:18:17.041 [logback-2] ERROR JUnitAnalyzer - Classpath: /home/wtwhite/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/guava/guava/31.0.1-jre/guava-31.0.1-jre.jar:t/dependency/checker-qual-3.12.0.jar:t/dependency/error_prone_annotations-2.7.1.jar:t/dependency/failureaccess-1.0.1.jar:t/dependency/j2objc-annotations-1.3.jar:t/dependency/jsr305-3.0.2.jar:t/dependency/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/home/wtwhite/code/regression-test-generation/evosuite/evosuite-1.2.0.jar:/home/wtwhite/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/guava/guava/31.0.1-jre/guava-31.0.1-jre.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/checker-qual-3.12.0.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/error_prone_annotations-2.7.1.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/failureaccess-1.0.1.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/j2objc-annotations-1.3.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/jsr305-3.0.2.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar
+[MASTER] 05:18:17.041 [logback-2] ERROR JUnitAnalyzer - evosuiteCP: /home/wtwhite/code/regression-test-generation/evosuite/evosuite-1.2.0.jar:/home/wtwhite/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/guava/guava/31.0.1-jre/guava-31.0.1-jre.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/checker-qual-3.12.0.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/error_prone_annotations-2.7.1.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/failureaccess-1.0.1.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/j2objc-annotations-1.3.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/jsr305-3.0.2.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar
+[MASTER] 05:18:17.041 [logback-2] ERROR JUnitAnalyzer - Diagnostic: incompatible types: com.google.common.hash.Crc32cHashFunction cannot be converted to com.google.common.hash.Murmur3_32HashFunction: 27
+[MASTER] 05:18:17.042 [logback-2] ERROR JUnitAnalyzer - RegularFileObject[/tmp/EvoSuite_21_1729700297019/com/google/common/hash/Murmur3_32HashFunction_21_tmp__ESTest.java]
+1: /*
+2:  * This file was automatically generated by EvoSuite
+3:  * Wed Oct 23 16:18:17 GMT 2024
+4:  */
+5: 
+6: package com.google.common.hash;
+7: 
+8: import org.junit.Test;
+9: import static org.junit.Assert.*;
+10: import static org.evosuite.runtime.EvoAssertions.*;
+11: import com.google.common.hash.Crc32cHashFunction;
+12: import com.google.common.hash.Murmur3_32HashFunction;
+13: import java.nio.charset.Charset;
+14: import org.evosuite.runtime.EvoRunner;
+15: import org.evosuite.runtime.EvoRunnerParameters;
+16: import org.junit.runner.RunWith;
+17: 
+18: @RunWith(EvoRunner.class) @EvoRunnerParameters(mockJVMNonDeterminism = true, useVFS = true, useVNET = true, resetStaticState = true) 
+19: public class Murmur3_32HashFunction_21_tmp__ESTest extends Murmur3_32HashFunction_21_tmp__ESTest_scaffolding {
+20: 
+21:   @Test(timeout = 4000)
+22:   public void test0()  throws Throwable  {
+23:       Charset charset0 = Charset.defaultCharset();
+24:       Crc32cHashFunction crc32cHashFunction0 = new Crc32cHashFunction();
+25:       // Undeclared exception!
+26:       try { 
+27:         ((Murmur3_32HashFunction) crc32cHashFunction0).hashString("Hashing.murmur3_32(839877416)", charset0);
+28:         fail("Expecting exception: IllegalArgumentException");
+29:       
+30:       } catch(IllegalArgumentException e) {
+31:       }
+32:   }
+33: }
+RegularFileObject[/tmp/EvoSuite_21_1729700297019/com/google/common/hash/Murmur3_32HashFunction_21_tmp__ESTest.java]
+1: /**
+2:  * Scaffolding file used to store all the setups needed to run 
+3:  * tests automatically generated by EvoSuite
+4:  * Wed Oct 23 16:18:17 GMT 2024
+5:  */
+6: 
+7: package com.google.common.hash;
+8: 
+9: import org.evosuite.runtime.annotation.EvoSuiteClassExclude;
+10: import org.junit.BeforeClass;
+11: import org.junit.Before;
+12: import org.junit.After;
+13: import org.junit.AfterClass;
+14: import org.evosuite.runtime.sandbox.Sandbox;
+15: import org.evosuite.runtime.sandbox.Sandbox.SandboxMode;
+16: 
+17: @EvoSuiteClassExclude
+18: public class Murmur3_32HashFunction_21_tmp__ESTest_scaffolding {
+19: 
+20:   @org.junit.Rule
+21:   public org.evosuite.runtime.vnet.NonFunctionalRequirementRule nfr = new org.evosuite.runtime.vnet.NonFunctionalRequirementRule();
+22: 
+23:   private static final java.util.Properties defaultProperties = (java.util.Properties) java.lang.System.getProperties().clone(); 
+24: 
+25:   private org.evosuite.runtime.thread.ThreadStopper threadStopper =  new org.evosuite.runtime.thread.ThreadStopper (org.evosuite.runtime.thread.KillSwitchHandler.getInstance(), 3000);
+26: 
+27: 
+28:   @BeforeClass
+29:   public static void initEvoSuiteFramework() { 
+30:     org.evosuite.runtime.RuntimeSettings.className = "com.google.common.hash.Murmur3_32HashFunction"; 
+31:     org.evosuite.runtime.GuiSupport.initialize(); 
+32:     org.evosuite.runtime.RuntimeSettings.maxNumberOfThreads = 100; 
+33:     org.evosuite.runtime.RuntimeSettings.maxNumberOfIterationsPerLoop = 10000; 
+34:     org.evosuite.runtime.RuntimeSettings.mockSystemIn = true; 
+35:     org.evosuite.runtime.RuntimeSettings.sandboxMode = org.evosuite.runtime.sandbox.Sandbox.SandboxMode.RECOMMENDED; 
+36:     org.evosuite.runtime.sandbox.Sandbox.initializeSecurityManagerForSUT(); 
+37:     org.evosuite.runtime.classhandling.JDKClassResetter.init();
+38:     setSystemProperties();
+39:     initializeClasses();
+40:     org.evosuite.runtime.Runtime.getInstance().resetRuntime(); 
+41:   } 
+42: 
+43:   @AfterClass
+44:   public static void clearEvoSuiteFramework(){ 
+45:     Sandbox.resetDefaultSecurityManager(); 
+46:     java.lang.System.setProperties((java.util.Properties) defaultProperties.clone()); 
+47:   } 
+48: 
+49:   @Before
+50:   public void initTestCase(){ 
+51:     threadStopper.storeCurrentThreads();
+52:     threadStopper.startRecordingTime();
+53:     org.evosuite.runtime.jvm.ShutdownHookHandler.getInstance().initHandler(); 
+54:     org.evosuite.runtime.sandbox.Sandbox.goingToExecuteSUTCode(); 
+55:     setSystemProperties(); 
+56:     org.evosuite.runtime.GuiSupport.setHeadless(); 
+57:     org.evosuite.runtime.Runtime.getInstance().resetRuntime(); 
+58:     org.evosuite.runtime.agent.InstrumentingAgent.activate(); 
+59:   } 
+60: 
+61:   @After
+62:   public void doneWithTestCase(){ 
+63:     threadStopper.killAndJoinClientThreads();
+64:     org.evosuite.runtime.jvm.ShutdownHookHandler.getInstance().safeExecuteAddedHooks(); 
+65:     org.evosuite.runtime.classhandling.JDKClassResetter.reset(); 
+66:     resetClasses(); 
+67:     org.evosuite.runtime.sandbox.Sandbox.doneWithExecutingSUTCode(); 
+68:     org.evosuite.runtime.agent.InstrumentingAgent.deactivate(); 
+69:     org.evosuite.runtime.GuiSupport.restoreHeadlessMode(); 
+70:   } 
+71: 
+72:   public static void setSystemProperties() {
+73:  
+74:     java.lang.System.setProperties((java.util.Properties) defaultProperties.clone()); 
+75:     java.lang.System.setProperty("user.dir", "/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre"); 
+76:     java.lang.System.setProperty("java.io.tmpdir", "/tmp"); 
+77:   }
+78: 
+79:   private static void initializeClasses() {
+80:     org.evosuite.runtime.classhandling.ClassStateSupport.initializeClasses(Murmur3_32HashFunction_21_tmp__ESTest_scaffolding.class.getClassLoader() ,
+81:       "com.google.common.hash.HashCode$LongHashCode",
+82:       "com.google.common.hash.SipHashFunction",
+83:       "com.google.common.hash.Crc32cHashFunction",
+84:       "com.google.common.hash.Hashing",
+85:       "com.google.common.hash.BloomFilterStrategies",
+86:       "com.google.common.hash.Murmur3_32HashFunction",
+87:       "com.google.common.hash.BloomFilter$Strategy",
+88:       "com.google.common.base.Strings",
+89:       "com.google.common.hash.BloomFilterStrategies$1",
+90:       "com.google.common.hash.AbstractHashFunction",
+91:       "com.google.common.hash.Murmur3_128HashFunction",
+92:       "com.google.common.hash.BloomFilterStrategies$2",
+93:       "com.google.common.hash.AbstractNonStreamingHashFunction",
+94:       "com.google.errorprone.annotations.Immutable",
+95:       "com.google.common.hash.PrimitiveSink",
+96:       "com.google.common.hash.Hasher",
+97:       "com.google.common.base.Converter",
+98:       "com.google.common.primitives.IntsMethodsForWeb",
+99:       "com.google.common.primitives.UnsignedBytes",
+100:       "com.google.common.base.Charsets",
+101:       "com.google.common.hash.Murmur3_32HashFunction$Murmur3_32Hasher",
+102:       "com.google.common.base.Function",
+103:       "com.google.common.hash.HashCode",
+104:       "com.google.common.primitives.Ints",
+105:       "com.google.common.hash.HashCode$IntHashCode",
+106:       "com.google.common.hash.HashCode$BytesHashCode",
+107:       "com.google.common.primitives.Ints$IntConverter",
+108:       "com.google.common.hash.FarmHashFingerprint64",
+109:       "com.google.common.hash.Funnel",
+110:       "com.google.common.hash.AbstractHasher",
+111:       "com.google.common.hash.ElementTypesAreNonnullByDefault",
+112:       "com.google.common.base.Preconditions",
+113:       "com.google.common.hash.HashFunction"
+114:     );
+115:   } 
+116: 
+117:   private static void resetClasses() {
+118:     org.evosuite.runtime.classhandling.ClassResetter.getInstance().setClassLoader(Murmur3_32HashFunction_21_tmp__ESTest_scaffolding.class.getClassLoader()); 
+119: 
+120:     org.evosuite.runtime.classhandling.ClassStateSupport.resetClasses(
+121:       "com.google.common.hash.AbstractHashFunction",
+122:       "com.google.common.hash.Hashing",
+123:       "com.google.common.hash.Murmur3_32HashFunction",
+124:       "com.google.common.hash.AbstractHasher",
+125:       "com.google.common.hash.Murmur3_32HashFunction$Murmur3_32Hasher",
+126:       "com.google.common.base.Charsets",
+127:       "com.google.common.hash.HashCode",
+128:       "com.google.common.hash.HashCode$IntHashCode",
+129:       "com.google.common.hash.BloomFilterStrategies",
+130:       "com.google.common.base.Preconditions",
+131:       "com.google.common.base.Strings",
+132:       "com.google.common.primitives.IntsMethodsForWeb",
+133:       "com.google.common.primitives.Ints",
+134:       "com.google.common.primitives.UnsignedBytes",
+135:       "com.google.common.hash.BloomFilterStrategies$LockFreeBitArray",
+136:       "com.google.common.math.LongMath",
+137:       "com.google.common.math.LongMath$1",
+138:       "com.google.common.hash.Striped64$1",
+139:       "com.google.common.hash.Striped64",
+140:       "com.google.common.hash.LongAdder",
+141:       "com.google.common.hash.LongAddables$1",
+142:       "com.google.common.hash.LongAddables",
+143:       "com.google.common.hash.Murmur3_128HashFunction",
+144:       "com.google.common.hash.AbstractStreamingHasher",
+145:       "com.google.common.hash.Murmur3_128HashFunction$Murmur3_128Hasher",
+146:       "com.google.common.hash.Java8Compatibility",
+147:       "com.google.common.hash.HashCode$BytesHashCode",
+148:       "com.google.common.primitives.Longs",
+149:       "com.google.common.hash.SipHashFunction",
+150:       "com.google.common.hash.MacHashFunction",
+151:       "com.google.common.hash.AbstractNonStreamingHashFunction",
+152:       "com.google.common.hash.FarmHashFingerprint64",
+153:       "com.google.common.hash.MessageDigestHashFunction",
+154:       "com.google.common.hash.Crc32cHashFunction",
+155:       "com.google.common.hash.SipHashFunction$SipHasher",
+156:       "com.google.common.hash.HashCode$LongHashCode",
+157:       "com.google.common.hash.LittleEndianByteArray$JavaLittleEndianBytes",
+158:       "com.google.common.hash.LittleEndianByteArray$UnsafeByteArray$3",
+159:       "com.google.common.hash.LittleEndianByteArray$UnsafeByteArray",
+160:       "com.google.common.hash.LittleEndianByteArray",
+161:       "com.google.common.hash.Crc32cHashFunction$Crc32cHasher",
+162:       "com.google.common.hash.AbstractNonStreamingHashFunction$BufferingHasher",
+163:       "com.google.common.hash.AbstractNonStreamingHashFunction$ExposedByteArrayOutputStream"
+164:     );
+165:   }
+166: }
+
+[MASTER] 05:18:17.042 [logback-2] ERROR JUnitAnalyzer - Failed to compile test case:
+Charset charset0 = Charset.defaultCharset();
+Crc32cHashFunction crc32cHashFunction0 = new Crc32cHashFunction();
+((Murmur3_32HashFunction) crc32cHashFunction0).hashString("Hashing.murmur3_32(839877416)", charset0);
+
+[MASTER] 05:18:18.541 [logback-2] ERROR JUnitAnalyzer - Compilation failed on compilation units: [RegularFileObject[/tmp/EvoSuite_24_1729700298528/com/google/common/hash/Murmur3_32HashFunction_24_tmp__ESTest.java], RegularFileObject[/tmp/EvoSuite_24_1729700298528/com/google/common/hash/Murmur3_32HashFunction_24_tmp__ESTest_scaffolding.java]]
+[MASTER] 05:18:18.541 [logback-2] ERROR JUnitAnalyzer - Classpath: /home/wtwhite/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/guava/guava/31.0.1-jre/guava-31.0.1-jre.jar:t/dependency/checker-qual-3.12.0.jar:t/dependency/error_prone_annotations-2.7.1.jar:t/dependency/failureaccess-1.0.1.jar:t/dependency/j2objc-annotations-1.3.jar:t/dependency/jsr305-3.0.2.jar:t/dependency/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/home/wtwhite/code/regression-test-generation/evosuite/evosuite-1.2.0.jar:/home/wtwhite/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/guava/guava/31.0.1-jre/guava-31.0.1-jre.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/checker-qual-3.12.0.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/error_prone_annotations-2.7.1.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/failureaccess-1.0.1.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/j2objc-annotations-1.3.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/jsr305-3.0.2.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar
+[MASTER] 05:18:18.541 [logback-2] ERROR JUnitAnalyzer - evosuiteCP: /home/wtwhite/code/regression-test-generation/evosuite/evosuite-1.2.0.jar:/home/wtwhite/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/guava/guava/31.0.1-jre/guava-31.0.1-jre.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/checker-qual-3.12.0.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/error_prone_annotations-2.7.1.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/failureaccess-1.0.1.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/j2objc-annotations-1.3.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/jsr305-3.0.2.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar
+[MASTER] 05:18:18.541 [logback-2] ERROR JUnitAnalyzer - Diagnostic: incompatible types: com.google.common.hash.FarmHashFingerprint64 cannot be converted to com.google.common.hash.Murmur3_32HashFunction: 25
+[MASTER] 05:18:18.541 [logback-2] ERROR JUnitAnalyzer - RegularFileObject[/tmp/EvoSuite_24_1729700298528/com/google/common/hash/Murmur3_32HashFunction_24_tmp__ESTest.java]
+1: /*
+2:  * This file was automatically generated by EvoSuite
+3:  * Wed Oct 23 16:18:18 GMT 2024
+4:  */
+5: 
+6: package com.google.common.hash;
+7: 
+8: import org.junit.Test;
+9: import static org.junit.Assert.*;
+10: import static org.evosuite.runtime.EvoAssertions.*;
+11: import com.google.common.hash.FarmHashFingerprint64;
+12: import com.google.common.hash.Murmur3_32HashFunction;
+13: import org.evosuite.runtime.EvoRunner;
+14: import org.evosuite.runtime.EvoRunnerParameters;
+15: import org.junit.runner.RunWith;
+16: 
+17: @RunWith(EvoRunner.class) @EvoRunnerParameters(mockJVMNonDeterminism = true, useVFS = true, useVNET = true, resetStaticState = true) 
+18: public class Murmur3_32HashFunction_24_tmp__ESTest extends Murmur3_32HashFunction_24_tmp__ESTest_scaffolding {
+19: 
+20:   @Test(timeout = 4000)
+21:   public void test0()  throws Throwable  {
+22:       FarmHashFingerprint64 farmHashFingerprint64_0 = new FarmHashFingerprint64();
+23:       // Undeclared exception!
+24:       try { 
+25:         ((Murmur3_32HashFunction) farmHashFingerprint64_0).hashUnencodedChars("Hashing.murmur3_32(0)");
+26:         fail("Expecting exception: IllegalArgumentException");
+27:       
+28:       } catch(IllegalArgumentException e) {
+29:       }
+30:   }
+31: }
+RegularFileObject[/tmp/EvoSuite_24_1729700298528/com/google/common/hash/Murmur3_32HashFunction_24_tmp__ESTest.java]
+1: /**
+2:  * Scaffolding file used to store all the setups needed to run 
+3:  * tests automatically generated by EvoSuite
+4:  * Wed Oct 23 16:18:18 GMT 2024
+5:  */
+6: 
+7: package com.google.common.hash;
+8: 
+9: import org.evosuite.runtime.annotation.EvoSuiteClassExclude;
+10: import org.junit.BeforeClass;
+11: import org.junit.Before;
+12: import org.junit.After;
+13: import org.junit.AfterClass;
+14: import org.evosuite.runtime.sandbox.Sandbox;
+15: import org.evosuite.runtime.sandbox.Sandbox.SandboxMode;
+16: 
+17: @EvoSuiteClassExclude
+18: public class Murmur3_32HashFunction_24_tmp__ESTest_scaffolding {
+19: 
+20:   @org.junit.Rule
+21:   public org.evosuite.runtime.vnet.NonFunctionalRequirementRule nfr = new org.evosuite.runtime.vnet.NonFunctionalRequirementRule();
+22: 
+23:   private static final java.util.Properties defaultProperties = (java.util.Properties) java.lang.System.getProperties().clone(); 
+24: 
+25:   private org.evosuite.runtime.thread.ThreadStopper threadStopper =  new org.evosuite.runtime.thread.ThreadStopper (org.evosuite.runtime.thread.KillSwitchHandler.getInstance(), 3000);
+26: 
+27: 
+28:   @BeforeClass
+29:   public static void initEvoSuiteFramework() { 
+30:     org.evosuite.runtime.RuntimeSettings.className = "com.google.common.hash.Murmur3_32HashFunction"; 
+31:     org.evosuite.runtime.GuiSupport.initialize(); 
+32:     org.evosuite.runtime.RuntimeSettings.maxNumberOfThreads = 100; 
+33:     org.evosuite.runtime.RuntimeSettings.maxNumberOfIterationsPerLoop = 10000; 
+34:     org.evosuite.runtime.RuntimeSettings.mockSystemIn = true; 
+35:     org.evosuite.runtime.RuntimeSettings.sandboxMode = org.evosuite.runtime.sandbox.Sandbox.SandboxMode.RECOMMENDED; 
+36:     org.evosuite.runtime.sandbox.Sandbox.initializeSecurityManagerForSUT(); 
+37:     org.evosuite.runtime.classhandling.JDKClassResetter.init();
+38:     setSystemProperties();
+39:     initializeClasses();
+40:     org.evosuite.runtime.Runtime.getInstance().resetRuntime(); 
+41:   } 
+42: 
+43:   @AfterClass
+44:   public static void clearEvoSuiteFramework(){ 
+45:     Sandbox.resetDefaultSecurityManager(); 
+46:     java.lang.System.setProperties((java.util.Properties) defaultProperties.clone()); 
+47:   } 
+48: 
+49:   @Before
+50:   public void initTestCase(){ 
+51:     threadStopper.storeCurrentThreads();
+52:     threadStopper.startRecordingTime();
+53:     org.evosuite.runtime.jvm.ShutdownHookHandler.getInstance().initHandler(); 
+54:     org.evosuite.runtime.sandbox.Sandbox.goingToExecuteSUTCode(); 
+55:     setSystemProperties(); 
+56:     org.evosuite.runtime.GuiSupport.setHeadless(); 
+57:     org.evosuite.runtime.Runtime.getInstance().resetRuntime(); 
+58:     org.evosuite.runtime.agent.InstrumentingAgent.activate(); 
+59:   } 
+60: 
+61:   @After
+62:   public void doneWithTestCase(){ 
+63:     threadStopper.killAndJoinClientThreads();
+64:     org.evosuite.runtime.jvm.ShutdownHookHandler.getInstance().safeExecuteAddedHooks(); 
+65:     org.evosuite.runtime.classhandling.JDKClassResetter.reset(); 
+66:     resetClasses(); 
+67:     org.evosuite.runtime.sandbox.Sandbox.doneWithExecutingSUTCode(); 
+68:     org.evosuite.runtime.agent.InstrumentingAgent.deactivate(); 
+69:     org.evosuite.runtime.GuiSupport.restoreHeadlessMode(); 
+70:   } 
+71: 
+72:   public static void setSystemProperties() {
+73:  
+74:     java.lang.System.setProperties((java.util.Properties) defaultProperties.clone()); 
+75:     java.lang.System.setProperty("user.dir", "/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre"); 
+76:     java.lang.System.setProperty("java.io.tmpdir", "/tmp"); 
+77:   }
+78: 
+79:   private static void initializeClasses() {
+80:     org.evosuite.runtime.classhandling.ClassStateSupport.initializeClasses(Murmur3_32HashFunction_24_tmp__ESTest_scaffolding.class.getClassLoader() ,
+81:       "com.google.common.hash.HashCode$LongHashCode",
+82:       "com.google.common.hash.SipHashFunction",
+83:       "com.google.common.hash.Crc32cHashFunction",
+84:       "com.google.common.hash.Hashing",
+85:       "com.google.common.hash.BloomFilterStrategies",
+86:       "com.google.common.hash.Murmur3_32HashFunction",
+87:       "com.google.common.hash.BloomFilter$Strategy",
+88:       "com.google.common.base.Strings",
+89:       "com.google.common.hash.BloomFilterStrategies$1",
+90:       "com.google.common.hash.AbstractHashFunction",
+91:       "com.google.common.hash.Murmur3_128HashFunction",
+92:       "com.google.common.hash.BloomFilterStrategies$2",
+93:       "com.google.common.hash.AbstractNonStreamingHashFunction",
+94:       "com.google.errorprone.annotations.Immutable",
+95:       "com.google.common.hash.PrimitiveSink",
+96:       "com.google.common.hash.Hasher",
+97:       "com.google.common.base.Converter",
+98:       "com.google.common.primitives.IntsMethodsForWeb",
+99:       "com.google.common.primitives.UnsignedBytes",
+100:       "com.google.common.base.Charsets",
+101:       "com.google.common.hash.Murmur3_32HashFunction$Murmur3_32Hasher",
+102:       "com.google.common.base.Function",
+103:       "com.google.common.hash.HashCode",
+104:       "com.google.common.primitives.Ints",
+105:       "com.google.common.hash.HashCode$IntHashCode",
+106:       "com.google.common.hash.HashCode$BytesHashCode",
+107:       "com.google.common.primitives.Ints$IntConverter",
+108:       "com.google.common.hash.FarmHashFingerprint64",
+109:       "com.google.common.hash.Funnel",
+110:       "com.google.common.hash.AbstractHasher",
+111:       "com.google.common.hash.ElementTypesAreNonnullByDefault",
+112:       "com.google.common.base.Preconditions",
+113:       "com.google.common.hash.HashFunction"
+114:     );
+115:   } 
+116: 
+117:   private static void resetClasses() {
+118:     org.evosuite.runtime.classhandling.ClassResetter.getInstance().setClassLoader(Murmur3_32HashFunction_24_tmp__ESTest_scaffolding.class.getClassLoader()); 
+119: 
+120:     org.evosuite.runtime.classhandling.ClassStateSupport.resetClasses(
+121:       "com.google.common.hash.AbstractHashFunction",
+122:       "com.google.common.hash.Hashing",
+123:       "com.google.common.hash.Murmur3_32HashFunction",
+124:       "com.google.common.hash.AbstractHasher",
+125:       "com.google.common.hash.Murmur3_32HashFunction$Murmur3_32Hasher",
+126:       "com.google.common.base.Charsets",
+127:       "com.google.common.hash.HashCode",
+128:       "com.google.common.hash.HashCode$IntHashCode",
+129:       "com.google.common.hash.BloomFilterStrategies",
+130:       "com.google.common.base.Preconditions",
+131:       "com.google.common.base.Strings",
+132:       "com.google.common.primitives.IntsMethodsForWeb",
+133:       "com.google.common.primitives.Ints",
+134:       "com.google.common.primitives.UnsignedBytes",
+135:       "com.google.common.hash.BloomFilterStrategies$LockFreeBitArray",
+136:       "com.google.common.math.LongMath",
+137:       "com.google.common.math.LongMath$1",
+138:       "com.google.common.hash.Striped64$1",
+139:       "com.google.common.hash.Striped64",
+140:       "com.google.common.hash.LongAdder",
+141:       "com.google.common.hash.LongAddables$1",
+142:       "com.google.common.hash.LongAddables",
+143:       "com.google.common.hash.Murmur3_128HashFunction",
+144:       "com.google.common.hash.AbstractStreamingHasher",
+145:       "com.google.common.hash.Murmur3_128HashFunction$Murmur3_128Hasher",
+146:       "com.google.common.hash.Java8Compatibility",
+147:       "com.google.common.hash.HashCode$BytesHashCode",
+148:       "com.google.common.primitives.Longs",
+149:       "com.google.common.hash.SipHashFunction",
+150:       "com.google.common.hash.MacHashFunction",
+151:       "com.google.common.hash.AbstractNonStreamingHashFunction",
+152:       "com.google.common.hash.FarmHashFingerprint64",
+153:       "com.google.common.hash.MessageDigestHashFunction",
+154:       "com.google.common.hash.Crc32cHashFunction",
+155:       "com.google.common.hash.SipHashFunction$SipHasher",
+156:       "com.google.common.hash.HashCode$LongHashCode",
+157:       "com.google.common.hash.LittleEndianByteArray$JavaLittleEndianBytes",
+158:       "com.google.common.hash.LittleEndianByteArray$UnsafeByteArray$3",
+159:       "com.google.common.hash.LittleEndianByteArray$UnsafeByteArray",
+160:       "com.google.common.hash.LittleEndianByteArray",
+161:       "com.google.common.hash.Crc32cHashFunction$Crc32cHasher",
+162:       "com.google.common.hash.AbstractNonStreamingHashFunction$BufferingHasher",
+163:       "com.google.common.hash.AbstractNonStreamingHashFunction$ExposedByteArrayOutputStream"
+164:     );
+165:   }
+166: }
+
+[MASTER] 05:18:18.541 [logback-2] ERROR JUnitAnalyzer - Failed to compile test case:
+FarmHashFingerprint64 farmHashFingerprint64_0 = new FarmHashFingerprint64();
+((Murmur3_32HashFunction) farmHashFingerprint64_0).hashUnencodedChars("Hashing.murmur3_32(0)");
+
+[MASTER] 05:18:22.927 [logback-1] WARN  JUnitAnalyzer - Found unstable test named test0 -> class java.lang.AssertionError: Expecting exception: IllegalArgumentException
+[MASTER] 05:18:22.927 [logback-1] WARN  JUnitAnalyzer - Failing test:
+ SipHashFunction sipHashFunction0 = new SipHashFunction((byte)50, (byte)1, (byte)55, (byte)1);
+sipHashFunction0.newHasher();
+
+[MASTER] 05:18:22.977 [logback-1] WARN  JUnitAnalyzer - Found unstable test named test0 -> class java.lang.AssertionError: Expecting exception: IllegalArgumentException
+[MASTER] 05:18:22.978 [logback-1] WARN  JUnitAnalyzer - Failing test:
+ Murmur3_128HashFunction murmur3_128HashFunction0 = (Murmur3_128HashFunction)Murmur3_128HashFunction.GOOD_FAST_HASH_128;
+murmur3_128HashFunction0.toString();
+
+* Writing tests to file
+* Writing JUnit test case 'Murmur3_32HashFunction_ESTest' to evosuite-tests
+* Done!
+
+* Computation finished

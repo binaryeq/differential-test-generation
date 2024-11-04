@@ -1,0 +1,272 @@
+* EvoSuite 1.2.0
+* Going to generate test cases for class: com.google.common.util.concurrent.FuturesGetChecked
+* Starting Client-0
+* Connecting to master process on port 15771
+* Analyzing classpath: 
+  - /home/wtwhite/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/guava/guava/31.0.1-jre/guava-31.0.1-jre.jar
+  - t/dependency/checker-qual-3.12.0.jar
+  - t/dependency/error_prone_annotations-2.7.1.jar
+  - t/dependency/failureaccess-1.0.1.jar
+  - t/dependency/j2objc-annotations-1.3.jar
+  - t/dependency/jsr305-3.0.2.jar
+  - t/dependency/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar
+* Finished analyzing classpath
+* Generating tests for class com.google.common.util.concurrent.FuturesGetChecked
+* Test criteria:
+  - Line Coverage
+  - Branch Coverage
+  - Exception
+  - Mutation testing (weak)
+  - Method-Output Coverage
+  - Top-Level Method Coverage
+  - No-Exception Top-Level Method Coverage
+  - Context Branch Coverage
+* Total number of test goals for DYNAMOSA: 251
+* Using seed 1729705159940
+* Starting evolution
+[Progress:>                             0%] [Cov:>                                  0%]* Initial Number of Goals in DynaMOSA = 104 / 251
+[MASTER] 06:39:22.052 [logback-1] WARN  CastClassManager - Nothing is assignable after adding java.util.concurrent.CompletionStage<T> for wildcard ? extends java.util.concurrent.CompletionStage<java.lang.reflect.Constructor<java.lang.Object>>
+[MASTER] 06:39:22.084 [logback-1] WARN  CastClassManager - Nothing is assignable after adding java.util.concurrent.CompletionStage<T> for wildcard ? extends java.util.concurrent.CompletionStage<java.util.concurrent.CompletionStage<java.util.concurrent.CompletionStage<T>>>
+[MASTER] 06:39:22.311 [logback-1] WARN  CastClassManager - Nothing is assignable after adding java.util.concurrent.CompletionStage<T> for wildcard ? extends java.util.concurrent.CompletionStage<java.util.concurrent.CompletionStage<T>>
+[MASTER] 06:39:22.385 [logback-1] WARN  CastClassManager - Nothing is assignable after adding java.util.concurrent.CompletionStage<T> for wildcard ? extends java.util.concurrent.CompletionStage<java.util.concurrent.Delayed>
+[MASTER] 06:39:22.406 [logback-1] WARN  CastClassManager - Nothing is assignable after adding java.util.concurrent.CompletionStage<T> for wildcard ? extends java.util.concurrent.CompletionStage<java.lang.Exception>
+[Progress:===>                          10%] [Cov:======================>            63%][Progress:=========>                    31%] [Cov:=====================>             61%][MASTER] 06:39:47.011 [logback-1] WARN  CastClassManager - Nothing is assignable after adding java.util.concurrent.CompletionStage<T> for wildcard ? extends java.util.concurrent.CompletionStage<java.lang.Exception>
+[Progress:==================>           60%] [Cov:======================>            65%][MASTER] 06:40:06.538 [logback-1] WARN  TestCluster - Failed to check cache for java.util.concurrent.ForkJoinTask<V> : Type points to itself
+[Progress:===========================>  90%] [Cov:=======================>           67%][Progress:============================> 96%] [Cov:======================>            65%][Progress:==============================100%] [Cov:======================>            65%]
+* Search finished after 64s and 5 generations, 1321 statements, best individual has fitness: 99.0
+* Minimizing test suite
+* Going to analyze the coverage criteria
+* Coverage analysis for criterion LINE
+* Coverage of criterion LINE: 55%
+* Total number of goals: 80
+* Number of covered goals: 44
+* Coverage analysis for criterion BRANCH
+* Coverage of criterion BRANCH: 59%
+* Total number of goals: 41
+* Number of covered goals: 24
+* Coverage analysis for criterion EXCEPTION
+* Coverage of criterion EXCEPTION: 100%
+* Total number of goals: 5
+* Number of covered goals: 5
+* Coverage analysis for criterion WEAKMUTATION
+* Coverage of criterion WEAKMUTATION: 49%
+* Total number of goals: 59
+* Number of covered goals: 29
+* Coverage analysis for criterion OUTPUT
+* Coverage of criterion OUTPUT: 58%
+* Total number of goals: 12
+* Number of covered goals: 7
+* Coverage analysis for criterion METHOD
+* Coverage of criterion METHOD: 100%
+* Total number of goals: 9
+* Number of covered goals: 9
+* Coverage analysis for criterion METHODNOEXCEPTION
+* Coverage of criterion METHODNOEXCEPTION: 100%
+* Total number of goals: 9
+* Number of covered goals: 9
+* Coverage analysis for criterion CBRANCH
+* Coverage of criterion CBRANCH: 59%
+* Total number of goals: 41
+* Number of covered goals: 24
+* Generated 14 tests with total length 49
+* Resulting test suite's coverage: 65% (average coverage for all fitness functions)
+* Generating assertions
+* Resulting test suite's mutation score: 20%
+* Compiling and checking tests
+[MASTER] 06:40:33.276 [logback-2] ERROR JUnitAnalyzer - Compilation failed on compilation units: [RegularFileObject[/tmp/EvoSuite_13_1729705233257/com/google/common/util/concurrent/FuturesGetChecked_13_tmp__ESTest.java], RegularFileObject[/tmp/EvoSuite_13_1729705233257/com/google/common/util/concurrent/FuturesGetChecked_13_tmp__ESTest_scaffolding.java]]
+[MASTER] 06:40:33.276 [logback-2] ERROR JUnitAnalyzer - Classpath: /home/wtwhite/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/guava/guava/31.0.1-jre/guava-31.0.1-jre.jar:t/dependency/checker-qual-3.12.0.jar:t/dependency/error_prone_annotations-2.7.1.jar:t/dependency/failureaccess-1.0.1.jar:t/dependency/j2objc-annotations-1.3.jar:t/dependency/jsr305-3.0.2.jar:t/dependency/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/home/wtwhite/code/regression-test-generation/evosuite/evosuite-1.2.0.jar:/home/wtwhite/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/guava/guava/31.0.1-jre/guava-31.0.1-jre.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/checker-qual-3.12.0.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/error_prone_annotations-2.7.1.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/failureaccess-1.0.1.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/j2objc-annotations-1.3.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/jsr305-3.0.2.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar
+[MASTER] 06:40:33.276 [logback-2] ERROR JUnitAnalyzer - evosuiteCP: /home/wtwhite/code/regression-test-generation/evosuite/evosuite-1.2.0.jar:/home/wtwhite/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/guava/guava/31.0.1-jre/guava-31.0.1-jre.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/checker-qual-3.12.0.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/error_prone_annotations-2.7.1.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/failureaccess-1.0.1.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/j2objc-annotations-1.3.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/jsr305-3.0.2.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/t/dependency/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar
+[MASTER] 06:40:33.279 [logback-2] ERROR JUnitAnalyzer - Diagnostic: no suitable method found for validateClass(java.lang.Class<com.google.common.util.concurrent.FuturesGetChecked.GetCheckedTypeValidatorHolder.ClassValueValidator>)
+    method com.google.common.util.concurrent.FuturesGetChecked.GetCheckedTypeValidator.validateClass(java.lang.Class<? extends java.lang.Exception>) is not applicable
+      (argument mismatch; java.lang.Class<com.google.common.util.concurrent.FuturesGetChecked.GetCheckedTypeValidatorHolder.ClassValueValidator> cannot be converted to java.lang.Class<? extends java.lang.Exception>)
+    method com.google.common.util.concurrent.FuturesGetChecked.GetCheckedTypeValidatorHolder.ClassValueValidator.validateClass(java.lang.Class<? extends java.lang.Exception>) is not applicable
+      (argument mismatch; java.lang.Class<com.google.common.util.concurrent.FuturesGetChecked.GetCheckedTypeValidatorHolder.ClassValueValidator> cannot be converted to java.lang.Class<? extends java.lang.Exception>): 25
+[MASTER] 06:40:33.279 [logback-2] ERROR JUnitAnalyzer - RegularFileObject[/tmp/EvoSuite_13_1729705233257/com/google/common/util/concurrent/FuturesGetChecked_13_tmp__ESTest.java]
+1: /*
+2:  * This file was automatically generated by EvoSuite
+3:  * Wed Oct 23 17:40:33 GMT 2024
+4:  */
+5: 
+6: package com.google.common.util.concurrent;
+7: 
+8: import org.junit.Test;
+9: import static org.junit.Assert.*;
+10: import static org.evosuite.runtime.EvoAssertions.*;
+11: import com.google.common.util.concurrent.FuturesGetChecked;
+12: import org.evosuite.runtime.EvoRunner;
+13: import org.evosuite.runtime.EvoRunnerParameters;
+14: import org.junit.runner.RunWith;
+15: 
+16: @RunWith(EvoRunner.class) @EvoRunnerParameters(mockJVMNonDeterminism = true, useVFS = true, useVNET = true, resetStaticState = true) 
+17: public class FuturesGetChecked_13_tmp__ESTest extends FuturesGetChecked_13_tmp__ESTest_scaffolding {
+18: 
+19:   @Test(timeout = 4000)
+20:   public void test0()  throws Throwable  {
+21:       FuturesGetChecked.GetCheckedTypeValidatorHolder.ClassValueValidator futuresGetChecked_GetCheckedTypeValidatorHolder_ClassValueValidator0 = (FuturesGetChecked.GetCheckedTypeValidatorHolder.ClassValueValidator)FuturesGetChecked.GetCheckedTypeValidatorHolder.BEST_VALIDATOR;
+22:       Class<FuturesGetChecked.GetCheckedTypeValidatorHolder.ClassValueValidator> class0 = FuturesGetChecked.GetCheckedTypeValidatorHolder.ClassValueValidator.class;
+23:       // Undeclared exception!
+24:       try { 
+25:         futuresGetChecked_GetCheckedTypeValidatorHolder_ClassValueValidator0.validateClass(class0);
+26:         fail("Expecting exception: ClassCastException");
+27:       
+28:       } catch(ClassCastException e) {
+29:       }
+30:   }
+31: }
+RegularFileObject[/tmp/EvoSuite_13_1729705233257/com/google/common/util/concurrent/FuturesGetChecked_13_tmp__ESTest.java]
+1: /**
+2:  * Scaffolding file used to store all the setups needed to run 
+3:  * tests automatically generated by EvoSuite
+4:  * Wed Oct 23 17:40:33 GMT 2024
+5:  */
+6: 
+7: package com.google.common.util.concurrent;
+8: 
+9: import org.evosuite.runtime.annotation.EvoSuiteClassExclude;
+10: import org.junit.BeforeClass;
+11: import org.junit.Before;
+12: import org.junit.After;
+13: import org.junit.AfterClass;
+14: import org.evosuite.runtime.sandbox.Sandbox;
+15: import org.evosuite.runtime.sandbox.Sandbox.SandboxMode;
+16: 
+17: @EvoSuiteClassExclude
+18: public class FuturesGetChecked_13_tmp__ESTest_scaffolding {
+19: 
+20:   @org.junit.Rule
+21:   public org.evosuite.runtime.vnet.NonFunctionalRequirementRule nfr = new org.evosuite.runtime.vnet.NonFunctionalRequirementRule();
+22: 
+23:   private static final java.util.Properties defaultProperties = (java.util.Properties) java.lang.System.getProperties().clone(); 
+24: 
+25:   private org.evosuite.runtime.thread.ThreadStopper threadStopper =  new org.evosuite.runtime.thread.ThreadStopper (org.evosuite.runtime.thread.KillSwitchHandler.getInstance(), 3000);
+26: 
+27: 
+28:   @BeforeClass
+29:   public static void initEvoSuiteFramework() { 
+30:     org.evosuite.runtime.RuntimeSettings.className = "com.google.common.util.concurrent.FuturesGetChecked"; 
+31:     org.evosuite.runtime.GuiSupport.initialize(); 
+32:     org.evosuite.runtime.RuntimeSettings.maxNumberOfThreads = 100; 
+33:     org.evosuite.runtime.RuntimeSettings.maxNumberOfIterationsPerLoop = 10000; 
+34:     org.evosuite.runtime.RuntimeSettings.mockSystemIn = true; 
+35:     org.evosuite.runtime.RuntimeSettings.sandboxMode = org.evosuite.runtime.sandbox.Sandbox.SandboxMode.RECOMMENDED; 
+36:     org.evosuite.runtime.sandbox.Sandbox.initializeSecurityManagerForSUT(); 
+37:     org.evosuite.runtime.classhandling.JDKClassResetter.init();
+38:     setSystemProperties();
+39:     initializeClasses();
+40:     org.evosuite.runtime.Runtime.getInstance().resetRuntime(); 
+41:   } 
+42: 
+43:   @AfterClass
+44:   public static void clearEvoSuiteFramework(){ 
+45:     Sandbox.resetDefaultSecurityManager(); 
+46:     java.lang.System.setProperties((java.util.Properties) defaultProperties.clone()); 
+47:   } 
+48: 
+49:   @Before
+50:   public void initTestCase(){ 
+51:     threadStopper.storeCurrentThreads();
+52:     threadStopper.startRecordingTime();
+53:     org.evosuite.runtime.jvm.ShutdownHookHandler.getInstance().initHandler(); 
+54:     org.evosuite.runtime.sandbox.Sandbox.goingToExecuteSUTCode(); 
+55:     setSystemProperties(); 
+56:     org.evosuite.runtime.GuiSupport.setHeadless(); 
+57:     org.evosuite.runtime.Runtime.getInstance().resetRuntime(); 
+58:     org.evosuite.runtime.agent.InstrumentingAgent.activate(); 
+59:   } 
+60: 
+61:   @After
+62:   public void doneWithTestCase(){ 
+63:     threadStopper.killAndJoinClientThreads();
+64:     org.evosuite.runtime.jvm.ShutdownHookHandler.getInstance().safeExecuteAddedHooks(); 
+65:     org.evosuite.runtime.classhandling.JDKClassResetter.reset(); 
+66:     resetClasses(); 
+67:     org.evosuite.runtime.sandbox.Sandbox.doneWithExecutingSUTCode(); 
+68:     org.evosuite.runtime.agent.InstrumentingAgent.deactivate(); 
+69:     org.evosuite.runtime.GuiSupport.restoreHeadlessMode(); 
+70:   } 
+71: 
+72:   public static void setSystemProperties() {
+73:  
+74:     java.lang.System.setProperties((java.util.Properties) defaultProperties.clone()); 
+75:     java.lang.System.setProperty("user.dir", "/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre"); 
+76:     java.lang.System.setProperty("java.io.tmpdir", "/tmp"); 
+77:   }
+78: 
+79:   private static void initializeClasses() {
+80:     org.evosuite.runtime.classhandling.ClassStateSupport.initializeClasses(FuturesGetChecked_13_tmp__ESTest_scaffolding.class.getClassLoader() ,
+81:       "com.google.common.collect.AllEqualOrdering",
+82:       "com.google.common.collect.Iterables",
+83:       "com.google.common.collect.NullsFirstOrdering",
+84:       "com.google.common.collect.Lists$RandomAccessPartition",
+85:       "com.google.common.collect.ImmutableCollection",
+86:       "com.google.common.util.concurrent.ExecutionError",
+87:       "com.google.common.util.concurrent.FuturesGetChecked$1",
+88:       "com.google.common.collect.CompoundOrdering",
+89:       "com.google.common.collect.Lists$RandomAccessListWrapper",
+90:       "com.google.common.base.Strings",
+91:       "com.google.common.collect.Lists$Partition",
+92:       "com.google.common.collect.Lists",
+93:       "com.google.common.collect.ImmutableList",
+94:       "com.google.common.collect.ReverseOrdering",
+95:       "com.google.common.util.concurrent.UncheckedExecutionException",
+96:       "com.google.common.collect.UsingToStringOrdering",
+97:       "com.google.common.collect.Lists$TransformingRandomAccessList",
+98:       "com.google.common.util.concurrent.ElementTypesAreNonnullByDefault",
+99:       "com.google.common.collect.Lists$TransformingSequentialList",
+100:       "com.google.common.collect.NullsLastOrdering",
+101:       "com.google.common.base.Function",
+102:       "com.google.common.collect.Lists$AbstractListWrapper",
+103:       "com.google.common.collect.ComparatorOrdering",
+104:       "com.google.common.util.concurrent.FuturesGetChecked$GetCheckedTypeValidatorHolder",
+105:       "com.google.common.util.concurrent.FuturesGetChecked$GetCheckedTypeValidatorHolder$ClassValueValidator",
+106:       "com.google.common.collect.ReverseNaturalOrdering",
+107:       "com.google.common.collect.ByFunctionOrdering",
+108:       "com.google.common.util.concurrent.FuturesGetChecked$GetCheckedTypeValidatorHolder$ClassValueValidator$1",
+109:       "com.google.common.collect.Ordering",
+110:       "com.google.common.util.concurrent.FuturesGetChecked$GetCheckedTypeValidator",
+111:       "com.google.common.collect.LexicographicalOrdering",
+112:       "com.google.common.collect.ExplicitOrdering",
+113:       "com.google.common.util.concurrent.FuturesGetChecked$GetCheckedTypeValidatorHolder$WeakSetValidator",
+114:       "com.google.common.collect.Lists$StringAsImmutableList",
+115:       "com.google.common.collect.NaturalOrdering",
+116:       "com.google.common.collect.Lists$2",
+117:       "com.google.common.util.concurrent.FuturesGetChecked",
+118:       "com.google.common.base.Preconditions",
+119:       "com.google.common.collect.Lists$1"
+120:     );
+121:   } 
+122: 
+123:   private static void resetClasses() {
+124:     org.evosuite.runtime.classhandling.ClassResetter.getInstance().setClassLoader(FuturesGetChecked_13_tmp__ESTest_scaffolding.class.getClassLoader()); 
+125: 
+126:     org.evosuite.runtime.classhandling.ClassStateSupport.resetClasses(
+127:       "com.google.common.collect.Ordering",
+128:       "com.google.common.collect.NaturalOrdering",
+129:       "com.google.common.util.concurrent.FuturesGetChecked$1",
+130:       "com.google.common.collect.ByFunctionOrdering",
+131:       "com.google.common.base.Preconditions",
+132:       "com.google.common.collect.ReverseOrdering",
+133:       "com.google.common.util.concurrent.FuturesGetChecked",
+134:       "com.google.common.util.concurrent.FuturesGetChecked$GetCheckedTypeValidatorHolder$ClassValueValidator$1",
+135:       "com.google.common.util.concurrent.FuturesGetChecked$GetCheckedTypeValidatorHolder$ClassValueValidator",
+136:       "com.google.common.util.concurrent.FuturesGetChecked$GetCheckedTypeValidatorHolder$WeakSetValidator",
+137:       "com.google.common.util.concurrent.FuturesGetChecked$GetCheckedTypeValidatorHolder",
+138:       "com.google.common.base.Converter",
+139:       "com.google.common.base.Converter$IdentityConverter",
+140:       "com.google.common.collect.Iterables",
+141:       "com.google.common.collect.Lists",
+142:       "com.google.common.base.Strings"
+143:     );
+144:   }
+145: }
+
+[MASTER] 06:40:33.280 [logback-2] ERROR JUnitAnalyzer - Failed to compile test case:
+FuturesGetChecked.GetCheckedTypeValidatorHolder.ClassValueValidator futuresGetChecked_GetCheckedTypeValidatorHolder_ClassValueValidator0 = (FuturesGetChecked.GetCheckedTypeValidatorHolder.ClassValueValidator)FuturesGetChecked.GetCheckedTypeValidatorHolder.BEST_VALIDATOR;
+Class<FuturesGetChecked.GetCheckedTypeValidatorHolder.ClassValueValidator> class0 = FuturesGetChecked.GetCheckedTypeValidatorHolder.ClassValueValidator.class;
+futuresGetChecked_GetCheckedTypeValidatorHolder_ClassValueValidator0.validateClass(class0);
+
+* Writing tests to file
+* Writing JUnit test case 'FuturesGetChecked_ESTest' to evosuite-tests
+* Done!
+
+* Computation finished

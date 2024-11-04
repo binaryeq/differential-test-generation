@@ -1,0 +1,105 @@
+* EvoSuite 1.2.0
+* Going to generate test cases for class: com.google.common.util.concurrent.AbstractFuture
+* Starting Client-0
+* Connecting to master process on port 3735
+* Analyzing classpath: 
+  - /home/wtwhite/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/guava/guava/31.0.1-jre/guava-31.0.1-jre.jar
+  - t/dependency/checker-qual-3.12.0.jar
+  - t/dependency/error_prone_annotations-2.7.1.jar
+  - t/dependency/failureaccess-1.0.1.jar
+  - t/dependency/j2objc-annotations-1.3.jar
+  - t/dependency/jsr305-3.0.2.jar
+  - t/dependency/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar
+* Finished analyzing classpath
+* Generating tests for class com.google.common.util.concurrent.AbstractFuture
+* Test criteria:
+  - Line Coverage
+  - Branch Coverage
+  - Exception
+  - Mutation testing (weak)
+  - Method-Output Coverage
+  - Top-Level Method Coverage
+  - No-Exception Top-Level Method Coverage
+  - Context Branch Coverage
+* Total number of test goals for DYNAMOSA: 1559
+* Using seed 1729703410370
+* Starting evolution
+[Progress:>                             0%] [Cov:>                                  0%]* Initial Number of Goals in DynaMOSA = 497 / 1559
+[MASTER] 06:10:16.717 [logback-1] WARN  TestCluster - Failed to check cache for java.lang.Comparable<T> : Type points to itself
+[MASTER] 06:10:17.761 [logback-1] WARN  TestCluster - Failed to check cache for java.util.SortedSet<com.google.common.util.concurrent.ListenableFuture<java.util.concurrent.Delayed>> : Type points to itself
+[MASTER] 06:10:44.037 [logback-1] WARN  TestCluster - Failed to check cache for java.util.Comparator<T> : Type points to itself
+[Progress:====================>         68%] [Cov:=================>                 50%][MASTER] 06:11:06.739 [logback-1] WARN  TestCluster - Failed to check cache for com.google.common.util.concurrent.ListenableFutureTask<V> : Type points to itself
+[MASTER] 06:11:06.807 [logback-1] WARN  TestCluster - Failed to check cache for com.google.common.util.concurrent.ListenableFuture<V> : Type points to itself
+[Progress:===========================>  90%] [Cov:================>                  46%][Progress:==============================100%] [Cov:=================>                 49%]
+* Search finished after 65s and 2 generations, 1345 statements, best individual has fitness: 908.0
+* Minimizing test suite
+[MASTER] 06:12:35.174 [logback-1] WARN  TestSuiteMinimizer - Minimization timeout. Roll back to original test suite
+* Going to analyze the coverage criteria
+* Coverage analysis for criterion LINE
+* Coverage of criterion LINE: 47%
+* Total number of goals: 435
+* Number of covered goals: 205
+* Coverage analysis for criterion BRANCH
+* Coverage of criterion BRANCH: 41%
+* Total number of goals: 272
+* Number of covered goals: 111
+* Coverage analysis for criterion EXCEPTION
+* Coverage of criterion EXCEPTION: 100%
+* Total number of goals: 5
+* Number of covered goals: 5
+* Coverage analysis for criterion WEAKMUTATION
+* Coverage of criterion WEAKMUTATION: 40%
+* Total number of goals: 500
+* Number of covered goals: 198
+* Coverage analysis for criterion OUTPUT
+* Coverage of criterion OUTPUT: 58%
+* Total number of goals: 26
+* Number of covered goals: 15
+* Coverage analysis for criterion METHOD
+* Coverage of criterion METHOD: 78%
+* Total number of goals: 27
+* Number of covered goals: 21
+* Coverage analysis for criterion METHODNOEXCEPTION
+* Coverage of criterion METHODNOEXCEPTION: 63%
+* Total number of goals: 27
+* Number of covered goals: 17
+* Coverage analysis for criterion CBRANCH
+* Coverage of criterion CBRANCH: 41%
+* Total number of goals: 272
+* Number of covered goals: 111
+* Generated 33 tests with total length 597
+* Resulting test suite's coverage: 49% (average coverage for all fitness functions)
+* Generating assertions
+* Resulting test suite's mutation score: 3%
+[MASTER] 06:13:35.972 [logback-1] WARN  SimpleMutationAssertionGenerator - Reached maximum time to generate assertions, aborting assertion generation
+* Compiling and checking tests
+[MASTER] 06:13:58.908 [logback-1] WARN  JUnitAnalyzer - Found unstable test named test0 -> class java.lang.AssertionError: expected null, but was:<com.google.common.util.concurrent.TimeoutFuture$TimeoutFutureException: Timed out: TrustedListenableFutureTask@1[status=PENDING, info=[task=[running=[RUNNING ON Time-limited test], com.google.common.util.concurrent.AsyncCallable$MockitoMock$303235638@0000000012]]]>
+[MASTER] 06:13:58.909 [logback-1] WARN  JUnitAnalyzer - Failing test:
+ AsyncCallable<Throwable> asyncCallable0 = (AsyncCallable<Throwable>) mock(AsyncCallable.class, new ViolatedAssumptionAnswer());
+doReturn((ListenableFuture) null).when(asyncCallable0).call();
+TrustedListenableFutureTask<Throwable> trustedListenableFutureTask0 = new TrustedListenableFutureTask<Throwable>(asyncCallable0);
+TimeUnit timeUnit0 = TimeUnit.MINUTES;
+Class<Throwable> class0 = Throwable.class;
+Converter<Throwable, Throwable> converter0 = Converter.identity();
+Converter<Throwable, Throwable> converter1 = converter0.reverse();
+Converter<Throwable, Throwable> converter2 = converter0.andThen(converter1);
+Converter<Throwable, Throwable> converter3 = Converter.from((Function<? super Throwable, ? extends Throwable>) converter2, (Function<? super Throwable, ? extends Throwable>) converter1);
+ThreadPoolExecutor.DiscardPolicy threadPoolExecutor_DiscardPolicy0 = new ThreadPoolExecutor.DiscardPolicy();
+ScheduledThreadPoolExecutor scheduledThreadPoolExecutor0 = new ScheduledThreadPoolExecutor(38, threadPoolExecutor_DiscardPolicy0);
+trustedListenableFutureTask0.catching(class0, (Function<? super Throwable, ? extends Throwable>) converter3, (Executor) scheduledThreadPoolExecutor0);
+Callable<Object> callable0 = (Callable<Object>) mock(Callable.class, new ViolatedAssumptionAnswer());
+TrustedListenableFutureTask.create(callable0);
+ThreadPoolExecutor.CallerRunsPolicy threadPoolExecutor_CallerRunsPolicy0 = new ThreadPoolExecutor.CallerRunsPolicy();
+ScheduledThreadPoolExecutor scheduledThreadPoolExecutor1 = new ScheduledThreadPoolExecutor(38, threadPoolExecutor_CallerRunsPolicy0);
+FluentFuture<Throwable> fluentFuture0 = trustedListenableFutureTask0.withTimeout((-758L), timeUnit0, (ScheduledExecutorService) scheduledThreadPoolExecutor1);
+threadPoolExecutor_CallerRunsPolicy0.rejectedExecution(trustedListenableFutureTask0, scheduledThreadPoolExecutor1);
+fluentFuture0.cancel(true);
+Throwable throwable0 = fluentFuture0.tryInternalFastPathGetFailure();
+assertNull(throwable0);
+
+
+* Writing tests to file
+* Writing JUnit test case 'AbstractFuture_ESTest' to evosuite-tests
+* Done!
+
+* Computation finished

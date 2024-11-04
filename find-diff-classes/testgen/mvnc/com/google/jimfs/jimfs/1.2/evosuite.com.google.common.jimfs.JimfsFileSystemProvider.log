@@ -1,0 +1,1257 @@
+* EvoSuite 1.2.0
+* Going to generate test cases for class: com.google.common.jimfs.JimfsFileSystemProvider
+* Starting Client-0
+* Connecting to master process on port 21624
+* Analyzing classpath: 
+  - /home/wtwhite/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/jimfs/jimfs/1.2/jimfs-1.2.jar
+  - t/dependency/asm-9.0.jar
+  - t/dependency/auto-service-annotations-1.0-rc7.jar
+  - t/dependency/auto-value-annotations-1.7.4.jar
+  - t/dependency/checker-compat-qual-2.5.5.jar
+  - t/dependency/checker-qual-3.7.0.jar
+  - t/dependency/error_prone_annotations-2.3.4.jar
+  - t/dependency/failureaccess-1.0.1.jar
+  - t/dependency/guava-30.1-android.jar
+  - t/dependency/guava-testlib-30.1-android.jar
+  - t/dependency/hamcrest-core-1.3.jar
+  - t/dependency/icu4j-68.2.jar
+  - t/dependency/j2objc-annotations-1.3.jar
+  - t/dependency/jsr305-3.0.2.jar
+  - t/dependency/junit-4.13.1.jar
+  - t/dependency/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar
+  - t/dependency/truth-1.1.jar
+* Finished analyzing classpath
+* Generating tests for class com.google.common.jimfs.JimfsFileSystemProvider
+* Test criteria:
+  - Line Coverage
+  - Branch Coverage
+  - Exception
+  - Mutation testing (weak)
+  - Method-Output Coverage
+  - Top-Level Method Coverage
+  - No-Exception Top-Level Method Coverage
+  - Context Branch Coverage
+* Total number of test goals for DYNAMOSA: 410
+* Using seed 1729708226191
+* Starting evolution
+[Progress:>                             0%] [Cov:>                                  0%]* Initial Number of Goals in DynaMOSA = 245 / 410
+[MASTER] 07:30:28.786 [logback-1] WARN  TestCluster - Failed to check cache for java.util.concurrent.ForkJoinTask<V> : Type points to itself
+[MASTER] 07:30:29.739 [logback-1] WARN  TestCluster - Failed to check cache for java.lang.Comparable<T> : Type points to itself
+[MASTER] 07:30:33.888 [logback-1] WARN  TestCluster - Failed to check cache for com.google.common.collect.DiscreteDomain<C> : Type points to itself
+[Progress:==>                           8%] [Cov:==========>                        29%][Progress:=============>                45%] [Cov:==========>                        30%][Progress:===============>              50%] [Cov:==========>                        30%][Progress:===============>              50%] [Cov:==========>                        30%][Progress:===============>              50%] [Cov:==========>                        30%][Progress:===============>              51%] [Cov:===========>                       32%][Progress:===============>              51%] [Cov:===========>                       32%][Progress:===============>              51%] [Cov:==========>                        31%][Progress:===============>              53%] [Cov:===========>                       33%][Progress:===============>              53%] [Cov:===========>                       34%][Progress:===============>              53%] [Cov:===========>                       34%][Progress:===============>              53%] [Cov:===========>                       33%][Progress:===============>              53%] [Cov:===========>                       33%][Progress:================>             55%] [Cov:===========>                       33%][Progress:================>             55%] [Cov:===========>                       33%][Progress:================>             55%] [Cov:===========>                       33%][Progress:==================>           60%] [Cov:===========>                       34%][Progress:==================>           60%] [Cov:===========>                       34%][Progress:==================>           60%] [Cov:===========>                       34%][Progress:==================>           60%] [Cov:===========>                       34%][Progress:==================>           61%] [Cov:===========>                       34%][Progress:==================>           61%] [Cov:===========>                       34%][Progress:==================>           61%] [Cov:============>                      35%][Progress:==================>           61%] [Cov:============>                      36%][Progress:==================>           61%] [Cov:============>                      36%][Progress:==================>           63%] [Cov:============>                      35%][Progress:==================>           63%] [Cov:============>                      35%][Progress:==================>           63%] [Cov:============>                      36%][Progress:==================>           63%] [Cov:============>                      36%][Progress:==================>           63%] [Cov:============>                      35%][Progress:==================>           63%] [Cov:============>                      37%][Progress:==================>           63%] [Cov:============>                      37%][Progress:===================>          65%] [Cov:============>                      37%][Progress:===================>          65%] [Cov:=============>                     38%][Progress:===================>          65%] [Cov:=============>                     38%][Progress:===================>          65%] [Cov:=============>                     38%][Progress:===================>          65%] [Cov:=============>                     39%][Progress:===================>          65%] [Cov:=============>                     39%][Progress:===================>          65%] [Cov:=============>                     39%][Progress:===================>          66%] [Cov:==============>                    40%][Progress:=====================>        71%] [Cov:=============>                     39%][Progress:=====================>        71%] [Cov:=============>                     39%][Progress:=====================>        71%] [Cov:=============>                     39%][Progress:=====================>        71%] [Cov:=============>                     39%][Progress:=====================>        71%] [Cov:=============>                     39%][Progress:=====================>        71%] [Cov:=============>                     39%][Progress:=====================>        71%] [Cov:=============>                     39%][Progress:=====================>        71%] [Cov:=============>                     39%][Progress:=====================>        73%] [Cov:=============>                     39%][Progress:=====================>        73%] [Cov:=============>                     39%][Progress:=====================>        73%] [Cov:=============>                     39%][Progress:=====================>        73%] [Cov:=============>                     39%][Progress:=======================>      78%] [Cov:=============>                     39%][Progress:=======================>      78%] [Cov:=============>                     39%][Progress:=======================>      78%] [Cov:=============>                     39%][Progress:=======================>      78%] [Cov:=============>                     39%][Progress:=======================>      78%] [Cov:=============>                     39%][Progress:=======================>      78%] [Cov:=============>                     39%][Progress:=========================>    85%] [Cov:=============>                     39%][Progress:=========================>    85%] [Cov:=============>                     39%][MASTER] 07:31:19.755 [logback-1] WARN  TestCluster - Failed to check cache for java.util.Set<java.lang.Object> : Type points to itself
+[Progress:===========================>  90%] [Cov:=============>                     39%][Progress:===========================>  90%] [Cov:=============>                     39%][Progress:===========================>  90%] [Cov:=============>                     39%][Progress:===========================>  90%] [Cov:=============>                     39%][Progress:===========================>  90%] [Cov:=============>                     39%][Progress:===========================>  90%] [Cov:=============>                     39%][Progress:===========================>  91%] [Cov:=============>                     39%][Progress:===========================>  91%] [Cov:=============>                     39%][Progress:===========================>  91%] [Cov:=============>                     39%][Progress:===========================>  91%] [Cov:=============>                     39%][Progress:===========================>  91%] [Cov:==============>                    40%][Progress:===========================>  91%] [Cov:==============>                    42%][Progress:===========================>  91%] [Cov:==============>                    41%][Progress:===========================>  91%] [Cov:==============>                    41%][Progress:===========================>  91%] [Cov:==============>                    42%][Progress:===========================>  93%] [Cov:==============>                    41%][Progress:===========================>  93%] [Cov:==============>                    41%][Progress:===========================>  93%] [Cov:==============>                    42%][Progress:===========================>  93%] [Cov:==============>                    41%][Progress:===========================>  93%] [Cov:==============>                    42%][Progress:===========================>  93%] [Cov:==============>                    42%][Progress:=============================>98%] [Cov:==============>                    42%][Progress:==============================100%] [Cov:==============>                    42%]
+* Search finished after 63s and 82 generations, 45089 statements, best individual has fitness: 279.0
+* Minimizing test suite
+[MASTER] 07:32:39.148 [logback-1] WARN  TestSuiteMinimizer - Minimization timeout. Roll back to original test suite
+* Going to analyze the coverage criteria
+* Coverage analysis for criterion LINE
+* Coverage of criterion LINE: 46%
+* Total number of goals: 115
+* Number of covered goals: 53
+* Coverage analysis for criterion BRANCH
+* Coverage of criterion BRANCH: 57%
+* Total number of goals: 47
+* Number of covered goals: 27
+* Coverage analysis for criterion EXCEPTION
+* Coverage of criterion EXCEPTION: 100%
+* Total number of goals: 44
+* Number of covered goals: 44
+* Coverage analysis for criterion WEAKMUTATION
+* Coverage of criterion WEAKMUTATION: 30%
+* Total number of goals: 93
+* Number of covered goals: 28
+* Coverage analysis for criterion OUTPUT
+* Coverage of criterion OUTPUT: 4%
+* Total number of goals: 52
+* Number of covered goals: 2
+* Coverage analysis for criterion METHOD
+* Coverage of criterion METHOD: 93%
+* Total number of goals: 28
+* Number of covered goals: 26
+* Coverage analysis for criterion METHODNOEXCEPTION
+* Coverage of criterion METHODNOEXCEPTION: 11%
+* Total number of goals: 28
+* Number of covered goals: 3
+* Coverage analysis for criterion CBRANCH
+* Coverage of criterion CBRANCH: 53%
+* Total number of goals: 47
+* Number of covered goals: 25
+* Generated 74 tests with total length 1097
+* Resulting test suite's coverage: 42% (average coverage for all fitness functions)
+* Generating assertions
+[MASTER] 07:33:21.693 [logback-1] WARN  SimpleMutationAssertionGenerator - Assertion minimization is taking too long (0.7068666666666666% of time used, but only 11/74 tests minimized), falling back to using all assertions
+* Resulting test suite's mutation score: 0%
+* Compiling and checking tests
+[MASTER] 07:33:26.087 [logback-2] ERROR JUnitAnalyzer - Compilation failed on compilation units: [RegularFileObject[/tmp/EvoSuite_9_1729708403040/com/google/common/jimfs/JimfsFileSystemProvider_9_tmp__ESTest.java], RegularFileObject[/tmp/EvoSuite_9_1729708403040/com/google/common/jimfs/JimfsFileSystemProvider_9_tmp__ESTest_scaffolding.java]]
+[MASTER] 07:33:26.087 [logback-2] ERROR JUnitAnalyzer - Classpath: /home/wtwhite/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/jimfs/jimfs/1.2/jimfs-1.2.jar:t/dependency/asm-9.0.jar:t/dependency/auto-service-annotations-1.0-rc7.jar:t/dependency/auto-value-annotations-1.7.4.jar:t/dependency/checker-compat-qual-2.5.5.jar:t/dependency/checker-qual-3.7.0.jar:t/dependency/error_prone_annotations-2.3.4.jar:t/dependency/failureaccess-1.0.1.jar:t/dependency/guava-30.1-android.jar:t/dependency/guava-testlib-30.1-android.jar:t/dependency/hamcrest-core-1.3.jar:t/dependency/icu4j-68.2.jar:t/dependency/j2objc-annotations-1.3.jar:t/dependency/jsr305-3.0.2.jar:t/dependency/junit-4.13.1.jar:t/dependency/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:t/dependency/truth-1.1.jar:/home/wtwhite/code/regression-test-generation/evosuite/evosuite-1.2.0.jar:/home/wtwhite/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/jimfs/jimfs/1.2/jimfs-1.2.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/jimfs/jimfs/1.2/t/dependency/asm-9.0.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/jimfs/jimfs/1.2/t/dependency/auto-service-annotations-1.0-rc7.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/jimfs/jimfs/1.2/t/dependency/auto-value-annotations-1.7.4.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/jimfs/jimfs/1.2/t/dependency/checker-compat-qual-2.5.5.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/jimfs/jimfs/1.2/t/dependency/checker-qual-3.7.0.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/jimfs/jimfs/1.2/t/dependency/error_prone_annotations-2.3.4.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/jimfs/jimfs/1.2/t/dependency/failureaccess-1.0.1.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/jimfs/jimfs/1.2/t/dependency/guava-30.1-android.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/jimfs/jimfs/1.2/t/dependency/guava-testlib-30.1-android.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/jimfs/jimfs/1.2/t/dependency/hamcrest-core-1.3.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/jimfs/jimfs/1.2/t/dependency/icu4j-68.2.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/jimfs/jimfs/1.2/t/dependency/j2objc-annotations-1.3.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/jimfs/jimfs/1.2/t/dependency/jsr305-3.0.2.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/jimfs/jimfs/1.2/t/dependency/junit-4.13.1.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/jimfs/jimfs/1.2/t/dependency/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/jimfs/jimfs/1.2/t/dependency/truth-1.1.jar
+[MASTER] 07:33:26.087 [logback-2] ERROR JUnitAnalyzer - evosuiteCP: /home/wtwhite/code/regression-test-generation/evosuite/evosuite-1.2.0.jar:/home/wtwhite/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/jimfs/jimfs/1.2/jimfs-1.2.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/jimfs/jimfs/1.2/t/dependency/asm-9.0.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/jimfs/jimfs/1.2/t/dependency/auto-service-annotations-1.0-rc7.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/jimfs/jimfs/1.2/t/dependency/auto-value-annotations-1.7.4.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/jimfs/jimfs/1.2/t/dependency/checker-compat-qual-2.5.5.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/jimfs/jimfs/1.2/t/dependency/checker-qual-3.7.0.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/jimfs/jimfs/1.2/t/dependency/error_prone_annotations-2.3.4.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/jimfs/jimfs/1.2/t/dependency/failureaccess-1.0.1.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/jimfs/jimfs/1.2/t/dependency/guava-30.1-android.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/jimfs/jimfs/1.2/t/dependency/guava-testlib-30.1-android.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/jimfs/jimfs/1.2/t/dependency/hamcrest-core-1.3.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/jimfs/jimfs/1.2/t/dependency/icu4j-68.2.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/jimfs/jimfs/1.2/t/dependency/j2objc-annotations-1.3.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/jimfs/jimfs/1.2/t/dependency/jsr305-3.0.2.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/jimfs/jimfs/1.2/t/dependency/junit-4.13.1.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/jimfs/jimfs/1.2/t/dependency/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/jimfs/jimfs/1.2/t/dependency/truth-1.1.jar
+[MASTER] 07:33:26.113 [logback-2] ERROR JUnitAnalyzer - Diagnostic: incompatible types: java.util.concurrent.Callable<java.nio.file.LinkOption> cannot be converted to java.util.concurrent.Callable<java.util.concurrent.ForkJoinTask<java.util.concurrent.ForkJoinTask>>: 50
+[MASTER] 07:33:26.113 [logback-2] ERROR JUnitAnalyzer - Diagnostic: /tmp/EvoSuite_9_1729708403040/com/google/common/jimfs/JimfsFileSystemProvider_9_tmp__ESTest.java uses unchecked or unsafe operations.: -1
+[MASTER] 07:33:26.113 [logback-2] ERROR JUnitAnalyzer - Diagnostic: Recompile with -Xlint:unchecked for details.: -1
+[MASTER] 07:33:26.113 [logback-2] ERROR JUnitAnalyzer - RegularFileObject[/tmp/EvoSuite_9_1729708403040/com/google/common/jimfs/JimfsFileSystemProvider_9_tmp__ESTest.java]
+1: /*
+2:  * This file was automatically generated by EvoSuite
+3:  * Wed Oct 23 18:33:26 GMT 2024
+4:  */
+5: 
+6: package com.google.common.jimfs;
+7: 
+8: import org.junit.Test;
+9: import static org.junit.Assert.*;
+10: import static org.evosuite.shaded.org.mockito.Mockito.*;
+11: import static org.evosuite.runtime.EvoAssertions.*;
+12: import com.google.common.collect.ImmutableSet;
+13: import com.google.common.jimfs.BasicAttributeProvider;
+14: import com.google.common.jimfs.JimfsFileSystemProvider;
+15: import java.lang.reflect.Array;
+16: import java.net.URI;
+17: import java.nio.file.LinkOption;
+18: import java.nio.file.OpenOption;
+19: import java.nio.file.Path;
+20: import java.nio.file.ProviderMismatchException;
+21: import java.nio.file.attribute.FileAttribute;
+22: import java.util.HashMap;
+23: import java.util.Map;
+24: import java.util.concurrent.Callable;
+25: import java.util.concurrent.ForkJoinTask;
+26: import java.util.concurrent.ScheduledThreadPoolExecutor;
+27: import java.util.concurrent.ThreadPoolExecutor;
+28: import org.evosuite.runtime.EvoRunner;
+29: import org.evosuite.runtime.EvoRunnerParameters;
+30: import org.evosuite.runtime.ViolatedAssumptionAnswer;
+31: import org.evosuite.runtime.mock.java.lang.MockThread;
+32: import org.junit.runner.RunWith;
+33: 
+34: @RunWith(EvoRunner.class) @EvoRunnerParameters(mockJVMNonDeterminism = true, useVFS = true, useVNET = true, resetStaticState = true) 
+35: public class JimfsFileSystemProvider_9_tmp__ESTest extends JimfsFileSystemProvider_9_tmp__ESTest_scaffolding {
+36: 
+37:   @Test(timeout = 4000)
+38:   public void test0()  throws Throwable  {
+39:       JimfsFileSystemProvider jimfsFileSystemProvider0 = JimfsFileSystemProvider.instance();
+40:       Path path0 = null;
+41:       LinkOption linkOption0 = LinkOption.NOFOLLOW_LINKS;
+42:       ImmutableSet<LinkOption> immutableSet0 = ImmutableSet.of(linkOption0, linkOption0);
+43:       ThreadPoolExecutor.DiscardOldestPolicy threadPoolExecutor_DiscardOldestPolicy0 = new ThreadPoolExecutor.DiscardOldestPolicy();
+44:       ScheduledThreadPoolExecutor scheduledThreadPoolExecutor0 = new ScheduledThreadPoolExecutor(1693, threadPoolExecutor_DiscardOldestPolicy0);
+45:       FileAttribute<BasicAttributeProvider.Attributes>[] fileAttributeArray0 = (FileAttribute<BasicAttributeProvider.Attributes>[]) Array.newInstance(FileAttribute.class, 4);
+46:       Thread thread0 = MockThread.currentThread();
+47:       threadPoolExecutor_DiscardOldestPolicy0.rejectedExecution(thread0, scheduledThreadPoolExecutor0);
+48:       Callable<LinkOption> callable0 = (Callable<LinkOption>) mock(Callable.class, new ViolatedAssumptionAnswer());
+49:       doReturn((Object) null).when(callable0).call();
+50:       scheduledThreadPoolExecutor0.submit((Callable<ForkJoinTask<ForkJoinTask>>) callable0);
+51:       FileAttribute<BasicAttributeProvider.Attributes> fileAttribute0 = (FileAttribute<BasicAttributeProvider.Attributes>) mock(FileAttribute.class, new ViolatedAssumptionAnswer());
+52:       // Undeclared exception!
+53:       try { 
+54:         jimfsFileSystemProvider0.newFileChannel((Path) null, immutableSet0, fileAttributeArray0);
+55:         fail("Expecting exception: ProviderMismatchException");
+56:       
+57:       } catch(ProviderMismatchException e) {
+58:          //
+59:          // path null is not associated with a Jimfs file system
+60:          //
+61:          verifyException("com.google.common.jimfs.JimfsFileSystemProvider", e);
+62:       }
+63:   }
+64: }
+RegularFileObject[/tmp/EvoSuite_9_1729708403040/com/google/common/jimfs/JimfsFileSystemProvider_9_tmp__ESTest.java]
+1: /**
+2:  * Scaffolding file used to store all the setups needed to run 
+3:  * tests automatically generated by EvoSuite
+4:  * Wed Oct 23 18:33:26 GMT 2024
+5:  */
+6: 
+7: package com.google.common.jimfs;
+8: 
+9: import org.evosuite.runtime.annotation.EvoSuiteClassExclude;
+10: import org.junit.BeforeClass;
+11: import org.junit.Before;
+12: import org.junit.After;
+13: import org.junit.AfterClass;
+14: import org.evosuite.runtime.sandbox.Sandbox;
+15: import org.evosuite.runtime.sandbox.Sandbox.SandboxMode;
+16: 
+17: import static org.evosuite.shaded.org.mockito.Mockito.*;
+18: @EvoSuiteClassExclude
+19: public class JimfsFileSystemProvider_9_tmp__ESTest_scaffolding {
+20: 
+21:   @org.junit.Rule
+22:   public org.evosuite.runtime.vnet.NonFunctionalRequirementRule nfr = new org.evosuite.runtime.vnet.NonFunctionalRequirementRule();
+23: 
+24:   private static final java.util.Properties defaultProperties = (java.util.Properties) java.lang.System.getProperties().clone(); 
+25: 
+26:   private org.evosuite.runtime.thread.ThreadStopper threadStopper =  new org.evosuite.runtime.thread.ThreadStopper (org.evosuite.runtime.thread.KillSwitchHandler.getInstance(), 3000);
+27: 
+28: 
+29:   @BeforeClass
+30:   public static void initEvoSuiteFramework() { 
+31:     org.evosuite.runtime.RuntimeSettings.className = "com.google.common.jimfs.JimfsFileSystemProvider"; 
+32:     org.evosuite.runtime.GuiSupport.initialize(); 
+33:     org.evosuite.runtime.RuntimeSettings.maxNumberOfThreads = 100; 
+34:     org.evosuite.runtime.RuntimeSettings.maxNumberOfIterationsPerLoop = 10000; 
+35:     org.evosuite.runtime.RuntimeSettings.mockSystemIn = true; 
+36:     org.evosuite.runtime.RuntimeSettings.sandboxMode = org.evosuite.runtime.sandbox.Sandbox.SandboxMode.RECOMMENDED; 
+37:     org.evosuite.runtime.sandbox.Sandbox.initializeSecurityManagerForSUT(); 
+38:     org.evosuite.runtime.classhandling.JDKClassResetter.init();
+39:     setSystemProperties();
+40:     initializeClasses();
+41:     org.evosuite.runtime.Runtime.getInstance().resetRuntime(); 
+42:     try { initMocksToAvoidTimeoutsInTheTests(); } catch(ClassNotFoundException e) {} 
+43:   } 
+44: 
+45:   @AfterClass
+46:   public static void clearEvoSuiteFramework(){ 
+47:     Sandbox.resetDefaultSecurityManager(); 
+48:     java.lang.System.setProperties((java.util.Properties) defaultProperties.clone()); 
+49:   } 
+50: 
+51:   @Before
+52:   public void initTestCase(){ 
+53:     threadStopper.storeCurrentThreads();
+54:     threadStopper.startRecordingTime();
+55:     org.evosuite.runtime.jvm.ShutdownHookHandler.getInstance().initHandler(); 
+56:     org.evosuite.runtime.sandbox.Sandbox.goingToExecuteSUTCode(); 
+57:     setSystemProperties(); 
+58:     org.evosuite.runtime.GuiSupport.setHeadless(); 
+59:     org.evosuite.runtime.Runtime.getInstance().resetRuntime(); 
+60:     org.evosuite.runtime.agent.InstrumentingAgent.activate(); 
+61:   } 
+62: 
+63:   @After
+64:   public void doneWithTestCase(){ 
+65:     threadStopper.killAndJoinClientThreads();
+66:     org.evosuite.runtime.jvm.ShutdownHookHandler.getInstance().safeExecuteAddedHooks(); 
+67:     org.evosuite.runtime.classhandling.JDKClassResetter.reset(); 
+68:     resetClasses(); 
+69:     org.evosuite.runtime.sandbox.Sandbox.doneWithExecutingSUTCode(); 
+70:     org.evosuite.runtime.agent.InstrumentingAgent.deactivate(); 
+71:     org.evosuite.runtime.GuiSupport.restoreHeadlessMode(); 
+72:   } 
+73: 
+74:   public static void setSystemProperties() {
+75:  
+76:     java.lang.System.setProperties((java.util.Properties) defaultProperties.clone()); 
+77:     java.lang.System.setProperty("java.io.tmpdir", "/tmp"); 
+78:     java.lang.System.setProperty("user.dir", "/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/jimfs/jimfs/1.2"); 
+79:   }
+80: 
+81:   private static void initializeClasses() {
+82:     org.evosuite.runtime.classhandling.ClassStateSupport.initializeClasses(JimfsFileSystemProvider_9_tmp__ESTest_scaffolding.class.getClassLoader() ,
+83:       "com.google.common.jimfs.Name",
+84:       "com.google.common.collect.RegularContiguousSet",
+85:       "com.google.common.jimfs.JimfsFileStore",
+86:       "com.google.common.collect.Lists$RandomAccessPartition",
+87:       "com.google.common.base.CharMatcher$ForPredicate",
+88:       "com.google.common.base.JdkPattern",
+89:       "com.google.common.collect.PeekingIterator",
+90:       "com.google.common.jimfs.Feature",
+91:       "com.google.common.math.IntMath",
+92:       "com.google.common.base.Platform$JdkPatternCompiler",
+93:       "com.google.common.collect.Sets$2",
+94:       "com.google.common.collect.Sets$3",
+95:       "com.google.common.collect.ImmutableCollection$ArrayBasedBuilder",
+96:       "com.google.common.collect.Sets$1",
+97:       "com.google.common.collect.NullsLastOrdering",
+98:       "com.google.common.collect.Platform",
+99:       "com.google.common.base.CharMatcher$JavaLetterOrDigit",
+100:       "com.google.common.collect.RegularImmutableMap",
+101:       "com.google.common.collect.ByFunctionOrdering",
+102:       "com.google.common.jimfs.WatchServiceConfiguration$PollingConfig",
+103:       "com.google.common.collect.Iterators$10",
+104:       "com.google.common.collect.ImmutableMap$IteratorBasedImmutableMap",
+105:       "com.google.common.base.Predicate",
+106:       "com.google.common.base.CharMatcher$Invisible",
+107:       "com.google.common.base.CharMatcher$None",
+108:       "com.google.common.base.Joiner",
+109:       "com.google.common.collect.NullsFirstOrdering",
+110:       "com.google.common.collect.DiscreteDomain$BigIntegerDomain",
+111:       "com.google.common.jimfs.PathURLConnection",
+112:       "com.google.common.collect.Lists$Partition",
+113:       "com.google.common.collect.Lists",
+114:       "com.google.common.collect.DiscreteDomain",
+115:       "com.google.common.collect.UnmodifiableListIterator",
+116:       "com.google.common.jimfs.PathType$ParseResult",
+117:       "com.google.common.collect.ImmutableSortedSet",
+118:       "com.google.common.collect.Cut",
+119:       "com.google.common.base.Functions",
+120:       "com.google.common.collect.Sets$4",
+121:       "com.google.common.jimfs.PathNormalization$1",
+122:       "com.google.common.base.Absent",
+123:       "com.google.common.collect.DiscreteDomain$1",
+124:       "com.google.common.jimfs.JimfsFileSystem",
+125:       "com.google.common.base.CharMatcher",
+126:       "com.google.common.jimfs.JimfsPath",
+127:       "com.google.common.collect.ImmutableSortedSet$Builder",
+128:       "com.google.common.jimfs.PathNormalization$2",
+129:       "com.google.common.jimfs.PathNormalization$3",
+130:       "com.google.common.jimfs.PathNormalization$4",
+131:       "com.google.common.jimfs.PathNormalization$5",
+132:       "com.google.common.base.Preconditions",
+133:       "com.google.common.collect.ImmutableSortedSetFauxverideShim",
+134:       "com.google.common.base.CharMatcher$1",
+135:       "com.google.common.base.CharMatcher$FastMatcher",
+136:       "com.google.common.base.Joiner$1",
+137:       "com.google.common.base.CharMatcher$JavaIsoControl",
+138:       "com.google.common.base.Joiner$2",
+139:       "com.google.common.collect.ImmutableList$Itr",
+140:       "com.google.common.collect.ImmutableCollection",
+141:       "com.google.common.collect.Lists$OnePlusArrayList",
+142:       "com.google.common.base.CharMatcher$BitSetMatcher",
+143:       "com.google.common.base.CharMatcher$JavaUpperCase",
+144:       "com.google.common.jimfs.PathService$1",
+145:       "com.google.common.collect.ImmutableCollection$Builder",
+146:       "com.google.errorprone.annotations.DoNotMock",
+147:       "com.google.common.collect.Iterators$6",
+148:       "com.google.common.collect.ImmutableSet",
+149:       "com.google.common.collect.Iterators$9",
+150:       "com.google.common.collect.Lists$AbstractListWrapper",
+151:       "com.google.common.collect.DiscreteDomain$IntegerDomain",
+152:       "com.google.common.base.CharMatcher$NamedFastMatcher",
+153:       "com.google.common.collect.Iterators$1",
+154:       "com.google.common.collect.Iterators$4",
+155:       "com.google.common.collect.Iterators$5",
+156:       "com.google.common.collect.AbstractIterator$State",
+157:       "com.google.common.collect.DiscreteDomain$LongDomain",
+158:       "com.google.common.base.Functions$ToStringFunction",
+159:       "com.google.common.base.CharMatcher$Is",
+160:       "com.google.common.collect.Lists$StringAsImmutableList",
+161:       "com.google.common.collect.Lists$2",
+162:       "com.google.common.collect.Cut$AboveValue",
+163:       "com.google.common.base.CharMatcher$SingleWidth",
+164:       "com.google.common.base.Splitter$Strategy",
+165:       "com.google.common.collect.Lists$1",
+166:       "com.google.common.jimfs.JimfsOutputStream",
+167:       "com.google.common.base.AbstractIterator$1",
+168:       "com.google.common.jimfs.PathService",
+169:       "com.google.common.collect.ImmutableList",
+170:       "com.google.common.collect.ReverseOrdering",
+171:       "com.google.common.collect.FluentIterable$1",
+172:       "com.google.common.collect.FluentIterable$2",
+173:       "com.google.common.collect.FluentIterable$3",
+174:       "com.google.common.base.CharMatcher$Negated",
+175:       "com.google.common.base.CharMatcher$Ascii",
+176:       "com.google.common.collect.Ordering",
+177:       "com.google.common.base.CharMatcher$Digit",
+178:       "com.google.common.collect.NaturalOrdering",
+179:       "com.google.common.jimfs.AttributeProvider",
+180:       "com.google.common.jimfs.JimfsInputStream",
+181:       "com.google.common.collect.AllEqualOrdering",
+182:       "com.google.common.collect.Hashing",
+183:       "com.google.common.collect.ImmutableList$SubList",
+184:       "com.google.common.jimfs.Directory",
+185:       "com.google.common.base.CharMatcher$Whitespace",
+186:       "com.google.common.collect.RegularImmutableList",
+187:       "com.google.common.base.CharMatcher$JavaDigit",
+188:       "com.google.common.collect.FluentIterable",
+189:       "com.google.common.base.Optional",
+190:       "com.google.common.collect.Lists$TransformingRandomAccessList",
+191:       "com.google.common.jimfs.BasicAttributeProvider$Attributes",
+192:       "com.google.common.collect.Iterators$ArrayItr",
+193:       "com.google.common.collect.RegularImmutableMap$KeySet",
+194:       "com.google.common.jimfs.File",
+195:       "com.google.common.base.CharMatcher$IsNot",
+196:       "com.google.common.base.CharMatcher$InRange",
+197:       "com.google.common.base.CharMatcher$JavaLetter",
+198:       "com.google.common.collect.AbstractIterator$1",
+199:       "com.google.common.jimfs.JimfsFileSystemProvider",
+200:       "com.google.common.base.CharMatcher$NegatedFastMatcher",
+201:       "com.google.common.collect.Range",
+202:       "com.google.common.collect.ComparisonChain",
+203:       "com.google.common.collect.RegularImmutableSet",
+204:       "com.google.common.base.CommonPattern",
+205:       "com.google.common.base.CharMatcher$IsEither",
+206:       "com.google.common.collect.LexicographicalOrdering",
+207:       "com.google.common.base.Present",
+208:       "com.google.common.collect.Iterables",
+209:       "com.google.common.collect.ContiguousSet",
+210:       "com.google.common.base.CharMatcher$Any",
+211:       "com.google.common.collect.ImmutableSet$Builder",
+212:       "com.google.common.collect.Sets$SetView",
+213:       "com.google.common.base.JdkPattern$JdkMatcher",
+214:       "com.google.common.collect.SingletonImmutableSet",
+215:       "com.google.common.collect.Cut$BelowValue",
+216:       "com.google.common.jimfs.JimfsFileChannel",
+217:       "com.google.common.base.PatternCompiler",
+218:       "com.google.common.base.Splitter$3$1",
+219:       "com.google.common.collect.UsingToStringOrdering",
+220:       "com.google.common.jimfs.Configuration$UnixHolder",
+221:       "com.google.common.collect.EmptyContiguousSet",
+222:       "com.google.common.collect.Lists$TransformingSequentialList",
+223:       "com.google.common.primitives.IntsMethodsForWeb",
+224:       "com.google.common.collect.RangeGwtSerializationDependencies",
+225:       "com.google.common.jimfs.PathType",
+226:       "com.google.common.jimfs.Configuration",
+227:       "com.google.common.collect.ObjectArrays",
+228:       "com.google.common.collect.AbstractIterator",
+229:       "com.google.common.base.CharMatcher$And",
+230:       "com.google.common.jimfs.Configuration$1",
+231:       "com.google.common.jimfs.UnixPathType",
+232:       "com.google.common.collect.SortedIterable",
+233:       "com.google.common.collect.ImmutableMap$MapViewOfValuesAsSingletonSets",
+234:       "com.google.common.base.CharMatcher$AnyOf",
+235:       "com.google.common.collect.UnmodifiableIterator",
+236:       "com.google.common.jimfs.WindowsPathType",
+237:       "com.google.common.collect.Lists$RandomAccessListWrapper",
+238:       "com.google.common.collect.ImmutableEnumSet",
+239:       "com.google.common.jimfs.PathNormalization",
+240:       "com.google.common.base.Platform",
+241:       "com.google.common.jimfs.Name$1",
+242:       "com.google.common.jimfs.Name$2",
+243:       "com.google.common.base.CommonMatcher",
+244:       "com.google.common.collect.ImmutableList$ReverseImmutableList",
+245:       "com.google.common.jimfs.FileSystemView",
+246:       "com.google.common.base.CharMatcher$RangesMatcher",
+247:       "com.google.common.base.Splitter",
+248:       "com.google.common.base.Converter",
+249:       "com.google.common.base.Function",
+250:       "com.google.common.collect.ImmutableMap",
+251:       "com.google.common.collect.ComparatorOrdering",
+252:       "com.google.common.collect.AbstractIndexedListIterator",
+253:       "com.google.common.collect.CollectPreconditions",
+254:       "com.google.common.jimfs.PollingWatchService",
+255:       "com.google.common.primitives.Ints$IntConverter",
+256:       "com.google.common.collect.Sets",
+257:       "com.google.common.jimfs.Handler",
+258:       "com.google.common.collect.BoundType",
+259:       "com.google.common.collect.ExplicitOrdering",
+260:       "com.google.common.collect.ComparisonChain$1",
+261:       "com.google.common.base.CharMatcher$JavaLowerCase",
+262:       "com.google.common.collect.ImmutableMap$1",
+263:       "com.google.common.collect.ImmutableList$Builder",
+264:       "com.google.common.primitives.Booleans",
+265:       "com.google.common.collect.Iterables$4",
+266:       "com.google.common.collect.Iterables$5",
+267:       "com.google.common.jimfs.AbstractWatchService",
+268:       "com.google.common.jimfs.Configuration$Builder",
+269:       "com.google.common.jimfs.DirectoryEntry",
+270:       "com.google.common.collect.CompoundOrdering",
+271:       "com.google.common.collect.Iterators",
+272:       "com.google.common.base.Splitter$1$1",
+273:       "com.google.common.base.AbstractIterator$State",
+274:       "com.google.common.jimfs.WatchServiceConfiguration",
+275:       "com.google.common.jimfs.Options",
+276:       "com.google.common.collect.ComparisonChain$InactiveComparisonChain",
+277:       "com.google.common.base.Splitter$3",
+278:       "com.google.common.base.Splitter$5",
+279:       "com.google.common.collect.RegularImmutableMap$EntrySet",
+280:       "com.google.common.collect.Cut$BelowAll",
+281:       "com.google.common.base.Ascii",
+282:       "com.google.common.collect.ReverseNaturalOrdering",
+283:       "com.google.common.jimfs.Configuration$WindowsHolder",
+284:       "com.google.common.primitives.Ints",
+285:       "com.google.common.base.CharMatcher$Or",
+286:       "com.google.common.base.Splitter$1",
+287:       "com.google.common.collect.TransformedIterator",
+288:       "com.google.common.jimfs.BasicAttributeProvider",
+289:       "com.google.common.collect.DescendingImmutableSortedSet",
+290:       "com.google.common.base.Splitter$SplittingIterator",
+291:       "com.google.common.base.AbstractIterator",
+292:       "com.google.common.collect.RegularImmutableMap$KeysOrValuesAsList",
+293:       "com.google.common.collect.SortedIterables",
+294:       "com.google.common.collect.Iterators$MergingIterator",
+295:       "com.google.common.jimfs.Configuration$OsxHolder",
+296:       "com.google.common.collect.RegularImmutableSortedSet",
+297:       "com.google.common.collect.Cut$AboveAll",
+298:       "com.google.common.collect.Table"
+299:     );
+300:   } 
+301:   private static void initMocksToAvoidTimeoutsInTheTests() throws ClassNotFoundException { 
+302:     mock(Class.forName("java.nio.file.attribute.FileAttribute", false, JimfsFileSystemProvider_9_tmp__ESTest_scaffolding.class.getClassLoader()));
+303:     mock(Class.forName("java.util.concurrent.Callable", false, JimfsFileSystemProvider_9_tmp__ESTest_scaffolding.class.getClassLoader()));
+304:   }
+305: 
+306:   private static void resetClasses() {
+307:     org.evosuite.runtime.classhandling.ClassResetter.getInstance().setClassLoader(JimfsFileSystemProvider_9_tmp__ESTest_scaffolding.class.getClassLoader()); 
+308: 
+309:     org.evosuite.runtime.classhandling.ClassStateSupport.resetClasses(
+310:       "com.google.common.jimfs.Handler",
+311:       "com.google.common.base.Preconditions",
+312:       "com.google.common.jimfs.JimfsFileSystemProvider",
+313:       "com.google.common.jimfs.Feature",
+314:       "com.google.common.collect.ImmutableCollection",
+315:       "com.google.common.collect.ImmutableSet",
+316:       "com.google.common.collect.RegularImmutableSet",
+317:       "com.google.common.collect.SingletonImmutableSet",
+318:       "com.google.common.collect.ObjectArrays",
+319:       "com.google.common.collect.Hashing",
+320:       "com.google.common.jimfs.Options",
+321:       "com.google.common.jimfs.FileSystemView$DeleteMode",
+322:       "com.google.common.jimfs.PathType",
+323:       "com.google.common.base.Joiner",
+324:       "com.google.common.base.Splitter",
+325:       "com.google.common.base.Platform$JdkPatternCompiler",
+326:       "com.google.common.base.Platform",
+327:       "com.google.common.base.CommonPattern",
+328:       "com.google.common.base.JdkPattern",
+329:       "com.google.common.base.CommonMatcher",
+330:       "com.google.common.base.JdkPattern$JdkMatcher",
+331:       "com.google.common.base.Splitter$3",
+332:       "com.google.common.base.CharMatcher",
+333:       "com.google.common.base.CharMatcher$FastMatcher",
+334:       "com.google.common.base.CharMatcher$NamedFastMatcher",
+335:       "com.google.common.base.CharMatcher$None",
+336:       "com.google.common.jimfs.WindowsPathType",
+337:       "com.google.common.collect.Ordering",
+338:       "com.google.common.collect.NaturalOrdering",
+339:       "com.google.common.jimfs.Name$1",
+340:       "com.google.common.collect.ByFunctionOrdering",
+341:       "com.google.common.jimfs.Name$2",
+342:       "com.google.common.jimfs.Name",
+343:       "com.google.common.collect.NullsLastOrdering",
+344:       "com.google.common.collect.LexicographicalOrdering",
+345:       "com.google.common.jimfs.PathService$1",
+346:       "com.google.common.jimfs.PathService",
+347:       "com.google.common.collect.UnmodifiableIterator",
+348:       "com.google.common.collect.UnmodifiableListIterator",
+349:       "com.google.common.collect.AbstractIndexedListIterator",
+350:       "com.google.common.collect.ImmutableList$Itr",
+351:       "com.google.common.collect.RegularImmutableList",
+352:       "com.google.common.collect.ImmutableList",
+353:       "com.google.common.collect.Iterables",
+354:       "com.google.common.collect.FluentIterable",
+355:       "com.google.common.collect.Iterables$4",
+356:       "com.google.common.base.Optional",
+357:       "com.google.common.base.Absent",
+358:       "com.google.common.collect.Iterators",
+359:       "com.google.common.collect.AbstractIterator",
+360:       "com.google.common.collect.Iterators$5",
+361:       "com.google.common.collect.AbstractIterator$State",
+362:       "com.google.common.collect.AbstractIterator$1",
+363:       "com.google.common.jimfs.JimfsPath",
+364:       "com.google.common.base.Functions",
+365:       "com.google.common.base.Functions$ToStringFunction",
+366:       "com.google.common.collect.Iterables$5",
+367:       "com.google.common.collect.TransformedIterator",
+368:       "com.google.common.collect.Iterators$6",
+369:       "com.google.common.jimfs.Configuration",
+370:       "com.google.common.base.CharMatcher$Is",
+371:       "com.google.common.base.Splitter$1",
+372:       "com.google.common.jimfs.UnixPathType",
+373:       "com.google.common.jimfs.Configuration$Builder",
+374:       "com.google.common.jimfs.WatchServiceConfiguration$PollingConfig",
+375:       "com.google.common.jimfs.WatchServiceConfiguration",
+376:       "com.google.common.collect.Lists",
+377:       "com.google.common.collect.Lists$OnePlusArrayList",
+378:       "com.google.common.math.IntMath",
+379:       "com.google.common.primitives.IntsMethodsForWeb",
+380:       "com.google.common.primitives.Ints",
+381:       "com.google.common.jimfs.PathType$ParseResult",
+382:       "com.google.common.base.Splitter$5",
+383:       "com.google.common.base.AbstractIterator",
+384:       "com.google.common.base.Splitter$SplittingIterator",
+385:       "com.google.common.base.Splitter$1$1",
+386:       "com.google.common.base.AbstractIterator$State",
+387:       "com.google.common.base.AbstractIterator$1",
+388:       "com.google.common.collect.Sets",
+389:       "com.google.common.collect.ImmutableEnumSet",
+390:       "com.google.common.collect.ImmutableMap",
+391:       "com.google.common.collect.RegularImmutableMap",
+392:       "com.google.common.jimfs.Configuration$UnixHolder",
+393:       "com.google.common.collect.ImmutableSortedSetFauxverideShim",
+394:       "com.google.common.collect.ImmutableSortedSet",
+395:       "com.google.common.collect.ImmutableCollection$Builder",
+396:       "com.google.common.collect.ImmutableCollection$ArrayBasedBuilder",
+397:       "com.google.common.collect.ImmutableSet$Builder",
+398:       "com.google.common.collect.ImmutableSortedSet$Builder",
+399:       "com.google.common.collect.CollectPreconditions",
+400:       "com.google.common.collect.RegularImmutableSortedSet",
+401:       "com.google.common.base.Splitter$3$1",
+402:       "com.google.common.jimfs.Configuration$1",
+403:       "com.google.common.jimfs.Configuration$WindowsHolder",
+404:       "com.google.common.collect.RangeGwtSerializationDependencies",
+405:       "com.google.common.collect.Cut",
+406:       "com.google.common.collect.Cut$BelowAll",
+407:       "com.google.common.collect.Cut$AboveAll",
+408:       "com.google.common.collect.Range",
+409:       "com.google.common.collect.Cut$BelowValue",
+410:       "com.google.common.collect.DiscreteDomain",
+411:       "com.google.common.collect.ContiguousSet",
+412:       "com.google.common.collect.Cut$AboveValue",
+413:       "com.google.common.jimfs.Util",
+414:       "com.google.common.collect.SortedIterables",
+415:       "com.google.common.jimfs.Configuration$OsxHolder",
+416:       "com.google.common.collect.Iterators$9",
+417:       "com.google.common.jimfs.File",
+418:       "com.google.common.jimfs.Directory",
+419:       "com.google.common.jimfs.DirectoryEntry",
+420:       "com.google.common.collect.Iterators$1",
+421:       "com.google.common.base.Ascii",
+422:       "com.google.common.collect.ImmutableList$Builder",
+423:       "com.google.common.collect.Platform",
+424:       "com.google.common.jimfs.HeapDisk",
+425:       "com.google.common.jimfs.RegularFile",
+426:       "com.google.common.jimfs.FileFactory",
+427:       "com.google.common.jimfs.FileFactory$DirectorySupplier",
+428:       "com.google.common.jimfs.FileFactory$RegularFileSupplier",
+429:       "com.google.common.jimfs.Directory$1",
+430:       "com.google.common.base.Strings",
+431:       "com.google.common.math.LongMath",
+432:       "com.google.common.jimfs.BasicAttributeProvider$Attributes",
+433:       "com.google.common.jimfs.PosixAttributeProvider$Attributes",
+434:       "com.google.common.jimfs.AttributeService",
+435:       "com.google.common.collect.ImmutableMap$Builder",
+436:       "com.google.common.jimfs.AttributeProvider",
+437:       "com.google.common.jimfs.BasicAttributeProvider",
+438:       "com.google.common.jimfs.UserLookupService",
+439:       "com.google.common.jimfs.UserLookupService$NamedPrincipal",
+440:       "com.google.common.jimfs.UserLookupService$JimfsUserPrincipal",
+441:       "com.google.common.jimfs.OwnerAttributeProvider",
+442:       "com.google.common.jimfs.UserLookupService$JimfsGroupPrincipal",
+443:       "com.google.common.jimfs.PosixAttributeProvider",
+444:       "com.google.common.jimfs.DosAttributeProvider",
+445:       "com.google.common.jimfs.AclAttributeProvider",
+446:       "com.google.common.jimfs.UserDefinedAttributeProvider",
+447:       "com.google.common.jimfs.StandardAttributeProviders",
+448:       "com.google.common.collect.RegularImmutableMap$EntrySet",
+449:       "com.google.common.collect.RegularImmutableMap$EntrySet$1",
+450:       "com.google.common.collect.RegularImmutableMap$KeysOrValuesAsList",
+451:       "com.google.common.collect.RegularImmutableMap$KeySet",
+452:       "com.google.common.jimfs.PathMatchers",
+453:       "com.google.common.jimfs.FileTree",
+454:       "com.google.common.collect.ImmutableSortedMapFauxverideShim",
+455:       "com.google.common.collect.ImmutableSortedMap",
+456:       "com.google.common.base.MoreObjects",
+457:       "com.google.common.base.MoreObjects$ToStringHelper",
+458:       "com.google.common.base.MoreObjects$ToStringHelper$ValueHolder",
+459:       "com.google.common.base.Java8Usage",
+460:       "com.google.common.jimfs.JimfsPath$1",
+461:       "com.google.common.primitives.Booleans",
+462:       "com.ibm.icu.lang.UCharacter",
+463:       "com.ibm.icu.impl.ICUData",
+464:       "com.ibm.icu.impl.ICUData$2",
+465:       "com.ibm.icu.impl.ICUConfig",
+466:       "com.ibm.icu.impl.ICUConfig$1",
+467:       "com.ibm.icu.impl.ICUBinary",
+468:       "com.ibm.icu.impl.ClassLoaderUtil",
+469:       "com.ibm.icu.impl.ICUData$3",
+470:       "com.ibm.icu.impl.UCaseProps$IsAcceptable",
+471:       "com.ibm.icu.impl.Trie2$1",
+472:       "com.ibm.icu.impl.Trie2",
+473:       "com.ibm.icu.impl.Trie2_16",
+474:       "com.ibm.icu.impl.Trie2$UTrie2Header",
+475:       "com.ibm.icu.impl.Trie2$ValueWidth",
+476:       "com.ibm.icu.impl.Trie2$2",
+477:       "com.ibm.icu.impl.UCaseProps",
+478:       "com.ibm.icu.impl.CaseMapImpl",
+479:       "com.ibm.icu.text.Edits",
+480:       "com.ibm.icu.impl.UCaseProps$LatinCase",
+481:       "com.ibm.icu.text.Edits$Iterator",
+482:       "com.google.common.jimfs.DosAttributeProvider$Attributes",
+483:       "com.google.common.collect.ComparisonChain$1",
+484:       "com.google.common.collect.ComparisonChain$InactiveComparisonChain",
+485:       "com.google.common.collect.ComparisonChain",
+486:       "com.google.common.jimfs.FileSystemView",
+487:       "com.google.common.collect.ImmutableList$SubList",
+488:       "com.google.common.jimfs.SymbolicLink",
+489:       "com.google.common.collect.Range$1",
+490:       "com.google.common.collect.EmptyContiguousSet",
+491:       "com.google.common.collect.Iterators$ArrayItr",
+492:       "com.google.common.collect.RegularContiguousSet"
+493:     );
+494:   }
+495: }
+
+[MASTER] 07:33:26.114 [logback-2] ERROR JUnitAnalyzer - Failed to compile test case:
+JimfsFileSystemProvider jimfsFileSystemProvider0 = JimfsFileSystemProvider.instance();
+Path path0 = null;
+LinkOption linkOption0 = LinkOption.NOFOLLOW_LINKS;
+ImmutableSet<LinkOption> immutableSet0 = ImmutableSet.of(linkOption0, linkOption0);
+ThreadPoolExecutor.DiscardOldestPolicy threadPoolExecutor_DiscardOldestPolicy0 = new ThreadPoolExecutor.DiscardOldestPolicy();
+ScheduledThreadPoolExecutor scheduledThreadPoolExecutor0 = new ScheduledThreadPoolExecutor(1693, threadPoolExecutor_DiscardOldestPolicy0);
+FileAttribute<BasicAttributeProvider.Attributes>[] fileAttributeArray0 = (FileAttribute<BasicAttributeProvider.Attributes>[]) Array.newInstance(FileAttribute.class, 4);
+Thread thread0 = MockThread.currentThread();
+threadPoolExecutor_DiscardOldestPolicy0.rejectedExecution(thread0, scheduledThreadPoolExecutor0);
+Callable<LinkOption> callable0 = (Callable<LinkOption>) mock(Callable.class, new ViolatedAssumptionAnswer());
+doReturn((Object) null).when(callable0).call();
+scheduledThreadPoolExecutor0.submit((Callable<ForkJoinTask<ForkJoinTask>>) callable0);
+FileAttribute<BasicAttributeProvider.Attributes> fileAttribute0 = (FileAttribute<BasicAttributeProvider.Attributes>) mock(FileAttribute.class, new ViolatedAssumptionAnswer());
+jimfsFileSystemProvider0.newFileChannel((Path) null, immutableSet0, fileAttributeArray0);
+
+[MASTER] 07:33:29.157 [logback-2] ERROR JUnitAnalyzer - Compilation failed on compilation units: [RegularFileObject[/tmp/EvoSuite_10_1729708406116/com/google/common/jimfs/JimfsFileSystemProvider_10_tmp__ESTest.java], RegularFileObject[/tmp/EvoSuite_10_1729708406116/com/google/common/jimfs/JimfsFileSystemProvider_10_tmp__ESTest_scaffolding.java]]
+[MASTER] 07:33:29.157 [logback-2] ERROR JUnitAnalyzer - Classpath: /home/wtwhite/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/jimfs/jimfs/1.2/jimfs-1.2.jar:t/dependency/asm-9.0.jar:t/dependency/auto-service-annotations-1.0-rc7.jar:t/dependency/auto-value-annotations-1.7.4.jar:t/dependency/checker-compat-qual-2.5.5.jar:t/dependency/checker-qual-3.7.0.jar:t/dependency/error_prone_annotations-2.3.4.jar:t/dependency/failureaccess-1.0.1.jar:t/dependency/guava-30.1-android.jar:t/dependency/guava-testlib-30.1-android.jar:t/dependency/hamcrest-core-1.3.jar:t/dependency/icu4j-68.2.jar:t/dependency/j2objc-annotations-1.3.jar:t/dependency/jsr305-3.0.2.jar:t/dependency/junit-4.13.1.jar:t/dependency/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:t/dependency/truth-1.1.jar:/home/wtwhite/code/regression-test-generation/evosuite/evosuite-1.2.0.jar:/home/wtwhite/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/jimfs/jimfs/1.2/jimfs-1.2.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/jimfs/jimfs/1.2/t/dependency/asm-9.0.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/jimfs/jimfs/1.2/t/dependency/auto-service-annotations-1.0-rc7.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/jimfs/jimfs/1.2/t/dependency/auto-value-annotations-1.7.4.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/jimfs/jimfs/1.2/t/dependency/checker-compat-qual-2.5.5.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/jimfs/jimfs/1.2/t/dependency/checker-qual-3.7.0.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/jimfs/jimfs/1.2/t/dependency/error_prone_annotations-2.3.4.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/jimfs/jimfs/1.2/t/dependency/failureaccess-1.0.1.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/jimfs/jimfs/1.2/t/dependency/guava-30.1-android.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/jimfs/jimfs/1.2/t/dependency/guava-testlib-30.1-android.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/jimfs/jimfs/1.2/t/dependency/hamcrest-core-1.3.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/jimfs/jimfs/1.2/t/dependency/icu4j-68.2.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/jimfs/jimfs/1.2/t/dependency/j2objc-annotations-1.3.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/jimfs/jimfs/1.2/t/dependency/jsr305-3.0.2.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/jimfs/jimfs/1.2/t/dependency/junit-4.13.1.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/jimfs/jimfs/1.2/t/dependency/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/jimfs/jimfs/1.2/t/dependency/truth-1.1.jar
+[MASTER] 07:33:29.157 [logback-2] ERROR JUnitAnalyzer - evosuiteCP: /home/wtwhite/code/regression-test-generation/evosuite/evosuite-1.2.0.jar:/home/wtwhite/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/jimfs/jimfs/1.2/jimfs-1.2.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/jimfs/jimfs/1.2/t/dependency/asm-9.0.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/jimfs/jimfs/1.2/t/dependency/auto-service-annotations-1.0-rc7.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/jimfs/jimfs/1.2/t/dependency/auto-value-annotations-1.7.4.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/jimfs/jimfs/1.2/t/dependency/checker-compat-qual-2.5.5.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/jimfs/jimfs/1.2/t/dependency/checker-qual-3.7.0.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/jimfs/jimfs/1.2/t/dependency/error_prone_annotations-2.3.4.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/jimfs/jimfs/1.2/t/dependency/failureaccess-1.0.1.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/jimfs/jimfs/1.2/t/dependency/guava-30.1-android.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/jimfs/jimfs/1.2/t/dependency/guava-testlib-30.1-android.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/jimfs/jimfs/1.2/t/dependency/hamcrest-core-1.3.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/jimfs/jimfs/1.2/t/dependency/icu4j-68.2.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/jimfs/jimfs/1.2/t/dependency/j2objc-annotations-1.3.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/jimfs/jimfs/1.2/t/dependency/jsr305-3.0.2.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/jimfs/jimfs/1.2/t/dependency/junit-4.13.1.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/jimfs/jimfs/1.2/t/dependency/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/jimfs/jimfs/1.2/t/dependency/truth-1.1.jar
+[MASTER] 07:33:29.158 [logback-2] ERROR JUnitAnalyzer - Diagnostic: incompatible types: java.util.concurrent.Callable<java.nio.file.LinkOption> cannot be converted to java.util.concurrent.Callable<java.util.concurrent.ForkJoinTask<java.util.concurrent.ForkJoinTask>>: 49
+[MASTER] 07:33:29.158 [logback-2] ERROR JUnitAnalyzer - Diagnostic: /tmp/EvoSuite_10_1729708406116/com/google/common/jimfs/JimfsFileSystemProvider_10_tmp__ESTest.java uses unchecked or unsafe operations.: -1
+[MASTER] 07:33:29.158 [logback-2] ERROR JUnitAnalyzer - Diagnostic: Recompile with -Xlint:unchecked for details.: -1
+[MASTER] 07:33:29.158 [logback-2] ERROR JUnitAnalyzer - RegularFileObject[/tmp/EvoSuite_10_1729708406116/com/google/common/jimfs/JimfsFileSystemProvider_10_tmp__ESTest.java]
+1: /*
+2:  * This file was automatically generated by EvoSuite
+3:  * Wed Oct 23 18:33:29 GMT 2024
+4:  */
+5: 
+6: package com.google.common.jimfs;
+7: 
+8: import org.junit.Test;
+9: import static org.junit.Assert.*;
+10: import static org.evosuite.shaded.org.mockito.Mockito.*;
+11: import static org.evosuite.runtime.EvoAssertions.*;
+12: import com.google.common.collect.ImmutableSet;
+13: import com.google.common.jimfs.BasicAttributeProvider;
+14: import com.google.common.jimfs.JimfsFileSystemProvider;
+15: import java.lang.reflect.Array;
+16: import java.nio.file.AccessMode;
+17: import java.nio.file.DirectoryStream;
+18: import java.nio.file.LinkOption;
+19: import java.nio.file.Path;
+20: import java.nio.file.ProviderMismatchException;
+21: import java.nio.file.attribute.FileAttribute;
+22: import java.util.concurrent.Callable;
+23: import java.util.concurrent.ForkJoinTask;
+24: import java.util.concurrent.ScheduledThreadPoolExecutor;
+25: import java.util.concurrent.ThreadPoolExecutor;
+26: import org.evosuite.runtime.EvoRunner;
+27: import org.evosuite.runtime.EvoRunnerParameters;
+28: import org.evosuite.runtime.ViolatedAssumptionAnswer;
+29: import org.evosuite.runtime.mock.java.lang.MockThread;
+30: import org.junit.runner.RunWith;
+31: 
+32: @RunWith(EvoRunner.class) @EvoRunnerParameters(mockJVMNonDeterminism = true, useVFS = true, useVNET = true, resetStaticState = true) 
+33: public class JimfsFileSystemProvider_10_tmp__ESTest extends JimfsFileSystemProvider_10_tmp__ESTest_scaffolding {
+34: 
+35:   @Test(timeout = 4000)
+36:   public void test0()  throws Throwable  {
+37:       JimfsFileSystemProvider jimfsFileSystemProvider0 = JimfsFileSystemProvider.instance();
+38:       Path path0 = null;
+39:       LinkOption linkOption0 = LinkOption.NOFOLLOW_LINKS;
+40:       ImmutableSet<LinkOption> immutableSet0 = ImmutableSet.of(linkOption0, linkOption0);
+41:       ThreadPoolExecutor.DiscardOldestPolicy threadPoolExecutor_DiscardOldestPolicy0 = new ThreadPoolExecutor.DiscardOldestPolicy();
+42:       ScheduledThreadPoolExecutor scheduledThreadPoolExecutor0 = new ScheduledThreadPoolExecutor(1693, threadPoolExecutor_DiscardOldestPolicy0);
+43:       FileAttribute<BasicAttributeProvider.Attributes>[] fileAttributeArray0 = (FileAttribute<BasicAttributeProvider.Attributes>[]) Array.newInstance(FileAttribute.class, 4);
+44:       Thread thread0 = MockThread.currentThread();
+45:       threadPoolExecutor_DiscardOldestPolicy0.rejectedExecution(thread0, scheduledThreadPoolExecutor0);
+46:       LinkOption linkOption1 = LinkOption.NOFOLLOW_LINKS;
+47:       Callable<LinkOption> callable0 = (Callable<LinkOption>) mock(Callable.class, new ViolatedAssumptionAnswer());
+48:       doReturn(linkOption1).when(callable0).call();
+49:       scheduledThreadPoolExecutor0.submit((Callable<ForkJoinTask<ForkJoinTask>>) callable0);
+50:       FileAttribute<BasicAttributeProvider.Attributes> fileAttribute0 = (FileAttribute<BasicAttributeProvider.Attributes>) mock(FileAttribute.class, new ViolatedAssumptionAnswer());
+51:       // Undeclared exception!
+52:       try { 
+53:         jimfsFileSystemProvider0.newFileChannel((Path) null, immutableSet0, fileAttributeArray0);
+54:         fail("Expecting exception: ProviderMismatchException");
+55:       
+56:       } catch(ProviderMismatchException e) {
+57:          //
+58:          // path null is not associated with a Jimfs file system
+59:          //
+60:          verifyException("com.google.common.jimfs.JimfsFileSystemProvider", e);
+61:       }
+62:   }
+63: }
+RegularFileObject[/tmp/EvoSuite_10_1729708406116/com/google/common/jimfs/JimfsFileSystemProvider_10_tmp__ESTest.java]
+1: /**
+2:  * Scaffolding file used to store all the setups needed to run 
+3:  * tests automatically generated by EvoSuite
+4:  * Wed Oct 23 18:33:29 GMT 2024
+5:  */
+6: 
+7: package com.google.common.jimfs;
+8: 
+9: import org.evosuite.runtime.annotation.EvoSuiteClassExclude;
+10: import org.junit.BeforeClass;
+11: import org.junit.Before;
+12: import org.junit.After;
+13: import org.junit.AfterClass;
+14: import org.evosuite.runtime.sandbox.Sandbox;
+15: import org.evosuite.runtime.sandbox.Sandbox.SandboxMode;
+16: 
+17: import static org.evosuite.shaded.org.mockito.Mockito.*;
+18: @EvoSuiteClassExclude
+19: public class JimfsFileSystemProvider_10_tmp__ESTest_scaffolding {
+20: 
+21:   @org.junit.Rule
+22:   public org.evosuite.runtime.vnet.NonFunctionalRequirementRule nfr = new org.evosuite.runtime.vnet.NonFunctionalRequirementRule();
+23: 
+24:   private static final java.util.Properties defaultProperties = (java.util.Properties) java.lang.System.getProperties().clone(); 
+25: 
+26:   private org.evosuite.runtime.thread.ThreadStopper threadStopper =  new org.evosuite.runtime.thread.ThreadStopper (org.evosuite.runtime.thread.KillSwitchHandler.getInstance(), 3000);
+27: 
+28: 
+29:   @BeforeClass
+30:   public static void initEvoSuiteFramework() { 
+31:     org.evosuite.runtime.RuntimeSettings.className = "com.google.common.jimfs.JimfsFileSystemProvider"; 
+32:     org.evosuite.runtime.GuiSupport.initialize(); 
+33:     org.evosuite.runtime.RuntimeSettings.maxNumberOfThreads = 100; 
+34:     org.evosuite.runtime.RuntimeSettings.maxNumberOfIterationsPerLoop = 10000; 
+35:     org.evosuite.runtime.RuntimeSettings.mockSystemIn = true; 
+36:     org.evosuite.runtime.RuntimeSettings.sandboxMode = org.evosuite.runtime.sandbox.Sandbox.SandboxMode.RECOMMENDED; 
+37:     org.evosuite.runtime.sandbox.Sandbox.initializeSecurityManagerForSUT(); 
+38:     org.evosuite.runtime.classhandling.JDKClassResetter.init();
+39:     setSystemProperties();
+40:     initializeClasses();
+41:     org.evosuite.runtime.Runtime.getInstance().resetRuntime(); 
+42:     try { initMocksToAvoidTimeoutsInTheTests(); } catch(ClassNotFoundException e) {} 
+43:   } 
+44: 
+45:   @AfterClass
+46:   public static void clearEvoSuiteFramework(){ 
+47:     Sandbox.resetDefaultSecurityManager(); 
+48:     java.lang.System.setProperties((java.util.Properties) defaultProperties.clone()); 
+49:   } 
+50: 
+51:   @Before
+52:   public void initTestCase(){ 
+53:     threadStopper.storeCurrentThreads();
+54:     threadStopper.startRecordingTime();
+55:     org.evosuite.runtime.jvm.ShutdownHookHandler.getInstance().initHandler(); 
+56:     org.evosuite.runtime.sandbox.Sandbox.goingToExecuteSUTCode(); 
+57:     setSystemProperties(); 
+58:     org.evosuite.runtime.GuiSupport.setHeadless(); 
+59:     org.evosuite.runtime.Runtime.getInstance().resetRuntime(); 
+60:     org.evosuite.runtime.agent.InstrumentingAgent.activate(); 
+61:   } 
+62: 
+63:   @After
+64:   public void doneWithTestCase(){ 
+65:     threadStopper.killAndJoinClientThreads();
+66:     org.evosuite.runtime.jvm.ShutdownHookHandler.getInstance().safeExecuteAddedHooks(); 
+67:     org.evosuite.runtime.classhandling.JDKClassResetter.reset(); 
+68:     resetClasses(); 
+69:     org.evosuite.runtime.sandbox.Sandbox.doneWithExecutingSUTCode(); 
+70:     org.evosuite.runtime.agent.InstrumentingAgent.deactivate(); 
+71:     org.evosuite.runtime.GuiSupport.restoreHeadlessMode(); 
+72:   } 
+73: 
+74:   public static void setSystemProperties() {
+75:  
+76:     java.lang.System.setProperties((java.util.Properties) defaultProperties.clone()); 
+77:     java.lang.System.setProperty("java.io.tmpdir", "/tmp"); 
+78:     java.lang.System.setProperty("user.dir", "/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/jimfs/jimfs/1.2"); 
+79:   }
+80: 
+81:   private static void initializeClasses() {
+82:     org.evosuite.runtime.classhandling.ClassStateSupport.initializeClasses(JimfsFileSystemProvider_10_tmp__ESTest_scaffolding.class.getClassLoader() ,
+83:       "com.google.common.jimfs.Name",
+84:       "com.google.common.collect.RegularContiguousSet",
+85:       "com.google.common.jimfs.JimfsFileStore",
+86:       "com.google.common.collect.Lists$RandomAccessPartition",
+87:       "com.google.common.base.CharMatcher$ForPredicate",
+88:       "com.google.common.base.JdkPattern",
+89:       "com.google.common.collect.PeekingIterator",
+90:       "com.google.common.jimfs.Feature",
+91:       "com.google.common.math.IntMath",
+92:       "com.google.common.base.Platform$JdkPatternCompiler",
+93:       "com.google.common.collect.Sets$2",
+94:       "com.google.common.collect.Sets$3",
+95:       "com.google.common.collect.ImmutableCollection$ArrayBasedBuilder",
+96:       "com.google.common.collect.Sets$1",
+97:       "com.google.common.collect.NullsLastOrdering",
+98:       "com.google.common.collect.Platform",
+99:       "com.google.common.base.CharMatcher$JavaLetterOrDigit",
+100:       "com.google.common.collect.RegularImmutableMap",
+101:       "com.google.common.collect.ByFunctionOrdering",
+102:       "com.google.common.jimfs.WatchServiceConfiguration$PollingConfig",
+103:       "com.google.common.collect.Iterators$10",
+104:       "com.google.common.collect.ImmutableMap$IteratorBasedImmutableMap",
+105:       "com.google.common.base.Predicate",
+106:       "com.google.common.base.CharMatcher$Invisible",
+107:       "com.google.common.base.CharMatcher$None",
+108:       "com.google.common.base.Joiner",
+109:       "com.google.common.collect.NullsFirstOrdering",
+110:       "com.google.common.collect.DiscreteDomain$BigIntegerDomain",
+111:       "com.google.common.jimfs.PathURLConnection",
+112:       "com.google.common.collect.Lists$Partition",
+113:       "com.google.common.collect.Lists",
+114:       "com.google.common.collect.DiscreteDomain",
+115:       "com.google.common.collect.UnmodifiableListIterator",
+116:       "com.google.common.jimfs.PathType$ParseResult",
+117:       "com.google.common.collect.ImmutableSortedSet",
+118:       "com.google.common.collect.Cut",
+119:       "com.google.common.base.Functions",
+120:       "com.google.common.collect.Sets$4",
+121:       "com.google.common.jimfs.PathNormalization$1",
+122:       "com.google.common.base.Absent",
+123:       "com.google.common.collect.DiscreteDomain$1",
+124:       "com.google.common.jimfs.JimfsFileSystem",
+125:       "com.google.common.base.CharMatcher",
+126:       "com.google.common.jimfs.JimfsPath",
+127:       "com.google.common.collect.ImmutableSortedSet$Builder",
+128:       "com.google.common.jimfs.PathNormalization$2",
+129:       "com.google.common.jimfs.PathNormalization$3",
+130:       "com.google.common.jimfs.PathNormalization$4",
+131:       "com.google.common.jimfs.PathNormalization$5",
+132:       "com.google.common.base.Preconditions",
+133:       "com.google.common.collect.ImmutableSortedSetFauxverideShim",
+134:       "com.google.common.base.CharMatcher$1",
+135:       "com.google.common.base.CharMatcher$FastMatcher",
+136:       "com.google.common.base.Joiner$1",
+137:       "com.google.common.base.CharMatcher$JavaIsoControl",
+138:       "com.google.common.base.Joiner$2",
+139:       "com.google.common.collect.ImmutableList$Itr",
+140:       "com.google.common.collect.ImmutableCollection",
+141:       "com.google.common.collect.Lists$OnePlusArrayList",
+142:       "com.google.common.base.CharMatcher$BitSetMatcher",
+143:       "com.google.common.base.CharMatcher$JavaUpperCase",
+144:       "com.google.common.jimfs.PathService$1",
+145:       "com.google.common.collect.ImmutableCollection$Builder",
+146:       "com.google.errorprone.annotations.DoNotMock",
+147:       "com.google.common.collect.Iterators$6",
+148:       "com.google.common.collect.ImmutableSet",
+149:       "com.google.common.collect.Iterators$9",
+150:       "com.google.common.collect.Lists$AbstractListWrapper",
+151:       "com.google.common.collect.DiscreteDomain$IntegerDomain",
+152:       "com.google.common.base.CharMatcher$NamedFastMatcher",
+153:       "com.google.common.collect.Iterators$1",
+154:       "com.google.common.collect.Iterators$4",
+155:       "com.google.common.collect.Iterators$5",
+156:       "com.google.common.collect.AbstractIterator$State",
+157:       "com.google.common.collect.DiscreteDomain$LongDomain",
+158:       "com.google.common.base.Functions$ToStringFunction",
+159:       "com.google.common.base.CharMatcher$Is",
+160:       "com.google.common.collect.Lists$StringAsImmutableList",
+161:       "com.google.common.collect.Lists$2",
+162:       "com.google.common.collect.Cut$AboveValue",
+163:       "com.google.common.base.CharMatcher$SingleWidth",
+164:       "com.google.common.base.Splitter$Strategy",
+165:       "com.google.common.collect.Lists$1",
+166:       "com.google.common.jimfs.JimfsOutputStream",
+167:       "com.google.common.base.AbstractIterator$1",
+168:       "com.google.common.jimfs.PathService",
+169:       "com.google.common.collect.ImmutableList",
+170:       "com.google.common.collect.ReverseOrdering",
+171:       "com.google.common.collect.FluentIterable$1",
+172:       "com.google.common.collect.FluentIterable$2",
+173:       "com.google.common.collect.FluentIterable$3",
+174:       "com.google.common.base.CharMatcher$Negated",
+175:       "com.google.common.base.CharMatcher$Ascii",
+176:       "com.google.common.collect.Ordering",
+177:       "com.google.common.base.CharMatcher$Digit",
+178:       "com.google.common.collect.NaturalOrdering",
+179:       "com.google.common.jimfs.AttributeProvider",
+180:       "com.google.common.jimfs.JimfsInputStream",
+181:       "com.google.common.collect.AllEqualOrdering",
+182:       "com.google.common.collect.Hashing",
+183:       "com.google.common.collect.ImmutableList$SubList",
+184:       "com.google.common.jimfs.Directory",
+185:       "com.google.common.base.CharMatcher$Whitespace",
+186:       "com.google.common.collect.RegularImmutableList",
+187:       "com.google.common.base.CharMatcher$JavaDigit",
+188:       "com.google.common.collect.FluentIterable",
+189:       "com.google.common.base.Optional",
+190:       "com.google.common.collect.Lists$TransformingRandomAccessList",
+191:       "com.google.common.jimfs.BasicAttributeProvider$Attributes",
+192:       "com.google.common.collect.Iterators$ArrayItr",
+193:       "com.google.common.collect.RegularImmutableMap$KeySet",
+194:       "com.google.common.jimfs.File",
+195:       "com.google.common.base.CharMatcher$IsNot",
+196:       "com.google.common.base.CharMatcher$InRange",
+197:       "com.google.common.base.CharMatcher$JavaLetter",
+198:       "com.google.common.collect.AbstractIterator$1",
+199:       "com.google.common.jimfs.JimfsFileSystemProvider",
+200:       "com.google.common.base.CharMatcher$NegatedFastMatcher",
+201:       "com.google.common.collect.Range",
+202:       "com.google.common.collect.ComparisonChain",
+203:       "com.google.common.collect.RegularImmutableSet",
+204:       "com.google.common.base.CommonPattern",
+205:       "com.google.common.base.CharMatcher$IsEither",
+206:       "com.google.common.collect.LexicographicalOrdering",
+207:       "com.google.common.base.Present",
+208:       "com.google.common.collect.Iterables",
+209:       "com.google.common.collect.ContiguousSet",
+210:       "com.google.common.base.CharMatcher$Any",
+211:       "com.google.common.collect.ImmutableSet$Builder",
+212:       "com.google.common.collect.Sets$SetView",
+213:       "com.google.common.base.JdkPattern$JdkMatcher",
+214:       "com.google.common.collect.SingletonImmutableSet",
+215:       "com.google.common.collect.Cut$BelowValue",
+216:       "com.google.common.jimfs.JimfsFileChannel",
+217:       "com.google.common.base.PatternCompiler",
+218:       "com.google.common.base.Splitter$3$1",
+219:       "com.google.common.collect.UsingToStringOrdering",
+220:       "com.google.common.jimfs.Configuration$UnixHolder",
+221:       "com.google.common.collect.EmptyContiguousSet",
+222:       "com.google.common.collect.Lists$TransformingSequentialList",
+223:       "com.google.common.primitives.IntsMethodsForWeb",
+224:       "com.google.common.collect.RangeGwtSerializationDependencies",
+225:       "com.google.common.jimfs.PathType",
+226:       "com.google.common.jimfs.Configuration",
+227:       "com.google.common.collect.ObjectArrays",
+228:       "com.google.common.collect.AbstractIterator",
+229:       "com.google.common.base.CharMatcher$And",
+230:       "com.google.common.jimfs.Configuration$1",
+231:       "com.google.common.jimfs.UnixPathType",
+232:       "com.google.common.collect.SortedIterable",
+233:       "com.google.common.collect.ImmutableMap$MapViewOfValuesAsSingletonSets",
+234:       "com.google.common.base.CharMatcher$AnyOf",
+235:       "com.google.common.collect.UnmodifiableIterator",
+236:       "com.google.common.jimfs.WindowsPathType",
+237:       "com.google.common.collect.Lists$RandomAccessListWrapper",
+238:       "com.google.common.collect.ImmutableEnumSet",
+239:       "com.google.common.jimfs.PathNormalization",
+240:       "com.google.common.base.Platform",
+241:       "com.google.common.jimfs.Name$1",
+242:       "com.google.common.jimfs.Name$2",
+243:       "com.google.common.base.CommonMatcher",
+244:       "com.google.common.collect.ImmutableList$ReverseImmutableList",
+245:       "com.google.common.jimfs.FileSystemView",
+246:       "com.google.common.base.CharMatcher$RangesMatcher",
+247:       "com.google.common.base.Splitter",
+248:       "com.google.common.base.Converter",
+249:       "com.google.common.base.Function",
+250:       "com.google.common.collect.ImmutableMap",
+251:       "com.google.common.collect.ComparatorOrdering",
+252:       "com.google.common.collect.AbstractIndexedListIterator",
+253:       "com.google.common.collect.CollectPreconditions",
+254:       "com.google.common.jimfs.PollingWatchService",
+255:       "com.google.common.primitives.Ints$IntConverter",
+256:       "com.google.common.collect.Sets",
+257:       "com.google.common.jimfs.Handler",
+258:       "com.google.common.collect.BoundType",
+259:       "com.google.common.collect.ExplicitOrdering",
+260:       "com.google.common.collect.ComparisonChain$1",
+261:       "com.google.common.base.CharMatcher$JavaLowerCase",
+262:       "com.google.common.collect.ImmutableMap$1",
+263:       "com.google.common.collect.ImmutableList$Builder",
+264:       "com.google.common.primitives.Booleans",
+265:       "com.google.common.collect.Iterables$4",
+266:       "com.google.common.collect.Iterables$5",
+267:       "com.google.common.jimfs.AbstractWatchService",
+268:       "com.google.common.jimfs.Configuration$Builder",
+269:       "com.google.common.jimfs.DirectoryEntry",
+270:       "com.google.common.collect.CompoundOrdering",
+271:       "com.google.common.collect.Iterators",
+272:       "com.google.common.base.Splitter$1$1",
+273:       "com.google.common.base.AbstractIterator$State",
+274:       "com.google.common.jimfs.WatchServiceConfiguration",
+275:       "com.google.common.jimfs.Options",
+276:       "com.google.common.collect.ComparisonChain$InactiveComparisonChain",
+277:       "com.google.common.base.Splitter$3",
+278:       "com.google.common.base.Splitter$5",
+279:       "com.google.common.collect.RegularImmutableMap$EntrySet",
+280:       "com.google.common.collect.Cut$BelowAll",
+281:       "com.google.common.base.Ascii",
+282:       "com.google.common.collect.ReverseNaturalOrdering",
+283:       "com.google.common.jimfs.Configuration$WindowsHolder",
+284:       "com.google.common.primitives.Ints",
+285:       "com.google.common.base.CharMatcher$Or",
+286:       "com.google.common.base.Splitter$1",
+287:       "com.google.common.collect.TransformedIterator",
+288:       "com.google.common.jimfs.BasicAttributeProvider",
+289:       "com.google.common.collect.DescendingImmutableSortedSet",
+290:       "com.google.common.base.Splitter$SplittingIterator",
+291:       "com.google.common.base.AbstractIterator",
+292:       "com.google.common.collect.RegularImmutableMap$KeysOrValuesAsList",
+293:       "com.google.common.collect.SortedIterables",
+294:       "com.google.common.collect.Iterators$MergingIterator",
+295:       "com.google.common.jimfs.Configuration$OsxHolder",
+296:       "com.google.common.collect.RegularImmutableSortedSet",
+297:       "com.google.common.collect.Cut$AboveAll",
+298:       "com.google.common.collect.Table"
+299:     );
+300:   } 
+301:   private static void initMocksToAvoidTimeoutsInTheTests() throws ClassNotFoundException { 
+302:     mock(Class.forName("java.nio.file.attribute.FileAttribute", false, JimfsFileSystemProvider_10_tmp__ESTest_scaffolding.class.getClassLoader()));
+303:     mock(Class.forName("java.util.concurrent.Callable", false, JimfsFileSystemProvider_10_tmp__ESTest_scaffolding.class.getClassLoader()));
+304:   }
+305: 
+306:   private static void resetClasses() {
+307:     org.evosuite.runtime.classhandling.ClassResetter.getInstance().setClassLoader(JimfsFileSystemProvider_10_tmp__ESTest_scaffolding.class.getClassLoader()); 
+308: 
+309:     org.evosuite.runtime.classhandling.ClassStateSupport.resetClasses(
+310:       "com.google.common.jimfs.Handler",
+311:       "com.google.common.base.Preconditions",
+312:       "com.google.common.jimfs.JimfsFileSystemProvider",
+313:       "com.google.common.jimfs.Feature",
+314:       "com.google.common.collect.ImmutableCollection",
+315:       "com.google.common.collect.ImmutableSet",
+316:       "com.google.common.collect.RegularImmutableSet",
+317:       "com.google.common.collect.SingletonImmutableSet",
+318:       "com.google.common.collect.ObjectArrays",
+319:       "com.google.common.collect.Hashing",
+320:       "com.google.common.jimfs.Options",
+321:       "com.google.common.jimfs.FileSystemView$DeleteMode",
+322:       "com.google.common.jimfs.PathType",
+323:       "com.google.common.base.Joiner",
+324:       "com.google.common.base.Splitter",
+325:       "com.google.common.base.Platform$JdkPatternCompiler",
+326:       "com.google.common.base.Platform",
+327:       "com.google.common.base.CommonPattern",
+328:       "com.google.common.base.JdkPattern",
+329:       "com.google.common.base.CommonMatcher",
+330:       "com.google.common.base.JdkPattern$JdkMatcher",
+331:       "com.google.common.base.Splitter$3",
+332:       "com.google.common.base.CharMatcher",
+333:       "com.google.common.base.CharMatcher$FastMatcher",
+334:       "com.google.common.base.CharMatcher$NamedFastMatcher",
+335:       "com.google.common.base.CharMatcher$None",
+336:       "com.google.common.jimfs.WindowsPathType",
+337:       "com.google.common.collect.Ordering",
+338:       "com.google.common.collect.NaturalOrdering",
+339:       "com.google.common.jimfs.Name$1",
+340:       "com.google.common.collect.ByFunctionOrdering",
+341:       "com.google.common.jimfs.Name$2",
+342:       "com.google.common.jimfs.Name",
+343:       "com.google.common.collect.NullsLastOrdering",
+344:       "com.google.common.collect.LexicographicalOrdering",
+345:       "com.google.common.jimfs.PathService$1",
+346:       "com.google.common.jimfs.PathService",
+347:       "com.google.common.collect.UnmodifiableIterator",
+348:       "com.google.common.collect.UnmodifiableListIterator",
+349:       "com.google.common.collect.AbstractIndexedListIterator",
+350:       "com.google.common.collect.ImmutableList$Itr",
+351:       "com.google.common.collect.RegularImmutableList",
+352:       "com.google.common.collect.ImmutableList",
+353:       "com.google.common.collect.Iterables",
+354:       "com.google.common.collect.FluentIterable",
+355:       "com.google.common.collect.Iterables$4",
+356:       "com.google.common.base.Optional",
+357:       "com.google.common.base.Absent",
+358:       "com.google.common.collect.Iterators",
+359:       "com.google.common.collect.AbstractIterator",
+360:       "com.google.common.collect.Iterators$5",
+361:       "com.google.common.collect.AbstractIterator$State",
+362:       "com.google.common.collect.AbstractIterator$1",
+363:       "com.google.common.jimfs.JimfsPath",
+364:       "com.google.common.base.Functions",
+365:       "com.google.common.base.Functions$ToStringFunction",
+366:       "com.google.common.collect.Iterables$5",
+367:       "com.google.common.collect.TransformedIterator",
+368:       "com.google.common.collect.Iterators$6",
+369:       "com.google.common.jimfs.Configuration",
+370:       "com.google.common.base.CharMatcher$Is",
+371:       "com.google.common.base.Splitter$1",
+372:       "com.google.common.jimfs.UnixPathType",
+373:       "com.google.common.jimfs.Configuration$Builder",
+374:       "com.google.common.jimfs.WatchServiceConfiguration$PollingConfig",
+375:       "com.google.common.jimfs.WatchServiceConfiguration",
+376:       "com.google.common.collect.Lists",
+377:       "com.google.common.collect.Lists$OnePlusArrayList",
+378:       "com.google.common.math.IntMath",
+379:       "com.google.common.primitives.IntsMethodsForWeb",
+380:       "com.google.common.primitives.Ints",
+381:       "com.google.common.jimfs.PathType$ParseResult",
+382:       "com.google.common.base.Splitter$5",
+383:       "com.google.common.base.AbstractIterator",
+384:       "com.google.common.base.Splitter$SplittingIterator",
+385:       "com.google.common.base.Splitter$1$1",
+386:       "com.google.common.base.AbstractIterator$State",
+387:       "com.google.common.base.AbstractIterator$1",
+388:       "com.google.common.collect.Sets",
+389:       "com.google.common.collect.ImmutableEnumSet",
+390:       "com.google.common.collect.ImmutableMap",
+391:       "com.google.common.collect.RegularImmutableMap",
+392:       "com.google.common.jimfs.Configuration$UnixHolder",
+393:       "com.google.common.collect.ImmutableSortedSetFauxverideShim",
+394:       "com.google.common.collect.ImmutableSortedSet",
+395:       "com.google.common.collect.ImmutableCollection$Builder",
+396:       "com.google.common.collect.ImmutableCollection$ArrayBasedBuilder",
+397:       "com.google.common.collect.ImmutableSet$Builder",
+398:       "com.google.common.collect.ImmutableSortedSet$Builder",
+399:       "com.google.common.collect.CollectPreconditions",
+400:       "com.google.common.collect.RegularImmutableSortedSet",
+401:       "com.google.common.base.Splitter$3$1",
+402:       "com.google.common.jimfs.Configuration$1",
+403:       "com.google.common.jimfs.Configuration$WindowsHolder",
+404:       "com.google.common.collect.RangeGwtSerializationDependencies",
+405:       "com.google.common.collect.Cut",
+406:       "com.google.common.collect.Cut$BelowAll",
+407:       "com.google.common.collect.Cut$AboveAll",
+408:       "com.google.common.collect.Range",
+409:       "com.google.common.collect.Cut$BelowValue",
+410:       "com.google.common.collect.DiscreteDomain",
+411:       "com.google.common.collect.ContiguousSet",
+412:       "com.google.common.collect.Cut$AboveValue",
+413:       "com.google.common.jimfs.Util",
+414:       "com.google.common.collect.SortedIterables",
+415:       "com.google.common.jimfs.Configuration$OsxHolder",
+416:       "com.google.common.collect.Iterators$9",
+417:       "com.google.common.jimfs.File",
+418:       "com.google.common.jimfs.Directory",
+419:       "com.google.common.jimfs.DirectoryEntry",
+420:       "com.google.common.collect.Iterators$1",
+421:       "com.google.common.base.Ascii",
+422:       "com.google.common.collect.ImmutableList$Builder",
+423:       "com.google.common.collect.Platform",
+424:       "com.google.common.jimfs.HeapDisk",
+425:       "com.google.common.jimfs.RegularFile",
+426:       "com.google.common.jimfs.FileFactory",
+427:       "com.google.common.jimfs.FileFactory$DirectorySupplier",
+428:       "com.google.common.jimfs.FileFactory$RegularFileSupplier",
+429:       "com.google.common.jimfs.Directory$1",
+430:       "com.google.common.base.Strings",
+431:       "com.google.common.math.LongMath",
+432:       "com.google.common.jimfs.BasicAttributeProvider$Attributes",
+433:       "com.google.common.jimfs.PosixAttributeProvider$Attributes",
+434:       "com.google.common.jimfs.AttributeService",
+435:       "com.google.common.collect.ImmutableMap$Builder",
+436:       "com.google.common.jimfs.AttributeProvider",
+437:       "com.google.common.jimfs.BasicAttributeProvider",
+438:       "com.google.common.jimfs.UserLookupService",
+439:       "com.google.common.jimfs.UserLookupService$NamedPrincipal",
+440:       "com.google.common.jimfs.UserLookupService$JimfsUserPrincipal",
+441:       "com.google.common.jimfs.OwnerAttributeProvider",
+442:       "com.google.common.jimfs.UserLookupService$JimfsGroupPrincipal",
+443:       "com.google.common.jimfs.PosixAttributeProvider",
+444:       "com.google.common.jimfs.DosAttributeProvider",
+445:       "com.google.common.jimfs.AclAttributeProvider",
+446:       "com.google.common.jimfs.UserDefinedAttributeProvider",
+447:       "com.google.common.jimfs.StandardAttributeProviders",
+448:       "com.google.common.collect.RegularImmutableMap$EntrySet",
+449:       "com.google.common.collect.RegularImmutableMap$EntrySet$1",
+450:       "com.google.common.collect.RegularImmutableMap$KeysOrValuesAsList",
+451:       "com.google.common.collect.RegularImmutableMap$KeySet",
+452:       "com.google.common.jimfs.PathMatchers",
+453:       "com.google.common.jimfs.FileTree",
+454:       "com.google.common.collect.ImmutableSortedMapFauxverideShim",
+455:       "com.google.common.collect.ImmutableSortedMap",
+456:       "com.google.common.base.MoreObjects",
+457:       "com.google.common.base.MoreObjects$ToStringHelper",
+458:       "com.google.common.base.MoreObjects$ToStringHelper$ValueHolder",
+459:       "com.google.common.base.Java8Usage",
+460:       "com.google.common.jimfs.JimfsPath$1",
+461:       "com.google.common.primitives.Booleans",
+462:       "com.ibm.icu.lang.UCharacter",
+463:       "com.ibm.icu.impl.ICUData",
+464:       "com.ibm.icu.impl.ICUData$2",
+465:       "com.ibm.icu.impl.ICUConfig",
+466:       "com.ibm.icu.impl.ICUConfig$1",
+467:       "com.ibm.icu.impl.ICUBinary",
+468:       "com.ibm.icu.impl.ClassLoaderUtil",
+469:       "com.ibm.icu.impl.ICUData$3",
+470:       "com.ibm.icu.impl.UCaseProps$IsAcceptable",
+471:       "com.ibm.icu.impl.Trie2$1",
+472:       "com.ibm.icu.impl.Trie2",
+473:       "com.ibm.icu.impl.Trie2_16",
+474:       "com.ibm.icu.impl.Trie2$UTrie2Header",
+475:       "com.ibm.icu.impl.Trie2$ValueWidth",
+476:       "com.ibm.icu.impl.Trie2$2",
+477:       "com.ibm.icu.impl.UCaseProps",
+478:       "com.ibm.icu.impl.CaseMapImpl",
+479:       "com.ibm.icu.text.Edits",
+480:       "com.ibm.icu.impl.UCaseProps$LatinCase",
+481:       "com.ibm.icu.text.Edits$Iterator",
+482:       "com.google.common.jimfs.DosAttributeProvider$Attributes",
+483:       "com.google.common.collect.ComparisonChain$1",
+484:       "com.google.common.collect.ComparisonChain$InactiveComparisonChain",
+485:       "com.google.common.collect.ComparisonChain",
+486:       "com.google.common.jimfs.FileSystemView",
+487:       "com.google.common.collect.ImmutableList$SubList",
+488:       "com.google.common.jimfs.SymbolicLink",
+489:       "com.google.common.collect.Range$1",
+490:       "com.google.common.collect.EmptyContiguousSet",
+491:       "com.google.common.collect.Iterators$ArrayItr",
+492:       "com.google.common.collect.RegularContiguousSet"
+493:     );
+494:   }
+495: }
+
+[MASTER] 07:33:29.159 [logback-2] ERROR JUnitAnalyzer - Failed to compile test case:
+JimfsFileSystemProvider jimfsFileSystemProvider0 = JimfsFileSystemProvider.instance();
+Path path0 = null;
+LinkOption linkOption0 = LinkOption.NOFOLLOW_LINKS;
+ImmutableSet<LinkOption> immutableSet0 = ImmutableSet.of(linkOption0, linkOption0);
+ThreadPoolExecutor.DiscardOldestPolicy threadPoolExecutor_DiscardOldestPolicy0 = new ThreadPoolExecutor.DiscardOldestPolicy();
+ScheduledThreadPoolExecutor scheduledThreadPoolExecutor0 = new ScheduledThreadPoolExecutor(1693, threadPoolExecutor_DiscardOldestPolicy0);
+FileAttribute<BasicAttributeProvider.Attributes>[] fileAttributeArray0 = (FileAttribute<BasicAttributeProvider.Attributes>[]) Array.newInstance(FileAttribute.class, 4);
+Thread thread0 = MockThread.currentThread();
+threadPoolExecutor_DiscardOldestPolicy0.rejectedExecution(thread0, scheduledThreadPoolExecutor0);
+LinkOption linkOption1 = LinkOption.NOFOLLOW_LINKS;
+Callable<LinkOption> callable0 = (Callable<LinkOption>) mock(Callable.class, new ViolatedAssumptionAnswer());
+doReturn(linkOption1).when(callable0).call();
+scheduledThreadPoolExecutor0.submit((Callable<ForkJoinTask<ForkJoinTask>>) callable0);
+FileAttribute<BasicAttributeProvider.Attributes> fileAttribute0 = (FileAttribute<BasicAttributeProvider.Attributes>) mock(FileAttribute.class, new ViolatedAssumptionAnswer());
+jimfsFileSystemProvider0.newFileChannel((Path) null, immutableSet0, fileAttributeArray0);
+
+* Writing tests to file
+* Writing JUnit test case 'JimfsFileSystemProvider_ESTest' to evosuite-tests
+* Done!
+
+* Computation finished

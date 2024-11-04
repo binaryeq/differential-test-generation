@@ -1,0 +1,79 @@
+* EvoSuite 1.2.0
+* Going to generate test cases for class: com.google.common.collect.ObjectArrays
+* Starting Client-0
+* Connecting to master process on port 17444
+* Analyzing classpath: 
+  - /home/wtwhite/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/guava/guava/31.0.1-jre/guava-31.0.1-jre.jar
+  - t/dependency/checker-qual-3.12.0.jar
+  - t/dependency/error_prone_annotations-2.7.1.jar
+  - t/dependency/failureaccess-1.0.1.jar
+  - t/dependency/j2objc-annotations-1.3.jar
+  - t/dependency/jsr305-3.0.2.jar
+  - t/dependency/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar
+* Finished analyzing classpath
+* Generating tests for class com.google.common.collect.ObjectArrays
+* Test criteria:
+  - Line Coverage
+  - Branch Coverage
+  - Exception
+  - Mutation testing (weak)
+  - Method-Output Coverage
+  - Top-Level Method Coverage
+  - No-Exception Top-Level Method Coverage
+  - Context Branch Coverage
+[Progress:>                             0%] [Cov:>                                  0%]* Total number of test goals for DYNAMOSA: 378
+* Using seed 1729697677113
+* Starting evolution
+* Initial Number of Goals in DynaMOSA = 235 / 378
+[MASTER] 04:34:40.433 [logback-1] WARN  CastClassManager - Nothing is assignable after adding com.google.common.collect.Multisets.UnmodifiableMultiset<E> for wildcard ? extends E
+[MASTER] 04:34:41.725 [logback-1] WARN  TestCluster - Failed to check cache for com.google.common.collect.ImmutableSortedSet<E> : Type points to itself
+[MASTER] 04:34:42.083 [logback-1] WARN  TestCluster - Failed to check cache for java.lang.Comparable<T> : Type points to itself
+[MASTER] 04:34:42.799 [logback-1] WARN  CastClassManager - Nothing is assignable after adding com.google.common.collect.Multisets.UnmodifiableMultiset<E> for wildcard ? extends E
+[MASTER] 04:34:42.991 [logback-1] WARN  TestCluster - Failed to check cache for com.google.common.collect.Multisets.UnmodifiableMultiset<E> : Type points to itself
+[MASTER] 04:34:43.384 [logback-1] WARN  CastClassManager - Nothing is assignable after adding com.google.common.collect.UnmodifiableSortedMultiset<E> for wildcard ? extends E
+[MASTER] 04:34:44.039 [logback-1] WARN  CastClassManager - Nothing is assignable after adding com.google.common.collect.UnmodifiableSortedMultiset<E> for wildcard ? extends E
+[MASTER] 04:34:44.350 [logback-1] WARN  TestCluster - Failed to check cache for com.google.common.collect.UnmodifiableSortedMultiset<E> : Type points to itself
+[MASTER] 04:34:44.408 [logback-1] WARN  TestCluster - Failed to check cache for com.google.common.collect.DescendingImmutableSortedSet<E> : Type points to itself
+[MASTER] 04:34:44.703 [logback-1] WARN  TestCluster - Failed to check cache for java.util.Comparator<T> : Type points to itself
+[MASTER] 04:34:45.060 [logback-1] WARN  TestCluster - Failed to check cache for com.google.common.base.Function<F, T> : Type points to itself
+[Progress:===>                          10%] [Cov:===========================>       78%][MASTER] 04:36:41.455 [logback-1] WARN  TimeController - Phase SEARCH lasted too long, 61 seconds more than allowed.
+[MASTER] 04:36:41.449 [logback-2] ERROR ClientNodeImpl - Error when generating tests for: com.google.common.collect.ObjectArrays with seed 1729697677113. Configuration id : null
+java.lang.OutOfMemoryError: Java heap space
+	at java.util.Arrays.copyOf(Arrays.java:3181)
+	at java.util.ArrayList.grow(ArrayList.java:267)
+	at java.util.ArrayList.ensureExplicitCapacity(ArrayList.java:241)
+	at java.util.ArrayList.ensureCapacityInternal(ArrayList.java:233)
+	at java.util.ArrayList.add(ArrayList.java:464)
+	at org.evosuite.utils.SimpleListenable.addListener(SimpleListenable.java:36)
+	at org.evosuite.testcase.DefaultTestCase.addListener(DefaultTestCase.java:207)
+	at org.evosuite.testcase.variable.VariableReferenceImpl.<init>(VariableReferenceImpl.java:67)
+	at org.evosuite.testcase.variable.ArrayIndex.<init>(ArrayIndex.java:78)
+	at org.evosuite.testcase.variable.ArrayIndex.<init>(ArrayIndex.java:65)
+	at org.evosuite.testcase.DefaultTestCase.getObjects(DefaultTestCase.java:608)
+	at org.evosuite.testcase.TestFactory.changeRandomCall(TestFactory.java:963)
+	at org.evosuite.testcase.TestChromosome.mutationChange(TestChromosome.java:510)
+	at org.evosuite.testcase.TestChromosome.mutate(TestChromosome.java:323)
+	at org.evosuite.ga.metaheuristics.mosa.AbstractMOSA.mutate(AbstractMOSA.java:215)
+	at org.evosuite.ga.metaheuristics.mosa.AbstractMOSA.breedNextGeneration(AbstractMOSA.java:170)
+	at org.evosuite.ga.metaheuristics.mosa.DynaMOSA.evolve(DynaMOSA.java:72)
+	at org.evosuite.ga.metaheuristics.mosa.DynaMOSA.generateSolution(DynaMOSA.java:173)
+	at org.evosuite.ga.metaheuristics.TestSuiteAdapter.generateSolution(TestSuiteAdapter.java:136)
+	at org.evosuite.strategy.MOSuiteStrategy.generateTests(MOSuiteStrategy.java:122)
+	at org.evosuite.TestSuiteGenerator.generateTests(TestSuiteGenerator.java:630)
+	at org.evosuite.TestSuiteGenerator.generateTestSuite(TestSuiteGenerator.java:208)
+	at org.evosuite.rmi.service.ClientNodeImpl.lambda$startNewSearch$0(ClientNodeImpl.java:140)
+	at org.evosuite.rmi.service.ClientNodeImpl$$Lambda$10/1162799704.run(Unknown Source)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+* Computation finished
+[MASTER] 04:36:41.763 [main] ERROR SearchStatistics - No obtained value for output variable: Total_Goals
+[MASTER] 04:36:43.767 [main] ERROR SearchStatistics - No obtained value for output variable: Total_Goals
+[MASTER] 04:36:44.768 [main] ERROR SearchStatistics - No obtained value for output variable: Total_Goals
+[MASTER] 04:36:45.768 [main] ERROR SearchStatistics - No obtained value for output variable: Total_Goals
+[MASTER] 04:36:46.771 [main] ERROR SearchStatistics - No obtained value for output variable: Total_Goals
+[MASTER] 04:36:47.771 [main] ERROR SearchStatistics - No obtained value for output variable: Total_Goals
+[MASTER] 04:36:47.771 [main] ERROR SearchStatistics - Not going to write down statistics data, as some are missing
+[MASTER] 04:36:47.872 [main] ERROR TestGeneration - failed to write statistics data
