@@ -1,0 +1,23 @@
+159a160,163
+> java.lang.reflect.Constructor[] v2;
+> int v13, v14;
+> java.lang.String v11, v12, v15;
+> boolean v6;
+162d165
+< java.lang.reflect.Constructor[] v2;
+166,167c169
+< java.lang.String v11;
+< boolean v6;
+---
+> java.lang.StringBuilder v16;
+187,188c189,195
+< v11 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.Class)>(v0) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("No appropriate constructor for exception of type \u0001 in response to chained exception");
+< specialinvoke v10.<java.lang.IllegalArgumentException: void <init>(java.lang.String,java.lang.Throwable)>(v11, v1);
+---
+> v11 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v0);
+> v12 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v11);
+> v13 = virtualinvoke v12.<java.lang.String: int length()>();
+> v14 = 82 + v13;
+> specialinvoke v16.<java.lang.StringBuilder: void <init>(int)>(v14);
+> v15 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v11) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("No appropriate constructor for exception of type \u0001 in response to chained exception");
+> specialinvoke v10.<java.lang.IllegalArgumentException: void <init>(java.lang.String,java.lang.Throwable)>(v15, v1);

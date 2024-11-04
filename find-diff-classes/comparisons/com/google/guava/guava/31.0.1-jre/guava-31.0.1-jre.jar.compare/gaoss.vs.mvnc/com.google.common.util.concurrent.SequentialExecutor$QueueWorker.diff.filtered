@@ -1,0 +1,91 @@
+53,54d52
+< java.lang.Throwable v19, v27, v28;
+< java.util.Deque v13, v4;
+56,57c54
+< java.util.logging.Level v24;
+< java.lang.Thread v18, v29, v8;
+---
+> java.lang.Thread v18, v33, v8;
+60d56
+< java.lang.String v26;
+61a58,64
+> java.util.logging.Logger v23;
+> java.lang.StringBuilder v34;
+> java.lang.Throwable v19, v31, v32;
+> java.util.Deque v13, v4;
+> java.util.logging.Level v24;
+> int v28, v29;
+> java.lang.String v26, v27, v30;
+64d66
+< java.util.logging.Logger v23;
+132,133c134,140
+< v26 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.Runnable)>(v25) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Exception while executing runnable \u0001");
+< virtualinvoke v23.<java.util.logging.Logger: void log(java.util.logging.Level,java.lang.String,java.lang.Throwable)>(v24, v26, v22);
+---
+> v26 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v25);
+> v27 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v26);
+> v28 = virtualinvoke v27.<java.lang.String: int length()>();
+> v29 = 35 + v28;
+> specialinvoke v34.<java.lang.StringBuilder: void <init>(int)>(v29);
+> v30 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v26) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Exception while executing runnable \u0001");
+> virtualinvoke v23.<java.util.logging.Logger: void log(java.util.logging.Level,java.lang.String,java.lang.Throwable)>(v24, v30, v22);
+138c145
+< v27 := @caughtexception;
+---
+> v31 := @caughtexception;
+140c147
+< throw v27;
+---
+> throw v31;
+142c149
+< v28 := @caughtexception;
+---
+> v32 := @caughtexception;
+144,145c151,152
+< v29 = staticinvoke <java.lang.Thread: java.lang.Thread currentThread()>();
+< virtualinvoke v29.<java.lang.Thread: void interrupt()>();
+---
+> v33 = staticinvoke <java.lang.Thread: java.lang.Thread currentThread()>();
+> virtualinvoke v33.<java.lang.Thread: void interrupt()>();
+147c154
+< throw v28;
+---
+> throw v32;
+158,161d164
+< com.google.common.util.concurrent.SequentialExecutor$WorkerRunningState v4;
+< com.google.common.util.concurrent.SequentialExecutor v3;
+< com.google.common.util.concurrent.SequentialExecutor$QueueWorker v0;
+< java.lang.String v2, v5;
+162a166,171
+> int v11, v12, v4, v5;
+> com.google.common.util.concurrent.SequentialExecutor$WorkerRunningState v8;
+> com.google.common.util.concurrent.SequentialExecutor$QueueWorker v0;
+> java.lang.String v10, v13, v2, v3, v6, v9;
+> com.google.common.util.concurrent.SequentialExecutor v7;
+> java.lang.StringBuilder v14, v15;
+166,167c175,181
+< v2 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.Runnable)>(v1) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("SequentialExecutorWorker{running=\u0001}");
+< return v2;
+---
+> v2 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v1);
+> v3 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v2);
+> v4 = virtualinvoke v3.<java.lang.String: int length()>();
+> v5 = 34 + v4;
+> specialinvoke v15.<java.lang.StringBuilder: void <init>(int)>(v5);
+> v6 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v2) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("SequentialExecutorWorker{running=\u0001}");
+> return v6;
+169,172c183,191
+< v3 = v0.<com.google.common.util.concurrent.SequentialExecutor$QueueWorker: com.google.common.util.concurrent.SequentialExecutor this$0>;
+< v4 = v3.<com.google.common.util.concurrent.SequentialExecutor: com.google.common.util.concurrent.SequentialExecutor$WorkerRunningState workerRunningState>;
+< v5 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (com.google.common.util.concurrent.SequentialExecutor$WorkerRunningState)>(v4) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("SequentialExecutorWorker{state=\u0001}");
+< return v5;
+---
+> v7 = v0.<com.google.common.util.concurrent.SequentialExecutor$QueueWorker: com.google.common.util.concurrent.SequentialExecutor this$0>;
+> v8 = v7.<com.google.common.util.concurrent.SequentialExecutor: com.google.common.util.concurrent.SequentialExecutor$WorkerRunningState workerRunningState>;
+> v9 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v8);
+> v10 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v9);
+> v11 = virtualinvoke v10.<java.lang.String: int length()>();
+> v12 = 32 + v11;
+> specialinvoke v14.<java.lang.StringBuilder: void <init>(int)>(v12);
+> v13 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v9) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("SequentialExecutorWorker{state=\u0001}");
+> return v13;

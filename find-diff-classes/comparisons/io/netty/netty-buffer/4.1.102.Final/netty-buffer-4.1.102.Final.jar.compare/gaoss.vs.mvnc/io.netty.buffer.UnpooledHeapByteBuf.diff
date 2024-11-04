@@ -1,0 +1,65 @@
+311,312c311
+< java.nio.ByteBuffer v5, v7;
+< java.nio.Buffer v10, v8;
+---
+> java.nio.ByteBuffer v10, v5, v7, v8;
+331c330
+< v8 = virtualinvoke v7.<java.nio.Buffer: java.nio.Buffer position(int)>(v1);
+---
+> v8 = virtualinvoke v7.<java.nio.ByteBuffer: java.nio.ByteBuffer position(int)>(v1);
+333c332
+< v10 = virtualinvoke v8.<java.nio.Buffer: java.nio.Buffer limit(int)>(v9);
+---
+> v10 = virtualinvoke v8.<java.nio.ByteBuffer: java.nio.ByteBuffer limit(int)>(v9);
+341,342c340
+< java.nio.ByteBuffer v6, v8;
+< java.nio.Buffer v11, v9;
+---
+> java.nio.ByteBuffer v11, v6, v8, v9;
+362c360
+< v9 = virtualinvoke v8.<java.nio.Buffer: java.nio.Buffer position(int)>(v1);
+---
+> v9 = virtualinvoke v8.<java.nio.ByteBuffer: java.nio.ByteBuffer position(int)>(v1);
+364c362
+< v11 = virtualinvoke v9.<java.nio.Buffer: java.nio.Buffer limit(int)>(v10);
+---
+> v11 = virtualinvoke v9.<java.nio.ByteBuffer: java.nio.ByteBuffer limit(int)>(v10);
+488,489c486
+< java.nio.ByteBuffer v4, v5;
+< java.nio.Buffer v6, v8;
+---
+> java.nio.ByteBuffer v4, v5, v6, v8;
+500c497
+< v6 = virtualinvoke v5.<java.nio.Buffer: java.nio.Buffer position(int)>(v1);
+---
+> v6 = virtualinvoke v5.<java.nio.ByteBuffer: java.nio.ByteBuffer position(int)>(v1);
+502c499
+< v8 = virtualinvoke v6.<java.nio.Buffer: java.nio.Buffer limit(int)>(v7);
+---
+> v8 = virtualinvoke v6.<java.nio.ByteBuffer: java.nio.ByteBuffer limit(int)>(v7);
+516,517c513
+< java.nio.ByteBuffer v5, v6;
+< java.nio.Buffer v7, v9;
+---
+> java.nio.ByteBuffer v5, v6, v7, v9;
+530c526
+< v7 = virtualinvoke v6.<java.nio.Buffer: java.nio.Buffer position(int)>(v1);
+---
+> v7 = virtualinvoke v6.<java.nio.ByteBuffer: java.nio.ByteBuffer position(int)>(v1);
+532c528
+< v9 = virtualinvoke v7.<java.nio.Buffer: java.nio.Buffer limit(int)>(v8);
+---
+> v9 = virtualinvoke v7.<java.nio.ByteBuffer: java.nio.ByteBuffer limit(int)>(v8);
+579,580c575
+< java.nio.ByteBuffer v3, v4;
+< java.nio.Buffer v5, v7;
+---
+> java.nio.ByteBuffer v3, v4, v5, v7;
+589c584
+< v5 = virtualinvoke v4.<java.nio.Buffer: java.nio.Buffer position(int)>(v1);
+---
+> v5 = virtualinvoke v4.<java.nio.ByteBuffer: java.nio.ByteBuffer position(int)>(v1);
+591c586
+< v7 = virtualinvoke v5.<java.nio.Buffer: java.nio.Buffer limit(int)>(v6);
+---
+> v7 = virtualinvoke v5.<java.nio.ByteBuffer: java.nio.ByteBuffer limit(int)>(v6);

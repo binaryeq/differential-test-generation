@@ -1,0 +1,23 @@
+228,229d227
+< com.google.common.jimfs.PathNormalization v0, v1;
+< java.lang.String v3;
+230a229,232
+> com.google.common.jimfs.PathNormalization v0, v1;
+> int v10, v6, v7, v9;
+> java.lang.StringBuilder v12;
+> java.lang.String v11, v3, v4, v5, v8;
+235,236c237,247
+< v3 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (com.google.common.jimfs.PathNormalization,com.google.common.jimfs.PathNormalization)>(v0, v1) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("can\'t set normalization \u0001: normalization \u0001 already set");
+< specialinvoke v2.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(v3);
+---
+> v3 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v0);
+> v4 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v1);
+> v5 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v3);
+> v6 = virtualinvoke v5.<java.lang.String: int length()>();
+> v7 = 52 + v6;
+> v8 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v4);
+> v9 = virtualinvoke v8.<java.lang.String: int length()>();
+> v10 = v7 + v9;
+> specialinvoke v12.<java.lang.StringBuilder: void <init>(int)>(v10);
+> v11 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,java.lang.String)>(v3, v4) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("can\'t set normalization \u0001: normalization \u0001 already set");
+> specialinvoke v2.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(v11);

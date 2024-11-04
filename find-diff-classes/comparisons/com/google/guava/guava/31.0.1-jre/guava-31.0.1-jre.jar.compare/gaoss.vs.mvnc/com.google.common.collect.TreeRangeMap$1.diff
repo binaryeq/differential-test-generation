@@ -1,0 +1,57 @@
+38,39d37
+< java.lang.Object v2;
+< java.lang.String v4;
+41a40,43
+> int v6, v7;
+> java.lang.Object v2;
+> java.lang.StringBuilder v9;
+> java.lang.String v4, v5, v8;
+47,48c49,55
+< v4 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (com.google.common.collect.Range)>(v1) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Cannot insert range \u0001 into an empty subRangeMap");
+< specialinvoke v3.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(v4);
+---
+> v4 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v1);
+> v5 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v4);
+> v6 = virtualinvoke v5.<java.lang.String: int length()>();
+> v7 = 46 + v6;
+> specialinvoke v9.<java.lang.StringBuilder: void <init>(int)>(v7);
+> v8 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v4) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Cannot insert range \u0001 into an empty subRangeMap");
+> specialinvoke v3.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(v8);
+54,55d60
+< java.lang.Object v2;
+< java.lang.String v4;
+57a63,66
+> int v6, v7;
+> java.lang.Object v2;
+> java.lang.StringBuilder v9;
+> java.lang.String v4, v5, v8;
+63,64c72,78
+< v4 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (com.google.common.collect.Range)>(v1) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Cannot insert range \u0001 into an empty subRangeMap");
+< specialinvoke v3.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(v4);
+---
+> v4 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v1);
+> v5 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v4);
+> v6 = virtualinvoke v5.<java.lang.String: int length()>();
+> v7 = 46 + v6;
+> specialinvoke v9.<java.lang.StringBuilder: void <init>(int)>(v7);
+> v8 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v4) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Cannot insert range \u0001 into an empty subRangeMap");
+> specialinvoke v3.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(v8);
+104,105d117
+< java.lang.Object v2;
+< java.lang.String v5;
+107a120,123
+> int v7, v8;
+> java.lang.Object v2;
+> java.lang.StringBuilder v10;
+> java.lang.String v5, v6, v9;
+114,115c130,136
+< v5 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (com.google.common.collect.Range)>(v1) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Cannot merge range \u0001 into an empty subRangeMap");
+< specialinvoke v4.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(v5);
+---
+> v5 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v1);
+> v6 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v5);
+> v7 = virtualinvoke v6.<java.lang.String: int length()>();
+> v8 = 45 + v7;
+> specialinvoke v10.<java.lang.StringBuilder: void <init>(int)>(v8);
+> v9 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v5) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Cannot merge range \u0001 into an empty subRangeMap");
+> specialinvoke v4.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(v9);

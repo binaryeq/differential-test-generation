@@ -1,0 +1,52 @@
+13,15c13,18
+< java.lang.Object[] v10;
+< java.lang.NumberFormatException v8;
+< java.lang.IllegalArgumentException v5, v9;
+---
+> java.lang.Object[] v13;
+> int v10, v7, v8;
+> java.lang.String v14, v2, v3, v6, v9;
+> boolean v4;
+> java.lang.NumberFormatException v11;
+> java.lang.IllegalArgumentException v12, v5;
+17,18c20
+< int v7;
+< java.lang.String v11, v2, v3, v6;
+---
+> java.lang.StringBuilder v15;
+20d21
+< boolean v4;
+28,29c29,34
+< v6 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v2) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("value of key \u0001 omitted");
+< specialinvoke v5.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(v6);
+---
+> v6 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v2);
+> v7 = virtualinvoke v6.<java.lang.String: int length()>();
+> v8 = 21 + v7;
+> specialinvoke v15.<java.lang.StringBuilder: void <init>(int)>(v8);
+> v9 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v2) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("value of key \u0001 omitted");
+> specialinvoke v5.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(v9);
+32,33c37,38
+< v7 = staticinvoke <java.lang.Integer: int parseInt(java.lang.String)>(v3);
+< virtualinvoke v0.<com.google.common.cache.CacheBuilderSpec$IntegerParser: void parseInteger(com.google.common.cache.CacheBuilderSpec,int)>(v1, v7);
+---
+> v10 = staticinvoke <java.lang.Integer: int parseInt(java.lang.String)>(v3);
+> virtualinvoke v0.<com.google.common.cache.CacheBuilderSpec$IntegerParser: void parseInteger(com.google.common.cache.CacheBuilderSpec,int)>(v1, v10);
+37,44c42,49
+< v8 := @caughtexception;
+< v9 = new java.lang.IllegalArgumentException;
+< v10 = newarray (java.lang.Object)[2];
+< v10[0] = v2;
+< v10[1] = v3;
+< v11 = staticinvoke <com.google.common.cache.CacheBuilderSpec: java.lang.String format(java.lang.String,java.lang.Object[])>("key %s value set to %s, must be integer", v10);
+< specialinvoke v9.<java.lang.IllegalArgumentException: void <init>(java.lang.String,java.lang.Throwable)>(v11, v8);
+< throw v9;
+---
+> v11 := @caughtexception;
+> v12 = new java.lang.IllegalArgumentException;
+> v13 = newarray (java.lang.Object)[2];
+> v13[0] = v2;
+> v13[1] = v3;
+> v14 = staticinvoke <com.google.common.cache.CacheBuilderSpec: java.lang.String format(java.lang.String,java.lang.Object[])>("key %s value set to %s, must be integer", v13);
+> specialinvoke v12.<java.lang.IllegalArgumentException: void <init>(java.lang.String,java.lang.Throwable)>(v14, v11);
+> throw v12;

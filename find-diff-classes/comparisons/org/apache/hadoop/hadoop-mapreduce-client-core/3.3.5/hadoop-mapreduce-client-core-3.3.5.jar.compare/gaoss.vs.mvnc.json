@@ -1,0 +1,390 @@
+{
+        "jar1": {
+            "file": "~/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-mapreduce-client-core/3.3.5/hadoop-mapreduce-client-core-3.3.5.jar",
+            "classcount": 1030,
+            "md5": "84721800e85f33ff146e42f111388be8",
+            "sha1": "082848938ecd46ab1859db438edb3e73dc53fdef",
+            "size": "1 MB",
+            "manifest": {
+                "Manifest-Version": "1.0",
+                "Archiver-Version": "Plexus Archiver",
+                "Created-By": "Apache Maven 3.8.6",
+                "Built-By": "root",
+                "Build-Jdk": "11.0.17"
+            },
+            "services": {
+                "org.apache.hadoop.security.token.TokenRenewer": ["org.apache.hadoop.mapreduce.security.token.JobTokenIdentifier$Renewer"],
+                "org.apache.hadoop.security.token.TokenIdentifier": [
+                    "org.apache.hadoop.mapreduce.security.token.delegation.DelegationTokenIdentifier",
+                    "org.apache.hadoop.mapreduce.security.token.JobTokenIdentifier"
+                ]
+            }
+        },
+        "jar2": {
+            "file": "~/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-mapreduce-client-core/3.3.5/hadoop-mapreduce-client-core-3.3.5.jar",
+            "classcount": 1032,
+            "md5": "404ef6471d6cbe5837d4af11df03deb8",
+            "sha1": "270fbb7f4491465cbeb6a45a654068be88fcf3df",
+            "size": "1 MB",
+            "manifest": {
+                "Manifest-Version": "1.0",
+                "Archiver-Version": "Plexus Archiver",
+                "Built-By": "stevel",
+                "Created-By": "Apache Maven 3.6.0",
+                "Build-Jdk": "1.8.0_352"
+            },
+            "services": {
+                "org.apache.hadoop.security.token.TokenRenewer": ["org.apache.hadoop.mapreduce.security.token.JobTokenIdentifier$Renewer"],
+                "org.apache.hadoop.security.token.TokenIdentifier": [
+                    "org.apache.hadoop.mapreduce.security.token.delegation.DelegationTokenIdentifier",
+                    "org.apache.hadoop.mapreduce.security.token.JobTokenIdentifier"
+                ]
+            }
+        },
+        "contentset-comparisons": [
+            {
+                "content-type": "sources",
+                "jar1.count": 0,
+                "jar2.count": 0,
+                "intersection": 0,
+                "union": 0,
+                "jar1-jar2": [],
+                "jar2-jar1": []
+            },
+            {
+                "content-type": "bytecode",
+                "jar1.count": 967,
+                "jar2.count": 967,
+                "intersection": 967,
+                "union": 967,
+                "jar1-jar2": [],
+                "jar2-jar1": []
+            },
+            {
+                "content-type": "metadata",
+                "jar1.count": 10,
+                "jar2.count": 12,
+                "intersection": 10,
+                "union": 12,
+                "jar1-jar2": [],
+                "jar2-jar1": [
+                    "META-INF/LICENSE.txt",
+                    "META-INF/NOTICE.txt"
+                ]
+            },
+            {
+                "content-type": "other",
+                "jar1.count": 53,
+                "jar2.count": 53,
+                "intersection": 53,
+                "union": 53,
+                "jar1-jar2": [],
+                "jar2-jar1": []
+            }
+        ],
+        "content-pairwise-comparisons": [{
+            "equivalence": {
+                "class": "io.github.bineq.equivalences.bytecode.JNormEquivalence2",
+                "name": "jnorm2"
+            },
+            "summary": {
+                "description": "comparison results of jar/folder content (pairwise comparison of content in both jars/folders)",
+                "equivalent": 951,
+                "non-equivalent": 16,
+                "errors": 0
+            },
+            "details": {
+                "non-equivalent": [
+                    {
+                        "class": "org/apache/hadoop/mapreduce/lib/output/committer/manifest/stages/TaskAttemptScanDirectoryStage.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-mapreduce-client-core/3.3.5/hadoop-mapreduce-client-core-3.3.5.jar/org.apache.hadoop.mapreduce.lib.output.committer.manifest.stages.TaskAttemptScanDirectoryStage.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-mapreduce-client-core/3.3.5/hadoop-mapreduce-client-core-3.3.5.jar/org.apache.hadoop.mapreduce.lib.output.committer.manifest.stages.TaskAttemptScanDirectoryStage.jimple",
+                            "transformed-class1": {
+                                "value": "public final class org.apache.hadoop.mapreduce.lib.output.committer.manifest.stages.TaskAttemptScanD ..  [abbreviated, 14948 chars]",
+                                "sha1": "db2630deefc6fe6e0ab1c9dcc0984779a6ee1db3",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-mapreduce-client-core/3.3.5/hadoop-mapreduce-client-core-3.3.5.jar/org.apache.hadoop.mapreduce.lib.output.committer.manifest.stages.TaskAttemptScanDirectoryStage.jimple",
+                                "md5": "2e5a3b0a2c4531539049c9474a3353e1"
+                            },
+                            "transformed-class2": {
+                                "value": "public final class org.apache.hadoop.mapreduce.lib.output.committer.manifest.stages.TaskAttemptScanD ..  [abbreviated, 14948 chars]",
+                                "sha1": "19bb64972f7318936701e56646a639050eed85b2",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-mapreduce-client-core/3.3.5/hadoop-mapreduce-client-core-3.3.5.jar/org.apache.hadoop.mapreduce.lib.output.committer.manifest.stages.TaskAttemptScanDirectoryStage.jimple",
+                                "md5": "abf253983efdb82ef070f49485b2c765"
+                            }
+                        }
+                    },
+                    {
+                        "class": "org/apache/hadoop/mapreduce/lib/output/committer/manifest/stages/LoadManifestsStage.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-mapreduce-client-core/3.3.5/hadoop-mapreduce-client-core-3.3.5.jar/org.apache.hadoop.mapreduce.lib.output.committer.manifest.stages.LoadManifestsStage.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-mapreduce-client-core/3.3.5/hadoop-mapreduce-client-core-3.3.5.jar/org.apache.hadoop.mapreduce.lib.output.committer.manifest.stages.LoadManifestsStage.jimple",
+                            "transformed-class1": {
+                                "value": "public class org.apache.hadoop.mapreduce.lib.output.committer.manifest.stages.LoadManifestsStage ext ..  [abbreviated, 13984 chars]",
+                                "sha1": "06497c26fafd2aec15b8e1df9d879b809cd15323",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-mapreduce-client-core/3.3.5/hadoop-mapreduce-client-core-3.3.5.jar/org.apache.hadoop.mapreduce.lib.output.committer.manifest.stages.LoadManifestsStage.jimple",
+                                "md5": "c750c60dc87f80a60422bd878bdc8715"
+                            },
+                            "transformed-class2": {
+                                "value": "public class org.apache.hadoop.mapreduce.lib.output.committer.manifest.stages.LoadManifestsStage ext ..  [abbreviated, 13983 chars]",
+                                "sha1": "3ae459d5463661798e9c158487b83c78c1acb7ad",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-mapreduce-client-core/3.3.5/hadoop-mapreduce-client-core-3.3.5.jar/org.apache.hadoop.mapreduce.lib.output.committer.manifest.stages.LoadManifestsStage.jimple",
+                                "md5": "113383f54966e6951c938c8c5fb6d4f0"
+                            }
+                        }
+                    },
+                    {
+                        "class": "org/apache/hadoop/mapred/BackupStore.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-mapreduce-client-core/3.3.5/hadoop-mapreduce-client-core-3.3.5.jar/org.apache.hadoop.mapred.BackupStore.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-mapreduce-client-core/3.3.5/hadoop-mapreduce-client-core-3.3.5.jar/org.apache.hadoop.mapred.BackupStore.jimple",
+                            "transformed-class1": {
+                                "value": "public class org.apache.hadoop.mapred.BackupStore extends java.lang.Object\n{\nprivate static final or ..  [abbreviated, 27316 chars]",
+                                "sha1": "a85be0936944909d23a5031198380c1ac4401c50",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-mapreduce-client-core/3.3.5/hadoop-mapreduce-client-core-3.3.5.jar/org.apache.hadoop.mapred.BackupStore.jimple",
+                                "md5": "777c30cae913c69d95b2c4c710b14914"
+                            },
+                            "transformed-class2": {
+                                "value": "public class org.apache.hadoop.mapred.BackupStore extends java.lang.Object\n{\nprivate static final or ..  [abbreviated, 27412 chars]",
+                                "sha1": "1c69032e406dfda6caf5383e18fa7b93c5a1bc5c",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-mapreduce-client-core/3.3.5/hadoop-mapreduce-client-core-3.3.5.jar/org.apache.hadoop.mapred.BackupStore.jimple",
+                                "md5": "842c707e1e9a675454e2f513b0d944f1"
+                            }
+                        }
+                    },
+                    {
+                        "class": "org/apache/hadoop/mapreduce/jobhistory/ReduceAttemptFinishedEvent.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-mapreduce-client-core/3.3.5/hadoop-mapreduce-client-core-3.3.5.jar/org.apache.hadoop.mapreduce.jobhistory.ReduceAttemptFinishedEvent.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-mapreduce-client-core/3.3.5/hadoop-mapreduce-client-core-3.3.5.jar/org.apache.hadoop.mapreduce.jobhistory.ReduceAttemptFinishedEvent.jimple",
+                            "transformed-class1": {
+                                "value": "public class org.apache.hadoop.mapreduce.jobhistory.ReduceAttemptFinishedEvent extends java.lang.Obj ..  [abbreviated, 38228 chars]",
+                                "sha1": "00f3b9bb6716237bee59a8ff77b556b0b2632972",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-mapreduce-client-core/3.3.5/hadoop-mapreduce-client-core-3.3.5.jar/org.apache.hadoop.mapreduce.jobhistory.ReduceAttemptFinishedEvent.jimple",
+                                "md5": "891538359c5c4d68a15a6f92dcd7a085"
+                            },
+                            "transformed-class2": {
+                                "value": "public class org.apache.hadoop.mapreduce.jobhistory.ReduceAttemptFinishedEvent extends java.lang.Obj ..  [abbreviated, 38262 chars]",
+                                "sha1": "e18b366a35c52e68c514ff31911700083e6a7afe",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-mapreduce-client-core/3.3.5/hadoop-mapreduce-client-core-3.3.5.jar/org.apache.hadoop.mapreduce.jobhistory.ReduceAttemptFinishedEvent.jimple",
+                                "md5": "8d0ef709134a031218bcf0878486f8f6"
+                            }
+                        }
+                    },
+                    {
+                        "class": "org/apache/hadoop/mapreduce/Job.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-mapreduce-client-core/3.3.5/hadoop-mapreduce-client-core-3.3.5.jar/org.apache.hadoop.mapreduce.Job.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-mapreduce-client-core/3.3.5/hadoop-mapreduce-client-core-3.3.5.jar/org.apache.hadoop.mapreduce.Job.jimple",
+                            "transformed-class1": {
+                                "value": "public class org.apache.hadoop.mapreduce.Job extends org.apache.hadoop.mapreduce.task.JobContextImpl ..  [abbreviated, 122867 chars]",
+                                "sha1": "f6c27cef22cc01acebbaaca36c8596af2b130c43",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-mapreduce-client-core/3.3.5/hadoop-mapreduce-client-core-3.3.5.jar/org.apache.hadoop.mapreduce.Job.jimple",
+                                "md5": "05b76ce150b54eed66d29db16b7c7229"
+                            },
+                            "transformed-class2": {
+                                "value": "public class org.apache.hadoop.mapreduce.Job extends org.apache.hadoop.mapreduce.task.JobContextImpl ..  [abbreviated, 122867 chars]",
+                                "sha1": "2406c44d43577de33de274406a15cd996df42fa2",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-mapreduce-client-core/3.3.5/hadoop-mapreduce-client-core-3.3.5.jar/org.apache.hadoop.mapreduce.Job.jimple",
+                                "md5": "e0afc5fa437382f6ecdfa33867b3269a"
+                            }
+                        }
+                    },
+                    {
+                        "class": "org/apache/hadoop/mapreduce/jobhistory/TaskAttemptUnsuccessfulCompletionEvent.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-mapreduce-client-core/3.3.5/hadoop-mapreduce-client-core-3.3.5.jar/org.apache.hadoop.mapreduce.jobhistory.TaskAttemptUnsuccessfulCompletionEvent.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-mapreduce-client-core/3.3.5/hadoop-mapreduce-client-core-3.3.5.jar/org.apache.hadoop.mapreduce.jobhistory.TaskAttemptUnsuccessfulCompletionEvent.jimple",
+                            "transformed-class1": {
+                                "value": "public class org.apache.hadoop.mapreduce.jobhistory.TaskAttemptUnsuccessfulCompletionEvent extends j ..  [abbreviated, 41762 chars]",
+                                "sha1": "472b74d5925943691a0553a5503fe085123506e2",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-mapreduce-client-core/3.3.5/hadoop-mapreduce-client-core-3.3.5.jar/org.apache.hadoop.mapreduce.jobhistory.TaskAttemptUnsuccessfulCompletionEvent.jimple",
+                                "md5": "4ecf30f81a4180863c5493324819dd09"
+                            },
+                            "transformed-class2": {
+                                "value": "public class org.apache.hadoop.mapreduce.jobhistory.TaskAttemptUnsuccessfulCompletionEvent extends j ..  [abbreviated, 41793 chars]",
+                                "sha1": "3d31e72dd8af6e0fc1fc56381f907600575054b2",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-mapreduce-client-core/3.3.5/hadoop-mapreduce-client-core-3.3.5.jar/org.apache.hadoop.mapreduce.jobhistory.TaskAttemptUnsuccessfulCompletionEvent.jimple",
+                                "md5": "2e3f1c854bcdf19da2720c6ed98ccd14"
+                            }
+                        }
+                    },
+                    {
+                        "class": "org/apache/hadoop/mapreduce/lib/output/committer/manifest/stages/AbstractJobOrTaskStage.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-mapreduce-client-core/3.3.5/hadoop-mapreduce-client-core-3.3.5.jar/org.apache.hadoop.mapreduce.lib.output.committer.manifest.stages.AbstractJobOrTaskStage.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-mapreduce-client-core/3.3.5/hadoop-mapreduce-client-core-3.3.5.jar/org.apache.hadoop.mapreduce.lib.output.committer.manifest.stages.AbstractJobOrTaskStage.jimple",
+                            "transformed-class1": {
+                                "value": "public abstract class org.apache.hadoop.mapreduce.lib.output.committer.manifest.stages.AbstractJobOr ..  [abbreviated, 74657 chars]",
+                                "sha1": "e2c1ad893c9825d736ecedccdb3424dc6f034941",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-mapreduce-client-core/3.3.5/hadoop-mapreduce-client-core-3.3.5.jar/org.apache.hadoop.mapreduce.lib.output.committer.manifest.stages.AbstractJobOrTaskStage.jimple",
+                                "md5": "2491f20ef232bfdb1ae2d5d220ac61fe"
+                            },
+                            "transformed-class2": {
+                                "value": "public abstract class org.apache.hadoop.mapreduce.lib.output.committer.manifest.stages.AbstractJobOr ..  [abbreviated, 74650 chars]",
+                                "sha1": "583532dc59950db770d327df43087029452cc28c",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-mapreduce-client-core/3.3.5/hadoop-mapreduce-client-core-3.3.5.jar/org.apache.hadoop.mapreduce.lib.output.committer.manifest.stages.AbstractJobOrTaskStage.jimple",
+                                "md5": "3392462139eec3d31c26029f0cd7a111"
+                            }
+                        }
+                    },
+                    {
+                        "class": "org/apache/hadoop/mapreduce/lib/chain/Chain.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-mapreduce-client-core/3.3.5/hadoop-mapreduce-client-core-3.3.5.jar/org.apache.hadoop.mapreduce.lib.chain.Chain.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-mapreduce-client-core/3.3.5/hadoop-mapreduce-client-core-3.3.5.jar/org.apache.hadoop.mapreduce.lib.chain.Chain.jimple",
+                            "transformed-class1": {
+                                "value": "public class org.apache.hadoop.mapreduce.lib.chain.Chain extends java.lang.Object\n{\nprotected static ..  [abbreviated, 51040 chars]",
+                                "sha1": "3a9231c4680322c4e3cbe674c6b06c76358d56ed",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-mapreduce-client-core/3.3.5/hadoop-mapreduce-client-core-3.3.5.jar/org.apache.hadoop.mapreduce.lib.chain.Chain.jimple",
+                                "md5": "74e9decb178164f257ac674b8da674fd"
+                            },
+                            "transformed-class2": {
+                                "value": "public class org.apache.hadoop.mapreduce.lib.chain.Chain extends java.lang.Object\n{\nprotected static ..  [abbreviated, 50718 chars]",
+                                "sha1": "2cafedf3e6a43032afd52b667eb96d55f5b739d6",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-mapreduce-client-core/3.3.5/hadoop-mapreduce-client-core-3.3.5.jar/org.apache.hadoop.mapreduce.lib.chain.Chain.jimple",
+                                "md5": "3cfa2db3a2829c61d038aaa478e945b9"
+                            }
+                        }
+                    },
+                    {
+                        "class": "org/apache/hadoop/mapreduce/lib/output/committer/manifest/files/TaskManifest.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-mapreduce-client-core/3.3.5/hadoop-mapreduce-client-core-3.3.5.jar/org.apache.hadoop.mapreduce.lib.output.committer.manifest.files.TaskManifest.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-mapreduce-client-core/3.3.5/hadoop-mapreduce-client-core-3.3.5.jar/org.apache.hadoop.mapreduce.lib.output.committer.manifest.files.TaskManifest.jimple",
+                            "transformed-class1": {
+                                "value": "public class org.apache.hadoop.mapreduce.lib.output.committer.manifest.files.TaskManifest extends or ..  [abbreviated, 22382 chars]",
+                                "sha1": "bf82cc44be76f6ef9e16ac2a0dc000c85a3724f2",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-mapreduce-client-core/3.3.5/hadoop-mapreduce-client-core-3.3.5.jar/org.apache.hadoop.mapreduce.lib.output.committer.manifest.files.TaskManifest.jimple",
+                                "md5": "c357ffd89af01b65eacf930f6f315620"
+                            },
+                            "transformed-class2": {
+                                "value": "public class org.apache.hadoop.mapreduce.lib.output.committer.manifest.files.TaskManifest extends or ..  [abbreviated, 22383 chars]",
+                                "sha1": "9467e2c99efc72f6495acde34145e2e7698c371e",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-mapreduce-client-core/3.3.5/hadoop-mapreduce-client-core-3.3.5.jar/org.apache.hadoop.mapreduce.lib.output.committer.manifest.files.TaskManifest.jimple",
+                                "md5": "21ae3eb0891bf329784725698cecaa39"
+                            }
+                        }
+                    },
+                    {
+                        "class": "org/apache/hadoop/mapreduce/lib/output/committer/manifest/files/ManifestSuccessData.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-mapreduce-client-core/3.3.5/hadoop-mapreduce-client-core-3.3.5.jar/org.apache.hadoop.mapreduce.lib.output.committer.manifest.files.ManifestSuccessData.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-mapreduce-client-core/3.3.5/hadoop-mapreduce-client-core-3.3.5.jar/org.apache.hadoop.mapreduce.lib.output.committer.manifest.files.ManifestSuccessData.jimple",
+                            "transformed-class1": {
+                                "value": "public class org.apache.hadoop.mapreduce.lib.output.committer.manifest.files.ManifestSuccessData ext ..  [abbreviated, 32226 chars]",
+                                "sha1": "ee316a7b300a73da3bce4515fb3fb89b58fba57f",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-mapreduce-client-core/3.3.5/hadoop-mapreduce-client-core-3.3.5.jar/org.apache.hadoop.mapreduce.lib.output.committer.manifest.files.ManifestSuccessData.jimple",
+                                "md5": "105a005efa5de70dc5ead9ef00053a10"
+                            },
+                            "transformed-class2": {
+                                "value": "public class org.apache.hadoop.mapreduce.lib.output.committer.manifest.files.ManifestSuccessData ext ..  [abbreviated, 32228 chars]",
+                                "sha1": "56b39afe9e73e1e79a072b68821fdba9f7ba1ff6",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-mapreduce-client-core/3.3.5/hadoop-mapreduce-client-core-3.3.5.jar/org.apache.hadoop.mapreduce.lib.output.committer.manifest.files.ManifestSuccessData.jimple",
+                                "md5": "8292c00e15e912260ae9f9f0c5d02cf9"
+                            }
+                        }
+                    },
+                    {
+                        "class": "org/apache/hadoop/mapreduce/lib/output/committer/manifest/stages/CreateOutputDirectoriesStage.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-mapreduce-client-core/3.3.5/hadoop-mapreduce-client-core-3.3.5.jar/org.apache.hadoop.mapreduce.lib.output.committer.manifest.stages.CreateOutputDirectoriesStage.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-mapreduce-client-core/3.3.5/hadoop-mapreduce-client-core-3.3.5.jar/org.apache.hadoop.mapreduce.lib.output.committer.manifest.stages.CreateOutputDirectoriesStage.jimple",
+                            "transformed-class1": {
+                                "value": "public class org.apache.hadoop.mapreduce.lib.output.committer.manifest.stages.CreateOutputDirectorie ..  [abbreviated, 30010 chars]",
+                                "sha1": "407014b88d1738950becb0f69554bbcad9afcfd4",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-mapreduce-client-core/3.3.5/hadoop-mapreduce-client-core-3.3.5.jar/org.apache.hadoop.mapreduce.lib.output.committer.manifest.stages.CreateOutputDirectoriesStage.jimple",
+                                "md5": "8c76ed79de551e636d356bbf709002f1"
+                            },
+                            "transformed-class2": {
+                                "value": "public class org.apache.hadoop.mapreduce.lib.output.committer.manifest.stages.CreateOutputDirectorie ..  [abbreviated, 30010 chars]",
+                                "sha1": "71a3c5ba2c56d4e4b92bcf7a1c6e7514b96eb0d4",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-mapreduce-client-core/3.3.5/hadoop-mapreduce-client-core-3.3.5.jar/org.apache.hadoop.mapreduce.lib.output.committer.manifest.stages.CreateOutputDirectoriesStage.jimple",
+                                "md5": "5ce2c70e78fef6a5b86e0ea72e7891ed"
+                            }
+                        }
+                    },
+                    {
+                        "class": "org/apache/hadoop/mapreduce/lib/output/committer/manifest/stages/CleanupJobStage.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-mapreduce-client-core/3.3.5/hadoop-mapreduce-client-core-3.3.5.jar/org.apache.hadoop.mapreduce.lib.output.committer.manifest.stages.CleanupJobStage.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-mapreduce-client-core/3.3.5/hadoop-mapreduce-client-core-3.3.5.jar/org.apache.hadoop.mapreduce.lib.output.committer.manifest.stages.CleanupJobStage.jimple",
+                            "transformed-class1": {
+                                "value": "public class org.apache.hadoop.mapreduce.lib.output.committer.manifest.stages.CleanupJobStage extend ..  [abbreviated, 21059 chars]",
+                                "sha1": "937464650203d521eb0f458566214afd7bfa89a9",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-mapreduce-client-core/3.3.5/hadoop-mapreduce-client-core-3.3.5.jar/org.apache.hadoop.mapreduce.lib.output.committer.manifest.stages.CleanupJobStage.jimple",
+                                "md5": "c475bcb9a040256ffd260193fb48da57"
+                            },
+                            "transformed-class2": {
+                                "value": "public class org.apache.hadoop.mapreduce.lib.output.committer.manifest.stages.CleanupJobStage extend ..  [abbreviated, 21059 chars]",
+                                "sha1": "a5e1568c8e368cc43d871935e645e80322d9b54b",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-mapreduce-client-core/3.3.5/hadoop-mapreduce-client-core-3.3.5.jar/org.apache.hadoop.mapreduce.lib.output.committer.manifest.stages.CleanupJobStage.jimple",
+                                "md5": "f7e0aab100a5567e99541896a188f388"
+                            }
+                        }
+                    },
+                    {
+                        "class": "org/apache/hadoop/mapreduce/security/SpillCallBackPathsFinder.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-mapreduce-client-core/3.3.5/hadoop-mapreduce-client-core-3.3.5.jar/org.apache.hadoop.mapreduce.security.SpillCallBackPathsFinder.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-mapreduce-client-core/3.3.5/hadoop-mapreduce-client-core-3.3.5.jar/org.apache.hadoop.mapreduce.security.SpillCallBackPathsFinder.jimple",
+                            "transformed-class1": {
+                                "value": "public class org.apache.hadoop.mapreduce.security.SpillCallBackPathsFinder extends org.apache.hadoop ..  [abbreviated, 18570 chars]",
+                                "sha1": "541d30453856a4f68febad49f22c8ff5813c5e73",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-mapreduce-client-core/3.3.5/hadoop-mapreduce-client-core-3.3.5.jar/org.apache.hadoop.mapreduce.security.SpillCallBackPathsFinder.jimple",
+                                "md5": "807c36a3147444faa9f1f167690078f9"
+                            },
+                            "transformed-class2": {
+                                "value": "public class org.apache.hadoop.mapreduce.security.SpillCallBackPathsFinder extends org.apache.hadoop ..  [abbreviated, 18572 chars]",
+                                "sha1": "643790578ae9182c292970b86a7aab2c1b6b18f0",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-mapreduce-client-core/3.3.5/hadoop-mapreduce-client-core-3.3.5.jar/org.apache.hadoop.mapreduce.security.SpillCallBackPathsFinder.jimple",
+                                "md5": "a43714a77ea27b2f93b0dc28327bb91c"
+                            }
+                        }
+                    },
+                    {
+                        "class": "org/apache/hadoop/mapreduce/lib/output/committer/manifest/stages/ValidateRenamedFilesStage.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-mapreduce-client-core/3.3.5/hadoop-mapreduce-client-core-3.3.5.jar/org.apache.hadoop.mapreduce.lib.output.committer.manifest.stages.ValidateRenamedFilesStage.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-mapreduce-client-core/3.3.5/hadoop-mapreduce-client-core-3.3.5.jar/org.apache.hadoop.mapreduce.lib.output.committer.manifest.stages.ValidateRenamedFilesStage.jimple",
+                            "transformed-class1": {
+                                "value": "public class org.apache.hadoop.mapreduce.lib.output.committer.manifest.stages.ValidateRenamedFilesSt ..  [abbreviated, 12852 chars]",
+                                "sha1": "f931f5176d9ec8bb6153e0e6f925212cff3fb390",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-mapreduce-client-core/3.3.5/hadoop-mapreduce-client-core-3.3.5.jar/org.apache.hadoop.mapreduce.lib.output.committer.manifest.stages.ValidateRenamedFilesStage.jimple",
+                                "md5": "83828edaf05aacc9de41c75bf565fe01"
+                            },
+                            "transformed-class2": {
+                                "value": "public class org.apache.hadoop.mapreduce.lib.output.committer.manifest.stages.ValidateRenamedFilesSt ..  [abbreviated, 12852 chars]",
+                                "sha1": "188fadc81b67fc52a5f185da7a0b01e4b2574213",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-mapreduce-client-core/3.3.5/hadoop-mapreduce-client-core-3.3.5.jar/org.apache.hadoop.mapreduce.lib.output.committer.manifest.stages.ValidateRenamedFilesStage.jimple",
+                                "md5": "5069038604c5f067c4613ab8e465b3b4"
+                            }
+                        }
+                    },
+                    {
+                        "class": "org/apache/hadoop/mapreduce/lib/output/committer/manifest/stages/RenameFilesStage.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-mapreduce-client-core/3.3.5/hadoop-mapreduce-client-core-3.3.5.jar/org.apache.hadoop.mapreduce.lib.output.committer.manifest.stages.RenameFilesStage.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-mapreduce-client-core/3.3.5/hadoop-mapreduce-client-core-3.3.5.jar/org.apache.hadoop.mapreduce.lib.output.committer.manifest.stages.RenameFilesStage.jimple",
+                            "transformed-class1": {
+                                "value": "public class org.apache.hadoop.mapreduce.lib.output.committer.manifest.stages.RenameFilesStage exten ..  [abbreviated, 12099 chars]",
+                                "sha1": "7b8d3f8377aaac7c56946b424f5bfe7c71beee49",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-mapreduce-client-core/3.3.5/hadoop-mapreduce-client-core-3.3.5.jar/org.apache.hadoop.mapreduce.lib.output.committer.manifest.stages.RenameFilesStage.jimple",
+                                "md5": "ed888dc2a229bcb63848ce66d455aa87"
+                            },
+                            "transformed-class2": {
+                                "value": "public class org.apache.hadoop.mapreduce.lib.output.committer.manifest.stages.RenameFilesStage exten ..  [abbreviated, 12102 chars]",
+                                "sha1": "085b9758a399a55dd91ad1ead26c0c7bc4775def",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-mapreduce-client-core/3.3.5/hadoop-mapreduce-client-core-3.3.5.jar/org.apache.hadoop.mapreduce.lib.output.committer.manifest.stages.RenameFilesStage.jimple",
+                                "md5": "5788282750201d2dd365238af0fa54f8"
+                            }
+                        }
+                    },
+                    {
+                        "class": "org/apache/hadoop/mapreduce/jobhistory/MapAttemptFinishedEvent.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-mapreduce-client-core/3.3.5/hadoop-mapreduce-client-core-3.3.5.jar/org.apache.hadoop.mapreduce.jobhistory.MapAttemptFinishedEvent.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-mapreduce-client-core/3.3.5/hadoop-mapreduce-client-core-3.3.5.jar/org.apache.hadoop.mapreduce.jobhistory.MapAttemptFinishedEvent.jimple",
+                            "transformed-class1": {
+                                "value": "public class org.apache.hadoop.mapreduce.jobhistory.MapAttemptFinishedEvent extends java.lang.Object ..  [abbreviated, 35654 chars]",
+                                "sha1": "2423ebf7ac37defebe419994c1cf742cac9249a3",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-mapreduce-client-core/3.3.5/hadoop-mapreduce-client-core-3.3.5.jar/org.apache.hadoop.mapreduce.jobhistory.MapAttemptFinishedEvent.jimple",
+                                "md5": "fcddb0496698c9e2298dc8b7f278e8d4"
+                            },
+                            "transformed-class2": {
+                                "value": "public class org.apache.hadoop.mapreduce.jobhistory.MapAttemptFinishedEvent extends java.lang.Object ..  [abbreviated, 35688 chars]",
+                                "sha1": "5a7325c129286c04d6320405b1de57c6dff36dfe",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-mapreduce-client-core/3.3.5/hadoop-mapreduce-client-core-3.3.5.jar/org.apache.hadoop.mapreduce.jobhistory.MapAttemptFinishedEvent.jimple",
+                                "md5": "1c1b3faf008806aba286ad708b8a9d71"
+                            }
+                        }
+                    }
+                ],
+                "errors": []
+            }
+        }]
+    }

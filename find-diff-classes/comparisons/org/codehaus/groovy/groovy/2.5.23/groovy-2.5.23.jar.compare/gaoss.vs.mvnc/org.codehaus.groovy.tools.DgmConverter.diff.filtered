@@ -1,0 +1,294 @@
+1c1
+< public class org.codehaus.groovy.tools.DgmConverter extends java.lang.Object implements org.objectweb.asm.Opcodes
+---
+> public class org.codehaus.groovy.tools.DgmConverter extends java.lang.Object implements groovyjarjarasm.asm.Opcodes
+21d20
+< org.objectweb.asm.ClassWriter v39;
+22a22
+> groovyjarjarasm.asm.ClassWriter v39;
+109,112c109,112
+< v39 = new org.objectweb.asm.ClassWriter;
+< specialinvoke v39.<org.objectweb.asm.ClassWriter: void <init>(int)>(1);
+< virtualinvoke v39.<org.objectweb.asm.ClassWriter: void visit(int,int,java.lang.String,java.lang.String,java.lang.String,java.lang.String[])>(47, 1, v34, null, "org/codehaus/groovy/reflection/GeneratedMetaMethod", null);
+< staticinvoke <org.codehaus.groovy.tools.DgmConverter: void createConstructor(org.objectweb.asm.ClassWriter)>(v39);
+---
+> v39 = new groovyjarjarasm.asm.ClassWriter;
+> specialinvoke v39.<groovyjarjarasm.asm.ClassWriter: void <init>(int)>(1);
+> virtualinvoke v39.<groovyjarjarasm.asm.ClassWriter: void visit(int,int,java.lang.String,java.lang.String,java.lang.String,java.lang.String[])>(47, 1, v34, null, "org/codehaus/groovy/reflection/GeneratedMetaMethod", null);
+> staticinvoke <org.codehaus.groovy.tools.DgmConverter: void createConstructor(groovyjarjarasm.asm.ClassWriter)>(v39);
+115,119c115,119
+< staticinvoke <org.codehaus.groovy.tools.DgmConverter: void createInvokeMethod(org.codehaus.groovy.reflection.CachedMethod,org.objectweb.asm.ClassWriter,java.lang.Class,java.lang.String)>(v25, v39, v32, v41);
+< staticinvoke <org.codehaus.groovy.tools.DgmConverter: void createDoMethodInvokeMethod(org.codehaus.groovy.reflection.CachedMethod,org.objectweb.asm.ClassWriter,java.lang.String,java.lang.Class,java.lang.String)>(v25, v39, v34, v32, v41);
+< staticinvoke <org.codehaus.groovy.tools.DgmConverter: void createIsValidMethodMethod(org.codehaus.groovy.reflection.CachedMethod,org.objectweb.asm.ClassWriter,java.lang.String)>(v25, v39, v34);
+< virtualinvoke v39.<org.objectweb.asm.ClassWriter: void visitEnd()>();
+< v42 = virtualinvoke v39.<org.objectweb.asm.ClassWriter: byte[] toByteArray()>();
+---
+> staticinvoke <org.codehaus.groovy.tools.DgmConverter: void createInvokeMethod(org.codehaus.groovy.reflection.CachedMethod,groovyjarjarasm.asm.ClassWriter,java.lang.Class,java.lang.String)>(v25, v39, v32, v41);
+> staticinvoke <org.codehaus.groovy.tools.DgmConverter: void createDoMethodInvokeMethod(org.codehaus.groovy.reflection.CachedMethod,groovyjarjarasm.asm.ClassWriter,java.lang.String,java.lang.Class,java.lang.String)>(v25, v39, v34, v32, v41);
+> staticinvoke <org.codehaus.groovy.tools.DgmConverter: void createIsValidMethodMethod(org.codehaus.groovy.reflection.CachedMethod,groovyjarjarasm.asm.ClassWriter,java.lang.String)>(v25, v39, v34);
+> virtualinvoke v39.<groovyjarjarasm.asm.ClassWriter: void visitEnd()>();
+> v42 = virtualinvoke v39.<groovyjarjarasm.asm.ClassWriter: byte[] toByteArray()>();
+151c151
+< private static void createConstructor(org.objectweb.asm.ClassWriter)
+---
+> private static void createConstructor(groovyjarjarasm.asm.ClassWriter)
+153,166c153,166
+< org.objectweb.asm.ClassWriter v0;
+< org.objectweb.asm.MethodVisitor v1;
+< v0 := @parameter0: org.objectweb.asm.ClassWriter;
+< v1 = virtualinvoke v0.<org.objectweb.asm.ClassWriter: org.objectweb.asm.MethodVisitor visitMethod(int,java.lang.String,java.lang.String,java.lang.String,java.lang.String[])>(1, "<init>", "(Ljava/lang/String;Lorg/codehaus/groovy/reflection/CachedClass;Ljava/lang/Class;[Ljava/lang/Class;)V", null, null);
+< virtualinvoke v1.<org.objectweb.asm.MethodVisitor: void visitCode()>();
+< virtualinvoke v1.<org.objectweb.asm.MethodVisitor: void visitVarInsn(int,int)>(25, 0);
+< virtualinvoke v1.<org.objectweb.asm.MethodVisitor: void visitVarInsn(int,int)>(25, 1);
+< virtualinvoke v1.<org.objectweb.asm.MethodVisitor: void visitVarInsn(int,int)>(25, 2);
+< virtualinvoke v1.<org.objectweb.asm.MethodVisitor: void visitVarInsn(int,int)>(25, 3);
+< virtualinvoke v1.<org.objectweb.asm.MethodVisitor: void visitVarInsn(int,int)>(25, 4);
+< virtualinvoke v1.<org.objectweb.asm.MethodVisitor: void visitMethodInsn(int,java.lang.String,java.lang.String,java.lang.String,boolean)>(183, "org/codehaus/groovy/reflection/GeneratedMetaMethod", "<init>", "(Ljava/lang/String;Lorg/codehaus/groovy/reflection/CachedClass;Ljava/lang/Class;[Ljava/lang/Class;)V", 0);
+< virtualinvoke v1.<org.objectweb.asm.MethodVisitor: void visitInsn(int)>(177);
+< virtualinvoke v1.<org.objectweb.asm.MethodVisitor: void visitMaxs(int,int)>(0, 0);
+< virtualinvoke v1.<org.objectweb.asm.MethodVisitor: void visitEnd()>();
+---
+> groovyjarjarasm.asm.ClassWriter v0;
+> groovyjarjarasm.asm.MethodVisitor v1;
+> v0 := @parameter0: groovyjarjarasm.asm.ClassWriter;
+> v1 = virtualinvoke v0.<groovyjarjarasm.asm.ClassWriter: groovyjarjarasm.asm.MethodVisitor visitMethod(int,java.lang.String,java.lang.String,java.lang.String,java.lang.String[])>(1, "<init>", "(Ljava/lang/String;Lorg/codehaus/groovy/reflection/CachedClass;Ljava/lang/Class;[Ljava/lang/Class;)V", null, null);
+> virtualinvoke v1.<groovyjarjarasm.asm.MethodVisitor: void visitCode()>();
+> virtualinvoke v1.<groovyjarjarasm.asm.MethodVisitor: void visitVarInsn(int,int)>(25, 0);
+> virtualinvoke v1.<groovyjarjarasm.asm.MethodVisitor: void visitVarInsn(int,int)>(25, 1);
+> virtualinvoke v1.<groovyjarjarasm.asm.MethodVisitor: void visitVarInsn(int,int)>(25, 2);
+> virtualinvoke v1.<groovyjarjarasm.asm.MethodVisitor: void visitVarInsn(int,int)>(25, 3);
+> virtualinvoke v1.<groovyjarjarasm.asm.MethodVisitor: void visitVarInsn(int,int)>(25, 4);
+> virtualinvoke v1.<groovyjarjarasm.asm.MethodVisitor: void visitMethodInsn(int,java.lang.String,java.lang.String,java.lang.String,boolean)>(183, "org/codehaus/groovy/reflection/GeneratedMetaMethod", "<init>", "(Ljava/lang/String;Lorg/codehaus/groovy/reflection/CachedClass;Ljava/lang/Class;[Ljava/lang/Class;)V", 0);
+> virtualinvoke v1.<groovyjarjarasm.asm.MethodVisitor: void visitInsn(int)>(177);
+> virtualinvoke v1.<groovyjarjarasm.asm.MethodVisitor: void visitMaxs(int,int)>(0, 0);
+> virtualinvoke v1.<groovyjarjarasm.asm.MethodVisitor: void visitEnd()>();
+169c169
+< private static void createIsValidMethodMethod(org.codehaus.groovy.reflection.CachedMethod, org.objectweb.asm.ClassWriter, java.lang.String)
+---
+> private static void createIsValidMethodMethod(org.codehaus.groovy.reflection.CachedMethod, groovyjarjarasm.asm.ClassWriter, java.lang.String)
+171,172d170
+< org.objectweb.asm.ClassWriter v1;
+< org.objectweb.asm.MethodVisitor v10;
+174c172,173
+< org.objectweb.asm.Label v11, v12, v13;
+---
+> groovyjarjarasm.asm.ClassWriter v1;
+> groovyjarjarasm.asm.MethodVisitor v10;
+179a179
+> groovyjarjarasm.asm.Label v11, v12, v13;
+181c181
+< v1 := @parameter1: org.objectweb.asm.ClassWriter;
+---
+> v1 := @parameter1: groovyjarjarasm.asm.ClassWriter;
+193,220c193,220
+< v10 = virtualinvoke v1.<org.objectweb.asm.ClassWriter: org.objectweb.asm.MethodVisitor visitMethod(int,java.lang.String,java.lang.String,java.lang.String,java.lang.String[])>(1, "isValidMethod", "([Ljava/lang/Class;)Z", null, null);
+< virtualinvoke v10.<org.objectweb.asm.MethodVisitor: void visitCode()>();
+< virtualinvoke v10.<org.objectweb.asm.MethodVisitor: void visitVarInsn(int,int)>(25, 1);
+< v11 = new org.objectweb.asm.Label;
+< specialinvoke v11.<org.objectweb.asm.Label: void <init>()>();
+< virtualinvoke v10.<org.objectweb.asm.MethodVisitor: void visitJumpInsn(int,org.objectweb.asm.Label)>(198, v11);
+< virtualinvoke v10.<org.objectweb.asm.MethodVisitor: void visitVarInsn(int,int)>(25, 0);
+< virtualinvoke v10.<org.objectweb.asm.MethodVisitor: void visitMethodInsn(int,java.lang.String,java.lang.String,java.lang.String,boolean)>(182, v2, "getParameterTypes", "()[Lorg/codehaus/groovy/reflection/CachedClass;", 0);
+< virtualinvoke v10.<org.objectweb.asm.MethodVisitor: void visitInsn(int)>(3);
+< virtualinvoke v10.<org.objectweb.asm.MethodVisitor: void visitInsn(int)>(50);
+< virtualinvoke v10.<org.objectweb.asm.MethodVisitor: void visitVarInsn(int,int)>(25, 1);
+< virtualinvoke v10.<org.objectweb.asm.MethodVisitor: void visitInsn(int)>(3);
+< virtualinvoke v10.<org.objectweb.asm.MethodVisitor: void visitInsn(int)>(50);
+< virtualinvoke v10.<org.objectweb.asm.MethodVisitor: void visitMethodInsn(int,java.lang.String,java.lang.String,java.lang.String,boolean)>(182, "org/codehaus/groovy/reflection/CachedClass", "isAssignableFrom", "(Ljava/lang/Class;)Z", 0);
+< v12 = new org.objectweb.asm.Label;
+< specialinvoke v12.<org.objectweb.asm.Label: void <init>()>();
+< virtualinvoke v10.<org.objectweb.asm.MethodVisitor: void visitJumpInsn(int,org.objectweb.asm.Label)>(153, v12);
+< virtualinvoke v10.<org.objectweb.asm.MethodVisitor: void visitLabel(org.objectweb.asm.Label)>(v11);
+< virtualinvoke v10.<org.objectweb.asm.MethodVisitor: void visitInsn(int)>(4);
+< v13 = new org.objectweb.asm.Label;
+< specialinvoke v13.<org.objectweb.asm.Label: void <init>()>();
+< virtualinvoke v10.<org.objectweb.asm.MethodVisitor: void visitJumpInsn(int,org.objectweb.asm.Label)>(167, v13);
+< virtualinvoke v10.<org.objectweb.asm.MethodVisitor: void visitLabel(org.objectweb.asm.Label)>(v12);
+< virtualinvoke v10.<org.objectweb.asm.MethodVisitor: void visitInsn(int)>(3);
+< virtualinvoke v10.<org.objectweb.asm.MethodVisitor: void visitLabel(org.objectweb.asm.Label)>(v13);
+< virtualinvoke v10.<org.objectweb.asm.MethodVisitor: void visitInsn(int)>(172);
+< virtualinvoke v10.<org.objectweb.asm.MethodVisitor: void visitMaxs(int,int)>(0, 0);
+< virtualinvoke v10.<org.objectweb.asm.MethodVisitor: void visitEnd()>();
+---
+> v10 = virtualinvoke v1.<groovyjarjarasm.asm.ClassWriter: groovyjarjarasm.asm.MethodVisitor visitMethod(int,java.lang.String,java.lang.String,java.lang.String,java.lang.String[])>(1, "isValidMethod", "([Ljava/lang/Class;)Z", null, null);
+> virtualinvoke v10.<groovyjarjarasm.asm.MethodVisitor: void visitCode()>();
+> virtualinvoke v10.<groovyjarjarasm.asm.MethodVisitor: void visitVarInsn(int,int)>(25, 1);
+> v11 = new groovyjarjarasm.asm.Label;
+> specialinvoke v11.<groovyjarjarasm.asm.Label: void <init>()>();
+> virtualinvoke v10.<groovyjarjarasm.asm.MethodVisitor: void visitJumpInsn(int,groovyjarjarasm.asm.Label)>(198, v11);
+> virtualinvoke v10.<groovyjarjarasm.asm.MethodVisitor: void visitVarInsn(int,int)>(25, 0);
+> virtualinvoke v10.<groovyjarjarasm.asm.MethodVisitor: void visitMethodInsn(int,java.lang.String,java.lang.String,java.lang.String,boolean)>(182, v2, "getParameterTypes", "()[Lorg/codehaus/groovy/reflection/CachedClass;", 0);
+> virtualinvoke v10.<groovyjarjarasm.asm.MethodVisitor: void visitInsn(int)>(3);
+> virtualinvoke v10.<groovyjarjarasm.asm.MethodVisitor: void visitInsn(int)>(50);
+> virtualinvoke v10.<groovyjarjarasm.asm.MethodVisitor: void visitVarInsn(int,int)>(25, 1);
+> virtualinvoke v10.<groovyjarjarasm.asm.MethodVisitor: void visitInsn(int)>(3);
+> virtualinvoke v10.<groovyjarjarasm.asm.MethodVisitor: void visitInsn(int)>(50);
+> virtualinvoke v10.<groovyjarjarasm.asm.MethodVisitor: void visitMethodInsn(int,java.lang.String,java.lang.String,java.lang.String,boolean)>(182, "org/codehaus/groovy/reflection/CachedClass", "isAssignableFrom", "(Ljava/lang/Class;)Z", 0);
+> v12 = new groovyjarjarasm.asm.Label;
+> specialinvoke v12.<groovyjarjarasm.asm.Label: void <init>()>();
+> virtualinvoke v10.<groovyjarjarasm.asm.MethodVisitor: void visitJumpInsn(int,groovyjarjarasm.asm.Label)>(153, v12);
+> virtualinvoke v10.<groovyjarjarasm.asm.MethodVisitor: void visitLabel(groovyjarjarasm.asm.Label)>(v11);
+> virtualinvoke v10.<groovyjarjarasm.asm.MethodVisitor: void visitInsn(int)>(4);
+> v13 = new groovyjarjarasm.asm.Label;
+> specialinvoke v13.<groovyjarjarasm.asm.Label: void <init>()>();
+> virtualinvoke v10.<groovyjarjarasm.asm.MethodVisitor: void visitJumpInsn(int,groovyjarjarasm.asm.Label)>(167, v13);
+> virtualinvoke v10.<groovyjarjarasm.asm.MethodVisitor: void visitLabel(groovyjarjarasm.asm.Label)>(v12);
+> virtualinvoke v10.<groovyjarjarasm.asm.MethodVisitor: void visitInsn(int)>(3);
+> virtualinvoke v10.<groovyjarjarasm.asm.MethodVisitor: void visitLabel(groovyjarjarasm.asm.Label)>(v13);
+> virtualinvoke v10.<groovyjarjarasm.asm.MethodVisitor: void visitInsn(int)>(172);
+> virtualinvoke v10.<groovyjarjarasm.asm.MethodVisitor: void visitMaxs(int,int)>(0, 0);
+> virtualinvoke v10.<groovyjarjarasm.asm.MethodVisitor: void visitEnd()>();
+224c224
+< private static void createDoMethodInvokeMethod(org.codehaus.groovy.reflection.CachedMethod, org.objectweb.asm.ClassWriter, java.lang.String, java.lang.Class, java.lang.String)
+---
+> private static void createDoMethodInvokeMethod(org.codehaus.groovy.reflection.CachedMethod, groovyjarjarasm.asm.ClassWriter, java.lang.String, java.lang.Class, java.lang.String)
+226,227d225
+< org.objectweb.asm.ClassWriter v1;
+< org.objectweb.asm.MethodVisitor v5;
+228a227,228
+> groovyjarjarasm.asm.ClassWriter v1;
+> groovyjarjarasm.asm.MethodVisitor v5;
+236c236
+< v1 := @parameter1: org.objectweb.asm.ClassWriter;
+---
+> v1 := @parameter1: groovyjarjarasm.asm.ClassWriter;
+240,241c240,241
+< v5 = virtualinvoke v1.<org.objectweb.asm.ClassWriter: org.objectweb.asm.MethodVisitor visitMethod(int,java.lang.String,java.lang.String,java.lang.String,java.lang.String[])>(17, "doMethodInvoke", "(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;", null, null);
+< virtualinvoke v5.<org.objectweb.asm.MethodVisitor: void visitCode()>();
+---
+> v5 = virtualinvoke v1.<groovyjarjarasm.asm.ClassWriter: groovyjarjarasm.asm.MethodVisitor visitMethod(int,java.lang.String,java.lang.String,java.lang.String,java.lang.String[])>(17, "doMethodInvoke", "(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;", null, null);
+> virtualinvoke v5.<groovyjarjarasm.asm.MethodVisitor: void visitCode()>();
+252c252
+< virtualinvoke v5.<org.objectweb.asm.MethodVisitor: void visitVarInsn(int,int)>(25, 1);
+---
+> virtualinvoke v5.<groovyjarjarasm.asm.MethodVisitor: void visitVarInsn(int,int)>(25, 1);
+256,264c256,264
+< staticinvoke <org.codehaus.groovy.classgen.asm.BytecodeHelper: void doCast(org.objectweb.asm.MethodVisitor,java.lang.Class)>(v5, v15);
+< virtualinvoke v5.<org.objectweb.asm.MethodVisitor: void visitVarInsn(int,int)>(25, 0);
+< virtualinvoke v5.<org.objectweb.asm.MethodVisitor: void visitMethodInsn(int,java.lang.String,java.lang.String,java.lang.String,boolean)>(182, v2, "getParameterTypes", "()[Lorg/codehaus/groovy/reflection/CachedClass;", 0);
+< virtualinvoke v5.<org.objectweb.asm.MethodVisitor: void visitInsn(int)>(3);
+< virtualinvoke v5.<org.objectweb.asm.MethodVisitor: void visitInsn(int)>(50);
+< virtualinvoke v5.<org.objectweb.asm.MethodVisitor: void visitVarInsn(int,int)>(25, 2);
+< virtualinvoke v5.<org.objectweb.asm.MethodVisitor: void visitInsn(int)>(3);
+< virtualinvoke v5.<org.objectweb.asm.MethodVisitor: void visitInsn(int)>(50);
+< virtualinvoke v5.<org.objectweb.asm.MethodVisitor: void visitMethodInsn(int,java.lang.String,java.lang.String,java.lang.String,boolean)>(182, "org/codehaus/groovy/reflection/CachedClass", "coerceArgument", "(Ljava/lang/Object;)Ljava/lang/Object;", 0);
+---
+> staticinvoke <org.codehaus.groovy.classgen.asm.BytecodeHelper: void doCast(groovyjarjarasm.asm.MethodVisitor,java.lang.Class)>(v5, v15);
+> virtualinvoke v5.<groovyjarjarasm.asm.MethodVisitor: void visitVarInsn(int,int)>(25, 0);
+> virtualinvoke v5.<groovyjarjarasm.asm.MethodVisitor: void visitMethodInsn(int,java.lang.String,java.lang.String,java.lang.String,boolean)>(182, v2, "getParameterTypes", "()[Lorg/codehaus/groovy/reflection/CachedClass;", 0);
+> virtualinvoke v5.<groovyjarjarasm.asm.MethodVisitor: void visitInsn(int)>(3);
+> virtualinvoke v5.<groovyjarjarasm.asm.MethodVisitor: void visitInsn(int)>(50);
+> virtualinvoke v5.<groovyjarjarasm.asm.MethodVisitor: void visitVarInsn(int,int)>(25, 2);
+> virtualinvoke v5.<groovyjarjarasm.asm.MethodVisitor: void visitInsn(int)>(3);
+> virtualinvoke v5.<groovyjarjarasm.asm.MethodVisitor: void visitInsn(int)>(50);
+> virtualinvoke v5.<groovyjarjarasm.asm.MethodVisitor: void visitMethodInsn(int,java.lang.String,java.lang.String,java.lang.String,boolean)>(182, "org/codehaus/groovy/reflection/CachedClass", "coerceArgument", "(Ljava/lang/Object;)Ljava/lang/Object;", 0);
+268c268
+< staticinvoke <org.codehaus.groovy.classgen.asm.BytecodeHelper: void doCast(org.objectweb.asm.MethodVisitor,java.lang.Class)>(v5, v18);
+---
+> staticinvoke <org.codehaus.groovy.classgen.asm.BytecodeHelper: void doCast(groovyjarjarasm.asm.MethodVisitor,java.lang.Class)>(v5, v18);
+271,275c271,275
+< virtualinvoke v5.<org.objectweb.asm.MethodVisitor: void visitVarInsn(int,int)>(25, 0);
+< virtualinvoke v5.<org.objectweb.asm.MethodVisitor: void visitVarInsn(int,int)>(25, 2);
+< virtualinvoke v5.<org.objectweb.asm.MethodVisitor: void visitMethodInsn(int,java.lang.String,java.lang.String,java.lang.String,boolean)>(182, v2, "coerceArgumentsToClasses", "([Ljava/lang/Object;)[Ljava/lang/Object;", 0);
+< virtualinvoke v5.<org.objectweb.asm.MethodVisitor: void visitVarInsn(int,int)>(58, 2);
+< virtualinvoke v5.<org.objectweb.asm.MethodVisitor: void visitVarInsn(int,int)>(25, 1);
+---
+> virtualinvoke v5.<groovyjarjarasm.asm.MethodVisitor: void visitVarInsn(int,int)>(25, 0);
+> virtualinvoke v5.<groovyjarjarasm.asm.MethodVisitor: void visitVarInsn(int,int)>(25, 2);
+> virtualinvoke v5.<groovyjarjarasm.asm.MethodVisitor: void visitMethodInsn(int,java.lang.String,java.lang.String,java.lang.String,boolean)>(182, v2, "coerceArgumentsToClasses", "([Ljava/lang/Object;)[Ljava/lang/Object;", 0);
+> virtualinvoke v5.<groovyjarjarasm.asm.MethodVisitor: void visitVarInsn(int,int)>(58, 2);
+> virtualinvoke v5.<groovyjarjarasm.asm.MethodVisitor: void visitVarInsn(int,int)>(25, 1);
+279,280c279,280
+< staticinvoke <org.codehaus.groovy.classgen.asm.BytecodeHelper: void doCast(org.objectweb.asm.MethodVisitor,java.lang.Class)>(v5, v21);
+< staticinvoke <org.codehaus.groovy.tools.DgmConverter: void loadParameters(org.codehaus.groovy.reflection.CachedMethod,int,org.objectweb.asm.MethodVisitor)>(v0, 2, v5);
+---
+> staticinvoke <org.codehaus.groovy.classgen.asm.BytecodeHelper: void doCast(groovyjarjarasm.asm.MethodVisitor,java.lang.Class)>(v5, v21);
+> staticinvoke <org.codehaus.groovy.tools.DgmConverter: void loadParameters(org.codehaus.groovy.reflection.CachedMethod,int,groovyjarjarasm.asm.MethodVisitor)>(v0, 2, v5);
+286,287c286,287
+< virtualinvoke v5.<org.objectweb.asm.MethodVisitor: void visitMethodInsn(int,java.lang.String,java.lang.String,java.lang.String,boolean)>(184, v24, v25, v4, 0);
+< staticinvoke <org.codehaus.groovy.classgen.asm.BytecodeHelper: boolean box(org.objectweb.asm.MethodVisitor,java.lang.Class)>(v5, v3);
+---
+> virtualinvoke v5.<groovyjarjarasm.asm.MethodVisitor: void visitMethodInsn(int,java.lang.String,java.lang.String,java.lang.String,boolean)>(184, v24, v25, v4, 0);
+> staticinvoke <org.codehaus.groovy.classgen.asm.BytecodeHelper: boolean box(groovyjarjarasm.asm.MethodVisitor,java.lang.Class)>(v5, v3);
+291c291
+< virtualinvoke v5.<org.objectweb.asm.MethodVisitor: void visitInsn(int)>(1);
+---
+> virtualinvoke v5.<groovyjarjarasm.asm.MethodVisitor: void visitInsn(int)>(1);
+293,295c293,295
+< virtualinvoke v5.<org.objectweb.asm.MethodVisitor: void visitInsn(int)>(176);
+< virtualinvoke v5.<org.objectweb.asm.MethodVisitor: void visitMaxs(int,int)>(0, 0);
+< virtualinvoke v5.<org.objectweb.asm.MethodVisitor: void visitEnd()>();
+---
+> virtualinvoke v5.<groovyjarjarasm.asm.MethodVisitor: void visitInsn(int)>(176);
+> virtualinvoke v5.<groovyjarjarasm.asm.MethodVisitor: void visitMaxs(int,int)>(0, 0);
+> virtualinvoke v5.<groovyjarjarasm.asm.MethodVisitor: void visitEnd()>();
+298c298
+< private static void createInvokeMethod(org.codehaus.groovy.reflection.CachedMethod, org.objectweb.asm.ClassWriter, java.lang.Class, java.lang.String)
+---
+> private static void createInvokeMethod(org.codehaus.groovy.reflection.CachedMethod, groovyjarjarasm.asm.ClassWriter, java.lang.Class, java.lang.String)
+300,301d299
+< org.objectweb.asm.ClassWriter v1;
+< org.objectweb.asm.MethodVisitor v4;
+302a301,302
+> groovyjarjarasm.asm.ClassWriter v1;
+> groovyjarjarasm.asm.MethodVisitor v4;
+308c308
+< v1 := @parameter1: org.objectweb.asm.ClassWriter;
+---
+> v1 := @parameter1: groovyjarjarasm.asm.ClassWriter;
+311,313c311,313
+< v4 = virtualinvoke v1.<org.objectweb.asm.ClassWriter: org.objectweb.asm.MethodVisitor visitMethod(int,java.lang.String,java.lang.String,java.lang.String,java.lang.String[])>(1, "invoke", "(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;", null, null);
+< virtualinvoke v4.<org.objectweb.asm.MethodVisitor: void visitCode()>();
+< virtualinvoke v4.<org.objectweb.asm.MethodVisitor: void visitVarInsn(int,int)>(25, 1);
+---
+> v4 = virtualinvoke v1.<groovyjarjarasm.asm.ClassWriter: groovyjarjarasm.asm.MethodVisitor visitMethod(int,java.lang.String,java.lang.String,java.lang.String,java.lang.String[])>(1, "invoke", "(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;", null, null);
+> virtualinvoke v4.<groovyjarjarasm.asm.MethodVisitor: void visitCode()>();
+> virtualinvoke v4.<groovyjarjarasm.asm.MethodVisitor: void visitVarInsn(int,int)>(25, 1);
+317,318c317,318
+< staticinvoke <org.codehaus.groovy.classgen.asm.BytecodeHelper: void doCast(org.objectweb.asm.MethodVisitor,java.lang.Class)>(v4, v7);
+< staticinvoke <org.codehaus.groovy.tools.DgmConverter: void loadParameters(org.codehaus.groovy.reflection.CachedMethod,int,org.objectweb.asm.MethodVisitor)>(v0, 2, v4);
+---
+> staticinvoke <org.codehaus.groovy.classgen.asm.BytecodeHelper: void doCast(groovyjarjarasm.asm.MethodVisitor,java.lang.Class)>(v4, v7);
+> staticinvoke <org.codehaus.groovy.tools.DgmConverter: void loadParameters(org.codehaus.groovy.reflection.CachedMethod,int,groovyjarjarasm.asm.MethodVisitor)>(v0, 2, v4);
+323,324c323,324
+< virtualinvoke v4.<org.objectweb.asm.MethodVisitor: void visitMethodInsn(int,java.lang.String,java.lang.String,java.lang.String,boolean)>(184, v10, v11, v3, 0);
+< staticinvoke <org.codehaus.groovy.classgen.asm.BytecodeHelper: boolean box(org.objectweb.asm.MethodVisitor,java.lang.Class)>(v4, v2);
+---
+> virtualinvoke v4.<groovyjarjarasm.asm.MethodVisitor: void visitMethodInsn(int,java.lang.String,java.lang.String,java.lang.String,boolean)>(184, v10, v11, v3, 0);
+> staticinvoke <org.codehaus.groovy.classgen.asm.BytecodeHelper: boolean box(groovyjarjarasm.asm.MethodVisitor,java.lang.Class)>(v4, v2);
+328c328
+< virtualinvoke v4.<org.objectweb.asm.MethodVisitor: void visitInsn(int)>(1);
+---
+> virtualinvoke v4.<groovyjarjarasm.asm.MethodVisitor: void visitInsn(int)>(1);
+330,332c330,332
+< virtualinvoke v4.<org.objectweb.asm.MethodVisitor: void visitInsn(int)>(176);
+< virtualinvoke v4.<org.objectweb.asm.MethodVisitor: void visitMaxs(int,int)>(0, 0);
+< virtualinvoke v4.<org.objectweb.asm.MethodVisitor: void visitEnd()>();
+---
+> virtualinvoke v4.<groovyjarjarasm.asm.MethodVisitor: void visitInsn(int)>(176);
+> virtualinvoke v4.<groovyjarjarasm.asm.MethodVisitor: void visitMaxs(int,int)>(0, 0);
+> virtualinvoke v4.<groovyjarjarasm.asm.MethodVisitor: void visitEnd()>();
+335c335
+< protected static void loadParameters(org.codehaus.groovy.reflection.CachedMethod, int, org.objectweb.asm.MethodVisitor)
+---
+> protected static void loadParameters(org.codehaus.groovy.reflection.CachedMethod, int, groovyjarjarasm.asm.MethodVisitor)
+337d336
+< org.objectweb.asm.MethodVisitor v2;
+338a338
+> groovyjarjarasm.asm.MethodVisitor v2;
+345c345
+< v2 := @parameter2: org.objectweb.asm.MethodVisitor;
+---
+> v2 := @parameter2: groovyjarjarasm.asm.MethodVisitor;
+352,354c352,354
+< virtualinvoke v2.<org.objectweb.asm.MethodVisitor: void visitVarInsn(int,int)>(25, v1);
+< staticinvoke <org.codehaus.groovy.classgen.asm.BytecodeHelper: void pushConstant(org.objectweb.asm.MethodVisitor,int)>(v2, v6);
+< virtualinvoke v2.<org.objectweb.asm.MethodVisitor: void visitInsn(int)>(50);
+---
+> virtualinvoke v2.<groovyjarjarasm.asm.MethodVisitor: void visitVarInsn(int,int)>(25, v1);
+> staticinvoke <org.codehaus.groovy.classgen.asm.BytecodeHelper: void pushConstant(groovyjarjarasm.asm.MethodVisitor,int)>(v2, v6);
+> virtualinvoke v2.<groovyjarjarasm.asm.MethodVisitor: void visitInsn(int)>(50);
+358c358
+< staticinvoke <org.codehaus.groovy.classgen.asm.BytecodeHelper: void doCast(org.objectweb.asm.MethodVisitor,java.lang.Class)>(v2, v9);
+---
+> staticinvoke <org.codehaus.groovy.classgen.asm.BytecodeHelper: void doCast(groovyjarjarasm.asm.MethodVisitor,java.lang.Class)>(v2, v9);

@@ -1,0 +1,327 @@
+59,61c59,62
+< byte v13, v17, v32, v37, v56, v63, v64, v67;
+< long v1, v14, v15, v16, v3, v31, v4, v46, v55, v58, v60, v61, v62;
+< java.lang.String v47, v48, v50, v51, v53, v54, v57, v68, v71, v73;
+---
+> byte v13, v17, v32, v37, v59, v67, v68, v71;
+> java.lang.StringBuilder v100, v101, v102, v99;
+> long v1, v14, v15, v16, v3, v31, v4, v46, v58, v62, v64, v65, v66;
+> java.lang.String v47, v48, v50, v51, v53, v54, v57, v60, v61, v72, v73, v76, v79, v80, v81, v82, v83, v86, v89, v90, v92, v95, v98;
+63c64
+< java.util.concurrent.TimeoutException v70, v72;
+---
+> java.util.concurrent.TimeoutException v88, v91;
+65c66
+< boolean v10, v11, v22, v23, v26, v27, v28, v29, v39, v40, v41, v42, v44, v5, v65, v66, v69, v8, v9;
+---
+> boolean v10, v11, v22, v23, v26, v27, v28, v29, v39, v40, v41, v42, v44, v5, v69, v70, v8, v87, v9;
+67c68,69
+< java.util.concurrent.TimeUnit v2, v59;
+---
+> int v55, v56, v74, v75, v77, v78, v84, v85, v93, v94, v96, v97;
+> java.util.concurrent.TimeUnit v2, v63;
+204,217c206,224
+< v54 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (long,java.lang.String)>(v1, v53) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Waited \u0001 \u0001");
+< v55 = v4 + 1000L;
+< v56 = v55 cmp 0L;
+< if v56 >= 0 goto label33;
+< v57 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v54) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001 (plus ");
+< v58 = neg v4;
+< v59 = <java.util.concurrent.TimeUnit: java.util.concurrent.TimeUnit NANOSECONDS>;
+< v60 = virtualinvoke v2.<java.util.concurrent.TimeUnit: long convert(long,java.util.concurrent.TimeUnit)>(v58, v59);
+< v61 = virtualinvoke v2.<java.util.concurrent.TimeUnit: long toNanos(long)>(v60);
+< v62 = v58 - v61;
+< v63 = v60 cmp 0L;
+< if v63 == 0 goto label27;
+< v64 = v62 cmp 1000L;
+< if v64 <= 0 goto label28;
+---
+> v54 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v53);
+> v55 = virtualinvoke v54.<java.lang.String: int length()>();
+> v56 = 28 + v55;
+> specialinvoke v99.<java.lang.StringBuilder: void <init>(int)>(v56);
+> v57 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (long,java.lang.String)>(v1, v53) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Waited \u0001 \u0001");
+> v58 = v4 + 1000L;
+> v59 = v58 cmp 0L;
+> if v59 >= 0 goto label33;
+> v60 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v57);
+> v61 = virtualinvoke v60.<java.lang.String: java.lang.String concat(java.lang.String)>(" (plus ");
+> v62 = neg v4;
+> v63 = <java.util.concurrent.TimeUnit: java.util.concurrent.TimeUnit NANOSECONDS>;
+> v64 = virtualinvoke v2.<java.util.concurrent.TimeUnit: long convert(long,java.util.concurrent.TimeUnit)>(v62, v63);
+> v65 = virtualinvoke v2.<java.util.concurrent.TimeUnit: long toNanos(long)>(v64);
+> v66 = v62 - v65;
+> v67 = v64 cmp 0L;
+> if v67 == 0 goto label27;
+> v68 = v66 cmp 1000L;
+> if v68 <= 0 goto label28;
+219c226
+< v65 = 1;
+---
+> v69 = 1;
+222c229
+< v65 = 0;
+---
+> v69 = 0;
+224,229c231,245
+< v66 = v65;
+< v67 = v60 cmp 0L;
+< if v67 <= 0 goto label31;
+< v68 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,long,java.lang.String)>(v57, v60, v50) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001\u0001 \u0001");
+< if v65 == 0 goto label30;
+< v68 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v68) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001,");
+---
+> v70 = v69;
+> v71 = v64 cmp 0L;
+> if v71 <= 0 goto label31;
+> v72 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v61);
+> v73 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v72);
+> v74 = virtualinvoke v73.<java.lang.String: int length()>();
+> v75 = 21 + v74;
+> v76 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v50);
+> v77 = virtualinvoke v76.<java.lang.String: int length()>();
+> v78 = v75 + v77;
+> specialinvoke v100.<java.lang.StringBuilder: void <init>(int)>(v78);
+> v79 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,long,java.lang.String)>(v72, v64, v50) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001\u0001 \u0001");
+> if v69 == 0 goto label30;
+> v80 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v79);
+> v79 = virtualinvoke v80.<java.lang.String: java.lang.String concat(java.lang.String)>(",");
+231c247,248
+< v57 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v68) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001 ");
+---
+> v81 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v79);
+> v61 = virtualinvoke v81.<java.lang.String: java.lang.String concat(java.lang.String)>(" ");
+233,234c250,256
+< if v66 == 0 goto label32;
+< v57 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,long)>(v57, v62) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001\u0001 nanoseconds ");
+---
+> if v70 == 0 goto label32;
+> v82 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v61);
+> v83 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v82);
+> v84 = virtualinvoke v83.<java.lang.String: int length()>();
+> v85 = 33 + v84;
+> specialinvoke v101.<java.lang.StringBuilder: void <init>(int)>(v85);
+> v61 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,long)>(v82, v66) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001\u0001 nanoseconds ");
+236c258,259
+< v54 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v57) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001delay)");
+---
+> v86 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v61);
+> v57 = virtualinvoke v86.<java.lang.String: java.lang.String concat(java.lang.String)>("delay)");
+238,243c261,267
+< v69 = virtualinvoke v0.<com.google.common.util.concurrent.AbstractFuture: boolean isDone()>();
+< if v69 == 0 goto label34;
+< v70 = new java.util.concurrent.TimeoutException;
+< v71 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v54) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001 but future completed as timeout expired");
+< specialinvoke v70.<java.util.concurrent.TimeoutException: void <init>(java.lang.String)>(v71);
+< throw v70;
+---
+> v87 = virtualinvoke v0.<com.google.common.util.concurrent.AbstractFuture: boolean isDone()>();
+> if v87 == 0 goto label34;
+> v88 = new java.util.concurrent.TimeoutException;
+> v89 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v57);
+> v90 = virtualinvoke v89.<java.lang.String: java.lang.String concat(java.lang.String)>(" but future completed as timeout expired");
+> specialinvoke v88.<java.util.concurrent.TimeoutException: void <init>(java.lang.String)>(v90);
+> throw v88;
+245,248c269,279
+< v72 = new java.util.concurrent.TimeoutException;
+< v73 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,java.lang.String)>(v54, v47) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001 for \u0001");
+< specialinvoke v72.<java.util.concurrent.TimeoutException: void <init>(java.lang.String)>(v73);
+< throw v72;
+---
+> v91 = new java.util.concurrent.TimeoutException;
+> v92 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v57);
+> v93 = virtualinvoke v92.<java.lang.String: int length()>();
+> v94 = 5 + v93;
+> v95 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v47);
+> v96 = virtualinvoke v95.<java.lang.String: int length()>();
+> v97 = v94 + v96;
+> specialinvoke v102.<java.lang.StringBuilder: void <init>(int)>(v97);
+> v98 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,java.lang.String)>(v57, v47) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001 for \u0001");
+> specialinvoke v91.<java.util.concurrent.TimeoutException: void <init>(java.lang.String)>(v98);
+> throw v91;
+639c670
+< com.google.common.util.concurrent.AbstractFuture$Failure v11, v27, v30, v35;
+---
+> com.google.common.util.concurrent.AbstractFuture$Failure v11, v35, v38, v47;
+641,642c672,674
+< java.util.concurrent.CancellationException v29;
+< java.lang.Throwable v10, v28, v34, v5, v7;
+---
+> java.util.concurrent.CancellationException v37;
+> java.lang.StringBuilder v48, v49, v50;
+> java.lang.Throwable v10, v36, v46, v5, v7;
+644,648c676,681
+< com.google.common.util.concurrent.AbstractFuture$Cancellation v16, v19, v24, v33, v6;
+< java.lang.String v21, v26, v32;
+< java.lang.IllegalArgumentException v20, v25, v31;
+< java.util.concurrent.ExecutionException v23;
+< java.lang.Object v17, v18, v2, v22, v8;
+---
+> com.google.common.util.concurrent.AbstractFuture$Cancellation v16, v19, v28, v45, v6;
+> int v23, v24, v32, v33, v42, v43;
+> java.lang.String v21, v22, v25, v30, v31, v34, v40, v41, v44;
+> java.lang.IllegalArgumentException v20, v29, v39;
+> java.util.concurrent.ExecutionException v27;
+> java.lang.Object v17, v18, v2, v26, v8;
+697,698c730,736
+< v21 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (com.google.common.util.concurrent.ListenableFuture)>(v0) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("get() did not throw CancellationException, despite reporting isCancelled() == true: \u0001");
+< specialinvoke v20.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(v21);
+---
+> v21 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v0);
+> v22 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v21);
+> v23 = virtualinvoke v22.<java.lang.String: int length()>();
+> v24 = 84 + v23;
+> specialinvoke v48.<java.lang.StringBuilder: void <init>(int)>(v24);
+> v25 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v21) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("get() did not throw CancellationException, despite reporting isCancelled() == true: \u0001");
+> specialinvoke v20.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(v25);
+704c742
+< v22 = <com.google.common.util.concurrent.AbstractFuture: java.lang.Object NULL>;
+---
+> v26 = <com.google.common.util.concurrent.AbstractFuture: java.lang.Object NULL>;
+707c745
+< v22 = v18;
+---
+> v26 = v18;
+709c747
+< return v22;
+---
+> return v26;
+711c749
+< v23 := @caughtexception;
+---
+> v27 := @caughtexception;
+713,718c751,761
+< v24 = new com.google.common.util.concurrent.AbstractFuture$Cancellation;
+< v25 = new java.lang.IllegalArgumentException;
+< v26 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (com.google.common.util.concurrent.ListenableFuture)>(v0) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("get() did not throw CancellationException, despite reporting isCancelled() == true: \u0001");
+< specialinvoke v25.<java.lang.IllegalArgumentException: void <init>(java.lang.String,java.lang.Throwable)>(v26, v23);
+< specialinvoke v24.<com.google.common.util.concurrent.AbstractFuture$Cancellation: void <init>(boolean,java.lang.Throwable)>(0, v25);
+< return v24;
+---
+> v28 = new com.google.common.util.concurrent.AbstractFuture$Cancellation;
+> v29 = new java.lang.IllegalArgumentException;
+> v30 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v0);
+> v31 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v30);
+> v32 = virtualinvoke v31.<java.lang.String: int length()>();
+> v33 = 84 + v32;
+> specialinvoke v50.<java.lang.StringBuilder: void <init>(int)>(v33);
+> v34 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v30) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("get() did not throw CancellationException, despite reporting isCancelled() == true: \u0001");
+> specialinvoke v29.<java.lang.IllegalArgumentException: void <init>(java.lang.String,java.lang.Throwable)>(v34, v27);
+> specialinvoke v28.<com.google.common.util.concurrent.AbstractFuture$Cancellation: void <init>(boolean,java.lang.Throwable)>(0, v29);
+> return v28;
+720,723c763,766
+< v27 = new com.google.common.util.concurrent.AbstractFuture$Failure;
+< v28 = virtualinvoke v23.<java.util.concurrent.ExecutionException: java.lang.Throwable getCause()>();
+< specialinvoke v27.<com.google.common.util.concurrent.AbstractFuture$Failure: void <init>(java.lang.Throwable)>(v28);
+< return v27;
+---
+> v35 = new com.google.common.util.concurrent.AbstractFuture$Failure;
+> v36 = virtualinvoke v27.<java.util.concurrent.ExecutionException: java.lang.Throwable getCause()>();
+> specialinvoke v35.<com.google.common.util.concurrent.AbstractFuture$Failure: void <init>(java.lang.Throwable)>(v36);
+> return v35;
+725c768
+< v29 := @caughtexception;
+---
+> v37 := @caughtexception;
+727,732c770,780
+< v30 = new com.google.common.util.concurrent.AbstractFuture$Failure;
+< v31 = new java.lang.IllegalArgumentException;
+< v32 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (com.google.common.util.concurrent.ListenableFuture)>(v0) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("get() threw CancellationException, despite reporting isCancelled() == false: \u0001");
+< specialinvoke v31.<java.lang.IllegalArgumentException: void <init>(java.lang.String,java.lang.Throwable)>(v32, v29);
+< specialinvoke v30.<com.google.common.util.concurrent.AbstractFuture$Failure: void <init>(java.lang.Throwable)>(v31);
+< return v30;
+---
+> v38 = new com.google.common.util.concurrent.AbstractFuture$Failure;
+> v39 = new java.lang.IllegalArgumentException;
+> v40 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v0);
+> v41 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v40);
+> v42 = virtualinvoke v41.<java.lang.String: int length()>();
+> v43 = 77 + v42;
+> specialinvoke v49.<java.lang.StringBuilder: void <init>(int)>(v43);
+> v44 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v40) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("get() threw CancellationException, despite reporting isCancelled() == false: \u0001");
+> specialinvoke v39.<java.lang.IllegalArgumentException: void <init>(java.lang.String,java.lang.Throwable)>(v44, v37);
+> specialinvoke v38.<com.google.common.util.concurrent.AbstractFuture$Failure: void <init>(java.lang.Throwable)>(v39);
+> return v38;
+734,736c782,784
+< v33 = new com.google.common.util.concurrent.AbstractFuture$Cancellation;
+< specialinvoke v33.<com.google.common.util.concurrent.AbstractFuture$Cancellation: void <init>(boolean,java.lang.Throwable)>(0, v29);
+< return v33;
+---
+> v45 = new com.google.common.util.concurrent.AbstractFuture$Cancellation;
+> specialinvoke v45.<com.google.common.util.concurrent.AbstractFuture$Cancellation: void <init>(boolean,java.lang.Throwable)>(0, v37);
+> return v45;
+738,741c786,789
+< v34 := @caughtexception;
+< v35 = new com.google.common.util.concurrent.AbstractFuture$Failure;
+< specialinvoke v35.<com.google.common.util.concurrent.AbstractFuture$Failure: void <init>(java.lang.Throwable)>(v34);
+< return v35;
+---
+> v46 := @caughtexception;
+> v47 = new com.google.common.util.concurrent.AbstractFuture$Failure;
+> specialinvoke v47.<com.google.common.util.concurrent.AbstractFuture$Failure: void <init>(java.lang.Throwable)>(v46);
+> return v47;
+961a1010
+> java.lang.StringBuilder v5;
+970a1020
+> specialinvoke v5.<java.lang.StringBuilder: void <init>(int)>(41);
+980c1030,1032
+< int v13, v2;
+---
+> int v12, v13, v17, v2;
+> java.lang.String v10, v11, v6, v7;
+> boolean v16, v4;
+983,984c1035
+< java.lang.StringBuilder v1, v10, v11;
+< java.lang.String v6, v7;
+---
+> java.lang.StringBuilder v1, v14, v15, v18;
+986d1036
+< boolean v12, v4;
+1007c1057,1062
+< v7 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.Class)>(v9) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Exception thrown from implementation: \u0001");
+---
+> v10 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v9);
+> v11 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v10);
+> v12 = virtualinvoke v11.<java.lang.String: int length()>();
+> v13 = 38 + v12;
+> specialinvoke v18.<java.lang.StringBuilder: void <init>(int)>(v13);
+> v7 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v10) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Exception thrown from implementation: \u0001");
+1010,1012c1065,1067
+< v10 = virtualinvoke v1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(", info=[");
+< v11 = virtualinvoke v10.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(v7);
+< virtualinvoke v11.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("]");
+---
+> v14 = virtualinvoke v1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(", info=[");
+> v15 = virtualinvoke v14.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(v7);
+> virtualinvoke v15.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("]");
+1014,1017c1069,1072
+< v12 = virtualinvoke v0.<com.google.common.util.concurrent.AbstractFuture: boolean isDone()>();
+< if v12 == 0 goto label6;
+< v13 = virtualinvoke v1.<java.lang.StringBuilder: int length()>();
+< virtualinvoke v1.<java.lang.StringBuilder: java.lang.StringBuilder delete(int,int)>(v2, v13);
+---
+> v16 = virtualinvoke v0.<com.google.common.util.concurrent.AbstractFuture: boolean isDone()>();
+> if v16 == 0 goto label6;
+> v17 = virtualinvoke v1.<java.lang.StringBuilder: int length()>();
+> virtualinvoke v1.<java.lang.StringBuilder: java.lang.StringBuilder delete(int,int)>(v2, v17);
+1127d1181
+< java.lang.String v5;
+1130a1185,1187
+> int v11, v12, v8, v9;
+> java.lang.StringBuilder v14;
+> java.lang.String v10, v13, v5, v6, v7;
+1141,1142c1198,1208
+< v5 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.Runnable,java.util.concurrent.Executor)>(v0, v1) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("RuntimeException while executing runnable \u0001 with executor \u0001");
+< virtualinvoke v3.<java.util.logging.Logger: void log(java.util.logging.Level,java.lang.String,java.lang.Throwable)>(v4, v5, v2);
+---
+> v5 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v0);
+> v6 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v1);
+> v7 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v5);
+> v8 = virtualinvoke v7.<java.lang.String: int length()>();
+> v9 = 57 + v8;
+> v10 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v6);
+> v11 = virtualinvoke v10.<java.lang.String: int length()>();
+> v12 = v9 + v11;
+> specialinvoke v14.<java.lang.StringBuilder: void <init>(int)>(v12);
+> v13 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,java.lang.String)>(v5, v6) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("RuntimeException while executing runnable \u0001 with executor \u0001");
+> virtualinvoke v3.<java.util.logging.Logger: void log(java.util.logging.Level,java.lang.String,java.lang.Throwable)>(v4, v13, v2);

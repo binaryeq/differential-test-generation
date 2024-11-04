@@ -1,0 +1,19 @@
+36c36
+< com.google.common.util.concurrent.FuturesGetChecked$GetCheckedTypeValidator v3;
+---
+> com.google.common.util.concurrent.FuturesGetChecked$GetCheckedTypeValidator v4;
+38c38
+< java.lang.String v1, v2;
+---
+> java.lang.String v1, v2, v3;
+41,44c41,45
+< v2 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v1) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001$ClassValueValidator");
+< <com.google.common.util.concurrent.FuturesGetChecked$GetCheckedTypeValidatorHolder: java.lang.String CLASS_VALUE_VALIDATOR_NAME> = v2;
+< v3 = staticinvoke <com.google.common.util.concurrent.FuturesGetChecked$GetCheckedTypeValidatorHolder: com.google.common.util.concurrent.FuturesGetChecked$GetCheckedTypeValidator getBestValidator()>();
+< <com.google.common.util.concurrent.FuturesGetChecked$GetCheckedTypeValidatorHolder: com.google.common.util.concurrent.FuturesGetChecked$GetCheckedTypeValidator BEST_VALIDATOR> = v3;
+---
+> v2 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v1);
+> v3 = virtualinvoke v2.<java.lang.String: java.lang.String concat(java.lang.String)>("$ClassValueValidator");
+> <com.google.common.util.concurrent.FuturesGetChecked$GetCheckedTypeValidatorHolder: java.lang.String CLASS_VALUE_VALIDATOR_NAME> = v3;
+> v4 = staticinvoke <com.google.common.util.concurrent.FuturesGetChecked$GetCheckedTypeValidatorHolder: com.google.common.util.concurrent.FuturesGetChecked$GetCheckedTypeValidator getBestValidator()>();
+> <com.google.common.util.concurrent.FuturesGetChecked$GetCheckedTypeValidatorHolder: com.google.common.util.concurrent.FuturesGetChecked$GetCheckedTypeValidator BEST_VALIDATOR> = v4;

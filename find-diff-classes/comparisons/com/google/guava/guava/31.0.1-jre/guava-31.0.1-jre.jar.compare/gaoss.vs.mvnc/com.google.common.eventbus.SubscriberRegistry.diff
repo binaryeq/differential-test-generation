@@ -1,0 +1,30 @@
+61,62d60
+< java.util.Iterator v5;
+< java.util.Set v4;
+64d61
+< java.lang.IllegalArgumentException v13;
+67c64
+< java.lang.Object v1, v11, v7, v8, v9;
+---
+> int v16, v17;
+69c66
+< java.lang.String v14;
+---
+> java.lang.String v14, v15, v18;
+70a68,72
+> java.util.Iterator v5;
+> java.util.Set v4;
+> java.lang.IllegalArgumentException v13;
+> java.lang.Object v1, v11, v7, v8, v9;
+> java.lang.StringBuilder v19;
+90,91c92,98
+< v14 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.Object)>(v1) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("missing event subscriber for an annotated method. Is \u0001 registered?");
+< specialinvoke v13.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(v14);
+---
+> v14 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v1);
+> v15 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v14);
+> v16 = virtualinvoke v15.<java.lang.String: int length()>();
+> v17 = 65 + v16;
+> specialinvoke v19.<java.lang.StringBuilder: void <init>(int)>(v17);
+> v18 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v14) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("missing event subscriber for an annotated method. Is \u0001 registered?");
+> specialinvoke v13.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(v18);

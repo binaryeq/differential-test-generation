@@ -1,0 +1,12 @@
+1251,1252c1251
+< org.apache.commons.configuration2.convert.ConversionHandler v1;
+< org.apache.commons.configuration2.convert.DefaultConversionHandler v3;
+---
+> org.apache.commons.configuration2.convert.ConversionHandler v1, v3;
+1259c1258,1259
+< return v1;
+---
+> v3 = v1;
+> goto label2;
+1261a1262
+> label2:

@@ -1,0 +1,40 @@
+219,220c219,220
+< int v10, v11, v12, v2, v3, v6;
+< java.lang.String v13, v4, v7, v8;
+---
+> int v10, v11, v12, v16, v2, v3, v6;
+> java.lang.String v13, v14, v15, v4, v7, v8;
+222c222
+< com.google.common.base.CharMatcher v0, v15, v5;
+---
+> com.google.common.base.CharMatcher v0, v18, v5;
+224c224
+< com.google.common.base.CharMatcher$1 v14;
+---
+> com.google.common.base.CharMatcher$1 v17;
+246c246
+< goto label3;
+---
+> goto label4;
+248c248,253
+< v13 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,java.lang.String)>(v8, ".negate()") <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001\u0001");
+---
+> v14 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v8);
+> v15 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(".negate()");
+> v16 = virtualinvoke v15.<java.lang.String: int length()>();
+> if v16 == 0 goto label3;
+> v13 = virtualinvoke v14.<java.lang.String: java.lang.String concat(java.lang.String)>(v15);
+> goto label4;
+250,253c255,261
+< v14 = new com.google.common.base.CharMatcher$1;
+< v15 = staticinvoke <com.google.common.base.CharMatcher: com.google.common.base.CharMatcher precomputedPositive(int,java.util.BitSet,java.lang.String)>(v6, v1, v13);
+< specialinvoke v14.<com.google.common.base.CharMatcher$1: void <init>(com.google.common.base.CharMatcher,com.google.common.base.CharMatcher,java.lang.String)>(v0, v15, v8);
+< return v14;
+---
+> v13 = new java.lang.String;
+> specialinvoke v13.<java.lang.String: void <init>(java.lang.String)>(v14);
+> label4:
+> v17 = new com.google.common.base.CharMatcher$1;
+> v18 = staticinvoke <com.google.common.base.CharMatcher: com.google.common.base.CharMatcher precomputedPositive(int,java.util.BitSet,java.lang.String)>(v6, v1, v13);
+> specialinvoke v17.<com.google.common.base.CharMatcher$1: void <init>(com.google.common.base.CharMatcher,com.google.common.base.CharMatcher,java.lang.String)>(v0, v18, v8);
+> return v17;

@@ -1,0 +1,20 @@
+27d26
+< org.objectweb.asm.ClassVisitor v21;
+37a37
+> groovyjarjarasm.asm.ClassVisitor v21;
+89c89
+< v21 = virtualinvoke v20.<org.codehaus.groovy.control.CompilationUnit: org.objectweb.asm.ClassVisitor createClassVisitor()>();
+---
+> v21 = virtualinvoke v20.<org.codehaus.groovy.control.CompilationUnit: groovyjarjarasm.asm.ClassVisitor createClassVisitor()>();
+106c106
+< specialinvoke v29.<org.codehaus.groovy.classgen.AsmClassGenerator: void <init>(org.codehaus.groovy.control.SourceUnit,org.codehaus.groovy.classgen.GeneratorContext,org.objectweb.asm.ClassVisitor,java.lang.String)>(v1, v2, v21, v24);
+---
+> specialinvoke v29.<org.codehaus.groovy.classgen.AsmClassGenerator: void <init>(org.codehaus.groovy.control.SourceUnit,org.codehaus.groovy.classgen.GeneratorContext,groovyjarjarasm.asm.ClassVisitor,java.lang.String)>(v1, v2, v21, v24);
+108c108
+< v30 = virtualinvoke v21.<org.objectweb.asm.ClassWriter: byte[] toByteArray()>();
+---
+> v30 = virtualinvoke v21.<groovyjarjarasm.asm.ClassWriter: byte[] toByteArray()>();
+120c120
+< virtualinvoke v38.<org.codehaus.groovy.control.CompilationUnit$ClassgenCallback: void call(org.objectweb.asm.ClassVisitor,org.codehaus.groovy.ast.ClassNode)>(v21, v3);
+---
+> virtualinvoke v38.<org.codehaus.groovy.control.CompilationUnit$ClassgenCallback: void call(groovyjarjarasm.asm.ClassVisitor,org.codehaus.groovy.ast.ClassNode)>(v21, v3);

@@ -1,0 +1,25 @@
+16a17
+> java.lang.IllegalArgumentException v3;
+19,20c20,22
+< java.lang.String v4, v5;
+< java.lang.IllegalArgumentException v3;
+---
+> int v10, v11, v7, v8;
+> java.lang.StringBuilder v13;
+> java.lang.String v12, v4, v5, v6, v9;
+25,27c27,37
+< v4 = v0.<com.google.auto.common.MoreTypes$CastingTypeVisitor: java.lang.String label>;
+< v5 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (javax.lang.model.type.TypeMirror,java.lang.String)>(v1, v4) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001 does not represent a \u0001");
+< specialinvoke v3.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(v5);
+---
+> v4 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v1);
+> v5 = v0.<com.google.auto.common.MoreTypes$CastingTypeVisitor: java.lang.String label>;
+> v6 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v4);
+> v7 = virtualinvoke v6.<java.lang.String: int length()>();
+> v8 = 22 + v7;
+> v9 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v5);
+> v10 = virtualinvoke v9.<java.lang.String: int length()>();
+> v11 = v8 + v10;
+> specialinvoke v13.<java.lang.StringBuilder: void <init>(int)>(v11);
+> v12 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,java.lang.String)>(v4, v5) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001 does not represent a \u0001");
+> specialinvoke v3.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(v12);

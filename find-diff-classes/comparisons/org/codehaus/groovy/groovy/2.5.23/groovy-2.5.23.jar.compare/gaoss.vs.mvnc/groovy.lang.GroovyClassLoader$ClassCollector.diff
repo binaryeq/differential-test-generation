@@ -1,0 +1,32 @@
+92c92
+< protected java.lang.Class onClassNode(org.objectweb.asm.ClassWriter, org.codehaus.groovy.ast.ClassNode)
+---
+> protected java.lang.Class onClassNode(groovyjarjarasm.asm.ClassWriter, org.codehaus.groovy.ast.ClassNode)
+94d93
+< org.objectweb.asm.ClassWriter v1;
+96a96
+> groovyjarjarasm.asm.ClassWriter v1;
+100c100
+< v1 := @parameter0: org.objectweb.asm.ClassWriter;
+---
+> v1 := @parameter0: groovyjarjarasm.asm.ClassWriter;
+102c102
+< v3 = virtualinvoke v1.<org.objectweb.asm.ClassWriter: byte[] toByteArray()>();
+---
+> v3 = virtualinvoke v1.<groovyjarjarasm.asm.ClassWriter: byte[] toByteArray()>();
+106c106
+< public void call(org.objectweb.asm.ClassVisitor, org.codehaus.groovy.ast.ClassNode)
+---
+> public void call(groovyjarjarasm.asm.ClassVisitor, org.codehaus.groovy.ast.ClassNode)
+107a108
+> groovyjarjarasm.asm.ClassVisitor v1;
+109d109
+< org.objectweb.asm.ClassVisitor v1;
+112c112
+< v1 := @parameter0: org.objectweb.asm.ClassVisitor;
+---
+> v1 := @parameter0: groovyjarjarasm.asm.ClassVisitor;
+114c114
+< virtualinvoke v0.<groovy.lang.GroovyClassLoader$ClassCollector: java.lang.Class onClassNode(org.objectweb.asm.ClassWriter,org.codehaus.groovy.ast.ClassNode)>(v1, v2);
+---
+> virtualinvoke v0.<groovy.lang.GroovyClassLoader$ClassCollector: java.lang.Class onClassNode(groovyjarjarasm.asm.ClassWriter,org.codehaus.groovy.ast.ClassNode)>(v1, v2);

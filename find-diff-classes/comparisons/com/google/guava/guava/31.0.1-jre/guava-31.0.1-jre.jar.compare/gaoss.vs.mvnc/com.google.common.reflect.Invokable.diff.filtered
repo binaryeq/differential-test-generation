@@ -1,0 +1,27 @@
+411d410
+< com.google.common.reflect.Invokable v0;
+413,414c412,413
+< java.lang.String v6;
+< java.lang.IllegalArgumentException v4;
+---
+> int v10, v12, v13, v9;
+> java.lang.String v11, v14, v6, v7, v8;
+415a415,417
+> java.lang.IllegalArgumentException v4;
+> com.google.common.reflect.Invokable v0;
+> java.lang.StringBuilder v15;
+423,424c425,435
+< v6 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (com.google.common.reflect.TypeToken,com.google.common.reflect.TypeToken)>(v5, v1) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Invokable is known to return \u0001, not \u0001");
+< specialinvoke v4.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(v6);
+---
+> v6 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v5);
+> v7 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v1);
+> v8 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v6);
+> v9 = virtualinvoke v8.<java.lang.String: int length()>();
+> v10 = 35 + v9;
+> v11 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v7);
+> v12 = virtualinvoke v11.<java.lang.String: int length()>();
+> v13 = v10 + v12;
+> specialinvoke v15.<java.lang.StringBuilder: void <init>(int)>(v13);
+> v14 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,java.lang.String)>(v6, v7) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Invokable is known to return \u0001, not \u0001");
+> specialinvoke v4.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(v14);

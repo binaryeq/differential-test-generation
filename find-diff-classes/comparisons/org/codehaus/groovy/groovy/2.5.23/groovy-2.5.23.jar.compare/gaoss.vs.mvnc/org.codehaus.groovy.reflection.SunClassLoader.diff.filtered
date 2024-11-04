@@ -1,0 +1,61 @@
+1c1
+< public class org.codehaus.groovy.reflection.SunClassLoader extends java.lang.ClassLoader implements org.objectweb.asm.Opcodes
+---
+> public class org.codehaus.groovy.reflection.SunClassLoader extends java.lang.ClassLoader implements groovyjarjarasm.asm.Opcodes
+28d27
+< org.objectweb.asm.ClassWriter v1;
+30d28
+< org.objectweb.asm.MethodVisitor v2;
+31a30,31
+> groovyjarjarasm.asm.ClassWriter v1;
+> groovyjarjarasm.asm.MethodVisitor v2;
+33,44c33,44
+< v1 = new org.objectweb.asm.ClassWriter;
+< specialinvoke v1.<org.objectweb.asm.ClassWriter: void <init>(int)>(1);
+< virtualinvoke v1.<org.objectweb.asm.ClassWriter: void visit(int,int,java.lang.String,java.lang.String,java.lang.String,java.lang.String[])>(48, 1, "sun/reflect/GroovyMagic", null, "sun/reflect/MagicAccessorImpl", null);
+< v2 = virtualinvoke v1.<org.objectweb.asm.ClassWriter: org.objectweb.asm.MethodVisitor visitMethod(int,java.lang.String,java.lang.String,java.lang.String,java.lang.String[])>(1, "<init>", "()V", null, null);
+< virtualinvoke v2.<org.objectweb.asm.MethodVisitor: void visitCode()>();
+< virtualinvoke v2.<org.objectweb.asm.MethodVisitor: void visitVarInsn(int,int)>(25, 0);
+< virtualinvoke v2.<org.objectweb.asm.MethodVisitor: void visitMethodInsn(int,java.lang.String,java.lang.String,java.lang.String,boolean)>(183, "sun/reflect/MagicAccessorImpl", "<init>", "()V", 0);
+< virtualinvoke v2.<org.objectweb.asm.MethodVisitor: void visitInsn(int)>(177);
+< virtualinvoke v2.<org.objectweb.asm.MethodVisitor: void visitMaxs(int,int)>(0, 0);
+< virtualinvoke v2.<org.objectweb.asm.MethodVisitor: void visitEnd()>();
+< virtualinvoke v1.<org.objectweb.asm.ClassWriter: void visitEnd()>();
+< v3 = virtualinvoke v1.<org.objectweb.asm.ClassWriter: byte[] toByteArray()>();
+---
+> v1 = new groovyjarjarasm.asm.ClassWriter;
+> specialinvoke v1.<groovyjarjarasm.asm.ClassWriter: void <init>(int)>(1);
+> virtualinvoke v1.<groovyjarjarasm.asm.ClassWriter: void visit(int,int,java.lang.String,java.lang.String,java.lang.String,java.lang.String[])>(48, 1, "sun/reflect/GroovyMagic", null, "sun/reflect/MagicAccessorImpl", null);
+> v2 = virtualinvoke v1.<groovyjarjarasm.asm.ClassWriter: groovyjarjarasm.asm.MethodVisitor visitMethod(int,java.lang.String,java.lang.String,java.lang.String,java.lang.String[])>(1, "<init>", "()V", null, null);
+> virtualinvoke v2.<groovyjarjarasm.asm.MethodVisitor: void visitCode()>();
+> virtualinvoke v2.<groovyjarjarasm.asm.MethodVisitor: void visitVarInsn(int,int)>(25, 0);
+> virtualinvoke v2.<groovyjarjarasm.asm.MethodVisitor: void visitMethodInsn(int,java.lang.String,java.lang.String,java.lang.String,boolean)>(183, "sun/reflect/MagicAccessorImpl", "<init>", "()V", 0);
+> virtualinvoke v2.<groovyjarjarasm.asm.MethodVisitor: void visitInsn(int)>(177);
+> virtualinvoke v2.<groovyjarjarasm.asm.MethodVisitor: void visitMaxs(int,int)>(0, 0);
+> virtualinvoke v2.<groovyjarjarasm.asm.MethodVisitor: void visitEnd()>();
+> virtualinvoke v1.<groovyjarjarasm.asm.ClassWriter: void visitEnd()>();
+> v3 = virtualinvoke v1.<groovyjarjarasm.asm.ClassWriter: byte[] toByteArray()>();
+50d49
+< org.objectweb.asm.ClassWriter v7;
+53c52
+< org.objectweb.asm.ClassReader v6;
+---
+> groovyjarjarasm.asm.ClassWriter v7;
+56a56
+> groovyjarjarasm.asm.ClassReader v6;
+64,68c64,68
+< v6 = new org.objectweb.asm.ClassReader;
+< specialinvoke v6.<org.objectweb.asm.ClassReader: void <init>(java.io.InputStream)>(v5);
+< v7 = new org.objectweb.asm.ClassWriter;
+< specialinvoke v7.<org.objectweb.asm.ClassWriter: void <init>(int)>(1);
+< virtualinvoke v6.<org.objectweb.asm.ClassReader: void accept(org.objectweb.asm.ClassVisitor,int)>(v7, 2);
+---
+> v6 = new groovyjarjarasm.asm.ClassReader;
+> specialinvoke v6.<groovyjarjarasm.asm.ClassReader: void <init>(java.io.InputStream)>(v5);
+> v7 = new groovyjarjarasm.asm.ClassWriter;
+> specialinvoke v7.<groovyjarjarasm.asm.ClassWriter: void <init>(int)>(1);
+> virtualinvoke v6.<groovyjarjarasm.asm.ClassReader: void accept(groovyjarjarasm.asm.ClassVisitor,int)>(v7, 2);
+70c70
+< v8 = virtualinvoke v7.<org.objectweb.asm.ClassWriter: byte[] toByteArray()>();
+---
+> v8 = virtualinvoke v7.<groovyjarjarasm.asm.ClassWriter: byte[] toByteArray()>();

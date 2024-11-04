@@ -1,0 +1,352 @@
+586,590c586,590
+< java.lang.Exception v72;
+< java.lang.ClassLoader v1, v21, v33, v43, v54;
+< java.lang.ClassCastException v53, v62;
+< java.lang.StringBuffer v10, v11, v13, v16, v17, v19, v20, v23, v24, v28, v29, v35, v36, v37, v38, v40, v45, v46, v47, v48, v50, v51, v56, v65, v66, v68, v69, v7, v8;
+< java.lang.String v0, v12, v14, v18, v22, v27, v30, v39, v41, v49, v52, v59, v61, v63, v67, v70, v9;
+---
+> java.lang.Exception v73;
+> java.lang.ClassLoader v1, v21, v33, v43, v55;
+> java.lang.ClassCastException v54, v63;
+> java.lang.StringBuffer v10, v11, v13, v16, v17, v19, v20, v23, v24, v28, v29, v35, v36, v37, v38, v40, v45, v46, v47, v48, v49, v51, v52, v57, v66, v67, v69, v7, v70, v8;
+> java.lang.String v0, v12, v14, v18, v22, v27, v30, v39, v41, v50, v53, v60, v62, v64, v68, v71, v9;
+592,593c592,593
+< org.apache.commons.logging.LogConfigurationException v77, v78;
+< boolean v15, v34, v44, v5, v55, v6, v60, v64, v73, v76;
+---
+> org.apache.commons.logging.LogConfigurationException v78, v79;
+> boolean v15, v34, v44, v5, v56, v6, v61, v65, v74, v77;
+595,596c595,596
+< java.lang.Class v2, v25, v26, v3, v4, v57, v58, v74, v75;
+< java.lang.Object v31, v71;
+---
+> java.lang.Class v2, v25, v26, v3, v4, v58, v59, v75, v76;
+> java.lang.Object v31, v72;
+685,690c685,691
+< v48 = virtualinvoke v47.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>("\' cannot be loaded via classloader ");
+< v49 = staticinvoke <org.apache.commons.logging.LogFactory: java.lang.String objectId(java.lang.Object)>(v1);
+< v50 = virtualinvoke v48.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>(v49);
+< v51 = virtualinvoke v50.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>(" - it depends on some other class that cannot be found.");
+< v52 = virtualinvoke v51.<java.lang.StringBuffer: java.lang.String toString()>();
+< staticinvoke <org.apache.commons.logging.LogFactory: void logDiagnostic(java.lang.String)>(v52);
+---
+> v48 = virtualinvoke v47.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>("\' cannot be loaded");
+> v49 = virtualinvoke v48.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>(" via classloader ");
+> v50 = staticinvoke <org.apache.commons.logging.LogFactory: java.lang.String objectId(java.lang.Object)>(v1);
+> v51 = virtualinvoke v49.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>(v50);
+> v52 = virtualinvoke v51.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>(" - it depends on some other class that cannot be found.");
+> v53 = virtualinvoke v52.<java.lang.StringBuffer: java.lang.String toString()>();
+> staticinvoke <org.apache.commons.logging.LogFactory: void logDiagnostic(java.lang.String)>(v53);
+694,707c695,708
+< v53 := @caughtexception;
+< v54 = <org.apache.commons.logging.LogFactory: java.lang.ClassLoader thisClassLoader>;
+< if v1 != v54 goto label20;
+< v55 = staticinvoke <org.apache.commons.logging.LogFactory: boolean implementsLogFactory(java.lang.Class)>(v2);
+< v56 = new java.lang.StringBuffer;
+< specialinvoke v56.<java.lang.StringBuffer: void <init>()>();
+< virtualinvoke v56.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>("The application has specified that a custom LogFactory implementation ");
+< virtualinvoke v56.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>("should be used but Class \'");
+< virtualinvoke v56.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>(v0);
+< virtualinvoke v56.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>("\' cannot be converted to \'");
+< v57 = <org.apache.commons.logging.LogFactory: java.lang.Class class$org$apache$commons$logging$LogFactory>;
+< if v57 != null goto label15;
+< v58 = staticinvoke <org.apache.commons.logging.LogFactory: java.lang.Class class$(java.lang.String)>("org.apache.commons.logging.LogFactory");
+< <org.apache.commons.logging.LogFactory: java.lang.Class class$org$apache$commons$logging$LogFactory> = v58;
+---
+> v54 := @caughtexception;
+> v55 = <org.apache.commons.logging.LogFactory: java.lang.ClassLoader thisClassLoader>;
+> if v1 != v55 goto label20;
+> v56 = staticinvoke <org.apache.commons.logging.LogFactory: boolean implementsLogFactory(java.lang.Class)>(v2);
+> v57 = new java.lang.StringBuffer;
+> specialinvoke v57.<java.lang.StringBuffer: void <init>()>();
+> virtualinvoke v57.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>("The application has specified that a custom LogFactory implementation ");
+> virtualinvoke v57.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>("should be used but Class \'");
+> virtualinvoke v57.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>(v0);
+> virtualinvoke v57.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>("\' cannot be converted to \'");
+> v58 = <org.apache.commons.logging.LogFactory: java.lang.Class class$org$apache$commons$logging$LogFactory>;
+> if v58 != null goto label15;
+> v59 = staticinvoke <org.apache.commons.logging.LogFactory: java.lang.Class class$(java.lang.String)>("org.apache.commons.logging.LogFactory");
+> <org.apache.commons.logging.LogFactory: java.lang.Class class$org$apache$commons$logging$LogFactory> = v59;
+710c711
+< v58 = <org.apache.commons.logging.LogFactory: java.lang.Class class$org$apache$commons$logging$LogFactory>;
+---
+> v59 = <org.apache.commons.logging.LogFactory: java.lang.Class class$org$apache$commons$logging$LogFactory>;
+712,722c713,723
+< v59 = virtualinvoke v58.<java.lang.Class: java.lang.String getName()>();
+< virtualinvoke v56.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>(v59);
+< virtualinvoke v56.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>("\'. ");
+< if v55 == 0 goto label17;
+< virtualinvoke v56.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>("The conflict is caused by the presence of multiple LogFactory classes ");
+< virtualinvoke v56.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>("in incompatible classloaders. ");
+< virtualinvoke v56.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>("Background can be found in http://commons.apache.org/logging/tech.html. ");
+< virtualinvoke v56.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>("If you have not explicitly specified a custom LogFactory then it is likely ");
+< virtualinvoke v56.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>("that the container has set one without your knowledge. ");
+< virtualinvoke v56.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>("In this case, consider using the commons-logging-adapters.jar file or ");
+< virtualinvoke v56.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>("specifying the standard LogFactory from the command line. ");
+---
+> v60 = virtualinvoke v59.<java.lang.Class: java.lang.String getName()>();
+> virtualinvoke v57.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>(v60);
+> virtualinvoke v57.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>("\'. ");
+> if v56 == 0 goto label17;
+> virtualinvoke v57.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>("The conflict is caused by the presence of multiple LogFactory classes ");
+> virtualinvoke v57.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>("in incompatible classloaders. ");
+> virtualinvoke v57.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>("Background can be found in http://commons.apache.org/logging/tech.html. ");
+> virtualinvoke v57.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>("If you have not explicitly specified a custom LogFactory then it is likely ");
+> virtualinvoke v57.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>("that the container has set one without your knowledge. ");
+> virtualinvoke v57.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>("In this case, consider using the commons-logging-adapters.jar file or ");
+> virtualinvoke v57.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>("specifying the standard LogFactory from the command line. ");
+725c726
+< virtualinvoke v56.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>("Please check the custom implementation. ");
+---
+> virtualinvoke v57.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>("Please check the custom implementation. ");
+727,731c728,732
+< virtualinvoke v56.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>("Help can be found @http://commons.apache.org/logging/troubleshooting.html.");
+< v60 = staticinvoke <org.apache.commons.logging.LogFactory: boolean isDiagnosticsEnabled()>();
+< if v60 == 0 goto label19;
+< v61 = virtualinvoke v56.<java.lang.StringBuffer: java.lang.String toString()>();
+< staticinvoke <org.apache.commons.logging.LogFactory: void logDiagnostic(java.lang.String)>(v61);
+---
+> virtualinvoke v57.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>("Help can be found @http://commons.apache.org/logging/troubleshooting.html.");
+> v61 = staticinvoke <org.apache.commons.logging.LogFactory: boolean isDiagnosticsEnabled()>();
+> if v61 == 0 goto label19;
+> v62 = virtualinvoke v57.<java.lang.StringBuffer: java.lang.String toString()>();
+> staticinvoke <org.apache.commons.logging.LogFactory: void logDiagnostic(java.lang.String)>(v62);
+733,736c734,737
+< v62 = new java.lang.ClassCastException;
+< v63 = virtualinvoke v56.<java.lang.StringBuffer: java.lang.String toString()>();
+< specialinvoke v62.<java.lang.ClassCastException: void <init>(java.lang.String)>(v63);
+< throw v62;
+---
+> v63 = new java.lang.ClassCastException;
+> v64 = virtualinvoke v57.<java.lang.StringBuffer: java.lang.String toString()>();
+> specialinvoke v63.<java.lang.ClassCastException: void <init>(java.lang.String)>(v64);
+> throw v63;
+738,747c739,748
+< v64 = staticinvoke <org.apache.commons.logging.LogFactory: boolean isDiagnosticsEnabled()>();
+< if v64 == 0 goto label21;
+< v65 = new java.lang.StringBuffer;
+< specialinvoke v65.<java.lang.StringBuffer: void <init>()>();
+< v66 = virtualinvoke v65.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>("Unable to load factory class via classloader ");
+< v67 = staticinvoke <org.apache.commons.logging.LogFactory: java.lang.String objectId(java.lang.Object)>(v1);
+< v68 = virtualinvoke v66.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>(v67);
+< v69 = virtualinvoke v68.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>(" - trying the classloader associated with this LogFactory.");
+< v70 = virtualinvoke v69.<java.lang.StringBuffer: java.lang.String toString()>();
+< staticinvoke <org.apache.commons.logging.LogFactory: void logDiagnostic(java.lang.String)>(v70);
+---
+> v65 = staticinvoke <org.apache.commons.logging.LogFactory: boolean isDiagnosticsEnabled()>();
+> if v65 == 0 goto label21;
+> v66 = new java.lang.StringBuffer;
+> specialinvoke v66.<java.lang.StringBuffer: void <init>()>();
+> v67 = virtualinvoke v66.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>("Unable to load factory class via classloader ");
+> v68 = staticinvoke <org.apache.commons.logging.LogFactory: java.lang.String objectId(java.lang.Object)>(v1);
+> v69 = virtualinvoke v67.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>(v68);
+> v70 = virtualinvoke v69.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>(" - trying the classloader associated with this LogFactory.");
+> v71 = virtualinvoke v70.<java.lang.StringBuffer: java.lang.String toString()>();
+> staticinvoke <org.apache.commons.logging.LogFactory: void logDiagnostic(java.lang.String)>(v71);
+750c751
+< v71 = virtualinvoke v2.<java.lang.Class: java.lang.Object newInstance()>();
+---
+> v72 = virtualinvoke v2.<java.lang.Class: java.lang.Object newInstance()>();
+752c753
+< return v71;
+---
+> return v72;
+754,756c755,757
+< v72 := @caughtexception;
+< v73 = staticinvoke <org.apache.commons.logging.LogFactory: boolean isDiagnosticsEnabled()>();
+< if v73 == 0 goto label24;
+---
+> v73 := @caughtexception;
+> v74 = staticinvoke <org.apache.commons.logging.LogFactory: boolean isDiagnosticsEnabled()>();
+> if v74 == 0 goto label24;
+760,763c761,764
+< v74 = <org.apache.commons.logging.LogFactory: java.lang.Class class$org$apache$commons$logging$LogFactory>;
+< if v74 != null goto label25;
+< v75 = staticinvoke <org.apache.commons.logging.LogFactory: java.lang.Class class$(java.lang.String)>("org.apache.commons.logging.LogFactory");
+< <org.apache.commons.logging.LogFactory: java.lang.Class class$org$apache$commons$logging$LogFactory> = v75;
+---
+> v75 = <org.apache.commons.logging.LogFactory: java.lang.Class class$org$apache$commons$logging$LogFactory>;
+> if v75 != null goto label25;
+> v76 = staticinvoke <org.apache.commons.logging.LogFactory: java.lang.Class class$(java.lang.String)>("org.apache.commons.logging.LogFactory");
+> <org.apache.commons.logging.LogFactory: java.lang.Class class$org$apache$commons$logging$LogFactory> = v76;
+766c767
+< v75 = <org.apache.commons.logging.LogFactory: java.lang.Class class$org$apache$commons$logging$LogFactory>;
+---
+> v76 = <org.apache.commons.logging.LogFactory: java.lang.Class class$org$apache$commons$logging$LogFactory>;
+768,773c769,770
+< v76 = virtualinvoke v75.<java.lang.Class: boolean isAssignableFrom(java.lang.Class)>(v2);
+< if v76 != 0 goto label27;
+< v77 = new org.apache.commons.logging.LogConfigurationException;
+< specialinvoke v77.<org.apache.commons.logging.LogConfigurationException: void <init>(java.lang.String,java.lang.Throwable)>("The chosen LogFactory implementation does not extend LogFactory. Please check your configuration.", v72);
+< return v77;
+< label27:
+---
+> v77 = virtualinvoke v76.<java.lang.Class: boolean isAssignableFrom(java.lang.Class)>(v2);
+> if v77 != 0 goto label27;
+775c772
+< specialinvoke v78.<org.apache.commons.logging.LogConfigurationException: void <init>(java.lang.Throwable)>(v72);
+---
+> specialinvoke v78.<org.apache.commons.logging.LogConfigurationException: void <init>(java.lang.String,java.lang.Throwable)>("The chosen LogFactory implementation does not extend LogFactory. Please check your configuration.", v73);
+776a774,777
+> label27:
+> v79 = new org.apache.commons.logging.LogConfigurationException;
+> specialinvoke v79.<org.apache.commons.logging.LogConfigurationException: void <init>(java.lang.Throwable)>(v73);
+> return v79;
+896,898c897,899
+< byte v19;
+< java.lang.SecurityException v42;
+< boolean v10, v20, v31, v43, v44, v6;
+---
+> byte v20;
+> java.lang.SecurityException v47;
+> boolean v10, v21, v34, v48, v49, v6;
+900,902c901,903
+< java.lang.StringBuffer v11, v12, v13, v14, v15, v21, v22, v23, v24, v25, v26, v27, v28, v29, v32, v33, v34, v35, v36, v37, v38, v39, v40, v45, v46, v47, v48, v50, v51, v52, v53, v54, v55;
+< java.lang.String v1, v16, v17, v30, v41, v49, v56, v9;
+< double v18, v3;
+---
+> java.lang.StringBuffer v11, v12, v13, v14, v15, v16, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v50, v51, v52, v53, v55, v56, v57, v58, v59, v60;
+> java.lang.String v1, v17, v18, v33, v46, v54, v61, v9;
+> double v19, v3;
+935,938c936,940
+< v14 = virtualinvoke v13.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>("\' with priority ");
+< v15 = virtualinvoke v14.<java.lang.StringBuffer: java.lang.StringBuffer append(double)>(v3);
+< v16 = virtualinvoke v15.<java.lang.StringBuffer: java.lang.String toString()>();
+< staticinvoke <org.apache.commons.logging.LogFactory: void logDiagnostic(java.lang.String)>(v16);
+---
+> v14 = virtualinvoke v13.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>("\'");
+> v15 = virtualinvoke v14.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>(" with priority ");
+> v16 = virtualinvoke v15.<java.lang.StringBuffer: java.lang.StringBuffer append(double)>(v3);
+> v17 = virtualinvoke v16.<java.lang.StringBuffer: java.lang.String toString()>();
+> staticinvoke <org.apache.commons.logging.LogFactory: void logDiagnostic(java.lang.String)>(v17);
+941,944c943,946
+< v17 = virtualinvoke v8.<java.util.Properties: java.lang.String getProperty(java.lang.String)>("priority");
+< v18 = 0.0;
+< if v17 == null goto label06;
+< v18 = staticinvoke <java.lang.Double: double parseDouble(java.lang.String)>(v17);
+---
+> v18 = virtualinvoke v8.<java.util.Properties: java.lang.String getProperty(java.lang.String)>("priority");
+> v19 = 0.0;
+> if v18 == null goto label06;
+> v19 = staticinvoke <java.lang.Double: double parseDouble(java.lang.String)>(v18);
+946,961c948,965
+< v19 = v18 cmpl v3;
+< if v19 <= 0 goto label08;
+< v20 = staticinvoke <org.apache.commons.logging.LogFactory: boolean isDiagnosticsEnabled()>();
+< if v20 == 0 goto label07;
+< v21 = new java.lang.StringBuffer;
+< specialinvoke v21.<java.lang.StringBuffer: void <init>()>();
+< v22 = virtualinvoke v21.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>("[LOOKUP] Properties file at \'");
+< v23 = virtualinvoke v22.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(v7);
+< v24 = virtualinvoke v23.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>("\' with priority ");
+< v25 = virtualinvoke v24.<java.lang.StringBuffer: java.lang.StringBuffer append(double)>(v18);
+< v26 = virtualinvoke v25.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>(" overrides file at \'");
+< v27 = virtualinvoke v26.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(v4);
+< v28 = virtualinvoke v27.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>("\' with priority ");
+< v29 = virtualinvoke v28.<java.lang.StringBuffer: java.lang.StringBuffer append(double)>(v3);
+< v30 = virtualinvoke v29.<java.lang.StringBuffer: java.lang.String toString()>();
+< staticinvoke <org.apache.commons.logging.LogFactory: void logDiagnostic(java.lang.String)>(v30);
+---
+> v20 = v19 cmpl v3;
+> if v20 <= 0 goto label08;
+> v21 = staticinvoke <org.apache.commons.logging.LogFactory: boolean isDiagnosticsEnabled()>();
+> if v21 == 0 goto label07;
+> v22 = new java.lang.StringBuffer;
+> specialinvoke v22.<java.lang.StringBuffer: void <init>()>();
+> v23 = virtualinvoke v22.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>("[LOOKUP] Properties file at \'");
+> v24 = virtualinvoke v23.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(v7);
+> v25 = virtualinvoke v24.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>("\'");
+> v26 = virtualinvoke v25.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>(" with priority ");
+> v27 = virtualinvoke v26.<java.lang.StringBuffer: java.lang.StringBuffer append(double)>(v19);
+> v28 = virtualinvoke v27.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>(" overrides file at \'");
+> v29 = virtualinvoke v28.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(v4);
+> v30 = virtualinvoke v29.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>("\'");
+> v31 = virtualinvoke v30.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>(" with priority ");
+> v32 = virtualinvoke v31.<java.lang.StringBuffer: java.lang.StringBuffer append(double)>(v3);
+> v33 = virtualinvoke v32.<java.lang.StringBuffer: java.lang.String toString()>();
+> staticinvoke <org.apache.commons.logging.LogFactory: void logDiagnostic(java.lang.String)>(v33);
+965c969
+< v3 = v18;
+---
+> v3 = v19;
+968,981c972,987
+< v31 = staticinvoke <org.apache.commons.logging.LogFactory: boolean isDiagnosticsEnabled()>();
+< if v31 == 0 goto label03;
+< v32 = new java.lang.StringBuffer;
+< specialinvoke v32.<java.lang.StringBuffer: void <init>()>();
+< v33 = virtualinvoke v32.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>("[LOOKUP] Properties file at \'");
+< v34 = virtualinvoke v33.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(v7);
+< v35 = virtualinvoke v34.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>("\' with priority ");
+< v36 = virtualinvoke v35.<java.lang.StringBuffer: java.lang.StringBuffer append(double)>(v18);
+< v37 = virtualinvoke v36.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>(" does not override file at \'");
+< v38 = virtualinvoke v37.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(v4);
+< v39 = virtualinvoke v38.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>("\' with priority ");
+< v40 = virtualinvoke v39.<java.lang.StringBuffer: java.lang.StringBuffer append(double)>(v3);
+< v41 = virtualinvoke v40.<java.lang.StringBuffer: java.lang.String toString()>();
+< staticinvoke <org.apache.commons.logging.LogFactory: void logDiagnostic(java.lang.String)>(v41);
+---
+> v34 = staticinvoke <org.apache.commons.logging.LogFactory: boolean isDiagnosticsEnabled()>();
+> if v34 == 0 goto label03;
+> v35 = new java.lang.StringBuffer;
+> specialinvoke v35.<java.lang.StringBuffer: void <init>()>();
+> v36 = virtualinvoke v35.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>("[LOOKUP] Properties file at \'");
+> v37 = virtualinvoke v36.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(v7);
+> v38 = virtualinvoke v37.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>("\'");
+> v39 = virtualinvoke v38.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>(" with priority ");
+> v40 = virtualinvoke v39.<java.lang.StringBuffer: java.lang.StringBuffer append(double)>(v19);
+> v41 = virtualinvoke v40.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>(" does not override file at \'");
+> v42 = virtualinvoke v41.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(v4);
+> v43 = virtualinvoke v42.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>("\'");
+> v44 = virtualinvoke v43.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>(" with priority ");
+> v45 = virtualinvoke v44.<java.lang.StringBuffer: java.lang.StringBuffer append(double)>(v3);
+> v46 = virtualinvoke v45.<java.lang.StringBuffer: java.lang.String toString()>();
+> staticinvoke <org.apache.commons.logging.LogFactory: void logDiagnostic(java.lang.String)>(v46);
+984,986c990,992
+< v42 := @caughtexception;
+< v43 = staticinvoke <org.apache.commons.logging.LogFactory: boolean isDiagnosticsEnabled()>();
+< if v43 == 0 goto label10;
+---
+> v47 := @caughtexception;
+> v48 = staticinvoke <org.apache.commons.logging.LogFactory: boolean isDiagnosticsEnabled()>();
+> if v48 == 0 goto label10;
+989,990c995,996
+< v44 = staticinvoke <org.apache.commons.logging.LogFactory: boolean isDiagnosticsEnabled()>();
+< if v44 == 0 goto label12;
+---
+> v49 = staticinvoke <org.apache.commons.logging.LogFactory: boolean isDiagnosticsEnabled()>();
+> if v49 == 0 goto label12;
+992,1000d997
+< v45 = new java.lang.StringBuffer;
+< specialinvoke v45.<java.lang.StringBuffer: void <init>()>();
+< v46 = virtualinvoke v45.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>("[LOOKUP] No properties file of name \'");
+< v47 = virtualinvoke v46.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>(v1);
+< v48 = virtualinvoke v47.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>("\' found.");
+< v49 = virtualinvoke v48.<java.lang.StringBuffer: java.lang.String toString()>();
+< staticinvoke <org.apache.commons.logging.LogFactory: void logDiagnostic(java.lang.String)>(v49);
+< goto label12;
+< label11:
+1003c1000
+< v51 = virtualinvoke v50.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>("[LOOKUP] Properties file of name \'");
+---
+> v51 = virtualinvoke v50.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>("[LOOKUP] No properties file of name \'");
+1005,1009c1002,1015
+< v53 = virtualinvoke v52.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>("\' found at \'");
+< v54 = virtualinvoke v53.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(v4);
+< v55 = virtualinvoke v54.<java.lang.StringBuffer: java.lang.StringBuffer append(char)>(34);
+< v56 = virtualinvoke v55.<java.lang.StringBuffer: java.lang.String toString()>();
+< staticinvoke <org.apache.commons.logging.LogFactory: void logDiagnostic(java.lang.String)>(v56);
+---
+> v53 = virtualinvoke v52.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>("\' found.");
+> v54 = virtualinvoke v53.<java.lang.StringBuffer: java.lang.String toString()>();
+> staticinvoke <org.apache.commons.logging.LogFactory: void logDiagnostic(java.lang.String)>(v54);
+> goto label12;
+> label11:
+> v55 = new java.lang.StringBuffer;
+> specialinvoke v55.<java.lang.StringBuffer: void <init>()>();
+> v56 = virtualinvoke v55.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>("[LOOKUP] Properties file of name \'");
+> v57 = virtualinvoke v56.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>(v1);
+> v58 = virtualinvoke v57.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>("\' found at \'");
+> v59 = virtualinvoke v58.<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>(v4);
+> v60 = virtualinvoke v59.<java.lang.StringBuffer: java.lang.StringBuffer append(char)>(34);
+> v61 = virtualinvoke v60.<java.lang.StringBuffer: java.lang.String toString()>();
+> staticinvoke <org.apache.commons.logging.LogFactory: void logDiagnostic(java.lang.String)>(v61);

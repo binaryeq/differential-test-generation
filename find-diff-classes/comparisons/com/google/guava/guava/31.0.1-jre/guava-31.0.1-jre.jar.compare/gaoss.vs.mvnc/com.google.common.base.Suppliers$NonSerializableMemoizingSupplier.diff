@@ -1,0 +1,32 @@
+60,61c60,63
+< java.lang.Object v2, v3;
+< java.lang.String v4;
+---
+> int v10, v11, v5, v6;
+> java.lang.Object v2, v7;
+> java.lang.StringBuilder v13, v14;
+> java.lang.String v12, v3, v4, v8, v9;
+66c68,73
+< v3 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.Object)>(v2) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("<supplier that returned \u0001>");
+---
+> v3 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v2);
+> v4 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v3);
+> v5 = virtualinvoke v4.<java.lang.String: int length()>();
+> v6 = 25 + v5;
+> specialinvoke v14.<java.lang.StringBuilder: void <init>(int)>(v6);
+> v7 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v3) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("<supplier that returned \u0001>");
+69c76
+< v3 = v1;
+---
+> v7 = v1;
+71,72c78,84
+< v4 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.Object)>(v3) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Suppliers.memoize(\u0001)");
+< return v4;
+---
+> v8 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v7);
+> v9 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v8);
+> v10 = virtualinvoke v9.<java.lang.String: int length()>();
+> v11 = 19 + v10;
+> specialinvoke v13.<java.lang.StringBuilder: void <init>(int)>(v11);
+> v12 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v8) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Suppliers.memoize(\u0001)");
+> return v12;

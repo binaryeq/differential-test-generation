@@ -1,0 +1,26 @@
+41,42c41
+< com.google.common.collect.ImmutableSet v2;
+< java.lang.String v3;
+---
+> com.google.common.collect.ImmutableSet v3;
+44a44,46
+> int v10, v6, v7, v9;
+> java.lang.StringBuilder v12;
+> java.lang.String v11, v2, v4, v5, v8;
+47,49c49,60
+< v2 = v0.<com.google.common.io.Files$FileByteSink: com.google.common.collect.ImmutableSet modes>;
+< v3 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.io.File,com.google.common.collect.ImmutableSet)>(v1, v2) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Files.asByteSink(\u0001, \u0001)");
+< return v3;
+---
+> v2 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v1);
+> v3 = v0.<com.google.common.io.Files$FileByteSink: com.google.common.collect.ImmutableSet modes>;
+> v4 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v3);
+> v5 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v2);
+> v6 = virtualinvoke v5.<java.lang.String: int length()>();
+> v7 = 20 + v6;
+> v8 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v4);
+> v9 = virtualinvoke v8.<java.lang.String: int length()>();
+> v10 = v7 + v9;
+> specialinvoke v12.<java.lang.StringBuilder: void <init>(int)>(v10);
+> v11 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,java.lang.String)>(v2, v4) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Files.asByteSink(\u0001, \u0001)");
+> return v11;

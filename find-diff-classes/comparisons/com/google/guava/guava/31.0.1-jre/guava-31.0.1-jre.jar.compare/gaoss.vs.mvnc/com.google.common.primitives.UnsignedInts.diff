@@ -1,0 +1,41 @@
+280,281c280,281
+< int v3, v4;
+< java.lang.String v0, v2, v7;
+---
+> int v3, v4, v9;
+> java.lang.String v0, v10, v2, v7, v8;
+293,294c293,303
+< v7 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v0) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Error parsing value: \u0001");
+< specialinvoke v6.<java.lang.NumberFormatException: void <init>(java.lang.String)>(v7);
+---
+> v7 = "Error parsing value: ";
+> v8 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v0);
+> v9 = virtualinvoke v8.<java.lang.String: int length()>();
+> if v9 == 0 goto label4;
+> v10 = virtualinvoke v7.<java.lang.String: java.lang.String concat(java.lang.String)>(v8);
+> goto label5;
+> label4:
+> v10 = new java.lang.String;
+> specialinvoke v10.<java.lang.String: void <init>(java.lang.String)>("Error parsing value: ");
+> label5:
+> specialinvoke v6.<java.lang.NumberFormatException: void <init>(java.lang.String)>(v10);
+309,310d317
+< byte v4;
+< int v1;
+313c320,323
+< java.lang.String v0, v6;
+---
+> byte v4;
+> int v1, v7, v8;
+> java.lang.StringBuilder v10;
+> java.lang.String v0, v6, v9;
+322,323c332,337
+< v6 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,int)>(v0, v1) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Input \u0001 in base \u0001 is not in the range of an unsigned integer");
+< specialinvoke v5.<java.lang.NumberFormatException: void <init>(java.lang.String)>(v6);
+---
+> v6 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v0);
+> v7 = virtualinvoke v6.<java.lang.String: int length()>();
+> v8 = 69 + v7;
+> specialinvoke v10.<java.lang.StringBuilder: void <init>(int)>(v8);
+> v9 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,int)>(v0, v1) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Input \u0001 in base \u0001 is not in the range of an unsigned integer");
+> specialinvoke v5.<java.lang.NumberFormatException: void <init>(java.lang.String)>(v9);

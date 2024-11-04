@@ -1,0 +1,36 @@
+247,248d246
+< com.google.common.collect.ImmutableSet v12, v2;
+< java.util.Iterator v6;
+249a248,253
+> int v12, v13, v15, v16;
+> java.lang.String v11, v14, v17;
+> boolean v7;
+> com.google.common.jimfs.File v0;
+> com.google.common.collect.ImmutableSet v18, v2;
+> java.util.Iterator v6;
+252c256
+< java.lang.String v11;
+---
+> java.lang.StringBuilder v19;
+254,255d257
+< boolean v7;
+< com.google.common.jimfs.File v0;
+272,273c274,282
+< v11 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,java.lang.Object)>(v9, v10) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001:\u0001");
+< virtualinvoke v3.<com.google.common.collect.ImmutableSet$Builder: com.google.common.collect.ImmutableSet$Builder add(java.lang.Object)>(v11);
+---
+> v11 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v9);
+> v12 = virtualinvoke v11.<java.lang.String: int length()>();
+> v13 = 1 + v12;
+> v14 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v10);
+> v15 = virtualinvoke v14.<java.lang.String: int length()>();
+> v16 = v13 + v15;
+> specialinvoke v19.<java.lang.StringBuilder: void <init>(int)>(v16);
+> v17 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,java.lang.String)>(v9, v10) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001:\u0001");
+> virtualinvoke v3.<com.google.common.collect.ImmutableSet$Builder: com.google.common.collect.ImmutableSet$Builder add(java.lang.Object)>(v17);
+276,277c285,286
+< v12 = virtualinvoke v3.<com.google.common.collect.ImmutableSet$Builder: com.google.common.collect.ImmutableSet build()>();
+< return v12;
+---
+> v18 = virtualinvoke v3.<com.google.common.collect.ImmutableSet$Builder: com.google.common.collect.ImmutableSet build()>();
+> return v18;

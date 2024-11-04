@@ -1,0 +1,1060 @@
+8,15c8,15
+< int v118, v142, v166, v190, v214, v238, v265, v295;
+< io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef v119, v143, v167, v191, v215, v239, v266, v95;
+< io.micronaut.inject.'annotation'.DefaultAnnotationMetadata v0, v120, v13, v144, v168, v192, v216, v22, v240, v267, v31, v40, v49, v58, v67, v79, v96;
+< java.util.List v113, v114, v115, v137, v138, v139, v161, v162, v163, v185, v186, v187, v209, v210, v211, v233, v234, v235, v257, v258, v259, v284, v285, v286;
+< io.micronaut.core.type.Argument[] v12, v261, v288, v290, v75, v87, v89;
+< java.util.Map v10, v100, v101, v102, v103, v104, v105, v106, v107, v108, v109, v11, v110, v111, v112, v116, v121, v122, v123, v124, v125, v126, v127, v128, v129, v130, v131, v132, v133, v134, v135, v136, v14, v140, v145, v146, v147, v148, v149, v15, v150, v151, v152, v153, v154, v155, v156, v157, v158, v159, v16, v160, v164, v169, v17, v170, v171, v172, v173, v174, v175, v176, v177, v178, v179, v18, v180, v181, v182, v183, v184, v188, v19, v193, v194, v195, v196, v197, v198, v199, v2, v20, v200, v201, v202, v203, v204, v205, v206, v207, v208, v212, v217, v218, v219, v220, v221, v222, v223, v224, v225, v226, v227, v228, v229, v23, v230, v231, v232, v236, v24, v241, v242, v243, v244, v245, v246, v247, v248, v249, v25, v250, v251, v252, v253, v254, v255, v256, v26, v260, v268, v269, v27, v270, v271, v272, v273, v274, v275, v276, v277, v278, v279, v28, v280, v281, v282, v283, v287, v29, v3, v32, v33, v34, v35, v36, v37, v38, v4, v41, v42, v43, v44, v45, v46, v47, v5, v50, v51, v52, v53, v54, v55, v56, v59, v6, v60, v61, v62, v63, v64, v65, v68, v69, v70, v71, v72, v73, v74, v8, v80, v81, v82, v83, v84, v85, v86, v9, v97, v98, v99;
+< io.micronaut.core.type.Argument v117, v141, v165, v189, v21, v213, v237, v262, v263, v264, v289, v291, v292, v293, v294, v30, v39, v48, v57, v66, v76, v77, v78, v88, v90, v91, v92, v93;
+< io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef[] v94;
+---
+> int v136, v160, v184, v208, v232, v256, v280, v304, v331, v361;
+> io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef v113, v137, v161, v185, v209, v233, v257, v281, v305, v332;
+> io.micronaut.inject.'annotation'.DefaultAnnotationMetadata v0, v114, v13, v138, v162, v186, v210, v22, v234, v258, v282, v306, v31, v333, v40, v49, v58, v67, v76, v85, v97;
+> java.util.List v131, v132, v133, v155, v156, v157, v179, v180, v181, v203, v204, v205, v227, v228, v229, v251, v252, v253, v275, v276, v277, v299, v300, v301, v323, v324, v325, v350, v351, v352;
+> io.micronaut.core.type.Argument[] v105, v107, v12, v327, v354, v356, v93;
+> java.util.Map v10, v100, v101, v102, v103, v104, v11, v115, v116, v117, v118, v119, v120, v121, v122, v123, v124, v125, v126, v127, v128, v129, v130, v134, v139, v14, v140, v141, v142, v143, v144, v145, v146, v147, v148, v149, v15, v150, v151, v152, v153, v154, v158, v16, v163, v164, v165, v166, v167, v168, v169, v17, v170, v171, v172, v173, v174, v175, v176, v177, v178, v18, v182, v187, v188, v189, v19, v190, v191, v192, v193, v194, v195, v196, v197, v198, v199, v2, v20, v200, v201, v202, v206, v211, v212, v213, v214, v215, v216, v217, v218, v219, v220, v221, v222, v223, v224, v225, v226, v23, v230, v235, v236, v237, v238, v239, v24, v240, v241, v242, v243, v244, v245, v246, v247, v248, v249, v25, v250, v254, v259, v26, v260, v261, v262, v263, v264, v265, v266, v267, v268, v269, v27, v270, v271, v272, v273, v274, v278, v28, v283, v284, v285, v286, v287, v288, v289, v29, v290, v291, v292, v293, v294, v295, v296, v297, v298, v3, v302, v307, v308, v309, v310, v311, v312, v313, v314, v315, v316, v317, v318, v319, v32, v320, v321, v322, v326, v33, v334, v335, v336, v337, v338, v339, v34, v340, v341, v342, v343, v344, v345, v346, v347, v348, v349, v35, v353, v36, v37, v38, v4, v41, v42, v43, v44, v45, v46, v47, v5, v50, v51, v52, v53, v54, v55, v56, v59, v6, v60, v61, v62, v63, v64, v65, v68, v69, v70, v71, v72, v73, v74, v77, v78, v79, v8, v80, v81, v82, v83, v86, v87, v88, v89, v9, v90, v91, v92, v98, v99;
+> io.micronaut.core.type.Argument v106, v108, v109, v110, v111, v135, v159, v183, v207, v21, v231, v255, v279, v30, v303, v328, v329, v330, v355, v357, v358, v359, v360, v39, v48, v57, v66, v75, v84, v94, v95, v96;
+> io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef[] v112;
+18c18
+< v1 = newarray (java.lang.String)[8];
+---
+> v1 = newarray (java.lang.String)[10];
+24,26c24,28
+< v1[5] = "resetPeriod";
+< v1[6] = "freeformTags";
+< v1[7] = "definedTags";
+---
+> v1[5] = "startDate";
+> v1[6] = "endDate";
+> v1[7] = "resetPeriod";
+> v1[8] = "freeformTags";
+> v1[9] = "definedTags";
+32c34
+< v7 = newarray (java.lang.String)[8];
+---
+> v7 = newarray (java.lang.String)[10];
+38,40c40,44
+< v7[5] = "resetPeriod";
+< v7[6] = "freeformTags";
+< v7[7] = "definedTags";
+---
+> v7[5] = "startDate";
+> v7[6] = "endDate";
+> v7[7] = "resetPeriod";
+> v7[8] = "freeformTags";
+> v7[9] = "definedTags";
+47c51
+< v12 = newarray (io.micronaut.core.type.Argument)[8];
+---
+> v12 = newarray (io.micronaut.core.type.Argument)[10];
+112c116
+< v66 = staticinvoke <io.micronaut.core.type.Argument: io.micronaut.core.type.Argument of(java.lang.Class,java.lang.String,io.micronaut.core.'annotation'.AnnotationMetadata,io.micronaut.core.type.Argument[])>(class "Lcom/oracle/bmc/budget/model/ResetPeriod;", "resetPeriod", v58, null);
+---
+> v66 = staticinvoke <io.micronaut.core.type.Argument: io.micronaut.core.type.Argument of(java.lang.Class,java.lang.String,io.micronaut.core.'annotation'.AnnotationMetadata,io.micronaut.core.type.Argument[])>(class "Ljava/util/Date;", "startDate", v58, null);
+123,130c127,132
+< v75 = newarray (io.micronaut.core.type.Argument)[2];
+< v76 = staticinvoke <io.micronaut.core.type.Argument: io.micronaut.core.type.Argument of(java.lang.Class,java.lang.String)>(class "Ljava/lang/String;", "K");
+< v75[0] = v76;
+< v77 = staticinvoke <io.micronaut.core.type.Argument: io.micronaut.core.type.Argument of(java.lang.Class,java.lang.String)>(class "Ljava/lang/String;", "V");
+< v75[1] = v77;
+< v78 = staticinvoke <io.micronaut.core.type.Argument: io.micronaut.core.type.Argument of(java.lang.Class,java.lang.String,io.micronaut.core.'annotation'.AnnotationMetadata,io.micronaut.core.type.Argument[])>(class "Ljava/util/Map;", "freeformTags", v67, v75);
+< v12[6] = v78;
+< v79 = new io.micronaut.inject.'annotation'.DefaultAnnotationMetadata;
+---
+> v75 = staticinvoke <io.micronaut.core.type.Argument: io.micronaut.core.type.Argument of(java.lang.Class,java.lang.String,io.micronaut.core.'annotation'.AnnotationMetadata,io.micronaut.core.type.Argument[])>(class "Ljava/util/Date;", "endDate", v67, null);
+> v12[6] = v75;
+> v76 = new io.micronaut.inject.'annotation'.DefaultAnnotationMetadata;
+> v77 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v78 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("jakarta.annotation.Nullable", v77);
+> v79 = staticinvoke <java.util.Map: java.util.Map of()>();
+132,133c134,135
+< v81 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("jakarta.annotation.Nullable", v80);
+< v82 = staticinvoke <java.util.Map: java.util.Map of()>();
+---
+> v81 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v82 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("jakarta.annotation.Nullable", v81);
+135,136c137,140
+< v84 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v85 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("jakarta.annotation.Nullable", v84);
+---
+> specialinvoke v76.<io.micronaut.inject.'annotation'.DefaultAnnotationMetadata: void <init>(java.util.Map,java.util.Map,java.util.Map,java.util.Map,java.util.Map,boolean,boolean)>(v78, v79, v80, v82, v83, 0, 0);
+> v84 = staticinvoke <io.micronaut.core.type.Argument: io.micronaut.core.type.Argument of(java.lang.Class,java.lang.String,io.micronaut.core.'annotation'.AnnotationMetadata,io.micronaut.core.type.Argument[])>(class "Lcom/oracle/bmc/budget/model/ResetPeriod;", "resetPeriod", v76, null);
+> v12[7] = v84;
+> v85 = new io.micronaut.inject.'annotation'.DefaultAnnotationMetadata;
+138,158c142,159
+< specialinvoke v79.<io.micronaut.inject.'annotation'.DefaultAnnotationMetadata: void <init>(java.util.Map,java.util.Map,java.util.Map,java.util.Map,java.util.Map,boolean,boolean)>(v81, v82, v83, v85, v86, 0, 0);
+< v87 = newarray (io.micronaut.core.type.Argument)[2];
+< v88 = staticinvoke <io.micronaut.core.type.Argument: io.micronaut.core.type.Argument of(java.lang.Class,java.lang.String)>(class "Ljava/lang/String;", "K");
+< v87[0] = v88;
+< v89 = newarray (io.micronaut.core.type.Argument)[2];
+< v90 = staticinvoke <io.micronaut.core.type.Argument: io.micronaut.core.type.Argument of(java.lang.Class,java.lang.String)>(class "Ljava/lang/String;", "K");
+< v89[0] = v90;
+< v91 = staticinvoke <io.micronaut.core.type.Argument: io.micronaut.core.type.Argument of(java.lang.Class,java.lang.String)>(class "Ljava/lang/Object;", "V");
+< v89[1] = v91;
+< v92 = staticinvoke <io.micronaut.core.type.Argument: io.micronaut.core.type.Argument of(java.lang.Class,java.lang.String,io.micronaut.core.'annotation'.AnnotationMetadata,io.micronaut.core.type.Argument[])>(class "Ljava/util/Map;", "V", null, v89);
+< v87[1] = v92;
+< v93 = staticinvoke <io.micronaut.core.type.Argument: io.micronaut.core.type.Argument of(java.lang.Class,java.lang.String,io.micronaut.core.'annotation'.AnnotationMetadata,io.micronaut.core.type.Argument[])>(class "Ljava/util/Map;", "definedTags", v79, v87);
+< v12[7] = v93;
+< <com.oracle.bmc.budget.model.introspection.$UpdateBudgetDetails$Introspection: io.micronaut.core.type.Argument[] $CONSTRUCTOR_ARGUMENTS> = v12;
+< v94 = newarray (io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef)[8];
+< v95 = new io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef;
+< v96 = new io.micronaut.inject.'annotation'.DefaultAnnotationMetadata;
+< v97 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("value", "displayName");
+< v98 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("property", "displayName");
+< v99 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v100 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty", v97, "io.micronaut.serde.config.annotation.SerdeConfig", v98, "jakarta.annotation.Nullable", v99);
+---
+> v87 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("jakarta.annotation.Nullable", v86);
+> v88 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v89 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v90 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v91 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("jakarta.annotation.Nullable", v90);
+> v92 = staticinvoke <java.util.Map: java.util.Map of()>();
+> specialinvoke v85.<io.micronaut.inject.'annotation'.DefaultAnnotationMetadata: void <init>(java.util.Map,java.util.Map,java.util.Map,java.util.Map,java.util.Map,boolean,boolean)>(v87, v88, v89, v91, v92, 0, 0);
+> v93 = newarray (io.micronaut.core.type.Argument)[2];
+> v94 = staticinvoke <io.micronaut.core.type.Argument: io.micronaut.core.type.Argument of(java.lang.Class,java.lang.String)>(class "Ljava/lang/String;", "K");
+> v93[0] = v94;
+> v95 = staticinvoke <io.micronaut.core.type.Argument: io.micronaut.core.type.Argument of(java.lang.Class,java.lang.String)>(class "Ljava/lang/String;", "V");
+> v93[1] = v95;
+> v96 = staticinvoke <io.micronaut.core.type.Argument: io.micronaut.core.type.Argument of(java.lang.Class,java.lang.String,io.micronaut.core.'annotation'.AnnotationMetadata,io.micronaut.core.type.Argument[])>(class "Ljava/util/Map;", "freeformTags", v85, v93);
+> v12[8] = v96;
+> v97 = new io.micronaut.inject.'annotation'.DefaultAnnotationMetadata;
+> v98 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v99 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("jakarta.annotation.Nullable", v98);
+> v100 = staticinvoke <java.util.Map: java.util.Map of()>();
+161,183c162,188
+< v103 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v104 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v101, "io.micronaut.core.annotation.Internal", v102, "io.micronaut.serde.config.annotation.SerdeConfig", v103);
+< v105 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v106 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v107 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v108 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v105, "io.micronaut.core.annotation.Internal", v106, "io.micronaut.serde.config.annotation.SerdeConfig", v107);
+< v109 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("value", "displayName");
+< v110 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("property", "displayName");
+< v111 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v112 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty", v109, "io.micronaut.serde.config.annotation.SerdeConfig", v110, "jakarta.annotation.Nullable", v111);
+< v113 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty");
+< v114 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("io.micronaut.serde.config.annotation.SerdeConfig");
+< v115 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty");
+< v116 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v113, "io.micronaut.core.annotation.Internal", v114, "io.micronaut.serde.config.annotation.SerdeConfig", v115);
+< specialinvoke v96.<io.micronaut.inject.'annotation'.DefaultAnnotationMetadata: void <init>(java.util.Map,java.util.Map,java.util.Map,java.util.Map,java.util.Map,boolean,boolean)>(v100, v104, v108, v112, v116, 0, 0);
+< v117 = staticinvoke <io.micronaut.core.type.Argument: io.micronaut.core.type.Argument of(java.lang.Class,java.lang.String,io.micronaut.core.'annotation'.AnnotationMetadata,io.micronaut.core.type.Argument[])>(class "Ljava/lang/String;", "displayName", v96, null);
+< v118 = (int) -1;
+< specialinvoke v95.<io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef: void <init>(io.micronaut.core.type.Argument,int,int,int,boolean,boolean)>(v117, 0, v118, 1, 1, 1);
+< v94[0] = v95;
+< v119 = new io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef;
+< v120 = new io.micronaut.inject.'annotation'.DefaultAnnotationMetadata;
+< v121 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("value", "description");
+< v122 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("property", "description");
+---
+> v103 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("jakarta.annotation.Nullable", v102);
+> v104 = staticinvoke <java.util.Map: java.util.Map of()>();
+> specialinvoke v97.<io.micronaut.inject.'annotation'.DefaultAnnotationMetadata: void <init>(java.util.Map,java.util.Map,java.util.Map,java.util.Map,java.util.Map,boolean,boolean)>(v99, v100, v101, v103, v104, 0, 0);
+> v105 = newarray (io.micronaut.core.type.Argument)[2];
+> v106 = staticinvoke <io.micronaut.core.type.Argument: io.micronaut.core.type.Argument of(java.lang.Class,java.lang.String)>(class "Ljava/lang/String;", "K");
+> v105[0] = v106;
+> v107 = newarray (io.micronaut.core.type.Argument)[2];
+> v108 = staticinvoke <io.micronaut.core.type.Argument: io.micronaut.core.type.Argument of(java.lang.Class,java.lang.String)>(class "Ljava/lang/String;", "K");
+> v107[0] = v108;
+> v109 = staticinvoke <io.micronaut.core.type.Argument: io.micronaut.core.type.Argument of(java.lang.Class,java.lang.String)>(class "Ljava/lang/Object;", "V");
+> v107[1] = v109;
+> v110 = staticinvoke <io.micronaut.core.type.Argument: io.micronaut.core.type.Argument of(java.lang.Class,java.lang.String,io.micronaut.core.'annotation'.AnnotationMetadata,io.micronaut.core.type.Argument[])>(class "Ljava/util/Map;", "V", null, v107);
+> v105[1] = v110;
+> v111 = staticinvoke <io.micronaut.core.type.Argument: io.micronaut.core.type.Argument of(java.lang.Class,java.lang.String,io.micronaut.core.'annotation'.AnnotationMetadata,io.micronaut.core.type.Argument[])>(class "Ljava/util/Map;", "definedTags", v97, v105);
+> v12[9] = v111;
+> <com.oracle.bmc.budget.model.introspection.$UpdateBudgetDetails$Introspection: io.micronaut.core.type.Argument[] $CONSTRUCTOR_ARGUMENTS> = v12;
+> v112 = newarray (io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef)[10];
+> v113 = new io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef;
+> v114 = new io.micronaut.inject.'annotation'.DefaultAnnotationMetadata;
+> v115 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("value", "displayName");
+> v116 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("property", "displayName");
+> v117 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v118 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty", v115, "io.micronaut.serde.config.annotation.SerdeConfig", v116, "jakarta.annotation.Nullable", v117);
+> v119 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v120 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v121 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v122 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v119, "io.micronaut.core.annotation.Internal", v120, "io.micronaut.serde.config.annotation.SerdeConfig", v121);
+185c190
+< v124 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty", v121, "io.micronaut.serde.config.annotation.SerdeConfig", v122, "jakarta.annotation.Nullable", v123);
+---
+> v124 = staticinvoke <java.util.Map: java.util.Map of()>();
+187,189c192,194
+< v126 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v127 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v128 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v125, "io.micronaut.core.annotation.Internal", v126, "io.micronaut.serde.config.annotation.SerdeConfig", v127);
+---
+> v126 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v123, "io.micronaut.core.annotation.Internal", v124, "io.micronaut.serde.config.annotation.SerdeConfig", v125);
+> v127 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("value", "displayName");
+> v128 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("property", "displayName");
+191,210c196,215
+< v130 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v131 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v132 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v129, "io.micronaut.core.annotation.Internal", v130, "io.micronaut.serde.config.annotation.SerdeConfig", v131);
+< v133 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("value", "description");
+< v134 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("property", "description");
+< v135 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v136 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty", v133, "io.micronaut.serde.config.annotation.SerdeConfig", v134, "jakarta.annotation.Nullable", v135);
+< v137 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty");
+< v138 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("io.micronaut.serde.config.annotation.SerdeConfig");
+< v139 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty");
+< v140 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v137, "io.micronaut.core.annotation.Internal", v138, "io.micronaut.serde.config.annotation.SerdeConfig", v139);
+< specialinvoke v120.<io.micronaut.inject.'annotation'.DefaultAnnotationMetadata: void <init>(java.util.Map,java.util.Map,java.util.Map,java.util.Map,java.util.Map,boolean,boolean)>(v124, v128, v132, v136, v140, 0, 0);
+< v141 = staticinvoke <io.micronaut.core.type.Argument: io.micronaut.core.type.Argument of(java.lang.Class,java.lang.String,io.micronaut.core.'annotation'.AnnotationMetadata,io.micronaut.core.type.Argument[])>(class "Ljava/lang/String;", "description", v120, null);
+< v142 = (int) -1;
+< specialinvoke v119.<io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef: void <init>(io.micronaut.core.type.Argument,int,int,int,boolean,boolean)>(v141, 2, v142, 3, 1, 1);
+< v94[1] = v119;
+< v143 = new io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef;
+< v144 = new io.micronaut.inject.'annotation'.DefaultAnnotationMetadata;
+< v145 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("value", "amount");
+< v146 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("property", "amount");
+---
+> v130 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty", v127, "io.micronaut.serde.config.annotation.SerdeConfig", v128, "jakarta.annotation.Nullable", v129);
+> v131 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty");
+> v132 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("io.micronaut.serde.config.annotation.SerdeConfig");
+> v133 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty");
+> v134 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v131, "io.micronaut.core.annotation.Internal", v132, "io.micronaut.serde.config.annotation.SerdeConfig", v133);
+> specialinvoke v114.<io.micronaut.inject.'annotation'.DefaultAnnotationMetadata: void <init>(java.util.Map,java.util.Map,java.util.Map,java.util.Map,java.util.Map,boolean,boolean)>(v118, v122, v126, v130, v134, 0, 0);
+> v135 = staticinvoke <io.micronaut.core.type.Argument: io.micronaut.core.type.Argument of(java.lang.Class,java.lang.String,io.micronaut.core.'annotation'.AnnotationMetadata,io.micronaut.core.type.Argument[])>(class "Ljava/lang/String;", "displayName", v114, null);
+> v136 = (int) -1;
+> specialinvoke v113.<io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef: void <init>(io.micronaut.core.type.Argument,int,int,int,boolean,boolean)>(v135, 0, v136, 1, 1, 1);
+> v112[0] = v113;
+> v137 = new io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef;
+> v138 = new io.micronaut.inject.'annotation'.DefaultAnnotationMetadata;
+> v139 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("value", "description");
+> v140 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("property", "description");
+> v141 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v142 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty", v139, "io.micronaut.serde.config.annotation.SerdeConfig", v140, "jakarta.annotation.Nullable", v141);
+> v143 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v144 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v145 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v146 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v143, "io.micronaut.core.annotation.Internal", v144, "io.micronaut.serde.config.annotation.SerdeConfig", v145);
+212c217
+< v148 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty", v145, "io.micronaut.serde.config.annotation.SerdeConfig", v146, "jakarta.annotation.Nullable", v147);
+---
+> v148 = staticinvoke <java.util.Map: java.util.Map of()>();
+214,216c219,221
+< v150 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v151 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v152 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v149, "io.micronaut.core.annotation.Internal", v150, "io.micronaut.serde.config.annotation.SerdeConfig", v151);
+---
+> v150 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v147, "io.micronaut.core.annotation.Internal", v148, "io.micronaut.serde.config.annotation.SerdeConfig", v149);
+> v151 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("value", "description");
+> v152 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("property", "description");
+218,237c223,242
+< v154 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v155 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v156 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v153, "io.micronaut.core.annotation.Internal", v154, "io.micronaut.serde.config.annotation.SerdeConfig", v155);
+< v157 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("value", "amount");
+< v158 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("property", "amount");
+< v159 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v160 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty", v157, "io.micronaut.serde.config.annotation.SerdeConfig", v158, "jakarta.annotation.Nullable", v159);
+< v161 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty");
+< v162 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("io.micronaut.serde.config.annotation.SerdeConfig");
+< v163 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty");
+< v164 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v161, "io.micronaut.core.annotation.Internal", v162, "io.micronaut.serde.config.annotation.SerdeConfig", v163);
+< specialinvoke v144.<io.micronaut.inject.'annotation'.DefaultAnnotationMetadata: void <init>(java.util.Map,java.util.Map,java.util.Map,java.util.Map,java.util.Map,boolean,boolean)>(v148, v152, v156, v160, v164, 0, 0);
+< v165 = staticinvoke <io.micronaut.core.type.Argument: io.micronaut.core.type.Argument of(java.lang.Class,java.lang.String,io.micronaut.core.'annotation'.AnnotationMetadata,io.micronaut.core.type.Argument[])>(class "Ljava/math/BigDecimal;", "amount", v144, null);
+< v166 = (int) -1;
+< specialinvoke v143.<io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef: void <init>(io.micronaut.core.type.Argument,int,int,int,boolean,boolean)>(v165, 4, v166, 5, 1, 1);
+< v94[2] = v143;
+< v167 = new io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef;
+< v168 = new io.micronaut.inject.'annotation'.DefaultAnnotationMetadata;
+< v169 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("value", "budgetProcessingPeriodStartOffset");
+< v170 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("property", "budgetProcessingPeriodStartOffset");
+---
+> v154 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty", v151, "io.micronaut.serde.config.annotation.SerdeConfig", v152, "jakarta.annotation.Nullable", v153);
+> v155 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty");
+> v156 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("io.micronaut.serde.config.annotation.SerdeConfig");
+> v157 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty");
+> v158 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v155, "io.micronaut.core.annotation.Internal", v156, "io.micronaut.serde.config.annotation.SerdeConfig", v157);
+> specialinvoke v138.<io.micronaut.inject.'annotation'.DefaultAnnotationMetadata: void <init>(java.util.Map,java.util.Map,java.util.Map,java.util.Map,java.util.Map,boolean,boolean)>(v142, v146, v150, v154, v158, 0, 0);
+> v159 = staticinvoke <io.micronaut.core.type.Argument: io.micronaut.core.type.Argument of(java.lang.Class,java.lang.String,io.micronaut.core.'annotation'.AnnotationMetadata,io.micronaut.core.type.Argument[])>(class "Ljava/lang/String;", "description", v138, null);
+> v160 = (int) -1;
+> specialinvoke v137.<io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef: void <init>(io.micronaut.core.type.Argument,int,int,int,boolean,boolean)>(v159, 2, v160, 3, 1, 1);
+> v112[1] = v137;
+> v161 = new io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef;
+> v162 = new io.micronaut.inject.'annotation'.DefaultAnnotationMetadata;
+> v163 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("value", "amount");
+> v164 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("property", "amount");
+> v165 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v166 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty", v163, "io.micronaut.serde.config.annotation.SerdeConfig", v164, "jakarta.annotation.Nullable", v165);
+> v167 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v168 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v169 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v170 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v167, "io.micronaut.core.annotation.Internal", v168, "io.micronaut.serde.config.annotation.SerdeConfig", v169);
+239c244
+< v172 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty", v169, "io.micronaut.serde.config.annotation.SerdeConfig", v170, "jakarta.annotation.Nullable", v171);
+---
+> v172 = staticinvoke <java.util.Map: java.util.Map of()>();
+241,243c246,248
+< v174 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v175 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v176 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v173, "io.micronaut.core.annotation.Internal", v174, "io.micronaut.serde.config.annotation.SerdeConfig", v175);
+---
+> v174 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v171, "io.micronaut.core.annotation.Internal", v172, "io.micronaut.serde.config.annotation.SerdeConfig", v173);
+> v175 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("value", "amount");
+> v176 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("property", "amount");
+245,264c250,269
+< v178 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v179 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v180 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v177, "io.micronaut.core.annotation.Internal", v178, "io.micronaut.serde.config.annotation.SerdeConfig", v179);
+< v181 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("value", "budgetProcessingPeriodStartOffset");
+< v182 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("property", "budgetProcessingPeriodStartOffset");
+< v183 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v184 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty", v181, "io.micronaut.serde.config.annotation.SerdeConfig", v182, "jakarta.annotation.Nullable", v183);
+< v185 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty");
+< v186 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("io.micronaut.serde.config.annotation.SerdeConfig");
+< v187 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty");
+< v188 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v185, "io.micronaut.core.annotation.Internal", v186, "io.micronaut.serde.config.annotation.SerdeConfig", v187);
+< specialinvoke v168.<io.micronaut.inject.'annotation'.DefaultAnnotationMetadata: void <init>(java.util.Map,java.util.Map,java.util.Map,java.util.Map,java.util.Map,boolean,boolean)>(v172, v176, v180, v184, v188, 0, 0);
+< v189 = staticinvoke <io.micronaut.core.type.Argument: io.micronaut.core.type.Argument of(java.lang.Class,java.lang.String,io.micronaut.core.'annotation'.AnnotationMetadata,io.micronaut.core.type.Argument[])>(class "Ljava/lang/Integer;", "budgetProcessingPeriodStartOffset", v168, null);
+< v190 = (int) -1;
+< specialinvoke v167.<io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef: void <init>(io.micronaut.core.type.Argument,int,int,int,boolean,boolean)>(v189, 6, v190, 7, 1, 1);
+< v94[3] = v167;
+< v191 = new io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef;
+< v192 = new io.micronaut.inject.'annotation'.DefaultAnnotationMetadata;
+< v193 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("value", "processingPeriodType");
+< v194 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("property", "processingPeriodType");
+---
+> v178 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty", v175, "io.micronaut.serde.config.annotation.SerdeConfig", v176, "jakarta.annotation.Nullable", v177);
+> v179 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty");
+> v180 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("io.micronaut.serde.config.annotation.SerdeConfig");
+> v181 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty");
+> v182 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v179, "io.micronaut.core.annotation.Internal", v180, "io.micronaut.serde.config.annotation.SerdeConfig", v181);
+> specialinvoke v162.<io.micronaut.inject.'annotation'.DefaultAnnotationMetadata: void <init>(java.util.Map,java.util.Map,java.util.Map,java.util.Map,java.util.Map,boolean,boolean)>(v166, v170, v174, v178, v182, 0, 0);
+> v183 = staticinvoke <io.micronaut.core.type.Argument: io.micronaut.core.type.Argument of(java.lang.Class,java.lang.String,io.micronaut.core.'annotation'.AnnotationMetadata,io.micronaut.core.type.Argument[])>(class "Ljava/math/BigDecimal;", "amount", v162, null);
+> v184 = (int) -1;
+> specialinvoke v161.<io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef: void <init>(io.micronaut.core.type.Argument,int,int,int,boolean,boolean)>(v183, 4, v184, 5, 1, 1);
+> v112[2] = v161;
+> v185 = new io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef;
+> v186 = new io.micronaut.inject.'annotation'.DefaultAnnotationMetadata;
+> v187 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("value", "budgetProcessingPeriodStartOffset");
+> v188 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("property", "budgetProcessingPeriodStartOffset");
+> v189 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v190 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty", v187, "io.micronaut.serde.config.annotation.SerdeConfig", v188, "jakarta.annotation.Nullable", v189);
+> v191 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v192 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v193 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v194 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v191, "io.micronaut.core.annotation.Internal", v192, "io.micronaut.serde.config.annotation.SerdeConfig", v193);
+266c271
+< v196 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty", v193, "io.micronaut.serde.config.annotation.SerdeConfig", v194, "jakarta.annotation.Nullable", v195);
+---
+> v196 = staticinvoke <java.util.Map: java.util.Map of()>();
+268,270c273,275
+< v198 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v199 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v200 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v197, "io.micronaut.core.annotation.Internal", v198, "io.micronaut.serde.config.annotation.SerdeConfig", v199);
+---
+> v198 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v195, "io.micronaut.core.annotation.Internal", v196, "io.micronaut.serde.config.annotation.SerdeConfig", v197);
+> v199 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("value", "budgetProcessingPeriodStartOffset");
+> v200 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("property", "budgetProcessingPeriodStartOffset");
+272,291c277,296
+< v202 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v203 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v204 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v201, "io.micronaut.core.annotation.Internal", v202, "io.micronaut.serde.config.annotation.SerdeConfig", v203);
+< v205 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("value", "processingPeriodType");
+< v206 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("property", "processingPeriodType");
+< v207 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v208 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty", v205, "io.micronaut.serde.config.annotation.SerdeConfig", v206, "jakarta.annotation.Nullable", v207);
+< v209 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty");
+< v210 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("io.micronaut.serde.config.annotation.SerdeConfig");
+< v211 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty");
+< v212 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v209, "io.micronaut.core.annotation.Internal", v210, "io.micronaut.serde.config.annotation.SerdeConfig", v211);
+< specialinvoke v192.<io.micronaut.inject.'annotation'.DefaultAnnotationMetadata: void <init>(java.util.Map,java.util.Map,java.util.Map,java.util.Map,java.util.Map,boolean,boolean)>(v196, v200, v204, v208, v212, 0, 0);
+< v213 = staticinvoke <io.micronaut.core.type.Argument: io.micronaut.core.type.Argument of(java.lang.Class,java.lang.String,io.micronaut.core.'annotation'.AnnotationMetadata,io.micronaut.core.type.Argument[])>(class "Lcom/oracle/bmc/budget/model/ProcessingPeriodType;", "processingPeriodType", v192, null);
+< v214 = (int) -1;
+< specialinvoke v191.<io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef: void <init>(io.micronaut.core.type.Argument,int,int,int,boolean,boolean)>(v213, 8, v214, 9, 1, 1);
+< v94[4] = v191;
+< v215 = new io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef;
+< v216 = new io.micronaut.inject.'annotation'.DefaultAnnotationMetadata;
+< v217 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("value", "resetPeriod");
+< v218 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("property", "resetPeriod");
+---
+> v202 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty", v199, "io.micronaut.serde.config.annotation.SerdeConfig", v200, "jakarta.annotation.Nullable", v201);
+> v203 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty");
+> v204 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("io.micronaut.serde.config.annotation.SerdeConfig");
+> v205 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty");
+> v206 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v203, "io.micronaut.core.annotation.Internal", v204, "io.micronaut.serde.config.annotation.SerdeConfig", v205);
+> specialinvoke v186.<io.micronaut.inject.'annotation'.DefaultAnnotationMetadata: void <init>(java.util.Map,java.util.Map,java.util.Map,java.util.Map,java.util.Map,boolean,boolean)>(v190, v194, v198, v202, v206, 0, 0);
+> v207 = staticinvoke <io.micronaut.core.type.Argument: io.micronaut.core.type.Argument of(java.lang.Class,java.lang.String,io.micronaut.core.'annotation'.AnnotationMetadata,io.micronaut.core.type.Argument[])>(class "Ljava/lang/Integer;", "budgetProcessingPeriodStartOffset", v186, null);
+> v208 = (int) -1;
+> specialinvoke v185.<io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef: void <init>(io.micronaut.core.type.Argument,int,int,int,boolean,boolean)>(v207, 6, v208, 7, 1, 1);
+> v112[3] = v185;
+> v209 = new io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef;
+> v210 = new io.micronaut.inject.'annotation'.DefaultAnnotationMetadata;
+> v211 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("value", "processingPeriodType");
+> v212 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("property", "processingPeriodType");
+> v213 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v214 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty", v211, "io.micronaut.serde.config.annotation.SerdeConfig", v212, "jakarta.annotation.Nullable", v213);
+> v215 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v216 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v217 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v218 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v215, "io.micronaut.core.annotation.Internal", v216, "io.micronaut.serde.config.annotation.SerdeConfig", v217);
+293c298
+< v220 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty", v217, "io.micronaut.serde.config.annotation.SerdeConfig", v218, "jakarta.annotation.Nullable", v219);
+---
+> v220 = staticinvoke <java.util.Map: java.util.Map of()>();
+295,297c300,302
+< v222 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v223 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v224 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v221, "io.micronaut.core.annotation.Internal", v222, "io.micronaut.serde.config.annotation.SerdeConfig", v223);
+---
+> v222 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v219, "io.micronaut.core.annotation.Internal", v220, "io.micronaut.serde.config.annotation.SerdeConfig", v221);
+> v223 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("value", "processingPeriodType");
+> v224 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("property", "processingPeriodType");
+299,318c304,323
+< v226 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v227 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v228 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v225, "io.micronaut.core.annotation.Internal", v226, "io.micronaut.serde.config.annotation.SerdeConfig", v227);
+< v229 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("value", "resetPeriod");
+< v230 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("property", "resetPeriod");
+< v231 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v232 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty", v229, "io.micronaut.serde.config.annotation.SerdeConfig", v230, "jakarta.annotation.Nullable", v231);
+< v233 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty");
+< v234 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("io.micronaut.serde.config.annotation.SerdeConfig");
+< v235 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty");
+< v236 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v233, "io.micronaut.core.annotation.Internal", v234, "io.micronaut.serde.config.annotation.SerdeConfig", v235);
+< specialinvoke v216.<io.micronaut.inject.'annotation'.DefaultAnnotationMetadata: void <init>(java.util.Map,java.util.Map,java.util.Map,java.util.Map,java.util.Map,boolean,boolean)>(v220, v224, v228, v232, v236, 0, 0);
+< v237 = staticinvoke <io.micronaut.core.type.Argument: io.micronaut.core.type.Argument of(java.lang.Class,java.lang.String,io.micronaut.core.'annotation'.AnnotationMetadata,io.micronaut.core.type.Argument[])>(class "Lcom/oracle/bmc/budget/model/ResetPeriod;", "resetPeriod", v216, null);
+< v238 = (int) -1;
+< specialinvoke v215.<io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef: void <init>(io.micronaut.core.type.Argument,int,int,int,boolean,boolean)>(v237, 10, v238, 11, 1, 1);
+< v94[5] = v215;
+< v239 = new io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef;
+< v240 = new io.micronaut.inject.'annotation'.DefaultAnnotationMetadata;
+< v241 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("value", "freeformTags");
+< v242 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("property", "freeformTags");
+---
+> v226 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty", v223, "io.micronaut.serde.config.annotation.SerdeConfig", v224, "jakarta.annotation.Nullable", v225);
+> v227 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty");
+> v228 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("io.micronaut.serde.config.annotation.SerdeConfig");
+> v229 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty");
+> v230 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v227, "io.micronaut.core.annotation.Internal", v228, "io.micronaut.serde.config.annotation.SerdeConfig", v229);
+> specialinvoke v210.<io.micronaut.inject.'annotation'.DefaultAnnotationMetadata: void <init>(java.util.Map,java.util.Map,java.util.Map,java.util.Map,java.util.Map,boolean,boolean)>(v214, v218, v222, v226, v230, 0, 0);
+> v231 = staticinvoke <io.micronaut.core.type.Argument: io.micronaut.core.type.Argument of(java.lang.Class,java.lang.String,io.micronaut.core.'annotation'.AnnotationMetadata,io.micronaut.core.type.Argument[])>(class "Lcom/oracle/bmc/budget/model/ProcessingPeriodType;", "processingPeriodType", v210, null);
+> v232 = (int) -1;
+> specialinvoke v209.<io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef: void <init>(io.micronaut.core.type.Argument,int,int,int,boolean,boolean)>(v231, 8, v232, 9, 1, 1);
+> v112[4] = v209;
+> v233 = new io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef;
+> v234 = new io.micronaut.inject.'annotation'.DefaultAnnotationMetadata;
+> v235 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("value", "startDate");
+> v236 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("property", "startDate");
+> v237 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v238 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty", v235, "io.micronaut.serde.config.annotation.SerdeConfig", v236, "jakarta.annotation.Nullable", v237);
+> v239 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v240 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v241 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v242 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v239, "io.micronaut.core.annotation.Internal", v240, "io.micronaut.serde.config.annotation.SerdeConfig", v241);
+320c325
+< v244 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty", v241, "io.micronaut.serde.config.annotation.SerdeConfig", v242, "jakarta.annotation.Nullable", v243);
+---
+> v244 = staticinvoke <java.util.Map: java.util.Map of()>();
+322,324c327,329
+< v246 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v247 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v248 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v245, "io.micronaut.core.annotation.Internal", v246, "io.micronaut.serde.config.annotation.SerdeConfig", v247);
+---
+> v246 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v243, "io.micronaut.core.annotation.Internal", v244, "io.micronaut.serde.config.annotation.SerdeConfig", v245);
+> v247 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("value", "startDate");
+> v248 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("property", "startDate");
+326,353c331,356
+< v250 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v251 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v252 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v249, "io.micronaut.core.annotation.Internal", v250, "io.micronaut.serde.config.annotation.SerdeConfig", v251);
+< v253 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("value", "freeformTags");
+< v254 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("property", "freeformTags");
+< v255 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v256 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty", v253, "io.micronaut.serde.config.annotation.SerdeConfig", v254, "jakarta.annotation.Nullable", v255);
+< v257 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty");
+< v258 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("io.micronaut.serde.config.annotation.SerdeConfig");
+< v259 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty");
+< v260 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v257, "io.micronaut.core.annotation.Internal", v258, "io.micronaut.serde.config.annotation.SerdeConfig", v259);
+< specialinvoke v240.<io.micronaut.inject.'annotation'.DefaultAnnotationMetadata: void <init>(java.util.Map,java.util.Map,java.util.Map,java.util.Map,java.util.Map,boolean,boolean)>(v244, v248, v252, v256, v260, 0, 0);
+< v261 = newarray (io.micronaut.core.type.Argument)[2];
+< v262 = staticinvoke <io.micronaut.core.type.Argument: io.micronaut.core.type.Argument of(java.lang.Class,java.lang.String)>(class "Ljava/lang/String;", "K");
+< v261[0] = v262;
+< v263 = staticinvoke <io.micronaut.core.type.Argument: io.micronaut.core.type.Argument of(java.lang.Class,java.lang.String)>(class "Ljava/lang/String;", "V");
+< v261[1] = v263;
+< v264 = staticinvoke <io.micronaut.core.type.Argument: io.micronaut.core.type.Argument of(java.lang.Class,java.lang.String,io.micronaut.core.'annotation'.AnnotationMetadata,io.micronaut.core.type.Argument[])>(class "Ljava/util/Map;", "freeformTags", v240, v261);
+< v265 = (int) -1;
+< specialinvoke v239.<io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef: void <init>(io.micronaut.core.type.Argument,int,int,int,boolean,boolean)>(v264, 12, v265, 13, 1, 1);
+< v94[6] = v239;
+< v266 = new io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef;
+< v267 = new io.micronaut.inject.'annotation'.DefaultAnnotationMetadata;
+< v268 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("value", "definedTags");
+< v269 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("property", "definedTags");
+< v270 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v271 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty", v268, "io.micronaut.serde.config.annotation.SerdeConfig", v269, "jakarta.annotation.Nullable", v270);
+< v272 = staticinvoke <java.util.Map: java.util.Map of()>();
+---
+> v250 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty", v247, "io.micronaut.serde.config.annotation.SerdeConfig", v248, "jakarta.annotation.Nullable", v249);
+> v251 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty");
+> v252 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("io.micronaut.serde.config.annotation.SerdeConfig");
+> v253 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty");
+> v254 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v251, "io.micronaut.core.annotation.Internal", v252, "io.micronaut.serde.config.annotation.SerdeConfig", v253);
+> specialinvoke v234.<io.micronaut.inject.'annotation'.DefaultAnnotationMetadata: void <init>(java.util.Map,java.util.Map,java.util.Map,java.util.Map,java.util.Map,boolean,boolean)>(v238, v242, v246, v250, v254, 0, 0);
+> v255 = staticinvoke <io.micronaut.core.type.Argument: io.micronaut.core.type.Argument of(java.lang.Class,java.lang.String,io.micronaut.core.'annotation'.AnnotationMetadata,io.micronaut.core.type.Argument[])>(class "Ljava/util/Date;", "startDate", v234, null);
+> v256 = (int) -1;
+> specialinvoke v233.<io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef: void <init>(io.micronaut.core.type.Argument,int,int,int,boolean,boolean)>(v255, 10, v256, 11, 1, 1);
+> v112[5] = v233;
+> v257 = new io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef;
+> v258 = new io.micronaut.inject.'annotation'.DefaultAnnotationMetadata;
+> v259 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("value", "endDate");
+> v260 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("property", "endDate");
+> v261 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v262 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty", v259, "io.micronaut.serde.config.annotation.SerdeConfig", v260, "jakarta.annotation.Nullable", v261);
+> v263 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v264 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v265 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v266 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v263, "io.micronaut.core.annotation.Internal", v264, "io.micronaut.serde.config.annotation.SerdeConfig", v265);
+> v267 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v268 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v269 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v270 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v267, "io.micronaut.core.annotation.Internal", v268, "io.micronaut.serde.config.annotation.SerdeConfig", v269);
+> v271 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("value", "endDate");
+> v272 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("property", "endDate");
+355,384c358,464
+< v274 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v275 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v272, "io.micronaut.core.annotation.Internal", v273, "io.micronaut.serde.config.annotation.SerdeConfig", v274);
+< v276 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v277 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v278 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v279 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v276, "io.micronaut.core.annotation.Internal", v277, "io.micronaut.serde.config.annotation.SerdeConfig", v278);
+< v280 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("value", "definedTags");
+< v281 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("property", "definedTags");
+< v282 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v283 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty", v280, "io.micronaut.serde.config.annotation.SerdeConfig", v281, "jakarta.annotation.Nullable", v282);
+< v284 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty");
+< v285 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("io.micronaut.serde.config.annotation.SerdeConfig");
+< v286 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty");
+< v287 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v284, "io.micronaut.core.annotation.Internal", v285, "io.micronaut.serde.config.annotation.SerdeConfig", v286);
+< specialinvoke v267.<io.micronaut.inject.'annotation'.DefaultAnnotationMetadata: void <init>(java.util.Map,java.util.Map,java.util.Map,java.util.Map,java.util.Map,boolean,boolean)>(v271, v275, v279, v283, v287, 0, 0);
+< v288 = newarray (io.micronaut.core.type.Argument)[2];
+< v289 = staticinvoke <io.micronaut.core.type.Argument: io.micronaut.core.type.Argument of(java.lang.Class,java.lang.String)>(class "Ljava/lang/String;", "K");
+< v288[0] = v289;
+< v290 = newarray (io.micronaut.core.type.Argument)[2];
+< v291 = staticinvoke <io.micronaut.core.type.Argument: io.micronaut.core.type.Argument of(java.lang.Class,java.lang.String)>(class "Ljava/lang/String;", "K");
+< v290[0] = v291;
+< v292 = staticinvoke <io.micronaut.core.type.Argument: io.micronaut.core.type.Argument of(java.lang.Class,java.lang.String)>(class "Ljava/lang/Object;", "V");
+< v290[1] = v292;
+< v293 = staticinvoke <io.micronaut.core.type.Argument: io.micronaut.core.type.Argument of(java.lang.Class,java.lang.String,io.micronaut.core.'annotation'.AnnotationMetadata,io.micronaut.core.type.Argument[])>(class "Ljava/util/Map;", "V", null, v290);
+< v288[1] = v293;
+< v294 = staticinvoke <io.micronaut.core.type.Argument: io.micronaut.core.type.Argument of(java.lang.Class,java.lang.String,io.micronaut.core.'annotation'.AnnotationMetadata,io.micronaut.core.type.Argument[])>(class "Ljava/util/Map;", "definedTags", v267, v288);
+< v295 = (int) -1;
+< specialinvoke v266.<io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef: void <init>(io.micronaut.core.type.Argument,int,int,int,boolean,boolean)>(v294, 14, v295, 15, 1, 1);
+< v94[7] = v266;
+< <com.oracle.bmc.budget.model.introspection.$UpdateBudgetDetails$Introspection: io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef[] $PROPERTIES_REFERENCES> = v94;
+---
+> v274 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty", v271, "io.micronaut.serde.config.annotation.SerdeConfig", v272, "jakarta.annotation.Nullable", v273);
+> v275 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty");
+> v276 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("io.micronaut.serde.config.annotation.SerdeConfig");
+> v277 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty");
+> v278 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v275, "io.micronaut.core.annotation.Internal", v276, "io.micronaut.serde.config.annotation.SerdeConfig", v277);
+> specialinvoke v258.<io.micronaut.inject.'annotation'.DefaultAnnotationMetadata: void <init>(java.util.Map,java.util.Map,java.util.Map,java.util.Map,java.util.Map,boolean,boolean)>(v262, v266, v270, v274, v278, 0, 0);
+> v279 = staticinvoke <io.micronaut.core.type.Argument: io.micronaut.core.type.Argument of(java.lang.Class,java.lang.String,io.micronaut.core.'annotation'.AnnotationMetadata,io.micronaut.core.type.Argument[])>(class "Ljava/util/Date;", "endDate", v258, null);
+> v280 = (int) -1;
+> specialinvoke v257.<io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef: void <init>(io.micronaut.core.type.Argument,int,int,int,boolean,boolean)>(v279, 12, v280, 13, 1, 1);
+> v112[6] = v257;
+> v281 = new io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef;
+> v282 = new io.micronaut.inject.'annotation'.DefaultAnnotationMetadata;
+> v283 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("value", "resetPeriod");
+> v284 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("property", "resetPeriod");
+> v285 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v286 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty", v283, "io.micronaut.serde.config.annotation.SerdeConfig", v284, "jakarta.annotation.Nullable", v285);
+> v287 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v288 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v289 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v290 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v287, "io.micronaut.core.annotation.Internal", v288, "io.micronaut.serde.config.annotation.SerdeConfig", v289);
+> v291 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v292 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v293 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v294 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v291, "io.micronaut.core.annotation.Internal", v292, "io.micronaut.serde.config.annotation.SerdeConfig", v293);
+> v295 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("value", "resetPeriod");
+> v296 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("property", "resetPeriod");
+> v297 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v298 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty", v295, "io.micronaut.serde.config.annotation.SerdeConfig", v296, "jakarta.annotation.Nullable", v297);
+> v299 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty");
+> v300 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("io.micronaut.serde.config.annotation.SerdeConfig");
+> v301 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty");
+> v302 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v299, "io.micronaut.core.annotation.Internal", v300, "io.micronaut.serde.config.annotation.SerdeConfig", v301);
+> specialinvoke v282.<io.micronaut.inject.'annotation'.DefaultAnnotationMetadata: void <init>(java.util.Map,java.util.Map,java.util.Map,java.util.Map,java.util.Map,boolean,boolean)>(v286, v290, v294, v298, v302, 0, 0);
+> v303 = staticinvoke <io.micronaut.core.type.Argument: io.micronaut.core.type.Argument of(java.lang.Class,java.lang.String,io.micronaut.core.'annotation'.AnnotationMetadata,io.micronaut.core.type.Argument[])>(class "Lcom/oracle/bmc/budget/model/ResetPeriod;", "resetPeriod", v282, null);
+> v304 = (int) -1;
+> specialinvoke v281.<io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef: void <init>(io.micronaut.core.type.Argument,int,int,int,boolean,boolean)>(v303, 14, v304, 15, 1, 1);
+> v112[7] = v281;
+> v305 = new io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef;
+> v306 = new io.micronaut.inject.'annotation'.DefaultAnnotationMetadata;
+> v307 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("value", "freeformTags");
+> v308 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("property", "freeformTags");
+> v309 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v310 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty", v307, "io.micronaut.serde.config.annotation.SerdeConfig", v308, "jakarta.annotation.Nullable", v309);
+> v311 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v312 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v313 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v314 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v311, "io.micronaut.core.annotation.Internal", v312, "io.micronaut.serde.config.annotation.SerdeConfig", v313);
+> v315 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v316 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v317 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v318 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v315, "io.micronaut.core.annotation.Internal", v316, "io.micronaut.serde.config.annotation.SerdeConfig", v317);
+> v319 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("value", "freeformTags");
+> v320 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("property", "freeformTags");
+> v321 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v322 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty", v319, "io.micronaut.serde.config.annotation.SerdeConfig", v320, "jakarta.annotation.Nullable", v321);
+> v323 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty");
+> v324 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("io.micronaut.serde.config.annotation.SerdeConfig");
+> v325 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty");
+> v326 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v323, "io.micronaut.core.annotation.Internal", v324, "io.micronaut.serde.config.annotation.SerdeConfig", v325);
+> specialinvoke v306.<io.micronaut.inject.'annotation'.DefaultAnnotationMetadata: void <init>(java.util.Map,java.util.Map,java.util.Map,java.util.Map,java.util.Map,boolean,boolean)>(v310, v314, v318, v322, v326, 0, 0);
+> v327 = newarray (io.micronaut.core.type.Argument)[2];
+> v328 = staticinvoke <io.micronaut.core.type.Argument: io.micronaut.core.type.Argument of(java.lang.Class,java.lang.String)>(class "Ljava/lang/String;", "K");
+> v327[0] = v328;
+> v329 = staticinvoke <io.micronaut.core.type.Argument: io.micronaut.core.type.Argument of(java.lang.Class,java.lang.String)>(class "Ljava/lang/String;", "V");
+> v327[1] = v329;
+> v330 = staticinvoke <io.micronaut.core.type.Argument: io.micronaut.core.type.Argument of(java.lang.Class,java.lang.String,io.micronaut.core.'annotation'.AnnotationMetadata,io.micronaut.core.type.Argument[])>(class "Ljava/util/Map;", "freeformTags", v306, v327);
+> v331 = (int) -1;
+> specialinvoke v305.<io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef: void <init>(io.micronaut.core.type.Argument,int,int,int,boolean,boolean)>(v330, 16, v331, 17, 1, 1);
+> v112[8] = v305;
+> v332 = new io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef;
+> v333 = new io.micronaut.inject.'annotation'.DefaultAnnotationMetadata;
+> v334 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("value", "definedTags");
+> v335 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("property", "definedTags");
+> v336 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v337 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty", v334, "io.micronaut.serde.config.annotation.SerdeConfig", v335, "jakarta.annotation.Nullable", v336);
+> v338 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v339 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v340 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v341 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v338, "io.micronaut.core.annotation.Internal", v339, "io.micronaut.serde.config.annotation.SerdeConfig", v340);
+> v342 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v343 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v344 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v345 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v342, "io.micronaut.core.annotation.Internal", v343, "io.micronaut.serde.config.annotation.SerdeConfig", v344);
+> v346 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("value", "definedTags");
+> v347 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("property", "definedTags");
+> v348 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v349 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty", v346, "io.micronaut.serde.config.annotation.SerdeConfig", v347, "jakarta.annotation.Nullable", v348);
+> v350 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty");
+> v351 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("io.micronaut.serde.config.annotation.SerdeConfig");
+> v352 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty");
+> v353 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v350, "io.micronaut.core.annotation.Internal", v351, "io.micronaut.serde.config.annotation.SerdeConfig", v352);
+> specialinvoke v333.<io.micronaut.inject.'annotation'.DefaultAnnotationMetadata: void <init>(java.util.Map,java.util.Map,java.util.Map,java.util.Map,java.util.Map,boolean,boolean)>(v337, v341, v345, v349, v353, 0, 0);
+> v354 = newarray (io.micronaut.core.type.Argument)[2];
+> v355 = staticinvoke <io.micronaut.core.type.Argument: io.micronaut.core.type.Argument of(java.lang.Class,java.lang.String)>(class "Ljava/lang/String;", "K");
+> v354[0] = v355;
+> v356 = newarray (io.micronaut.core.type.Argument)[2];
+> v357 = staticinvoke <io.micronaut.core.type.Argument: io.micronaut.core.type.Argument of(java.lang.Class,java.lang.String)>(class "Ljava/lang/String;", "K");
+> v356[0] = v357;
+> v358 = staticinvoke <io.micronaut.core.type.Argument: io.micronaut.core.type.Argument of(java.lang.Class,java.lang.String)>(class "Ljava/lang/Object;", "V");
+> v356[1] = v358;
+> v359 = staticinvoke <io.micronaut.core.type.Argument: io.micronaut.core.type.Argument of(java.lang.Class,java.lang.String,io.micronaut.core.'annotation'.AnnotationMetadata,io.micronaut.core.type.Argument[])>(class "Ljava/util/Map;", "V", null, v356);
+> v354[1] = v359;
+> v360 = staticinvoke <io.micronaut.core.type.Argument: io.micronaut.core.type.Argument of(java.lang.Class,java.lang.String,io.micronaut.core.'annotation'.AnnotationMetadata,io.micronaut.core.type.Argument[])>(class "Ljava/util/Map;", "definedTags", v333, v354);
+> v361 = (int) -1;
+> specialinvoke v332.<io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef: void <init>(io.micronaut.core.type.Argument,int,int,int,boolean,boolean)>(v360, 18, v361, 19, 1, 1);
+> v112[9] = v332;
+> <com.oracle.bmc.budget.model.introspection.$UpdateBudgetDetails$Introspection: io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef[] $PROPERTIES_REFERENCES> = v112;
+403,409c483,490
+< java.lang.Integer v17, v26, v31, v45, v54, v63, v72, v8;
+< java.math.BigDecimal v16, v22, v35, v44, v53, v62, v7, v71;
+< java.util.Map v11, v12, v20, v21, v29, v30, v38, v39, v47, v48, v56, v57, v58, v66, v67, v75;
+< java.lang.String v13, v15, v24, v25, v33, v34, v4, v42, v43, v51, v52, v6, v60, v61, v69, v70;
+< com.oracle.bmc.budget.model.ResetPeriod v10, v19, v28, v37, v46, v49, v65, v74;
+< java.lang.RuntimeException v76;
+< com.oracle.bmc.budget.model.UpdateBudgetDetails v14, v23, v32, v41, v5, v50, v59, v68;
+---
+> java.lang.Integer v108, v19, v30, v37, v53, v64, v75, v8, v86, v97;
+> java.math.BigDecimal v107, v18, v26, v41, v52, v63, v7, v74, v85, v96;
+> java.util.Map v102, v103, v113, v13, v14, v24, v25, v35, v36, v46, v47, v57, v58, v68, v69, v79, v80, v90, v91, v92;
+> java.lang.String v105, v106, v15, v17, v28, v29, v39, v4, v40, v50, v51, v6, v61, v62, v72, v73, v83, v84, v94, v95;
+> com.oracle.bmc.budget.model.ResetPeriod v101, v112, v12, v23, v34, v45, v56, v67, v78, v81;
+> java.lang.RuntimeException v114;
+> java.util.Date v10, v100, v11, v110, v111, v21, v22, v32, v33, v43, v44, v54, v55, v59, v66, v70, v77, v88, v89, v99;
+> com.oracle.bmc.budget.model.UpdateBudgetDetails v104, v16, v27, v38, v49, v5, v60, v71, v82, v93;
+412c493
+< com.oracle.bmc.budget.model.ProcessingPeriodType v18, v27, v36, v40, v55, v64, v73, v9;
+---
+> com.oracle.bmc.budget.model.ProcessingPeriodType v109, v20, v31, v42, v48, v65, v76, v87, v9, v98;
+436c517,521
+< default: goto label17;
+---
+> case 16: goto label17;
+> case 17: goto label18;
+> case 18: goto label19;
+> case 19: goto label20;
+> default: goto label21;
+447,450c532,537
+< v10 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: com.oracle.bmc.budget.model.ResetPeriod getResetPeriod()>();
+< v11 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.util.Map getFreeformTags()>();
+< v12 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.util.Map getDefinedTags()>();
+< specialinvoke v5.<com.oracle.bmc.budget.model.UpdateBudgetDetails: void <init>(java.lang.String,java.lang.String,java.math.BigDecimal,java.lang.Integer,com.oracle.bmc.budget.model.ProcessingPeriodType,com.oracle.bmc.budget.model.ResetPeriod,java.util.Map,java.util.Map)>(v3, v6, v7, v8, v9, v10, v11, v12);
+---
+> v10 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.util.Date getStartDate()>();
+> v11 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.util.Date getEndDate()>();
+> v12 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: com.oracle.bmc.budget.model.ResetPeriod getResetPeriod()>();
+> v13 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.util.Map getFreeformTags()>();
+> v14 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.util.Map getDefinedTags()>();
+> specialinvoke v5.<com.oracle.bmc.budget.model.UpdateBudgetDetails: void <init>(java.lang.String,java.lang.String,java.math.BigDecimal,java.lang.Integer,com.oracle.bmc.budget.model.ProcessingPeriodType,java.util.Date,java.util.Date,com.oracle.bmc.budget.model.ResetPeriod,java.util.Map,java.util.Map)>(v3, v6, v7, v8, v9, v10, v11, v12, v13, v14);
+453,454c540,541
+< v13 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.lang.String getDescription()>();
+< return v13;
+---
+> v15 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.lang.String getDescription()>();
+> return v15;
+456,465c543,554
+< v14 = new com.oracle.bmc.budget.model.UpdateBudgetDetails;
+< v15 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.lang.String getDisplayName()>();
+< v16 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.math.BigDecimal getAmount()>();
+< v17 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.lang.Integer getBudgetProcessingPeriodStartOffset()>();
+< v18 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: com.oracle.bmc.budget.model.ProcessingPeriodType getProcessingPeriodType()>();
+< v19 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: com.oracle.bmc.budget.model.ResetPeriod getResetPeriod()>();
+< v20 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.util.Map getFreeformTags()>();
+< v21 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.util.Map getDefinedTags()>();
+< specialinvoke v14.<com.oracle.bmc.budget.model.UpdateBudgetDetails: void <init>(java.lang.String,java.lang.String,java.math.BigDecimal,java.lang.Integer,com.oracle.bmc.budget.model.ProcessingPeriodType,com.oracle.bmc.budget.model.ResetPeriod,java.util.Map,java.util.Map)>(v15, v3, v16, v17, v18, v19, v20, v21);
+< return v14;
+---
+> v16 = new com.oracle.bmc.budget.model.UpdateBudgetDetails;
+> v17 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.lang.String getDisplayName()>();
+> v18 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.math.BigDecimal getAmount()>();
+> v19 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.lang.Integer getBudgetProcessingPeriodStartOffset()>();
+> v20 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: com.oracle.bmc.budget.model.ProcessingPeriodType getProcessingPeriodType()>();
+> v21 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.util.Date getStartDate()>();
+> v22 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.util.Date getEndDate()>();
+> v23 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: com.oracle.bmc.budget.model.ResetPeriod getResetPeriod()>();
+> v24 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.util.Map getFreeformTags()>();
+> v25 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.util.Map getDefinedTags()>();
+> specialinvoke v16.<com.oracle.bmc.budget.model.UpdateBudgetDetails: void <init>(java.lang.String,java.lang.String,java.math.BigDecimal,java.lang.Integer,com.oracle.bmc.budget.model.ProcessingPeriodType,java.util.Date,java.util.Date,com.oracle.bmc.budget.model.ResetPeriod,java.util.Map,java.util.Map)>(v17, v3, v18, v19, v20, v21, v22, v23, v24, v25);
+> return v16;
+467,468c556,557
+< v22 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.math.BigDecimal getAmount()>();
+< return v22;
+---
+> v26 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.math.BigDecimal getAmount()>();
+> return v26;
+470,479c559,570
+< v23 = new com.oracle.bmc.budget.model.UpdateBudgetDetails;
+< v24 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.lang.String getDisplayName()>();
+< v25 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.lang.String getDescription()>();
+< v26 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.lang.Integer getBudgetProcessingPeriodStartOffset()>();
+< v27 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: com.oracle.bmc.budget.model.ProcessingPeriodType getProcessingPeriodType()>();
+< v28 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: com.oracle.bmc.budget.model.ResetPeriod getResetPeriod()>();
+< v29 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.util.Map getFreeformTags()>();
+< v30 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.util.Map getDefinedTags()>();
+< specialinvoke v23.<com.oracle.bmc.budget.model.UpdateBudgetDetails: void <init>(java.lang.String,java.lang.String,java.math.BigDecimal,java.lang.Integer,com.oracle.bmc.budget.model.ProcessingPeriodType,com.oracle.bmc.budget.model.ResetPeriod,java.util.Map,java.util.Map)>(v24, v25, v3, v26, v27, v28, v29, v30);
+< return v23;
+---
+> v27 = new com.oracle.bmc.budget.model.UpdateBudgetDetails;
+> v28 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.lang.String getDisplayName()>();
+> v29 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.lang.String getDescription()>();
+> v30 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.lang.Integer getBudgetProcessingPeriodStartOffset()>();
+> v31 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: com.oracle.bmc.budget.model.ProcessingPeriodType getProcessingPeriodType()>();
+> v32 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.util.Date getStartDate()>();
+> v33 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.util.Date getEndDate()>();
+> v34 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: com.oracle.bmc.budget.model.ResetPeriod getResetPeriod()>();
+> v35 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.util.Map getFreeformTags()>();
+> v36 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.util.Map getDefinedTags()>();
+> specialinvoke v27.<com.oracle.bmc.budget.model.UpdateBudgetDetails: void <init>(java.lang.String,java.lang.String,java.math.BigDecimal,java.lang.Integer,com.oracle.bmc.budget.model.ProcessingPeriodType,java.util.Date,java.util.Date,com.oracle.bmc.budget.model.ResetPeriod,java.util.Map,java.util.Map)>(v28, v29, v3, v30, v31, v32, v33, v34, v35, v36);
+> return v27;
+481,482c572,573
+< v31 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.lang.Integer getBudgetProcessingPeriodStartOffset()>();
+< return v31;
+---
+> v37 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.lang.Integer getBudgetProcessingPeriodStartOffset()>();
+> return v37;
+484,493c575,586
+< v32 = new com.oracle.bmc.budget.model.UpdateBudgetDetails;
+< v33 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.lang.String getDisplayName()>();
+< v34 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.lang.String getDescription()>();
+< v35 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.math.BigDecimal getAmount()>();
+< v36 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: com.oracle.bmc.budget.model.ProcessingPeriodType getProcessingPeriodType()>();
+< v37 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: com.oracle.bmc.budget.model.ResetPeriod getResetPeriod()>();
+< v38 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.util.Map getFreeformTags()>();
+< v39 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.util.Map getDefinedTags()>();
+< specialinvoke v32.<com.oracle.bmc.budget.model.UpdateBudgetDetails: void <init>(java.lang.String,java.lang.String,java.math.BigDecimal,java.lang.Integer,com.oracle.bmc.budget.model.ProcessingPeriodType,com.oracle.bmc.budget.model.ResetPeriod,java.util.Map,java.util.Map)>(v33, v34, v35, v3, v36, v37, v38, v39);
+< return v32;
+---
+> v38 = new com.oracle.bmc.budget.model.UpdateBudgetDetails;
+> v39 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.lang.String getDisplayName()>();
+> v40 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.lang.String getDescription()>();
+> v41 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.math.BigDecimal getAmount()>();
+> v42 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: com.oracle.bmc.budget.model.ProcessingPeriodType getProcessingPeriodType()>();
+> v43 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.util.Date getStartDate()>();
+> v44 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.util.Date getEndDate()>();
+> v45 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: com.oracle.bmc.budget.model.ResetPeriod getResetPeriod()>();
+> v46 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.util.Map getFreeformTags()>();
+> v47 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.util.Map getDefinedTags()>();
+> specialinvoke v38.<com.oracle.bmc.budget.model.UpdateBudgetDetails: void <init>(java.lang.String,java.lang.String,java.math.BigDecimal,java.lang.Integer,com.oracle.bmc.budget.model.ProcessingPeriodType,java.util.Date,java.util.Date,com.oracle.bmc.budget.model.ResetPeriod,java.util.Map,java.util.Map)>(v39, v40, v41, v3, v42, v43, v44, v45, v46, v47);
+> return v38;
+495,496c588,589
+< v40 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: com.oracle.bmc.budget.model.ProcessingPeriodType getProcessingPeriodType()>();
+< return v40;
+---
+> v48 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: com.oracle.bmc.budget.model.ProcessingPeriodType getProcessingPeriodType()>();
+> return v48;
+498,509c591,601
+< v41 = new com.oracle.bmc.budget.model.UpdateBudgetDetails;
+< v42 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.lang.String getDisplayName()>();
+< v43 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.lang.String getDescription()>();
+< v44 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.math.BigDecimal getAmount()>();
+< v45 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.lang.Integer getBudgetProcessingPeriodStartOffset()>();
+< v46 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: com.oracle.bmc.budget.model.ResetPeriod getResetPeriod()>();
+< v47 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.util.Map getFreeformTags()>();
+< v48 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.util.Map getDefinedTags()>();
+< specialinvoke v41.<com.oracle.bmc.budget.model.UpdateBudgetDetails: void <init>(java.lang.String,java.lang.String,java.math.BigDecimal,java.lang.Integer,com.oracle.bmc.budget.model.ProcessingPeriodType,com.oracle.bmc.budget.model.ResetPeriod,java.util.Map,java.util.Map)>(v42, v43, v44, v45, v3, v46, v47, v48);
+< return v41;
+< label11:
+< v49 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: com.oracle.bmc.budget.model.ResetPeriod getResetPeriod()>();
+---
+> v49 = new com.oracle.bmc.budget.model.UpdateBudgetDetails;
+> v50 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.lang.String getDisplayName()>();
+> v51 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.lang.String getDescription()>();
+> v52 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.math.BigDecimal getAmount()>();
+> v53 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.lang.Integer getBudgetProcessingPeriodStartOffset()>();
+> v54 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.util.Date getStartDate()>();
+> v55 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.util.Date getEndDate()>();
+> v56 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: com.oracle.bmc.budget.model.ResetPeriod getResetPeriod()>();
+> v57 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.util.Map getFreeformTags()>();
+> v58 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.util.Map getDefinedTags()>();
+> specialinvoke v49.<com.oracle.bmc.budget.model.UpdateBudgetDetails: void <init>(java.lang.String,java.lang.String,java.math.BigDecimal,java.lang.Integer,com.oracle.bmc.budget.model.ProcessingPeriodType,java.util.Date,java.util.Date,com.oracle.bmc.budget.model.ResetPeriod,java.util.Map,java.util.Map)>(v50, v51, v52, v53, v3, v54, v55, v56, v57, v58);
+510a603,605
+> label11:
+> v59 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.util.Date getStartDate()>();
+> return v59;
+512,521c607,618
+< v50 = new com.oracle.bmc.budget.model.UpdateBudgetDetails;
+< v51 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.lang.String getDisplayName()>();
+< v52 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.lang.String getDescription()>();
+< v53 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.math.BigDecimal getAmount()>();
+< v54 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.lang.Integer getBudgetProcessingPeriodStartOffset()>();
+< v55 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: com.oracle.bmc.budget.model.ProcessingPeriodType getProcessingPeriodType()>();
+< v56 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.util.Map getFreeformTags()>();
+< v57 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.util.Map getDefinedTags()>();
+< specialinvoke v50.<com.oracle.bmc.budget.model.UpdateBudgetDetails: void <init>(java.lang.String,java.lang.String,java.math.BigDecimal,java.lang.Integer,com.oracle.bmc.budget.model.ProcessingPeriodType,com.oracle.bmc.budget.model.ResetPeriod,java.util.Map,java.util.Map)>(v51, v52, v53, v54, v55, v3, v56, v57);
+< return v50;
+---
+> v60 = new com.oracle.bmc.budget.model.UpdateBudgetDetails;
+> v61 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.lang.String getDisplayName()>();
+> v62 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.lang.String getDescription()>();
+> v63 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.math.BigDecimal getAmount()>();
+> v64 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.lang.Integer getBudgetProcessingPeriodStartOffset()>();
+> v65 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: com.oracle.bmc.budget.model.ProcessingPeriodType getProcessingPeriodType()>();
+> v66 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.util.Date getEndDate()>();
+> v67 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: com.oracle.bmc.budget.model.ResetPeriod getResetPeriod()>();
+> v68 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.util.Map getFreeformTags()>();
+> v69 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.util.Map getDefinedTags()>();
+> specialinvoke v60.<com.oracle.bmc.budget.model.UpdateBudgetDetails: void <init>(java.lang.String,java.lang.String,java.math.BigDecimal,java.lang.Integer,com.oracle.bmc.budget.model.ProcessingPeriodType,java.util.Date,java.util.Date,com.oracle.bmc.budget.model.ResetPeriod,java.util.Map,java.util.Map)>(v61, v62, v63, v64, v65, v3, v66, v67, v68, v69);
+> return v60;
+523,524c620,621
+< v58 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.util.Map getFreeformTags()>();
+< return v58;
+---
+> v70 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.util.Date getEndDate()>();
+> return v70;
+526,535c623,634
+< v59 = new com.oracle.bmc.budget.model.UpdateBudgetDetails;
+< v60 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.lang.String getDisplayName()>();
+< v61 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.lang.String getDescription()>();
+< v62 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.math.BigDecimal getAmount()>();
+< v63 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.lang.Integer getBudgetProcessingPeriodStartOffset()>();
+< v64 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: com.oracle.bmc.budget.model.ProcessingPeriodType getProcessingPeriodType()>();
+< v65 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: com.oracle.bmc.budget.model.ResetPeriod getResetPeriod()>();
+< v66 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.util.Map getDefinedTags()>();
+< specialinvoke v59.<com.oracle.bmc.budget.model.UpdateBudgetDetails: void <init>(java.lang.String,java.lang.String,java.math.BigDecimal,java.lang.Integer,com.oracle.bmc.budget.model.ProcessingPeriodType,com.oracle.bmc.budget.model.ResetPeriod,java.util.Map,java.util.Map)>(v60, v61, v62, v63, v64, v65, v3, v66);
+< return v59;
+---
+> v71 = new com.oracle.bmc.budget.model.UpdateBudgetDetails;
+> v72 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.lang.String getDisplayName()>();
+> v73 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.lang.String getDescription()>();
+> v74 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.math.BigDecimal getAmount()>();
+> v75 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.lang.Integer getBudgetProcessingPeriodStartOffset()>();
+> v76 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: com.oracle.bmc.budget.model.ProcessingPeriodType getProcessingPeriodType()>();
+> v77 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.util.Date getStartDate()>();
+> v78 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: com.oracle.bmc.budget.model.ResetPeriod getResetPeriod()>();
+> v79 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.util.Map getFreeformTags()>();
+> v80 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.util.Map getDefinedTags()>();
+> specialinvoke v71.<com.oracle.bmc.budget.model.UpdateBudgetDetails: void <init>(java.lang.String,java.lang.String,java.math.BigDecimal,java.lang.Integer,com.oracle.bmc.budget.model.ProcessingPeriodType,java.util.Date,java.util.Date,com.oracle.bmc.budget.model.ResetPeriod,java.util.Map,java.util.Map)>(v72, v73, v74, v75, v76, v77, v3, v78, v79, v80);
+> return v71;
+537,538c636,637
+< v67 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.util.Map getDefinedTags()>();
+< return v67;
+---
+> v81 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: com.oracle.bmc.budget.model.ResetPeriod getResetPeriod()>();
+> return v81;
+540,549c639,650
+< v68 = new com.oracle.bmc.budget.model.UpdateBudgetDetails;
+< v69 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.lang.String getDisplayName()>();
+< v70 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.lang.String getDescription()>();
+< v71 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.math.BigDecimal getAmount()>();
+< v72 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.lang.Integer getBudgetProcessingPeriodStartOffset()>();
+< v73 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: com.oracle.bmc.budget.model.ProcessingPeriodType getProcessingPeriodType()>();
+< v74 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: com.oracle.bmc.budget.model.ResetPeriod getResetPeriod()>();
+< v75 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.util.Map getFreeformTags()>();
+< specialinvoke v68.<com.oracle.bmc.budget.model.UpdateBudgetDetails: void <init>(java.lang.String,java.lang.String,java.math.BigDecimal,java.lang.Integer,com.oracle.bmc.budget.model.ProcessingPeriodType,com.oracle.bmc.budget.model.ResetPeriod,java.util.Map,java.util.Map)>(v69, v70, v71, v72, v73, v74, v75, v3);
+< return v68;
+---
+> v82 = new com.oracle.bmc.budget.model.UpdateBudgetDetails;
+> v83 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.lang.String getDisplayName()>();
+> v84 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.lang.String getDescription()>();
+> v85 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.math.BigDecimal getAmount()>();
+> v86 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.lang.Integer getBudgetProcessingPeriodStartOffset()>();
+> v87 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: com.oracle.bmc.budget.model.ProcessingPeriodType getProcessingPeriodType()>();
+> v88 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.util.Date getStartDate()>();
+> v89 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.util.Date getEndDate()>();
+> v90 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.util.Map getFreeformTags()>();
+> v91 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.util.Map getDefinedTags()>();
+> specialinvoke v82.<com.oracle.bmc.budget.model.UpdateBudgetDetails: void <init>(java.lang.String,java.lang.String,java.math.BigDecimal,java.lang.Integer,com.oracle.bmc.budget.model.ProcessingPeriodType,java.util.Date,java.util.Date,com.oracle.bmc.budget.model.ResetPeriod,java.util.Map,java.util.Map)>(v83, v84, v85, v86, v87, v88, v89, v3, v90, v91);
+> return v82;
+551,552c652,685
+< v76 = virtualinvoke v0.<com.oracle.bmc.budget.model.introspection.$UpdateBudgetDetails$Introspection: java.lang.RuntimeException unknownDispatchAtIndexException(int)>(v1);
+< throw v76;
+---
+> v92 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.util.Map getFreeformTags()>();
+> return v92;
+> label18:
+> v93 = new com.oracle.bmc.budget.model.UpdateBudgetDetails;
+> v94 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.lang.String getDisplayName()>();
+> v95 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.lang.String getDescription()>();
+> v96 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.math.BigDecimal getAmount()>();
+> v97 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.lang.Integer getBudgetProcessingPeriodStartOffset()>();
+> v98 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: com.oracle.bmc.budget.model.ProcessingPeriodType getProcessingPeriodType()>();
+> v99 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.util.Date getStartDate()>();
+> v100 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.util.Date getEndDate()>();
+> v101 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: com.oracle.bmc.budget.model.ResetPeriod getResetPeriod()>();
+> v102 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.util.Map getDefinedTags()>();
+> specialinvoke v93.<com.oracle.bmc.budget.model.UpdateBudgetDetails: void <init>(java.lang.String,java.lang.String,java.math.BigDecimal,java.lang.Integer,com.oracle.bmc.budget.model.ProcessingPeriodType,java.util.Date,java.util.Date,com.oracle.bmc.budget.model.ResetPeriod,java.util.Map,java.util.Map)>(v94, v95, v96, v97, v98, v99, v100, v101, v3, v102);
+> return v93;
+> label19:
+> v103 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.util.Map getDefinedTags()>();
+> return v103;
+> label20:
+> v104 = new com.oracle.bmc.budget.model.UpdateBudgetDetails;
+> v105 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.lang.String getDisplayName()>();
+> v106 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.lang.String getDescription()>();
+> v107 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.math.BigDecimal getAmount()>();
+> v108 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.lang.Integer getBudgetProcessingPeriodStartOffset()>();
+> v109 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: com.oracle.bmc.budget.model.ProcessingPeriodType getProcessingPeriodType()>();
+> v110 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.util.Date getStartDate()>();
+> v111 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.util.Date getEndDate()>();
+> v112 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: com.oracle.bmc.budget.model.ResetPeriod getResetPeriod()>();
+> v113 = virtualinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: java.util.Map getFreeformTags()>();
+> specialinvoke v104.<com.oracle.bmc.budget.model.UpdateBudgetDetails: void <init>(java.lang.String,java.lang.String,java.math.BigDecimal,java.lang.Integer,com.oracle.bmc.budget.model.ProcessingPeriodType,java.util.Date,java.util.Date,com.oracle.bmc.budget.model.ResetPeriod,java.util.Map,java.util.Map)>(v105, v106, v107, v108, v109, v110, v111, v112, v113, v3);
+> return v104;
+> label21:
+> v114 = virtualinvoke v0.<com.oracle.bmc.budget.model.introspection.$UpdateBudgetDetails$Introspection: java.lang.RuntimeException unknownDispatchAtIndexException(int)>(v1);
+> throw v114;
+557c690
+< java.lang.reflect.Method v11, v13, v15, v17, v3, v5, v7, v9;
+---
+> java.lang.reflect.Method v11, v13, v15, v17, v19, v21, v3, v5, v7, v9;
+559,560c692,693
+< java.lang.Class[] v10, v12, v14, v16, v2, v4, v6, v8;
+< java.lang.RuntimeException v18;
+---
+> java.lang.Class[] v10, v12, v14, v16, v18, v2, v20, v4, v6, v8;
+> java.lang.RuntimeException v22;
+565,580c698,717
+< case 0: goto label1;
+< case 1: goto label9;
+< case 2: goto label2;
+< case 3: goto label9;
+< case 4: goto label3;
+< case 5: goto label9;
+< case 6: goto label4;
+< case 7: goto label9;
+< case 8: goto label5;
+< case 9: goto label9;
+< case 10: goto label6;
+< case 11: goto label9;
+< case 12: goto label7;
+< case 13: goto label9;
+< case 14: goto label8;
+< default: goto label9;
+---
+> case 0: goto label01;
+> case 1: goto label11;
+> case 2: goto label02;
+> case 3: goto label11;
+> case 4: goto label03;
+> case 5: goto label11;
+> case 6: goto label04;
+> case 7: goto label11;
+> case 8: goto label05;
+> case 9: goto label11;
+> case 10: goto label06;
+> case 11: goto label11;
+> case 12: goto label07;
+> case 13: goto label11;
+> case 14: goto label08;
+> case 15: goto label11;
+> case 16: goto label09;
+> case 17: goto label11;
+> case 18: goto label10;
+> default: goto label11;
+582c719
+< label1:
+---
+> label01:
+586c723
+< label2:
+---
+> label02:
+590c727
+< label3:
+---
+> label03:
+594c731
+< label4:
+---
+> label04:
+598c735
+< label5:
+---
+> label05:
+602c739
+< label6:
+---
+> label06:
+604c741
+< v13 = staticinvoke <io.micronaut.core.reflect.ReflectionUtils: java.lang.reflect.Method getRequiredMethod(java.lang.Class,java.lang.String,java.lang.Class[])>(class "Lcom/oracle/bmc/budget/model/UpdateBudgetDetails;", "getResetPeriod", v12);
+---
+> v13 = staticinvoke <io.micronaut.core.reflect.ReflectionUtils: java.lang.reflect.Method getRequiredMethod(java.lang.Class,java.lang.String,java.lang.Class[])>(class "Lcom/oracle/bmc/budget/model/UpdateBudgetDetails;", "getStartDate", v12);
+606c743
+< label7:
+---
+> label07:
+608c745
+< v15 = staticinvoke <io.micronaut.core.reflect.ReflectionUtils: java.lang.reflect.Method getRequiredMethod(java.lang.Class,java.lang.String,java.lang.Class[])>(class "Lcom/oracle/bmc/budget/model/UpdateBudgetDetails;", "getFreeformTags", v14);
+---
+> v15 = staticinvoke <io.micronaut.core.reflect.ReflectionUtils: java.lang.reflect.Method getRequiredMethod(java.lang.Class,java.lang.String,java.lang.Class[])>(class "Lcom/oracle/bmc/budget/model/UpdateBudgetDetails;", "getEndDate", v14);
+610c747
+< label8:
+---
+> label08:
+612c749
+< v17 = staticinvoke <io.micronaut.core.reflect.ReflectionUtils: java.lang.reflect.Method getRequiredMethod(java.lang.Class,java.lang.String,java.lang.Class[])>(class "Lcom/oracle/bmc/budget/model/UpdateBudgetDetails;", "getDefinedTags", v16);
+---
+> v17 = staticinvoke <io.micronaut.core.reflect.ReflectionUtils: java.lang.reflect.Method getRequiredMethod(java.lang.Class,java.lang.String,java.lang.Class[])>(class "Lcom/oracle/bmc/budget/model/UpdateBudgetDetails;", "getResetPeriod", v16);
+614,616c751,761
+< label9:
+< v18 = virtualinvoke v0.<com.oracle.bmc.budget.model.introspection.$UpdateBudgetDetails$Introspection: java.lang.RuntimeException unknownDispatchAtIndexException(int)>(v1);
+< throw v18;
+---
+> label09:
+> v18 = <io.micronaut.core.reflect.ReflectionUtils: java.lang.Class[] EMPTY_CLASS_ARRAY>;
+> v19 = staticinvoke <io.micronaut.core.reflect.ReflectionUtils: java.lang.reflect.Method getRequiredMethod(java.lang.Class,java.lang.String,java.lang.Class[])>(class "Lcom/oracle/bmc/budget/model/UpdateBudgetDetails;", "getFreeformTags", v18);
+> return v19;
+> label10:
+> v20 = <io.micronaut.core.reflect.ReflectionUtils: java.lang.Class[] EMPTY_CLASS_ARRAY>;
+> v21 = staticinvoke <io.micronaut.core.reflect.ReflectionUtils: java.lang.reflect.Method getRequiredMethod(java.lang.Class,java.lang.String,java.lang.Class[])>(class "Lcom/oracle/bmc/budget/model/UpdateBudgetDetails;", "getDefinedTags", v20);
+> return v21;
+> label11:
+> v22 = virtualinvoke v0.<com.oracle.bmc.budget.model.introspection.$UpdateBudgetDetails$Introspection: java.lang.RuntimeException unknownDispatchAtIndexException(int)>(v1);
+> throw v22;
+623c768
+< java.lang.Object v10, v3, v4, v5, v6, v7, v8, v9;
+---
+> java.lang.Object v10, v11, v12, v3, v4, v5, v6, v7, v8, v9;
+635c780,782
+< specialinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: void <init>(java.lang.String,java.lang.String,java.math.BigDecimal,java.lang.Integer,com.oracle.bmc.budget.model.ProcessingPeriodType,com.oracle.bmc.budget.model.ResetPeriod,java.util.Map,java.util.Map)>(v3, v4, v5, v6, v7, v8, v9, v10);
+---
+> v11 = v1[8];
+> v12 = v1[9];
+> specialinvoke v2.<com.oracle.bmc.budget.model.UpdateBudgetDetails: void <init>(java.lang.String,java.lang.String,java.math.BigDecimal,java.lang.Integer,com.oracle.bmc.budget.model.ProcessingPeriodType,java.util.Date,java.util.Date,com.oracle.bmc.budget.model.ResetPeriod,java.util.Map,java.util.Map)>(v3, v4, v5, v6, v7, v8, v9, v10, v11, v12);

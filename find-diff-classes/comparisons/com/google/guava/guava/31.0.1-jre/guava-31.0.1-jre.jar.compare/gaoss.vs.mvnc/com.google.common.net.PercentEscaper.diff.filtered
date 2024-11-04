@@ -1,0 +1,39 @@
+9,10c9,10
+< boolean[] v8;
+< java.lang.IllegalArgumentException v4, v7;
+---
+> boolean[] v9;
+> java.lang.IllegalArgumentException v4, v8;
+12,13c12,13
+< java.lang.String v1, v5;
+< boolean v2, v3, v6;
+---
+> java.lang.String v1, v5, v6;
+> boolean v2, v3, v7;
+25c25,26
+< v5 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v1) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789");
+---
+> v5 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v1);
+> v6 = virtualinvoke v5.<java.lang.String: java.lang.String concat(java.lang.String)>("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789");
+27,31c28,32
+< v6 = virtualinvoke v5.<java.lang.String: boolean contains(java.lang.CharSequence)>(" ");
+< if v6 == 0 goto label2;
+< v7 = new java.lang.IllegalArgumentException;
+< specialinvoke v7.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>("plusForSpace cannot be specified when space is a \'safe\' character");
+< throw v7;
+---
+> v7 = virtualinvoke v6.<java.lang.String: boolean contains(java.lang.CharSequence)>(" ");
+> if v7 == 0 goto label2;
+> v8 = new java.lang.IllegalArgumentException;
+> specialinvoke v8.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>("plusForSpace cannot be specified when space is a \'safe\' character");
+> throw v8;
+34,35c35,36
+< v8 = staticinvoke <com.google.common.net.PercentEscaper: boolean[] createSafeOctets(java.lang.String)>(v5);
+< v0.<com.google.common.net.PercentEscaper: boolean[] safeOctets> = v8;
+---
+> v9 = staticinvoke <com.google.common.net.PercentEscaper: boolean[] createSafeOctets(java.lang.String)>(v6);
+> v0.<com.google.common.net.PercentEscaper: boolean[] safeOctets> = v9;
+130a132
+> java.lang.StringBuilder v87;
+274a277
+> specialinvoke v87.<java.lang.StringBuilder: void <init>(int)>(43);

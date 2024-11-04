@@ -1,0 +1,98 @@
+196,207c196,202
+< org.apache.zookeeper.KeeperException$NoNodeException v29;
+< int[] v16;
+< org.apache.curator.framework.WatcherRemoveCuratorFramework v21;
+< org.apache.curator.framework.recipes.locks.InterProcessSemaphoreV2$InternalAcquireResult v17;
+< boolean v10, v15, v28, v5, v6;
+< org.apache.curator.CuratorZookeeperClient v22;
+< org.apache.curator.shaded.com.google.common.collect.ImmutableList v20, v31, v32;
+< org.apache.curator.RetryPolicy v23;
+< org.apache.curator.framework.recipes.locks.InterProcessSemaphoreV2 v0;
+< java.lang.Throwable v30;
+< long v14, v2, v25, v26, v4, v8, v9;
+< int v1, v12, v13, v18, v19, v24;
+---
+> java.lang.Throwable v28;
+> long v14, v2, v23, v24, v4, v8, v9;
+> org.apache.zookeeper.KeeperException$NoNodeException v27;
+> int v1, v12, v13, v17, v22;
+> org.apache.curator.framework.WatcherRemoveCuratorFramework v19;
+> org.apache.curator.framework.recipes.locks.InterProcessSemaphoreV2$InternalAcquireResult v16;
+> boolean v10, v15, v26, v5, v6;
+208a204
+> org.apache.curator.CuratorZookeeperClient v20;
+210c206,209
+< org.apache.curator.RetrySleeper v27;
+---
+> org.apache.curator.shaded.com.google.common.collect.ImmutableList v18, v29, v30;
+> org.apache.curator.RetryPolicy v21;
+> org.apache.curator.RetrySleeper v25;
+> org.apache.curator.framework.recipes.locks.InterProcessSemaphoreV2 v0;
+248,252c247,249
+< v16 = <org.apache.curator.framework.recipes.locks.InterProcessSemaphoreV2$4: int[] $SwitchMap$org$apache$curator$framework$recipes$locks$InterProcessSemaphoreV2$InternalAcquireResult>;
+< v17 = specialinvoke v0.<org.apache.curator.framework.recipes.locks.InterProcessSemaphoreV2: org.apache.curator.framework.recipes.locks.InterProcessSemaphoreV2$InternalAcquireResult internalAcquire1Lease(org.apache.curator.shaded.com.google.common.collect.ImmutableList$Builder,long,boolean,long)>(v11, v4, v6, v9);
+< v18 = virtualinvoke v17.<org.apache.curator.framework.recipes.locks.InterProcessSemaphoreV2$InternalAcquireResult: int ordinal()>();
+< v19 = v16[v18];
+< tableswitch(v19)
+---
+> v16 = specialinvoke v0.<org.apache.curator.framework.recipes.locks.InterProcessSemaphoreV2: org.apache.curator.framework.recipes.locks.InterProcessSemaphoreV2$InternalAcquireResult internalAcquire1Lease(org.apache.curator.shaded.com.google.common.collect.ImmutableList$Builder,long,boolean,long)>(v11, v4, v6, v9);
+> v17 = virtualinvoke v16.<org.apache.curator.framework.recipes.locks.InterProcessSemaphoreV2$InternalAcquireResult: int ordinal()>();
+> tableswitch(v17)
+254,256c251,253
+< case 1: goto label09;
+< case 2: goto label10;
+< case 3: goto label11;
+---
+> case 0: goto label09;
+> case 1: goto label10;
+> case 2: goto label11;
+263,264c260,261
+< v20 = virtualinvoke v11.<org.apache.curator.shaded.com.google.common.collect.ImmutableList$Builder: org.apache.curator.shaded.com.google.common.collect.ImmutableList build()>();
+< virtualinvoke v0.<org.apache.curator.framework.recipes.locks.InterProcessSemaphoreV2: void returnAll(java.util.Collection)>(v20);
+---
+> v18 = virtualinvoke v11.<org.apache.curator.shaded.com.google.common.collect.ImmutableList$Builder: org.apache.curator.shaded.com.google.common.collect.ImmutableList build()>();
+> virtualinvoke v0.<org.apache.curator.framework.recipes.locks.InterProcessSemaphoreV2: void returnAll(java.util.Collection)>(v18);
+267,270c264,267
+< v21 = v0.<org.apache.curator.framework.recipes.locks.InterProcessSemaphoreV2: org.apache.curator.framework.WatcherRemoveCuratorFramework client>;
+< v22 = interfaceinvoke v21.<org.apache.curator.framework.WatcherRemoveCuratorFramework: org.apache.curator.CuratorZookeeperClient getZookeeperClient()>();
+< v23 = virtualinvoke v22.<org.apache.curator.CuratorZookeeperClient: org.apache.curator.RetryPolicy getRetryPolicy()>();
+< v24 = v13;
+---
+> v19 = v0.<org.apache.curator.framework.recipes.locks.InterProcessSemaphoreV2: org.apache.curator.framework.WatcherRemoveCuratorFramework client>;
+> v20 = interfaceinvoke v19.<org.apache.curator.framework.WatcherRemoveCuratorFramework: org.apache.curator.CuratorZookeeperClient getZookeeperClient()>();
+> v21 = virtualinvoke v20.<org.apache.curator.CuratorZookeeperClient: org.apache.curator.RetryPolicy getRetryPolicy()>();
+> v22 = v13;
+272,279c269,276
+< v25 = staticinvoke <java.lang.System: long currentTimeMillis()>();
+< v26 = v25 - v14;
+< v27 = staticinvoke <org.apache.curator.RetryLoop: org.apache.curator.RetrySleeper getDefaultRetrySleeper()>();
+< v28 = interfaceinvoke v23.<org.apache.curator.RetryPolicy: boolean allowRetry(int,long,org.apache.curator.RetrySleeper)>(v24, v26, v27);
+< if v28 != 0 goto label08;
+< v29 = new org.apache.zookeeper.KeeperException$NoNodeException;
+< specialinvoke v29.<org.apache.zookeeper.KeeperException$NoNodeException: void <init>(java.lang.String)>("Sequential path not found - possible session loss");
+< throw v29;
+---
+> v23 = staticinvoke <java.lang.System: long currentTimeMillis()>();
+> v24 = v23 - v14;
+> v25 = staticinvoke <org.apache.curator.RetryLoop: org.apache.curator.RetrySleeper getDefaultRetrySleeper()>();
+> v26 = interfaceinvoke v21.<org.apache.curator.RetryPolicy: boolean allowRetry(int,long,org.apache.curator.RetrySleeper)>(v22, v24, v25);
+> if v26 != 0 goto label08;
+> v27 = new org.apache.zookeeper.KeeperException$NoNodeException;
+> specialinvoke v27.<org.apache.zookeeper.KeeperException$NoNodeException: void <init>(java.lang.String)>("Sequential path not found - possible session loss");
+> throw v27;
+281,284c278,281
+< v30 := @caughtexception;
+< v31 = virtualinvoke v11.<org.apache.curator.shaded.com.google.common.collect.ImmutableList$Builder: org.apache.curator.shaded.com.google.common.collect.ImmutableList build()>();
+< virtualinvoke v0.<org.apache.curator.framework.recipes.locks.InterProcessSemaphoreV2: void returnAll(java.util.Collection)>(v31);
+< throw v30;
+---
+> v28 := @caughtexception;
+> v29 = virtualinvoke v11.<org.apache.curator.shaded.com.google.common.collect.ImmutableList$Builder: org.apache.curator.shaded.com.google.common.collect.ImmutableList build()>();
+> virtualinvoke v0.<org.apache.curator.framework.recipes.locks.InterProcessSemaphoreV2: void returnAll(java.util.Collection)>(v29);
+> throw v28;
+286,287c283,284
+< v32 = virtualinvoke v11.<org.apache.curator.shaded.com.google.common.collect.ImmutableList$Builder: org.apache.curator.shaded.com.google.common.collect.ImmutableList build()>();
+< return v32;
+---
+> v30 = virtualinvoke v11.<org.apache.curator.shaded.com.google.common.collect.ImmutableList$Builder: org.apache.curator.shaded.com.google.common.collect.ImmutableList build()>();
+> return v30;

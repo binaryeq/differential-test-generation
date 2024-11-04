@@ -1,0 +1,88 @@
+13c13
+< java.lang.Throwable v6;
+---
+> java.lang.Throwable v6, v7;
+16,17c16,17
+< java.lang.Exception v7;
+< org.apache.maven.toolchain.MisconfiguredToolchainException v8;
+---
+> java.lang.Exception v8;
+> org.apache.maven.toolchain.MisconfiguredToolchainException v9;
+19,20c19,20
+< java.lang.String v10, v12, v9;
+< org.codehaus.plexus.logging.Logger v11;
+---
+> java.lang.String v10, v11, v13;
+> org.codehaus.plexus.logging.Logger v12;
+27c27
+< if v1 == null goto label7;
+---
+> if v1 == null goto label11;
+29,30c29,30
+< if v3 == 0 goto label6;
+< label1:
+---
+> if v3 == 0 goto label10;
+> label01:
+32c32
+< label2:
+---
+> label02:
+36,37c36,37
+< label3:
+< if v4 == null goto label7;
+---
+> label03:
+> if v4 == null goto label11;
+39,40c39,40
+< goto label7;
+< label4:
+---
+> goto label11;
+> label04:
+42,43c42,47
+< throw v6;
+< label5:
+---
+> if v4 == null goto label08;
+> label05:
+> virtualinvoke v4.<java.io.Reader: void close()>();
+> label06:
+> goto label08;
+> label07:
+45,55c49,64
+< v8 = new org.apache.maven.toolchain.MisconfiguredToolchainException;
+< v9 = virtualinvoke v1.<java.io.File: java.lang.String getAbsolutePath()>();
+< v10 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v9) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Cannot read toolchains file at \u0001");
+< specialinvoke v8.<org.apache.maven.toolchain.MisconfiguredToolchainException: void <init>(java.lang.String,java.lang.Throwable)>(v10, v7);
+< throw v8;
+< label6:
+< if v1 == null goto label7;
+< v11 = v0.<org.apache.maven.toolchain.DefaultToolchainsBuilder: org.codehaus.plexus.logging.Logger logger>;
+< v12 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.io.File)>(v1) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Toolchains configuration was not found at \u0001");
+< interfaceinvoke v11.<org.codehaus.plexus.logging.Logger: void debug(java.lang.String)>(v12);
+< label7:
+---
+> virtualinvoke v6.<java.lang.Throwable: void addSuppressed(java.lang.Throwable)>(v7);
+> label08:
+> throw v6;
+> label09:
+> v8 := @caughtexception;
+> v9 = new org.apache.maven.toolchain.MisconfiguredToolchainException;
+> v10 = virtualinvoke v1.<java.io.File: java.lang.String getAbsolutePath()>();
+> v11 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v10) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Cannot read toolchains file at \u0001");
+> specialinvoke v9.<org.apache.maven.toolchain.MisconfiguredToolchainException: void <init>(java.lang.String,java.lang.Throwable)>(v11, v8);
+> throw v9;
+> label10:
+> if v1 == null goto label11;
+> v12 = v0.<org.apache.maven.toolchain.DefaultToolchainsBuilder: org.codehaus.plexus.logging.Logger logger>;
+> v13 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.io.File)>(v1) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Toolchains configuration was not found at \u0001");
+> interfaceinvoke v12.<org.codehaus.plexus.logging.Logger: void debug(java.lang.String)>(v13);
+> label11:
+57,58c66,68
+< catch java.lang.Throwable from label2 to label3 with label4;
+< catch java.lang.Exception from label1 to label5 with label5;
+---
+> catch java.lang.Throwable from label02 to label03 with label04;
+> catch java.lang.Throwable from label05 to label06 with label07;
+> catch java.lang.Exception from label01 to label09 with label09;

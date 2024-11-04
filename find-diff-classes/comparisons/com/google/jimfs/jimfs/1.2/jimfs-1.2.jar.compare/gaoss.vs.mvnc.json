@@ -1,0 +1,505 @@
+{
+        "jar1": {
+            "file": "~/code/craw-redhat-oss/wget/crawl/google-aoss/com/google/jimfs/jimfs/1.2/jimfs-1.2.jar",
+            "classcount": 137,
+            "md5": "c4bafafac40cd9be1bcec89a780ba1aa",
+            "sha1": "73bef6d5d9427792639a639d700632cf19e29feb",
+            "size": "203 KB",
+            "manifest": {
+                "Manifest-Version": "1.0",
+                "Bnd-LastModified": "1665569307533",
+                "Build-Jdk-Spec": "11",
+                "Bundle-Description": "Jimfs is an in-memory implementation of Java 7's java.nio.file abstract file system API.",
+                "Bundle-DocURL": "http://www.google.com/",
+                "Bundle-License": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+                "Bundle-ManifestVersion": "2",
+                "Bundle-Name": "Jimfs",
+                "Bundle-SymbolicName": "com.google.jimfs",
+                "Bundle-Vendor": "Google Inc.",
+                "Bundle-Version": "1.2.0",
+                "Created-By": "Apache Maven Bundle Plugin",
+                "Export-Package": "com.google.common.jimfs;uses:=\"com.google.common.base,com.google.common.collect,org.checkerframework.checker.nullness.compatqual\";version=\"1.2.0\"",
+                "Import-Package": "com.google.common.base;version=\"[30.1,31)\",com.google.common.collect;version=\"[30.1,31)\",com.google.common.math;version=\"[30.1,31)\",com.google.common.primitives;version=\"[30.1,31)\",com.google.common.util.concurrent;version=\"[30.1,31)\",com.ibm.icu.lang;resolution:=optional,javax.annotation;resolution:=optional;version=\"[3.0,4)\",org.checkerframework.checker.nullness.compatqual;resolution:=optional",
+                "Require-Capability": "osgi.ee;filter:=\"(&(osgi.ee=JavaSE)(version=1.7))\"",
+                "Tool": "Bnd-5.1.1.202006162103"
+            },
+            "services": {"java.nio.file.spi.FileSystemProvider": ["com.google.common.jimfs.SystemJimfsFileSystemProvider"]}
+        },
+        "jar2": {
+            "file": "~/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/jimfs/jimfs/1.2/jimfs-1.2.jar",
+            "classcount": 137,
+            "md5": "c47cfe0223863f400132e6d8f38a8da0",
+            "sha1": "48462eb319817c90c27d377341684b6b81372e08",
+            "size": "205 KB",
+            "manifest": {
+                "Manifest-Version": "1.0",
+                "Bnd-LastModified": "1609881097631",
+                "Build-Jdk-Spec": "11",
+                "Bundle-Description": "Jimfs is an in-memory implementation of Java 7's java.nio.file abstract file system API.",
+                "Bundle-DocURL": "http://www.google.com/",
+                "Bundle-License": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+                "Bundle-ManifestVersion": "2",
+                "Bundle-Name": "Jimfs",
+                "Bundle-SymbolicName": "com.google.jimfs",
+                "Bundle-Vendor": "Google Inc.",
+                "Bundle-Version": "1.2.0",
+                "Created-By": "Apache Maven Bundle Plugin",
+                "Export-Package": "com.google.common.jimfs;uses:=\"com.google.common.base,com.google.common.collect,org.checkerframework.checker.nullness.compatqual\";version=\"1.2.0\"",
+                "Import-Package": "com.google.common.base;version=\"[30.1,31)\",com.google.common.collect;version=\"[30.1,31)\",com.google.common.math;version=\"[30.1,31)\",com.google.common.primitives;version=\"[30.1,31)\",com.google.common.util.concurrent;version=\"[30.1,31)\",com.ibm.icu.lang;resolution:=optional,javax.annotation;resolution:=optional;version=\"[3.0,4)\",org.checkerframework.checker.nullness.compatqual;resolution:=optional",
+                "Require-Capability": "osgi.ee;filter:=\"(&(osgi.ee=JavaSE)(version=1.7))\"",
+                "Tool": "Bnd-5.1.1.202006162103"
+            },
+            "services": {"java.nio.file.spi.FileSystemProvider": ["com.google.common.jimfs.SystemJimfsFileSystemProvider"]}
+        },
+        "contentset-comparisons": [
+            {
+                "content-type": "sources",
+                "jar1.count": 0,
+                "jar2.count": 0,
+                "intersection": 0,
+                "union": 0,
+                "jar1-jar2": [],
+                "jar2-jar1": []
+            },
+            {
+                "content-type": "bytecode",
+                "jar1.count": 124,
+                "jar2.count": 124,
+                "intersection": 124,
+                "union": 124,
+                "jar1-jar2": [],
+                "jar2-jar1": []
+            },
+            {
+                "content-type": "metadata",
+                "jar1.count": 9,
+                "jar2.count": 9,
+                "intersection": 9,
+                "union": 9,
+                "jar1-jar2": [],
+                "jar2-jar1": []
+            },
+            {
+                "content-type": "other",
+                "jar1.count": 4,
+                "jar2.count": 4,
+                "intersection": 4,
+                "union": 4,
+                "jar1-jar2": [],
+                "jar2-jar1": []
+            }
+        ],
+        "content-pairwise-comparisons": [{
+            "equivalence": {
+                "class": "io.github.bineq.equivalences.bytecode.JNormEquivalence2",
+                "name": "jnorm2"
+            },
+            "summary": {
+                "description": "comparison results of jar/folder content (pairwise comparison of content in both jars/folders)",
+                "equivalent": 102,
+                "non-equivalent": 22,
+                "errors": 0
+            },
+            "details": {
+                "non-equivalent": [
+                    {
+                        "class": "com/google/common/jimfs/Handler.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/com/google/jimfs/jimfs/1.2/jimfs-1.2.jar/com.google.common.jimfs.Handler.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/jimfs/jimfs/1.2/jimfs-1.2.jar/com.google.common.jimfs.Handler.jimple",
+                            "transformed-class1": {
+                                "value": "public final class com.google.common.jimfs.Handler extends java.net.URLStreamHandler\n{\nprivate stati ..  [abbreviated, 2785 chars]",
+                                "sha1": "8ac97bff1a6ebd512ca62de6fb851d92dcff4dd8",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/com/google/jimfs/jimfs/1.2/jimfs-1.2.jar/com.google.common.jimfs.Handler.jimple",
+                                "md5": "f6efb3553b5670c030dc4fe8482751d7"
+                            },
+                            "transformed-class2": {
+                                "value": "public final class com.google.common.jimfs.Handler extends java.net.URLStreamHandler\n{\nprivate stati ..  [abbreviated, 3332 chars]",
+                                "sha1": "d793dd4c7a9cf3592301658736a883a8d28cf255",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/jimfs/jimfs/1.2/jimfs-1.2.jar/com.google.common.jimfs.Handler.jimple",
+                                "md5": "1a548e4008b2ee6c3484536b9cbb9d31"
+                            }
+                        }
+                    },
+                    {
+                        "class": "com/google/common/jimfs/PathMatchers.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/com/google/jimfs/jimfs/1.2/jimfs-1.2.jar/com.google.common.jimfs.PathMatchers.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/jimfs/jimfs/1.2/jimfs-1.2.jar/com.google.common.jimfs.PathMatchers.jimple",
+                            "transformed-class1": {
+                                "value": "final class com.google.common.jimfs.PathMatchers extends java.lang.Object\n{\nprivate void <init>()\n{\n ..  [abbreviated, 3273 chars]",
+                                "sha1": "3c6e952a5d1c2cdba057e05dcf4f691b49890a85",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/com/google/jimfs/jimfs/1.2/jimfs-1.2.jar/com.google.common.jimfs.PathMatchers.jimple",
+                                "md5": "c56359bd11e7b2d14915fb68e712ea00"
+                            },
+                            "transformed-class2": {
+                                "value": "final class com.google.common.jimfs.PathMatchers extends java.lang.Object\n{\nprivate void <init>()\n{\n ..  [abbreviated, 3438 chars]",
+                                "sha1": "6ae36ba26135c0e0e8734d5ce864e43baeab756d",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/jimfs/jimfs/1.2/jimfs-1.2.jar/com.google.common.jimfs.PathMatchers.jimple",
+                                "md5": "5c7b495b0db40017ec97c4e139c05895"
+                            }
+                        }
+                    },
+                    {
+                        "class": "com/google/common/jimfs/JimfsFileSystemProvider.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/com/google/jimfs/jimfs/1.2/jimfs-1.2.jar/com.google.common.jimfs.JimfsFileSystemProvider.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/jimfs/jimfs/1.2/jimfs-1.2.jar/com.google.common.jimfs.JimfsFileSystemProvider.jimple",
+                            "transformed-class1": {
+                                "value": "final class com.google.common.jimfs.JimfsFileSystemProvider extends java.nio.file.spi.FileSystemProv ..  [abbreviated, 37757 chars]",
+                                "sha1": "3836000b55be36c6f1a444aa4e7dbe11a79518fe",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/com/google/jimfs/jimfs/1.2/jimfs-1.2.jar/com.google.common.jimfs.JimfsFileSystemProvider.jimple",
+                                "md5": "8ad012fa7aca253d09d9e5d431c97a74"
+                            },
+                            "transformed-class2": {
+                                "value": "final class com.google.common.jimfs.JimfsFileSystemProvider extends java.nio.file.spi.FileSystemProv ..  [abbreviated, 38489 chars]",
+                                "sha1": "f165f5ff341ad40196295ee66f0a10a83ad617e9",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/jimfs/jimfs/1.2/jimfs-1.2.jar/com.google.common.jimfs.JimfsFileSystemProvider.jimple",
+                                "md5": "793e5d56d75b2931f2dc2535b86f83ff"
+                            }
+                        }
+                    },
+                    {
+                        "class": "com/google/common/jimfs/JimfsPath.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/com/google/jimfs/jimfs/1.2/jimfs-1.2.jar/com.google.common.jimfs.JimfsPath.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/jimfs/jimfs/1.2/jimfs-1.2.jar/com.google.common.jimfs.JimfsPath.jimple",
+                            "transformed-class1": {
+                                "value": "final class com.google.common.jimfs.JimfsPath extends java.lang.Object implements java.nio.file.Path ..  [abbreviated, 39535 chars]",
+                                "sha1": "d226d3216be1a4422c8c8610e29de33117d1580e",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/com/google/jimfs/jimfs/1.2/jimfs-1.2.jar/com.google.common.jimfs.JimfsPath.jimple",
+                                "md5": "e5900af2132051a15fe60a722b2b38f8"
+                            },
+                            "transformed-class2": {
+                                "value": "final class com.google.common.jimfs.JimfsPath extends java.lang.Object implements java.nio.file.Path ..  [abbreviated, 39891 chars]",
+                                "sha1": "41edf9d86d8245d1896c925fc31ec237e555c6af",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/jimfs/jimfs/1.2/jimfs-1.2.jar/com.google.common.jimfs.JimfsPath.jimple",
+                                "md5": "6fc1f109b4c38361056808a439db230f"
+                            }
+                        }
+                    },
+                    {
+                        "class": "com/google/common/jimfs/JimfsFileSystem.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/com/google/jimfs/jimfs/1.2/jimfs-1.2.jar/com.google.common.jimfs.JimfsFileSystem.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/jimfs/jimfs/1.2/jimfs-1.2.jar/com.google.common.jimfs.JimfsFileSystem.jimple",
+                            "transformed-class1": {
+                                "value": "final class com.google.common.jimfs.JimfsFileSystem extends java.nio.file.FileSystem\n{\nprivate final ..  [abbreviated, 18395 chars]",
+                                "sha1": "a4b8dafe823f01b28d89193a71fbc071c8699e66",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/com/google/jimfs/jimfs/1.2/jimfs-1.2.jar/com.google.common.jimfs.JimfsFileSystem.jimple",
+                                "md5": "960f81c0e960d1fe258373062f318869"
+                            },
+                            "transformed-class2": {
+                                "value": "final class com.google.common.jimfs.JimfsFileSystem extends java.nio.file.FileSystem\n{\nprivate final ..  [abbreviated, 18674 chars]",
+                                "sha1": "444fa59555376f4d6dc2646ab1f3ff0b4b132ccc",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/jimfs/jimfs/1.2/jimfs-1.2.jar/com.google.common.jimfs.JimfsFileSystem.jimple",
+                                "md5": "2bbe1935ccfd3d57884d170e290ecd38"
+                            }
+                        }
+                    },
+                    {
+                        "class": "com/google/common/jimfs/AttributeProvider.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/com/google/jimfs/jimfs/1.2/jimfs-1.2.jar/com.google.common.jimfs.AttributeProvider.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/jimfs/jimfs/1.2/jimfs-1.2.jar/com.google.common.jimfs.AttributeProvider.jimple",
+                            "transformed-class1": {
+                                "value": "public abstract class com.google.common.jimfs.AttributeProvider extends java.lang.Object\n{\npublic vo ..  [abbreviated, 7452 chars]",
+                                "sha1": "30bfd5bf25905c3b7fc3632ce74e10509515e52d",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/com/google/jimfs/jimfs/1.2/jimfs-1.2.jar/com.google.common.jimfs.AttributeProvider.jimple",
+                                "md5": "3a7bc95249f9bf686bc8bb34ea141112"
+                            },
+                            "transformed-class2": {
+                                "value": "public abstract class com.google.common.jimfs.AttributeProvider extends java.lang.Object\n{\npublic vo ..  [abbreviated, 9459 chars]",
+                                "sha1": "d2ff74870dc464b25f5ace857694a4e95756ddc0",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/jimfs/jimfs/1.2/jimfs-1.2.jar/com.google.common.jimfs.AttributeProvider.jimple",
+                                "md5": "e473768cc8f0590706ea213e134bc3a5"
+                            }
+                        }
+                    },
+                    {
+                        "class": "com/google/common/jimfs/PollingWatchService.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/com/google/jimfs/jimfs/1.2/jimfs-1.2.jar/com.google.common.jimfs.PollingWatchService.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/jimfs/jimfs/1.2/jimfs-1.2.jar/com.google.common.jimfs.PollingWatchService.jimple",
+                            "transformed-class1": {
+                                "value": "final class com.google.common.jimfs.PollingWatchService extends com.google.common.jimfs.AbstractWatc ..  [abbreviated, 13819 chars]",
+                                "sha1": "875a4261f77f9c7b33ba30e334e3827a80c54894",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/com/google/jimfs/jimfs/1.2/jimfs-1.2.jar/com.google.common.jimfs.PollingWatchService.jimple",
+                                "md5": "237462e3329f162d93b10b15b8a8938f"
+                            },
+                            "transformed-class2": {
+                                "value": "final class com.google.common.jimfs.PollingWatchService extends com.google.common.jimfs.AbstractWatc ..  [abbreviated, 14172 chars]",
+                                "sha1": "cca2333dcbbbf044cfbf4183892eebed18964388",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/jimfs/jimfs/1.2/jimfs-1.2.jar/com.google.common.jimfs.PollingWatchService.jimple",
+                                "md5": "6fd198d3cae2205ccb18db4a72061a7f"
+                            }
+                        }
+                    },
+                    {
+                        "class": "com/google/common/jimfs/PathURLConnection.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/com/google/jimfs/jimfs/1.2/jimfs-1.2.jar/com.google.common.jimfs.PathURLConnection.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/jimfs/jimfs/1.2/jimfs-1.2.jar/com.google.common.jimfs.PathURLConnection.jimple",
+                            "transformed-class1": {
+                                "value": "final class com.google.common.jimfs.PathURLConnection extends java.net.URLConnection\n{\nprivate stati ..  [abbreviated, 9840 chars]",
+                                "sha1": "447f300a2608d34a76370220d0bde7572a6c3280",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/com/google/jimfs/jimfs/1.2/jimfs-1.2.jar/com.google.common.jimfs.PathURLConnection.jimple",
+                                "md5": "17a7afde8455dd584a8248526cd4a743"
+                            },
+                            "transformed-class2": {
+                                "value": "final class com.google.common.jimfs.PathURLConnection extends java.net.URLConnection\n{\nprivate stati ..  [abbreviated, 10274 chars]",
+                                "sha1": "906d8ba0a1c5954c1ee89d0f40e5b70b6b952129",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/jimfs/jimfs/1.2/jimfs-1.2.jar/com.google.common.jimfs.PathURLConnection.jimple",
+                                "md5": "de168167841699e82a68f447f41ceff4"
+                            }
+                        }
+                    },
+                    {
+                        "class": "com/google/common/jimfs/Options.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/com/google/jimfs/jimfs/1.2/jimfs-1.2.jar/com.google.common.jimfs.Options.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/jimfs/jimfs/1.2/jimfs-1.2.jar/com.google.common.jimfs.Options.jimple",
+                            "transformed-class1": {
+                                "value": "final class com.google.common.jimfs.Options extends java.lang.Object\n{\npublic static final com.googl ..  [abbreviated, 10747 chars]",
+                                "sha1": "36f9d9589d48a8e50805fc390fd786a1b19be871",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/com/google/jimfs/jimfs/1.2/jimfs-1.2.jar/com.google.common.jimfs.Options.jimple",
+                                "md5": "ace9d54667188f99638a13e236c9c7c6"
+                            },
+                            "transformed-class2": {
+                                "value": "final class com.google.common.jimfs.Options extends java.lang.Object\n{\npublic static final com.googl ..  [abbreviated, 11107 chars]",
+                                "sha1": "64640567b68c6479cbbbc7f4cebc06e7e974aa60",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/jimfs/jimfs/1.2/jimfs-1.2.jar/com.google.common.jimfs.Options.jimple",
+                                "md5": "46bf4a09a04478925e2f30d1c464eb95"
+                            }
+                        }
+                    },
+                    {
+                        "class": "com/google/common/jimfs/AttributeService.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/com/google/jimfs/jimfs/1.2/jimfs-1.2.jar/com.google.common.jimfs.AttributeService.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/jimfs/jimfs/1.2/jimfs-1.2.jar/com.google.common.jimfs.AttributeService.jimple",
+                            "transformed-class1": {
+                                "value": "final class com.google.common.jimfs.AttributeService extends java.lang.Object\n{\nprivate static final ..  [abbreviated, 38480 chars]",
+                                "sha1": "a7b2d88776d06e9a1d469fa9d6cef9accfdcdb1e",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/com/google/jimfs/jimfs/1.2/jimfs-1.2.jar/com.google.common.jimfs.AttributeService.jimple",
+                                "md5": "a03f694dfbb027fe0ee1df3f9c717922"
+                            },
+                            "transformed-class2": {
+                                "value": "final class com.google.common.jimfs.AttributeService extends java.lang.Object\n{\nprivate static final ..  [abbreviated, 40464 chars]",
+                                "sha1": "37be75e28890f9767dadd635f4dd15a14bfdb55c",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/jimfs/jimfs/1.2/jimfs-1.2.jar/com.google.common.jimfs.AttributeService.jimple",
+                                "md5": "27749e1e9b20745dc710ae4a0e083ed1"
+                            }
+                        }
+                    },
+                    {
+                        "class": "com/google/common/jimfs/Configuration$Builder.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/com/google/jimfs/jimfs/1.2/jimfs-1.2.jar/com.google.common.jimfs.Configuration$Builder.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/jimfs/jimfs/1.2/jimfs-1.2.jar/com.google.common.jimfs.Configuration$Builder.jimple",
+                            "transformed-class1": {
+                                "value": "public final class com.google.common.jimfs.Configuration$Builder extends java.lang.Object\n{\npublic s ..  [abbreviated, 25283 chars]",
+                                "sha1": "9c64a4ceb3271b317113904dbf400745138ed63c",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/com/google/jimfs/jimfs/1.2/jimfs-1.2.jar/com.google.common.jimfs.Configuration$Builder.jimple",
+                                "md5": "b0ecee1f660919c6d8cebade4a171785"
+                            },
+                            "transformed-class2": {
+                                "value": "public final class com.google.common.jimfs.Configuration$Builder extends java.lang.Object\n{\npublic s ..  [abbreviated, 25859 chars]",
+                                "sha1": "2856f87d2f01930c9df4492909f1f281e721b082",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/jimfs/jimfs/1.2/jimfs-1.2.jar/com.google.common.jimfs.Configuration$Builder.jimple",
+                                "md5": "19bb0d82be335ab99c71fda54a4510f6"
+                            }
+                        }
+                    },
+                    {
+                        "class": "com/google/common/jimfs/AclAttributeProvider.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/com/google/jimfs/jimfs/1.2/jimfs-1.2.jar/com.google.common.jimfs.AclAttributeProvider.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/jimfs/jimfs/1.2/jimfs-1.2.jar/com.google.common.jimfs.AclAttributeProvider.jimple",
+                            "transformed-class1": {
+                                "value": "final class com.google.common.jimfs.AclAttributeProvider extends com.google.common.jimfs.AttributePr ..  [abbreviated, 7759 chars]",
+                                "sha1": "5546bcb24b014d891b7fb8f73d7d438c9865056f",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/com/google/jimfs/jimfs/1.2/jimfs-1.2.jar/com.google.common.jimfs.AclAttributeProvider.jimple",
+                                "md5": "db4383fbcece1266332e83ad2cec2fa3"
+                            },
+                            "transformed-class2": {
+                                "value": "final class com.google.common.jimfs.AclAttributeProvider extends com.google.common.jimfs.AttributePr ..  [abbreviated, 8129 chars]",
+                                "sha1": "7757fa7e3e394e4eb5b8fcdc81e7f376a1b73b77",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/jimfs/jimfs/1.2/jimfs-1.2.jar/com.google.common.jimfs.AclAttributeProvider.jimple",
+                                "md5": "98be849de9e40f176523313369b5e2d3"
+                            }
+                        }
+                    },
+                    {
+                        "class": "com/google/common/jimfs/JimfsFileSystems.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/com/google/jimfs/jimfs/1.2/jimfs-1.2.jar/com.google.common.jimfs.JimfsFileSystems.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/jimfs/jimfs/1.2/jimfs-1.2.jar/com.google.common.jimfs.JimfsFileSystems.jimple",
+                            "transformed-class1": {
+                                "value": "final class com.google.common.jimfs.JimfsFileSystems extends java.lang.Object\n{\nprivate static final ..  [abbreviated, 12049 chars]",
+                                "sha1": "dfc37c575951929afef8d8815a32aab4ba31d0db",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/com/google/jimfs/jimfs/1.2/jimfs-1.2.jar/com.google.common.jimfs.JimfsFileSystems.jimple",
+                                "md5": "5819e670b6212bfb1b24496e9677ca7c"
+                            },
+                            "transformed-class2": {
+                                "value": "final class com.google.common.jimfs.JimfsFileSystems extends java.lang.Object\n{\nprivate static final ..  [abbreviated, 12549 chars]",
+                                "sha1": "528ea63104a5c92044b57e31f38c1bf0c993f99f",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/jimfs/jimfs/1.2/jimfs-1.2.jar/com.google.common.jimfs.JimfsFileSystems.jimple",
+                                "md5": "d84c7f62483a25cbaaca946a34f33f13"
+                            }
+                        }
+                    },
+                    {
+                        "class": "com/google/common/jimfs/File.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/com/google/jimfs/jimfs/1.2/jimfs-1.2.jar/com.google.common.jimfs.File.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/jimfs/jimfs/1.2/jimfs-1.2.jar/com.google.common.jimfs.File.jimple",
+                            "transformed-class1": {
+                                "value": "public abstract class com.google.common.jimfs.File extends java.lang.Object\n{\nprivate final int id;\n ..  [abbreviated, 14336 chars]",
+                                "sha1": "09362c4ff74d201e370faa7b4ed52fb98103ed58",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/com/google/jimfs/jimfs/1.2/jimfs-1.2.jar/com.google.common.jimfs.File.jimple",
+                                "md5": "99ae797fd83019d2bc0dca4deaa05c2a"
+                            },
+                            "transformed-class2": {
+                                "value": "public abstract class com.google.common.jimfs.File extends java.lang.Object\n{\nprivate final int id;\n ..  [abbreviated, 14794 chars]",
+                                "sha1": "5c8885a12103268787d6a0a2f55e3c50ceeda2ba",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/jimfs/jimfs/1.2/jimfs-1.2.jar/com.google.common.jimfs.File.jimple",
+                                "md5": "7ebd3d1958313e2862b358ef7882c694"
+                            }
+                        }
+                    },
+                    {
+                        "class": "com/google/common/jimfs/WatchServiceConfiguration$PollingConfig.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/com/google/jimfs/jimfs/1.2/jimfs-1.2.jar/com.google.common.jimfs.WatchServiceConfiguration$PollingConfig.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/jimfs/jimfs/1.2/jimfs-1.2.jar/com.google.common.jimfs.WatchServiceConfiguration$PollingConfig.jimple",
+                            "transformed-class1": {
+                                "value": "final class com.google.common.jimfs.WatchServiceConfiguration$PollingConfig extends com.google.commo ..  [abbreviated, 3321 chars]",
+                                "sha1": "1963438d8422f8a8d24cc3b7f6861cab449faf1e",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/com/google/jimfs/jimfs/1.2/jimfs-1.2.jar/com.google.common.jimfs.WatchServiceConfiguration$PollingConfig.jimple",
+                                "md5": "01a48b3c24bbf48c70c2ec54e841b63b"
+                            },
+                            "transformed-class2": {
+                                "value": "final class com.google.common.jimfs.WatchServiceConfiguration$PollingConfig extends com.google.commo ..  [abbreviated, 3666 chars]",
+                                "sha1": "4b37d1119a8e7dba45fe51b85aa8a23a8478aa75",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/jimfs/jimfs/1.2/jimfs-1.2.jar/com.google.common.jimfs.WatchServiceConfiguration$PollingConfig.jimple",
+                                "md5": "c23061cc5ce1074a2af5092886ca22bd"
+                            }
+                        }
+                    },
+                    {
+                        "class": "com/google/common/jimfs/PathService.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/com/google/jimfs/jimfs/1.2/jimfs-1.2.jar/com.google.common.jimfs.PathService.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/jimfs/jimfs/1.2/jimfs-1.2.jar/com.google.common.jimfs.PathService.jimple",
+                            "transformed-class1": {
+                                "value": "final class com.google.common.jimfs.PathService extends java.lang.Object implements java.util.Compar ..  [abbreviated, 27086 chars]",
+                                "sha1": "85cb4b3bf1a610590684cc65c9d4cb8743927c3c",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/com/google/jimfs/jimfs/1.2/jimfs-1.2.jar/com.google.common.jimfs.PathService.jimple",
+                                "md5": "6fc1622ba40e753347e27f84caef6d7c"
+                            },
+                            "transformed-class2": {
+                                "value": "final class com.google.common.jimfs.PathService extends java.lang.Object implements java.util.Compar ..  [abbreviated, 27248 chars]",
+                                "sha1": "ba73b96ad5cce9d2f7dc2968f1b3b29d633ac05b",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/jimfs/jimfs/1.2/jimfs-1.2.jar/com.google.common.jimfs.PathService.jimple",
+                                "md5": "bad77cbd5d73117042b37cdfce4b5bf2"
+                            }
+                        }
+                    },
+                    {
+                        "class": "com/google/common/jimfs/PosixAttributeProvider.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/com/google/jimfs/jimfs/1.2/jimfs-1.2.jar/com.google.common.jimfs.PosixAttributeProvider.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/jimfs/jimfs/1.2/jimfs-1.2.jar/com.google.common.jimfs.PosixAttributeProvider.jimple",
+                            "transformed-class1": {
+                                "value": "final class com.google.common.jimfs.PosixAttributeProvider extends com.google.common.jimfs.Attribute ..  [abbreviated, 13907 chars]",
+                                "sha1": "63250d2856b37121b4c7643ed5f7e64798fc627a",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/com/google/jimfs/jimfs/1.2/jimfs-1.2.jar/com.google.common.jimfs.PosixAttributeProvider.jimple",
+                                "md5": "a80f789ef01c8a73dd0f2e87dd765d15"
+                            },
+                            "transformed-class2": {
+                                "value": "final class com.google.common.jimfs.PosixAttributeProvider extends com.google.common.jimfs.Attribute ..  [abbreviated, 15911 chars]",
+                                "sha1": "23e981b1daf60715a53241eab398aaaadf87b9ee",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/jimfs/jimfs/1.2/jimfs-1.2.jar/com.google.common.jimfs.PosixAttributeProvider.jimple",
+                                "md5": "343b054130e93742af0d0329c23afba5"
+                            }
+                        }
+                    },
+                    {
+                        "class": "com/google/common/jimfs/JimfsSecureDirectoryStream.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/com/google/jimfs/jimfs/1.2/jimfs-1.2.jar/com.google.common.jimfs.JimfsSecureDirectoryStream.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/jimfs/jimfs/1.2/jimfs-1.2.jar/com.google.common.jimfs.JimfsSecureDirectoryStream.jimple",
+                            "transformed-class1": {
+                                "value": "final class com.google.common.jimfs.JimfsSecureDirectoryStream extends java.lang.Object implements j ..  [abbreviated, 15989 chars]",
+                                "sha1": "e03ca160288c019932dc154e30e092c13221f898",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/com/google/jimfs/jimfs/1.2/jimfs-1.2.jar/com.google.common.jimfs.JimfsSecureDirectoryStream.jimple",
+                                "md5": "00e57f07dc1048afb46660affb862171"
+                            },
+                            "transformed-class2": {
+                                "value": "final class com.google.common.jimfs.JimfsSecureDirectoryStream extends java.lang.Object implements j ..  [abbreviated, 16345 chars]",
+                                "sha1": "8280517adf112871f45dad42774ab8819b36f2ff",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/jimfs/jimfs/1.2/jimfs-1.2.jar/com.google.common.jimfs.JimfsSecureDirectoryStream.jimple",
+                                "md5": "2ac256d122ffbdd0ed9667e010b65e13"
+                            }
+                        }
+                    },
+                    {
+                        "class": "com/google/common/jimfs/SystemJimfsFileSystemProvider.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/com/google/jimfs/jimfs/1.2/jimfs-1.2.jar/com.google.common.jimfs.SystemJimfsFileSystemProvider.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/jimfs/jimfs/1.2/jimfs-1.2.jar/com.google.common.jimfs.SystemJimfsFileSystemProvider.jimple",
+                            "transformed-class1": {
+                                "value": "public final class com.google.common.jimfs.SystemJimfsFileSystemProvider extends java.nio.file.spi.F ..  [abbreviated, 18766 chars]",
+                                "sha1": "2b9949c1df762ec56997284b4b2dc4d2604897a9",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/com/google/jimfs/jimfs/1.2/jimfs-1.2.jar/com.google.common.jimfs.SystemJimfsFileSystemProvider.jimple",
+                                "md5": "b2ffe6d91adeb3d9332ae1982809681f"
+                            },
+                            "transformed-class2": {
+                                "value": "public final class com.google.common.jimfs.SystemJimfsFileSystemProvider extends java.nio.file.spi.F ..  [abbreviated, 19130 chars]",
+                                "sha1": "a0f73d4f91c3f1627f6f10bd1ce6aa57aae5d967",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/jimfs/jimfs/1.2/jimfs-1.2.jar/com.google.common.jimfs.SystemJimfsFileSystemProvider.jimple",
+                                "md5": "2e529e5363d5f11169a708cf91cc9824"
+                            }
+                        }
+                    },
+                    {
+                        "class": "com/google/common/jimfs/WindowsPathType.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/com/google/jimfs/jimfs/1.2/jimfs-1.2.jar/com.google.common.jimfs.WindowsPathType.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/jimfs/jimfs/1.2/jimfs-1.2.jar/com.google.common.jimfs.WindowsPathType.jimple",
+                            "transformed-class1": {
+                                "value": "final class com.google.common.jimfs.WindowsPathType extends com.google.common.jimfs.PathType\n{\nstati ..  [abbreviated, 13684 chars]",
+                                "sha1": "2291dd9487ca5275e25a8720f36c18b7482aa2a2",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/com/google/jimfs/jimfs/1.2/jimfs-1.2.jar/com.google.common.jimfs.WindowsPathType.jimple",
+                                "md5": "01cfe3300dee9d1165f889d4148819e5"
+                            },
+                            "transformed-class2": {
+                                "value": "final class com.google.common.jimfs.WindowsPathType extends com.google.common.jimfs.PathType\n{\nstati ..  [abbreviated, 13806 chars]",
+                                "sha1": "3524d4294a2786c0be998b71225b2c41e147703d",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/jimfs/jimfs/1.2/jimfs-1.2.jar/com.google.common.jimfs.WindowsPathType.jimple",
+                                "md5": "7ba8c530f3b034f825fa4930bce1d5fd"
+                            }
+                        }
+                    },
+                    {
+                        "class": "com/google/common/jimfs/UserDefinedAttributeProvider$View.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/com/google/jimfs/jimfs/1.2/jimfs-1.2.jar/com.google.common.jimfs.UserDefinedAttributeProvider$View.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/jimfs/jimfs/1.2/jimfs-1.2.jar/com.google.common.jimfs.UserDefinedAttributeProvider$View.jimple",
+                            "transformed-class1": {
+                                "value": "class com.google.common.jimfs.UserDefinedAttributeProvider$View extends com.google.common.jimfs.Abst ..  [abbreviated, 5580 chars]",
+                                "sha1": "8c2417e036d28fa19d20e01f049ff8ffbd805c38",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/com/google/jimfs/jimfs/1.2/jimfs-1.2.jar/com.google.common.jimfs.UserDefinedAttributeProvider$View.jimple",
+                                "md5": "d21ad396214559b58e20f9042ee1541d"
+                            },
+                            "transformed-class2": {
+                                "value": "class com.google.common.jimfs.UserDefinedAttributeProvider$View extends com.google.common.jimfs.Abst ..  [abbreviated, 6032 chars]",
+                                "sha1": "97387ef8f43493745e4bb7f5e7b3e5dd96f563e0",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/jimfs/jimfs/1.2/jimfs-1.2.jar/com.google.common.jimfs.UserDefinedAttributeProvider$View.jimple",
+                                "md5": "5c76694cb0f3a40fb8394b9b77561403"
+                            }
+                        }
+                    },
+                    {
+                        "class": "com/google/common/jimfs/Directory.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/com/google/jimfs/jimfs/1.2/jimfs-1.2.jar/com.google.common.jimfs.Directory.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/jimfs/jimfs/1.2/jimfs-1.2.jar/com.google.common.jimfs.Directory.jimple",
+                            "transformed-class1": {
+                                "value": "final class com.google.common.jimfs.Directory extends com.google.common.jimfs.File implements java.l ..  [abbreviated, 22061 chars]",
+                                "sha1": "bf66729f6205d2c8e120f6f2bf247c3569866da6",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/com/google/jimfs/jimfs/1.2/jimfs-1.2.jar/com.google.common.jimfs.Directory.jimple",
+                                "md5": "a8e241a95844ab394aa9b54ecbefdb6c"
+                            },
+                            "transformed-class2": {
+                                "value": "final class com.google.common.jimfs.Directory extends com.google.common.jimfs.File implements java.l ..  [abbreviated, 23298 chars]",
+                                "sha1": "3860c1e63e064e015ce0ad1ba669590fb31565f9",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/jimfs/jimfs/1.2/jimfs-1.2.jar/com.google.common.jimfs.Directory.jimple",
+                                "md5": "069f014c77d811bed09ae67725c22a8b"
+                            }
+                        }
+                    }
+                ],
+                "errors": []
+            }
+        }]
+    }

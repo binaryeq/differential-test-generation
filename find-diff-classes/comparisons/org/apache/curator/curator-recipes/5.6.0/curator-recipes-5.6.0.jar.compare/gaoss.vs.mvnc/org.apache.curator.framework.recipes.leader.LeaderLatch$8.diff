@@ -1,0 +1,40 @@
+3d2
+< static final int[] $SwitchMap$org$apache$curator$framework$recipes$leader$LeaderLatch$CloseMode;
+7,10d5
+< org.apache.curator.framework.recipes.leader.LeaderLatch$CloseMode[] v15;
+< java.lang.NoSuchFieldError v10, v14, v21, v25, v6;
+< int[] v11, v17, v18, v2, v22, v3, v7;
+< int v1, v13, v16, v20, v24, v5, v9;
+12c7,9
+< org.apache.curator.framework.recipes.leader.LeaderLatch$CloseMode v19, v23;
+---
+> java.lang.NoSuchFieldError v10, v14, v6;
+> int[] v11, v2, v3, v7;
+> int v1, v13, v5, v9;
+46,68d42
+< v15 = staticinvoke <org.apache.curator.framework.recipes.leader.LeaderLatch$CloseMode: org.apache.curator.framework.recipes.leader.LeaderLatch$CloseMode[] values()>();
+< v16 = lengthof v15;
+< v17 = newarray (int)[v16];
+< <org.apache.curator.framework.recipes.leader.LeaderLatch$8: int[] $SwitchMap$org$apache$curator$framework$recipes$leader$LeaderLatch$CloseMode> = v17;
+< label11:
+< v18 = <org.apache.curator.framework.recipes.leader.LeaderLatch$8: int[] $SwitchMap$org$apache$curator$framework$recipes$leader$LeaderLatch$CloseMode>;
+< v19 = <org.apache.curator.framework.recipes.leader.LeaderLatch$CloseMode: org.apache.curator.framework.recipes.leader.LeaderLatch$CloseMode NOTIFY_LEADER>;
+< v20 = virtualinvoke v19.<org.apache.curator.framework.recipes.leader.LeaderLatch$CloseMode: int ordinal()>();
+< v18[v20] = 1;
+< label12:
+< goto label14;
+< label13:
+< v21 := @caughtexception;
+< label14:
+< v22 = <org.apache.curator.framework.recipes.leader.LeaderLatch$8: int[] $SwitchMap$org$apache$curator$framework$recipes$leader$LeaderLatch$CloseMode>;
+< v23 = <org.apache.curator.framework.recipes.leader.LeaderLatch$CloseMode: org.apache.curator.framework.recipes.leader.LeaderLatch$CloseMode SILENT>;
+< v24 = virtualinvoke v23.<org.apache.curator.framework.recipes.leader.LeaderLatch$CloseMode: int ordinal()>();
+< v22[v24] = 2;
+< label15:
+< goto label17;
+< label16:
+< v25 := @caughtexception;
+< label17:
+73,74d46
+< catch java.lang.NoSuchFieldError from label11 to label12 with label13;
+< catch java.lang.NoSuchFieldError from label14 to label15 with label16;

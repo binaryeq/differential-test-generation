@@ -1,0 +1,33 @@
+269c269
+< java.lang.Throwable v19, v20;
+---
+> java.lang.Throwable v18, v19;
+275c275
+< int v10, v13, v17, v18, v6, v8;
+---
+> int v10, v13, v17, v6, v8;
+315,316d314
+< v18 = v6;
+< label6:
+318c316
+< label7:
+---
+> label6:
+320c318,321
+< return v18;
+---
+> return v6;
+> label7:
+> v18 := @caughtexception;
+> throw v18;
+324,327c325,326
+< label9:
+< v20 := @caughtexception;
+< throw v20;
+< catch java.lang.Throwable from label2 to label3 with label8;
+---
+> catch java.lang.Throwable from label2 to label3 with label7;
+> catch java.lang.Throwable from label1 to label4 with label8;
+329,330d327
+< catch java.lang.Throwable from label1 to label4 with label9;
+< catch java.lang.Throwable from label5 to label7 with label9;

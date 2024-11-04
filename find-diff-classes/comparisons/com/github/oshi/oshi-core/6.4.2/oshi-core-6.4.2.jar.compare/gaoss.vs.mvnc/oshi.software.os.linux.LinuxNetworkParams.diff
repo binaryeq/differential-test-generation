@@ -1,0 +1,101 @@
+16c16
+< java.lang.Throwable v21, v22, v23;
+---
+> java.lang.Throwable v20, v21, v22;
+20c20
+< java.lang.String v14, v17, v18, v19, v20, v3, v6;
+---
+> java.lang.String v14, v17, v18, v19, v3, v6;
+37c37
+< goto label07;
+---
+> goto label06;
+44d43
+< if v1 == null goto label06;
+46d44
+< label06:
+48c46
+< label07:
+---
+> label06:
+51c49
+< label08:
+---
+> label07:
+54c52
+< if v9 <= 0 goto label11;
+---
+> if v9 <= 0 goto label10;
+57c55
+< if v11 == 0 goto label09;
+---
+> if v11 == 0 goto label08;
+62c60
+< label09:
+---
+> label08:
+64c62
+< label10:
+---
+> label09:
+67c65
+< label11:
+---
+> label10:
+71c69
+< label12:
+---
+> label11:
+73c71
+< if v17 != null goto label13;
+---
+> if v17 != null goto label12;
+75,76c73,74
+< goto label14;
+< label13:
+---
+> goto label13;
+> label12:
+78a77,78
+> label13:
+> virtualinvoke v15.<oshi.jna.platform.unix.CLibrary$Addrinfo: void close()>();
+80c80
+< v20 = v18;
+---
+> virtualinvoke v7.<oshi.jna.ByRef$CloseablePointerByReference: void close()>();
+82c82,83
+< virtualinvoke v15.<oshi.jna.platform.unix.CLibrary$Addrinfo: void close()>();
+---
+> virtualinvoke v1.<oshi.jna.platform.unix.CLibrary$Addrinfo: void close()>();
+> return v18;
+84c85,86
+< virtualinvoke v7.<oshi.jna.ByRef$CloseablePointerByReference: void close()>();
+---
+> v20 := @caughtexception;
+> throw v20;
+86,88d87
+< virtualinvoke v1.<oshi.jna.platform.unix.CLibrary$Addrinfo: void close()>();
+< return v20;
+< label18:
+91c90
+< label19:
+---
+> label18:
+94,96d92
+< label20:
+< v23 := @caughtexception;
+< throw v23;
+98,103c94,99
+< catch java.lang.Throwable from label12 to label15 with label18;
+< catch java.lang.Throwable from label08 to label09 with label19;
+< catch java.lang.Throwable from label11 to label16 with label19;
+< catch java.lang.Throwable from label01 to label05 with label20;
+< catch java.lang.Throwable from label07 to label10 with label20;
+< catch java.lang.Throwable from label11 to label17 with label20;
+---
+> catch java.lang.Throwable from label11 to label13 with label16;
+> catch java.lang.Throwable from label07 to label08 with label17;
+> catch java.lang.Throwable from label10 to label14 with label17;
+> catch java.lang.Throwable from label01 to label05 with label18;
+> catch java.lang.Throwable from label06 to label09 with label18;
+> catch java.lang.Throwable from label10 to label15 with label18;

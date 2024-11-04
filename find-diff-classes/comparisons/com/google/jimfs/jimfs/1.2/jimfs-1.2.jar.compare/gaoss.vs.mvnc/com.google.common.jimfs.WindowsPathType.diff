@@ -1,0 +1,122 @@
+21c21
+< java.lang.Iterable v28;
+---
+> java.lang.Iterable v29;
+25,27c25,27
+< com.google.common.jimfs.PathType$ParseResult v26;
+< java.lang.String v1, v18, v2, v8;
+< com.google.common.base.Splitter v27;
+---
+> com.google.common.jimfs.PathType$ParseResult v27;
+> java.lang.String v1, v18, v2, v26, v8;
+> com.google.common.base.Splitter v28;
+29a30
+> java.lang.StringBuilder v30;
+71a73
+> specialinvoke v30.<java.lang.StringBuilder: void <init>(int)>(16);
+93c95,96
+< v8 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v8) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001\\");
+---
+> v26 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v8);
+> v8 = virtualinvoke v26.<java.lang.String: java.lang.String concat(java.lang.String)>("\\");
+95,99c98,102
+< v26 = new com.google.common.jimfs.PathType$ParseResult;
+< v27 = virtualinvoke v0.<com.google.common.jimfs.WindowsPathType: com.google.common.base.Splitter splitter()>();
+< v28 = virtualinvoke v27.<com.google.common.base.Splitter: java.lang.Iterable split(java.lang.CharSequence)>(v2);
+< specialinvoke v26.<com.google.common.jimfs.PathType$ParseResult: void <init>(java.lang.String,java.lang.Iterable)>(v8, v28);
+< return v26;
+---
+> v27 = new com.google.common.jimfs.PathType$ParseResult;
+> v28 = virtualinvoke v0.<com.google.common.jimfs.WindowsPathType: com.google.common.base.Splitter splitter()>();
+> v29 = virtualinvoke v28.<com.google.common.base.Splitter: java.lang.Iterable split(java.lang.CharSequence)>(v2);
+> specialinvoke v27.<com.google.common.jimfs.PathType$ParseResult: void <init>(java.lang.String,java.lang.Iterable)>(v8, v29);
+> return v27;
+210,216c213,219
+< int v14, v15;
+< java.lang.String v1, v17, v5, v6;
+< boolean v11, v3, v4, v9;
+< java.util.Iterator v8;
+< char v16;
+< java.lang.Object v10, v13;
+< java.lang.StringBuilder v12, v7;
+---
+> int v19, v20, v9;
+> java.lang.String v1, v10, v11, v22, v5, v6, v7, v8;
+> boolean v14, v16, v3, v4;
+> java.util.Iterator v13;
+> char v21;
+> java.lang.Object v15, v18;
+> java.lang.StringBuilder v12, v17;
+224c227
+< goto label2;
+---
+> goto label4;
+226,227c229,235
+< v6 = virtualinvoke v1.<java.lang.String: java.lang.String replace(char,char)>(92, 47);
+< v5 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v6) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("/\u0001");
+---
+> v6 = "/";
+> v7 = virtualinvoke v1.<java.lang.String: java.lang.String replace(char,char)>(92, 47);
+> v8 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v7);
+> v9 = virtualinvoke v8.<java.lang.String: int length()>();
+> if v9 == 0 goto label2;
+> v10 = virtualinvoke v6.<java.lang.String: java.lang.String concat(java.lang.String)>(v8);
+> goto label3;
+229,236c237,239
+< v7 = new java.lang.StringBuilder;
+< specialinvoke v7.<java.lang.StringBuilder: void <init>()>();
+< virtualinvoke v7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(v5);
+< v8 = interfaceinvoke v2.<java.lang.Iterable: java.util.Iterator iterator()>();
+< v9 = interfaceinvoke v8.<java.util.Iterator: boolean hasNext()>();
+< if v9 == 0 goto label4;
+< v10 = interfaceinvoke v8.<java.util.Iterator: java.lang.Object next()>();
+< virtualinvoke v7.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(v10);
+---
+> v11 = new java.lang.String;
+> v10 = v11;
+> specialinvoke v11.<java.lang.String: void <init>(java.lang.String)>("/");
+238,243c241
+< v11 = interfaceinvoke v8.<java.util.Iterator: boolean hasNext()>();
+< if v11 == 0 goto label4;
+< v12 = virtualinvoke v7.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(47);
+< v13 = interfaceinvoke v8.<java.util.Iterator: java.lang.Object next()>();
+< virtualinvoke v12.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(v13);
+< goto label3;
+---
+> v5 = v10;
+245,250c243,250
+< if v3 == 0 goto label5;
+< v14 = virtualinvoke v7.<java.lang.StringBuilder: int length()>();
+< v15 = v14 - 1;
+< v16 = virtualinvoke v7.<java.lang.StringBuilder: char charAt(int)>(v15);
+< if v16 == 47 goto label5;
+< virtualinvoke v7.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(47);
+---
+> v12 = new java.lang.StringBuilder;
+> specialinvoke v12.<java.lang.StringBuilder: void <init>()>();
+> virtualinvoke v12.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(v5);
+> v13 = interfaceinvoke v2.<java.lang.Iterable: java.util.Iterator iterator()>();
+> v14 = interfaceinvoke v13.<java.util.Iterator: boolean hasNext()>();
+> if v14 == 0 goto label6;
+> v15 = interfaceinvoke v13.<java.util.Iterator: java.lang.Object next()>();
+> virtualinvoke v12.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(v15);
+252,253c252,267
+< v17 = virtualinvoke v7.<java.lang.StringBuilder: java.lang.String toString()>();
+< return v17;
+---
+> v16 = interfaceinvoke v13.<java.util.Iterator: boolean hasNext()>();
+> if v16 == 0 goto label6;
+> v17 = virtualinvoke v12.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(47);
+> v18 = interfaceinvoke v13.<java.util.Iterator: java.lang.Object next()>();
+> virtualinvoke v17.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(v18);
+> goto label5;
+> label6:
+> if v3 == 0 goto label7;
+> v19 = virtualinvoke v12.<java.lang.StringBuilder: int length()>();
+> v20 = v19 - 1;
+> v21 = virtualinvoke v12.<java.lang.StringBuilder: char charAt(int)>(v20);
+> if v21 == 47 goto label7;
+> virtualinvoke v12.<java.lang.StringBuilder: java.lang.StringBuilder append(char)>(47);
+> label7:
+> v22 = virtualinvoke v12.<java.lang.StringBuilder: java.lang.String toString()>();
+> return v22;

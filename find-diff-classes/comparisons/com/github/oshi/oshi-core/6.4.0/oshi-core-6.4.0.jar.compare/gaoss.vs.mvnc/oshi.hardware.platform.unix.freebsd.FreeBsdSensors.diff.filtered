@@ -1,0 +1,25 @@
+20c20
+< java.lang.Throwable v15, v18;
+---
+> java.lang.Throwable v15, v17;
+27c27
+< double v13, v14, v16, v17, v3;
+---
+> double v13, v14, v16, v3;
+68,69d67
+< v17 = v16;
+< label8:
+71,74c69,72
+< return v17;
+< label9:
+< v18 := @caughtexception;
+< throw v18;
+---
+> return v16;
+> label8:
+> v17 := @caughtexception;
+> throw v17;
+76c74
+< catch java.lang.Throwable from label1 to label8 with label9;
+---
+> catch java.lang.Throwable from label1 to label7 with label8;

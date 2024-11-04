@@ -1,0 +1,62 @@
+24c24
+< java.lang.Throwable v8, v9;
+---
+> java.lang.Throwable v8;
+29c29
+< java.nio.ByteBuffer v1, v10;
+---
+> java.nio.ByteBuffer v1, v9;
+45c45
+< goto label8;
+---
+> goto label4;
+48,55d47
+< label4:
+< virtualinvoke v3.<java.io.OutputStream: void close()>();
+< label5:
+< goto label7;
+< label6:
+< v9 := @caughtexception;
+< virtualinvoke v8.<java.lang.Throwable: void addSuppressed(java.lang.Throwable)>(v9);
+< label7:
+57,59c49,51
+< label8:
+< v10 = virtualinvoke v2.<org.apache.avro.util.NonCopyingByteArrayOutputStream: java.nio.ByteBuffer asByteBuffer()>();
+< return v10;
+---
+> label4:
+> v9 = virtualinvoke v2.<org.apache.avro.util.NonCopyingByteArrayOutputStream: java.nio.ByteBuffer asByteBuffer()>();
+> return v9;
+61d52
+< catch java.lang.Throwable from label4 to label5 with label6;
+65c56
+< java.lang.Throwable v8, v9;
+---
+> java.lang.Throwable v8;
+69c60
+< java.nio.ByteBuffer v1, v10;
+---
+> java.nio.ByteBuffer v1, v9;
+88c79
+< goto label8;
+---
+> goto label4;
+91,98d81
+< label4:
+< virtualinvoke v7.<java.io.InputStream: void close()>();
+< label5:
+< goto label7;
+< label6:
+< v9 := @caughtexception;
+< virtualinvoke v8.<java.lang.Throwable: void addSuppressed(java.lang.Throwable)>(v9);
+< label7:
+100,102c83,85
+< label8:
+< v10 = virtualinvoke v2.<org.apache.avro.util.NonCopyingByteArrayOutputStream: java.nio.ByteBuffer asByteBuffer()>();
+< return v10;
+---
+> label4:
+> v9 = virtualinvoke v2.<org.apache.avro.util.NonCopyingByteArrayOutputStream: java.nio.ByteBuffer asByteBuffer()>();
+> return v9;
+104d86
+< catch java.lang.Throwable from label4 to label5 with label6;

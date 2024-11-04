@@ -1,0 +1,18 @@
+19a20
+> int v10, v11;
+22c23,24
+< java.lang.String v8;
+---
+> java.lang.StringBuilder v13;
+> java.lang.String v12, v8, v9;
+35,36c37,43
+< v8 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.reflect.Constructor)>(v7) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001 failed.");
+< specialinvoke v6.<java.lang.RuntimeException: void <init>(java.lang.String,java.lang.Throwable)>(v8, v5);
+---
+> v8 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v7);
+> v9 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v8);
+> v10 = virtualinvoke v9.<java.lang.String: int length()>();
+> v11 = 8 + v10;
+> specialinvoke v13.<java.lang.StringBuilder: void <init>(int)>(v11);
+> v12 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v8) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001 failed.");
+> specialinvoke v6.<java.lang.RuntimeException: void <init>(java.lang.String,java.lang.Throwable)>(v12, v5);

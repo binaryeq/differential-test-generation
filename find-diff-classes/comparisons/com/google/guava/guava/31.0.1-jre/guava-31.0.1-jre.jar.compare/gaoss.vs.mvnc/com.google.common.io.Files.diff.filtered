@@ -1,0 +1,183 @@
+245c245
+< java.lang.IllegalStateException v8;
+---
+> java.lang.IllegalStateException v11;
+246a247,249
+> int v13, v14, v16, v17, v4, v7, v8;
+> java.lang.String v1, v12, v15, v18, v3, v6, v9;
+> boolean v10;
+248,250c251
+< int v4;
+< java.lang.String v1, v3, v6, v9;
+< boolean v7;
+---
+> java.lang.StringBuilder v19, v20, v21;
+254a256
+> specialinvoke v19.<java.lang.StringBuilder: void <init>(int)>(21);
+260,263c262,269
+< v6 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,int)>(v3, v4) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001\u0001");
+< specialinvoke v5.<java.io.File: void <init>(java.io.File,java.lang.String)>(v0, v6);
+< v7 = virtualinvoke v5.<java.io.File: boolean mkdir()>();
+< if v7 == 0 goto label2;
+---
+> v6 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v3);
+> v7 = virtualinvoke v6.<java.lang.String: int length()>();
+> v8 = 11 + v7;
+> specialinvoke v21.<java.lang.StringBuilder: void <init>(int)>(v8);
+> v9 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,int)>(v3, v4) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001\u0001");
+> specialinvoke v5.<java.io.File: void <init>(java.io.File,java.lang.String)>(v0, v9);
+> v10 = virtualinvoke v5.<java.io.File: boolean mkdir()>();
+> if v10 == 0 goto label2;
+269,272c275,285
+< v8 = new java.lang.IllegalStateException;
+< v9 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,java.lang.String)>(v3, v3) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Failed to create directory within 10000 attempts (tried \u00010 to \u00019999)");
+< specialinvoke v8.<java.lang.IllegalStateException: void <init>(java.lang.String)>(v9);
+< throw v8;
+---
+> v11 = new java.lang.IllegalStateException;
+> v12 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v3);
+> v13 = virtualinvoke v12.<java.lang.String: int length()>();
+> v14 = 66 + v13;
+> v15 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v3);
+> v16 = virtualinvoke v15.<java.lang.String: int length()>();
+> v17 = v14 + v16;
+> specialinvoke v20.<java.lang.StringBuilder: void <init>(int)>(v17);
+> v18 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,java.lang.String)>(v3, v3) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Failed to create directory within 10000 attempts (tried \u00010 to \u00019999)");
+> specialinvoke v11.<java.lang.IllegalStateException: void <init>(java.lang.String)>(v18);
+> throw v11;
+278d290
+< java.lang.String v5;
+279a292,294
+> int v7, v8;
+> java.lang.StringBuilder v10;
+> java.lang.String v5, v6, v9;
+289,290c304,310
+< v5 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.io.File)>(v0) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Unable to update modification time of \u0001");
+< specialinvoke v4.<java.io.IOException: void <init>(java.lang.String)>(v5);
+---
+> v5 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v0);
+> v6 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v5);
+> v7 = virtualinvoke v6.<java.lang.String: int length()>();
+> v8 = 38 + v7;
+> specialinvoke v10.<java.lang.StringBuilder: void <init>(int)>(v8);
+> v9 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v5) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Unable to update modification time of \u0001");
+> specialinvoke v4.<java.io.IOException: void <init>(java.lang.String)>(v9);
+298d317
+< java.lang.String v5;
+299a319,321
+> int v7, v8;
+> java.lang.StringBuilder v10;
+> java.lang.String v5, v6, v9;
+312,313c334,340
+< v5 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.io.File)>(v0) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Unable to create parent directories of \u0001");
+< specialinvoke v4.<java.io.IOException: void <init>(java.lang.String)>(v5);
+---
+> v5 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v0);
+> v6 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v5);
+> v7 = virtualinvoke v6.<java.lang.String: int length()>();
+> v8 = 39 + v7;
+> specialinvoke v10.<java.lang.StringBuilder: void <init>(int)>(v8);
+> v9 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v5) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Unable to create parent directories of \u0001");
+> specialinvoke v4.<java.io.IOException: void <init>(java.lang.String)>(v9);
+320,322c347,348
+< java.io.IOException v7, v9;
+< java.io.File v0, v1;
+< java.lang.String v10, v8;
+---
+> int v10, v11, v16, v17;
+> java.lang.String v12, v14, v15, v18, v8, v9;
+323a350,352
+> java.io.IOException v13, v7;
+> java.io.File v0, v1;
+> java.lang.StringBuilder v19, v20;
+344,345c373,379
+< v8 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.io.File)>(v1) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Unable to delete \u0001");
+< specialinvoke v7.<java.io.IOException: void <init>(java.lang.String)>(v8);
+---
+> v8 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v1);
+> v9 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v8);
+> v10 = virtualinvoke v9.<java.lang.String: int length()>();
+> v11 = 17 + v10;
+> specialinvoke v20.<java.lang.StringBuilder: void <init>(int)>(v11);
+> v12 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v8) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Unable to delete \u0001");
+> specialinvoke v7.<java.io.IOException: void <init>(java.lang.String)>(v12);
+348,351c382,390
+< v9 = new java.io.IOException;
+< v10 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.io.File)>(v0) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Unable to delete \u0001");
+< specialinvoke v9.<java.io.IOException: void <init>(java.lang.String)>(v10);
+< throw v9;
+---
+> v13 = new java.io.IOException;
+> v14 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v0);
+> v15 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v14);
+> v16 = virtualinvoke v15.<java.lang.String: int length()>();
+> v17 = 17 + v16;
+> specialinvoke v19.<java.lang.StringBuilder: void <init>(int)>(v17);
+> v18 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v14) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Unable to delete \u0001");
+> specialinvoke v13.<java.io.IOException: void <init>(java.lang.String)>(v18);
+> throw v13;
+515,516d553
+< java.lang.Iterable v4;
+< java.util.ArrayList v5;
+518,519d554
+< int v1, v10, v13, v14, v15, v18, v19;
+< java.lang.String v0, v21, v25;
+521c556,561
+< boolean v11, v12, v17, v23, v24, v26, v7;
+---
+> boolean v11, v12, v17, v28, v29, v31, v7;
+> com.google.common.base.Joiner v20;
+> java.lang.Iterable v4;
+> java.util.ArrayList v5;
+> int v1, v10, v13, v14, v15, v18, v19, v25;
+> java.lang.String v0, v21, v23, v24, v26, v27, v30;
+525d564
+< com.google.common.base.Joiner v20;
+588,589c627,633
+< if v22 != 47 goto label10;
+< v21 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v21) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("/\u0001");
+---
+> if v22 != 47 goto label12;
+> v23 = "/";
+> v24 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v21);
+> v25 = virtualinvoke v24.<java.lang.String: int length()>();
+> if v25 == 0 goto label10;
+> v26 = virtualinvoke v23.<java.lang.String: java.lang.String concat(java.lang.String)>(v24);
+> goto label11;
+591,594c635,637
+< v23 = virtualinvoke v21.<java.lang.String: boolean startsWith(java.lang.String)>("/../");
+< if v23 == 0 goto label11;
+< v21 = virtualinvoke v21.<java.lang.String: java.lang.String substring(int)>(3);
+< goto label10;
+---
+> v27 = new java.lang.String;
+> v26 = v27;
+> specialinvoke v27.<java.lang.String: void <init>(java.lang.String)>("/");
+596,599c639
+< v24 = virtualinvoke v21.<java.lang.String: boolean equals(java.lang.Object)>("/..");
+< if v24 == 0 goto label12;
+< v21 = "/";
+< goto label13;
+---
+> v21 = v26;
+601,604c641,644
+< v25 = "";
+< v26 = virtualinvoke v25.<java.lang.String: boolean equals(java.lang.Object)>(v21);
+< if v26 == 0 goto label13;
+< v21 = ".";
+---
+> v28 = virtualinvoke v21.<java.lang.String: boolean startsWith(java.lang.String)>("/../");
+> if v28 == 0 goto label13;
+> v21 = virtualinvoke v21.<java.lang.String: java.lang.String substring(int)>(3);
+> goto label12;
+605a646,655
+> v29 = virtualinvoke v21.<java.lang.String: boolean equals(java.lang.Object)>("/..");
+> if v29 == 0 goto label14;
+> v21 = "/";
+> goto label15;
+> label14:
+> v30 = "";
+> v31 = virtualinvoke v30.<java.lang.String: boolean equals(java.lang.Object)>(v21);
+> if v31 == 0 goto label15;
+> v21 = ".";
+> label15:

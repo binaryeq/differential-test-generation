@@ -1,0 +1,36 @@
+1c1
+< class org.codehaus.groovy.transform.sc.transformers.ConstructorCallTransformer$MapStyleConstructorCall extends org.codehaus.groovy.classgen.BytecodeExpression implements org.objectweb.asm.Opcodes
+---
+> class org.codehaus.groovy.transform.sc.transformers.ConstructorCallTransformer$MapStyleConstructorCall extends org.codehaus.groovy.classgen.BytecodeExpression implements groovyjarjarasm.asm.Opcodes
+102c102
+< public void visit(org.objectweb.asm.MethodVisitor)
+---
+> public void visit(groovyjarjarasm.asm.MethodVisitor)
+104d103
+< org.objectweb.asm.MethodVisitor v1;
+106a106
+> groovyjarjarasm.asm.MethodVisitor v1;
+127c127
+< v1 := @parameter0: org.objectweb.asm.MethodVisitor;
+---
+> v1 := @parameter0: groovyjarjarasm.asm.MethodVisitor;
+136,137c136,137
+< virtualinvoke v1.<org.objectweb.asm.MethodVisitor: void visitTypeInsn(int,java.lang.String)>(187, v9);
+< virtualinvoke v1.<org.objectweb.asm.MethodVisitor: void visitInsn(int)>(89);
+---
+> virtualinvoke v1.<groovyjarjarasm.asm.MethodVisitor: void visitTypeInsn(int,java.lang.String)>(187, v9);
+> virtualinvoke v1.<groovyjarjarasm.asm.MethodVisitor: void visitInsn(int)>(89);
+148c148
+< virtualinvoke v1.<org.objectweb.asm.MethodVisitor: void visitVarInsn(int,int)>(25, 0);
+---
+> virtualinvoke v1.<groovyjarjarasm.asm.MethodVisitor: void visitVarInsn(int,int)>(25, 0);
+159,160c159,160
+< virtualinvoke v1.<org.objectweb.asm.MethodVisitor: void visitMethodInsn(int,java.lang.String,java.lang.String,java.lang.String,boolean)>(183, v9, "<init>", v10, 0);
+< virtualinvoke v1.<org.objectweb.asm.MethodVisitor: void visitVarInsn(int,int)>(58, v7);
+---
+> virtualinvoke v1.<groovyjarjarasm.asm.MethodVisitor: void visitMethodInsn(int,java.lang.String,java.lang.String,java.lang.String,boolean)>(183, v9, "<init>", v10, 0);
+> virtualinvoke v1.<groovyjarjarasm.asm.MethodVisitor: void visitVarInsn(int,int)>(58, v7);
+189c189
+< virtualinvoke v1.<org.objectweb.asm.MethodVisitor: void visitVarInsn(int,int)>(25, v7);
+---
+> virtualinvoke v1.<groovyjarjarasm.asm.MethodVisitor: void visitVarInsn(int,int)>(25, v7);

@@ -1,0 +1,103 @@
+45d44
+< antlr.collections.AST v6;
+58a58
+> groovyjarjarantlr.collections.AST v6;
+66c66
+< v6 = virtualinvoke v4.<org.codehaus.groovy.antlr.java.JavaRecognizer: antlr.collections.AST getAST()>();
+---
+> v6 = virtualinvoke v4.<org.codehaus.groovy.antlr.java.JavaRecognizer: groovyjarjarantlr.collections.AST getAST()>();
+83c83
+< interfaceinvoke v16.<org.codehaus.groovy.antlr.AntlrASTProcessor: antlr.collections.AST process(antlr.collections.AST)>(v6);
+---
+> interfaceinvoke v16.<org.codehaus.groovy.antlr.AntlrASTProcessor: groovyjarjarantlr.collections.AST process(groovyjarjarantlr.collections.AST)>(v6);
+92c92
+< staticinvoke <org.codehaus.groovy.antlr.java.Java2GroovyProcessor: void modifyJavaASTintoGroovyAST(java.lang.String[],antlr.collections.AST)>(v5, v6);
+---
+> staticinvoke <org.codehaus.groovy.antlr.java.Java2GroovyProcessor: void modifyJavaASTintoGroovyAST(java.lang.String[],groovyjarjarantlr.collections.AST)>(v5, v6);
+94c94
+< staticinvoke <org.codehaus.groovy.antlr.java.Java2GroovyProcessor: void groovifyFatJavaLikeGroovyAST(antlr.collections.AST,java.lang.String[])>(v6, v20);
+---
+> staticinvoke <org.codehaus.groovy.antlr.java.Java2GroovyProcessor: void groovifyFatJavaLikeGroovyAST(groovyjarjarantlr.collections.AST,java.lang.String[])>(v6, v20);
+103c103
+< interfaceinvoke v24.<org.codehaus.groovy.antlr.AntlrASTProcessor: antlr.collections.AST process(antlr.collections.AST)>(v6);
+---
+> interfaceinvoke v24.<org.codehaus.groovy.antlr.AntlrASTProcessor: groovyjarjarantlr.collections.AST process(groovyjarjarantlr.collections.AST)>(v6);
+115c115
+< private static void groovifyFatJavaLikeGroovyAST(antlr.collections.AST, java.lang.String[])
+---
+> private static void groovifyFatJavaLikeGroovyAST(groovyjarjarantlr.collections.AST, java.lang.String[])
+117d116
+< antlr.collections.AST v0;
+121c120,121
+< v0 := @parameter0: antlr.collections.AST;
+---
+> groovyjarjarantlr.collections.AST v0;
+> v0 := @parameter0: groovyjarjarantlr.collections.AST;
+127c127
+< interfaceinvoke v3.<org.codehaus.groovy.antlr.AntlrASTProcessor: antlr.collections.AST process(antlr.collections.AST)>(v0);
+---
+> interfaceinvoke v3.<org.codehaus.groovy.antlr.AntlrASTProcessor: groovyjarjarantlr.collections.AST process(groovyjarjarantlr.collections.AST)>(v0);
+130c130
+< private static void modifyJavaASTintoGroovyAST(java.lang.String[], antlr.collections.AST)
+---
+> private static void modifyJavaASTintoGroovyAST(java.lang.String[], groovyjarjarantlr.collections.AST)
+132d131
+< antlr.collections.AST v1;
+136a136
+> groovyjarjarantlr.collections.AST v1;
+138c138
+< v1 := @parameter1: antlr.collections.AST;
+---
+> v1 := @parameter1: groovyjarjarantlr.collections.AST;
+143c143
+< interfaceinvoke v3.<org.codehaus.groovy.antlr.AntlrASTProcessor: antlr.collections.AST process(antlr.collections.AST)>(v1);
+---
+> interfaceinvoke v3.<org.codehaus.groovy.antlr.AntlrASTProcessor: groovyjarjarantlr.collections.AST process(groovyjarjarantlr.collections.AST)>(v1);
+148c148
+< interfaceinvoke v5.<org.codehaus.groovy.antlr.AntlrASTProcessor: antlr.collections.AST process(antlr.collections.AST)>(v1);
+---
+> interfaceinvoke v5.<org.codehaus.groovy.antlr.AntlrASTProcessor: groovyjarjarantlr.collections.AST process(groovyjarjarantlr.collections.AST)>(v1);
+168c168
+< virtualinvoke v2.<org.codehaus.groovy.antlr.UnicodeEscapingReader: void setLexer(antlr.CharScanner)>(v4);
+---
+> virtualinvoke v2.<org.codehaus.groovy.antlr.UnicodeEscapingReader: void setLexer(groovyjarjarantlr.CharScanner)>(v4);
+175d174
+< antlr.collections.AST v3;
+183a183
+> groovyjarjarantlr.collections.AST v3;
+188,189c188,189
+< v3 = virtualinvoke v1.<org.codehaus.groovy.antlr.java.JavaRecognizer: antlr.collections.AST getAST()>();
+< staticinvoke <org.codehaus.groovy.antlr.java.Java2GroovyProcessor: void modifyJavaASTintoGroovyAST(java.lang.String[],antlr.collections.AST)>(v2, v3);
+---
+> v3 = virtualinvoke v1.<org.codehaus.groovy.antlr.java.JavaRecognizer: groovyjarjarantlr.collections.AST getAST()>();
+> staticinvoke <org.codehaus.groovy.antlr.java.Java2GroovyProcessor: void modifyJavaASTintoGroovyAST(java.lang.String[],groovyjarjarantlr.collections.AST)>(v2, v3);
+191c191
+< staticinvoke <org.codehaus.groovy.antlr.java.Java2GroovyProcessor: void groovifyFatJavaLikeGroovyAST(antlr.collections.AST,java.lang.String[])>(v3, v4);
+---
+> staticinvoke <org.codehaus.groovy.antlr.java.Java2GroovyProcessor: void groovifyFatJavaLikeGroovyAST(groovyjarjarantlr.collections.AST,java.lang.String[])>(v3, v4);
+200c200
+< interfaceinvoke v8.<org.codehaus.groovy.antlr.AntlrASTProcessor: antlr.collections.AST process(antlr.collections.AST)>(v3);
+---
+> interfaceinvoke v8.<org.codehaus.groovy.antlr.AntlrASTProcessor: groovyjarjarantlr.collections.AST process(groovyjarjarantlr.collections.AST)>(v3);
+208d207
+< antlr.collections.AST v3;
+216a216
+> groovyjarjarantlr.collections.AST v3;
+221,222c221,222
+< v3 = virtualinvoke v1.<org.codehaus.groovy.antlr.java.JavaRecognizer: antlr.collections.AST getAST()>();
+< staticinvoke <org.codehaus.groovy.antlr.java.Java2GroovyProcessor: void modifyJavaASTintoGroovyAST(java.lang.String[],antlr.collections.AST)>(v2, v3);
+---
+> v3 = virtualinvoke v1.<org.codehaus.groovy.antlr.java.JavaRecognizer: groovyjarjarantlr.collections.AST getAST()>();
+> staticinvoke <org.codehaus.groovy.antlr.java.Java2GroovyProcessor: void modifyJavaASTintoGroovyAST(java.lang.String[],groovyjarjarantlr.collections.AST)>(v2, v3);
+224c224
+< staticinvoke <org.codehaus.groovy.antlr.java.Java2GroovyProcessor: void groovifyFatJavaLikeGroovyAST(antlr.collections.AST,java.lang.String[])>(v3, v4);
+---
+> staticinvoke <org.codehaus.groovy.antlr.java.Java2GroovyProcessor: void groovifyFatJavaLikeGroovyAST(groovyjarjarantlr.collections.AST,java.lang.String[])>(v3, v4);
+233c233
+< interfaceinvoke v8.<org.codehaus.groovy.antlr.AntlrASTProcessor: antlr.collections.AST process(antlr.collections.AST)>(v3);
+---
+> interfaceinvoke v8.<org.codehaus.groovy.antlr.AntlrASTProcessor: groovyjarjarantlr.collections.AST process(groovyjarjarantlr.collections.AST)>(v3);
+257c257
+< virtualinvoke v2.<org.codehaus.groovy.antlr.UnicodeEscapingReader: void setLexer(antlr.CharScanner)>(v4);
+---
+> virtualinvoke v2.<org.codehaus.groovy.antlr.UnicodeEscapingReader: void setLexer(groovyjarjarantlr.CharScanner)>(v4);

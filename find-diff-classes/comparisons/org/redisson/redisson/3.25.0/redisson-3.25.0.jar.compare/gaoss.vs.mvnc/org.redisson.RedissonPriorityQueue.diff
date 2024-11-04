@@ -1,0 +1,20 @@
+265c265
+< v6 = virtualinvoke v5.<java.lang.Object: java.lang.Class getClass()>();
+---
+> v6 = interfaceinvoke v5.<java.util.Comparator: java.lang.Class getClass()>();
+440c440
+< v3 = staticinvoke <org.redisson.RedissonPriorityQueue$lambda_wrapLockedAsync_0__220: java.util.function.Supplier bootstrap$(org.redisson.RedissonPriorityQueue,org.redisson.client.protocol.RedisCommand,java.lang.Object[])>(v0, v1, v2);
+---
+> v3 = staticinvoke <org.redisson.RedissonPriorityQueue$lambda_wrapLockedAsync_0__852: java.util.function.Supplier bootstrap$(org.redisson.RedissonPriorityQueue,org.redisson.client.protocol.RedisCommand,java.lang.Object[])>(v0, v1, v2);
+461c461
+< v6 = staticinvoke <org.redisson.RedissonPriorityQueue$lambda_wrapLockedAsync_3__221: java.util.function.Function bootstrap$(org.redisson.RedissonPriorityQueue,java.util.function.Supplier,long)>(v0, v1, v3);
+---
+> v6 = staticinvoke <org.redisson.RedissonPriorityQueue$lambda_wrapLockedAsync_3__853: java.util.function.Function bootstrap$(org.redisson.RedissonPriorityQueue,java.util.function.Supplier,long)>(v0, v1, v3);
+539c539
+< v2 = virtualinvoke v1.<java.lang.Object: java.lang.Class getClass()>();
+---
+> v2 = interfaceinvoke v1.<java.util.Comparator: java.lang.Class getClass()>();
+804c804
+< v2 = staticinvoke <org.redisson.RedissonPriorityQueue$lambda_pollAsync_4__222: java.util.function.Supplier bootstrap$(org.redisson.RedissonPriorityQueue,int)>(v0, v1);
+---
+> v2 = staticinvoke <org.redisson.RedissonPriorityQueue$lambda_pollAsync_4__854: java.util.function.Supplier bootstrap$(org.redisson.RedissonPriorityQueue,int)>(v0, v1);

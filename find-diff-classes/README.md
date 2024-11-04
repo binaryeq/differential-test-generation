@@ -10,10 +10,12 @@ Then run:
 
 ```
 cd find-diff-classes
+rm -r comparisons testgen compile run    # Get rid of stale in-repo results
+rm *.sh                                  # Get rid of stale in-repo scripts that will be regenerated
 tools/run_all.sh
 ```
 
 See [tools/run_all.sh](tools/run_all.sh), which has detailed comments explaining each step.
 
-Note that all shell scripts in the current directory are **generated** by `tools/run_all.sh`.
-The repo contains a copy of these generated scripts for convenience in case you want to run some of the steps manually, but they will be overwritten by `tools/run_all.sh` -- this is normal.
+Note that all shell scripts in the `find-diff-classes` directory are **generated** by `tools/run_all.sh`.
+For convenience the repo contains a copy of these generated scripts, as well as the resulting data in the `comparisons`, `testgen`, `compile` and `run` directories; the directories *must* be deleted before running `tools/run_all.sh`, while the shell scripts will be overwritten if they are not deleted.

@@ -1,0 +1,12 @@
+18d17
+< org.objectweb.asm.ClassReader v11;
+23a23
+> groovyjarjarasm.asm.ClassReader v11;
+49,51c49,51
+< v11 = new org.objectweb.asm.ClassReader;
+< specialinvoke v11.<org.objectweb.asm.ClassReader: void <init>(java.io.InputStream)>(v9);
+< virtualinvoke v11.<org.objectweb.asm.ClassReader: void accept(org.objectweb.asm.ClassVisitor,int)>(v8, 4);
+---
+> v11 = new groovyjarjarasm.asm.ClassReader;
+> specialinvoke v11.<groovyjarjarasm.asm.ClassReader: void <init>(java.io.InputStream)>(v9);
+> virtualinvoke v11.<groovyjarjarasm.asm.ClassReader: void accept(groovyjarjarasm.asm.ClassVisitor,int)>(v8, 4);

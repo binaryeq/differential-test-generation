@@ -1,0 +1,31 @@
+37c37
+< java.lang.Object[] v12, v15, v17, v2, v22, v9;
+---
+> java.lang.Object[] v12, v15, v17, v2, v26, v9;
+39,40c39,40
+< int v1, v10, v14, v16, v23, v3, v5, v6, v7;
+< java.lang.String v21;
+---
+> int v1, v10, v14, v16, v23, v24, v27, v3, v5, v6, v7;
+> java.lang.String v21, v22, v25;
+42a43
+> java.lang.StringBuilder v28;
+77,78c78,84
+< v21 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.util.Comparator)>(v20) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Comparator \u0001 compare method violates its contract");
+< specialinvoke v19.<java.lang.AssertionError: void <init>(java.lang.Object)>(v21);
+---
+> v21 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v20);
+> v22 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v21);
+> v23 = virtualinvoke v22.<java.lang.String: int length()>();
+> v24 = 48 + v23;
+> specialinvoke v28.<java.lang.StringBuilder: void <init>(int)>(v24);
+> v25 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v21) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Comparator \u0001 compare method violates its contract");
+> specialinvoke v19.<java.lang.AssertionError: void <init>(java.lang.Object)>(v25);
+84,86c90,92
+< v22 = v0.<com.google.common.collect.ImmutableSortedSet$Builder: java.lang.Object[] elements>;
+< v23 = v0.<com.google.common.collect.ImmutableSortedSet$Builder: int n>;
+< staticinvoke <java.util.Arrays: void fill(java.lang.Object[],int,int,java.lang.Object)>(v22, v5, v23, null);
+---
+> v26 = v0.<com.google.common.collect.ImmutableSortedSet$Builder: java.lang.Object[] elements>;
+> v27 = v0.<com.google.common.collect.ImmutableSortedSet$Builder: int n>;
+> staticinvoke <java.util.Arrays: void fill(java.lang.Object[],int,int,java.lang.Object)>(v26, v5, v27, null);

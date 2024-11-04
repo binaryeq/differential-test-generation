@@ -1,0 +1,11 @@
+43c43
+< java.lang.String v2, v3;
+---
+> java.lang.String v2, v3, v4;
+49,50c49,51
+< v3 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v2) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001 (cycled)");
+< return v3;
+---
+> v3 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v2);
+> v4 = virtualinvoke v3.<java.lang.String: java.lang.String concat(java.lang.String)>(" (cycled)");
+> return v4;

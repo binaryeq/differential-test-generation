@@ -1,0 +1,100 @@
+75d74
+< java.lang.String v0, v1, v4;
+76a76,78
+> int v5, v6, v8, v9;
+> java.lang.StringBuilder v11;
+> java.lang.String v0, v1, v10, v4, v7;
+83,84c85,93
+< v4 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,java.lang.String)>(v0, v1) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("cannot set attribute \'\u0001:\u0001\'");
+< specialinvoke v3.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(v4);
+---
+> v4 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v0);
+> v5 = virtualinvoke v4.<java.lang.String: int length()>();
+> v6 = 24 + v5;
+> v7 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v1);
+> v8 = virtualinvoke v7.<java.lang.String: int length()>();
+> v9 = v6 + v8;
+> specialinvoke v11.<java.lang.StringBuilder: void <init>(int)>(v9);
+> v10 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,java.lang.String)>(v0, v1) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("cannot set attribute \'\u0001:\u0001\'");
+> specialinvoke v3.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(v10);
+90c99,101
+< java.lang.String v0, v1, v4;
+---
+> int v5, v6, v8, v9;
+> java.lang.StringBuilder v11;
+> java.lang.String v0, v1, v10, v4, v7;
+97,98c108,116
+< v4 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,java.lang.String)>(v0, v1) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("cannot set attribute \'\u0001:\u0001\' during file creation");
+< specialinvoke v3.<java.lang.UnsupportedOperationException: void <init>(java.lang.String)>(v4);
+---
+> v4 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v0);
+> v5 = virtualinvoke v4.<java.lang.String: int length()>();
+> v6 = 45 + v5;
+> v7 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v1);
+> v8 = virtualinvoke v7.<java.lang.String: int length()>();
+> v9 = v6 + v8;
+> specialinvoke v11.<java.lang.StringBuilder: void <init>(int)>(v9);
+> v10 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,java.lang.String)>(v0, v1) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("cannot set attribute \'\u0001:\u0001\' during file creation");
+> specialinvoke v3.<java.lang.UnsupportedOperationException: void <init>(java.lang.String)>(v10);
+127a146,147
+> int v16, v17, v19, v20, v22, v23, v25, v26, v4, v9;
+> java.lang.String v0, v1, v10, v13, v14, v15, v18, v21, v24, v27, v6, v7, v8;
+129c149
+< java.lang.IllegalArgumentException v7;
+---
+> java.lang.IllegalArgumentException v11;
+131,132c151
+< int v4;
+< java.lang.Class v8;
+---
+> java.lang.Class v12;
+134c153
+< java.lang.String v0, v1, v6, v9;
+---
+> java.lang.StringBuilder v28;
+142c161
+< goto label2;
+---
+> goto label3;
+144,145c163,169
+< v6 = staticinvoke <java.util.Arrays: java.lang.String toString(java.lang.Object[])>(v3);
+< v5 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v6) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("one of \u0001");
+---
+> v6 = "one of ";
+> v7 = staticinvoke <java.util.Arrays: java.lang.String toString(java.lang.Object[])>(v3);
+> v8 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v7);
+> v9 = virtualinvoke v8.<java.lang.String: int length()>();
+> if v9 == 0 goto label2;
+> v5 = virtualinvoke v6.<java.lang.String: java.lang.String concat(java.lang.String)>(v8);
+> goto label3;
+147,151c171,194
+< v7 = new java.lang.IllegalArgumentException;
+< v8 = virtualinvoke v2.<java.lang.Object: java.lang.Class getClass()>();
+< v9 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.Class,java.lang.String,java.lang.String,java.io.Serializable)>(v8, v0, v1, v5) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("invalid type \u0001 for attribute \'\u0001:\u0001\': expected \u0001");
+< specialinvoke v7.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(v9);
+< throw v7;
+---
+> v10 = new java.lang.String;
+> v5 = v10;
+> specialinvoke v10.<java.lang.String: void <init>(java.lang.String)>("one of ");
+> label3:
+> v11 = new java.lang.IllegalArgumentException;
+> v12 = virtualinvoke v2.<java.lang.Object: java.lang.Class getClass()>();
+> v13 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v12);
+> v14 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v5);
+> v15 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v13);
+> v16 = virtualinvoke v15.<java.lang.String: int length()>();
+> v17 = 42 + v16;
+> v18 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v0);
+> v19 = virtualinvoke v18.<java.lang.String: int length()>();
+> v20 = v17 + v19;
+> v21 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v1);
+> v22 = virtualinvoke v21.<java.lang.String: int length()>();
+> v23 = v20 + v22;
+> v24 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v14);
+> v25 = virtualinvoke v24.<java.lang.String: int length()>();
+> v26 = v23 + v25;
+> specialinvoke v28.<java.lang.StringBuilder: void <init>(int)>(v26);
+> v27 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,java.lang.String,java.lang.String,java.lang.String)>(v13, v0, v1, v14) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("invalid type \u0001 for attribute \'\u0001:\u0001\': expected \u0001");
+> specialinvoke v11.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(v27);
+> throw v11;

@@ -1,0 +1,172 @@
+46,47c46,47
+< int v100, v101, v103, v104, v106, v107, v108, v109, v110, v111, v114, v116, v119, v120, v15, v16, v163, v164, v17, v18, v2, v20, v21, v23, v233, v234, v24, v251, v252, v253, v254, v255, v256, v257, v258, v259, v26, v260, v261, v262, v263, v264, v266, v267, v27, v281, v282, v29, v30, v32, v33, v35, v37, v39, v41, v43, v51, v52, v54, v55, v57, v58, v6, v60, v61, v63, v64, v66, v68, v70, v72, v74, v94, v95, v96, v97, v98;
+< java.lang.String v122, v244, v268, v274, v283, v84, v88, v93;
+---
+> int v100, v101, v103, v104, v106, v107, v108, v109, v110, v111, v114, v116, v119, v120, v15, v16, v163, v164, v17, v18, v2, v20, v21, v23, v233, v234, v24, v251, v252, v253, v254, v255, v256, v257, v258, v259, v26, v260, v261, v262, v263, v264, v266, v267, v27, v282, v283, v29, v30, v32, v33, v35, v37, v39, v41, v43, v51, v52, v54, v55, v57, v58, v6, v60, v61, v63, v64, v66, v68, v70, v72, v74, v94, v95, v96, v97, v98;
+> java.lang.String v122, v244, v268, v274, v275, v284, v84, v88, v93;
+49c49
+< javassist.bytecode.analysis.Type v10, v102, v105, v11, v112, v113, v115, v117, v118, v12, v123, v124, v125, v126, v127, v128, v129, v13, v130, v131, v132, v133, v134, v135, v136, v137, v138, v139, v14, v140, v141, v142, v143, v144, v145, v146, v147, v148, v149, v150, v151, v152, v153, v154, v155, v156, v157, v158, v159, v160, v161, v162, v165, v166, v167, v168, v169, v170, v171, v172, v173, v174, v175, v176, v177, v178, v179, v180, v181, v182, v183, v184, v185, v186, v187, v188, v189, v19, v190, v191, v192, v193, v194, v195, v196, v197, v198, v199, v200, v201, v202, v203, v204, v205, v206, v207, v208, v209, v210, v211, v212, v213, v214, v215, v216, v217, v218, v219, v22, v220, v221, v222, v223, v224, v225, v226, v227, v228, v229, v230, v231, v232, v235, v236, v237, v238, v239, v240, v241, v242, v243, v247, v248, v25, v269, v270, v272, v275, v276, v277, v278, v279, v28, v284, v285, v286, v287, v288, v289, v290, v291, v292, v31, v34, v36, v38, v40, v42, v44, v45, v46, v47, v48, v49, v50, v53, v56, v59, v62, v65, v67, v69, v7, v71, v73, v75, v76, v77, v78, v79, v8, v80, v81, v82, v85, v86, v89, v9, v90, v91, v99;
+---
+> javassist.bytecode.analysis.Type v10, v102, v105, v11, v112, v113, v115, v117, v118, v12, v123, v124, v125, v126, v127, v128, v129, v13, v130, v131, v132, v133, v134, v135, v136, v137, v138, v139, v14, v140, v141, v142, v143, v144, v145, v146, v147, v148, v149, v150, v151, v152, v153, v154, v155, v156, v157, v158, v159, v160, v161, v162, v165, v166, v167, v168, v169, v170, v171, v172, v173, v174, v175, v176, v177, v178, v179, v180, v181, v182, v183, v184, v185, v186, v187, v188, v189, v19, v190, v191, v192, v193, v194, v195, v196, v197, v198, v199, v200, v201, v202, v203, v204, v205, v206, v207, v208, v209, v210, v211, v212, v213, v214, v215, v216, v217, v218, v219, v22, v220, v221, v222, v223, v224, v225, v226, v227, v228, v229, v230, v231, v232, v235, v236, v237, v238, v239, v240, v241, v242, v243, v247, v248, v25, v269, v270, v272, v276, v277, v278, v279, v28, v280, v285, v286, v287, v288, v289, v290, v291, v292, v293, v31, v34, v36, v38, v40, v42, v44, v45, v46, v47, v48, v49, v50, v53, v56, v59, v62, v65, v67, v69, v7, v71, v73, v75, v76, v77, v78, v79, v8, v80, v81, v82, v85, v86, v89, v9, v90, v91, v99;
+55c55
+< javassist.bytecode.ConstPool v265, v280;
+---
+> javassist.bytecode.ConstPool v265, v281;
+963,964c963,965
+< v274 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (int,javassist.bytecode.analysis.Type)>(v2, v270) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Array length passed a non-array [pos = \u0001]: \u0001");
+< specialinvoke v273.<javassist.bytecode.BadBytecode: void <init>(java.lang.String)>(v274);
+---
+> v274 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v270);
+> v275 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (int,java.lang.String)>(v2, v274) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Array length passed a non-array [pos = \u0001]: \u0001");
+> specialinvoke v273.<javassist.bytecode.BadBytecode: void <init>(java.lang.String)>(v275);
+967,968c968,969
+< v275 = <javassist.bytecode.analysis.Type: javassist.bytecode.analysis.Type INTEGER>;
+< virtualinvoke v4.<javassist.bytecode.analysis.Frame: void push(javassist.bytecode.analysis.Type)>(v275);
+---
+> v276 = <javassist.bytecode.analysis.Type: javassist.bytecode.analysis.Type INTEGER>;
+> virtualinvoke v4.<javassist.bytecode.analysis.Frame: void push(javassist.bytecode.analysis.Type)>(v276);
+971,973c972,974
+< v276 = v0.<javassist.bytecode.analysis.Executor: javassist.bytecode.analysis.Type THROWABLE_TYPE>;
+< v277 = specialinvoke v0.<javassist.bytecode.analysis.Executor: javassist.bytecode.analysis.Type simplePop(javassist.bytecode.analysis.Frame)>(v4);
+< specialinvoke v0.<javassist.bytecode.analysis.Executor: void verifyAssignable(javassist.bytecode.analysis.Type,javassist.bytecode.analysis.Type)>(v276, v277);
+---
+> v277 = v0.<javassist.bytecode.analysis.Executor: javassist.bytecode.analysis.Type THROWABLE_TYPE>;
+> v278 = specialinvoke v0.<javassist.bytecode.analysis.Executor: javassist.bytecode.analysis.Type simplePop(javassist.bytecode.analysis.Frame)>(v4);
+> specialinvoke v0.<javassist.bytecode.analysis.Executor: void verifyAssignable(javassist.bytecode.analysis.Type,javassist.bytecode.analysis.Type)>(v277, v278);
+976,984c977,985
+< v278 = <javassist.bytecode.analysis.Type: javassist.bytecode.analysis.Type OBJECT>;
+< v279 = specialinvoke v0.<javassist.bytecode.analysis.Executor: javassist.bytecode.analysis.Type simplePop(javassist.bytecode.analysis.Frame)>(v4);
+< specialinvoke v0.<javassist.bytecode.analysis.Executor: void verifyAssignable(javassist.bytecode.analysis.Type,javassist.bytecode.analysis.Type)>(v278, v279);
+< v280 = v0.<javassist.bytecode.analysis.Executor: javassist.bytecode.ConstPool constPool>;
+< v281 = v2 + 1;
+< v282 = virtualinvoke v3.<javassist.bytecode.CodeIterator: int u16bitAt(int)>(v281);
+< v283 = virtualinvoke v280.<javassist.bytecode.ConstPool: java.lang.String getClassInfoByDescriptor(int)>(v282);
+< v284 = specialinvoke v0.<javassist.bytecode.analysis.Executor: javassist.bytecode.analysis.Type typeFromDesc(java.lang.String)>(v283);
+< virtualinvoke v4.<javassist.bytecode.analysis.Frame: void push(javassist.bytecode.analysis.Type)>(v284);
+---
+> v279 = <javassist.bytecode.analysis.Type: javassist.bytecode.analysis.Type OBJECT>;
+> v280 = specialinvoke v0.<javassist.bytecode.analysis.Executor: javassist.bytecode.analysis.Type simplePop(javassist.bytecode.analysis.Frame)>(v4);
+> specialinvoke v0.<javassist.bytecode.analysis.Executor: void verifyAssignable(javassist.bytecode.analysis.Type,javassist.bytecode.analysis.Type)>(v279, v280);
+> v281 = v0.<javassist.bytecode.analysis.Executor: javassist.bytecode.ConstPool constPool>;
+> v282 = v2 + 1;
+> v283 = virtualinvoke v3.<javassist.bytecode.CodeIterator: int u16bitAt(int)>(v282);
+> v284 = virtualinvoke v281.<javassist.bytecode.ConstPool: java.lang.String getClassInfoByDescriptor(int)>(v283);
+> v285 = specialinvoke v0.<javassist.bytecode.analysis.Executor: javassist.bytecode.analysis.Type typeFromDesc(java.lang.String)>(v284);
+> virtualinvoke v4.<javassist.bytecode.analysis.Frame: void push(javassist.bytecode.analysis.Type)>(v285);
+987,991c988,992
+< v285 = <javassist.bytecode.analysis.Type: javassist.bytecode.analysis.Type OBJECT>;
+< v286 = specialinvoke v0.<javassist.bytecode.analysis.Executor: javassist.bytecode.analysis.Type simplePop(javassist.bytecode.analysis.Frame)>(v4);
+< specialinvoke v0.<javassist.bytecode.analysis.Executor: void verifyAssignable(javassist.bytecode.analysis.Type,javassist.bytecode.analysis.Type)>(v285, v286);
+< v287 = <javassist.bytecode.analysis.Type: javassist.bytecode.analysis.Type INTEGER>;
+< virtualinvoke v4.<javassist.bytecode.analysis.Frame: void push(javassist.bytecode.analysis.Type)>(v287);
+---
+> v286 = <javassist.bytecode.analysis.Type: javassist.bytecode.analysis.Type OBJECT>;
+> v287 = specialinvoke v0.<javassist.bytecode.analysis.Executor: javassist.bytecode.analysis.Type simplePop(javassist.bytecode.analysis.Frame)>(v4);
+> specialinvoke v0.<javassist.bytecode.analysis.Executor: void verifyAssignable(javassist.bytecode.analysis.Type,javassist.bytecode.analysis.Type)>(v286, v287);
+> v288 = <javassist.bytecode.analysis.Type: javassist.bytecode.analysis.Type INTEGER>;
+> virtualinvoke v4.<javassist.bytecode.analysis.Frame: void push(javassist.bytecode.analysis.Type)>(v288);
+994,996c995,997
+< v288 = <javassist.bytecode.analysis.Type: javassist.bytecode.analysis.Type OBJECT>;
+< v289 = specialinvoke v0.<javassist.bytecode.analysis.Executor: javassist.bytecode.analysis.Type simplePop(javassist.bytecode.analysis.Frame)>(v4);
+< specialinvoke v0.<javassist.bytecode.analysis.Executor: void verifyAssignable(javassist.bytecode.analysis.Type,javassist.bytecode.analysis.Type)>(v288, v289);
+---
+> v289 = <javassist.bytecode.analysis.Type: javassist.bytecode.analysis.Type OBJECT>;
+> v290 = specialinvoke v0.<javassist.bytecode.analysis.Executor: javassist.bytecode.analysis.Type simplePop(javassist.bytecode.analysis.Frame)>(v4);
+> specialinvoke v0.<javassist.bytecode.analysis.Executor: void verifyAssignable(javassist.bytecode.analysis.Type,javassist.bytecode.analysis.Type)>(v289, v290);
+1005,1007c1006,1008
+< v290 = <javassist.bytecode.analysis.Type: javassist.bytecode.analysis.Type OBJECT>;
+< v291 = specialinvoke v0.<javassist.bytecode.analysis.Executor: javassist.bytecode.analysis.Type simplePop(javassist.bytecode.analysis.Frame)>(v4);
+< specialinvoke v0.<javassist.bytecode.analysis.Executor: void verifyAssignable(javassist.bytecode.analysis.Type,javassist.bytecode.analysis.Type)>(v290, v291);
+---
+> v291 = <javassist.bytecode.analysis.Type: javassist.bytecode.analysis.Type OBJECT>;
+> v292 = specialinvoke v0.<javassist.bytecode.analysis.Executor: javassist.bytecode.analysis.Type simplePop(javassist.bytecode.analysis.Frame)>(v4);
+> specialinvoke v0.<javassist.bytecode.analysis.Executor: void verifyAssignable(javassist.bytecode.analysis.Type,javassist.bytecode.analysis.Type)>(v291, v292);
+1010,1011c1011,1012
+< v292 = <javassist.bytecode.analysis.Type: javassist.bytecode.analysis.Type RETURN_ADDRESS>;
+< virtualinvoke v4.<javassist.bytecode.analysis.Frame: void push(javassist.bytecode.analysis.Type)>(v292);
+---
+> v293 = <javassist.bytecode.analysis.Type: javassist.bytecode.analysis.Type RETURN_ADDRESS>;
+> virtualinvoke v4.<javassist.bytecode.analysis.Frame: void push(javassist.bytecode.analysis.Type)>(v293);
+1040,1041c1041
+< javassist.bytecode.analysis.Executor v0;
+< javassist.bytecode.analysis.Type v1, v13, v14, v3, v4, v5, v6, v7, v8, v9;
+---
+> javassist.bytecode.analysis.Type v1, v14, v15, v3, v4, v5, v6, v7, v8, v9;
+1043c1043,1044
+< java.lang.String v12;
+---
+> java.lang.String v12, v13;
+> javassist.bytecode.analysis.Executor v0;
+1067,1068c1068,1070
+< v12 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (int,javassist.bytecode.analysis.Type)>(v11, v9) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Not an array! [pos = \u0001]: \u0001");
+< specialinvoke v10.<javassist.bytecode.BadBytecode: void <init>(java.lang.String)>(v12);
+---
+> v12 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v9);
+> v13 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (int,java.lang.String)>(v11, v12) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Not an array! [pos = \u0001]: \u0001");
+> specialinvoke v10.<javassist.bytecode.BadBytecode: void <init>(java.lang.String)>(v13);
+1071,1075c1073,1077
+< v13 = specialinvoke v0.<javassist.bytecode.analysis.Executor: javassist.bytecode.analysis.Type zeroExtend(javassist.bytecode.analysis.Type)>(v9);
+< specialinvoke v0.<javassist.bytecode.analysis.Executor: void verifyAssignable(javassist.bytecode.analysis.Type,javassist.bytecode.analysis.Type)>(v1, v13);
+< v14 = <javassist.bytecode.analysis.Type: javassist.bytecode.analysis.Type INTEGER>;
+< specialinvoke v0.<javassist.bytecode.analysis.Executor: void verifyAssignable(javassist.bytecode.analysis.Type,javassist.bytecode.analysis.Type)>(v14, v3);
+< specialinvoke v0.<javassist.bytecode.analysis.Executor: void simplePush(javassist.bytecode.analysis.Type,javassist.bytecode.analysis.Frame)>(v13, v2);
+---
+> v14 = specialinvoke v0.<javassist.bytecode.analysis.Executor: javassist.bytecode.analysis.Type zeroExtend(javassist.bytecode.analysis.Type)>(v9);
+> specialinvoke v0.<javassist.bytecode.analysis.Executor: void verifyAssignable(javassist.bytecode.analysis.Type,javassist.bytecode.analysis.Type)>(v1, v14);
+> v15 = <javassist.bytecode.analysis.Type: javassist.bytecode.analysis.Type INTEGER>;
+> specialinvoke v0.<javassist.bytecode.analysis.Executor: void verifyAssignable(javassist.bytecode.analysis.Type,javassist.bytecode.analysis.Type)>(v15, v3);
+> specialinvoke v0.<javassist.bytecode.analysis.Executor: void simplePush(javassist.bytecode.analysis.Type,javassist.bytecode.analysis.Frame)>(v14, v2);
+1082,1083c1084
+< javassist.bytecode.analysis.Executor v0;
+< javassist.bytecode.analysis.Type v1, v12, v13, v14, v3, v4, v5, v6, v7, v8;
+---
+> javassist.bytecode.analysis.Type v1, v13, v14, v15, v3, v4, v5, v6, v7, v8;
+1085c1086,1087
+< java.lang.String v11;
+---
+> java.lang.String v11, v12;
+> javassist.bytecode.analysis.Executor v0;
+1102,1103c1104,1106
+< v11 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (int,javassist.bytecode.analysis.Type)>(v10, v8) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Not an array! [pos = \u0001]: \u0001");
+< specialinvoke v9.<javassist.bytecode.BadBytecode: void <init>(java.lang.String)>(v11);
+---
+> v11 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v8);
+> v12 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (int,java.lang.String)>(v10, v11) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Not an array! [pos = \u0001]: \u0001");
+> specialinvoke v9.<javassist.bytecode.BadBytecode: void <init>(java.lang.String)>(v12);
+1106,1111c1109,1114
+< v12 = specialinvoke v0.<javassist.bytecode.analysis.Executor: javassist.bytecode.analysis.Type zeroExtend(javassist.bytecode.analysis.Type)>(v8);
+< specialinvoke v0.<javassist.bytecode.analysis.Executor: void verifyAssignable(javassist.bytecode.analysis.Type,javassist.bytecode.analysis.Type)>(v1, v12);
+< v13 = <javassist.bytecode.analysis.Type: javassist.bytecode.analysis.Type INTEGER>;
+< specialinvoke v0.<javassist.bytecode.analysis.Executor: void verifyAssignable(javassist.bytecode.analysis.Type,javassist.bytecode.analysis.Type)>(v13, v4);
+< v14 = <javassist.bytecode.analysis.Type: javassist.bytecode.analysis.Type OBJECT>;
+< if v1 != v14 goto label3;
+---
+> v13 = specialinvoke v0.<javassist.bytecode.analysis.Executor: javassist.bytecode.analysis.Type zeroExtend(javassist.bytecode.analysis.Type)>(v8);
+> specialinvoke v0.<javassist.bytecode.analysis.Executor: void verifyAssignable(javassist.bytecode.analysis.Type,javassist.bytecode.analysis.Type)>(v1, v13);
+> v14 = <javassist.bytecode.analysis.Type: javassist.bytecode.analysis.Type INTEGER>;
+> specialinvoke v0.<javassist.bytecode.analysis.Executor: void verifyAssignable(javassist.bytecode.analysis.Type,javassist.bytecode.analysis.Type)>(v14, v4);
+> v15 = <javassist.bytecode.analysis.Type: javassist.bytecode.analysis.Type OBJECT>;
+> if v1 != v15 goto label3;
+1115c1118
+< specialinvoke v0.<javassist.bytecode.analysis.Executor: void verifyAssignable(javassist.bytecode.analysis.Type,javassist.bytecode.analysis.Type)>(v12, v3);
+---
+> specialinvoke v0.<javassist.bytecode.analysis.Executor: void verifyAssignable(javassist.bytecode.analysis.Type,javassist.bytecode.analysis.Type)>(v13, v3);
+1900d1902
+< javassist.bytecode.analysis.Type v1, v2;
+1902,1903d1903
+< int v5;
+< java.lang.String v6;
+1904a1905,1907
+> javassist.bytecode.analysis.Type v1, v2;
+> int v7;
+> java.lang.String v5, v6, v8;
+1912,1914c1915,1919
+< v5 = v0.<javassist.bytecode.analysis.Executor: int lastPos>;
+< v6 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (javassist.bytecode.analysis.Type,javassist.bytecode.analysis.Type,int)>(v1, v2, v5) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Expected type: \u0001 Got: \u0001 [pos = \u0001]");
+< specialinvoke v4.<javassist.bytecode.BadBytecode: void <init>(java.lang.String)>(v6);
+---
+> v5 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v1);
+> v6 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v2);
+> v7 = v0.<javassist.bytecode.analysis.Executor: int lastPos>;
+> v8 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,java.lang.String,int)>(v5, v6, v7) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Expected type: \u0001 Got: \u0001 [pos = \u0001]");
+> specialinvoke v4.<javassist.bytecode.BadBytecode: void <init>(java.lang.String)>(v8);

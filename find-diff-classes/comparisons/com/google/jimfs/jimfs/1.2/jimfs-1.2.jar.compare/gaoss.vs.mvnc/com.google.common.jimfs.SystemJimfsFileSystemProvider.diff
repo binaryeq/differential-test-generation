@@ -1,0 +1,38 @@
+147a148,152
+> java.lang.ReflectiveOperationException v14;
+> int v11, v12;
+> java.lang.String v10, v13, v9;
+> java.net.URI v1;
+> java.lang.reflect.Method v4;
+149,150c154
+< java.lang.ReflectiveOperationException v10;
+< java.lang.RuntimeException v11;
+---
+> java.lang.RuntimeException v15;
+155,157c159
+< java.lang.String v9;
+< java.net.URI v1;
+< java.lang.reflect.Method v4;
+---
+> java.lang.StringBuilder v16;
+173,174c175,181
+< v9 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.nio.file.FileSystem)>(v0) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("invalid file system: \u0001");
+< specialinvoke v8.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(v9);
+---
+> v9 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v0);
+> v10 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v9);
+> v11 = virtualinvoke v10.<java.lang.String: int length()>();
+> v12 = 21 + v11;
+> specialinvoke v16.<java.lang.StringBuilder: void <init>(int)>(v12);
+> v13 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v9) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("invalid file system: \u0001");
+> specialinvoke v8.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(v13);
+177,180c184,187
+< v10 := @caughtexception;
+< v11 = new java.lang.RuntimeException;
+< specialinvoke v11.<java.lang.RuntimeException: void <init>(java.lang.Throwable)>(v10);
+< throw v11;
+---
+> v14 := @caughtexception;
+> v15 = new java.lang.RuntimeException;
+> specialinvoke v15.<java.lang.RuntimeException: void <init>(java.lang.Throwable)>(v14);
+> throw v15;

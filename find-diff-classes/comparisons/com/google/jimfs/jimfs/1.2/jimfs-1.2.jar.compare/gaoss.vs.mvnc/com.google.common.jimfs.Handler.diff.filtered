@@ -1,0 +1,23 @@
+10a11,13
+> int v13, v14, v16, v17, v6;
+> java.lang.String v1, v10, v11, v12, v15, v2, v5, v8, v9;
+> boolean v3, v7;
+12d14
+< int v6;
+14,15c16
+< java.lang.String v1, v10, v2, v5, v8, v9;
+< boolean v3, v7;
+---
+> java.lang.StringBuilder v18;
+37c38,46
+< v10 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,java.lang.String)>(v9, v8) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001|\u0001");
+---
+> v11 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v9);
+> v12 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v11);
+> v13 = virtualinvoke v12.<java.lang.String: int length()>();
+> v14 = 1 + v13;
+> v15 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v8);
+> v16 = virtualinvoke v15.<java.lang.String: int length()>();
+> v17 = v14 + v16;
+> specialinvoke v18.<java.lang.StringBuilder: void <init>(int)>(v17);
+> v10 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,java.lang.String)>(v11, v8) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001|\u0001");

@@ -1,0 +1,73 @@
+409,410d408
+< java.lang.Throwable v24;
+< com.google.common.collect.ImmutableSet$Builder v13;
+412,414c410
+< int v10, v14, v17, v3, v7, v8;
+< java.io.InvalidObjectException v11, v18, v22, v4;
+< java.lang.String v12, v19, v23, v5;
+---
+> java.io.InvalidObjectException v11, v18, v26, v4;
+416,419c412,420
+< com.google.common.collect.Serialization$FieldSetter v25, v26, v27;
+< com.google.common.collect.ImmutableSet v16, v28;
+< com.google.common.collect.ImmutableMap v20;
+< java.lang.IllegalArgumentException v21;
+---
+> com.google.common.collect.ImmutableSet v16, v32;
+> com.google.common.collect.ImmutableMap v24;
+> java.lang.StringBuilder v33, v34, v35;
+> java.lang.Throwable v28;
+> com.google.common.collect.ImmutableSet$Builder v13;
+> int v10, v14, v17, v21, v22, v3, v7, v8;
+> java.lang.String v12, v19, v20, v23, v27, v5;
+> com.google.common.collect.Serialization$FieldSetter v29, v30, v31;
+> java.lang.IllegalArgumentException v25;
+428a430
+> specialinvoke v35.<java.lang.StringBuilder: void <init>(int)>(29);
+441a444
+> specialinvoke v34.<java.lang.StringBuilder: void <init>(int)>(31);
+459,460c462,468
+< v19 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.Object)>(v9) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Duplicate key-value pairs exist for key \u0001");
+< specialinvoke v18.<java.io.InvalidObjectException: void <init>(java.lang.String)>(v19);
+---
+> v19 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v9);
+> v20 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v19);
+> v21 = virtualinvoke v20.<java.lang.String: int length()>();
+> v22 = 40 + v21;
+> specialinvoke v33.<java.lang.StringBuilder: void <init>(int)>(v22);
+> v23 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v19) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Duplicate key-value pairs exist for key \u0001");
+> specialinvoke v18.<java.io.InvalidObjectException: void <init>(java.lang.String)>(v23);
+468c476
+< v20 = virtualinvoke v6.<com.google.common.collect.ImmutableMap$Builder: com.google.common.collect.ImmutableMap build()>();
+---
+> v24 = virtualinvoke v6.<com.google.common.collect.ImmutableMap$Builder: com.google.common.collect.ImmutableMap build()>();
+472,477c480,485
+< v21 := @caughtexception;
+< v22 = new java.io.InvalidObjectException;
+< v23 = virtualinvoke v21.<java.lang.IllegalArgumentException: java.lang.String getMessage()>();
+< specialinvoke v22.<java.io.InvalidObjectException: void <init>(java.lang.String)>(v23);
+< v24 = virtualinvoke v22.<java.io.InvalidObjectException: java.lang.Throwable initCause(java.lang.Throwable)>(v21);
+< throw v24;
+---
+> v25 := @caughtexception;
+> v26 = new java.io.InvalidObjectException;
+> v27 = virtualinvoke v25.<java.lang.IllegalArgumentException: java.lang.String getMessage()>();
+> specialinvoke v26.<java.io.InvalidObjectException: void <init>(java.lang.String)>(v27);
+> v28 = virtualinvoke v26.<java.io.InvalidObjectException: java.lang.Throwable initCause(java.lang.Throwable)>(v25);
+> throw v28;
+479,485c487,493
+< v25 = <com.google.common.collect.ImmutableMultimap$FieldSettersHolder: com.google.common.collect.Serialization$FieldSetter MAP_FIELD_SETTER>;
+< virtualinvoke v25.<com.google.common.collect.Serialization$FieldSetter: void set(java.lang.Object,java.lang.Object)>(v0, v20);
+< v26 = <com.google.common.collect.ImmutableMultimap$FieldSettersHolder: com.google.common.collect.Serialization$FieldSetter SIZE_FIELD_SETTER>;
+< virtualinvoke v26.<com.google.common.collect.Serialization$FieldSetter: void set(java.lang.Object,int)>(v0, v7);
+< v27 = <com.google.common.collect.ImmutableSetMultimap$SetFieldSettersHolder: com.google.common.collect.Serialization$FieldSetter EMPTY_SET_FIELD_SETTER>;
+< v28 = staticinvoke <com.google.common.collect.ImmutableSetMultimap: com.google.common.collect.ImmutableSet emptySet(java.util.Comparator)>(v2);
+< virtualinvoke v27.<com.google.common.collect.Serialization$FieldSetter: void set(java.lang.Object,java.lang.Object)>(v0, v28);
+---
+> v29 = <com.google.common.collect.ImmutableMultimap$FieldSettersHolder: com.google.common.collect.Serialization$FieldSetter MAP_FIELD_SETTER>;
+> virtualinvoke v29.<com.google.common.collect.Serialization$FieldSetter: void set(java.lang.Object,java.lang.Object)>(v0, v24);
+> v30 = <com.google.common.collect.ImmutableMultimap$FieldSettersHolder: com.google.common.collect.Serialization$FieldSetter SIZE_FIELD_SETTER>;
+> virtualinvoke v30.<com.google.common.collect.Serialization$FieldSetter: void set(java.lang.Object,int)>(v0, v7);
+> v31 = <com.google.common.collect.ImmutableSetMultimap$SetFieldSettersHolder: com.google.common.collect.Serialization$FieldSetter EMPTY_SET_FIELD_SETTER>;
+> v32 = staticinvoke <com.google.common.collect.ImmutableSetMultimap: com.google.common.collect.ImmutableSet emptySet(java.util.Comparator)>(v2);
+> virtualinvoke v31.<com.google.common.collect.Serialization$FieldSetter: void set(java.lang.Object,java.lang.Object)>(v0, v32);

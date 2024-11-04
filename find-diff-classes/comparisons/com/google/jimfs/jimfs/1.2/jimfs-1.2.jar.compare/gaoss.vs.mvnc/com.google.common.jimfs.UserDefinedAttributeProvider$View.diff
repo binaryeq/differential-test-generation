@@ -1,0 +1,20 @@
+33a34
+> int v11, v12, v8, v9;
+35c36,37
+< java.lang.String v1, v3, v6, v7;
+---
+> java.lang.StringBuilder v14;
+> java.lang.String v1, v10, v13, v3, v6, v7;
+45,46c47,55
+< v7 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,java.lang.String)>(v6, v1) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("attribute \'\u0001:\u0001\' is not set");
+< specialinvoke v5.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(v7);
+---
+> v7 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v6);
+> v8 = virtualinvoke v7.<java.lang.String: int length()>();
+> v9 = 24 + v8;
+> v10 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v1);
+> v11 = virtualinvoke v10.<java.lang.String: int length()>();
+> v12 = v9 + v11;
+> specialinvoke v14.<java.lang.StringBuilder: void <init>(int)>(v12);
+> v13 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,java.lang.String)>(v6, v1) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("attribute \'\u0001:\u0001\' is not set");
+> specialinvoke v5.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(v13);

@@ -1,0 +1,39 @@
+74d73
+< long v10, v15;
+76,77c75,76
+< int[] v12, v17, v4;
+< int v1, v13, v14, v18, v19, v5, v6;
+---
+> int[] v10, v14, v4;
+> int v1, v11, v12, v15, v16, v5, v6;
+79c78
+< com.google.common.collect.EnumMultiset v11, v16, v3, v7, v8, v9;
+---
+> com.google.common.collect.EnumMultiset v13, v3, v7, v8, v9;
+98,108c97,104
+< v10 = v9.<com.google.common.collect.EnumMultiset: long size>;
+< v11 = v0.<com.google.common.collect.EnumMultiset$Itr: com.google.common.collect.EnumMultiset this$0>;
+< v12 = v11.<com.google.common.collect.EnumMultiset: int[] counts>;
+< v13 = v0.<com.google.common.collect.EnumMultiset$Itr: int toRemove>;
+< v14 = v12[v13];
+< v15 = v10 - v14;
+< v8.<com.google.common.collect.EnumMultiset: long size> = v15;
+< v16 = v0.<com.google.common.collect.EnumMultiset$Itr: com.google.common.collect.EnumMultiset this$0>;
+< v17 = v16.<com.google.common.collect.EnumMultiset: int[] counts>;
+< v18 = v0.<com.google.common.collect.EnumMultiset$Itr: int toRemove>;
+< v17[v18] = 0;
+---
+> v10 = v9.<com.google.common.collect.EnumMultiset: int[] counts>;
+> v11 = v0.<com.google.common.collect.EnumMultiset$Itr: int toRemove>;
+> v12 = v10[v11];
+> v8.<com.google.common.collect.EnumMultiset: long size> = v12;
+> v13 = v0.<com.google.common.collect.EnumMultiset$Itr: com.google.common.collect.EnumMultiset this$0>;
+> v14 = v13.<com.google.common.collect.EnumMultiset: int[] counts>;
+> v15 = v0.<com.google.common.collect.EnumMultiset$Itr: int toRemove>;
+> v14[v15] = 0;
+110,111c106,107
+< v19 = (int) -1;
+< v0.<com.google.common.collect.EnumMultiset$Itr: int toRemove> = v19;
+---
+> v16 = (int) -1;
+> v0.<com.google.common.collect.EnumMultiset$Itr: int toRemove> = v16;

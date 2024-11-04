@@ -1,0 +1,25 @@
+65d64
+< com.google.common.reflect.TypeToken$1 v0;
+67c66,69
+< java.lang.String v2, v3;
+---
+> com.google.common.reflect.TypeToken$1 v0;
+> int v5, v6, v8, v9;
+> java.lang.StringBuilder v11;
+> java.lang.String v10, v2, v3, v4, v7;
+70,72c72,82
+< v2 = specialinvoke v0.<com.google.common.reflect.Invokable$MethodInvokable: java.lang.String toString()>();
+< v3 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (com.google.common.reflect.TypeToken,java.lang.String)>(v1, v2) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001.\u0001");
+< return v3;
+---
+> v2 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v1);
+> v3 = specialinvoke v0.<com.google.common.reflect.Invokable$MethodInvokable: java.lang.String toString()>();
+> v4 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v2);
+> v5 = virtualinvoke v4.<java.lang.String: int length()>();
+> v6 = 1 + v5;
+> v7 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v3);
+> v8 = virtualinvoke v7.<java.lang.String: int length()>();
+> v9 = v6 + v8;
+> specialinvoke v11.<java.lang.StringBuilder: void <init>(int)>(v9);
+> v10 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,java.lang.String)>(v2, v3) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001.\u0001");
+> return v10;

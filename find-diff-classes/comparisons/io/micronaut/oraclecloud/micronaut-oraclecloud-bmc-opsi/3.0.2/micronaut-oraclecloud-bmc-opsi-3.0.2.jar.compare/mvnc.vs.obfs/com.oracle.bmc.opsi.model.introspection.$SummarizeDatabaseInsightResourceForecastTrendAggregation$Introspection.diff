@@ -1,0 +1,1142 @@
+8,15c8,15
+< int v131, v155, v179, v203, v227, v251, v275, v299, v325, v351;
+< io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef v108, v132, v156, v180, v204, v228, v252, v276, v300, v326;
+< io.micronaut.inject.'annotation'.DefaultAnnotationMetadata v0, v109, v13, v133, v157, v181, v205, v22, v229, v253, v277, v301, v31, v327, v40, v49, v58, v67, v76, v85, v96;
+< java.util.List v126, v127, v128, v150, v151, v152, v174, v175, v176, v198, v199, v200, v222, v223, v224, v246, v247, v248, v270, v271, v272, v294, v295, v296, v318, v319, v320, v344, v345, v346;
+< io.micronaut.core.type.Argument[] v104, v12, v322, v348, v93;
+< java.util.Map v10, v100, v101, v102, v103, v11, v110, v111, v112, v113, v114, v115, v116, v117, v118, v119, v120, v121, v122, v123, v124, v125, v129, v134, v135, v136, v137, v138, v139, v14, v140, v141, v142, v143, v144, v145, v146, v147, v148, v149, v15, v153, v158, v159, v16, v160, v161, v162, v163, v164, v165, v166, v167, v168, v169, v17, v170, v171, v172, v173, v177, v18, v182, v183, v184, v185, v186, v187, v188, v189, v19, v190, v191, v192, v193, v194, v195, v196, v197, v2, v20, v201, v206, v207, v208, v209, v210, v211, v212, v213, v214, v215, v216, v217, v218, v219, v220, v221, v225, v23, v230, v231, v232, v233, v234, v235, v236, v237, v238, v239, v24, v240, v241, v242, v243, v244, v245, v249, v25, v254, v255, v256, v257, v258, v259, v26, v260, v261, v262, v263, v264, v265, v266, v267, v268, v269, v27, v273, v278, v279, v28, v280, v281, v282, v283, v284, v285, v286, v287, v288, v289, v29, v290, v291, v292, v293, v297, v3, v302, v303, v304, v305, v306, v307, v308, v309, v310, v311, v312, v313, v314, v315, v316, v317, v32, v321, v328, v329, v33, v330, v331, v332, v333, v334, v335, v336, v337, v338, v339, v34, v340, v341, v342, v343, v347, v35, v36, v37, v38, v4, v41, v42, v43, v44, v45, v46, v47, v5, v50, v51, v52, v53, v54, v55, v56, v59, v6, v60, v61, v62, v63, v64, v65, v68, v69, v70, v71, v72, v73, v74, v77, v78, v79, v8, v80, v81, v82, v83, v86, v87, v88, v89, v9, v90, v91, v92, v97, v98, v99;
+< io.micronaut.core.type.Argument v105, v106, v130, v154, v178, v202, v21, v226, v250, v274, v298, v30, v323, v324, v349, v350, v39, v48, v57, v66, v75, v84, v94, v95;
+< io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef[] v107;
+---
+> int v140, v164, v188, v212, v236, v260, v284, v308, v332, v358, v384;
+> io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef v117, v141, v165, v189, v213, v237, v261, v285, v309, v333, v359;
+> io.micronaut.inject.'annotation'.DefaultAnnotationMetadata v0, v105, v118, v13, v142, v166, v190, v214, v22, v238, v262, v286, v31, v310, v334, v360, v40, v49, v58, v67, v76, v85, v94;
+> java.util.List v135, v136, v137, v159, v160, v161, v183, v184, v185, v207, v208, v209, v231, v232, v233, v255, v256, v257, v279, v280, v281, v303, v304, v305, v327, v328, v329, v351, v352, v353, v377, v378, v379;
+> io.micronaut.core.type.Argument[] v102, v113, v12, v355, v381;
+> java.util.Map v10, v100, v101, v106, v107, v108, v109, v11, v110, v111, v112, v119, v120, v121, v122, v123, v124, v125, v126, v127, v128, v129, v130, v131, v132, v133, v134, v138, v14, v143, v144, v145, v146, v147, v148, v149, v15, v150, v151, v152, v153, v154, v155, v156, v157, v158, v16, v162, v167, v168, v169, v17, v170, v171, v172, v173, v174, v175, v176, v177, v178, v179, v18, v180, v181, v182, v186, v19, v191, v192, v193, v194, v195, v196, v197, v198, v199, v2, v20, v200, v201, v202, v203, v204, v205, v206, v210, v215, v216, v217, v218, v219, v220, v221, v222, v223, v224, v225, v226, v227, v228, v229, v23, v230, v234, v239, v24, v240, v241, v242, v243, v244, v245, v246, v247, v248, v249, v25, v250, v251, v252, v253, v254, v258, v26, v263, v264, v265, v266, v267, v268, v269, v27, v270, v271, v272, v273, v274, v275, v276, v277, v278, v28, v282, v287, v288, v289, v29, v290, v291, v292, v293, v294, v295, v296, v297, v298, v299, v3, v300, v301, v302, v306, v311, v312, v313, v314, v315, v316, v317, v318, v319, v32, v320, v321, v322, v323, v324, v325, v326, v33, v330, v335, v336, v337, v338, v339, v34, v340, v341, v342, v343, v344, v345, v346, v347, v348, v349, v35, v350, v354, v36, v361, v362, v363, v364, v365, v366, v367, v368, v369, v37, v370, v371, v372, v373, v374, v375, v376, v38, v380, v4, v41, v42, v43, v44, v45, v46, v47, v5, v50, v51, v52, v53, v54, v55, v56, v59, v6, v60, v61, v62, v63, v64, v65, v68, v69, v70, v71, v72, v73, v74, v77, v78, v79, v8, v80, v81, v82, v83, v86, v87, v88, v89, v9, v90, v91, v92, v95, v96, v97, v98, v99;
+> io.micronaut.core.type.Argument v103, v104, v114, v115, v139, v163, v187, v21, v211, v235, v259, v283, v30, v307, v331, v356, v357, v382, v383, v39, v48, v57, v66, v75, v84, v93;
+> io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef[] v116;
+18c18
+< v1 = newarray (java.lang.String)[10];
+---
+> v1 = newarray (java.lang.String)[11];
+25,28c25,29
+< v1[6] = "pattern";
+< v1[7] = "tablespaceName";
+< v1[8] = "historicalData";
+< v1[9] = "projectedData";
+---
+> v1[6] = "selectedForecastAlgorithm";
+> v1[7] = "pattern";
+> v1[8] = "tablespaceName";
+> v1[9] = "historicalData";
+> v1[10] = "projectedData";
+34c35
+< v7 = newarray (java.lang.String)[10];
+---
+> v7 = newarray (java.lang.String)[11];
+41,44c42,46
+< v7[6] = "pattern";
+< v7[7] = "tablespaceName";
+< v7[8] = "historicalData";
+< v7[9] = "projectedData";
+---
+> v7[6] = "selectedForecastAlgorithm";
+> v7[7] = "pattern";
+> v7[8] = "tablespaceName";
+> v7[9] = "historicalData";
+> v7[10] = "projectedData";
+51c53
+< v12 = newarray (io.micronaut.core.type.Argument)[10];
+---
+> v12 = newarray (io.micronaut.core.type.Argument)[11];
+127c129
+< v75 = staticinvoke <io.micronaut.core.type.Argument: io.micronaut.core.type.Argument of(java.lang.Class,java.lang.String,io.micronaut.core.'annotation'.AnnotationMetadata,io.micronaut.core.type.Argument[])>(class "Lcom/oracle/bmc/opsi/model/SummarizeDatabaseInsightResourceForecastTrendAggregation$Pattern;", "pattern", v67, null);
+---
+> v75 = staticinvoke <io.micronaut.core.type.Argument: io.micronaut.core.type.Argument of(java.lang.Class,java.lang.String,io.micronaut.core.'annotation'.AnnotationMetadata,io.micronaut.core.type.Argument[])>(class "Ljava/lang/String;", "selectedForecastAlgorithm", v67, null);
+138c140
+< v84 = staticinvoke <io.micronaut.core.type.Argument: io.micronaut.core.type.Argument of(java.lang.Class,java.lang.String,io.micronaut.core.'annotation'.AnnotationMetadata,io.micronaut.core.type.Argument[])>(class "Ljava/lang/String;", "tablespaceName", v76, null);
+---
+> v84 = staticinvoke <io.micronaut.core.type.Argument: io.micronaut.core.type.Argument of(java.lang.Class,java.lang.String,io.micronaut.core.'annotation'.AnnotationMetadata,io.micronaut.core.type.Argument[])>(class "Lcom/oracle/bmc/opsi/model/SummarizeDatabaseInsightResourceForecastTrendAggregation$Pattern;", "pattern", v76, null);
+149,154c151,155
+< v93 = newarray (io.micronaut.core.type.Argument)[1];
+< v94 = staticinvoke <io.micronaut.core.type.Argument: io.micronaut.core.type.Argument of(java.lang.Class,java.lang.String)>(class "Lcom/oracle/bmc/opsi/model/HistoricalDataItem;", "E");
+< v93[0] = v94;
+< v95 = staticinvoke <io.micronaut.core.type.Argument: io.micronaut.core.type.Argument of(java.lang.Class,java.lang.String,io.micronaut.core.'annotation'.AnnotationMetadata,io.micronaut.core.type.Argument[])>(class "Ljava/util/List;", "historicalData", v85, v93);
+< v12[8] = v95;
+< v96 = new io.micronaut.inject.'annotation'.DefaultAnnotationMetadata;
+---
+> v93 = staticinvoke <io.micronaut.core.type.Argument: io.micronaut.core.type.Argument of(java.lang.Class,java.lang.String,io.micronaut.core.'annotation'.AnnotationMetadata,io.micronaut.core.type.Argument[])>(class "Ljava/lang/String;", "tablespaceName", v85, null);
+> v12[8] = v93;
+> v94 = new io.micronaut.inject.'annotation'.DefaultAnnotationMetadata;
+> v95 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v96 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("jakarta.annotation.Nullable", v95);
+156c157
+< v98 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("jakarta.annotation.Nullable", v97);
+---
+> v98 = staticinvoke <java.util.Map: java.util.Map of()>();
+158c159
+< v100 = staticinvoke <java.util.Map: java.util.Map of()>();
+---
+> v100 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("jakarta.annotation.Nullable", v99);
+160,173c161,173
+< v102 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("jakarta.annotation.Nullable", v101);
+< v103 = staticinvoke <java.util.Map: java.util.Map of()>();
+< specialinvoke v96.<io.micronaut.inject.'annotation'.DefaultAnnotationMetadata: void <init>(java.util.Map,java.util.Map,java.util.Map,java.util.Map,java.util.Map,boolean,boolean)>(v98, v99, v100, v102, v103, 0, 0);
+< v104 = newarray (io.micronaut.core.type.Argument)[1];
+< v105 = staticinvoke <io.micronaut.core.type.Argument: io.micronaut.core.type.Argument of(java.lang.Class,java.lang.String)>(class "Lcom/oracle/bmc/opsi/model/ProjectedDataItem;", "E");
+< v104[0] = v105;
+< v106 = staticinvoke <io.micronaut.core.type.Argument: io.micronaut.core.type.Argument of(java.lang.Class,java.lang.String,io.micronaut.core.'annotation'.AnnotationMetadata,io.micronaut.core.type.Argument[])>(class "Ljava/util/List;", "projectedData", v96, v104);
+< v12[9] = v106;
+< <com.oracle.bmc.opsi.model.introspection.$SummarizeDatabaseInsightResourceForecastTrendAggregation$Introspection: io.micronaut.core.type.Argument[] $CONSTRUCTOR_ARGUMENTS> = v12;
+< v107 = newarray (io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef)[10];
+< v108 = new io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef;
+< v109 = new io.micronaut.inject.'annotation'.DefaultAnnotationMetadata;
+< v110 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("value", "timeIntervalStart");
+< v111 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("property", "timeIntervalStart");
+---
+> specialinvoke v94.<io.micronaut.inject.'annotation'.DefaultAnnotationMetadata: void <init>(java.util.Map,java.util.Map,java.util.Map,java.util.Map,java.util.Map,boolean,boolean)>(v96, v97, v98, v100, v101, 0, 0);
+> v102 = newarray (io.micronaut.core.type.Argument)[1];
+> v103 = staticinvoke <io.micronaut.core.type.Argument: io.micronaut.core.type.Argument of(java.lang.Class,java.lang.String)>(class "Lcom/oracle/bmc/opsi/model/HistoricalDataItem;", "E");
+> v102[0] = v103;
+> v104 = staticinvoke <io.micronaut.core.type.Argument: io.micronaut.core.type.Argument of(java.lang.Class,java.lang.String,io.micronaut.core.'annotation'.AnnotationMetadata,io.micronaut.core.type.Argument[])>(class "Ljava/util/List;", "historicalData", v94, v102);
+> v12[9] = v104;
+> v105 = new io.micronaut.inject.'annotation'.DefaultAnnotationMetadata;
+> v106 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v107 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("jakarta.annotation.Nullable", v106);
+> v108 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v109 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v110 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v111 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("jakarta.annotation.Nullable", v110);
+175,185c175,189
+< v113 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty", v110, "io.micronaut.serde.config.annotation.SerdeConfig", v111, "jakarta.annotation.Nullable", v112);
+< v114 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v115 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v116 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v117 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v114, "io.micronaut.core.annotation.Internal", v115, "io.micronaut.serde.config.annotation.SerdeConfig", v116);
+< v118 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v119 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v120 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v121 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v118, "io.micronaut.core.annotation.Internal", v119, "io.micronaut.serde.config.annotation.SerdeConfig", v120);
+< v122 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("value", "timeIntervalStart");
+< v123 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("property", "timeIntervalStart");
+---
+> specialinvoke v105.<io.micronaut.inject.'annotation'.DefaultAnnotationMetadata: void <init>(java.util.Map,java.util.Map,java.util.Map,java.util.Map,java.util.Map,boolean,boolean)>(v107, v108, v109, v111, v112, 0, 0);
+> v113 = newarray (io.micronaut.core.type.Argument)[1];
+> v114 = staticinvoke <io.micronaut.core.type.Argument: io.micronaut.core.type.Argument of(java.lang.Class,java.lang.String)>(class "Lcom/oracle/bmc/opsi/model/ProjectedDataItem;", "E");
+> v113[0] = v114;
+> v115 = staticinvoke <io.micronaut.core.type.Argument: io.micronaut.core.type.Argument of(java.lang.Class,java.lang.String,io.micronaut.core.'annotation'.AnnotationMetadata,io.micronaut.core.type.Argument[])>(class "Ljava/util/List;", "projectedData", v105, v113);
+> v12[10] = v115;
+> <com.oracle.bmc.opsi.model.introspection.$SummarizeDatabaseInsightResourceForecastTrendAggregation$Introspection: io.micronaut.core.type.Argument[] $CONSTRUCTOR_ARGUMENTS> = v12;
+> v116 = newarray (io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef)[11];
+> v117 = new io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef;
+> v118 = new io.micronaut.inject.'annotation'.DefaultAnnotationMetadata;
+> v119 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("value", "timeIntervalStart");
+> v120 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("property", "timeIntervalStart");
+> v121 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v122 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty", v119, "io.micronaut.serde.config.annotation.SerdeConfig", v120, "jakarta.annotation.Nullable", v121);
+> v123 = staticinvoke <java.util.Map: java.util.Map of()>();
+187,212c191,216
+< v125 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty", v122, "io.micronaut.serde.config.annotation.SerdeConfig", v123, "jakarta.annotation.Nullable", v124);
+< v126 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty");
+< v127 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("io.micronaut.serde.config.annotation.SerdeConfig");
+< v128 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty");
+< v129 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v126, "io.micronaut.core.annotation.Internal", v127, "io.micronaut.serde.config.annotation.SerdeConfig", v128);
+< specialinvoke v109.<io.micronaut.inject.'annotation'.DefaultAnnotationMetadata: void <init>(java.util.Map,java.util.Map,java.util.Map,java.util.Map,java.util.Map,boolean,boolean)>(v113, v117, v121, v125, v129, 0, 0);
+< v130 = staticinvoke <io.micronaut.core.type.Argument: io.micronaut.core.type.Argument of(java.lang.Class,java.lang.String,io.micronaut.core.'annotation'.AnnotationMetadata,io.micronaut.core.type.Argument[])>(class "Ljava/util/Date;", "timeIntervalStart", v109, null);
+< v131 = (int) -1;
+< specialinvoke v108.<io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef: void <init>(io.micronaut.core.type.Argument,int,int,int,boolean,boolean)>(v130, 0, v131, 1, 1, 1);
+< v107[0] = v108;
+< v132 = new io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef;
+< v133 = new io.micronaut.inject.'annotation'.DefaultAnnotationMetadata;
+< v134 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("value", "timeIntervalEnd");
+< v135 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("property", "timeIntervalEnd");
+< v136 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v137 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty", v134, "io.micronaut.serde.config.annotation.SerdeConfig", v135, "jakarta.annotation.Nullable", v136);
+< v138 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v139 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v140 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v141 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v138, "io.micronaut.core.annotation.Internal", v139, "io.micronaut.serde.config.annotation.SerdeConfig", v140);
+< v142 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v143 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v144 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v145 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v142, "io.micronaut.core.annotation.Internal", v143, "io.micronaut.serde.config.annotation.SerdeConfig", v144);
+< v146 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("value", "timeIntervalEnd");
+< v147 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("property", "timeIntervalEnd");
+---
+> v125 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v126 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v123, "io.micronaut.core.annotation.Internal", v124, "io.micronaut.serde.config.annotation.SerdeConfig", v125);
+> v127 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v128 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v129 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v130 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v127, "io.micronaut.core.annotation.Internal", v128, "io.micronaut.serde.config.annotation.SerdeConfig", v129);
+> v131 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("value", "timeIntervalStart");
+> v132 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("property", "timeIntervalStart");
+> v133 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v134 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty", v131, "io.micronaut.serde.config.annotation.SerdeConfig", v132, "jakarta.annotation.Nullable", v133);
+> v135 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty");
+> v136 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("io.micronaut.serde.config.annotation.SerdeConfig");
+> v137 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty");
+> v138 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v135, "io.micronaut.core.annotation.Internal", v136, "io.micronaut.serde.config.annotation.SerdeConfig", v137);
+> specialinvoke v118.<io.micronaut.inject.'annotation'.DefaultAnnotationMetadata: void <init>(java.util.Map,java.util.Map,java.util.Map,java.util.Map,java.util.Map,boolean,boolean)>(v122, v126, v130, v134, v138, 0, 0);
+> v139 = staticinvoke <io.micronaut.core.type.Argument: io.micronaut.core.type.Argument of(java.lang.Class,java.lang.String,io.micronaut.core.'annotation'.AnnotationMetadata,io.micronaut.core.type.Argument[])>(class "Ljava/util/Date;", "timeIntervalStart", v118, null);
+> v140 = (int) -1;
+> specialinvoke v117.<io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef: void <init>(io.micronaut.core.type.Argument,int,int,int,boolean,boolean)>(v139, 0, v140, 1, 1, 1);
+> v116[0] = v117;
+> v141 = new io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef;
+> v142 = new io.micronaut.inject.'annotation'.DefaultAnnotationMetadata;
+> v143 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("value", "timeIntervalEnd");
+> v144 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("property", "timeIntervalEnd");
+> v145 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v146 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty", v143, "io.micronaut.serde.config.annotation.SerdeConfig", v144, "jakarta.annotation.Nullable", v145);
+> v147 = staticinvoke <java.util.Map: java.util.Map of()>();
+214,239c218,243
+< v149 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty", v146, "io.micronaut.serde.config.annotation.SerdeConfig", v147, "jakarta.annotation.Nullable", v148);
+< v150 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty");
+< v151 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("io.micronaut.serde.config.annotation.SerdeConfig");
+< v152 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty");
+< v153 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v150, "io.micronaut.core.annotation.Internal", v151, "io.micronaut.serde.config.annotation.SerdeConfig", v152);
+< specialinvoke v133.<io.micronaut.inject.'annotation'.DefaultAnnotationMetadata: void <init>(java.util.Map,java.util.Map,java.util.Map,java.util.Map,java.util.Map,boolean,boolean)>(v137, v141, v145, v149, v153, 0, 0);
+< v154 = staticinvoke <io.micronaut.core.type.Argument: io.micronaut.core.type.Argument of(java.lang.Class,java.lang.String,io.micronaut.core.'annotation'.AnnotationMetadata,io.micronaut.core.type.Argument[])>(class "Ljava/util/Date;", "timeIntervalEnd", v133, null);
+< v155 = (int) -1;
+< specialinvoke v132.<io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef: void <init>(io.micronaut.core.type.Argument,int,int,int,boolean,boolean)>(v154, 2, v155, 3, 1, 1);
+< v107[1] = v132;
+< v156 = new io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef;
+< v157 = new io.micronaut.inject.'annotation'.DefaultAnnotationMetadata;
+< v158 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("value", "highUtilizationThreshold");
+< v159 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("property", "highUtilizationThreshold");
+< v160 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v161 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty", v158, "io.micronaut.serde.config.annotation.SerdeConfig", v159, "jakarta.annotation.Nullable", v160);
+< v162 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v163 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v164 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v165 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v162, "io.micronaut.core.annotation.Internal", v163, "io.micronaut.serde.config.annotation.SerdeConfig", v164);
+< v166 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v167 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v168 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v169 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v166, "io.micronaut.core.annotation.Internal", v167, "io.micronaut.serde.config.annotation.SerdeConfig", v168);
+< v170 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("value", "highUtilizationThreshold");
+< v171 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("property", "highUtilizationThreshold");
+---
+> v149 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v150 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v147, "io.micronaut.core.annotation.Internal", v148, "io.micronaut.serde.config.annotation.SerdeConfig", v149);
+> v151 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v152 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v153 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v154 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v151, "io.micronaut.core.annotation.Internal", v152, "io.micronaut.serde.config.annotation.SerdeConfig", v153);
+> v155 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("value", "timeIntervalEnd");
+> v156 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("property", "timeIntervalEnd");
+> v157 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v158 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty", v155, "io.micronaut.serde.config.annotation.SerdeConfig", v156, "jakarta.annotation.Nullable", v157);
+> v159 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty");
+> v160 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("io.micronaut.serde.config.annotation.SerdeConfig");
+> v161 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty");
+> v162 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v159, "io.micronaut.core.annotation.Internal", v160, "io.micronaut.serde.config.annotation.SerdeConfig", v161);
+> specialinvoke v142.<io.micronaut.inject.'annotation'.DefaultAnnotationMetadata: void <init>(java.util.Map,java.util.Map,java.util.Map,java.util.Map,java.util.Map,boolean,boolean)>(v146, v150, v154, v158, v162, 0, 0);
+> v163 = staticinvoke <io.micronaut.core.type.Argument: io.micronaut.core.type.Argument of(java.lang.Class,java.lang.String,io.micronaut.core.'annotation'.AnnotationMetadata,io.micronaut.core.type.Argument[])>(class "Ljava/util/Date;", "timeIntervalEnd", v142, null);
+> v164 = (int) -1;
+> specialinvoke v141.<io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef: void <init>(io.micronaut.core.type.Argument,int,int,int,boolean,boolean)>(v163, 2, v164, 3, 1, 1);
+> v116[1] = v141;
+> v165 = new io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef;
+> v166 = new io.micronaut.inject.'annotation'.DefaultAnnotationMetadata;
+> v167 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("value", "highUtilizationThreshold");
+> v168 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("property", "highUtilizationThreshold");
+> v169 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v170 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty", v167, "io.micronaut.serde.config.annotation.SerdeConfig", v168, "jakarta.annotation.Nullable", v169);
+> v171 = staticinvoke <java.util.Map: java.util.Map of()>();
+241,266c245,270
+< v173 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty", v170, "io.micronaut.serde.config.annotation.SerdeConfig", v171, "jakarta.annotation.Nullable", v172);
+< v174 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty");
+< v175 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("io.micronaut.serde.config.annotation.SerdeConfig");
+< v176 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty");
+< v177 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v174, "io.micronaut.core.annotation.Internal", v175, "io.micronaut.serde.config.annotation.SerdeConfig", v176);
+< specialinvoke v157.<io.micronaut.inject.'annotation'.DefaultAnnotationMetadata: void <init>(java.util.Map,java.util.Map,java.util.Map,java.util.Map,java.util.Map,boolean,boolean)>(v161, v165, v169, v173, v177, 0, 0);
+< v178 = staticinvoke <io.micronaut.core.type.Argument: io.micronaut.core.type.Argument of(java.lang.Class,java.lang.String,io.micronaut.core.'annotation'.AnnotationMetadata,io.micronaut.core.type.Argument[])>(class "Ljava/lang/Integer;", "highUtilizationThreshold", v157, null);
+< v179 = (int) -1;
+< specialinvoke v156.<io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef: void <init>(io.micronaut.core.type.Argument,int,int,int,boolean,boolean)>(v178, 4, v179, 5, 1, 1);
+< v107[2] = v156;
+< v180 = new io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef;
+< v181 = new io.micronaut.inject.'annotation'.DefaultAnnotationMetadata;
+< v182 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("value", "lowUtilizationThreshold");
+< v183 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("property", "lowUtilizationThreshold");
+< v184 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v185 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty", v182, "io.micronaut.serde.config.annotation.SerdeConfig", v183, "jakarta.annotation.Nullable", v184);
+< v186 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v187 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v188 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v189 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v186, "io.micronaut.core.annotation.Internal", v187, "io.micronaut.serde.config.annotation.SerdeConfig", v188);
+< v190 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v191 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v192 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v193 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v190, "io.micronaut.core.annotation.Internal", v191, "io.micronaut.serde.config.annotation.SerdeConfig", v192);
+< v194 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("value", "lowUtilizationThreshold");
+< v195 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("property", "lowUtilizationThreshold");
+---
+> v173 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v174 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v171, "io.micronaut.core.annotation.Internal", v172, "io.micronaut.serde.config.annotation.SerdeConfig", v173);
+> v175 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v176 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v177 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v178 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v175, "io.micronaut.core.annotation.Internal", v176, "io.micronaut.serde.config.annotation.SerdeConfig", v177);
+> v179 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("value", "highUtilizationThreshold");
+> v180 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("property", "highUtilizationThreshold");
+> v181 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v182 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty", v179, "io.micronaut.serde.config.annotation.SerdeConfig", v180, "jakarta.annotation.Nullable", v181);
+> v183 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty");
+> v184 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("io.micronaut.serde.config.annotation.SerdeConfig");
+> v185 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty");
+> v186 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v183, "io.micronaut.core.annotation.Internal", v184, "io.micronaut.serde.config.annotation.SerdeConfig", v185);
+> specialinvoke v166.<io.micronaut.inject.'annotation'.DefaultAnnotationMetadata: void <init>(java.util.Map,java.util.Map,java.util.Map,java.util.Map,java.util.Map,boolean,boolean)>(v170, v174, v178, v182, v186, 0, 0);
+> v187 = staticinvoke <io.micronaut.core.type.Argument: io.micronaut.core.type.Argument of(java.lang.Class,java.lang.String,io.micronaut.core.'annotation'.AnnotationMetadata,io.micronaut.core.type.Argument[])>(class "Ljava/lang/Integer;", "highUtilizationThreshold", v166, null);
+> v188 = (int) -1;
+> specialinvoke v165.<io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef: void <init>(io.micronaut.core.type.Argument,int,int,int,boolean,boolean)>(v187, 4, v188, 5, 1, 1);
+> v116[2] = v165;
+> v189 = new io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef;
+> v190 = new io.micronaut.inject.'annotation'.DefaultAnnotationMetadata;
+> v191 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("value", "lowUtilizationThreshold");
+> v192 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("property", "lowUtilizationThreshold");
+> v193 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v194 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty", v191, "io.micronaut.serde.config.annotation.SerdeConfig", v192, "jakarta.annotation.Nullable", v193);
+> v195 = staticinvoke <java.util.Map: java.util.Map of()>();
+268,293c272,297
+< v197 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty", v194, "io.micronaut.serde.config.annotation.SerdeConfig", v195, "jakarta.annotation.Nullable", v196);
+< v198 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty");
+< v199 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("io.micronaut.serde.config.annotation.SerdeConfig");
+< v200 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty");
+< v201 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v198, "io.micronaut.core.annotation.Internal", v199, "io.micronaut.serde.config.annotation.SerdeConfig", v200);
+< specialinvoke v181.<io.micronaut.inject.'annotation'.DefaultAnnotationMetadata: void <init>(java.util.Map,java.util.Map,java.util.Map,java.util.Map,java.util.Map,boolean,boolean)>(v185, v189, v193, v197, v201, 0, 0);
+< v202 = staticinvoke <io.micronaut.core.type.Argument: io.micronaut.core.type.Argument of(java.lang.Class,java.lang.String,io.micronaut.core.'annotation'.AnnotationMetadata,io.micronaut.core.type.Argument[])>(class "Ljava/lang/Integer;", "lowUtilizationThreshold", v181, null);
+< v203 = (int) -1;
+< specialinvoke v180.<io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef: void <init>(io.micronaut.core.type.Argument,int,int,int,boolean,boolean)>(v202, 6, v203, 7, 1, 1);
+< v107[3] = v180;
+< v204 = new io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef;
+< v205 = new io.micronaut.inject.'annotation'.DefaultAnnotationMetadata;
+< v206 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("value", "resourceMetric");
+< v207 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("property", "resourceMetric");
+< v208 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v209 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty", v206, "io.micronaut.serde.config.annotation.SerdeConfig", v207, "jakarta.annotation.Nullable", v208);
+< v210 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v211 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v212 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v213 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v210, "io.micronaut.core.annotation.Internal", v211, "io.micronaut.serde.config.annotation.SerdeConfig", v212);
+< v214 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v215 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v216 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v217 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v214, "io.micronaut.core.annotation.Internal", v215, "io.micronaut.serde.config.annotation.SerdeConfig", v216);
+< v218 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("value", "resourceMetric");
+< v219 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("property", "resourceMetric");
+---
+> v197 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v198 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v195, "io.micronaut.core.annotation.Internal", v196, "io.micronaut.serde.config.annotation.SerdeConfig", v197);
+> v199 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v200 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v201 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v202 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v199, "io.micronaut.core.annotation.Internal", v200, "io.micronaut.serde.config.annotation.SerdeConfig", v201);
+> v203 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("value", "lowUtilizationThreshold");
+> v204 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("property", "lowUtilizationThreshold");
+> v205 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v206 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty", v203, "io.micronaut.serde.config.annotation.SerdeConfig", v204, "jakarta.annotation.Nullable", v205);
+> v207 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty");
+> v208 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("io.micronaut.serde.config.annotation.SerdeConfig");
+> v209 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty");
+> v210 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v207, "io.micronaut.core.annotation.Internal", v208, "io.micronaut.serde.config.annotation.SerdeConfig", v209);
+> specialinvoke v190.<io.micronaut.inject.'annotation'.DefaultAnnotationMetadata: void <init>(java.util.Map,java.util.Map,java.util.Map,java.util.Map,java.util.Map,boolean,boolean)>(v194, v198, v202, v206, v210, 0, 0);
+> v211 = staticinvoke <io.micronaut.core.type.Argument: io.micronaut.core.type.Argument of(java.lang.Class,java.lang.String,io.micronaut.core.'annotation'.AnnotationMetadata,io.micronaut.core.type.Argument[])>(class "Ljava/lang/Integer;", "lowUtilizationThreshold", v190, null);
+> v212 = (int) -1;
+> specialinvoke v189.<io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef: void <init>(io.micronaut.core.type.Argument,int,int,int,boolean,boolean)>(v211, 6, v212, 7, 1, 1);
+> v116[3] = v189;
+> v213 = new io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef;
+> v214 = new io.micronaut.inject.'annotation'.DefaultAnnotationMetadata;
+> v215 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("value", "resourceMetric");
+> v216 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("property", "resourceMetric");
+> v217 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v218 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty", v215, "io.micronaut.serde.config.annotation.SerdeConfig", v216, "jakarta.annotation.Nullable", v217);
+> v219 = staticinvoke <java.util.Map: java.util.Map of()>();
+295,320c299,324
+< v221 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty", v218, "io.micronaut.serde.config.annotation.SerdeConfig", v219, "jakarta.annotation.Nullable", v220);
+< v222 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty");
+< v223 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("io.micronaut.serde.config.annotation.SerdeConfig");
+< v224 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty");
+< v225 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v222, "io.micronaut.core.annotation.Internal", v223, "io.micronaut.serde.config.annotation.SerdeConfig", v224);
+< specialinvoke v205.<io.micronaut.inject.'annotation'.DefaultAnnotationMetadata: void <init>(java.util.Map,java.util.Map,java.util.Map,java.util.Map,java.util.Map,boolean,boolean)>(v209, v213, v217, v221, v225, 0, 0);
+< v226 = staticinvoke <io.micronaut.core.type.Argument: io.micronaut.core.type.Argument of(java.lang.Class,java.lang.String,io.micronaut.core.'annotation'.AnnotationMetadata,io.micronaut.core.type.Argument[])>(class "Lcom/oracle/bmc/opsi/model/SummarizeDatabaseInsightResourceForecastTrendAggregation$ResourceMetric;", "resourceMetric", v205, null);
+< v227 = (int) -1;
+< specialinvoke v204.<io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef: void <init>(io.micronaut.core.type.Argument,int,int,int,boolean,boolean)>(v226, 8, v227, 9, 1, 1);
+< v107[4] = v204;
+< v228 = new io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef;
+< v229 = new io.micronaut.inject.'annotation'.DefaultAnnotationMetadata;
+< v230 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("value", "usageUnit");
+< v231 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("property", "usageUnit");
+< v232 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v233 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty", v230, "io.micronaut.serde.config.annotation.SerdeConfig", v231, "jakarta.annotation.Nullable", v232);
+< v234 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v235 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v236 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v237 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v234, "io.micronaut.core.annotation.Internal", v235, "io.micronaut.serde.config.annotation.SerdeConfig", v236);
+< v238 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v239 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v240 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v241 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v238, "io.micronaut.core.annotation.Internal", v239, "io.micronaut.serde.config.annotation.SerdeConfig", v240);
+< v242 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("value", "usageUnit");
+< v243 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("property", "usageUnit");
+---
+> v221 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v222 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v219, "io.micronaut.core.annotation.Internal", v220, "io.micronaut.serde.config.annotation.SerdeConfig", v221);
+> v223 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v224 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v225 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v226 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v223, "io.micronaut.core.annotation.Internal", v224, "io.micronaut.serde.config.annotation.SerdeConfig", v225);
+> v227 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("value", "resourceMetric");
+> v228 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("property", "resourceMetric");
+> v229 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v230 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty", v227, "io.micronaut.serde.config.annotation.SerdeConfig", v228, "jakarta.annotation.Nullable", v229);
+> v231 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty");
+> v232 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("io.micronaut.serde.config.annotation.SerdeConfig");
+> v233 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty");
+> v234 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v231, "io.micronaut.core.annotation.Internal", v232, "io.micronaut.serde.config.annotation.SerdeConfig", v233);
+> specialinvoke v214.<io.micronaut.inject.'annotation'.DefaultAnnotationMetadata: void <init>(java.util.Map,java.util.Map,java.util.Map,java.util.Map,java.util.Map,boolean,boolean)>(v218, v222, v226, v230, v234, 0, 0);
+> v235 = staticinvoke <io.micronaut.core.type.Argument: io.micronaut.core.type.Argument of(java.lang.Class,java.lang.String,io.micronaut.core.'annotation'.AnnotationMetadata,io.micronaut.core.type.Argument[])>(class "Lcom/oracle/bmc/opsi/model/SummarizeDatabaseInsightResourceForecastTrendAggregation$ResourceMetric;", "resourceMetric", v214, null);
+> v236 = (int) -1;
+> specialinvoke v213.<io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef: void <init>(io.micronaut.core.type.Argument,int,int,int,boolean,boolean)>(v235, 8, v236, 9, 1, 1);
+> v116[4] = v213;
+> v237 = new io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef;
+> v238 = new io.micronaut.inject.'annotation'.DefaultAnnotationMetadata;
+> v239 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("value", "usageUnit");
+> v240 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("property", "usageUnit");
+> v241 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v242 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty", v239, "io.micronaut.serde.config.annotation.SerdeConfig", v240, "jakarta.annotation.Nullable", v241);
+> v243 = staticinvoke <java.util.Map: java.util.Map of()>();
+322,347c326,351
+< v245 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty", v242, "io.micronaut.serde.config.annotation.SerdeConfig", v243, "jakarta.annotation.Nullable", v244);
+< v246 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty");
+< v247 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("io.micronaut.serde.config.annotation.SerdeConfig");
+< v248 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty");
+< v249 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v246, "io.micronaut.core.annotation.Internal", v247, "io.micronaut.serde.config.annotation.SerdeConfig", v248);
+< specialinvoke v229.<io.micronaut.inject.'annotation'.DefaultAnnotationMetadata: void <init>(java.util.Map,java.util.Map,java.util.Map,java.util.Map,java.util.Map,boolean,boolean)>(v233, v237, v241, v245, v249, 0, 0);
+< v250 = staticinvoke <io.micronaut.core.type.Argument: io.micronaut.core.type.Argument of(java.lang.Class,java.lang.String,io.micronaut.core.'annotation'.AnnotationMetadata,io.micronaut.core.type.Argument[])>(class "Lcom/oracle/bmc/opsi/model/SummarizeDatabaseInsightResourceForecastTrendAggregation$UsageUnit;", "usageUnit", v229, null);
+< v251 = (int) -1;
+< specialinvoke v228.<io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef: void <init>(io.micronaut.core.type.Argument,int,int,int,boolean,boolean)>(v250, 10, v251, 11, 1, 1);
+< v107[5] = v228;
+< v252 = new io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef;
+< v253 = new io.micronaut.inject.'annotation'.DefaultAnnotationMetadata;
+< v254 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("value", "pattern");
+< v255 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("property", "pattern");
+< v256 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v257 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty", v254, "io.micronaut.serde.config.annotation.SerdeConfig", v255, "jakarta.annotation.Nullable", v256);
+< v258 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v259 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v260 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v261 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v258, "io.micronaut.core.annotation.Internal", v259, "io.micronaut.serde.config.annotation.SerdeConfig", v260);
+< v262 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v263 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v264 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v265 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v262, "io.micronaut.core.annotation.Internal", v263, "io.micronaut.serde.config.annotation.SerdeConfig", v264);
+< v266 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("value", "pattern");
+< v267 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("property", "pattern");
+---
+> v245 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v246 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v243, "io.micronaut.core.annotation.Internal", v244, "io.micronaut.serde.config.annotation.SerdeConfig", v245);
+> v247 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v248 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v249 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v250 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v247, "io.micronaut.core.annotation.Internal", v248, "io.micronaut.serde.config.annotation.SerdeConfig", v249);
+> v251 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("value", "usageUnit");
+> v252 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("property", "usageUnit");
+> v253 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v254 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty", v251, "io.micronaut.serde.config.annotation.SerdeConfig", v252, "jakarta.annotation.Nullable", v253);
+> v255 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty");
+> v256 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("io.micronaut.serde.config.annotation.SerdeConfig");
+> v257 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty");
+> v258 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v255, "io.micronaut.core.annotation.Internal", v256, "io.micronaut.serde.config.annotation.SerdeConfig", v257);
+> specialinvoke v238.<io.micronaut.inject.'annotation'.DefaultAnnotationMetadata: void <init>(java.util.Map,java.util.Map,java.util.Map,java.util.Map,java.util.Map,boolean,boolean)>(v242, v246, v250, v254, v258, 0, 0);
+> v259 = staticinvoke <io.micronaut.core.type.Argument: io.micronaut.core.type.Argument of(java.lang.Class,java.lang.String,io.micronaut.core.'annotation'.AnnotationMetadata,io.micronaut.core.type.Argument[])>(class "Lcom/oracle/bmc/opsi/model/SummarizeDatabaseInsightResourceForecastTrendAggregation$UsageUnit;", "usageUnit", v238, null);
+> v260 = (int) -1;
+> specialinvoke v237.<io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef: void <init>(io.micronaut.core.type.Argument,int,int,int,boolean,boolean)>(v259, 10, v260, 11, 1, 1);
+> v116[5] = v237;
+> v261 = new io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef;
+> v262 = new io.micronaut.inject.'annotation'.DefaultAnnotationMetadata;
+> v263 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("value", "selectedForecastAlgorithm");
+> v264 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("property", "selectedForecastAlgorithm");
+> v265 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v266 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty", v263, "io.micronaut.serde.config.annotation.SerdeConfig", v264, "jakarta.annotation.Nullable", v265);
+> v267 = staticinvoke <java.util.Map: java.util.Map of()>();
+349,374c353,378
+< v269 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty", v266, "io.micronaut.serde.config.annotation.SerdeConfig", v267, "jakarta.annotation.Nullable", v268);
+< v270 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty");
+< v271 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("io.micronaut.serde.config.annotation.SerdeConfig");
+< v272 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty");
+< v273 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v270, "io.micronaut.core.annotation.Internal", v271, "io.micronaut.serde.config.annotation.SerdeConfig", v272);
+< specialinvoke v253.<io.micronaut.inject.'annotation'.DefaultAnnotationMetadata: void <init>(java.util.Map,java.util.Map,java.util.Map,java.util.Map,java.util.Map,boolean,boolean)>(v257, v261, v265, v269, v273, 0, 0);
+< v274 = staticinvoke <io.micronaut.core.type.Argument: io.micronaut.core.type.Argument of(java.lang.Class,java.lang.String,io.micronaut.core.'annotation'.AnnotationMetadata,io.micronaut.core.type.Argument[])>(class "Lcom/oracle/bmc/opsi/model/SummarizeDatabaseInsightResourceForecastTrendAggregation$Pattern;", "pattern", v253, null);
+< v275 = (int) -1;
+< specialinvoke v252.<io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef: void <init>(io.micronaut.core.type.Argument,int,int,int,boolean,boolean)>(v274, 12, v275, 13, 1, 1);
+< v107[6] = v252;
+< v276 = new io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef;
+< v277 = new io.micronaut.inject.'annotation'.DefaultAnnotationMetadata;
+< v278 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("value", "tablespaceName");
+< v279 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("property", "tablespaceName");
+< v280 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v281 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty", v278, "io.micronaut.serde.config.annotation.SerdeConfig", v279, "jakarta.annotation.Nullable", v280);
+< v282 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v283 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v284 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v285 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v282, "io.micronaut.core.annotation.Internal", v283, "io.micronaut.serde.config.annotation.SerdeConfig", v284);
+< v286 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v287 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v288 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v289 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v286, "io.micronaut.core.annotation.Internal", v287, "io.micronaut.serde.config.annotation.SerdeConfig", v288);
+< v290 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("value", "tablespaceName");
+< v291 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("property", "tablespaceName");
+---
+> v269 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v270 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v267, "io.micronaut.core.annotation.Internal", v268, "io.micronaut.serde.config.annotation.SerdeConfig", v269);
+> v271 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v272 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v273 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v274 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v271, "io.micronaut.core.annotation.Internal", v272, "io.micronaut.serde.config.annotation.SerdeConfig", v273);
+> v275 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("value", "selectedForecastAlgorithm");
+> v276 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("property", "selectedForecastAlgorithm");
+> v277 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v278 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty", v275, "io.micronaut.serde.config.annotation.SerdeConfig", v276, "jakarta.annotation.Nullable", v277);
+> v279 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty");
+> v280 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("io.micronaut.serde.config.annotation.SerdeConfig");
+> v281 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty");
+> v282 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v279, "io.micronaut.core.annotation.Internal", v280, "io.micronaut.serde.config.annotation.SerdeConfig", v281);
+> specialinvoke v262.<io.micronaut.inject.'annotation'.DefaultAnnotationMetadata: void <init>(java.util.Map,java.util.Map,java.util.Map,java.util.Map,java.util.Map,boolean,boolean)>(v266, v270, v274, v278, v282, 0, 0);
+> v283 = staticinvoke <io.micronaut.core.type.Argument: io.micronaut.core.type.Argument of(java.lang.Class,java.lang.String,io.micronaut.core.'annotation'.AnnotationMetadata,io.micronaut.core.type.Argument[])>(class "Ljava/lang/String;", "selectedForecastAlgorithm", v262, null);
+> v284 = (int) -1;
+> specialinvoke v261.<io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef: void <init>(io.micronaut.core.type.Argument,int,int,int,boolean,boolean)>(v283, 12, v284, 13, 1, 1);
+> v116[6] = v261;
+> v285 = new io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef;
+> v286 = new io.micronaut.inject.'annotation'.DefaultAnnotationMetadata;
+> v287 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("value", "pattern");
+> v288 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("property", "pattern");
+> v289 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v290 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty", v287, "io.micronaut.serde.config.annotation.SerdeConfig", v288, "jakarta.annotation.Nullable", v289);
+> v291 = staticinvoke <java.util.Map: java.util.Map of()>();
+376,401c380,405
+< v293 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty", v290, "io.micronaut.serde.config.annotation.SerdeConfig", v291, "jakarta.annotation.Nullable", v292);
+< v294 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty");
+< v295 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("io.micronaut.serde.config.annotation.SerdeConfig");
+< v296 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty");
+< v297 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v294, "io.micronaut.core.annotation.Internal", v295, "io.micronaut.serde.config.annotation.SerdeConfig", v296);
+< specialinvoke v277.<io.micronaut.inject.'annotation'.DefaultAnnotationMetadata: void <init>(java.util.Map,java.util.Map,java.util.Map,java.util.Map,java.util.Map,boolean,boolean)>(v281, v285, v289, v293, v297, 0, 0);
+< v298 = staticinvoke <io.micronaut.core.type.Argument: io.micronaut.core.type.Argument of(java.lang.Class,java.lang.String,io.micronaut.core.'annotation'.AnnotationMetadata,io.micronaut.core.type.Argument[])>(class "Ljava/lang/String;", "tablespaceName", v277, null);
+< v299 = (int) -1;
+< specialinvoke v276.<io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef: void <init>(io.micronaut.core.type.Argument,int,int,int,boolean,boolean)>(v298, 14, v299, 15, 1, 1);
+< v107[7] = v276;
+< v300 = new io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef;
+< v301 = new io.micronaut.inject.'annotation'.DefaultAnnotationMetadata;
+< v302 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("value", "historicalData");
+< v303 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("property", "historicalData");
+< v304 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v305 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty", v302, "io.micronaut.serde.config.annotation.SerdeConfig", v303, "jakarta.annotation.Nullable", v304);
+< v306 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v307 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v308 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v309 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v306, "io.micronaut.core.annotation.Internal", v307, "io.micronaut.serde.config.annotation.SerdeConfig", v308);
+< v310 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v311 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v312 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v313 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v310, "io.micronaut.core.annotation.Internal", v311, "io.micronaut.serde.config.annotation.SerdeConfig", v312);
+< v314 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("value", "historicalData");
+< v315 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("property", "historicalData");
+---
+> v293 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v294 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v291, "io.micronaut.core.annotation.Internal", v292, "io.micronaut.serde.config.annotation.SerdeConfig", v293);
+> v295 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v296 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v297 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v298 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v295, "io.micronaut.core.annotation.Internal", v296, "io.micronaut.serde.config.annotation.SerdeConfig", v297);
+> v299 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("value", "pattern");
+> v300 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("property", "pattern");
+> v301 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v302 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty", v299, "io.micronaut.serde.config.annotation.SerdeConfig", v300, "jakarta.annotation.Nullable", v301);
+> v303 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty");
+> v304 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("io.micronaut.serde.config.annotation.SerdeConfig");
+> v305 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty");
+> v306 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v303, "io.micronaut.core.annotation.Internal", v304, "io.micronaut.serde.config.annotation.SerdeConfig", v305);
+> specialinvoke v286.<io.micronaut.inject.'annotation'.DefaultAnnotationMetadata: void <init>(java.util.Map,java.util.Map,java.util.Map,java.util.Map,java.util.Map,boolean,boolean)>(v290, v294, v298, v302, v306, 0, 0);
+> v307 = staticinvoke <io.micronaut.core.type.Argument: io.micronaut.core.type.Argument of(java.lang.Class,java.lang.String,io.micronaut.core.'annotation'.AnnotationMetadata,io.micronaut.core.type.Argument[])>(class "Lcom/oracle/bmc/opsi/model/SummarizeDatabaseInsightResourceForecastTrendAggregation$Pattern;", "pattern", v286, null);
+> v308 = (int) -1;
+> specialinvoke v285.<io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef: void <init>(io.micronaut.core.type.Argument,int,int,int,boolean,boolean)>(v307, 14, v308, 15, 1, 1);
+> v116[7] = v285;
+> v309 = new io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef;
+> v310 = new io.micronaut.inject.'annotation'.DefaultAnnotationMetadata;
+> v311 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("value", "tablespaceName");
+> v312 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("property", "tablespaceName");
+> v313 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v314 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty", v311, "io.micronaut.serde.config.annotation.SerdeConfig", v312, "jakarta.annotation.Nullable", v313);
+> v315 = staticinvoke <java.util.Map: java.util.Map of()>();
+403,426c407,429
+< v317 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty", v314, "io.micronaut.serde.config.annotation.SerdeConfig", v315, "jakarta.annotation.Nullable", v316);
+< v318 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty");
+< v319 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("io.micronaut.serde.config.annotation.SerdeConfig");
+< v320 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty");
+< v321 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v318, "io.micronaut.core.annotation.Internal", v319, "io.micronaut.serde.config.annotation.SerdeConfig", v320);
+< specialinvoke v301.<io.micronaut.inject.'annotation'.DefaultAnnotationMetadata: void <init>(java.util.Map,java.util.Map,java.util.Map,java.util.Map,java.util.Map,boolean,boolean)>(v305, v309, v313, v317, v321, 0, 0);
+< v322 = newarray (io.micronaut.core.type.Argument)[1];
+< v323 = staticinvoke <io.micronaut.core.type.Argument: io.micronaut.core.type.Argument of(java.lang.Class,java.lang.String)>(class "Lcom/oracle/bmc/opsi/model/HistoricalDataItem;", "E");
+< v322[0] = v323;
+< v324 = staticinvoke <io.micronaut.core.type.Argument: io.micronaut.core.type.Argument of(java.lang.Class,java.lang.String,io.micronaut.core.'annotation'.AnnotationMetadata,io.micronaut.core.type.Argument[])>(class "Ljava/util/List;", "historicalData", v301, v322);
+< v325 = (int) -1;
+< specialinvoke v300.<io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef: void <init>(io.micronaut.core.type.Argument,int,int,int,boolean,boolean)>(v324, 16, v325, 17, 1, 1);
+< v107[8] = v300;
+< v326 = new io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef;
+< v327 = new io.micronaut.inject.'annotation'.DefaultAnnotationMetadata;
+< v328 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("value", "projectedData");
+< v329 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("property", "projectedData");
+< v330 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v331 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty", v328, "io.micronaut.serde.config.annotation.SerdeConfig", v329, "jakarta.annotation.Nullable", v330);
+< v332 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v333 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v334 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v335 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v332, "io.micronaut.core.annotation.Internal", v333, "io.micronaut.serde.config.annotation.SerdeConfig", v334);
+< v336 = staticinvoke <java.util.Map: java.util.Map of()>();
+---
+> v317 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v318 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v315, "io.micronaut.core.annotation.Internal", v316, "io.micronaut.serde.config.annotation.SerdeConfig", v317);
+> v319 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v320 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v321 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v322 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v319, "io.micronaut.core.annotation.Internal", v320, "io.micronaut.serde.config.annotation.SerdeConfig", v321);
+> v323 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("value", "tablespaceName");
+> v324 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("property", "tablespaceName");
+> v325 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v326 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty", v323, "io.micronaut.serde.config.annotation.SerdeConfig", v324, "jakarta.annotation.Nullable", v325);
+> v327 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty");
+> v328 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("io.micronaut.serde.config.annotation.SerdeConfig");
+> v329 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty");
+> v330 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v327, "io.micronaut.core.annotation.Internal", v328, "io.micronaut.serde.config.annotation.SerdeConfig", v329);
+> specialinvoke v310.<io.micronaut.inject.'annotation'.DefaultAnnotationMetadata: void <init>(java.util.Map,java.util.Map,java.util.Map,java.util.Map,java.util.Map,boolean,boolean)>(v314, v318, v322, v326, v330, 0, 0);
+> v331 = staticinvoke <io.micronaut.core.type.Argument: io.micronaut.core.type.Argument of(java.lang.Class,java.lang.String,io.micronaut.core.'annotation'.AnnotationMetadata,io.micronaut.core.type.Argument[])>(class "Ljava/lang/String;", "tablespaceName", v310, null);
+> v332 = (int) -1;
+> specialinvoke v309.<io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef: void <init>(io.micronaut.core.type.Argument,int,int,int,boolean,boolean)>(v331, 16, v332, 17, 1, 1);
+> v116[8] = v309;
+> v333 = new io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef;
+> v334 = new io.micronaut.inject.'annotation'.DefaultAnnotationMetadata;
+> v335 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("value", "historicalData");
+> v336 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("property", "historicalData");
+428,446c431,486
+< v338 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v339 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v336, "io.micronaut.core.annotation.Internal", v337, "io.micronaut.serde.config.annotation.SerdeConfig", v338);
+< v340 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("value", "projectedData");
+< v341 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("property", "projectedData");
+< v342 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v343 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty", v340, "io.micronaut.serde.config.annotation.SerdeConfig", v341, "jakarta.annotation.Nullable", v342);
+< v344 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty");
+< v345 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("io.micronaut.serde.config.annotation.SerdeConfig");
+< v346 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty");
+< v347 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v344, "io.micronaut.core.annotation.Internal", v345, "io.micronaut.serde.config.annotation.SerdeConfig", v346);
+< specialinvoke v327.<io.micronaut.inject.'annotation'.DefaultAnnotationMetadata: void <init>(java.util.Map,java.util.Map,java.util.Map,java.util.Map,java.util.Map,boolean,boolean)>(v331, v335, v339, v343, v347, 0, 0);
+< v348 = newarray (io.micronaut.core.type.Argument)[1];
+< v349 = staticinvoke <io.micronaut.core.type.Argument: io.micronaut.core.type.Argument of(java.lang.Class,java.lang.String)>(class "Lcom/oracle/bmc/opsi/model/ProjectedDataItem;", "E");
+< v348[0] = v349;
+< v350 = staticinvoke <io.micronaut.core.type.Argument: io.micronaut.core.type.Argument of(java.lang.Class,java.lang.String,io.micronaut.core.'annotation'.AnnotationMetadata,io.micronaut.core.type.Argument[])>(class "Ljava/util/List;", "projectedData", v327, v348);
+< v351 = (int) -1;
+< specialinvoke v326.<io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef: void <init>(io.micronaut.core.type.Argument,int,int,int,boolean,boolean)>(v350, 18, v351, 19, 1, 1);
+< v107[9] = v326;
+< <com.oracle.bmc.opsi.model.introspection.$SummarizeDatabaseInsightResourceForecastTrendAggregation$Introspection: io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef[] $PROPERTIES_REFERENCES> = v107;
+---
+> v338 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty", v335, "io.micronaut.serde.config.annotation.SerdeConfig", v336, "jakarta.annotation.Nullable", v337);
+> v339 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v340 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v341 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v342 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v339, "io.micronaut.core.annotation.Internal", v340, "io.micronaut.serde.config.annotation.SerdeConfig", v341);
+> v343 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v344 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v345 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v346 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v343, "io.micronaut.core.annotation.Internal", v344, "io.micronaut.serde.config.annotation.SerdeConfig", v345);
+> v347 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("value", "historicalData");
+> v348 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("property", "historicalData");
+> v349 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v350 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty", v347, "io.micronaut.serde.config.annotation.SerdeConfig", v348, "jakarta.annotation.Nullable", v349);
+> v351 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty");
+> v352 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("io.micronaut.serde.config.annotation.SerdeConfig");
+> v353 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty");
+> v354 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v351, "io.micronaut.core.annotation.Internal", v352, "io.micronaut.serde.config.annotation.SerdeConfig", v353);
+> specialinvoke v334.<io.micronaut.inject.'annotation'.DefaultAnnotationMetadata: void <init>(java.util.Map,java.util.Map,java.util.Map,java.util.Map,java.util.Map,boolean,boolean)>(v338, v342, v346, v350, v354, 0, 0);
+> v355 = newarray (io.micronaut.core.type.Argument)[1];
+> v356 = staticinvoke <io.micronaut.core.type.Argument: io.micronaut.core.type.Argument of(java.lang.Class,java.lang.String)>(class "Lcom/oracle/bmc/opsi/model/HistoricalDataItem;", "E");
+> v355[0] = v356;
+> v357 = staticinvoke <io.micronaut.core.type.Argument: io.micronaut.core.type.Argument of(java.lang.Class,java.lang.String,io.micronaut.core.'annotation'.AnnotationMetadata,io.micronaut.core.type.Argument[])>(class "Ljava/util/List;", "historicalData", v334, v355);
+> v358 = (int) -1;
+> specialinvoke v333.<io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef: void <init>(io.micronaut.core.type.Argument,int,int,int,boolean,boolean)>(v357, 18, v358, 19, 1, 1);
+> v116[9] = v333;
+> v359 = new io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef;
+> v360 = new io.micronaut.inject.'annotation'.DefaultAnnotationMetadata;
+> v361 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("value", "projectedData");
+> v362 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("property", "projectedData");
+> v363 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v364 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty", v361, "io.micronaut.serde.config.annotation.SerdeConfig", v362, "jakarta.annotation.Nullable", v363);
+> v365 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v366 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v367 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v368 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v365, "io.micronaut.core.annotation.Internal", v366, "io.micronaut.serde.config.annotation.SerdeConfig", v367);
+> v369 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v370 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v371 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v372 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v369, "io.micronaut.core.annotation.Internal", v370, "io.micronaut.serde.config.annotation.SerdeConfig", v371);
+> v373 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("value", "projectedData");
+> v374 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("property", "projectedData");
+> v375 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v376 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty", v373, "io.micronaut.serde.config.annotation.SerdeConfig", v374, "jakarta.annotation.Nullable", v375);
+> v377 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty");
+> v378 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("io.micronaut.serde.config.annotation.SerdeConfig");
+> v379 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty");
+> v380 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v377, "io.micronaut.core.annotation.Internal", v378, "io.micronaut.serde.config.annotation.SerdeConfig", v379);
+> specialinvoke v360.<io.micronaut.inject.'annotation'.DefaultAnnotationMetadata: void <init>(java.util.Map,java.util.Map,java.util.Map,java.util.Map,java.util.Map,boolean,boolean)>(v364, v368, v372, v376, v380, 0, 0);
+> v381 = newarray (io.micronaut.core.type.Argument)[1];
+> v382 = staticinvoke <io.micronaut.core.type.Argument: io.micronaut.core.type.Argument of(java.lang.Class,java.lang.String)>(class "Lcom/oracle/bmc/opsi/model/ProjectedDataItem;", "E");
+> v381[0] = v382;
+> v383 = staticinvoke <io.micronaut.core.type.Argument: io.micronaut.core.type.Argument of(java.lang.Class,java.lang.String,io.micronaut.core.'annotation'.AnnotationMetadata,io.micronaut.core.type.Argument[])>(class "Ljava/util/List;", "projectedData", v360, v381);
+> v384 = (int) -1;
+> specialinvoke v359.<io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef: void <init>(io.micronaut.core.type.Argument,int,int,int,boolean,boolean)>(v383, 20, v384, 21, 1, 1);
+> v116[10] = v359;
+> <com.oracle.bmc.opsi.model.introspection.$SummarizeDatabaseInsightResourceForecastTrendAggregation$Introspection: io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef[] $PROPERTIES_REFERENCES> = v116;
+465,470c505,506
+< com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$Pattern v100, v11, v111, v22, v33, v44, v55, v66, v70, v89;
+< java.lang.Integer v107, v108, v18, v19, v26, v30, v37, v41, v52, v53, v63, v64, v7, v74, v75, v8, v85, v86, v96, v97;
+< java.lang.String v101, v112, v12, v23, v34, v45, v56, v67, v78, v81;
+< java.lang.RuntimeException v114;
+< java.util.Date v105, v106, v15, v17, v28, v29, v39, v4, v40, v50, v51, v6, v61, v62, v72, v73, v83, v84, v94, v95;
+< java.util.List v102, v103, v113, v13, v14, v24, v25, v35, v36, v46, v47, v57, v58, v68, v69, v79, v80, v90, v91, v92;
+---
+> java.lang.Integer v104, v105, v116, v117, v128, v129, v19, v20, v28, v32, v40, v44, v56, v57, v68, v69, v7, v8, v80, v81, v92, v93;
+> java.util.Date v102, v103, v114, v115, v126, v127, v16, v18, v30, v31, v4, v42, v43, v54, v55, v6, v66, v67, v78, v79, v90, v91;
+473,475c509,510
+< com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$UsageUnit v10, v110, v21, v32, v43, v54, v59, v77, v88, v99;
+< com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation v104, v16, v27, v38, v49, v5, v60, v71, v82, v93;
+< com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$ResourceMetric v109, v20, v31, v42, v48, v65, v76, v87, v9, v98;
+---
+> com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation v101, v113, v125, v17, v29, v41, v5, v53, v65, v77, v89;
+> com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$ResourceMetric v106, v118, v130, v21, v33, v45, v52, v70, v82, v9, v94;
+476a512,516
+> com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$Pattern v109, v12, v121, v133, v24, v36, v48, v60, v72, v84, v88;
+> java.lang.String v100, v108, v11, v120, v122, v13, v132, v134, v23, v25, v35, v37, v47, v49, v59, v61, v71, v73, v76, v85, v96, v97;
+> java.lang.RuntimeException v136;
+> java.util.List v110, v111, v112, v123, v124, v135, v14, v15, v26, v27, v38, v39, v50, v51, v62, v63, v74, v75, v86, v87, v98, v99;
+> com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$UsageUnit v10, v107, v119, v131, v22, v34, v46, v58, v64, v83, v95;
+503c543,545
+< default: goto label21;
+---
+> case 20: goto label21;
+> case 21: goto label22;
+> default: goto label23;
+515,519c557,562
+< v11 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$Pattern getPattern()>();
+< v12 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.lang.String getTablespaceName()>();
+< v13 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.util.List getHistoricalData()>();
+< v14 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.util.List getProjectedData()>();
+< specialinvoke v5.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: void <init>(java.util.Date,java.util.Date,java.lang.Integer,java.lang.Integer,com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$ResourceMetric,com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$UsageUnit,com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$Pattern,java.lang.String,java.util.List,java.util.List)>(v3, v6, v7, v8, v9, v10, v11, v12, v13, v14);
+---
+> v11 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.lang.String getSelectedForecastAlgorithm()>();
+> v12 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$Pattern getPattern()>();
+> v13 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.lang.String getTablespaceName()>();
+> v14 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.util.List getHistoricalData()>();
+> v15 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.util.List getProjectedData()>();
+> specialinvoke v5.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: void <init>(java.util.Date,java.util.Date,java.lang.Integer,java.lang.Integer,com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$ResourceMetric,com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$UsageUnit,java.lang.String,com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$Pattern,java.lang.String,java.util.List,java.util.List)>(v3, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15);
+522,535c565
+< v15 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.util.Date getTimeIntervalEnd()>();
+< return v15;
+< label04:
+< v16 = new com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation;
+< v17 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.util.Date getTimeIntervalStart()>();
+< v18 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.lang.Integer getHighUtilizationThreshold()>();
+< v19 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.lang.Integer getLowUtilizationThreshold()>();
+< v20 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$ResourceMetric getResourceMetric()>();
+< v21 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$UsageUnit getUsageUnit()>();
+< v22 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$Pattern getPattern()>();
+< v23 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.lang.String getTablespaceName()>();
+< v24 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.util.List getHistoricalData()>();
+< v25 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.util.List getProjectedData()>();
+< specialinvoke v16.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: void <init>(java.util.Date,java.util.Date,java.lang.Integer,java.lang.Integer,com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$ResourceMetric,com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$UsageUnit,com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$Pattern,java.lang.String,java.util.List,java.util.List)>(v17, v3, v18, v19, v20, v21, v22, v23, v24, v25);
+---
+> v16 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.util.Date getTimeIntervalEnd()>();
+536a567,580
+> label04:
+> v17 = new com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation;
+> v18 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.util.Date getTimeIntervalStart()>();
+> v19 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.lang.Integer getHighUtilizationThreshold()>();
+> v20 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.lang.Integer getLowUtilizationThreshold()>();
+> v21 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$ResourceMetric getResourceMetric()>();
+> v22 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$UsageUnit getUsageUnit()>();
+> v23 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.lang.String getSelectedForecastAlgorithm()>();
+> v24 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$Pattern getPattern()>();
+> v25 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.lang.String getTablespaceName()>();
+> v26 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.util.List getHistoricalData()>();
+> v27 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.util.List getProjectedData()>();
+> specialinvoke v17.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: void <init>(java.util.Date,java.util.Date,java.lang.Integer,java.lang.Integer,com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$ResourceMetric,com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$UsageUnit,java.lang.String,com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$Pattern,java.lang.String,java.util.List,java.util.List)>(v18, v3, v19, v20, v21, v22, v23, v24, v25, v26, v27);
+> return v17;
+538,539c582,583
+< v26 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.lang.Integer getHighUtilizationThreshold()>();
+< return v26;
+---
+> v28 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.lang.Integer getHighUtilizationThreshold()>();
+> return v28;
+541,552c585,597
+< v27 = new com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation;
+< v28 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.util.Date getTimeIntervalStart()>();
+< v29 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.util.Date getTimeIntervalEnd()>();
+< v30 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.lang.Integer getLowUtilizationThreshold()>();
+< v31 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$ResourceMetric getResourceMetric()>();
+< v32 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$UsageUnit getUsageUnit()>();
+< v33 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$Pattern getPattern()>();
+< v34 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.lang.String getTablespaceName()>();
+< v35 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.util.List getHistoricalData()>();
+< v36 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.util.List getProjectedData()>();
+< specialinvoke v27.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: void <init>(java.util.Date,java.util.Date,java.lang.Integer,java.lang.Integer,com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$ResourceMetric,com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$UsageUnit,com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$Pattern,java.lang.String,java.util.List,java.util.List)>(v28, v29, v3, v30, v31, v32, v33, v34, v35, v36);
+< return v27;
+---
+> v29 = new com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation;
+> v30 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.util.Date getTimeIntervalStart()>();
+> v31 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.util.Date getTimeIntervalEnd()>();
+> v32 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.lang.Integer getLowUtilizationThreshold()>();
+> v33 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$ResourceMetric getResourceMetric()>();
+> v34 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$UsageUnit getUsageUnit()>();
+> v35 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.lang.String getSelectedForecastAlgorithm()>();
+> v36 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$Pattern getPattern()>();
+> v37 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.lang.String getTablespaceName()>();
+> v38 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.util.List getHistoricalData()>();
+> v39 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.util.List getProjectedData()>();
+> specialinvoke v29.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: void <init>(java.util.Date,java.util.Date,java.lang.Integer,java.lang.Integer,com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$ResourceMetric,com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$UsageUnit,java.lang.String,com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$Pattern,java.lang.String,java.util.List,java.util.List)>(v30, v31, v3, v32, v33, v34, v35, v36, v37, v38, v39);
+> return v29;
+554,555c599,600
+< v37 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.lang.Integer getLowUtilizationThreshold()>();
+< return v37;
+---
+> v40 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.lang.Integer getLowUtilizationThreshold()>();
+> return v40;
+557,568c602,614
+< v38 = new com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation;
+< v39 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.util.Date getTimeIntervalStart()>();
+< v40 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.util.Date getTimeIntervalEnd()>();
+< v41 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.lang.Integer getHighUtilizationThreshold()>();
+< v42 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$ResourceMetric getResourceMetric()>();
+< v43 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$UsageUnit getUsageUnit()>();
+< v44 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$Pattern getPattern()>();
+< v45 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.lang.String getTablespaceName()>();
+< v46 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.util.List getHistoricalData()>();
+< v47 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.util.List getProjectedData()>();
+< specialinvoke v38.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: void <init>(java.util.Date,java.util.Date,java.lang.Integer,java.lang.Integer,com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$ResourceMetric,com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$UsageUnit,com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$Pattern,java.lang.String,java.util.List,java.util.List)>(v39, v40, v41, v3, v42, v43, v44, v45, v46, v47);
+< return v38;
+---
+> v41 = new com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation;
+> v42 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.util.Date getTimeIntervalStart()>();
+> v43 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.util.Date getTimeIntervalEnd()>();
+> v44 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.lang.Integer getHighUtilizationThreshold()>();
+> v45 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$ResourceMetric getResourceMetric()>();
+> v46 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$UsageUnit getUsageUnit()>();
+> v47 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.lang.String getSelectedForecastAlgorithm()>();
+> v48 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$Pattern getPattern()>();
+> v49 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.lang.String getTablespaceName()>();
+> v50 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.util.List getHistoricalData()>();
+> v51 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.util.List getProjectedData()>();
+> specialinvoke v41.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: void <init>(java.util.Date,java.util.Date,java.lang.Integer,java.lang.Integer,com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$ResourceMetric,com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$UsageUnit,java.lang.String,com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$Pattern,java.lang.String,java.util.List,java.util.List)>(v42, v43, v44, v3, v45, v46, v47, v48, v49, v50, v51);
+> return v41;
+570,571c616,617
+< v48 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$ResourceMetric getResourceMetric()>();
+< return v48;
+---
+> v52 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$ResourceMetric getResourceMetric()>();
+> return v52;
+573,584c619,631
+< v49 = new com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation;
+< v50 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.util.Date getTimeIntervalStart()>();
+< v51 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.util.Date getTimeIntervalEnd()>();
+< v52 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.lang.Integer getHighUtilizationThreshold()>();
+< v53 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.lang.Integer getLowUtilizationThreshold()>();
+< v54 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$UsageUnit getUsageUnit()>();
+< v55 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$Pattern getPattern()>();
+< v56 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.lang.String getTablespaceName()>();
+< v57 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.util.List getHistoricalData()>();
+< v58 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.util.List getProjectedData()>();
+< specialinvoke v49.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: void <init>(java.util.Date,java.util.Date,java.lang.Integer,java.lang.Integer,com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$ResourceMetric,com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$UsageUnit,com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$Pattern,java.lang.String,java.util.List,java.util.List)>(v50, v51, v52, v53, v3, v54, v55, v56, v57, v58);
+< return v49;
+---
+> v53 = new com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation;
+> v54 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.util.Date getTimeIntervalStart()>();
+> v55 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.util.Date getTimeIntervalEnd()>();
+> v56 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.lang.Integer getHighUtilizationThreshold()>();
+> v57 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.lang.Integer getLowUtilizationThreshold()>();
+> v58 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$UsageUnit getUsageUnit()>();
+> v59 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.lang.String getSelectedForecastAlgorithm()>();
+> v60 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$Pattern getPattern()>();
+> v61 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.lang.String getTablespaceName()>();
+> v62 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.util.List getHistoricalData()>();
+> v63 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.util.List getProjectedData()>();
+> specialinvoke v53.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: void <init>(java.util.Date,java.util.Date,java.lang.Integer,java.lang.Integer,com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$ResourceMetric,com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$UsageUnit,java.lang.String,com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$Pattern,java.lang.String,java.util.List,java.util.List)>(v54, v55, v56, v57, v3, v58, v59, v60, v61, v62, v63);
+> return v53;
+586,587c633,634
+< v59 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$UsageUnit getUsageUnit()>();
+< return v59;
+---
+> v64 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$UsageUnit getUsageUnit()>();
+> return v64;
+589,600c636,648
+< v60 = new com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation;
+< v61 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.util.Date getTimeIntervalStart()>();
+< v62 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.util.Date getTimeIntervalEnd()>();
+< v63 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.lang.Integer getHighUtilizationThreshold()>();
+< v64 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.lang.Integer getLowUtilizationThreshold()>();
+< v65 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$ResourceMetric getResourceMetric()>();
+< v66 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$Pattern getPattern()>();
+< v67 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.lang.String getTablespaceName()>();
+< v68 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.util.List getHistoricalData()>();
+< v69 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.util.List getProjectedData()>();
+< specialinvoke v60.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: void <init>(java.util.Date,java.util.Date,java.lang.Integer,java.lang.Integer,com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$ResourceMetric,com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$UsageUnit,com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$Pattern,java.lang.String,java.util.List,java.util.List)>(v61, v62, v63, v64, v65, v3, v66, v67, v68, v69);
+< return v60;
+---
+> v65 = new com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation;
+> v66 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.util.Date getTimeIntervalStart()>();
+> v67 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.util.Date getTimeIntervalEnd()>();
+> v68 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.lang.Integer getHighUtilizationThreshold()>();
+> v69 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.lang.Integer getLowUtilizationThreshold()>();
+> v70 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$ResourceMetric getResourceMetric()>();
+> v71 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.lang.String getSelectedForecastAlgorithm()>();
+> v72 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$Pattern getPattern()>();
+> v73 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.lang.String getTablespaceName()>();
+> v74 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.util.List getHistoricalData()>();
+> v75 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.util.List getProjectedData()>();
+> specialinvoke v65.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: void <init>(java.util.Date,java.util.Date,java.lang.Integer,java.lang.Integer,com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$ResourceMetric,com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$UsageUnit,java.lang.String,com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$Pattern,java.lang.String,java.util.List,java.util.List)>(v66, v67, v68, v69, v70, v3, v71, v72, v73, v74, v75);
+> return v65;
+602,603c650,651
+< v70 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$Pattern getPattern()>();
+< return v70;
+---
+> v76 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.lang.String getSelectedForecastAlgorithm()>();
+> return v76;
+605,616c653,665
+< v71 = new com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation;
+< v72 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.util.Date getTimeIntervalStart()>();
+< v73 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.util.Date getTimeIntervalEnd()>();
+< v74 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.lang.Integer getHighUtilizationThreshold()>();
+< v75 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.lang.Integer getLowUtilizationThreshold()>();
+< v76 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$ResourceMetric getResourceMetric()>();
+< v77 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$UsageUnit getUsageUnit()>();
+< v78 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.lang.String getTablespaceName()>();
+< v79 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.util.List getHistoricalData()>();
+< v80 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.util.List getProjectedData()>();
+< specialinvoke v71.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: void <init>(java.util.Date,java.util.Date,java.lang.Integer,java.lang.Integer,com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$ResourceMetric,com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$UsageUnit,com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$Pattern,java.lang.String,java.util.List,java.util.List)>(v72, v73, v74, v75, v76, v77, v3, v78, v79, v80);
+< return v71;
+---
+> v77 = new com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation;
+> v78 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.util.Date getTimeIntervalStart()>();
+> v79 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.util.Date getTimeIntervalEnd()>();
+> v80 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.lang.Integer getHighUtilizationThreshold()>();
+> v81 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.lang.Integer getLowUtilizationThreshold()>();
+> v82 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$ResourceMetric getResourceMetric()>();
+> v83 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$UsageUnit getUsageUnit()>();
+> v84 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$Pattern getPattern()>();
+> v85 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.lang.String getTablespaceName()>();
+> v86 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.util.List getHistoricalData()>();
+> v87 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.util.List getProjectedData()>();
+> specialinvoke v77.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: void <init>(java.util.Date,java.util.Date,java.lang.Integer,java.lang.Integer,com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$ResourceMetric,com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$UsageUnit,java.lang.String,com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$Pattern,java.lang.String,java.util.List,java.util.List)>(v78, v79, v80, v81, v82, v83, v3, v84, v85, v86, v87);
+> return v77;
+618,619c667,668
+< v81 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.lang.String getTablespaceName()>();
+< return v81;
+---
+> v88 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$Pattern getPattern()>();
+> return v88;
+621,632c670,682
+< v82 = new com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation;
+< v83 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.util.Date getTimeIntervalStart()>();
+< v84 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.util.Date getTimeIntervalEnd()>();
+< v85 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.lang.Integer getHighUtilizationThreshold()>();
+< v86 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.lang.Integer getLowUtilizationThreshold()>();
+< v87 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$ResourceMetric getResourceMetric()>();
+< v88 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$UsageUnit getUsageUnit()>();
+< v89 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$Pattern getPattern()>();
+< v90 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.util.List getHistoricalData()>();
+< v91 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.util.List getProjectedData()>();
+< specialinvoke v82.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: void <init>(java.util.Date,java.util.Date,java.lang.Integer,java.lang.Integer,com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$ResourceMetric,com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$UsageUnit,com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$Pattern,java.lang.String,java.util.List,java.util.List)>(v83, v84, v85, v86, v87, v88, v89, v3, v90, v91);
+< return v82;
+---
+> v89 = new com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation;
+> v90 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.util.Date getTimeIntervalStart()>();
+> v91 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.util.Date getTimeIntervalEnd()>();
+> v92 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.lang.Integer getHighUtilizationThreshold()>();
+> v93 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.lang.Integer getLowUtilizationThreshold()>();
+> v94 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$ResourceMetric getResourceMetric()>();
+> v95 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$UsageUnit getUsageUnit()>();
+> v96 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.lang.String getSelectedForecastAlgorithm()>();
+> v97 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.lang.String getTablespaceName()>();
+> v98 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.util.List getHistoricalData()>();
+> v99 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.util.List getProjectedData()>();
+> specialinvoke v89.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: void <init>(java.util.Date,java.util.Date,java.lang.Integer,java.lang.Integer,com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$ResourceMetric,com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$UsageUnit,java.lang.String,com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$Pattern,java.lang.String,java.util.List,java.util.List)>(v90, v91, v92, v93, v94, v95, v96, v3, v97, v98, v99);
+> return v89;
+634,635c684,685
+< v92 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.util.List getHistoricalData()>();
+< return v92;
+---
+> v100 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.lang.String getTablespaceName()>();
+> return v100;
+637,648c687,699
+< v93 = new com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation;
+< v94 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.util.Date getTimeIntervalStart()>();
+< v95 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.util.Date getTimeIntervalEnd()>();
+< v96 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.lang.Integer getHighUtilizationThreshold()>();
+< v97 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.lang.Integer getLowUtilizationThreshold()>();
+< v98 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$ResourceMetric getResourceMetric()>();
+< v99 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$UsageUnit getUsageUnit()>();
+< v100 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$Pattern getPattern()>();
+< v101 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.lang.String getTablespaceName()>();
+< v102 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.util.List getProjectedData()>();
+< specialinvoke v93.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: void <init>(java.util.Date,java.util.Date,java.lang.Integer,java.lang.Integer,com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$ResourceMetric,com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$UsageUnit,com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$Pattern,java.lang.String,java.util.List,java.util.List)>(v94, v95, v96, v97, v98, v99, v100, v101, v3, v102);
+< return v93;
+---
+> v101 = new com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation;
+> v102 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.util.Date getTimeIntervalStart()>();
+> v103 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.util.Date getTimeIntervalEnd()>();
+> v104 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.lang.Integer getHighUtilizationThreshold()>();
+> v105 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.lang.Integer getLowUtilizationThreshold()>();
+> v106 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$ResourceMetric getResourceMetric()>();
+> v107 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$UsageUnit getUsageUnit()>();
+> v108 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.lang.String getSelectedForecastAlgorithm()>();
+> v109 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$Pattern getPattern()>();
+> v110 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.util.List getHistoricalData()>();
+> v111 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.util.List getProjectedData()>();
+> specialinvoke v101.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: void <init>(java.util.Date,java.util.Date,java.lang.Integer,java.lang.Integer,com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$ResourceMetric,com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$UsageUnit,java.lang.String,com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$Pattern,java.lang.String,java.util.List,java.util.List)>(v102, v103, v104, v105, v106, v107, v108, v109, v3, v110, v111);
+> return v101;
+650,651c701,702
+< v103 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.util.List getProjectedData()>();
+< return v103;
+---
+> v112 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.util.List getHistoricalData()>();
+> return v112;
+653,664c704,716
+< v104 = new com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation;
+< v105 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.util.Date getTimeIntervalStart()>();
+< v106 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.util.Date getTimeIntervalEnd()>();
+< v107 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.lang.Integer getHighUtilizationThreshold()>();
+< v108 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.lang.Integer getLowUtilizationThreshold()>();
+< v109 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$ResourceMetric getResourceMetric()>();
+< v110 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$UsageUnit getUsageUnit()>();
+< v111 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$Pattern getPattern()>();
+< v112 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.lang.String getTablespaceName()>();
+< v113 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.util.List getHistoricalData()>();
+< specialinvoke v104.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: void <init>(java.util.Date,java.util.Date,java.lang.Integer,java.lang.Integer,com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$ResourceMetric,com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$UsageUnit,com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$Pattern,java.lang.String,java.util.List,java.util.List)>(v105, v106, v107, v108, v109, v110, v111, v112, v113, v3);
+< return v104;
+---
+> v113 = new com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation;
+> v114 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.util.Date getTimeIntervalStart()>();
+> v115 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.util.Date getTimeIntervalEnd()>();
+> v116 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.lang.Integer getHighUtilizationThreshold()>();
+> v117 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.lang.Integer getLowUtilizationThreshold()>();
+> v118 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$ResourceMetric getResourceMetric()>();
+> v119 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$UsageUnit getUsageUnit()>();
+> v120 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.lang.String getSelectedForecastAlgorithm()>();
+> v121 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$Pattern getPattern()>();
+> v122 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.lang.String getTablespaceName()>();
+> v123 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.util.List getProjectedData()>();
+> specialinvoke v113.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: void <init>(java.util.Date,java.util.Date,java.lang.Integer,java.lang.Integer,com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$ResourceMetric,com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$UsageUnit,java.lang.String,com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$Pattern,java.lang.String,java.util.List,java.util.List)>(v114, v115, v116, v117, v118, v119, v120, v121, v122, v3, v123);
+> return v113;
+666,667c718,736
+< v114 = virtualinvoke v0.<com.oracle.bmc.opsi.model.introspection.$SummarizeDatabaseInsightResourceForecastTrendAggregation$Introspection: java.lang.RuntimeException unknownDispatchAtIndexException(int)>(v1);
+< throw v114;
+---
+> v124 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.util.List getProjectedData()>();
+> return v124;
+> label22:
+> v125 = new com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation;
+> v126 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.util.Date getTimeIntervalStart()>();
+> v127 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.util.Date getTimeIntervalEnd()>();
+> v128 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.lang.Integer getHighUtilizationThreshold()>();
+> v129 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.lang.Integer getLowUtilizationThreshold()>();
+> v130 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$ResourceMetric getResourceMetric()>();
+> v131 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$UsageUnit getUsageUnit()>();
+> v132 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.lang.String getSelectedForecastAlgorithm()>();
+> v133 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$Pattern getPattern()>();
+> v134 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.lang.String getTablespaceName()>();
+> v135 = virtualinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: java.util.List getHistoricalData()>();
+> specialinvoke v125.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: void <init>(java.util.Date,java.util.Date,java.lang.Integer,java.lang.Integer,com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$ResourceMetric,com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$UsageUnit,java.lang.String,com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$Pattern,java.lang.String,java.util.List,java.util.List)>(v126, v127, v128, v129, v130, v131, v132, v133, v134, v135, v3);
+> return v125;
+> label23:
+> v136 = virtualinvoke v0.<com.oracle.bmc.opsi.model.introspection.$SummarizeDatabaseInsightResourceForecastTrendAggregation$Introspection: java.lang.RuntimeException unknownDispatchAtIndexException(int)>(v1);
+> throw v136;
+673,675c742,744
+< java.lang.reflect.Method v11, v13, v15, v17, v19, v21, v3, v5, v7, v9;
+< java.lang.Class[] v10, v12, v14, v16, v18, v2, v20, v4, v6, v8;
+< java.lang.RuntimeException v22;
+---
+> java.lang.reflect.Method v11, v13, v15, v17, v19, v21, v23, v3, v5, v7, v9;
+> java.lang.Class[] v10, v12, v14, v16, v18, v2, v20, v22, v4, v6, v8;
+> java.lang.RuntimeException v24;
+681c750
+< case 1: goto label11;
+---
+> case 1: goto label12;
+683c752
+< case 3: goto label11;
+---
+> case 3: goto label12;
+685c754
+< case 5: goto label11;
+---
+> case 5: goto label12;
+687c756
+< case 7: goto label11;
+---
+> case 7: goto label12;
+689c758
+< case 9: goto label11;
+---
+> case 9: goto label12;
+691c760
+< case 11: goto label11;
+---
+> case 11: goto label12;
+693c762
+< case 13: goto label11;
+---
+> case 13: goto label12;
+695c764
+< case 15: goto label11;
+---
+> case 15: goto label12;
+697c766
+< case 17: goto label11;
+---
+> case 17: goto label12;
+699c768,770
+< default: goto label11;
+---
+> case 19: goto label12;
+> case 20: goto label11;
+> default: goto label12;
+727c798
+< v15 = staticinvoke <io.micronaut.core.reflect.ReflectionUtils: java.lang.reflect.Method getRequiredMethod(java.lang.Class,java.lang.String,java.lang.Class[])>(class "Lcom/oracle/bmc/opsi/model/SummarizeDatabaseInsightResourceForecastTrendAggregation;", "getPattern", v14);
+---
+> v15 = staticinvoke <io.micronaut.core.reflect.ReflectionUtils: java.lang.reflect.Method getRequiredMethod(java.lang.Class,java.lang.String,java.lang.Class[])>(class "Lcom/oracle/bmc/opsi/model/SummarizeDatabaseInsightResourceForecastTrendAggregation;", "getSelectedForecastAlgorithm", v14);
+731c802
+< v17 = staticinvoke <io.micronaut.core.reflect.ReflectionUtils: java.lang.reflect.Method getRequiredMethod(java.lang.Class,java.lang.String,java.lang.Class[])>(class "Lcom/oracle/bmc/opsi/model/SummarizeDatabaseInsightResourceForecastTrendAggregation;", "getTablespaceName", v16);
+---
+> v17 = staticinvoke <io.micronaut.core.reflect.ReflectionUtils: java.lang.reflect.Method getRequiredMethod(java.lang.Class,java.lang.String,java.lang.Class[])>(class "Lcom/oracle/bmc/opsi/model/SummarizeDatabaseInsightResourceForecastTrendAggregation;", "getPattern", v16);
+735c806
+< v19 = staticinvoke <io.micronaut.core.reflect.ReflectionUtils: java.lang.reflect.Method getRequiredMethod(java.lang.Class,java.lang.String,java.lang.Class[])>(class "Lcom/oracle/bmc/opsi/model/SummarizeDatabaseInsightResourceForecastTrendAggregation;", "getHistoricalData", v18);
+---
+> v19 = staticinvoke <io.micronaut.core.reflect.ReflectionUtils: java.lang.reflect.Method getRequiredMethod(java.lang.Class,java.lang.String,java.lang.Class[])>(class "Lcom/oracle/bmc/opsi/model/SummarizeDatabaseInsightResourceForecastTrendAggregation;", "getTablespaceName", v18);
+739c810
+< v21 = staticinvoke <io.micronaut.core.reflect.ReflectionUtils: java.lang.reflect.Method getRequiredMethod(java.lang.Class,java.lang.String,java.lang.Class[])>(class "Lcom/oracle/bmc/opsi/model/SummarizeDatabaseInsightResourceForecastTrendAggregation;", "getProjectedData", v20);
+---
+> v21 = staticinvoke <io.micronaut.core.reflect.ReflectionUtils: java.lang.reflect.Method getRequiredMethod(java.lang.Class,java.lang.String,java.lang.Class[])>(class "Lcom/oracle/bmc/opsi/model/SummarizeDatabaseInsightResourceForecastTrendAggregation;", "getHistoricalData", v20);
+742,743c813,818
+< v22 = virtualinvoke v0.<com.oracle.bmc.opsi.model.introspection.$SummarizeDatabaseInsightResourceForecastTrendAggregation$Introspection: java.lang.RuntimeException unknownDispatchAtIndexException(int)>(v1);
+< throw v22;
+---
+> v22 = <io.micronaut.core.reflect.ReflectionUtils: java.lang.Class[] EMPTY_CLASS_ARRAY>;
+> v23 = staticinvoke <io.micronaut.core.reflect.ReflectionUtils: java.lang.reflect.Method getRequiredMethod(java.lang.Class,java.lang.String,java.lang.Class[])>(class "Lcom/oracle/bmc/opsi/model/SummarizeDatabaseInsightResourceForecastTrendAggregation;", "getProjectedData", v22);
+> return v23;
+> label12:
+> v24 = virtualinvoke v0.<com.oracle.bmc.opsi.model.introspection.$SummarizeDatabaseInsightResourceForecastTrendAggregation$Introspection: java.lang.RuntimeException unknownDispatchAtIndexException(int)>(v1);
+> throw v24;
+750c825
+< java.lang.Object v10, v11, v12, v3, v4, v5, v6, v7, v8, v9;
+---
+> java.lang.Object v10, v11, v12, v13, v3, v4, v5, v6, v7, v8, v9;
+764c839,840
+< specialinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: void <init>(java.util.Date,java.util.Date,java.lang.Integer,java.lang.Integer,com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$ResourceMetric,com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$UsageUnit,com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$Pattern,java.lang.String,java.util.List,java.util.List)>(v3, v4, v5, v6, v7, v8, v9, v10, v11, v12);
+---
+> v13 = v1[10];
+> specialinvoke v2.<com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation: void <init>(java.util.Date,java.util.Date,java.lang.Integer,java.lang.Integer,com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$ResourceMetric,com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$UsageUnit,java.lang.String,com.oracle.bmc.opsi.model.SummarizeDatabaseInsightResourceForecastTrendAggregation$Pattern,java.lang.String,java.util.List,java.util.List)>(v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13);

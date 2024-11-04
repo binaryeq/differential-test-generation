@@ -1,0 +1,32 @@
+429d428
+< antlr.collections.AST v3;
+432a432
+> groovyjarjarantlr.collections.AST v3;
+436c436
+< v3 = virtualinvoke v1.<org.codehaus.groovy.antlr.GroovySourceAST: antlr.collections.AST getNextSibling()>();
+---
+> v3 = virtualinvoke v1.<org.codehaus.groovy.antlr.GroovySourceAST: groovyjarjarantlr.collections.AST getNextSibling()>();
+1360d1359
+< antlr.collections.AST v10, v3, v7;
+1364a1364
+> groovyjarjarantlr.collections.AST v10, v3, v7;
+1370c1370
+< v3 = virtualinvoke v1.<org.codehaus.groovy.antlr.GroovySourceAST: antlr.collections.AST getFirstChild()>();
+---
+> v3 = virtualinvoke v1.<org.codehaus.groovy.antlr.GroovySourceAST: groovyjarjarantlr.collections.AST getFirstChild()>();
+1372c1372
+< v5 = interfaceinvoke v3.<antlr.collections.AST: java.lang.String getText()>();
+---
+> v5 = interfaceinvoke v3.<groovyjarjarantlr.collections.AST: java.lang.String getText()>();
+1375,1376c1375,1376
+< v7 = interfaceinvoke v3.<antlr.collections.AST: antlr.collections.AST getNextSibling()>();
+< v8 = interfaceinvoke v7.<antlr.collections.AST: java.lang.String getText()>();
+---
+> v7 = interfaceinvoke v3.<groovyjarjarantlr.collections.AST: groovyjarjarantlr.collections.AST getNextSibling()>();
+> v8 = interfaceinvoke v7.<groovyjarjarantlr.collections.AST: java.lang.String getText()>();
+1381,1382c1381,1382
+< v10 = interfaceinvoke v3.<antlr.collections.AST: antlr.collections.AST getFirstChild()>();
+< v11 = interfaceinvoke v10.<antlr.collections.AST: java.lang.String getText()>();
+---
+> v10 = interfaceinvoke v3.<groovyjarjarantlr.collections.AST: groovyjarjarantlr.collections.AST getFirstChild()>();
+> v11 = interfaceinvoke v10.<groovyjarjarantlr.collections.AST: java.lang.String getText()>();

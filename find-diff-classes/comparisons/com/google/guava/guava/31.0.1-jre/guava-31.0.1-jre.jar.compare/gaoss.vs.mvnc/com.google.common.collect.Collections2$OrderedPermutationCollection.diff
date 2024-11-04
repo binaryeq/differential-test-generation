@@ -1,0 +1,17 @@
+103d102
+< java.lang.String v2;
+105a105,107
+> int v4, v5;
+> java.lang.StringBuilder v7;
+> java.lang.String v2, v3, v6;
+108,109c110,116
+< v2 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (com.google.common.collect.ImmutableList)>(v1) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("orderedPermutationCollection(\u0001)");
+< return v2;
+---
+> v2 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v1);
+> v3 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v2);
+> v4 = virtualinvoke v3.<java.lang.String: int length()>();
+> v5 = 30 + v4;
+> specialinvoke v7.<java.lang.StringBuilder: void <init>(int)>(v5);
+> v6 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v2) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("orderedPermutationCollection(\u0001)");
+> return v6;

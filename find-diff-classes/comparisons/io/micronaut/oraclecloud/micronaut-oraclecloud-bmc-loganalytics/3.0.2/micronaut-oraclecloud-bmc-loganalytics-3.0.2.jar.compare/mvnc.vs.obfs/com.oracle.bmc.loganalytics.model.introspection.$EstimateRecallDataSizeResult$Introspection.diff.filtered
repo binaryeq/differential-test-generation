@@ -1,0 +1,604 @@
+8,14c8,14
+< java.util.Map v10, v100, v101, v102, v103, v104, v105, v106, v107, v108, v109, v11, v110, v111, v112, v113, v114, v115, v119, v124, v125, v126, v127, v128, v129, v130, v131, v132, v133, v134, v135, v136, v137, v138, v139, v14, v143, v15, v16, v17, v18, v19, v2, v20, v23, v24, v25, v26, v27, v28, v29, v3, v32, v33, v34, v35, v36, v37, v38, v4, v41, v42, v43, v44, v45, v46, v47, v5, v52, v53, v54, v55, v56, v57, v58, v59, v6, v60, v61, v62, v63, v64, v65, v66, v67, v71, v76, v77, v78, v79, v8, v80, v81, v82, v83, v84, v85, v86, v87, v88, v89, v9, v90, v91, v95;
+< int v121, v145, v73, v97;
+< io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef v122, v50, v74, v98;
+< io.micronaut.inject.'annotation'.DefaultAnnotationMetadata v0, v123, v13, v22, v31, v40, v51, v75, v99;
+< io.micronaut.core.type.Argument v120, v144, v21, v30, v39, v48, v72, v96;
+< io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef[] v49;
+< java.util.List v116, v117, v118, v140, v141, v142, v68, v69, v70, v92, v93, v94;
+---
+> java.util.Map v10, v103, v104, v105, v106, v107, v108, v109, v11, v110, v111, v112, v113, v114, v115, v116, v117, v118, v122, v127, v128, v129, v130, v131, v132, v133, v134, v135, v136, v137, v138, v139, v14, v140, v141, v142, v146, v15, v151, v152, v153, v154, v155, v156, v157, v158, v159, v16, v160, v161, v162, v163, v164, v165, v166, v17, v170, v175, v176, v177, v178, v179, v18, v180, v181, v182, v183, v184, v185, v186, v187, v188, v189, v19, v190, v194, v199, v2, v20, v200, v201, v202, v203, v204, v205, v206, v207, v208, v209, v210, v211, v212, v213, v214, v218, v223, v224, v225, v226, v227, v228, v229, v23, v230, v231, v232, v233, v234, v235, v236, v237, v238, v24, v242, v25, v26, v27, v28, v29, v3, v32, v33, v34, v35, v36, v37, v38, v4, v41, v42, v43, v44, v45, v46, v47, v5, v50, v51, v52, v53, v54, v55, v56, v59, v6, v60, v61, v62, v63, v64, v65, v68, v69, v70, v71, v72, v73, v74, v79, v8, v80, v81, v82, v83, v84, v85, v86, v87, v88, v89, v9, v90, v91, v92, v93, v94, v98;
+> int v100, v124, v148, v172, v196, v220, v244;
+> io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef v101, v125, v149, v173, v197, v221, v77;
+> io.micronaut.inject.'annotation'.DefaultAnnotationMetadata v0, v102, v126, v13, v150, v174, v198, v22, v222, v31, v40, v49, v58, v67, v78;
+> io.micronaut.core.type.Argument v123, v147, v171, v195, v21, v219, v243, v30, v39, v48, v57, v66, v75, v99;
+> io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef[] v76;
+> java.util.List v119, v120, v121, v143, v144, v145, v167, v168, v169, v191, v192, v193, v215, v216, v217, v239, v240, v241, v95, v96, v97;
+18c18
+< v1 = newarray (java.lang.String)[4];
+---
+> v1 = newarray (java.lang.String)[7];
+22a23,25
+> v1[4] = "coreGroupCount";
+> v1[5] = "coreGroupCountLimit";
+> v1[6] = "sizeLimitInBytes";
+28c31
+< v7 = newarray (java.lang.String)[4];
+---
+> v7 = newarray (java.lang.String)[7];
+32a36,38
+> v7[4] = "coreGroupCount";
+> v7[5] = "coreGroupCountLimit";
+> v7[6] = "sizeLimitInBytes";
+39c45
+< v12 = newarray (io.micronaut.core.type.Argument)[4];
+---
+> v12 = newarray (io.micronaut.core.type.Argument)[7];
+84,89c90,94
+< <com.oracle.bmc.loganalytics.model.introspection.$EstimateRecallDataSizeResult$Introspection: io.micronaut.core.type.Argument[] $CONSTRUCTOR_ARGUMENTS> = v12;
+< v49 = newarray (io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef)[4];
+< v50 = new io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef;
+< v51 = new io.micronaut.inject.'annotation'.DefaultAnnotationMetadata;
+< v52 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("value", "timeDataEnded");
+< v53 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("property", "timeDataEnded");
+---
+> v49 = new io.micronaut.inject.'annotation'.DefaultAnnotationMetadata;
+> v50 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v51 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("jakarta.annotation.Nullable", v50);
+> v52 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v53 = staticinvoke <java.util.Map: java.util.Map of()>();
+91c96
+< v55 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty", v52, "io.micronaut.serde.config.annotation.SerdeConfig", v53, "jakarta.annotation.Nullable", v54);
+---
+> v55 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("jakarta.annotation.Nullable", v54);
+93,96c98,103
+< v57 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v58 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v59 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v56, "io.micronaut.core.annotation.Internal", v57, "io.micronaut.serde.config.annotation.SerdeConfig", v58);
+< v60 = staticinvoke <java.util.Map: java.util.Map of()>();
+---
+> specialinvoke v49.<io.micronaut.inject.'annotation'.DefaultAnnotationMetadata: void <init>(java.util.Map,java.util.Map,java.util.Map,java.util.Map,java.util.Map,boolean,boolean)>(v51, v52, v53, v55, v56, 0, 0);
+> v57 = staticinvoke <io.micronaut.core.type.Argument: io.micronaut.core.type.Argument of(java.lang.Class,java.lang.String,io.micronaut.core.'annotation'.AnnotationMetadata,io.micronaut.core.type.Argument[])>(class "Ljava/lang/Integer;", "coreGroupCount", v49, null);
+> v12[4] = v57;
+> v58 = new io.micronaut.inject.'annotation'.DefaultAnnotationMetadata;
+> v59 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v60 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("jakarta.annotation.Nullable", v59);
+99,119c106,128
+< v63 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v60, "io.micronaut.core.annotation.Internal", v61, "io.micronaut.serde.config.annotation.SerdeConfig", v62);
+< v64 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("value", "timeDataEnded");
+< v65 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("property", "timeDataEnded");
+< v66 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v67 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty", v64, "io.micronaut.serde.config.annotation.SerdeConfig", v65, "jakarta.annotation.Nullable", v66);
+< v68 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty");
+< v69 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("io.micronaut.serde.config.annotation.SerdeConfig");
+< v70 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty");
+< v71 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v68, "io.micronaut.core.annotation.Internal", v69, "io.micronaut.serde.config.annotation.SerdeConfig", v70);
+< specialinvoke v51.<io.micronaut.inject.'annotation'.DefaultAnnotationMetadata: void <init>(java.util.Map,java.util.Map,java.util.Map,java.util.Map,java.util.Map,boolean,boolean)>(v55, v59, v63, v67, v71, 0, 0);
+< v72 = staticinvoke <io.micronaut.core.type.Argument: io.micronaut.core.type.Argument of(java.lang.Class,java.lang.String,io.micronaut.core.'annotation'.AnnotationMetadata,io.micronaut.core.type.Argument[])>(class "Ljava/util/Date;", "timeDataEnded", v51, null);
+< v73 = (int) -1;
+< specialinvoke v50.<io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef: void <init>(io.micronaut.core.type.Argument,int,int,int,boolean,boolean)>(v72, 0, v73, 1, 1, 1);
+< v49[0] = v50;
+< v74 = new io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef;
+< v75 = new io.micronaut.inject.'annotation'.DefaultAnnotationMetadata;
+< v76 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("value", "timeDataStarted");
+< v77 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("property", "timeDataStarted");
+< v78 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v79 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty", v76, "io.micronaut.serde.config.annotation.SerdeConfig", v77, "jakarta.annotation.Nullable", v78);
+< v80 = staticinvoke <java.util.Map: java.util.Map of()>();
+---
+> v63 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v64 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("jakarta.annotation.Nullable", v63);
+> v65 = staticinvoke <java.util.Map: java.util.Map of()>();
+> specialinvoke v58.<io.micronaut.inject.'annotation'.DefaultAnnotationMetadata: void <init>(java.util.Map,java.util.Map,java.util.Map,java.util.Map,java.util.Map,boolean,boolean)>(v60, v61, v62, v64, v65, 0, 0);
+> v66 = staticinvoke <io.micronaut.core.type.Argument: io.micronaut.core.type.Argument of(java.lang.Class,java.lang.String,io.micronaut.core.'annotation'.AnnotationMetadata,io.micronaut.core.type.Argument[])>(class "Ljava/lang/Integer;", "coreGroupCountLimit", v58, null);
+> v12[5] = v66;
+> v67 = new io.micronaut.inject.'annotation'.DefaultAnnotationMetadata;
+> v68 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v69 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("jakarta.annotation.Nullable", v68);
+> v70 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v71 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v72 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v73 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("jakarta.annotation.Nullable", v72);
+> v74 = staticinvoke <java.util.Map: java.util.Map of()>();
+> specialinvoke v67.<io.micronaut.inject.'annotation'.DefaultAnnotationMetadata: void <init>(java.util.Map,java.util.Map,java.util.Map,java.util.Map,java.util.Map,boolean,boolean)>(v69, v70, v71, v73, v74, 0, 0);
+> v75 = staticinvoke <io.micronaut.core.type.Argument: io.micronaut.core.type.Argument of(java.lang.Class,java.lang.String,io.micronaut.core.'annotation'.AnnotationMetadata,io.micronaut.core.type.Argument[])>(class "Ljava/lang/Long;", "sizeLimitInBytes", v67, null);
+> v12[6] = v75;
+> <com.oracle.bmc.loganalytics.model.introspection.$EstimateRecallDataSizeResult$Introspection: io.micronaut.core.type.Argument[] $CONSTRUCTOR_ARGUMENTS> = v12;
+> v76 = newarray (io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef)[7];
+> v77 = new io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef;
+> v78 = new io.micronaut.inject.'annotation'.DefaultAnnotationMetadata;
+> v79 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("value", "timeDataEnded");
+> v80 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("property", "timeDataEnded");
+121,122c130,131
+< v82 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v83 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v80, "io.micronaut.core.annotation.Internal", v81, "io.micronaut.serde.config.annotation.SerdeConfig", v82);
+---
+> v82 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty", v79, "io.micronaut.serde.config.annotation.SerdeConfig", v80, "jakarta.annotation.Nullable", v81);
+> v83 = staticinvoke <java.util.Map: java.util.Map of()>();
+125,146c134,155
+< v86 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v87 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v84, "io.micronaut.core.annotation.Internal", v85, "io.micronaut.serde.config.annotation.SerdeConfig", v86);
+< v88 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("value", "timeDataStarted");
+< v89 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("property", "timeDataStarted");
+< v90 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v91 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty", v88, "io.micronaut.serde.config.annotation.SerdeConfig", v89, "jakarta.annotation.Nullable", v90);
+< v92 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty");
+< v93 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("io.micronaut.serde.config.annotation.SerdeConfig");
+< v94 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty");
+< v95 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v92, "io.micronaut.core.annotation.Internal", v93, "io.micronaut.serde.config.annotation.SerdeConfig", v94);
+< specialinvoke v75.<io.micronaut.inject.'annotation'.DefaultAnnotationMetadata: void <init>(java.util.Map,java.util.Map,java.util.Map,java.util.Map,java.util.Map,boolean,boolean)>(v79, v83, v87, v91, v95, 0, 0);
+< v96 = staticinvoke <io.micronaut.core.type.Argument: io.micronaut.core.type.Argument of(java.lang.Class,java.lang.String,io.micronaut.core.'annotation'.AnnotationMetadata,io.micronaut.core.type.Argument[])>(class "Ljava/util/Date;", "timeDataStarted", v75, null);
+< v97 = (int) -1;
+< specialinvoke v74.<io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef: void <init>(io.micronaut.core.type.Argument,int,int,int,boolean,boolean)>(v96, 2, v97, 3, 1, 1);
+< v49[1] = v74;
+< v98 = new io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef;
+< v99 = new io.micronaut.inject.'annotation'.DefaultAnnotationMetadata;
+< v100 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("value", "sizeInBytes");
+< v101 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("property", "sizeInBytes");
+< v102 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v103 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty", v100, "io.micronaut.serde.config.annotation.SerdeConfig", v101, "jakarta.annotation.Nullable", v102);
+< v104 = staticinvoke <java.util.Map: java.util.Map of()>();
+---
+> v86 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v83, "io.micronaut.core.annotation.Internal", v84, "io.micronaut.serde.config.annotation.SerdeConfig", v85);
+> v87 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v88 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v89 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v90 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v87, "io.micronaut.core.annotation.Internal", v88, "io.micronaut.serde.config.annotation.SerdeConfig", v89);
+> v91 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("value", "timeDataEnded");
+> v92 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("property", "timeDataEnded");
+> v93 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v94 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty", v91, "io.micronaut.serde.config.annotation.SerdeConfig", v92, "jakarta.annotation.Nullable", v93);
+> v95 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty");
+> v96 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("io.micronaut.serde.config.annotation.SerdeConfig");
+> v97 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty");
+> v98 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v95, "io.micronaut.core.annotation.Internal", v96, "io.micronaut.serde.config.annotation.SerdeConfig", v97);
+> specialinvoke v78.<io.micronaut.inject.'annotation'.DefaultAnnotationMetadata: void <init>(java.util.Map,java.util.Map,java.util.Map,java.util.Map,java.util.Map,boolean,boolean)>(v82, v86, v90, v94, v98, 0, 0);
+> v99 = staticinvoke <io.micronaut.core.type.Argument: io.micronaut.core.type.Argument of(java.lang.Class,java.lang.String,io.micronaut.core.'annotation'.AnnotationMetadata,io.micronaut.core.type.Argument[])>(class "Ljava/util/Date;", "timeDataEnded", v78, null);
+> v100 = (int) -1;
+> specialinvoke v77.<io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef: void <init>(io.micronaut.core.type.Argument,int,int,int,boolean,boolean)>(v99, 0, v100, 1, 1, 1);
+> v76[0] = v77;
+> v101 = new io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef;
+> v102 = new io.micronaut.inject.'annotation'.DefaultAnnotationMetadata;
+> v103 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("value", "timeDataStarted");
+> v104 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("property", "timeDataStarted");
+148,149c157,158
+< v106 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v107 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v104, "io.micronaut.core.annotation.Internal", v105, "io.micronaut.serde.config.annotation.SerdeConfig", v106);
+---
+> v106 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty", v103, "io.micronaut.serde.config.annotation.SerdeConfig", v104, "jakarta.annotation.Nullable", v105);
+> v107 = staticinvoke <java.util.Map: java.util.Map of()>();
+152,173c161,182
+< v110 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v111 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v108, "io.micronaut.core.annotation.Internal", v109, "io.micronaut.serde.config.annotation.SerdeConfig", v110);
+< v112 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("value", "sizeInBytes");
+< v113 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("property", "sizeInBytes");
+< v114 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v115 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty", v112, "io.micronaut.serde.config.annotation.SerdeConfig", v113, "jakarta.annotation.Nullable", v114);
+< v116 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty");
+< v117 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("io.micronaut.serde.config.annotation.SerdeConfig");
+< v118 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty");
+< v119 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v116, "io.micronaut.core.annotation.Internal", v117, "io.micronaut.serde.config.annotation.SerdeConfig", v118);
+< specialinvoke v99.<io.micronaut.inject.'annotation'.DefaultAnnotationMetadata: void <init>(java.util.Map,java.util.Map,java.util.Map,java.util.Map,java.util.Map,boolean,boolean)>(v103, v107, v111, v115, v119, 0, 0);
+< v120 = staticinvoke <io.micronaut.core.type.Argument: io.micronaut.core.type.Argument of(java.lang.Class,java.lang.String,io.micronaut.core.'annotation'.AnnotationMetadata,io.micronaut.core.type.Argument[])>(class "Ljava/lang/Long;", "sizeInBytes", v99, null);
+< v121 = (int) -1;
+< specialinvoke v98.<io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef: void <init>(io.micronaut.core.type.Argument,int,int,int,boolean,boolean)>(v120, 4, v121, 5, 1, 1);
+< v49[2] = v98;
+< v122 = new io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef;
+< v123 = new io.micronaut.inject.'annotation'.DefaultAnnotationMetadata;
+< v124 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("value", "isOverlappingWithExistingRecalls");
+< v125 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("property", "isOverlappingWithExistingRecalls");
+< v126 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v127 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty", v124, "io.micronaut.serde.config.annotation.SerdeConfig", v125, "jakarta.annotation.Nullable", v126);
+< v128 = staticinvoke <java.util.Map: java.util.Map of()>();
+---
+> v110 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v107, "io.micronaut.core.annotation.Internal", v108, "io.micronaut.serde.config.annotation.SerdeConfig", v109);
+> v111 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v112 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v113 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v114 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v111, "io.micronaut.core.annotation.Internal", v112, "io.micronaut.serde.config.annotation.SerdeConfig", v113);
+> v115 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("value", "timeDataStarted");
+> v116 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("property", "timeDataStarted");
+> v117 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v118 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty", v115, "io.micronaut.serde.config.annotation.SerdeConfig", v116, "jakarta.annotation.Nullable", v117);
+> v119 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty");
+> v120 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("io.micronaut.serde.config.annotation.SerdeConfig");
+> v121 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty");
+> v122 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v119, "io.micronaut.core.annotation.Internal", v120, "io.micronaut.serde.config.annotation.SerdeConfig", v121);
+> specialinvoke v102.<io.micronaut.inject.'annotation'.DefaultAnnotationMetadata: void <init>(java.util.Map,java.util.Map,java.util.Map,java.util.Map,java.util.Map,boolean,boolean)>(v106, v110, v114, v118, v122, 0, 0);
+> v123 = staticinvoke <io.micronaut.core.type.Argument: io.micronaut.core.type.Argument of(java.lang.Class,java.lang.String,io.micronaut.core.'annotation'.AnnotationMetadata,io.micronaut.core.type.Argument[])>(class "Ljava/util/Date;", "timeDataStarted", v102, null);
+> v124 = (int) -1;
+> specialinvoke v101.<io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef: void <init>(io.micronaut.core.type.Argument,int,int,int,boolean,boolean)>(v123, 2, v124, 3, 1, 1);
+> v76[1] = v101;
+> v125 = new io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef;
+> v126 = new io.micronaut.inject.'annotation'.DefaultAnnotationMetadata;
+> v127 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("value", "sizeInBytes");
+> v128 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("property", "sizeInBytes");
+175,176c184,185
+< v130 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v131 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v128, "io.micronaut.core.annotation.Internal", v129, "io.micronaut.serde.config.annotation.SerdeConfig", v130);
+---
+> v130 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty", v127, "io.micronaut.serde.config.annotation.SerdeConfig", v128, "jakarta.annotation.Nullable", v129);
+> v131 = staticinvoke <java.util.Map: java.util.Map of()>();
+179,194c188,314
+< v134 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v135 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v132, "io.micronaut.core.annotation.Internal", v133, "io.micronaut.serde.config.annotation.SerdeConfig", v134);
+< v136 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("value", "isOverlappingWithExistingRecalls");
+< v137 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("property", "isOverlappingWithExistingRecalls");
+< v138 = staticinvoke <java.util.Map: java.util.Map of()>();
+< v139 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty", v136, "io.micronaut.serde.config.annotation.SerdeConfig", v137, "jakarta.annotation.Nullable", v138);
+< v140 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty");
+< v141 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("io.micronaut.serde.config.annotation.SerdeConfig");
+< v142 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty");
+< v143 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v140, "io.micronaut.core.annotation.Internal", v141, "io.micronaut.serde.config.annotation.SerdeConfig", v142);
+< specialinvoke v123.<io.micronaut.inject.'annotation'.DefaultAnnotationMetadata: void <init>(java.util.Map,java.util.Map,java.util.Map,java.util.Map,java.util.Map,boolean,boolean)>(v127, v131, v135, v139, v143, 0, 0);
+< v144 = staticinvoke <io.micronaut.core.type.Argument: io.micronaut.core.type.Argument of(java.lang.Class,java.lang.String,io.micronaut.core.'annotation'.AnnotationMetadata,io.micronaut.core.type.Argument[])>(class "Ljava/lang/Boolean;", "isOverlappingWithExistingRecalls", v123, null);
+< v145 = (int) -1;
+< specialinvoke v122.<io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef: void <init>(io.micronaut.core.type.Argument,int,int,int,boolean,boolean)>(v144, 6, v145, 7, 1, 1);
+< v49[3] = v122;
+< <com.oracle.bmc.loganalytics.model.introspection.$EstimateRecallDataSizeResult$Introspection: io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef[] $PROPERTIES_REFERENCES> = v49;
+---
+> v134 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v131, "io.micronaut.core.annotation.Internal", v132, "io.micronaut.serde.config.annotation.SerdeConfig", v133);
+> v135 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v136 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v137 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v138 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v135, "io.micronaut.core.annotation.Internal", v136, "io.micronaut.serde.config.annotation.SerdeConfig", v137);
+> v139 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("value", "sizeInBytes");
+> v140 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("property", "sizeInBytes");
+> v141 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v142 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty", v139, "io.micronaut.serde.config.annotation.SerdeConfig", v140, "jakarta.annotation.Nullable", v141);
+> v143 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty");
+> v144 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("io.micronaut.serde.config.annotation.SerdeConfig");
+> v145 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty");
+> v146 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v143, "io.micronaut.core.annotation.Internal", v144, "io.micronaut.serde.config.annotation.SerdeConfig", v145);
+> specialinvoke v126.<io.micronaut.inject.'annotation'.DefaultAnnotationMetadata: void <init>(java.util.Map,java.util.Map,java.util.Map,java.util.Map,java.util.Map,boolean,boolean)>(v130, v134, v138, v142, v146, 0, 0);
+> v147 = staticinvoke <io.micronaut.core.type.Argument: io.micronaut.core.type.Argument of(java.lang.Class,java.lang.String,io.micronaut.core.'annotation'.AnnotationMetadata,io.micronaut.core.type.Argument[])>(class "Ljava/lang/Long;", "sizeInBytes", v126, null);
+> v148 = (int) -1;
+> specialinvoke v125.<io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef: void <init>(io.micronaut.core.type.Argument,int,int,int,boolean,boolean)>(v147, 4, v148, 5, 1, 1);
+> v76[2] = v125;
+> v149 = new io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef;
+> v150 = new io.micronaut.inject.'annotation'.DefaultAnnotationMetadata;
+> v151 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("value", "isOverlappingWithExistingRecalls");
+> v152 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("property", "isOverlappingWithExistingRecalls");
+> v153 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v154 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty", v151, "io.micronaut.serde.config.annotation.SerdeConfig", v152, "jakarta.annotation.Nullable", v153);
+> v155 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v156 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v157 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v158 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v155, "io.micronaut.core.annotation.Internal", v156, "io.micronaut.serde.config.annotation.SerdeConfig", v157);
+> v159 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v160 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v161 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v162 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v159, "io.micronaut.core.annotation.Internal", v160, "io.micronaut.serde.config.annotation.SerdeConfig", v161);
+> v163 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("value", "isOverlappingWithExistingRecalls");
+> v164 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("property", "isOverlappingWithExistingRecalls");
+> v165 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v166 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty", v163, "io.micronaut.serde.config.annotation.SerdeConfig", v164, "jakarta.annotation.Nullable", v165);
+> v167 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty");
+> v168 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("io.micronaut.serde.config.annotation.SerdeConfig");
+> v169 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty");
+> v170 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v167, "io.micronaut.core.annotation.Internal", v168, "io.micronaut.serde.config.annotation.SerdeConfig", v169);
+> specialinvoke v150.<io.micronaut.inject.'annotation'.DefaultAnnotationMetadata: void <init>(java.util.Map,java.util.Map,java.util.Map,java.util.Map,java.util.Map,boolean,boolean)>(v154, v158, v162, v166, v170, 0, 0);
+> v171 = staticinvoke <io.micronaut.core.type.Argument: io.micronaut.core.type.Argument of(java.lang.Class,java.lang.String,io.micronaut.core.'annotation'.AnnotationMetadata,io.micronaut.core.type.Argument[])>(class "Ljava/lang/Boolean;", "isOverlappingWithExistingRecalls", v150, null);
+> v172 = (int) -1;
+> specialinvoke v149.<io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef: void <init>(io.micronaut.core.type.Argument,int,int,int,boolean,boolean)>(v171, 6, v172, 7, 1, 1);
+> v76[3] = v149;
+> v173 = new io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef;
+> v174 = new io.micronaut.inject.'annotation'.DefaultAnnotationMetadata;
+> v175 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("value", "coreGroupCount");
+> v176 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("property", "coreGroupCount");
+> v177 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v178 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty", v175, "io.micronaut.serde.config.annotation.SerdeConfig", v176, "jakarta.annotation.Nullable", v177);
+> v179 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v180 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v181 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v182 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v179, "io.micronaut.core.annotation.Internal", v180, "io.micronaut.serde.config.annotation.SerdeConfig", v181);
+> v183 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v184 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v185 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v186 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v183, "io.micronaut.core.annotation.Internal", v184, "io.micronaut.serde.config.annotation.SerdeConfig", v185);
+> v187 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("value", "coreGroupCount");
+> v188 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("property", "coreGroupCount");
+> v189 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v190 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty", v187, "io.micronaut.serde.config.annotation.SerdeConfig", v188, "jakarta.annotation.Nullable", v189);
+> v191 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty");
+> v192 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("io.micronaut.serde.config.annotation.SerdeConfig");
+> v193 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty");
+> v194 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v191, "io.micronaut.core.annotation.Internal", v192, "io.micronaut.serde.config.annotation.SerdeConfig", v193);
+> specialinvoke v174.<io.micronaut.inject.'annotation'.DefaultAnnotationMetadata: void <init>(java.util.Map,java.util.Map,java.util.Map,java.util.Map,java.util.Map,boolean,boolean)>(v178, v182, v186, v190, v194, 0, 0);
+> v195 = staticinvoke <io.micronaut.core.type.Argument: io.micronaut.core.type.Argument of(java.lang.Class,java.lang.String,io.micronaut.core.'annotation'.AnnotationMetadata,io.micronaut.core.type.Argument[])>(class "Ljava/lang/Integer;", "coreGroupCount", v174, null);
+> v196 = (int) -1;
+> specialinvoke v173.<io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef: void <init>(io.micronaut.core.type.Argument,int,int,int,boolean,boolean)>(v195, 8, v196, 9, 1, 1);
+> v76[4] = v173;
+> v197 = new io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef;
+> v198 = new io.micronaut.inject.'annotation'.DefaultAnnotationMetadata;
+> v199 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("value", "coreGroupCountLimit");
+> v200 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("property", "coreGroupCountLimit");
+> v201 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v202 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty", v199, "io.micronaut.serde.config.annotation.SerdeConfig", v200, "jakarta.annotation.Nullable", v201);
+> v203 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v204 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v205 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v206 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v203, "io.micronaut.core.annotation.Internal", v204, "io.micronaut.serde.config.annotation.SerdeConfig", v205);
+> v207 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v208 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v209 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v210 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v207, "io.micronaut.core.annotation.Internal", v208, "io.micronaut.serde.config.annotation.SerdeConfig", v209);
+> v211 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("value", "coreGroupCountLimit");
+> v212 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("property", "coreGroupCountLimit");
+> v213 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v214 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty", v211, "io.micronaut.serde.config.annotation.SerdeConfig", v212, "jakarta.annotation.Nullable", v213);
+> v215 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty");
+> v216 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("io.micronaut.serde.config.annotation.SerdeConfig");
+> v217 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty");
+> v218 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v215, "io.micronaut.core.annotation.Internal", v216, "io.micronaut.serde.config.annotation.SerdeConfig", v217);
+> specialinvoke v198.<io.micronaut.inject.'annotation'.DefaultAnnotationMetadata: void <init>(java.util.Map,java.util.Map,java.util.Map,java.util.Map,java.util.Map,boolean,boolean)>(v202, v206, v210, v214, v218, 0, 0);
+> v219 = staticinvoke <io.micronaut.core.type.Argument: io.micronaut.core.type.Argument of(java.lang.Class,java.lang.String,io.micronaut.core.'annotation'.AnnotationMetadata,io.micronaut.core.type.Argument[])>(class "Ljava/lang/Integer;", "coreGroupCountLimit", v198, null);
+> v220 = (int) -1;
+> specialinvoke v197.<io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef: void <init>(io.micronaut.core.type.Argument,int,int,int,boolean,boolean)>(v219, 10, v220, 11, 1, 1);
+> v76[5] = v197;
+> v221 = new io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef;
+> v222 = new io.micronaut.inject.'annotation'.DefaultAnnotationMetadata;
+> v223 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("value", "sizeLimitInBytes");
+> v224 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("property", "sizeLimitInBytes");
+> v225 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v226 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty", v223, "io.micronaut.serde.config.annotation.SerdeConfig", v224, "jakarta.annotation.Nullable", v225);
+> v227 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v228 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v229 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v230 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v227, "io.micronaut.core.annotation.Internal", v228, "io.micronaut.serde.config.annotation.SerdeConfig", v229);
+> v231 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v232 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v233 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v234 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v231, "io.micronaut.core.annotation.Internal", v232, "io.micronaut.serde.config.annotation.SerdeConfig", v233);
+> v235 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("value", "sizeLimitInBytes");
+> v236 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object)>("property", "sizeLimitInBytes");
+> v237 = staticinvoke <java.util.Map: java.util.Map of()>();
+> v238 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty", v235, "io.micronaut.serde.config.annotation.SerdeConfig", v236, "jakarta.annotation.Nullable", v237);
+> v239 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty");
+> v240 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("io.micronaut.serde.config.annotation.SerdeConfig");
+> v241 = staticinvoke <java.util.List: java.util.List of(java.lang.Object)>("com.fasterxml.jackson.annotation.JsonProperty");
+> v242 = staticinvoke <java.util.Map: java.util.Map of(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>("com.fasterxml.jackson.annotation.JacksonAnnotation", v239, "io.micronaut.core.annotation.Internal", v240, "io.micronaut.serde.config.annotation.SerdeConfig", v241);
+> specialinvoke v222.<io.micronaut.inject.'annotation'.DefaultAnnotationMetadata: void <init>(java.util.Map,java.util.Map,java.util.Map,java.util.Map,java.util.Map,boolean,boolean)>(v226, v230, v234, v238, v242, 0, 0);
+> v243 = staticinvoke <io.micronaut.core.type.Argument: io.micronaut.core.type.Argument of(java.lang.Class,java.lang.String,io.micronaut.core.'annotation'.AnnotationMetadata,io.micronaut.core.type.Argument[])>(class "Ljava/lang/Long;", "sizeLimitInBytes", v222, null);
+> v244 = (int) -1;
+> specialinvoke v221.<io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef: void <init>(io.micronaut.core.type.Argument,int,int,int,boolean,boolean)>(v243, 12, v244, 13, 1, 1);
+> v76[6] = v221;
+> <com.oracle.bmc.loganalytics.model.introspection.$EstimateRecallDataSizeResult$Introspection: io.micronaut.inject.beans.AbstractInitializableBeanIntrospection$BeanPropertyRef[] $PROPERTIES_REFERENCES> = v76;
+213c333,335
+< java.util.Date v11, v16, v17, v21, v22, v4, v6, v9;
+---
+> java.util.Date v12, v14, v22, v23, v30, v31, v38, v39, v4, v46, v47, v54, v55, v6;
+> java.lang.Integer v10, v17, v18, v25, v26, v33, v34, v36, v42, v44, v50, v58, v59, v9;
+> java.lang.Long v11, v15, v19, v20, v27, v32, v35, v40, v43, v48, v51, v52, v56, v7;
+215,216c337
+< com.oracle.bmc.loganalytics.model.EstimateRecallDataSizeResult v10, v15, v20, v5;
+< java.lang.Long v12, v14, v23, v7;
+---
+> com.oracle.bmc.loganalytics.model.EstimateRecallDataSizeResult v13, v21, v29, v37, v45, v5, v53;
+218,219c339,340
+< java.lang.Boolean v13, v18, v19, v8;
+< java.lang.RuntimeException v24;
+---
+> java.lang.Boolean v16, v24, v28, v41, v49, v57, v8;
+> java.lang.RuntimeException v60;
+227,235c348,362
+< case 0: goto label1;
+< case 1: goto label2;
+< case 2: goto label3;
+< case 3: goto label4;
+< case 4: goto label5;
+< case 5: goto label6;
+< case 6: goto label7;
+< case 7: goto label8;
+< default: goto label9;
+---
+> case 0: goto label01;
+> case 1: goto label02;
+> case 2: goto label03;
+> case 3: goto label04;
+> case 4: goto label05;
+> case 5: goto label06;
+> case 6: goto label07;
+> case 7: goto label08;
+> case 8: goto label09;
+> case 9: goto label10;
+> case 10: goto label11;
+> case 11: goto label12;
+> case 12: goto label13;
+> case 13: goto label14;
+> default: goto label15;
+237c364
+< label1:
+---
+> label01:
+240c367
+< label2:
+---
+> label02:
+245c372,375
+< specialinvoke v5.<com.oracle.bmc.loganalytics.model.EstimateRecallDataSizeResult: void <init>(java.util.Date,java.util.Date,java.lang.Long,java.lang.Boolean)>(v3, v6, v7, v8);
+---
+> v9 = virtualinvoke v2.<com.oracle.bmc.loganalytics.model.EstimateRecallDataSizeResult: java.lang.Integer getCoreGroupCount()>();
+> v10 = virtualinvoke v2.<com.oracle.bmc.loganalytics.model.EstimateRecallDataSizeResult: java.lang.Integer getCoreGroupCountLimit()>();
+> v11 = virtualinvoke v2.<com.oracle.bmc.loganalytics.model.EstimateRecallDataSizeResult: java.lang.Long getSizeLimitInBytes()>();
+> specialinvoke v5.<com.oracle.bmc.loganalytics.model.EstimateRecallDataSizeResult: void <init>(java.util.Date,java.util.Date,java.lang.Long,java.lang.Boolean,java.lang.Integer,java.lang.Integer,java.lang.Long)>(v3, v6, v7, v8, v9, v10, v11);
+247,275c377,391
+< label3:
+< v9 = virtualinvoke v2.<com.oracle.bmc.loganalytics.model.EstimateRecallDataSizeResult: java.util.Date getTimeDataStarted()>();
+< return v9;
+< label4:
+< v10 = new com.oracle.bmc.loganalytics.model.EstimateRecallDataSizeResult;
+< v11 = virtualinvoke v2.<com.oracle.bmc.loganalytics.model.EstimateRecallDataSizeResult: java.util.Date getTimeDataEnded()>();
+< v12 = virtualinvoke v2.<com.oracle.bmc.loganalytics.model.EstimateRecallDataSizeResult: java.lang.Long getSizeInBytes()>();
+< v13 = virtualinvoke v2.<com.oracle.bmc.loganalytics.model.EstimateRecallDataSizeResult: java.lang.Boolean getIsOverlappingWithExistingRecalls()>();
+< specialinvoke v10.<com.oracle.bmc.loganalytics.model.EstimateRecallDataSizeResult: void <init>(java.util.Date,java.util.Date,java.lang.Long,java.lang.Boolean)>(v11, v3, v12, v13);
+< return v10;
+< label5:
+< v14 = virtualinvoke v2.<com.oracle.bmc.loganalytics.model.EstimateRecallDataSizeResult: java.lang.Long getSizeInBytes()>();
+< return v14;
+< label6:
+< v15 = new com.oracle.bmc.loganalytics.model.EstimateRecallDataSizeResult;
+< v16 = virtualinvoke v2.<com.oracle.bmc.loganalytics.model.EstimateRecallDataSizeResult: java.util.Date getTimeDataEnded()>();
+< v17 = virtualinvoke v2.<com.oracle.bmc.loganalytics.model.EstimateRecallDataSizeResult: java.util.Date getTimeDataStarted()>();
+< v18 = virtualinvoke v2.<com.oracle.bmc.loganalytics.model.EstimateRecallDataSizeResult: java.lang.Boolean getIsOverlappingWithExistingRecalls()>();
+< specialinvoke v15.<com.oracle.bmc.loganalytics.model.EstimateRecallDataSizeResult: void <init>(java.util.Date,java.util.Date,java.lang.Long,java.lang.Boolean)>(v16, v17, v3, v18);
+< return v15;
+< label7:
+< v19 = virtualinvoke v2.<com.oracle.bmc.loganalytics.model.EstimateRecallDataSizeResult: java.lang.Boolean getIsOverlappingWithExistingRecalls()>();
+< return v19;
+< label8:
+< v20 = new com.oracle.bmc.loganalytics.model.EstimateRecallDataSizeResult;
+< v21 = virtualinvoke v2.<com.oracle.bmc.loganalytics.model.EstimateRecallDataSizeResult: java.util.Date getTimeDataEnded()>();
+< v22 = virtualinvoke v2.<com.oracle.bmc.loganalytics.model.EstimateRecallDataSizeResult: java.util.Date getTimeDataStarted()>();
+< v23 = virtualinvoke v2.<com.oracle.bmc.loganalytics.model.EstimateRecallDataSizeResult: java.lang.Long getSizeInBytes()>();
+< specialinvoke v20.<com.oracle.bmc.loganalytics.model.EstimateRecallDataSizeResult: void <init>(java.util.Date,java.util.Date,java.lang.Long,java.lang.Boolean)>(v21, v22, v23, v3);
+---
+> label03:
+> v12 = virtualinvoke v2.<com.oracle.bmc.loganalytics.model.EstimateRecallDataSizeResult: java.util.Date getTimeDataStarted()>();
+> return v12;
+> label04:
+> v13 = new com.oracle.bmc.loganalytics.model.EstimateRecallDataSizeResult;
+> v14 = virtualinvoke v2.<com.oracle.bmc.loganalytics.model.EstimateRecallDataSizeResult: java.util.Date getTimeDataEnded()>();
+> v15 = virtualinvoke v2.<com.oracle.bmc.loganalytics.model.EstimateRecallDataSizeResult: java.lang.Long getSizeInBytes()>();
+> v16 = virtualinvoke v2.<com.oracle.bmc.loganalytics.model.EstimateRecallDataSizeResult: java.lang.Boolean getIsOverlappingWithExistingRecalls()>();
+> v17 = virtualinvoke v2.<com.oracle.bmc.loganalytics.model.EstimateRecallDataSizeResult: java.lang.Integer getCoreGroupCount()>();
+> v18 = virtualinvoke v2.<com.oracle.bmc.loganalytics.model.EstimateRecallDataSizeResult: java.lang.Integer getCoreGroupCountLimit()>();
+> v19 = virtualinvoke v2.<com.oracle.bmc.loganalytics.model.EstimateRecallDataSizeResult: java.lang.Long getSizeLimitInBytes()>();
+> specialinvoke v13.<com.oracle.bmc.loganalytics.model.EstimateRecallDataSizeResult: void <init>(java.util.Date,java.util.Date,java.lang.Long,java.lang.Boolean,java.lang.Integer,java.lang.Integer,java.lang.Long)>(v14, v3, v15, v16, v17, v18, v19);
+> return v13;
+> label05:
+> v20 = virtualinvoke v2.<com.oracle.bmc.loganalytics.model.EstimateRecallDataSizeResult: java.lang.Long getSizeInBytes()>();
+277,279c393,457
+< label9:
+< v24 = virtualinvoke v0.<com.oracle.bmc.loganalytics.model.introspection.$EstimateRecallDataSizeResult$Introspection: java.lang.RuntimeException unknownDispatchAtIndexException(int)>(v1);
+< throw v24;
+---
+> label06:
+> v21 = new com.oracle.bmc.loganalytics.model.EstimateRecallDataSizeResult;
+> v22 = virtualinvoke v2.<com.oracle.bmc.loganalytics.model.EstimateRecallDataSizeResult: java.util.Date getTimeDataEnded()>();
+> v23 = virtualinvoke v2.<com.oracle.bmc.loganalytics.model.EstimateRecallDataSizeResult: java.util.Date getTimeDataStarted()>();
+> v24 = virtualinvoke v2.<com.oracle.bmc.loganalytics.model.EstimateRecallDataSizeResult: java.lang.Boolean getIsOverlappingWithExistingRecalls()>();
+> v25 = virtualinvoke v2.<com.oracle.bmc.loganalytics.model.EstimateRecallDataSizeResult: java.lang.Integer getCoreGroupCount()>();
+> v26 = virtualinvoke v2.<com.oracle.bmc.loganalytics.model.EstimateRecallDataSizeResult: java.lang.Integer getCoreGroupCountLimit()>();
+> v27 = virtualinvoke v2.<com.oracle.bmc.loganalytics.model.EstimateRecallDataSizeResult: java.lang.Long getSizeLimitInBytes()>();
+> specialinvoke v21.<com.oracle.bmc.loganalytics.model.EstimateRecallDataSizeResult: void <init>(java.util.Date,java.util.Date,java.lang.Long,java.lang.Boolean,java.lang.Integer,java.lang.Integer,java.lang.Long)>(v22, v23, v3, v24, v25, v26, v27);
+> return v21;
+> label07:
+> v28 = virtualinvoke v2.<com.oracle.bmc.loganalytics.model.EstimateRecallDataSizeResult: java.lang.Boolean getIsOverlappingWithExistingRecalls()>();
+> return v28;
+> label08:
+> v29 = new com.oracle.bmc.loganalytics.model.EstimateRecallDataSizeResult;
+> v30 = virtualinvoke v2.<com.oracle.bmc.loganalytics.model.EstimateRecallDataSizeResult: java.util.Date getTimeDataEnded()>();
+> v31 = virtualinvoke v2.<com.oracle.bmc.loganalytics.model.EstimateRecallDataSizeResult: java.util.Date getTimeDataStarted()>();
+> v32 = virtualinvoke v2.<com.oracle.bmc.loganalytics.model.EstimateRecallDataSizeResult: java.lang.Long getSizeInBytes()>();
+> v33 = virtualinvoke v2.<com.oracle.bmc.loganalytics.model.EstimateRecallDataSizeResult: java.lang.Integer getCoreGroupCount()>();
+> v34 = virtualinvoke v2.<com.oracle.bmc.loganalytics.model.EstimateRecallDataSizeResult: java.lang.Integer getCoreGroupCountLimit()>();
+> v35 = virtualinvoke v2.<com.oracle.bmc.loganalytics.model.EstimateRecallDataSizeResult: java.lang.Long getSizeLimitInBytes()>();
+> specialinvoke v29.<com.oracle.bmc.loganalytics.model.EstimateRecallDataSizeResult: void <init>(java.util.Date,java.util.Date,java.lang.Long,java.lang.Boolean,java.lang.Integer,java.lang.Integer,java.lang.Long)>(v30, v31, v32, v3, v33, v34, v35);
+> return v29;
+> label09:
+> v36 = virtualinvoke v2.<com.oracle.bmc.loganalytics.model.EstimateRecallDataSizeResult: java.lang.Integer getCoreGroupCount()>();
+> return v36;
+> label10:
+> v37 = new com.oracle.bmc.loganalytics.model.EstimateRecallDataSizeResult;
+> v38 = virtualinvoke v2.<com.oracle.bmc.loganalytics.model.EstimateRecallDataSizeResult: java.util.Date getTimeDataEnded()>();
+> v39 = virtualinvoke v2.<com.oracle.bmc.loganalytics.model.EstimateRecallDataSizeResult: java.util.Date getTimeDataStarted()>();
+> v40 = virtualinvoke v2.<com.oracle.bmc.loganalytics.model.EstimateRecallDataSizeResult: java.lang.Long getSizeInBytes()>();
+> v41 = virtualinvoke v2.<com.oracle.bmc.loganalytics.model.EstimateRecallDataSizeResult: java.lang.Boolean getIsOverlappingWithExistingRecalls()>();
+> v42 = virtualinvoke v2.<com.oracle.bmc.loganalytics.model.EstimateRecallDataSizeResult: java.lang.Integer getCoreGroupCountLimit()>();
+> v43 = virtualinvoke v2.<com.oracle.bmc.loganalytics.model.EstimateRecallDataSizeResult: java.lang.Long getSizeLimitInBytes()>();
+> specialinvoke v37.<com.oracle.bmc.loganalytics.model.EstimateRecallDataSizeResult: void <init>(java.util.Date,java.util.Date,java.lang.Long,java.lang.Boolean,java.lang.Integer,java.lang.Integer,java.lang.Long)>(v38, v39, v40, v41, v3, v42, v43);
+> return v37;
+> label11:
+> v44 = virtualinvoke v2.<com.oracle.bmc.loganalytics.model.EstimateRecallDataSizeResult: java.lang.Integer getCoreGroupCountLimit()>();
+> return v44;
+> label12:
+> v45 = new com.oracle.bmc.loganalytics.model.EstimateRecallDataSizeResult;
+> v46 = virtualinvoke v2.<com.oracle.bmc.loganalytics.model.EstimateRecallDataSizeResult: java.util.Date getTimeDataEnded()>();
+> v47 = virtualinvoke v2.<com.oracle.bmc.loganalytics.model.EstimateRecallDataSizeResult: java.util.Date getTimeDataStarted()>();
+> v48 = virtualinvoke v2.<com.oracle.bmc.loganalytics.model.EstimateRecallDataSizeResult: java.lang.Long getSizeInBytes()>();
+> v49 = virtualinvoke v2.<com.oracle.bmc.loganalytics.model.EstimateRecallDataSizeResult: java.lang.Boolean getIsOverlappingWithExistingRecalls()>();
+> v50 = virtualinvoke v2.<com.oracle.bmc.loganalytics.model.EstimateRecallDataSizeResult: java.lang.Integer getCoreGroupCount()>();
+> v51 = virtualinvoke v2.<com.oracle.bmc.loganalytics.model.EstimateRecallDataSizeResult: java.lang.Long getSizeLimitInBytes()>();
+> specialinvoke v45.<com.oracle.bmc.loganalytics.model.EstimateRecallDataSizeResult: void <init>(java.util.Date,java.util.Date,java.lang.Long,java.lang.Boolean,java.lang.Integer,java.lang.Integer,java.lang.Long)>(v46, v47, v48, v49, v50, v3, v51);
+> return v45;
+> label13:
+> v52 = virtualinvoke v2.<com.oracle.bmc.loganalytics.model.EstimateRecallDataSizeResult: java.lang.Long getSizeLimitInBytes()>();
+> return v52;
+> label14:
+> v53 = new com.oracle.bmc.loganalytics.model.EstimateRecallDataSizeResult;
+> v54 = virtualinvoke v2.<com.oracle.bmc.loganalytics.model.EstimateRecallDataSizeResult: java.util.Date getTimeDataEnded()>();
+> v55 = virtualinvoke v2.<com.oracle.bmc.loganalytics.model.EstimateRecallDataSizeResult: java.util.Date getTimeDataStarted()>();
+> v56 = virtualinvoke v2.<com.oracle.bmc.loganalytics.model.EstimateRecallDataSizeResult: java.lang.Long getSizeInBytes()>();
+> v57 = virtualinvoke v2.<com.oracle.bmc.loganalytics.model.EstimateRecallDataSizeResult: java.lang.Boolean getIsOverlappingWithExistingRecalls()>();
+> v58 = virtualinvoke v2.<com.oracle.bmc.loganalytics.model.EstimateRecallDataSizeResult: java.lang.Integer getCoreGroupCount()>();
+> v59 = virtualinvoke v2.<com.oracle.bmc.loganalytics.model.EstimateRecallDataSizeResult: java.lang.Integer getCoreGroupCountLimit()>();
+> specialinvoke v53.<com.oracle.bmc.loganalytics.model.EstimateRecallDataSizeResult: void <init>(java.util.Date,java.util.Date,java.lang.Long,java.lang.Boolean,java.lang.Integer,java.lang.Integer,java.lang.Long)>(v54, v55, v56, v57, v58, v59, v3);
+> return v53;
+> label15:
+> v60 = virtualinvoke v0.<com.oracle.bmc.loganalytics.model.introspection.$EstimateRecallDataSizeResult$Introspection: java.lang.RuntimeException unknownDispatchAtIndexException(int)>(v1);
+> throw v60;
+283d460
+< java.lang.Class[] v2, v4, v6, v8;
+285d461
+< java.lang.RuntimeException v10;
+287c463,465
+< java.lang.reflect.Method v3, v5, v7, v9;
+---
+> java.lang.reflect.Method v11, v13, v15, v3, v5, v7, v9;
+> java.lang.Class[] v10, v12, v14, v2, v4, v6, v8;
+> java.lang.RuntimeException v16;
+293c471
+< case 1: goto label5;
+---
+> case 1: goto label8;
+295c473
+< case 3: goto label5;
+---
+> case 3: goto label8;
+297c475
+< case 5: goto label5;
+---
+> case 5: goto label8;
+299c477,483
+< default: goto label5;
+---
+> case 7: goto label8;
+> case 8: goto label5;
+> case 9: goto label8;
+> case 10: goto label6;
+> case 11: goto label8;
+> case 12: goto label7;
+> default: goto label8;
+318,319c502,515
+< v10 = virtualinvoke v0.<com.oracle.bmc.loganalytics.model.introspection.$EstimateRecallDataSizeResult$Introspection: java.lang.RuntimeException unknownDispatchAtIndexException(int)>(v1);
+< throw v10;
+---
+> v10 = <io.micronaut.core.reflect.ReflectionUtils: java.lang.Class[] EMPTY_CLASS_ARRAY>;
+> v11 = staticinvoke <io.micronaut.core.reflect.ReflectionUtils: java.lang.reflect.Method getRequiredMethod(java.lang.Class,java.lang.String,java.lang.Class[])>(class "Lcom/oracle/bmc/loganalytics/model/EstimateRecallDataSizeResult;", "getCoreGroupCount", v10);
+> return v11;
+> label6:
+> v12 = <io.micronaut.core.reflect.ReflectionUtils: java.lang.Class[] EMPTY_CLASS_ARRAY>;
+> v13 = staticinvoke <io.micronaut.core.reflect.ReflectionUtils: java.lang.reflect.Method getRequiredMethod(java.lang.Class,java.lang.String,java.lang.Class[])>(class "Lcom/oracle/bmc/loganalytics/model/EstimateRecallDataSizeResult;", "getCoreGroupCountLimit", v12);
+> return v13;
+> label7:
+> v14 = <io.micronaut.core.reflect.ReflectionUtils: java.lang.Class[] EMPTY_CLASS_ARRAY>;
+> v15 = staticinvoke <io.micronaut.core.reflect.ReflectionUtils: java.lang.reflect.Method getRequiredMethod(java.lang.Class,java.lang.String,java.lang.Class[])>(class "Lcom/oracle/bmc/loganalytics/model/EstimateRecallDataSizeResult;", "getSizeLimitInBytes", v14);
+> return v15;
+> label8:
+> v16 = virtualinvoke v0.<com.oracle.bmc.loganalytics.model.introspection.$EstimateRecallDataSizeResult$Introspection: java.lang.RuntimeException unknownDispatchAtIndexException(int)>(v1);
+> throw v16;
+323d518
+< com.oracle.bmc.loganalytics.model.EstimateRecallDataSizeResult v2;
+326c521,522
+< java.lang.Object v3, v4, v5, v6;
+---
+> com.oracle.bmc.loganalytics.model.EstimateRecallDataSizeResult v2;
+> java.lang.Object v3, v4, v5, v6, v7, v8, v9;
+334c530,533
+< specialinvoke v2.<com.oracle.bmc.loganalytics.model.EstimateRecallDataSizeResult: void <init>(java.util.Date,java.util.Date,java.lang.Long,java.lang.Boolean)>(v3, v4, v5, v6);
+---
+> v7 = v1[4];
+> v8 = v1[5];
+> v9 = v1[6];
+> specialinvoke v2.<com.oracle.bmc.loganalytics.model.EstimateRecallDataSizeResult: void <init>(java.util.Date,java.util.Date,java.lang.Long,java.lang.Boolean,java.lang.Integer,java.lang.Integer,java.lang.Long)>(v3, v4, v5, v6, v7, v8, v9);

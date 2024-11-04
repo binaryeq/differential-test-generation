@@ -1,0 +1,123 @@
+23,29c23,29
+< com.google.common.collect.ImmutableMapEntry$NonTerminalImmutableBiMapEntry v27;
+< com.google.common.collect.ImmutableBiMap v25;
+< int v0, v10, v15, v16, v17, v18, v19, v2, v20, v22, v24, v28, v3, v4, v7, v9;
+< java.util.Map$Entry[] v1, v8;
+< java.util.Map$Entry v11;
+< com.google.common.collect.ImmutableMapEntry v21, v23, v26;
+< com.google.common.collect.RegularImmutableBiMap v29;
+---
+> com.google.common.collect.ImmutableMapEntry$NonTerminalImmutableBiMapEntry v28;
+> com.google.common.collect.ImmutableBiMap v26;
+> int v0, v10, v11, v16, v17, v18, v19, v2, v20, v21, v23, v25, v29, v3, v4, v7;
+> java.util.Map$Entry[] v1, v8, v9;
+> java.util.Map$Entry v12;
+> com.google.common.collect.ImmutableMapEntry v22, v24, v27;
+> com.google.common.collect.RegularImmutableBiMap v30;
+31c31
+< java.lang.Object v12, v13, v14;
+---
+> java.lang.Object v13, v14, v15;
+41,43c41
+< if v0 == v7 goto label1;
+< v1 = staticinvoke <com.google.common.collect.ImmutableMapEntry: com.google.common.collect.ImmutableMapEntry[] createEntryArray(int)>(v0);
+< label1:
+---
+> if v0 != v7 goto label1;
+45,46c43,45
+< v9 = 0;
+< v10 = 0;
+---
+> goto label2;
+> label1:
+> v8 = staticinvoke <com.google.common.collect.ImmutableMapEntry: com.google.common.collect.ImmutableMapEntry[] createEntryArray(int)>(v0);
+48,65c47,49
+< if v10 >= v0 goto label7;
+< v11 = v1[v10];
+< v12 = staticinvoke <java.util.Objects: java.lang.Object requireNonNull(java.lang.Object)>(v11);
+< v13 = interfaceinvoke v12.<java.util.Map$Entry: java.lang.Object getKey()>();
+< v14 = interfaceinvoke v12.<java.util.Map$Entry: java.lang.Object getValue()>();
+< staticinvoke <com.google.common.collect.CollectPreconditions: void checkEntryNotNull(java.lang.Object,java.lang.Object)>(v13, v14);
+< v15 = virtualinvoke v13.<java.lang.Object: int hashCode()>();
+< v16 = virtualinvoke v14.<java.lang.Object: int hashCode()>();
+< v17 = staticinvoke <com.google.common.collect.Hashing: int smear(int)>(v15);
+< v18 = v17 & v4;
+< v19 = staticinvoke <com.google.common.collect.Hashing: int smear(int)>(v16);
+< v20 = v19 & v4;
+< v21 = v5[v18];
+< v22 = staticinvoke <com.google.common.collect.RegularImmutableMap: int checkNoConflictInKeyBucket(java.lang.Object,java.util.Map$Entry,com.google.common.collect.ImmutableMapEntry)>(v13, v12, v21);
+< v23 = v6[v20];
+< v24 = staticinvoke <com.google.common.collect.RegularImmutableBiMap: int checkNoConflictInValueBucket(java.lang.Object,java.util.Map$Entry,com.google.common.collect.ImmutableMapEntry)>(v14, v12, v23);
+< if v22 > 8 goto label3;
+< if v24 <= 8 goto label4;
+---
+> v9 = v8;
+> v10 = 0;
+> v11 = 0;
+67,68c51,68
+< v25 = staticinvoke <com.google.common.collect.JdkBackedImmutableBiMap: com.google.common.collect.ImmutableBiMap create(int,java.util.Map$Entry[])>(v0, v1);
+< return v25;
+---
+> if v11 >= v0 goto label8;
+> v12 = v1[v11];
+> v13 = staticinvoke <java.util.Objects: java.lang.Object requireNonNull(java.lang.Object)>(v12);
+> v14 = interfaceinvoke v13.<java.util.Map$Entry: java.lang.Object getKey()>();
+> v15 = interfaceinvoke v13.<java.util.Map$Entry: java.lang.Object getValue()>();
+> staticinvoke <com.google.common.collect.CollectPreconditions: void checkEntryNotNull(java.lang.Object,java.lang.Object)>(v14, v15);
+> v16 = virtualinvoke v14.<java.lang.Object: int hashCode()>();
+> v17 = virtualinvoke v15.<java.lang.Object: int hashCode()>();
+> v18 = staticinvoke <com.google.common.collect.Hashing: int smear(int)>(v16);
+> v19 = v18 & v4;
+> v20 = staticinvoke <com.google.common.collect.Hashing: int smear(int)>(v17);
+> v21 = v20 & v4;
+> v22 = v5[v19];
+> v23 = staticinvoke <com.google.common.collect.RegularImmutableMap: int checkNoConflictInKeyBucket(java.lang.Object,java.util.Map$Entry,com.google.common.collect.ImmutableMapEntry)>(v14, v13, v22);
+> v24 = v6[v21];
+> v25 = staticinvoke <com.google.common.collect.RegularImmutableBiMap: int checkNoConflictInValueBucket(java.lang.Object,java.util.Map$Entry,com.google.common.collect.ImmutableMapEntry)>(v15, v13, v24);
+> if v23 > 8 goto label4;
+> if v25 <= 8 goto label5;
+70,73c70,71
+< if v23 != null goto label5;
+< if v21 != null goto label5;
+< v26 = staticinvoke <com.google.common.collect.RegularImmutableMap: com.google.common.collect.ImmutableMapEntry makeImmutable(java.util.Map$Entry,java.lang.Object,java.lang.Object)>(v12, v13, v14);
+< goto label6;
+---
+> v26 = staticinvoke <com.google.common.collect.JdkBackedImmutableBiMap: com.google.common.collect.ImmutableBiMap create(int,java.util.Map$Entry[])>(v0, v1);
+> return v26;
+75,77c73,76
+< v27 = new com.google.common.collect.ImmutableMapEntry$NonTerminalImmutableBiMapEntry;
+< v26 = v27;
+< specialinvoke v27.<com.google.common.collect.ImmutableMapEntry$NonTerminalImmutableBiMapEntry: void <init>(java.lang.Object,java.lang.Object,com.google.common.collect.ImmutableMapEntry,com.google.common.collect.ImmutableMapEntry)>(v13, v14, v21, v23);
+---
+> if v24 != null goto label6;
+> if v22 != null goto label6;
+> v27 = staticinvoke <com.google.common.collect.RegularImmutableMap: com.google.common.collect.ImmutableMapEntry makeImmutable(java.util.Map$Entry,java.lang.Object,java.lang.Object)>(v13, v14, v15);
+> goto label7;
+79,85c78,80
+< v5[v18] = v26;
+< v6[v20] = v26;
+< v8[v10] = v26;
+< v28 = v15 ^ v16;
+< v9 = v9 + v28;
+< v10 = v10 + 1;
+< goto label2;
+---
+> v28 = new com.google.common.collect.ImmutableMapEntry$NonTerminalImmutableBiMapEntry;
+> v27 = v28;
+> specialinvoke v28.<com.google.common.collect.ImmutableMapEntry$NonTerminalImmutableBiMapEntry: void <init>(java.lang.Object,java.lang.Object,com.google.common.collect.ImmutableMapEntry,com.google.common.collect.ImmutableMapEntry)>(v14, v15, v22, v24);
+87,89c82,92
+< v29 = new com.google.common.collect.RegularImmutableBiMap;
+< specialinvoke v29.<com.google.common.collect.RegularImmutableBiMap: void <init>(com.google.common.collect.ImmutableMapEntry[],com.google.common.collect.ImmutableMapEntry[],java.util.Map$Entry[],int,int)>(v5, v6, v8, v4, v9);
+< return v29;
+---
+> v5[v19] = v27;
+> v6[v21] = v27;
+> v9[v11] = v27;
+> v29 = v16 ^ v17;
+> v10 = v10 + v29;
+> v11 = v11 + 1;
+> goto label3;
+> label8:
+> v30 = new com.google.common.collect.RegularImmutableBiMap;
+> specialinvoke v30.<com.google.common.collect.RegularImmutableBiMap: void <init>(com.google.common.collect.ImmutableMapEntry[],com.google.common.collect.ImmutableMapEntry[],java.util.Map$Entry[],int,int)>(v5, v6, v9, v4, v10);
+> return v30;

@@ -1,0 +1,155 @@
+56,58c56,58
+< java.lang.Throwable v14, v26;
+< org.apache.maven.artifact.repository.metadata.io.xpp3.MetadataXpp3Writer v25;
+< long v27, v8;
+---
+> java.lang.Throwable v14, v15, v27, v28;
+> org.apache.maven.artifact.repository.metadata.io.xpp3.MetadataXpp3Writer v26;
+> long v29, v8;
+61c61
+< java.lang.String v17, v18, v20, v6, v7;
+---
+> java.lang.String v18, v19, v21, v6, v7;
+63,65c63,65
+< boolean v10, v12, v15, v19, v21, v22;
+< org.codehaus.plexus.util.xml.XmlStreamWriter v24;
+< java.io.File v23, v5;
+---
+> boolean v10, v12, v16, v20, v22, v23;
+> org.codehaus.plexus.util.xml.XmlStreamWriter v25;
+> java.io.File v24, v5;
+69c69
+< org.apache.maven.artifact.repository.metadata.Metadata v16, v4;
+---
+> org.apache.maven.artifact.repository.metadata.Metadata v17, v4;
+84c84
+< if v10 != 0 goto label09;
+---
+> if v10 != 0 goto label13;
+93c93
+< goto label09;
+---
+> goto label13;
+96c96
+< if v12 == 0 goto label09;
+---
+> if v12 == 0 goto label13;
+101c101
+< if v13 == null goto label09;
+---
+> if v13 == null goto label13;
+103c103
+< goto label09;
+---
+> goto label13;
+106c106
+< throw v14;
+---
+> if v13 == null goto label12;
+108,111c108
+< if v4 != null goto label10;
+< v4 = v0.<org.apache.maven.artifact.repository.metadata.AbstractRepositoryMetadata: org.apache.maven.artifact.repository.metadata.Metadata metadata>;
+< v15 = 1;
+< goto label11;
+---
+> virtualinvoke v13.<java.io.Reader: void close()>();
+113,114c110
+< v16 = v0.<org.apache.maven.artifact.repository.metadata.AbstractRepositoryMetadata: org.apache.maven.artifact.repository.metadata.Metadata metadata>;
+< v15 = virtualinvoke v4.<org.apache.maven.artifact.repository.metadata.Metadata: boolean merge(org.apache.maven.artifact.repository.metadata.Metadata)>(v16);
+---
+> goto label12;
+116,123c112,113
+< v17 = virtualinvoke v4.<org.apache.maven.artifact.repository.metadata.Metadata: java.lang.String getVersion()>();
+< if v17 == null goto label13;
+< v18 = "LATEST";
+< v19 = virtualinvoke v18.<java.lang.String: boolean equals(java.lang.Object)>(v17);
+< if v19 != 0 goto label12;
+< v20 = "RELEASE";
+< v21 = virtualinvoke v20.<java.lang.String: boolean equals(java.lang.Object)>(v17);
+< if v21 == 0 goto label13;
+---
+> v15 := @caughtexception;
+> virtualinvoke v14.<java.lang.Throwable: void addSuppressed(java.lang.Throwable)>(v15);
+125c115
+< virtualinvoke v4.<org.apache.maven.artifact.repository.metadata.Metadata: void setVersion(java.lang.String)>(null);
+---
+> throw v14;
+127,129c117,120
+< if v15 != 0 goto label14;
+< v22 = virtualinvoke v5.<java.io.File: boolean exists()>();
+< if v22 != 0 goto label18;
+---
+> if v4 != null goto label14;
+> v4 = v0.<org.apache.maven.artifact.repository.metadata.AbstractRepositoryMetadata: org.apache.maven.artifact.repository.metadata.Metadata metadata>;
+> v16 = 1;
+> goto label15;
+131,133c122,123
+< v23 = virtualinvoke v5.<java.io.File: java.io.File getParentFile()>();
+< virtualinvoke v23.<java.io.File: boolean mkdirs()>();
+< v24 = staticinvoke <org.codehaus.plexus.util.WriterFactory: org.codehaus.plexus.util.xml.XmlStreamWriter newXmlWriter(java.io.File)>(v5);
+---
+> v17 = v0.<org.apache.maven.artifact.repository.metadata.AbstractRepositoryMetadata: org.apache.maven.artifact.repository.metadata.Metadata metadata>;
+> v16 = virtualinvoke v4.<org.apache.maven.artifact.repository.metadata.Metadata: boolean merge(org.apache.maven.artifact.repository.metadata.Metadata)>(v17);
+135,137c125,132
+< v25 = new org.apache.maven.artifact.repository.metadata.io.xpp3.MetadataXpp3Writer;
+< specialinvoke v25.<org.apache.maven.artifact.repository.metadata.io.xpp3.MetadataXpp3Writer: void <init>()>();
+< virtualinvoke v25.<org.apache.maven.artifact.repository.metadata.io.xpp3.MetadataXpp3Writer: void write(java.io.Writer,org.apache.maven.artifact.repository.metadata.Metadata)>(v24, v4);
+---
+> v18 = virtualinvoke v4.<org.apache.maven.artifact.repository.metadata.Metadata: java.lang.String getVersion()>();
+> if v18 == null goto label17;
+> v19 = "LATEST";
+> v20 = virtualinvoke v19.<java.lang.String: boolean equals(java.lang.Object)>(v18);
+> if v20 != 0 goto label16;
+> v21 = "RELEASE";
+> v22 = virtualinvoke v21.<java.lang.String: boolean equals(java.lang.Object)>(v18);
+> if v22 == 0 goto label17;
+139,141c134
+< if v24 == null goto label19;
+< virtualinvoke v24.<java.io.Writer: void close()>();
+< goto label19;
+---
+> virtualinvoke v4.<org.apache.maven.artifact.repository.metadata.Metadata: void setVersion(java.lang.String)>(null);
+143,144c136,138
+< v26 := @caughtexception;
+< throw v26;
+---
+> if v16 != 0 goto label18;
+> v23 = virtualinvoke v5.<java.io.File: boolean exists()>();
+> if v23 != 0 goto label26;
+146,147c140,142
+< v27 = staticinvoke <java.lang.System: long currentTimeMillis()>();
+< virtualinvoke v5.<java.io.File: boolean setLastModified(long)>(v27);
+---
+> v24 = virtualinvoke v5.<java.io.File: java.io.File getParentFile()>();
+> virtualinvoke v24.<java.io.File: boolean mkdirs()>();
+> v25 = staticinvoke <org.codehaus.plexus.util.WriterFactory: org.codehaus.plexus.util.xml.XmlStreamWriter newXmlWriter(java.io.File)>(v5);
+148a144,166
+> v26 = new org.apache.maven.artifact.repository.metadata.io.xpp3.MetadataXpp3Writer;
+> specialinvoke v26.<org.apache.maven.artifact.repository.metadata.io.xpp3.MetadataXpp3Writer: void <init>()>();
+> virtualinvoke v26.<org.apache.maven.artifact.repository.metadata.io.xpp3.MetadataXpp3Writer: void write(java.io.Writer,org.apache.maven.artifact.repository.metadata.Metadata)>(v25, v4);
+> label20:
+> if v25 == null goto label27;
+> virtualinvoke v25.<java.io.Writer: void close()>();
+> goto label27;
+> label21:
+> v27 := @caughtexception;
+> if v25 == null goto label25;
+> label22:
+> virtualinvoke v25.<java.io.Writer: void close()>();
+> label23:
+> goto label25;
+> label24:
+> v28 := @caughtexception;
+> virtualinvoke v27.<java.lang.Throwable: void addSuppressed(java.lang.Throwable)>(v28);
+> label25:
+> throw v27;
+> label26:
+> v29 = staticinvoke <java.lang.System: long currentTimeMillis()>();
+> virtualinvoke v5.<java.io.File: boolean setLastModified(long)>(v29);
+> label27:
+152c170,172
+< catch java.lang.Throwable from label15 to label16 with label17;
+---
+> catch java.lang.Throwable from label09 to label10 with label11;
+> catch java.lang.Throwable from label19 to label20 with label21;
+> catch java.lang.Throwable from label22 to label23 with label24;

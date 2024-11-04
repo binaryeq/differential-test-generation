@@ -1,0 +1,38 @@
+1c1
+< public class org.codehaus.groovy.transform.sc.transformers.CompareIdentityExpression extends org.codehaus.groovy.ast.expr.BinaryExpression implements org.objectweb.asm.Opcodes
+---
+> public class org.codehaus.groovy.transform.sc.transformers.CompareIdentityExpression extends org.codehaus.groovy.ast.expr.BinaryExpression implements groovyjarjarasm.asm.Opcodes
+33d32
+< org.objectweb.asm.MethodVisitor v10;
+35c34
+< org.objectweb.asm.Label v15, v16;
+---
+> groovyjarjarasm.asm.MethodVisitor v10;
+38a38
+> groovyjarjarasm.asm.Label v15, v16;
+56c56
+< v10 = virtualinvoke v3.<org.codehaus.groovy.classgen.asm.WriterController: org.objectweb.asm.MethodVisitor getMethodVisitor()>();
+---
+> v10 = virtualinvoke v3.<org.codehaus.groovy.classgen.asm.WriterController: groovyjarjarasm.asm.MethodVisitor getMethodVisitor()>();
+65,74c65,74
+< v15 = new org.objectweb.asm.Label;
+< specialinvoke v15.<org.objectweb.asm.Label: void <init>()>();
+< virtualinvoke v10.<org.objectweb.asm.MethodVisitor: void visitJumpInsn(int,org.objectweb.asm.Label)>(166, v15);
+< virtualinvoke v10.<org.objectweb.asm.MethodVisitor: void visitInsn(int)>(4);
+< v16 = new org.objectweb.asm.Label;
+< specialinvoke v16.<org.objectweb.asm.Label: void <init>()>();
+< virtualinvoke v10.<org.objectweb.asm.MethodVisitor: void visitJumpInsn(int,org.objectweb.asm.Label)>(167, v16);
+< virtualinvoke v10.<org.objectweb.asm.MethodVisitor: void visitLabel(org.objectweb.asm.Label)>(v15);
+< virtualinvoke v10.<org.objectweb.asm.MethodVisitor: void visitInsn(int)>(3);
+< virtualinvoke v10.<org.objectweb.asm.MethodVisitor: void visitLabel(org.objectweb.asm.Label)>(v16);
+---
+> v15 = new groovyjarjarasm.asm.Label;
+> specialinvoke v15.<groovyjarjarasm.asm.Label: void <init>()>();
+> virtualinvoke v10.<groovyjarjarasm.asm.MethodVisitor: void visitJumpInsn(int,groovyjarjarasm.asm.Label)>(166, v15);
+> virtualinvoke v10.<groovyjarjarasm.asm.MethodVisitor: void visitInsn(int)>(4);
+> v16 = new groovyjarjarasm.asm.Label;
+> specialinvoke v16.<groovyjarjarasm.asm.Label: void <init>()>();
+> virtualinvoke v10.<groovyjarjarasm.asm.MethodVisitor: void visitJumpInsn(int,groovyjarjarasm.asm.Label)>(167, v16);
+> virtualinvoke v10.<groovyjarjarasm.asm.MethodVisitor: void visitLabel(groovyjarjarasm.asm.Label)>(v15);
+> virtualinvoke v10.<groovyjarjarasm.asm.MethodVisitor: void visitInsn(int)>(3);
+> virtualinvoke v10.<groovyjarjarasm.asm.MethodVisitor: void visitLabel(groovyjarjarasm.asm.Label)>(v16);

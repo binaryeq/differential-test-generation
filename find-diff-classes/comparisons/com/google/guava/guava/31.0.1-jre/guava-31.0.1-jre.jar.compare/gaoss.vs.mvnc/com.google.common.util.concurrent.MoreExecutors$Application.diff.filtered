@@ -1,0 +1,30 @@
+67a68
+> long v2;
+70,73c71,75
+< com.google.common.util.concurrent.MoreExecutors$Application$1 v5;
+< java.lang.Thread v6;
+< long v2;
+< java.lang.String v4;
+---
+> com.google.common.util.concurrent.MoreExecutors$Application$1 v9;
+> java.lang.Thread v10;
+> int v6, v7;
+> java.lang.StringBuilder v11;
+> java.lang.String v4, v5, v8;
+81,85c83,92
+< v4 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.util.concurrent.ExecutorService)>(v1) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("DelayedShutdownHook-for-\u0001");
+< v5 = new com.google.common.util.concurrent.MoreExecutors$Application$1;
+< specialinvoke v5.<com.google.common.util.concurrent.MoreExecutors$Application$1: void <init>(com.google.common.util.concurrent.MoreExecutors$Application,java.util.concurrent.ExecutorService,long,java.util.concurrent.TimeUnit)>(v0, v1, v2, v3);
+< v6 = staticinvoke <com.google.common.util.concurrent.MoreExecutors: java.lang.Thread newThread(java.lang.String,java.lang.Runnable)>(v4, v5);
+< virtualinvoke v0.<com.google.common.util.concurrent.MoreExecutors$Application: void addShutdownHook(java.lang.Thread)>(v6);
+---
+> v4 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v1);
+> v5 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v4);
+> v6 = virtualinvoke v5.<java.lang.String: int length()>();
+> v7 = 24 + v6;
+> specialinvoke v11.<java.lang.StringBuilder: void <init>(int)>(v7);
+> v8 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v4) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("DelayedShutdownHook-for-\u0001");
+> v9 = new com.google.common.util.concurrent.MoreExecutors$Application$1;
+> specialinvoke v9.<com.google.common.util.concurrent.MoreExecutors$Application$1: void <init>(com.google.common.util.concurrent.MoreExecutors$Application,java.util.concurrent.ExecutorService,long,java.util.concurrent.TimeUnit)>(v0, v1, v2, v3);
+> v10 = staticinvoke <com.google.common.util.concurrent.MoreExecutors: java.lang.Thread newThread(java.lang.String,java.lang.Runnable)>(v8, v9);
+> virtualinvoke v0.<com.google.common.util.concurrent.MoreExecutors$Application: void addShutdownHook(java.lang.Thread)>(v10);

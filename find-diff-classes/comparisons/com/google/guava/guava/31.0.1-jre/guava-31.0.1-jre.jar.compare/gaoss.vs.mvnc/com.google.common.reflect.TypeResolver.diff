@@ -1,0 +1,26 @@
+230,232d229
+< java.lang.Class v0;
+< java.lang.Object v1, v2;
+< java.lang.String v5, v6;
+234a232,236
+> int v11, v12, v8, v9;
+> java.lang.Class v0;
+> java.lang.Object v1, v2;
+> java.lang.StringBuilder v14;
+> java.lang.String v10, v13, v5, v6, v7;
+244,246c246,256
+< v5 = virtualinvoke v0.<java.lang.Class: java.lang.String getSimpleName()>();
+< v6 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.Object,java.lang.String)>(v1, v5) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001 is not a \u0001");
+< specialinvoke v4.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(v6);
+---
+> v5 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v1);
+> v6 = virtualinvoke v0.<java.lang.Class: java.lang.String getSimpleName()>();
+> v7 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v5);
+> v8 = virtualinvoke v7.<java.lang.String: int length()>();
+> v9 = 10 + v8;
+> v10 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v6);
+> v11 = virtualinvoke v10.<java.lang.String: int length()>();
+> v12 = v9 + v11;
+> specialinvoke v14.<java.lang.StringBuilder: void <init>(int)>(v12);
+> v13 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,java.lang.String)>(v5, v6) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001 is not a \u0001");
+> specialinvoke v4.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(v13);

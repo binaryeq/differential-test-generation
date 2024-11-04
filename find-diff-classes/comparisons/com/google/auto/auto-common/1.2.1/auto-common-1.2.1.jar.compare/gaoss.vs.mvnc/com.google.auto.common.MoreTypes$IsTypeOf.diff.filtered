@@ -1,0 +1,62 @@
+17,18d16
+< javax.lang.model.type.TypeMirror v1;
+< java.lang.String v4;
+20a19,22
+> javax.lang.model.type.TypeMirror v1;
+> int v6, v7;
+> java.lang.StringBuilder v9;
+> java.lang.String v4, v5, v8;
+25,26c27,33
+< v4 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (javax.lang.model.type.TypeMirror)>(v1) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001 cannot be represented as a Class<?>.");
+< specialinvoke v3.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(v4);
+---
+> v4 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v1);
+> v5 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v4);
+> v6 = virtualinvoke v5.<java.lang.String: int length()>();
+> v7 = 37 + v6;
+> specialinvoke v9.<java.lang.StringBuilder: void <init>(int)>(v7);
+> v8 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v4) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001 cannot be represented as a Class<?>.");
+> specialinvoke v3.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(v8);
+30a38,41
+> int v13, v14;
+> java.lang.Boolean v9;
+> java.lang.String v11, v12, v15;
+> boolean v5, v8;
+36d46
+< java.lang.Boolean v9;
+38,39c48
+< java.lang.String v11;
+< boolean v5, v8;
+---
+> java.lang.StringBuilder v16;
+54,55c63,69
+< v11 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (javax.lang.model.type.NoType)>(v1) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001 cannot be represented as a Class<?>.");
+< specialinvoke v10.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(v11);
+---
+> v11 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v1);
+> v12 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v11);
+> v13 = virtualinvoke v12.<java.lang.String: int length()>();
+> v14 = 37 + v13;
+> specialinvoke v16.<java.lang.StringBuilder: void <init>(int)>(v14);
+> v15 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v11) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001 cannot be represented as a Class<?>.");
+> specialinvoke v10.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(v15);
+76c90,91
+< int v5, v6;
+---
+> java.lang.StringBuilder v45;
+> int v42, v43, v5, v6;
+78c93
+< java.lang.String v40;
+---
+> java.lang.String v40, v41, v44;
+152,153c167,173
+< v40 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (javax.lang.model.type.PrimitiveType)>(v1) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001 cannot be represented as a Class<?>.");
+< specialinvoke v39.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(v40);
+---
+> v40 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v1);
+> v41 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v40);
+> v42 = virtualinvoke v41.<java.lang.String: int length()>();
+> v43 = 37 + v42;
+> specialinvoke v45.<java.lang.StringBuilder: void <init>(int)>(v43);
+> v44 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v40) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001 cannot be represented as a Class<?>.");
+> specialinvoke v39.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(v44);

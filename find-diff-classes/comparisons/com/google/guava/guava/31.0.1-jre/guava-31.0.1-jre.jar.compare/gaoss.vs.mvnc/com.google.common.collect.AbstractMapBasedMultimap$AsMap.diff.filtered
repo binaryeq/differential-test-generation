@@ -1,0 +1,17 @@
+81c81
+< com.google.common.collect.AbstractMapBasedMultimap v4, v6, v7;
+---
+> com.google.common.collect.AbstractMapBasedMultimap v4, v6;
+83c83
+< int v10, v8, v9;
+---
+> int v7;
+96,100c96,97
+< v7 = v0.<com.google.common.collect.AbstractMapBasedMultimap$AsMap: com.google.common.collect.AbstractMapBasedMultimap this$0>;
+< v8 = v7.<com.google.common.collect.AbstractMapBasedMultimap: int totalSize>;
+< v9 = interfaceinvoke v3.<java.util.Collection: int size()>();
+< v10 = v8 - v9;
+< v6.<com.google.common.collect.AbstractMapBasedMultimap: int totalSize> = v10;
+---
+> v7 = interfaceinvoke v3.<java.util.Collection: int size()>();
+> v6.<com.google.common.collect.AbstractMapBasedMultimap: int totalSize> = v7;

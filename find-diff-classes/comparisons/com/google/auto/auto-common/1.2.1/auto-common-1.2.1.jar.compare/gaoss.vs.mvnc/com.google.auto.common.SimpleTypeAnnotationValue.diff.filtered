@@ -1,0 +1,19 @@
+65,66d64
+< javax.lang.model.type.TypeMirror v1;
+< java.lang.String v2;
+67a66,69
+> javax.lang.model.type.TypeMirror v1;
+> int v4, v5;
+> java.lang.StringBuilder v7;
+> java.lang.String v2, v3, v6;
+70,71c72,78
+< v2 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (javax.lang.model.type.TypeMirror)>(v1) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001.class");
+< return v2;
+---
+> v2 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v1);
+> v3 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v2);
+> v4 = virtualinvoke v3.<java.lang.String: int length()>();
+> v5 = 6 + v4;
+> specialinvoke v7.<java.lang.StringBuilder: void <init>(int)>(v5);
+> v6 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v2) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001.class");
+> return v6;

@@ -1,0 +1,24 @@
+91d90
+< com.google.common.base.Suppliers$ExpiringMemoizingSupplier v0;
+93,94c92,96
+< long v2;
+< java.lang.String v3;
+---
+> long v3;
+> com.google.common.base.Suppliers$ExpiringMemoizingSupplier v0;
+> int v5, v6;
+> java.lang.StringBuilder v8;
+> java.lang.String v2, v4, v7;
+97,99c99,106
+< v2 = v0.<com.google.common.base.Suppliers$ExpiringMemoizingSupplier: long durationNanos>;
+< v3 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (com.google.common.base.Supplier,long)>(v1, v2) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Suppliers.memoizeWithExpiration(\u0001, \u0001, NANOS)");
+< return v3;
+---
+> v2 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v1);
+> v3 = v0.<com.google.common.base.Suppliers$ExpiringMemoizingSupplier: long durationNanos>;
+> v4 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v2);
+> v5 = virtualinvoke v4.<java.lang.String: int length()>();
+> v6 = 62 + v5;
+> specialinvoke v8.<java.lang.StringBuilder: void <init>(int)>(v6);
+> v7 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,long)>(v2, v3) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Suppliers.memoizeWithExpiration(\u0001, \u0001, NANOS)");
+> return v7;

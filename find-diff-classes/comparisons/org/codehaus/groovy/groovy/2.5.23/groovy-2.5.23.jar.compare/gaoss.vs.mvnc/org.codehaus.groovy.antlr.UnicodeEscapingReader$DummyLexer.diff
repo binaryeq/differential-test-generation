@@ -1,0 +1,34 @@
+1c1
+< class org.codehaus.groovy.antlr.UnicodeEscapingReader$DummyLexer extends antlr.CharScanner
+---
+> class org.codehaus.groovy.antlr.UnicodeEscapingReader$DummyLexer extends groovyjarjarantlr.CharScanner
+3c3
+< private final antlr.Token t;
+---
+> private final groovyjarjarantlr.Token t;
+6d5
+< antlr.Token v1;
+7a7
+> groovyjarjarantlr.Token v1;
+9,12c9,12
+< specialinvoke v0.<antlr.CharScanner: void <init>()>();
+< v1 = new antlr.Token;
+< specialinvoke v1.<antlr.Token: void <init>()>();
+< v0.<org.codehaus.groovy.antlr.UnicodeEscapingReader$DummyLexer: antlr.Token t> = v1;
+---
+> specialinvoke v0.<groovyjarjarantlr.CharScanner: void <init>()>();
+> v1 = new groovyjarjarantlr.Token;
+> specialinvoke v1.<groovyjarjarantlr.Token: void <init>()>();
+> v0.<org.codehaus.groovy.antlr.UnicodeEscapingReader$DummyLexer: groovyjarjarantlr.Token t> = v1;
+15c15
+< public antlr.Token nextToken() throws antlr.TokenStreamException
+---
+> public groovyjarjarantlr.Token nextToken() throws groovyjarjarantlr.TokenStreamException
+17d16
+< antlr.Token v1;
+18a18
+> groovyjarjarantlr.Token v1;
+20c20
+< v1 = v0.<org.codehaus.groovy.antlr.UnicodeEscapingReader$DummyLexer: antlr.Token t>;
+---
+> v1 = v0.<org.codehaus.groovy.antlr.UnicodeEscapingReader$DummyLexer: groovyjarjarantlr.Token t>;

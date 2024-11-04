@@ -1,0 +1,144 @@
+1c1
+< public class org.codehaus.groovy.antlr.GroovySourceAST extends antlr.CommonAST implements java.lang.Comparable, org.codehaus.groovy.antlr.SourceInfo
+---
+> public class org.codehaus.groovy.antlr.GroovySourceAST extends groovyjarjarantlr.CommonAST implements java.lang.Comparable, org.codehaus.groovy.antlr.SourceInfo
+13c13
+< specialinvoke v0.<antlr.CommonAST: void <init>()>();
+---
+> specialinvoke v0.<groovyjarjarantlr.CommonAST: void <init>()>();
+16c16
+< public void <init>(antlr.Token)
+---
+> public void <init>(groovyjarjarantlr.Token)
+18d17
+< antlr.Token v1;
+19a19
+> groovyjarjarantlr.Token v1;
+21,22c21,22
+< v1 := @parameter0: antlr.Token;
+< specialinvoke v0.<antlr.CommonAST: void <init>(antlr.Token)>(v1);
+---
+> v1 := @parameter0: groovyjarjarantlr.Token;
+> specialinvoke v0.<groovyjarjarantlr.CommonAST: void <init>(groovyjarjarantlr.Token)>(v1);
+25c25
+< public void initialize(antlr.collections.AST)
+---
+> public void initialize(groovyjarjarantlr.collections.AST)
+27d26
+< antlr.collections.AST v1;
+29a29
+> groovyjarjarantlr.collections.AST v1;
+32,34c32,34
+< v1 := @parameter0: antlr.collections.AST;
+< specialinvoke v0.<antlr.CommonAST: void initialize(antlr.collections.AST)>(v1);
+< v2 = interfaceinvoke v1.<antlr.collections.AST: int getLine()>();
+---
+> v1 := @parameter0: groovyjarjarantlr.collections.AST;
+> specialinvoke v0.<groovyjarjarantlr.CommonAST: void initialize(groovyjarjarantlr.collections.AST)>(v1);
+> v2 = interfaceinvoke v1.<groovyjarjarantlr.collections.AST: int getLine()>();
+36c36
+< v3 = interfaceinvoke v1.<antlr.collections.AST: int getColumn()>();
+---
+> v3 = interfaceinvoke v1.<groovyjarjarantlr.collections.AST: int getColumn()>();
+47c47
+< public void initialize(antlr.Token)
+---
+> public void initialize(groovyjarjarantlr.Token)
+50d49
+< antlr.Token v1;
+51a51
+> groovyjarjarantlr.Token v1;
+54,56c54,56
+< v1 := @parameter0: antlr.Token;
+< specialinvoke v0.<antlr.CommonAST: void initialize(antlr.Token)>(v1);
+< v2 = virtualinvoke v1.<antlr.Token: int getLine()>();
+---
+> v1 := @parameter0: groovyjarjarantlr.Token;
+> specialinvoke v0.<groovyjarjarantlr.CommonAST: void initialize(groovyjarjarantlr.Token)>(v1);
+> v2 = virtualinvoke v1.<groovyjarjarantlr.Token: int getLine()>();
+58c58
+< v3 = virtualinvoke v1.<antlr.Token: int getColumn()>();
+---
+> v3 = virtualinvoke v1.<groovyjarjarantlr.Token: int getColumn()>();
+69c69
+< public void setLast(antlr.Token)
+---
+> public void setLast(groovyjarjarantlr.Token)
+72d71
+< antlr.Token v1;
+73a73
+> groovyjarjarantlr.Token v1;
+75,76c75,76
+< v1 := @parameter0: antlr.Token;
+< v2 = virtualinvoke v1.<antlr.Token: int getLine()>();
+---
+> v1 := @parameter0: groovyjarjarantlr.Token;
+> v2 = virtualinvoke v1.<groovyjarjarantlr.Token: int getLine()>();
+78c78
+< v3 = virtualinvoke v1.<antlr.Token: int getColumn()>();
+---
+> v3 = virtualinvoke v1.<groovyjarjarantlr.Token: int getColumn()>();
+178c178
+< v2 = v1 instanceof antlr.collections.AST;
+---
+> v2 = v1 instanceof groovyjarjarantlr.collections.AST;
+183c183
+< v4 = interfaceinvoke v1.<antlr.collections.AST: int getLine()>();
+---
+> v4 = interfaceinvoke v1.<groovyjarjarantlr.collections.AST: int getLine()>();
+189c189
+< v7 = interfaceinvoke v1.<antlr.collections.AST: int getLine()>();
+---
+> v7 = interfaceinvoke v1.<groovyjarjarantlr.collections.AST: int getLine()>();
+194c194
+< v9 = interfaceinvoke v1.<antlr.collections.AST: int getColumn()>();
+---
+> v9 = interfaceinvoke v1.<groovyjarjarantlr.collections.AST: int getColumn()>();
+200c200
+< v12 = interfaceinvoke v1.<antlr.collections.AST: int getColumn()>();
+---
+> v12 = interfaceinvoke v1.<groovyjarjarantlr.collections.AST: int getColumn()>();
+208d207
+< antlr.collections.AST v3;
+210a210
+> groovyjarjarantlr.collections.AST v3;
+214c214
+< v3 = virtualinvoke v0.<org.codehaus.groovy.antlr.GroovySourceAST: antlr.collections.AST getFirstChild()>();
+---
+> v3 = virtualinvoke v0.<org.codehaus.groovy.antlr.GroovySourceAST: groovyjarjarantlr.collections.AST getFirstChild()>();
+222c222
+< v3 = interfaceinvoke v3.<antlr.collections.AST: antlr.collections.AST getNextSibling()>();
+---
+> v3 = interfaceinvoke v3.<groovyjarjarantlr.collections.AST: groovyjarjarantlr.collections.AST getNextSibling()>();
+229d228
+< antlr.collections.AST v2;
+231a231
+> groovyjarjarantlr.collections.AST v2;
+234c234
+< v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.GroovySourceAST: antlr.collections.AST getFirstChild()>();
+---
+> v2 = virtualinvoke v0.<org.codehaus.groovy.antlr.GroovySourceAST: groovyjarjarantlr.collections.AST getFirstChild()>();
+237c237
+< v3 = interfaceinvoke v2.<antlr.collections.AST: int getType()>();
+---
+> v3 = interfaceinvoke v2.<groovyjarjarantlr.collections.AST: int getType()>();
+241c241
+< v2 = interfaceinvoke v2.<antlr.collections.AST: antlr.collections.AST getNextSibling()>();
+---
+> v2 = interfaceinvoke v2.<groovyjarjarantlr.collections.AST: groovyjarjarantlr.collections.AST getNextSibling()>();
+248d247
+< antlr.collections.AST v3;
+250a250
+> groovyjarjarantlr.collections.AST v3;
+256c256
+< v3 = virtualinvoke v0.<org.codehaus.groovy.antlr.GroovySourceAST: antlr.collections.AST getFirstChild()>();
+---
+> v3 = virtualinvoke v0.<org.codehaus.groovy.antlr.GroovySourceAST: groovyjarjarantlr.collections.AST getFirstChild()>();
+259c259
+< v4 = interfaceinvoke v3.<antlr.collections.AST: int getType()>();
+---
+> v4 = interfaceinvoke v3.<groovyjarjarantlr.collections.AST: int getType()>();
+263c263
+< v3 = interfaceinvoke v3.<antlr.collections.AST: antlr.collections.AST getNextSibling()>();
+---
+> v3 = interfaceinvoke v3.<groovyjarjarantlr.collections.AST: groovyjarjarantlr.collections.AST getNextSibling()>();

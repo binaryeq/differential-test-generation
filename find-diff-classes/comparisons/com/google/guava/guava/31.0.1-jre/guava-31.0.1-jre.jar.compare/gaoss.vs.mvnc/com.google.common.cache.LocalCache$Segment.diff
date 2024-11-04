@@ -1,0 +1,123 @@
+497,499c497,499
+< java.lang.Throwable v15;
+< com.google.common.cache.AbstractCache$StatsCounter v14, v16;
+< long v13;
+---
+> java.lang.Throwable v19;
+> com.google.common.cache.AbstractCache$StatsCounter v18, v20;
+> long v17;
+502,503c502,504
+< com.google.common.cache.LocalCache v11;
+< java.lang.String v10;
+---
+> com.google.common.cache.LocalCache v15;
+> int v12, v13;
+> java.lang.String v10, v11, v14;
+507c508
+< com.google.common.base.Ticker v12;
+---
+> com.google.common.base.Ticker v16;
+509a511
+> java.lang.StringBuilder v21;
+532,533c534,540
+< v10 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.Object)>(v2) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("CacheLoader returned null for key \u0001.");
+< specialinvoke v9.<com.google.common.cache.CacheLoader$InvalidCacheLoadException: void <init>(java.lang.String)>(v10);
+---
+> v10 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v2);
+> v11 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v10);
+> v12 = virtualinvoke v11.<java.lang.String: int length()>();
+> v13 = 35 + v12;
+> specialinvoke v21.<java.lang.StringBuilder: void <init>(int)>(v13);
+> v14 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v10) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("CacheLoader returned null for key \u0001.");
+> specialinvoke v9.<com.google.common.cache.CacheLoader$InvalidCacheLoadException: void <init>(java.lang.String)>(v14);
+536,539c543,546
+< v11 = v0.<com.google.common.cache.LocalCache$Segment: com.google.common.cache.LocalCache map>;
+< v12 = v11.<com.google.common.cache.LocalCache: com.google.common.base.Ticker ticker>;
+< v13 = virtualinvoke v12.<com.google.common.base.Ticker: long read()>();
+< virtualinvoke v0.<com.google.common.cache.LocalCache$Segment: void recordRead(com.google.common.cache.ReferenceEntry,long)>(v1, v13);
+---
+> v15 = v0.<com.google.common.cache.LocalCache$Segment: com.google.common.cache.LocalCache map>;
+> v16 = v15.<com.google.common.cache.LocalCache: com.google.common.base.Ticker ticker>;
+> v17 = virtualinvoke v16.<com.google.common.base.Ticker: long read()>();
+> virtualinvoke v0.<com.google.common.cache.LocalCache$Segment: void recordRead(com.google.common.cache.ReferenceEntry,long)>(v1, v17);
+541,542c548,549
+< v14 = v0.<com.google.common.cache.LocalCache$Segment: com.google.common.cache.AbstractCache$StatsCounter statsCounter>;
+< interfaceinvoke v14.<com.google.common.cache.AbstractCache$StatsCounter: void recordMisses(int)>(1);
+---
+> v18 = v0.<com.google.common.cache.LocalCache$Segment: com.google.common.cache.AbstractCache$StatsCounter statsCounter>;
+> interfaceinvoke v18.<com.google.common.cache.AbstractCache$StatsCounter: void recordMisses(int)>(1);
+545,548c552,555
+< v15 := @caughtexception;
+< v16 = v0.<com.google.common.cache.LocalCache$Segment: com.google.common.cache.AbstractCache$StatsCounter statsCounter>;
+< interfaceinvoke v16.<com.google.common.cache.AbstractCache$StatsCounter: void recordMisses(int)>(1);
+< throw v15;
+---
+> v19 := @caughtexception;
+> v20 = v0.<com.google.common.cache.LocalCache$Segment: com.google.common.cache.AbstractCache$StatsCounter statsCounter>;
+> interfaceinvoke v20.<com.google.common.cache.AbstractCache$StatsCounter: void recordMisses(int)>(1);
+> throw v19;
+723c730
+< java.lang.Throwable v11;
+---
+> java.lang.Throwable v15;
+725c732,736
+< com.google.common.cache.AbstractCache$StatsCounter v12, v8;
+---
+> com.google.common.cache.AbstractCache$StatsCounter v12, v16;
+> long v13, v17;
+> int v10, v2, v9;
+> java.lang.String v11, v7, v8;
+> com.google.common.cache.CacheLoader$InvalidCacheLoadException v6;
+727d737
+< long v13, v9;
+729,732c739,740
+< int v2;
+< java.lang.Object v1, v10, v5;
+< java.lang.String v7;
+< com.google.common.cache.CacheLoader$InvalidCacheLoadException v6;
+---
+> java.lang.Object v1, v14, v5;
+> java.lang.StringBuilder v18;
+743,744c751,757
+< v7 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.Object)>(v1) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("CacheLoader returned null for key \u0001.");
+< specialinvoke v6.<com.google.common.cache.CacheLoader$InvalidCacheLoadException: void <init>(java.lang.String)>(v7);
+---
+> v7 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v1);
+> v8 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v7);
+> v9 = virtualinvoke v8.<java.lang.String: int length()>();
+> v10 = 35 + v9;
+> specialinvoke v18.<java.lang.StringBuilder: void <init>(int)>(v10);
+> v11 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v7) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("CacheLoader returned null for key \u0001.");
+> specialinvoke v6.<com.google.common.cache.CacheLoader$InvalidCacheLoadException: void <init>(java.lang.String)>(v11);
+747,749c760,762
+< v8 = v0.<com.google.common.cache.LocalCache$Segment: com.google.common.cache.AbstractCache$StatsCounter statsCounter>;
+< v9 = virtualinvoke v3.<com.google.common.cache.LocalCache$LoadingValueReference: long elapsedNanos()>();
+< interfaceinvoke v8.<com.google.common.cache.AbstractCache$StatsCounter: void recordLoadSuccess(long)>(v9);
+---
+> v12 = v0.<com.google.common.cache.LocalCache$Segment: com.google.common.cache.AbstractCache$StatsCounter statsCounter>;
+> v13 = virtualinvoke v3.<com.google.common.cache.LocalCache$LoadingValueReference: long elapsedNanos()>();
+> interfaceinvoke v12.<com.google.common.cache.AbstractCache$StatsCounter: void recordLoadSuccess(long)>(v13);
+751c764
+< v10 = v5;
+---
+> v14 = v5;
+753c766
+< return v10;
+---
+> return v14;
+755c768
+< v11 := @caughtexception;
+---
+> v15 := @caughtexception;
+757,759c770,772
+< v12 = v0.<com.google.common.cache.LocalCache$Segment: com.google.common.cache.AbstractCache$StatsCounter statsCounter>;
+< v13 = virtualinvoke v3.<com.google.common.cache.LocalCache$LoadingValueReference: long elapsedNanos()>();
+< interfaceinvoke v12.<com.google.common.cache.AbstractCache$StatsCounter: void recordLoadException(long)>(v13);
+---
+> v16 = v0.<com.google.common.cache.LocalCache$Segment: com.google.common.cache.AbstractCache$StatsCounter statsCounter>;
+> v17 = virtualinvoke v3.<com.google.common.cache.LocalCache$LoadingValueReference: long elapsedNanos()>();
+> interfaceinvoke v16.<com.google.common.cache.AbstractCache$StatsCounter: void recordLoadException(long)>(v17);
+762c775
+< throw v11;
+---
+> throw v15;

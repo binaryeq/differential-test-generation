@@ -1,0 +1,187 @@
+22c22
+< v1 = staticinvoke <oshi.software.os.windows.WindowsOperatingSystem$queryProcessMapFromRegistry__280: java.util.function.Supplier bootstrap$()>();
+---
+> v1 = staticinvoke <oshi.software.os.windows.WindowsOperatingSystem$queryProcessMapFromRegistry__292: java.util.function.Supplier bootstrap$()>();
+26c26
+< v4 = staticinvoke <oshi.software.os.windows.WindowsOperatingSystem$queryProcessMapFromPerfCounters__281: java.util.function.Supplier bootstrap$()>();
+---
+> v4 = staticinvoke <oshi.software.os.windows.WindowsOperatingSystem$queryProcessMapFromPerfCounters__293: java.util.function.Supplier bootstrap$()>();
+30c30
+< v7 = staticinvoke <oshi.software.os.windows.WindowsOperatingSystem$queryThreadMapFromRegistry__282: java.util.function.Supplier bootstrap$()>();
+---
+> v7 = staticinvoke <oshi.software.os.windows.WindowsOperatingSystem$queryThreadMapFromRegistry__294: java.util.function.Supplier bootstrap$()>();
+34c34
+< v10 = staticinvoke <oshi.software.os.windows.WindowsOperatingSystem$queryThreadMapFromPerfCounters__283: java.util.function.Supplier bootstrap$()>();
+---
+> v10 = staticinvoke <oshi.software.os.windows.WindowsOperatingSystem$queryThreadMapFromPerfCounters__295: java.util.function.Supplier bootstrap$()>();
+178c178
+< java.lang.Throwable v20, v23, v26, v27;
+---
+> java.lang.Throwable v19, v22, v25, v26;
+185c185
+< boolean v14, v16, v17, v6;
+---
+> boolean v14, v16, v6;
+188,189c188,189
+< com.sun.jna.platform.win32.Kernel32 v18, v21, v24, v4;
+< com.sun.jna.platform.win32.WinNT$HANDLE v12, v19, v22, v25, v5;
+---
+> com.sun.jna.platform.win32.Kernel32 v17, v20, v23, v4;
+> com.sun.jna.platform.win32.WinNT$HANDLE v12, v18, v21, v24, v5;
+219c219
+< if v14 == 0 goto label13;
+---
+> if v14 == 0 goto label12;
+227,228d226
+< v17 = v16;
+< label09:
+229a228,231
+> label09:
+> v17 = <com.sun.jna.platform.win32.Kernel32: com.sun.jna.platform.win32.Kernel32 INSTANCE>;
+> v18 = virtualinvoke v1.<oshi.jna.ByRef$CloseableHANDLEByReference: com.sun.jna.platform.win32.WinNT$HANDLE getValue()>();
+> interfaceinvoke v17.<com.sun.jna.platform.win32.Kernel32: boolean CloseHandle(com.sun.jna.platform.win32.WinNT$HANDLE)>(v18);
+231,234d232
+< v18 = <com.sun.jna.platform.win32.Kernel32: com.sun.jna.platform.win32.Kernel32 INSTANCE>;
+< v19 = virtualinvoke v1.<oshi.jna.ByRef$CloseableHANDLEByReference: com.sun.jna.platform.win32.WinNT$HANDLE getValue()>();
+< interfaceinvoke v18.<com.sun.jna.platform.win32.Kernel32: boolean CloseHandle(com.sun.jna.platform.win32.WinNT$HANDLE)>(v19);
+< label11:
+236c234
+< label12:
+---
+> label11:
+238,239c236,237
+< return v17;
+< label13:
+---
+> return v16;
+> label12:
+241c239,242
+< goto label15;
+---
+> goto label14;
+> label13:
+> v19 := @caughtexception;
+> throw v19;
+243,244c244,247
+< v20 := @caughtexception;
+< throw v20;
+---
+> v20 = <com.sun.jna.platform.win32.Kernel32: com.sun.jna.platform.win32.Kernel32 INSTANCE>;
+> v21 = virtualinvoke v1.<oshi.jna.ByRef$CloseableHANDLEByReference: com.sun.jna.platform.win32.WinNT$HANDLE getValue()>();
+> interfaceinvoke v20.<com.sun.jna.platform.win32.Kernel32: boolean CloseHandle(com.sun.jna.platform.win32.WinNT$HANDLE)>(v21);
+> goto label16;
+246,249c249,253
+< v21 = <com.sun.jna.platform.win32.Kernel32: com.sun.jna.platform.win32.Kernel32 INSTANCE>;
+< v22 = virtualinvoke v1.<oshi.jna.ByRef$CloseableHANDLEByReference: com.sun.jna.platform.win32.WinNT$HANDLE getValue()>();
+< interfaceinvoke v21.<com.sun.jna.platform.win32.Kernel32: boolean CloseHandle(com.sun.jna.platform.win32.WinNT$HANDLE)>(v22);
+< goto label17;
+---
+> v22 := @caughtexception;
+> v23 = <com.sun.jna.platform.win32.Kernel32: com.sun.jna.platform.win32.Kernel32 INSTANCE>;
+> v24 = virtualinvoke v1.<oshi.jna.ByRef$CloseableHANDLEByReference: com.sun.jna.platform.win32.WinNT$HANDLE getValue()>();
+> interfaceinvoke v23.<com.sun.jna.platform.win32.Kernel32: boolean CloseHandle(com.sun.jna.platform.win32.WinNT$HANDLE)>(v24);
+> throw v22;
+251,256d254
+< v23 := @caughtexception;
+< v24 = <com.sun.jna.platform.win32.Kernel32: com.sun.jna.platform.win32.Kernel32 INSTANCE>;
+< v25 = virtualinvoke v1.<oshi.jna.ByRef$CloseableHANDLEByReference: com.sun.jna.platform.win32.WinNT$HANDLE getValue()>();
+< interfaceinvoke v24.<com.sun.jna.platform.win32.Kernel32: boolean CloseHandle(com.sun.jna.platform.win32.WinNT$HANDLE)>(v25);
+< throw v23;
+< label17:
+258c256,259
+< goto label19;
+---
+> goto label18;
+> label17:
+> v25 := @caughtexception;
+> throw v25;
+259a261,263
+> virtualinvoke v1.<oshi.jna.ByRef$CloseableHANDLEByReference: void close()>();
+> goto label20;
+> label19:
+262,264d265
+< label19:
+< virtualinvoke v1.<oshi.jna.ByRef$CloseableHANDLEByReference: void close()>();
+< goto label21;
+266,268d266
+< v27 := @caughtexception;
+< throw v27;
+< label21:
+270,278c268,276
+< catch java.lang.Throwable from label06 to label09 with label14;
+< catch java.lang.Throwable from label05 to label10 with label16;
+< catch java.lang.Throwable from label13 to label15 with label16;
+< catch java.lang.Throwable from label02 to label03 with label18;
+< catch java.lang.Throwable from label05 to label11 with label18;
+< catch java.lang.Throwable from label13 to label17 with label18;
+< catch java.lang.Throwable from label01 to label04 with label20;
+< catch java.lang.Throwable from label05 to label12 with label20;
+< catch java.lang.Throwable from label13 to label19 with label20;
+---
+> catch java.lang.Throwable from label06 to label08 with label13;
+> catch java.lang.Throwable from label05 to label09 with label15;
+> catch java.lang.Throwable from label12 to label14 with label15;
+> catch java.lang.Throwable from label02 to label03 with label17;
+> catch java.lang.Throwable from label05 to label10 with label17;
+> catch java.lang.Throwable from label12 to label16 with label17;
+> catch java.lang.Throwable from label01 to label04 with label19;
+> catch java.lang.Throwable from label05 to label11 with label19;
+> catch java.lang.Throwable from label12 to label18 with label19;
+488c486
+< v19 = staticinvoke <oshi.software.os.windows.WindowsOperatingSystem$lambda_processMapToList_0__284: java.util.function.Function bootstrap$(oshi.software.os.windows.WindowsOperatingSystem,java.util.Map,java.util.Map,java.util.Map)>(v0, v3, v13, v9);
+---
+> v19 = staticinvoke <oshi.software.os.windows.WindowsOperatingSystem$lambda_processMapToList_0__296: java.util.function.Function bootstrap$(oshi.software.os.windows.WindowsOperatingSystem,java.util.Map,java.util.Map,java.util.Map)>(v0, v3, v13, v9);
+596c594
+< v5 = staticinvoke <oshi.software.os.windows.WindowsOperatingSystem$lambda_getCurrentThread_1__285: java.util.function.Predicate bootstrap$(int)>(v2);
+---
+> v5 = staticinvoke <oshi.software.os.windows.WindowsOperatingSystem$lambda_getCurrentThread_1__297: java.util.function.Predicate bootstrap$(int)>(v2);
+972c970
+< java.lang.Throwable v8;
+---
+> java.lang.Throwable v7;
+979c977
+< boolean v6, v7;
+---
+> boolean v6;
+995,996d992
+< v7 = v6;
+< label4:
+998,1002c994,998
+< return v7;
+< label5:
+< v8 := @caughtexception;
+< throw v8;
+< catch java.lang.Throwable from label1 to label4 with label5;
+---
+> return v6;
+> label4:
+> v7 := @caughtexception;
+> throw v7;
+> catch java.lang.Throwable from label1 to label3 with label4;
+1012c1008
+< java.lang.Throwable v7;
+---
+> java.lang.Throwable v6;
+1017c1013
+< boolean v1, v5, v6;
+---
+> boolean v1, v5;
+1035,1036d1030
+< v6 = v5;
+< label5:
+1038,1042c1032,1036
+< return v6;
+< label6:
+< v7 := @caughtexception;
+< throw v7;
+< catch java.lang.Throwable from label2 to label5 with label6;
+---
+> return v5;
+> label5:
+> v6 := @caughtexception;
+> throw v6;
+> catch java.lang.Throwable from label2 to label4 with label5;
+1076c1070
+< v3 = staticinvoke <oshi.software.os.windows.WindowsOperatingSystem$querySystemLog__286: java.util.function.Supplier bootstrap$()>();
+---
+> v3 = staticinvoke <oshi.software.os.windows.WindowsOperatingSystem$querySystemLog__298: java.util.function.Supplier bootstrap$()>();

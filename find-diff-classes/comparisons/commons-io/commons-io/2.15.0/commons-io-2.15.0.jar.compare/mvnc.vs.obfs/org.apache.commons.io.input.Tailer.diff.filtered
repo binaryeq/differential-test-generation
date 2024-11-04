@@ -1,0 +1,28 @@
+393c393
+< v8 = interfaceinvoke v7.<org.apache.commons.io.input.Tailer$Tailable: java.lang.Class getClass()>();
+---
+> v8 = virtualinvoke v7.<java.lang.Object: java.lang.Class getClass()>();
+417c417
+< java.lang.Throwable v26;
+---
+> java.lang.Throwable v27;
+421c421
+< long v17, v22, v3, v4;
+---
+> long v17, v22, v26, v3, v4;
+501,502c501
+< virtualinvoke v2.<java.io.ByteArrayOutputStream: void close()>();
+< return v4;
+---
+> v26 = v4;
+504,506c503,508
+< v26 := @caughtexception;
+< throw v26;
+< catch java.lang.Throwable from label01 to label12 with label13;
+---
+> virtualinvoke v2.<java.io.ByteArrayOutputStream: void close()>();
+> return v26;
+> label14:
+> v27 := @caughtexception;
+> throw v27;
+> catch java.lang.Throwable from label01 to label13 with label14;

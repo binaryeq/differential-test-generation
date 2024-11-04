@@ -1,0 +1,21 @@
+103d102
+< java.lang.String v5;
+106a106,108
+> int v11, v12, v8, v9;
+> java.lang.StringBuilder v14;
+> java.lang.String v10, v13, v5, v6, v7;
+117,118c119,129
+< v5 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.Runnable,java.util.concurrent.Executor)>(v0, v1) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("RuntimeException while executing runnable \u0001 with executor \u0001");
+< virtualinvoke v3.<java.util.logging.Logger: void log(java.util.logging.Level,java.lang.String,java.lang.Throwable)>(v4, v5, v2);
+---
+> v5 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v0);
+> v6 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v1);
+> v7 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v5);
+> v8 = virtualinvoke v7.<java.lang.String: int length()>();
+> v9 = 57 + v8;
+> v10 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v6);
+> v11 = virtualinvoke v10.<java.lang.String: int length()>();
+> v12 = v9 + v11;
+> specialinvoke v14.<java.lang.StringBuilder: void <init>(int)>(v12);
+> v13 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,java.lang.String)>(v5, v6) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("RuntimeException while executing runnable \u0001 with executor \u0001");
+> virtualinvoke v3.<java.util.logging.Logger: void log(java.util.logging.Level,java.lang.String,java.lang.Throwable)>(v4, v13, v2);

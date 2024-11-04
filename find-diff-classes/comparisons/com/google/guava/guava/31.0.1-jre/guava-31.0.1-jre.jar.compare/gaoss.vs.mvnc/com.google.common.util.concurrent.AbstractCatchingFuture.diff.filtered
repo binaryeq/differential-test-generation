@@ -1,0 +1,130 @@
+61,62d60
+< java.lang.Throwable v11, v18, v22, v23;
+< com.google.common.util.concurrent.ListenableFuture v1;
+64,65c62,67
+< java.lang.String v17;
+< boolean v12, v20, v4, v5, v6, v7, v8, v9;
+---
+> boolean v12, v28, v4, v5, v6, v7, v8, v9;
+> java.lang.StringBuilder v32;
+> java.lang.Throwable v11, v26, v30, v31;
+> com.google.common.util.concurrent.ListenableFuture v1;
+> int v20, v21, v23, v24;
+> java.lang.String v16, v18, v19, v22, v25;
+68,69c70,71
+< java.lang.Class v15, v16, v2;
+< java.lang.Object v10, v19, v21, v3;
+---
+> java.lang.Class v15, v17, v2;
+> java.lang.Object v10, v27, v29, v3;
+118,120c120,131
+< v16 = virtualinvoke v13.<java.lang.Object: java.lang.Class getClass()>();
+< v17 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.Class,java.lang.Class)>(v15, v16) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Future type \u0001 threw \u0001 without a cause");
+< specialinvoke v14.<java.lang.NullPointerException: void <init>(java.lang.String)>(v17);
+---
+> v16 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v15);
+> v17 = virtualinvoke v13.<java.lang.Object: java.lang.Class getClass()>();
+> v18 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v17);
+> v19 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v16);
+> v20 = virtualinvoke v19.<java.lang.String: int length()>();
+> v21 = 35 + v20;
+> v22 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v18);
+> v23 = virtualinvoke v22.<java.lang.String: int length()>();
+> v24 = v21 + v23;
+> specialinvoke v32.<java.lang.StringBuilder: void <init>(int)>(v24);
+> v25 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,java.lang.String)>(v16, v18) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Future type \u0001 threw \u0001 without a cause");
+> specialinvoke v14.<java.lang.NullPointerException: void <init>(java.lang.String)>(v25);
+124,125c135,136
+< v18 := @caughtexception;
+< v11 = v18;
+---
+> v26 := @caughtexception;
+> v11 = v26;
+128,129c139,140
+< v19 = staticinvoke <com.google.common.util.concurrent.NullnessCasts: java.lang.Object uncheckedCastNullableTToT(java.lang.Object)>(v10);
+< virtualinvoke v0.<com.google.common.util.concurrent.AbstractCatchingFuture: boolean set(java.lang.Object)>(v19);
+---
+> v27 = staticinvoke <com.google.common.util.concurrent.NullnessCasts: java.lang.Object uncheckedCastNullableTToT(java.lang.Object)>(v10);
+> virtualinvoke v0.<com.google.common.util.concurrent.AbstractCatchingFuture: boolean set(java.lang.Object)>(v27);
+132,133c143,144
+< v20 = staticinvoke <com.google.common.util.concurrent.Platform: boolean isInstanceOfThrowableClass(java.lang.Throwable,java.lang.Class)>(v11, v2);
+< if v20 != 0 goto label16;
+---
+> v28 = staticinvoke <com.google.common.util.concurrent.Platform: boolean isInstanceOfThrowableClass(java.lang.Throwable,java.lang.Class)>(v11, v2);
+> if v28 != 0 goto label16;
+137c148
+< v21 = virtualinvoke v0.<com.google.common.util.concurrent.AbstractCatchingFuture: java.lang.Object doFallback(java.lang.Object,java.lang.Throwable)>(v3, v11);
+---
+> v29 = virtualinvoke v0.<com.google.common.util.concurrent.AbstractCatchingFuture: java.lang.Object doFallback(java.lang.Object,java.lang.Throwable)>(v3, v11);
+143,144c154,155
+< v22 := @caughtexception;
+< virtualinvoke v0.<com.google.common.util.concurrent.AbstractCatchingFuture: boolean setException(java.lang.Throwable)>(v22);
+---
+> v30 := @caughtexception;
+> virtualinvoke v0.<com.google.common.util.concurrent.AbstractCatchingFuture: boolean setException(java.lang.Throwable)>(v30);
+150c161
+< v23 := @caughtexception;
+---
+> v31 := @caughtexception;
+153c164
+< throw v23;
+---
+> throw v31;
+155c166
+< virtualinvoke v0.<com.google.common.util.concurrent.AbstractCatchingFuture: void setResult(java.lang.Object)>(v21);
+---
+> virtualinvoke v0.<com.google.common.util.concurrent.AbstractCatchingFuture: void setResult(java.lang.Object)>(v29);
+164a176,178
+> int v13, v14, v16, v17, v19, v20, v24, v8, v9;
+> java.lang.String v10, v11, v12, v15, v18, v21, v22, v23, v25, v4, v5, v6, v7;
+> com.google.common.util.concurrent.AbstractCatchingFuture v0;
+167,168c181
+< java.lang.String v4, v5, v6, v7;
+< com.google.common.util.concurrent.AbstractCatchingFuture v0;
+---
+> java.lang.StringBuilder v26, v27;
+176c189,194
+< v5 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (com.google.common.util.concurrent.ListenableFuture)>(v1) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("inputFuture=[\u0001], ");
+---
+> v6 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v1);
+> v7 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v6);
+> v8 = virtualinvoke v7.<java.lang.String: int length()>();
+> v9 = 16 + v8;
+> specialinvoke v27.<java.lang.StringBuilder: void <init>(int)>(v9);
+> v5 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v6) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("inputFuture=[\u0001], ");
+180,181c198,211
+< v6 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,java.lang.Class,java.lang.Object)>(v5, v2, v3) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001exceptionType=[\u0001], fallback=[\u0001]");
+< return v6;
+---
+> v10 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v2);
+> v11 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v3);
+> v12 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v5);
+> v13 = virtualinvoke v12.<java.lang.String: int length()>();
+> v14 = 29 + v13;
+> v15 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v10);
+> v16 = virtualinvoke v15.<java.lang.String: int length()>();
+> v17 = v14 + v16;
+> v18 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v11);
+> v19 = virtualinvoke v18.<java.lang.String: int length()>();
+> v20 = v17 + v19;
+> specialinvoke v26.<java.lang.StringBuilder: void <init>(int)>(v20);
+> v21 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,java.lang.String,java.lang.String)>(v5, v10, v11) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001exceptionType=[\u0001], fallback=[\u0001]");
+> return v21;
+183,185c213,219
+< if v4 == null goto label3;
+< v7 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,java.lang.String)>(v5, v4) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001\u0001");
+< return v7;
+---
+> if v4 == null goto label5;
+> v22 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v5);
+> v23 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v4);
+> v24 = virtualinvoke v23.<java.lang.String: int length()>();
+> if v24 == 0 goto label3;
+> v25 = virtualinvoke v22.<java.lang.String: java.lang.String concat(java.lang.String)>(v23);
+> goto label4;
+186a221,225
+> v25 = new java.lang.String;
+> specialinvoke v25.<java.lang.String: void <init>(java.lang.String)>(v22);
+> label4:
+> return v25;
+> label5:

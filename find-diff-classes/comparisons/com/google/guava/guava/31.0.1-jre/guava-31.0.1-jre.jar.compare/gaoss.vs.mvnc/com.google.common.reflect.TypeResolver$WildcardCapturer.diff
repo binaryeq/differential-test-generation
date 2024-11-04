@@ -1,0 +1,25 @@
+95c95
+< java.lang.reflect.TypeVariable v7;
+---
+> java.lang.reflect.TypeVariable v10;
+98c98
+< int v3;
+---
+> int v3, v7, v8;
+100c100,101
+< java.lang.String v5, v6;
+---
+> java.lang.StringBuilder v11;
+> java.lang.String v5, v6, v9;
+108,110c109,115
+< v6 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (int,java.lang.String)>(v3, v5) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("capture#\u0001-of ? extends \u0001");
+< v7 = staticinvoke <com.google.common.reflect.Types: java.lang.reflect.TypeVariable newArtificialTypeVariable(java.lang.reflect.GenericDeclaration,java.lang.String,java.lang.reflect.Type[])>(class "Lcom/google/common/reflect/TypeResolver$WildcardCapturer;", v6, v1);
+< return v7;
+---
+> v6 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v5);
+> v7 = virtualinvoke v6.<java.lang.String: int length()>();
+> v8 = 33 + v7;
+> specialinvoke v11.<java.lang.StringBuilder: void <init>(int)>(v8);
+> v9 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (int,java.lang.String)>(v3, v5) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("capture#\u0001-of ? extends \u0001");
+> v10 = staticinvoke <com.google.common.reflect.Types: java.lang.reflect.TypeVariable newArtificialTypeVariable(java.lang.reflect.GenericDeclaration,java.lang.String,java.lang.reflect.Type[])>(class "Lcom/google/common/reflect/TypeResolver$WildcardCapturer;", v9, v1);
+> return v10;

@@ -1,0 +1,192 @@
+5,6d4
+< int v1;
+< java.lang.String v0, v3;
+7a6,8
+> int v1, v4, v5;
+> java.lang.StringBuilder v7;
+> java.lang.String v0, v3, v6;
+12,13c13,18
+< v3 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,int)>(v0, v1) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001 (\u0001) must be > 0");
+< specialinvoke v2.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(v3);
+---
+> v3 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v0);
+> v4 = virtualinvoke v3.<java.lang.String: int length()>();
+> v5 = 26 + v4;
+> specialinvoke v7.<java.lang.StringBuilder: void <init>(int)>(v5);
+> v6 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,int)>(v0, v1) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001 (\u0001) must be > 0");
+> specialinvoke v2.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(v6);
+20d24
+< byte v2;
+22d25
+< java.lang.String v0, v4;
+23a27,30
+> byte v2;
+> int v5, v6;
+> java.lang.StringBuilder v8;
+> java.lang.String v0, v4, v7;
+29,30c36,41
+< v4 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,long)>(v0, v1) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001 (\u0001) must be > 0");
+< specialinvoke v3.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(v4);
+---
+> v4 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v0);
+> v5 = virtualinvoke v4.<java.lang.String: int length()>();
+> v6 = 35 + v5;
+> specialinvoke v8.<java.lang.StringBuilder: void <init>(int)>(v6);
+> v7 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,long)>(v0, v1) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001 (\u0001) must be > 0");
+> specialinvoke v3.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(v7);
+37,39d47
+< int v2;
+< java.math.BigInteger v1;
+< java.lang.String v0, v4;
+40a49,52
+> int v10, v2, v6, v7, v9;
+> java.lang.StringBuilder v12;
+> java.math.BigInteger v1;
+> java.lang.String v0, v11, v4, v5, v8;
+46,47c58,67
+< v4 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,java.math.BigInteger)>(v0, v1) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001 (\u0001) must be > 0");
+< specialinvoke v3.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(v4);
+---
+> v4 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v1);
+> v5 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v0);
+> v6 = virtualinvoke v5.<java.lang.String: int length()>();
+> v7 = 15 + v6;
+> v8 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v4);
+> v9 = virtualinvoke v8.<java.lang.String: int length()>();
+> v10 = v7 + v9;
+> specialinvoke v12.<java.lang.StringBuilder: void <init>(int)>(v10);
+> v11 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,java.lang.String)>(v0, v4) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001 (\u0001) must be > 0");
+> specialinvoke v3.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(v11);
+54,55d73
+< int v1;
+< java.lang.String v0, v3;
+56a75,77
+> int v1, v4, v5;
+> java.lang.StringBuilder v7;
+> java.lang.String v0, v3, v6;
+61,62c82,87
+< v3 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,int)>(v0, v1) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001 (\u0001) must be >= 0");
+< specialinvoke v2.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(v3);
+---
+> v3 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v0);
+> v4 = virtualinvoke v3.<java.lang.String: int length()>();
+> v5 = 27 + v4;
+> specialinvoke v7.<java.lang.StringBuilder: void <init>(int)>(v5);
+> v6 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,int)>(v0, v1) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001 (\u0001) must be >= 0");
+> specialinvoke v2.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(v6);
+69d93
+< byte v2;
+71d94
+< java.lang.String v0, v4;
+72a96,99
+> byte v2;
+> int v5, v6;
+> java.lang.StringBuilder v8;
+> java.lang.String v0, v4, v7;
+78,79c105,110
+< v4 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,long)>(v0, v1) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001 (\u0001) must be >= 0");
+< specialinvoke v3.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(v4);
+---
+> v4 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v0);
+> v5 = virtualinvoke v4.<java.lang.String: int length()>();
+> v6 = 36 + v5;
+> specialinvoke v8.<java.lang.StringBuilder: void <init>(int)>(v6);
+> v7 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,long)>(v0, v1) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001 (\u0001) must be >= 0");
+> specialinvoke v3.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(v7);
+86,88d116
+< int v2;
+< java.math.BigInteger v1;
+< java.lang.String v0, v4;
+89a118,121
+> int v10, v2, v6, v7, v9;
+> java.lang.StringBuilder v12;
+> java.math.BigInteger v1;
+> java.lang.String v0, v11, v4, v5, v8;
+95,96c127,136
+< v4 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,java.math.BigInteger)>(v0, v1) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001 (\u0001) must be >= 0");
+< specialinvoke v3.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(v4);
+---
+> v4 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v1);
+> v5 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v0);
+> v6 = virtualinvoke v5.<java.lang.String: int length()>();
+> v7 = 16 + v6;
+> v8 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v4);
+> v9 = virtualinvoke v8.<java.lang.String: int length()>();
+> v10 = v7 + v9;
+> specialinvoke v12.<java.lang.StringBuilder: void <init>(int)>(v10);
+> v11 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,java.lang.String)>(v0, v4) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001 (\u0001) must be >= 0");
+> specialinvoke v3.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(v11);
+103,104d142
+< byte v2;
+< java.lang.String v0, v4;
+105a144,147
+> byte v2;
+> int v5, v6;
+> java.lang.StringBuilder v8;
+> java.lang.String v0, v4, v7;
+112,113c154,159
+< v4 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,double)>(v0, v1) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001 (\u0001) must be >= 0");
+< specialinvoke v3.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(v4);
+---
+> v4 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v0);
+> v5 = virtualinvoke v4.<java.lang.String: int length()>();
+> v6 = 40 + v5;
+> specialinvoke v8.<java.lang.StringBuilder: void <init>(int)>(v6);
+> v7 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,double)>(v0, v1) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001 (\u0001) must be >= 0");
+> specialinvoke v3.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(v7);
+131a178
+> int v6, v7;
+133c180,181
+< java.lang.String v4;
+---
+> java.lang.StringBuilder v9;
+> java.lang.String v4, v5, v8;
+142,143c190,196
+< v4 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (double,java.math.RoundingMode)>(v1, v2) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("rounded value is out of range for input \u0001 and rounding mode \u0001");
+< specialinvoke v3.<java.lang.ArithmeticException: void <init>(java.lang.String)>(v4);
+---
+> v4 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v2);
+> v5 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v4);
+> v6 = virtualinvoke v5.<java.lang.String: int length()>();
+> v7 = 83 + v6;
+> specialinvoke v9.<java.lang.StringBuilder: void <init>(int)>(v7);
+> v8 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (double,java.lang.String)>(v1, v4) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("rounded value is out of range for input \u0001 and rounding mode \u0001");
+> specialinvoke v3.<java.lang.ArithmeticException: void <init>(java.lang.String)>(v8);
+150c203
+< int v2, v3;
+---
+> int v2, v3, v6, v7;
+152c205,206
+< java.lang.String v1, v5;
+---
+> java.lang.StringBuilder v9;
+> java.lang.String v1, v5, v8;
+160,161c214,219
+< v5 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,int,int)>(v1, v2, v3) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("overflow: \u0001(\u0001, \u0001)");
+< specialinvoke v4.<java.lang.ArithmeticException: void <init>(java.lang.String)>(v5);
+---
+> v5 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v1);
+> v6 = virtualinvoke v5.<java.lang.String: int length()>();
+> v7 = 36 + v6;
+> specialinvoke v9.<java.lang.StringBuilder: void <init>(int)>(v7);
+> v8 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,int,int)>(v1, v2, v3) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("overflow: \u0001(\u0001, \u0001)");
+> specialinvoke v4.<java.lang.ArithmeticException: void <init>(java.lang.String)>(v8);
+168d225
+< java.lang.ArithmeticException v4;
+170c227,230
+< java.lang.String v1, v5;
+---
+> int v6, v7;
+> java.lang.ArithmeticException v4;
+> java.lang.StringBuilder v9;
+> java.lang.String v1, v5, v8;
+178,179c238,243
+< v5 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,long,long)>(v1, v2, v3) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("overflow: \u0001(\u0001, \u0001)");
+< specialinvoke v4.<java.lang.ArithmeticException: void <init>(java.lang.String)>(v5);
+---
+> v5 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v1);
+> v6 = virtualinvoke v5.<java.lang.String: int length()>();
+> v7 = 54 + v6;
+> specialinvoke v9.<java.lang.StringBuilder: void <init>(int)>(v7);
+> v8 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,long,long)>(v1, v2, v3) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("overflow: \u0001(\u0001, \u0001)");
+> specialinvoke v4.<java.lang.ArithmeticException: void <init>(java.lang.String)>(v8);

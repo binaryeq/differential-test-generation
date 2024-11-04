@@ -1,0 +1,213 @@
+{
+        "jar1": {
+            "file": "~/code/craw-redhat-oss/wget/crawl/google-aoss/org/aspectj/aspectjrt/1.9.21/aspectjrt-1.9.21.jar",
+            "classcount": 150,
+            "md5": "a129bb1c123f1532c117493548a95c8a",
+            "sha1": "2db3a0fccb47b171ca5a1f4ed4dfae7a66009fd2",
+            "size": "123 KB",
+            "manifest": {
+                "Manifest-Version": "1.0",
+                "Automatic-Module-Name": "org.aspectj.runtime",
+                "Built-By": "root",
+                "Created-By": "Apache Maven 3.8.6",
+                "Build-Jdk": "1.8.0_342"
+            },
+            "services": {}
+        },
+        "jar2": {
+            "file": "~/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/aspectj/aspectjrt/1.9.21/aspectjrt-1.9.21.jar",
+            "classcount": 150,
+            "md5": "19a777fefa1a494cb90214460e6103ba",
+            "sha1": "4f22793b96d0298b880471aae06ecdbd4393d493",
+            "size": "124 KB",
+            "manifest": {
+                "Manifest-Version": "1.0",
+                "Created-By": "Apache Maven 3.9.5",
+                "Built-By": "alexa",
+                "Build-Jdk": "21",
+                "Automatic-Module-Name": "org.aspectj.runtime"
+            },
+            "services": {}
+        },
+        "contentset-comparisons": [
+            {
+                "content-type": "sources",
+                "jar1.count": 0,
+                "jar2.count": 0,
+                "intersection": 0,
+                "union": 0,
+                "jar1-jar2": [],
+                "jar2-jar1": []
+            },
+            {
+                "content-type": "bytecode",
+                "jar1.count": 131,
+                "jar2.count": 131,
+                "intersection": 131,
+                "union": 131,
+                "jar1-jar2": [],
+                "jar2-jar1": []
+            },
+            {
+                "content-type": "metadata",
+                "jar1.count": 2,
+                "jar2.count": 2,
+                "intersection": 2,
+                "union": 2,
+                "jar1-jar2": [],
+                "jar2-jar1": []
+            },
+            {
+                "content-type": "other",
+                "jar1.count": 17,
+                "jar2.count": 17,
+                "intersection": 17,
+                "union": 17,
+                "jar1-jar2": [],
+                "jar2-jar1": []
+            }
+        ],
+        "content-pairwise-comparisons": [{
+            "equivalence": {
+                "class": "io.github.bineq.equivalences.bytecode.JNormEquivalence2",
+                "name": "jnorm2"
+            },
+            "summary": {
+                "description": "comparison results of jar/folder content (pairwise comparison of content in both jars/folders)",
+                "equivalent": 124,
+                "non-equivalent": 7,
+                "errors": 0
+            },
+            "details": {
+                "non-equivalent": [
+                    {
+                        "class": "org/aspectj/internal/lang/reflect/AdviceImpl.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/aspectj/aspectjrt/1.9.21/aspectjrt-1.9.21.jar/org.aspectj.internal.lang.reflect.AdviceImpl.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/aspectj/aspectjrt/1.9.21/aspectjrt-1.9.21.jar/org.aspectj.internal.lang.reflect.AdviceImpl.jimple",
+                            "transformed-class1": {
+                                "value": "public class org.aspectj.internal.lang.reflect.AdviceImpl extends java.lang.Object implements org.as ..  [abbreviated, 17249 chars]",
+                                "sha1": "c47c5d4ec5fb1203912f4fdf4eeebb11794adaa9",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/aspectj/aspectjrt/1.9.21/aspectjrt-1.9.21.jar/org.aspectj.internal.lang.reflect.AdviceImpl.jimple",
+                                "md5": "88e9aff9f4c75f7e6b63ec694aa66218"
+                            },
+                            "transformed-class2": {
+                                "value": "public class org.aspectj.internal.lang.reflect.AdviceImpl extends java.lang.Object implements org.as ..  [abbreviated, 17257 chars]",
+                                "sha1": "2043d222ba6fc681100a6317b2e60d1f925fcf11",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/aspectj/aspectjrt/1.9.21/aspectjrt-1.9.21.jar/org.aspectj.internal.lang.reflect.AdviceImpl.jimple",
+                                "md5": "2bacfef84692217c867436672414acbd"
+                            }
+                        }
+                    },
+                    {
+                        "class": "org/aspectj/runtime/internal/CFlowCounter.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/aspectj/aspectjrt/1.9.21/aspectjrt-1.9.21.jar/org.aspectj.runtime.internal.CFlowCounter.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/aspectj/aspectjrt/1.9.21/aspectjrt-1.9.21.jar/org.aspectj.runtime.internal.CFlowCounter.jimple",
+                            "transformed-class1": {
+                                "value": "public class org.aspectj.runtime.internal.CFlowCounter extends java.lang.Object\n{\nprivate static org ..  [abbreviated, 6271 chars]",
+                                "sha1": "6cca2d034373d00c34469fa4a6913a20637401d9",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/aspectj/aspectjrt/1.9.21/aspectjrt-1.9.21.jar/org.aspectj.runtime.internal.CFlowCounter.jimple",
+                                "md5": "9d2a2a32e46e838db8e828d9f55af14e"
+                            },
+                            "transformed-class2": {
+                                "value": "public class org.aspectj.runtime.internal.CFlowCounter extends java.lang.Object\n{\nprivate static org ..  [abbreviated, 6315 chars]",
+                                "sha1": "bc94bee486541d4317c1729e4b6df77c51c459e6",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/aspectj/aspectjrt/1.9.21/aspectjrt-1.9.21.jar/org.aspectj.runtime.internal.CFlowCounter.jimple",
+                                "md5": "5ba9ecda5a81a5078bbfc8a756a3bfc8"
+                            }
+                        }
+                    },
+                    {
+                        "class": "org/aspectj/internal/lang/reflect/AjTypeImpl.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/aspectj/aspectjrt/1.9.21/aspectjrt-1.9.21.jar/org.aspectj.internal.lang.reflect.AjTypeImpl.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/aspectj/aspectjrt/1.9.21/aspectjrt-1.9.21.jar/org.aspectj.internal.lang.reflect.AjTypeImpl.jimple",
+                            "transformed-class1": {
+                                "value": "public class org.aspectj.internal.lang.reflect.AjTypeImpl extends java.lang.Object implements org.as ..  [abbreviated, 117682 chars]",
+                                "sha1": "0185ae7b602c3b7561969992c9b1c1035e13d53f",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/aspectj/aspectjrt/1.9.21/aspectjrt-1.9.21.jar/org.aspectj.internal.lang.reflect.AjTypeImpl.jimple",
+                                "md5": "3028e9f1ce69b518f2261d396d7a7fdd"
+                            },
+                            "transformed-class2": {
+                                "value": "public class org.aspectj.internal.lang.reflect.AjTypeImpl extends java.lang.Object implements org.as ..  [abbreviated, 117852 chars]",
+                                "sha1": "50e1a934eb4098d398231cbddbfa70f67c787c3a",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/aspectj/aspectjrt/1.9.21/aspectjrt-1.9.21.jar/org.aspectj.internal.lang.reflect.AjTypeImpl.jimple",
+                                "md5": "20d119cfee3768b0c1f8706ee6243097"
+                            }
+                        }
+                    },
+                    {
+                        "class": "org/aspectj/internal/lang/reflect/InterTypeFieldDeclarationImpl.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/aspectj/aspectjrt/1.9.21/aspectjrt-1.9.21.jar/org.aspectj.internal.lang.reflect.InterTypeFieldDeclarationImpl.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/aspectj/aspectjrt/1.9.21/aspectjrt-1.9.21.jar/org.aspectj.internal.lang.reflect.InterTypeFieldDeclarationImpl.jimple",
+                            "transformed-class1": {
+                                "value": "public class org.aspectj.internal.lang.reflect.InterTypeFieldDeclarationImpl extends org.aspectj.int ..  [abbreviated, 6124 chars]",
+                                "sha1": "640a3c2a7c2391c6c526978f270ea3991a7ae230",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/aspectj/aspectjrt/1.9.21/aspectjrt-1.9.21.jar/org.aspectj.internal.lang.reflect.InterTypeFieldDeclarationImpl.jimple",
+                                "md5": "78d61da239751f95cc3a3af47b8cf463"
+                            },
+                            "transformed-class2": {
+                                "value": "public class org.aspectj.internal.lang.reflect.InterTypeFieldDeclarationImpl extends org.aspectj.int ..  [abbreviated, 6141 chars]",
+                                "sha1": "2be29df57e8f43323959e50035771db97d517ad1",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/aspectj/aspectjrt/1.9.21/aspectjrt-1.9.21.jar/org.aspectj.internal.lang.reflect.InterTypeFieldDeclarationImpl.jimple",
+                                "md5": "6a92cb409edbf7e8bce90001205b9393"
+                            }
+                        }
+                    },
+                    {
+                        "class": "org/aspectj/internal/lang/reflect/InterTypeConstructorDeclarationImpl.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/aspectj/aspectjrt/1.9.21/aspectjrt-1.9.21.jar/org.aspectj.internal.lang.reflect.InterTypeConstructorDeclarationImpl.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/aspectj/aspectjrt/1.9.21/aspectjrt-1.9.21.jar/org.aspectj.internal.lang.reflect.InterTypeConstructorDeclarationImpl.jimple",
+                            "transformed-class1": {
+                                "value": "public class org.aspectj.internal.lang.reflect.InterTypeConstructorDeclarationImpl extends org.aspec ..  [abbreviated, 6355 chars]",
+                                "sha1": "b2b544ba1dd2e941ac186fa799a7b36e75bf9cce",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/aspectj/aspectjrt/1.9.21/aspectjrt-1.9.21.jar/org.aspectj.internal.lang.reflect.InterTypeConstructorDeclarationImpl.jimple",
+                                "md5": "c14afa37e067f12b011d9e18e358ceee"
+                            },
+                            "transformed-class2": {
+                                "value": "public class org.aspectj.internal.lang.reflect.InterTypeConstructorDeclarationImpl extends org.aspec ..  [abbreviated, 6389 chars]",
+                                "sha1": "851012dab87a86e3fa5057a4cb014bb84eb6741a",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/aspectj/aspectjrt/1.9.21/aspectjrt-1.9.21.jar/org.aspectj.internal.lang.reflect.InterTypeConstructorDeclarationImpl.jimple",
+                                "md5": "eb61aec7d8976ec781b76ce660c48dac"
+                            }
+                        }
+                    },
+                    {
+                        "class": "org/aspectj/internal/lang/reflect/InterTypeMethodDeclarationImpl.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/aspectj/aspectjrt/1.9.21/aspectjrt-1.9.21.jar/org.aspectj.internal.lang.reflect.InterTypeMethodDeclarationImpl.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/aspectj/aspectjrt/1.9.21/aspectjrt-1.9.21.jar/org.aspectj.internal.lang.reflect.InterTypeMethodDeclarationImpl.jimple",
+                            "transformed-class1": {
+                                "value": "public class org.aspectj.internal.lang.reflect.InterTypeMethodDeclarationImpl extends org.aspectj.in ..  [abbreviated, 11695 chars]",
+                                "sha1": "ae2a666b4c1d44862485d767094d8a351c1c7838",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/aspectj/aspectjrt/1.9.21/aspectjrt-1.9.21.jar/org.aspectj.internal.lang.reflect.InterTypeMethodDeclarationImpl.jimple",
+                                "md5": "fc882c4ce31637f321a4efc6327d3aa6"
+                            },
+                            "transformed-class2": {
+                                "value": "public class org.aspectj.internal.lang.reflect.InterTypeMethodDeclarationImpl extends org.aspectj.in ..  [abbreviated, 11746 chars]",
+                                "sha1": "c818604acb2b4f222c80a2dd9763020b5c7446b4",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/aspectj/aspectjrt/1.9.21/aspectjrt-1.9.21.jar/org.aspectj.internal.lang.reflect.InterTypeMethodDeclarationImpl.jimple",
+                                "md5": "b49e38571fc15d91d79f957e6d95f211"
+                            }
+                        }
+                    },
+                    {
+                        "class": "org/aspectj/runtime/internal/CFlowStack.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/aspectj/aspectjrt/1.9.21/aspectjrt-1.9.21.jar/org.aspectj.runtime.internal.CFlowStack.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/aspectj/aspectjrt/1.9.21/aspectjrt-1.9.21.jar/org.aspectj.runtime.internal.CFlowStack.jimple",
+                            "transformed-class1": {
+                                "value": "public class org.aspectj.runtime.internal.CFlowStack extends java.lang.Object\n{\nprivate static org.a ..  [abbreviated, 10309 chars]",
+                                "sha1": "3d9f1d89dadf56fe55d7326c245f31672e9bbba7",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/aspectj/aspectjrt/1.9.21/aspectjrt-1.9.21.jar/org.aspectj.runtime.internal.CFlowStack.jimple",
+                                "md5": "d2dd2dc26cfeb245af1d310d01783037"
+                            },
+                            "transformed-class2": {
+                                "value": "public class org.aspectj.runtime.internal.CFlowStack extends java.lang.Object\n{\nprivate static org.a ..  [abbreviated, 10353 chars]",
+                                "sha1": "85a5b701ee085462b697ec7098cf55b80c4371bf",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/aspectj/aspectjrt/1.9.21/aspectjrt-1.9.21.jar/org.aspectj.runtime.internal.CFlowStack.jimple",
+                                "md5": "382f4b5c68c60462d7376b3059f4571e"
+                            }
+                        }
+                    }
+                ],
+                "errors": []
+            }
+        }]
+    }

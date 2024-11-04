@@ -1,0 +1,28 @@
+187c187
+< java.nio.file.OpenOption[] v2;
+---
+> java.nio.file.OpenOption[] v3;
+189c189,191
+< java.lang.String v3, v4;
+---
+> int v10, v6, v7, v9;
+> java.lang.StringBuilder v12;
+> java.lang.String v11, v2, v4, v5, v8;
+193,196c195,206
+< v2 = v0.<com.google.common.io.MoreFiles$PathByteSource: java.nio.file.OpenOption[] options>;
+< v3 = staticinvoke <java.util.Arrays: java.lang.String toString(java.lang.Object[])>(v2);
+< v4 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.nio.file.Path,java.lang.String)>(v1, v3) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("MoreFiles.asByteSource(\u0001, \u0001)");
+< return v4;
+---
+> v2 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v1);
+> v3 = v0.<com.google.common.io.MoreFiles$PathByteSource: java.nio.file.OpenOption[] options>;
+> v4 = staticinvoke <java.util.Arrays: java.lang.String toString(java.lang.Object[])>(v3);
+> v5 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v2);
+> v6 = virtualinvoke v5.<java.lang.String: int length()>();
+> v7 = 26 + v6;
+> v8 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v4);
+> v9 = virtualinvoke v8.<java.lang.String: int length()>();
+> v10 = v7 + v9;
+> specialinvoke v12.<java.lang.StringBuilder: void <init>(int)>(v10);
+> v11 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,java.lang.String)>(v2, v4) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("MoreFiles.asByteSource(\u0001, \u0001)");
+> return v11;

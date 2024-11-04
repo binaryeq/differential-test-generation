@@ -1,0 +1,44 @@
+62c62
+< public org.codehaus.groovy.ast.ClassNode resolveType(org.objectweb.asm.Type)
+---
+> public org.codehaus.groovy.ast.ClassNode resolveType(groovyjarjarasm.asm.Type)
+63a64
+> groovyjarjarasm.asm.Type v1, v3;
+65d65
+< org.objectweb.asm.Type v1, v3;
+69,70c69,70
+< v1 := @parameter0: org.objectweb.asm.Type;
+< v2 = virtualinvoke v1.<org.objectweb.asm.Type: int getSort()>();
+---
+> v1 := @parameter0: groovyjarjarasm.asm.Type;
+> v2 = virtualinvoke v1.<groovyjarjarasm.asm.Type: int getSort()>();
+72,73c72,73
+< v3 = virtualinvoke v1.<org.objectweb.asm.Type: org.objectweb.asm.Type getElementType()>();
+< v4 = specialinvoke v0.<org.codehaus.groovy.ast.decompiled.AsmReferenceResolver: org.codehaus.groovy.ast.ClassNode resolveNonArrayType(org.objectweb.asm.Type)>(v3);
+---
+> v3 = virtualinvoke v1.<groovyjarjarasm.asm.Type: groovyjarjarasm.asm.Type getElementType()>();
+> v4 = specialinvoke v0.<org.codehaus.groovy.ast.decompiled.AsmReferenceResolver: org.codehaus.groovy.ast.ClassNode resolveNonArrayType(groovyjarjarasm.asm.Type)>(v3);
+76c76
+< v6 = virtualinvoke v1.<org.objectweb.asm.Type: int getDimensions()>();
+---
+> v6 = virtualinvoke v1.<groovyjarjarasm.asm.Type: int getDimensions()>();
+84c84
+< v7 = specialinvoke v0.<org.codehaus.groovy.ast.decompiled.AsmReferenceResolver: org.codehaus.groovy.ast.ClassNode resolveNonArrayType(org.objectweb.asm.Type)>(v1);
+---
+> v7 = specialinvoke v0.<org.codehaus.groovy.ast.decompiled.AsmReferenceResolver: org.codehaus.groovy.ast.ClassNode resolveNonArrayType(groovyjarjarasm.asm.Type)>(v1);
+87c87
+< private org.codehaus.groovy.ast.ClassNode resolveNonArrayType(org.objectweb.asm.Type)
+---
+> private org.codehaus.groovy.ast.ClassNode resolveNonArrayType(groovyjarjarasm.asm.Type)
+89a90
+> groovyjarjarasm.asm.Type v1;
+93d93
+< org.objectweb.asm.Type v1;
+95,97c95,97
+< v1 := @parameter0: org.objectweb.asm.Type;
+< v2 = virtualinvoke v1.<org.objectweb.asm.Type: java.lang.String getClassName()>();
+< v3 = virtualinvoke v1.<org.objectweb.asm.Type: int getSort()>();
+---
+> v1 := @parameter0: groovyjarjarasm.asm.Type;
+> v2 = virtualinvoke v1.<groovyjarjarasm.asm.Type: java.lang.String getClassName()>();
+> v3 = virtualinvoke v1.<groovyjarjarasm.asm.Type: int getSort()>();

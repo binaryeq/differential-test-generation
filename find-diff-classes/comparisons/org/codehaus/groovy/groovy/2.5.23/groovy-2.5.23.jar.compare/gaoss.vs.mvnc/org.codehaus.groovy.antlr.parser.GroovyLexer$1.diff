@@ -1,0 +1,74 @@
+1c1
+< class org.codehaus.groovy.antlr.parser.GroovyLexer$1 extends java.lang.Object implements antlr.TokenStream
+---
+> class org.codehaus.groovy.antlr.parser.GroovyLexer$1 extends java.lang.Object implements groovyjarjarantlr.TokenStream
+14c14
+< public antlr.Token nextToken() throws antlr.TokenStreamException
+---
+> public groovyjarjarantlr.Token nextToken() throws groovyjarjarantlr.TokenStreamException
+16c16,17
+< antlr.TokenStreamException v25;
+---
+> groovyjarjarantlr.TokenStreamIOException v23;
+> groovyjarjarantlr.Token v15, v18, v28;
+19,20c20,22
+< java.lang.Throwable v19, v21;
+< antlr.Token v15, v18, v28;
+---
+> groovyjarjarantlr.CharStreamException v21;
+> groovyjarjarantlr.RecognitionException v19;
+> groovyjarjarantlr.TokenStreamRecognitionException v20;
+22d23
+< antlr.TokenStreamRecognitionException v20;
+25d25
+< antlr.TokenStreamIOException v23;
+27a28
+> groovyjarjarantlr.TokenStreamException v25;
+71,72c72,73
+< v15 = v14.<org.codehaus.groovy.antlr.parser.GroovyLexer: antlr.Token _returnToken>;
+< v16 = virtualinvoke v15.<antlr.Token: int getType()>();
+---
+> v15 = v14.<org.codehaus.groovy.antlr.parser.GroovyLexer: groovyjarjarantlr.Token _returnToken>;
+> v16 = virtualinvoke v15.<groovyjarjarantlr.Token: int getType()>();
+75c76
+< v18 = v17.<org.codehaus.groovy.antlr.parser.GroovyLexer: antlr.Token _returnToken>;
+---
+> v18 = v17.<org.codehaus.groovy.antlr.parser.GroovyLexer: groovyjarjarantlr.Token _returnToken>;
+80,81c81,82
+< v20 = new antlr.TokenStreamRecognitionException;
+< specialinvoke v20.<antlr.TokenStreamRecognitionException: void <init>(antlr.RecognitionException)>(v19);
+---
+> v20 = new groovyjarjarantlr.TokenStreamRecognitionException;
+> specialinvoke v20.<groovyjarjarantlr.TokenStreamRecognitionException: void <init>(groovyjarjarantlr.RecognitionException)>(v19);
+85c86
+< v22 = v21 instanceof antlr.CharStreamIOException;
+---
+> v22 = v21 instanceof groovyjarjarantlr.CharStreamIOException;
+87,89c88,90
+< v23 = new antlr.TokenStreamIOException;
+< v24 = v21.<antlr.CharStreamIOException: java.io.IOException io>;
+< specialinvoke v23.<antlr.TokenStreamIOException: void <init>(java.io.IOException)>(v24);
+---
+> v23 = new groovyjarjarantlr.TokenStreamIOException;
+> v24 = v21.<groovyjarjarantlr.CharStreamIOException: java.io.IOException io>;
+> specialinvoke v23.<groovyjarjarantlr.TokenStreamIOException: void <init>(java.io.IOException)>(v24);
+92,94c93,95
+< v25 = new antlr.TokenStreamException;
+< v26 = virtualinvoke v21.<antlr.CharStreamException: java.lang.String getMessage()>();
+< specialinvoke v25.<antlr.TokenStreamException: void <init>(java.lang.String)>(v26);
+---
+> v25 = new groovyjarjarantlr.TokenStreamException;
+> v26 = virtualinvoke v21.<groovyjarjarantlr.CharStreamException: java.lang.String getMessage()>();
+> specialinvoke v25.<groovyjarjarantlr.TokenStreamException: void <init>(java.lang.String)>(v26);
+98,99c99,100
+< v28 = virtualinvoke v27.<org.codehaus.groovy.antlr.parser.GroovyLexer: antlr.Token nextToken()>();
+< v29 = virtualinvoke v28.<antlr.Token: int getType()>();
+---
+> v28 = virtualinvoke v27.<org.codehaus.groovy.antlr.parser.GroovyLexer: groovyjarjarantlr.Token nextToken()>();
+> v29 = virtualinvoke v28.<groovyjarjarantlr.Token: int getType()>();
+118,119c119,120
+< catch antlr.RecognitionException from label01 to label08 with label09;
+< catch antlr.CharStreamException from label01 to label08 with label10;
+---
+> catch groovyjarjarantlr.RecognitionException from label01 to label08 with label09;
+> catch groovyjarjarantlr.CharStreamException from label01 to label08 with label10;

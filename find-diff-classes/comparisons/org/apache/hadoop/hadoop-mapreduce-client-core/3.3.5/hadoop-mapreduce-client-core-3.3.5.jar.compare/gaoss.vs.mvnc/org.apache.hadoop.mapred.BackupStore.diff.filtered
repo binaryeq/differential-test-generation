@@ -1,0 +1,14 @@
+455d454
+< org.apache.hadoop.mapred.BackupStore v0;
+456a456
+> org.apache.hadoop.mapred.BackupStore v0;
+458c458
+< int v1;
+---
+> int v1, v7, v8;
+472c472,474
+< v6.<org.apache.hadoop.mapred.BackupStore$MemoryCache: int usedSize> = v1;
+---
+> v7 = v6.<org.apache.hadoop.mapred.BackupStore$MemoryCache: int usedSize>;
+> v8 = v7 + v1;
+> v6.<org.apache.hadoop.mapred.BackupStore$MemoryCache: int usedSize> = v8;

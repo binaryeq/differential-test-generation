@@ -1,0 +1,81 @@
+134c134
+< virtualinvoke v13.<org.codehaus.groovy.antlr.UnicodeEscapingReader: void setLexer(antlr.CharScanner)>(v15);
+---
+> virtualinvoke v13.<org.codehaus.groovy.antlr.UnicodeEscapingReader: void setLexer(groovyjarjarantlr.CharScanner)>(v15);
+142d141
+< antlr.collections.AST v10, v12;
+144d142
+< antlr.Token v6;
+147a146
+> groovyjarjarantlr.Token v6;
+152a152
+> groovyjarjarantlr.collections.AST v10, v12;
+165c165
+< v6 = virtualinvoke v5.<org.codehaus.groovy.antlr.parser.GroovyLexer: antlr.Token nextToken()>();
+---
+> v6 = virtualinvoke v5.<org.codehaus.groovy.antlr.parser.GroovyLexer: groovyjarjarantlr.Token nextToken()>();
+169c169
+< v8 = virtualinvoke v6.<antlr.Token: int getType()>();
+---
+> v8 = virtualinvoke v6.<groovyjarjarantlr.Token: int getType()>();
+176,177c176,177
+< v10 = virtualinvoke v3.<org.codehaus.groovy.antlr.parser.GroovyRecognizer: antlr.collections.AST getAST()>();
+< v11 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,antlr.collections.AST)>(v0, v10) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("parseFile \u0001 => \u0001");
+---
+> v10 = virtualinvoke v3.<org.codehaus.groovy.antlr.parser.GroovyRecognizer: groovyjarjarantlr.collections.AST getAST()>();
+> v11 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,groovyjarjarantlr.collections.AST)>(v0, v10) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("parseFile \u0001 => \u0001");
+179c179
+< v12 = virtualinvoke v3.<org.codehaus.groovy.antlr.parser.GroovyRecognizer: antlr.collections.AST getAST()>();
+---
+> v12 = virtualinvoke v3.<org.codehaus.groovy.antlr.parser.GroovyRecognizer: groovyjarjarantlr.collections.AST getAST()>();
+181c181
+< staticinvoke <org.codehaus.groovy.antlr.Main: void doTreeAction(java.lang.String,antlr.collections.AST,java.lang.String[])>(v0, v12, v13);
+---
+> staticinvoke <org.codehaus.groovy.antlr.Main: void doTreeAction(java.lang.String,groovyjarjarantlr.collections.AST,java.lang.String[])>(v0, v12, v13);
+195c195
+< public static void doTreeAction(java.lang.String, antlr.collections.AST, java.lang.String[])
+---
+> public static void doTreeAction(java.lang.String, groovyjarjarantlr.collections.AST, java.lang.String[])
+197d196
+< antlr.collections.AST v1, v5;
+201c200
+< antlr.ASTFactory v4;
+---
+> groovyjarjarantlr.debug.misc.ASTFrame v6;
+203c202,203
+< antlr.debug.misc.ASTFrame v6;
+---
+> groovyjarjarantlr.collections.AST v1, v5;
+> groovyjarjarantlr.ASTFactory v4;
+206c206
+< v1 := @parameter1: antlr.collections.AST;
+---
+> v1 := @parameter1: groovyjarjarantlr.collections.AST;
+213,220c213,220
+< staticinvoke <antlr.CommonAST: void setVerboseStringConversion(boolean,java.lang.String[])>(1, v2);
+< v4 = new antlr.ASTFactory;
+< specialinvoke v4.<antlr.ASTFactory: void <init>()>();
+< v5 = virtualinvoke v4.<antlr.ASTFactory: antlr.collections.AST create(int,java.lang.String)>(0, "AST ROOT");
+< interfaceinvoke v5.<antlr.collections.AST: void setFirstChild(antlr.collections.AST)>(v1);
+< v6 = new antlr.debug.misc.ASTFrame;
+< specialinvoke v6.<antlr.debug.misc.ASTFrame: void <init>(java.lang.String,antlr.collections.AST)>("Groovy AST", v5);
+< virtualinvoke v6.<antlr.debug.misc.ASTFrame: void setVisible(boolean)>(1);
+---
+> staticinvoke <groovyjarjarantlr.CommonAST: void setVerboseStringConversion(boolean,java.lang.String[])>(1, v2);
+> v4 = new groovyjarjarantlr.ASTFactory;
+> specialinvoke v4.<groovyjarjarantlr.ASTFactory: void <init>()>();
+> v5 = virtualinvoke v4.<groovyjarjarantlr.ASTFactory: groovyjarjarantlr.collections.AST create(int,java.lang.String)>(0, "AST ROOT");
+> interfaceinvoke v5.<groovyjarjarantlr.collections.AST: void setFirstChild(groovyjarjarantlr.collections.AST)>(v1);
+> v6 = new groovyjarjarantlr.debug.misc.ASTFrame;
+> specialinvoke v6.<groovyjarjarantlr.debug.misc.ASTFrame: void <init>(java.lang.String,groovyjarjarantlr.collections.AST)>("Groovy AST", v5);
+> virtualinvoke v6.<groovyjarjarantlr.debug.misc.ASTFrame: void setVisible(boolean)>(1);
+222,223c222,223
+< specialinvoke v7.<org.codehaus.groovy.antlr.Main$1: void <init>(antlr.debug.misc.ASTFrame)>(v6);
+< virtualinvoke v6.<antlr.debug.misc.ASTFrame: void addWindowListener(java.awt.event.WindowListener)>(v7);
+---
+> specialinvoke v7.<org.codehaus.groovy.antlr.Main$1: void <init>(groovyjarjarantlr.debug.misc.ASTFrame)>(v6);
+> virtualinvoke v6.<groovyjarjarantlr.debug.misc.ASTFrame: void addWindowListener(java.awt.event.WindowListener)>(v7);
+227c227
+< v10 = interfaceinvoke v1.<antlr.collections.AST: java.lang.String toStringList()>();
+---
+> v10 = interfaceinvoke v1.<groovyjarjarantlr.collections.AST: java.lang.String toStringList()>();

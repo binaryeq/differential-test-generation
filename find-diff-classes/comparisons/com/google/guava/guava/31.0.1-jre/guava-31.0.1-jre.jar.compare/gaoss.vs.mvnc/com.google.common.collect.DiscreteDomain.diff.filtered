@@ -1,0 +1,18 @@
+44a45
+> int v10, v9;
+46c47,48
+< java.lang.String v7;
+---
+> java.lang.StringBuilder v12;
+> java.lang.String v11, v7, v8;
+59,60c61,67
+< v7 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.Comparable,long)>(v1, v2) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("overflowed computing offset(\u0001, \u0001)");
+< specialinvoke v6.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(v7);
+---
+> v7 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v1);
+> v8 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v7);
+> v9 = virtualinvoke v8.<java.lang.String: int length()>();
+> v10 = 51 + v9;
+> specialinvoke v12.<java.lang.StringBuilder: void <init>(int)>(v10);
+> v11 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,long)>(v7, v2) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("overflowed computing offset(\u0001, \u0001)");
+> specialinvoke v6.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(v11);

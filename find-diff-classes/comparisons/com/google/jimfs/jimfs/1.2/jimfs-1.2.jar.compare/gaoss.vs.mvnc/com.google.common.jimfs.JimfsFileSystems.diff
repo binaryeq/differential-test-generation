@@ -1,0 +1,151 @@
+78,80c78,80
+< com.google.common.jimfs.Name v17;
+< com.google.common.jimfs.JimfsFileStore v20;
+< com.google.common.jimfs.Directory v18;
+---
+> com.google.common.jimfs.Name v21;
+> com.google.common.jimfs.JimfsFileStore v24;
+> com.google.common.jimfs.Directory v22;
+84c84
+< com.google.common.jimfs.FileTree v21;
+---
+> com.google.common.jimfs.FileTree v25;
+87,89c87,89
+< java.nio.file.attribute.FileAttribute[] v19;
+< int v14;
+< java.lang.String v16;
+---
+> java.nio.file.attribute.FileAttribute[] v23;
+> int v14, v18;
+> java.lang.String v16, v17, v19, v20;
+91c91
+< com.google.common.collect.ImmutableSet v22, v7;
+---
+> com.google.common.collect.ImmutableSet v26, v7;
+114c114
+< if v9 == 0 goto label3;
+---
+> if v9 == 0 goto label5;
+119c119
+< if v13 != 0 goto label2;
+---
+> if v13 != 0 goto label4;
+121c121
+< if v14 != 0 goto label2;
+---
+> if v14 != 0 goto label4;
+123,125c123,128
+< v16 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v10) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Invalid root path: \u0001");
+< specialinvoke v15.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(v16);
+< throw v15;
+---
+> v16 = "Invalid root path: ";
+> v17 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v10);
+> v18 = virtualinvoke v17.<java.lang.String: int length()>();
+> if v18 == 0 goto label2;
+> v19 = virtualinvoke v16.<java.lang.String: java.lang.String concat(java.lang.String)>(v17);
+> goto label3;
+127,132c130,132
+< v17 = virtualinvoke v12.<com.google.common.jimfs.JimfsPath: com.google.common.jimfs.Name root()>();
+< v18 = virtualinvoke v5.<com.google.common.jimfs.FileFactory: com.google.common.jimfs.Directory createRootDirectory(com.google.common.jimfs.Name)>(v17);
+< v19 = newarray (java.nio.file.attribute.FileAttribute)[0];
+< virtualinvoke v3.<com.google.common.jimfs.AttributeService: void setInitialAttributes(com.google.common.jimfs.File,java.nio.file.attribute.FileAttribute[])>(v18, v19);
+< interfaceinvoke v6.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>(v17, v18);
+< goto label1;
+---
+> v20 = new java.lang.String;
+> v19 = v20;
+> specialinvoke v20.<java.lang.String: void <init>(java.lang.String)>("Invalid root path: ");
+134,139c134,149
+< v20 = new com.google.common.jimfs.JimfsFileStore;
+< v21 = new com.google.common.jimfs.FileTree;
+< specialinvoke v21.<com.google.common.jimfs.FileTree: void <init>(java.util.Map)>(v6);
+< v22 = v0.<com.google.common.jimfs.Configuration: com.google.common.collect.ImmutableSet supportedFeatures>;
+< specialinvoke v20.<com.google.common.jimfs.JimfsFileStore: void <init>(com.google.common.jimfs.FileTree,com.google.common.jimfs.FileFactory,com.google.common.jimfs.HeapDisk,com.google.common.jimfs.AttributeService,com.google.common.collect.ImmutableSet,com.google.common.jimfs.FileSystemState)>(v21, v5, v4, v3, v22, v2);
+< return v20;
+---
+> specialinvoke v15.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(v19);
+> throw v15;
+> label4:
+> v21 = virtualinvoke v12.<com.google.common.jimfs.JimfsPath: com.google.common.jimfs.Name root()>();
+> v22 = virtualinvoke v5.<com.google.common.jimfs.FileFactory: com.google.common.jimfs.Directory createRootDirectory(com.google.common.jimfs.Name)>(v21);
+> v23 = newarray (java.nio.file.attribute.FileAttribute)[0];
+> virtualinvoke v3.<com.google.common.jimfs.AttributeService: void setInitialAttributes(com.google.common.jimfs.File,java.nio.file.attribute.FileAttribute[])>(v22, v23);
+> interfaceinvoke v6.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>(v21, v22);
+> goto label1;
+> label5:
+> v24 = new com.google.common.jimfs.JimfsFileStore;
+> v25 = new com.google.common.jimfs.FileTree;
+> specialinvoke v25.<com.google.common.jimfs.FileTree: void <init>(java.util.Map)>(v6);
+> v26 = v0.<com.google.common.jimfs.Configuration: com.google.common.collect.ImmutableSet supportedFeatures>;
+> specialinvoke v24.<com.google.common.jimfs.JimfsFileStore: void <init>(com.google.common.jimfs.FileTree,com.google.common.jimfs.FileFactory,com.google.common.jimfs.HeapDisk,com.google.common.jimfs.AttributeService,com.google.common.collect.ImmutableSet,com.google.common.jimfs.FileSystemState)>(v25, v5, v4, v3, v26, v2);
+> return v24;
+146c156
+< com.google.common.base.Supplier v14;
+---
+> com.google.common.base.Supplier v18;
+149,153c159,164
+< com.google.common.collect.ImmutableList v10;
+< java.nio.file.attribute.FileAttribute[] v16;
+< java.lang.String v3, v9;
+< com.google.common.jimfs.FileSystemView v17;
+< boolean v12;
+---
+> com.google.common.collect.ImmutableList v14;
+> java.nio.file.attribute.FileAttribute[] v20;
+> int v11, v12;
+> java.lang.String v10, v13, v3, v9;
+> com.google.common.jimfs.FileSystemView v21;
+> boolean v16;
+157,158c168,170
+< java.lang.Object v13, v15;
+< com.google.common.collect.UnmodifiableIterator v11;
+---
+> java.lang.Object v17, v19;
+> java.lang.StringBuilder v22;
+> com.google.common.collect.UnmodifiableIterator v15;
+169,170c181,187
+< v9 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (com.google.common.jimfs.JimfsPath)>(v5) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Invalid working dir path: \u0001");
+< specialinvoke v8.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(v9);
+---
+> v9 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v5);
+> v10 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v9);
+> v11 = virtualinvoke v10.<java.lang.String: int length()>();
+> v12 = 26 + v11;
+> specialinvoke v22.<java.lang.StringBuilder: void <init>(int)>(v12);
+> v13 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v9) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Invalid working dir path: \u0001");
+> specialinvoke v8.<java.lang.IllegalArgumentException: void <init>(java.lang.String)>(v13);
+173,174c190,191
+< v10 = virtualinvoke v5.<com.google.common.jimfs.JimfsPath: com.google.common.collect.ImmutableList names()>();
+< v11 = virtualinvoke v10.<com.google.common.collect.ImmutableList: com.google.common.collect.UnmodifiableIterator iterator()>();
+---
+> v14 = virtualinvoke v5.<com.google.common.jimfs.JimfsPath: com.google.common.collect.ImmutableList names()>();
+> v15 = virtualinvoke v14.<com.google.common.collect.ImmutableList: com.google.common.collect.UnmodifiableIterator iterator()>();
+176,184c193,201
+< v12 = interfaceinvoke v11.<java.util.Iterator: boolean hasNext()>();
+< if v12 == 0 goto label3;
+< v13 = interfaceinvoke v11.<java.util.Iterator: java.lang.Object next()>();
+< v14 = virtualinvoke v1.<com.google.common.jimfs.JimfsFileStore: com.google.common.base.Supplier directoryCreator()>();
+< v15 = interfaceinvoke v14.<com.google.common.base.Supplier: java.lang.Object get()>();
+< v16 = newarray (java.nio.file.attribute.FileAttribute)[0];
+< virtualinvoke v1.<com.google.common.jimfs.JimfsFileStore: void setInitialAttributes(com.google.common.jimfs.File,java.nio.file.attribute.FileAttribute[])>(v15, v16);
+< virtualinvoke v7.<com.google.common.jimfs.Directory: void link(com.google.common.jimfs.Name,com.google.common.jimfs.File)>(v13, v15);
+< v7 = v15;
+---
+> v16 = interfaceinvoke v15.<java.util.Iterator: boolean hasNext()>();
+> if v16 == 0 goto label3;
+> v17 = interfaceinvoke v15.<java.util.Iterator: java.lang.Object next()>();
+> v18 = virtualinvoke v1.<com.google.common.jimfs.JimfsFileStore: com.google.common.base.Supplier directoryCreator()>();
+> v19 = interfaceinvoke v18.<com.google.common.base.Supplier: java.lang.Object get()>();
+> v20 = newarray (java.nio.file.attribute.FileAttribute)[0];
+> virtualinvoke v1.<com.google.common.jimfs.JimfsFileStore: void setInitialAttributes(com.google.common.jimfs.File,java.nio.file.attribute.FileAttribute[])>(v19, v20);
+> virtualinvoke v7.<com.google.common.jimfs.Directory: void link(com.google.common.jimfs.Name,com.google.common.jimfs.File)>(v17, v19);
+> v7 = v19;
+187,189c204,206
+< v17 = new com.google.common.jimfs.FileSystemView;
+< specialinvoke v17.<com.google.common.jimfs.FileSystemView: void <init>(com.google.common.jimfs.JimfsFileStore,com.google.common.jimfs.Directory,com.google.common.jimfs.JimfsPath)>(v1, v7, v5);
+< return v17;
+---
+> v21 = new com.google.common.jimfs.FileSystemView;
+> specialinvoke v21.<com.google.common.jimfs.FileSystemView: void <init>(com.google.common.jimfs.JimfsFileStore,com.google.common.jimfs.Directory,com.google.common.jimfs.JimfsPath)>(v1, v7, v5);
+> return v21;

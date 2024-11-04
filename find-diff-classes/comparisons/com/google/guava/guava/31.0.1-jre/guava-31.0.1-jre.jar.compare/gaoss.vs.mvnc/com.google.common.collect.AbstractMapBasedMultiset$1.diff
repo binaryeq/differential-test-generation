@@ -1,0 +1,32 @@
+43,47c43,46
+< java.util.Map$Entry v1, v6;
+< java.util.Iterator v10;
+< com.google.common.collect.AbstractMapBasedMultiset v3, v4;
+< long v5, v9;
+< int v8;
+---
+> java.util.Map$Entry v1, v4;
+> java.util.Iterator v7;
+> com.google.common.collect.AbstractMapBasedMultiset v3;
+> int v6;
+49c48
+< java.lang.Object v7;
+---
+> java.lang.Object v5;
+61,69c60,65
+< v4 = v0.<com.google.common.collect.AbstractMapBasedMultiset$1: com.google.common.collect.AbstractMapBasedMultiset this$0>;
+< v5 = v4.<com.google.common.collect.AbstractMapBasedMultiset: long size>;
+< v6 = v0.<com.google.common.collect.AbstractMapBasedMultiset$1: java.util.Map$Entry toRemove>;
+< v7 = interfaceinvoke v6.<java.util.Map$Entry: java.lang.Object getValue()>();
+< v8 = virtualinvoke v7.<com.google.common.collect.Count: int getAndSet(int)>(0);
+< v9 = v5 - v8;
+< v3.<com.google.common.collect.AbstractMapBasedMultiset: long size> = v9;
+< v10 = v0.<com.google.common.collect.AbstractMapBasedMultiset$1: java.util.Iterator val$backingEntries>;
+< interfaceinvoke v10.<java.util.Iterator: void remove()>();
+---
+> v4 = v0.<com.google.common.collect.AbstractMapBasedMultiset$1: java.util.Map$Entry toRemove>;
+> v5 = interfaceinvoke v4.<java.util.Map$Entry: java.lang.Object getValue()>();
+> v6 = virtualinvoke v5.<com.google.common.collect.Count: int getAndSet(int)>(0);
+> v3.<com.google.common.collect.AbstractMapBasedMultiset: long size> = v6;
+> v7 = v0.<com.google.common.collect.AbstractMapBasedMultiset$1: java.util.Iterator val$backingEntries>;
+> interfaceinvoke v7.<java.util.Iterator: void remove()>();

@@ -1,0 +1,25 @@
+28c28
+< java.lang.Throwable v29;
+---
+> java.lang.Throwable v28;
+32c32
+< long v26, v27, v28;
+---
+> long v26, v27;
+100,101d99
+< v28 = v27;
+< label12:
+103,108c101,106
+< return v28;
+< label13:
+< v29 := @caughtexception;
+< throw v29;
+< catch java.lang.Throwable from label01 to label08 with label13;
+< catch java.lang.Throwable from label09 to label12 with label13;
+---
+> return v27;
+> label12:
+> v28 := @caughtexception;
+> throw v28;
+> catch java.lang.Throwable from label01 to label08 with label12;
+> catch java.lang.Throwable from label09 to label11 with label12;

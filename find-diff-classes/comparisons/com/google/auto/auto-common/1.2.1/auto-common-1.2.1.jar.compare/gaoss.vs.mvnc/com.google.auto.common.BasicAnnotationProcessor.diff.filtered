@@ -1,0 +1,69 @@
+274,275c274,276
+< java.lang.String v12, v13, v14, v15, v19, v20;
+< javax.'annotation'.processing.Messager v17, v8;
+---
+> int v16;
+> java.lang.String v10, v13, v14, v15, v17, v18, v22, v23;
+> javax.'annotation'.processing.Messager v20, v8;
+278c279
+< javax.lang.model.element.ElementKind v11;
+---
+> javax.lang.model.element.ElementKind v12;
+280,281c281,282
+< javax.tools.Diagnostic$Kind v18, v9;
+< java.lang.Object v10, v16, v4;
+---
+> javax.tools.Diagnostic$Kind v21, v9;
+> java.lang.Object v11, v19, v4;
+288c289
+< if v3 == 0 goto label3;
+---
+> if v3 == 0 goto label5;
+293c294
+< if v7 == 0 goto label2;
+---
+> if v7 == 0 goto label4;
+296,304c297,306
+< v10 = virtualinvoke v6.<com.google.common.base.Optional: java.lang.Object get()>();
+< v11 = interfaceinvoke v10.<javax.lang.model.element.Element: javax.lang.model.element.ElementKind getKind()>();
+< v12 = virtualinvoke v11.<javax.lang.model.element.ElementKind: java.lang.String name()>();
+< v13 = staticinvoke <com.google.common.base.Ascii: java.lang.String toLowerCase(java.lang.String)>(v12);
+< v14 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v13) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("this \u0001");
+< v15 = specialinvoke v0.<com.google.auto.common.BasicAnnotationProcessor: java.lang.String processingErrorMessage(java.lang.String)>(v14);
+< v16 = virtualinvoke v6.<com.google.common.base.Optional: java.lang.Object get()>();
+< interfaceinvoke v8.<javax.'annotation'.processing.Messager: void printMessage(javax.tools.Diagnostic$Kind,java.lang.CharSequence,javax.lang.model.element.Element)>(v9, v15, v16);
+< goto label1;
+---
+> v10 = "this ";
+> v11 = virtualinvoke v6.<com.google.common.base.Optional: java.lang.Object get()>();
+> v12 = interfaceinvoke v11.<javax.lang.model.element.Element: javax.lang.model.element.ElementKind getKind()>();
+> v13 = virtualinvoke v12.<javax.lang.model.element.ElementKind: java.lang.String name()>();
+> v14 = staticinvoke <com.google.common.base.Ascii: java.lang.String toLowerCase(java.lang.String)>(v13);
+> v15 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v14);
+> v16 = virtualinvoke v15.<java.lang.String: int length()>();
+> if v16 == 0 goto label2;
+> v17 = virtualinvoke v10.<java.lang.String: java.lang.String concat(java.lang.String)>(v15);
+> goto label3;
+306,311c308,309
+< v17 = v0.<com.google.auto.common.BasicAnnotationProcessor: javax.'annotation'.processing.Messager messager>;
+< v18 = <javax.tools.Diagnostic$Kind: javax.tools.Diagnostic$Kind ERROR>;
+< v19 = virtualinvoke v4.<com.google.auto.common.BasicAnnotationProcessor$ElementName: java.lang.String name()>();
+< v20 = specialinvoke v0.<com.google.auto.common.BasicAnnotationProcessor: java.lang.String processingErrorMessage(java.lang.String)>(v19);
+< interfaceinvoke v17.<javax.'annotation'.processing.Messager: void printMessage(javax.tools.Diagnostic$Kind,java.lang.CharSequence)>(v18, v20);
+< goto label1;
+---
+> v17 = new java.lang.String;
+> specialinvoke v17.<java.lang.String: void <init>(java.lang.String)>("this ");
+312a311,322
+> v18 = specialinvoke v0.<com.google.auto.common.BasicAnnotationProcessor: java.lang.String processingErrorMessage(java.lang.String)>(v17);
+> v19 = virtualinvoke v6.<com.google.common.base.Optional: java.lang.Object get()>();
+> interfaceinvoke v8.<javax.'annotation'.processing.Messager: void printMessage(javax.tools.Diagnostic$Kind,java.lang.CharSequence,javax.lang.model.element.Element)>(v9, v18, v19);
+> goto label1;
+> label4:
+> v20 = v0.<com.google.auto.common.BasicAnnotationProcessor: javax.'annotation'.processing.Messager messager>;
+> v21 = <javax.tools.Diagnostic$Kind: javax.tools.Diagnostic$Kind ERROR>;
+> v22 = virtualinvoke v4.<com.google.auto.common.BasicAnnotationProcessor$ElementName: java.lang.String name()>();
+> v23 = specialinvoke v0.<com.google.auto.common.BasicAnnotationProcessor: java.lang.String processingErrorMessage(java.lang.String)>(v22);
+> interfaceinvoke v20.<javax.'annotation'.processing.Messager: void printMessage(javax.tools.Diagnostic$Kind,java.lang.CharSequence)>(v21, v23);
+> goto label1;
+> label5:

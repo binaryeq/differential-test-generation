@@ -1,0 +1,95 @@
+446,447c446,447
+< java.lang.Throwable v7;
+< java.util.HashMap v8;
+---
+> java.lang.Throwable v7, v8;
+> java.util.HashMap v9;
+449,452c449,452
+< java.util.Map v13, v15, v2;
+< java.lang.String v1, v14;
+< boolean v11;
+< java.util.Iterator v10;
+---
+> java.util.Map v14, v16, v2;
+> java.lang.String v1, v15;
+> boolean v12;
+> java.util.Iterator v11;
+455c455
+< java.util.List v9;
+---
+> java.util.List v10;
+457c457
+< java.lang.Object v12, v16;
+---
+> java.lang.Object v13, v17;
+462c462
+< if v2 != null goto label6;
+---
+> if v2 != null goto label10;
+465c465
+< label1:
+---
+> label01:
+469,470c469,470
+< label2:
+< if v4 == null goto label4;
+---
+> label02:
+> if v4 == null goto label08;
+472,473c472,473
+< goto label4;
+< label3:
+---
+> goto label08;
+> label03:
+474a475,483
+> if v4 == null goto label07;
+> label04:
+> virtualinvoke v4.<java.io.Reader: void close()>();
+> label05:
+> goto label07;
+> label06:
+> v8 := @caughtexception;
+> virtualinvoke v7.<java.lang.Throwable: void addSuppressed(java.lang.Throwable)>(v8);
+> label07:
+476,494c485,504
+< label4:
+< v8 = new java.util.HashMap;
+< specialinvoke v8.<java.util.HashMap: void <init>()>();
+< v0.<org.apache.maven.plugin.descriptor.PluginDescriptor: java.util.Map lifecycleMappings> = v8;
+< v9 = virtualinvoke v6.<org.apache.maven.plugin.lifecycle.LifecycleConfiguration: java.util.List getLifecycles()>();
+< v10 = interfaceinvoke v9.<java.util.List: java.util.Iterator iterator()>();
+< label5:
+< v11 = interfaceinvoke v10.<java.util.Iterator: boolean hasNext()>();
+< if v11 == 0 goto label6;
+< v12 = interfaceinvoke v10.<java.util.Iterator: java.lang.Object next()>();
+< v13 = v0.<org.apache.maven.plugin.descriptor.PluginDescriptor: java.util.Map lifecycleMappings>;
+< v14 = virtualinvoke v12.<org.apache.maven.plugin.lifecycle.Lifecycle: java.lang.String getId()>();
+< interfaceinvoke v13.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>(v14, v12);
+< goto label5;
+< label6:
+< v15 = v0.<org.apache.maven.plugin.descriptor.PluginDescriptor: java.util.Map lifecycleMappings>;
+< v16 = interfaceinvoke v15.<java.util.Map: java.lang.Object get(java.lang.Object)>(v1);
+< return v16;
+< catch java.lang.Throwable from label1 to label2 with label3;
+---
+> label08:
+> v9 = new java.util.HashMap;
+> specialinvoke v9.<java.util.HashMap: void <init>()>();
+> v0.<org.apache.maven.plugin.descriptor.PluginDescriptor: java.util.Map lifecycleMappings> = v9;
+> v10 = virtualinvoke v6.<org.apache.maven.plugin.lifecycle.LifecycleConfiguration: java.util.List getLifecycles()>();
+> v11 = interfaceinvoke v10.<java.util.List: java.util.Iterator iterator()>();
+> label09:
+> v12 = interfaceinvoke v11.<java.util.Iterator: boolean hasNext()>();
+> if v12 == 0 goto label10;
+> v13 = interfaceinvoke v11.<java.util.Iterator: java.lang.Object next()>();
+> v14 = v0.<org.apache.maven.plugin.descriptor.PluginDescriptor: java.util.Map lifecycleMappings>;
+> v15 = virtualinvoke v13.<org.apache.maven.plugin.lifecycle.Lifecycle: java.lang.String getId()>();
+> interfaceinvoke v14.<java.util.Map: java.lang.Object put(java.lang.Object,java.lang.Object)>(v15, v13);
+> goto label09;
+> label10:
+> v16 = v0.<org.apache.maven.plugin.descriptor.PluginDescriptor: java.util.Map lifecycleMappings>;
+> v17 = interfaceinvoke v16.<java.util.Map: java.lang.Object get(java.lang.Object)>(v1);
+> return v17;
+> catch java.lang.Throwable from label01 to label02 with label03;
+> catch java.lang.Throwable from label04 to label05 with label06;

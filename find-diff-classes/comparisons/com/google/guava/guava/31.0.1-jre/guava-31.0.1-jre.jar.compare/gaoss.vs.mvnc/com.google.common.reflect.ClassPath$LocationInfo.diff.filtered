@@ -1,0 +1,132 @@
+59a60,63
+> int v10, v11, v13, v14;
+> java.lang.SecurityException v5;
+> java.lang.String v12, v15, v7, v8, v9;
+> boolean v16, v4;
+64,66c68
+< java.lang.SecurityException v5;
+< java.lang.String v7;
+< boolean v4, v8;
+---
+> java.lang.StringBuilder v17;
+79,80c81,91
+< v7 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.io.File,java.lang.SecurityException)>(v1, v5) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Cannot access \u0001: \u0001");
+< virtualinvoke v6.<java.util.logging.Logger: void warning(java.lang.String)>(v7);
+---
+> v7 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v1);
+> v8 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v5);
+> v9 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v7);
+> v10 = virtualinvoke v9.<java.lang.String: int length()>();
+> v11 = 16 + v10;
+> v12 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v8);
+> v13 = virtualinvoke v12.<java.lang.String: int length()>();
+> v14 = v11 + v13;
+> specialinvoke v17.<java.lang.StringBuilder: void <init>(int)>(v14);
+> v15 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,java.lang.String)>(v7, v8) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Cannot access \u0001: \u0001");
+> virtualinvoke v6.<java.util.logging.Logger: void warning(java.lang.String)>(v15);
+83,84c94,95
+< v8 = virtualinvoke v1.<java.io.File: boolean isDirectory()>();
+< if v8 == 0 goto label5;
+---
+> v16 = virtualinvoke v1.<java.io.File: boolean isDirectory()>();
+> if v16 == 0 goto label5;
+198,202c209,210
+< com.google.common.collect.ImmutableSet$Builder v4;
+< int v8, v9;
+< java.lang.String v11, v15, v16, v2, v7;
+< boolean v12, v14, v17;
+< com.google.common.reflect.ClassPath$ResourceInfo v19;
+---
+> boolean v16, v18, v30;
+> com.google.common.reflect.ClassPath$ResourceInfo v32;
+205d212
+< java.io.File v1, v10, v13;
+207c214,219
+< java.lang.ClassLoader v18;
+---
+> java.lang.StringBuilder v33, v34;
+> java.lang.ClassLoader v31;
+> com.google.common.collect.ImmutableSet$Builder v4;
+> int v10, v12, v13, v20, v21, v23, v24, v28, v9;
+> java.lang.String v11, v15, v19, v2, v22, v25, v26, v27, v29, v7, v8;
+> java.io.File v1, v14, v17;
+217,218c229,235
+< v7 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.io.File)>(v1) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Cannot read directory \u0001");
+< virtualinvoke v6.<java.util.logging.Logger: void warning(java.lang.String)>(v7);
+---
+> v7 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v1);
+> v8 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v7);
+> v9 = virtualinvoke v8.<java.lang.String: int length()>();
+> v10 = 22 + v9;
+> specialinvoke v34.<java.lang.StringBuilder: void <init>(int)>(v10);
+> v11 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v7) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Cannot read directory \u0001");
+> virtualinvoke v6.<java.util.logging.Logger: void warning(java.lang.String)>(v11);
+221,222c238,239
+< v8 = lengthof v5;
+< v9 = 0;
+---
+> v12 = lengthof v5;
+> v13 = 0;
+224,235c241,259
+< if v9 >= v8 goto label5;
+< v10 = v5[v9];
+< v11 = virtualinvoke v10.<java.io.File: java.lang.String getName()>();
+< v12 = virtualinvoke v10.<java.io.File: boolean isDirectory()>();
+< if v12 == 0 goto label3;
+< v13 = virtualinvoke v10.<java.io.File: java.io.File getCanonicalFile()>();
+< v14 = interfaceinvoke v3.<java.util.Set: boolean add(java.lang.Object)>(v13);
+< if v14 == 0 goto label4;
+< v15 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,java.lang.String)>(v2, v11) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001\u0001/");
+< specialinvoke v0.<com.google.common.reflect.ClassPath$LocationInfo: void scanDirectory(java.io.File,java.lang.String,java.util.Set,com.google.common.collect.ImmutableSet$Builder)>(v13, v15, v3, v4);
+< interfaceinvoke v3.<java.util.Set: boolean remove(java.lang.Object)>(v13);
+< goto label4;
+---
+> if v13 >= v12 goto label7;
+> v14 = v5[v13];
+> v15 = virtualinvoke v14.<java.io.File: java.lang.String getName()>();
+> v16 = virtualinvoke v14.<java.io.File: boolean isDirectory()>();
+> if v16 == 0 goto label3;
+> v17 = virtualinvoke v14.<java.io.File: java.io.File getCanonicalFile()>();
+> v18 = interfaceinvoke v3.<java.util.Set: boolean add(java.lang.Object)>(v17);
+> if v18 == 0 goto label6;
+> v19 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v2);
+> v20 = virtualinvoke v19.<java.lang.String: int length()>();
+> v21 = 1 + v20;
+> v22 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v15);
+> v23 = virtualinvoke v22.<java.lang.String: int length()>();
+> v24 = v21 + v23;
+> specialinvoke v33.<java.lang.StringBuilder: void <init>(int)>(v24);
+> v25 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,java.lang.String)>(v2, v15) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001\u0001/");
+> specialinvoke v0.<com.google.common.reflect.ClassPath$LocationInfo: void scanDirectory(java.io.File,java.lang.String,java.util.Set,com.google.common.collect.ImmutableSet$Builder)>(v17, v25, v3, v4);
+> interfaceinvoke v3.<java.util.Set: boolean remove(java.lang.Object)>(v17);
+> goto label6;
+237,242c261,266
+< v16 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,java.lang.String)>(v2, v11) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001\u0001");
+< v17 = virtualinvoke v16.<java.lang.String: boolean equals(java.lang.Object)>("META-INF/MANIFEST.MF");
+< if v17 != 0 goto label4;
+< v18 = v0.<com.google.common.reflect.ClassPath$LocationInfo: java.lang.ClassLoader classloader>;
+< v19 = staticinvoke <com.google.common.reflect.ClassPath$ResourceInfo: com.google.common.reflect.ClassPath$ResourceInfo of(java.io.File,java.lang.String,java.lang.ClassLoader)>(v10, v16, v18);
+< virtualinvoke v4.<com.google.common.collect.ImmutableSet$Builder: com.google.common.collect.ImmutableSet$Builder add(java.lang.Object)>(v19);
+---
+> v26 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v2);
+> v27 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v15);
+> v28 = virtualinvoke v27.<java.lang.String: int length()>();
+> if v28 == 0 goto label4;
+> v29 = virtualinvoke v26.<java.lang.String: java.lang.String concat(java.lang.String)>(v27);
+> goto label5;
+244,245c268,269
+< v9 = v9 + 1;
+< goto label2;
+---
+> v29 = new java.lang.String;
+> specialinvoke v29.<java.lang.String: void <init>(java.lang.String)>(v26);
+246a271,279
+> v30 = virtualinvoke v29.<java.lang.String: boolean equals(java.lang.Object)>("META-INF/MANIFEST.MF");
+> if v30 != 0 goto label6;
+> v31 = v0.<com.google.common.reflect.ClassPath$LocationInfo: java.lang.ClassLoader classloader>;
+> v32 = staticinvoke <com.google.common.reflect.ClassPath$ResourceInfo: com.google.common.reflect.ClassPath$ResourceInfo of(java.io.File,java.lang.String,java.lang.ClassLoader)>(v14, v29, v31);
+> virtualinvoke v4.<com.google.common.collect.ImmutableSet$Builder: com.google.common.collect.ImmutableSet$Builder add(java.lang.Object)>(v32);
+> label6:
+> v13 = v13 + 1;
+> goto label2;
+> label7:

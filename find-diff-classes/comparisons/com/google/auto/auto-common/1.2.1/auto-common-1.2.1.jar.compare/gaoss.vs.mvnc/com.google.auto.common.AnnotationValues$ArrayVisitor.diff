@@ -1,0 +1,18 @@
+20a21
+> int v6, v7;
+22c23,24
+< java.lang.String v4;
+---
+> java.lang.StringBuilder v9;
+> java.lang.String v4, v5, v8;
+27,28c29,35
+< v4 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.Object)>(v1) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Expected an array, got instead: \u0001");
+< specialinvoke v3.<java.lang.IllegalStateException: void <init>(java.lang.String)>(v4);
+---
+> v4 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v1);
+> v5 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v4);
+> v6 = virtualinvoke v5.<java.lang.String: int length()>();
+> v7 = 32 + v6;
+> specialinvoke v9.<java.lang.StringBuilder: void <init>(int)>(v7);
+> v8 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v4) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Expected an array, got instead: \u0001");
+> specialinvoke v3.<java.lang.IllegalStateException: void <init>(java.lang.String)>(v8);

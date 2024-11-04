@@ -1,0 +1,19 @@
+23d22
+< float[][] v1;
+25c24
+< org.jfree.chart.axis.NumberAxis v2, v3;
+---
+> org.jfree.chart.axis.NumberAxis v1, v2;
+27c26,27
+< v1 = (float[][]) null;
+---
+> v1 = new org.jfree.chart.axis.NumberAxis;
+> specialinvoke v1.<org.jfree.chart.axis.NumberAxis: void <init>(java.lang.String)>("X");
+29,32c29,30
+< specialinvoke v2.<org.jfree.chart.axis.NumberAxis: void <init>(java.lang.String)>("X");
+< v3 = new org.jfree.chart.axis.NumberAxis;
+< specialinvoke v3.<org.jfree.chart.axis.NumberAxis: void <init>(java.lang.String)>("Y");
+< specialinvoke v0.<org.jfree.chart.plot.FastScatterPlot: void <init>(float[][],org.jfree.chart.axis.ValueAxis,org.jfree.chart.axis.ValueAxis)>(v1, v2, v3);
+---
+> specialinvoke v2.<org.jfree.chart.axis.NumberAxis: void <init>(java.lang.String)>("Y");
+> specialinvoke v0.<org.jfree.chart.plot.FastScatterPlot: void <init>(float[][],org.jfree.chart.axis.ValueAxis,org.jfree.chart.axis.ValueAxis)>(null, v1, v2);

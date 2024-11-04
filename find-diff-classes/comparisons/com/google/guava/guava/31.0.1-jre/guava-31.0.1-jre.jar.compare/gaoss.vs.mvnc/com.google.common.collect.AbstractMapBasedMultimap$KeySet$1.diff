@@ -1,0 +1,20 @@
+47c47
+< com.google.common.collect.AbstractMapBasedMultimap$KeySet v6, v8;
+---
+> com.google.common.collect.AbstractMapBasedMultimap$KeySet v6;
+49,50c49,50
+< com.google.common.collect.AbstractMapBasedMultimap v7, v9;
+< int v10, v11, v12;
+---
+> com.google.common.collect.AbstractMapBasedMultimap v7;
+> int v8;
+68,73c68,69
+< v8 = v0.<com.google.common.collect.AbstractMapBasedMultimap$KeySet$1: com.google.common.collect.AbstractMapBasedMultimap$KeySet this$1>;
+< v9 = v8.<com.google.common.collect.AbstractMapBasedMultimap$KeySet: com.google.common.collect.AbstractMapBasedMultimap this$0>;
+< v10 = v9.<com.google.common.collect.AbstractMapBasedMultimap: int totalSize>;
+< v11 = interfaceinvoke v4.<java.util.Collection: int size()>();
+< v12 = v10 - v11;
+< v7.<com.google.common.collect.AbstractMapBasedMultimap: int totalSize> = v12;
+---
+> v8 = interfaceinvoke v4.<java.util.Collection: int size()>();
+> v7.<com.google.common.collect.AbstractMapBasedMultimap: int totalSize> = v8;

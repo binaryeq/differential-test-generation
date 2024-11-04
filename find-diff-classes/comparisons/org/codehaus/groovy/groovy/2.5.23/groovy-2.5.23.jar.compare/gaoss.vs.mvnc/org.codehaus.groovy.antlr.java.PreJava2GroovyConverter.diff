@@ -1,0 +1,23 @@
+61c61
+< virtualinvoke v4.<org.codehaus.groovy.antlr.GroovySourceAST: void setFirstChild(antlr.collections.AST)>(v1);
+---
+> virtualinvoke v4.<org.codehaus.groovy.antlr.GroovySourceAST: void setFirstChild(groovyjarjarantlr.collections.AST)>(v1);
+68,69c68
+< antlr.collections.AST v2, v3;
+< org.codehaus.groovy.antlr.GroovySourceAST v1, v4, v5;
+---
+> org.codehaus.groovy.antlr.GroovySourceAST v1;
+70a70
+> groovyjarjarantlr.collections.AST v2, v3;
+73,77c73,77
+< v2 = virtualinvoke v1.<org.codehaus.groovy.antlr.GroovySourceAST: antlr.collections.AST getFirstChild()>();
+< v3 = virtualinvoke v2.<org.codehaus.groovy.antlr.GroovySourceAST: antlr.collections.AST getNextSibling()>();
+< virtualinvoke v1.<org.codehaus.groovy.antlr.GroovySourceAST: void setFirstChild(antlr.collections.AST)>(v5);
+< virtualinvoke v2.<org.codehaus.groovy.antlr.GroovySourceAST: void setNextSibling(antlr.collections.AST)>(null);
+< virtualinvoke v3.<org.codehaus.groovy.antlr.GroovySourceAST: void setNextSibling(antlr.collections.AST)>(v4);
+---
+> v2 = virtualinvoke v1.<org.codehaus.groovy.antlr.GroovySourceAST: groovyjarjarantlr.collections.AST getFirstChild()>();
+> v3 = virtualinvoke v2.<org.codehaus.groovy.antlr.GroovySourceAST: groovyjarjarantlr.collections.AST getNextSibling()>();
+> virtualinvoke v1.<org.codehaus.groovy.antlr.GroovySourceAST: void setFirstChild(groovyjarjarantlr.collections.AST)>(v3);
+> virtualinvoke v2.<org.codehaus.groovy.antlr.GroovySourceAST: void setNextSibling(groovyjarjarantlr.collections.AST)>(null);
+> virtualinvoke v3.<org.codehaus.groovy.antlr.GroovySourceAST: void setNextSibling(groovyjarjarantlr.collections.AST)>(v2);

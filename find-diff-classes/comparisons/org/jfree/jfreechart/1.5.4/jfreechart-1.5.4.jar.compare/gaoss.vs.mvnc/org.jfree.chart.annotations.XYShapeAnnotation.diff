@@ -1,0 +1,12 @@
+168c168
+< v6 = virtualinvoke v4.<java.lang.Object: boolean equals(java.lang.Object)>(v5);
+---
+> v6 = interfaceinvoke v4.<java.awt.Shape: boolean equals(java.lang.Object)>(v5);
+201c201
+< v2 = virtualinvoke v1.<java.lang.Object: int hashCode()>();
+---
+> v2 = interfaceinvoke v1.<java.awt.Shape: int hashCode()>();
+207c207
+< v7 = virtualinvoke v6.<java.lang.Object: int hashCode()>();
+---
+> v7 = interfaceinvoke v6.<java.awt.Stroke: int hashCode()>();

@@ -1,0 +1,17 @@
+37,38c37,38
+< java.lang.String v1, v2;
+< java.util.Comparator v3;
+---
+> java.lang.String v1, v2, v3;
+> java.util.Comparator v4;
+41,44c41,45
+< v2 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v1) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001$UnsafeComparator");
+< <com.google.common.primitives.UnsignedBytes$LexicographicalComparatorHolder: java.lang.String UNSAFE_COMPARATOR_NAME> = v2;
+< v3 = staticinvoke <com.google.common.primitives.UnsignedBytes$LexicographicalComparatorHolder: java.util.Comparator getBestComparator()>();
+< <com.google.common.primitives.UnsignedBytes$LexicographicalComparatorHolder: java.util.Comparator BEST_COMPARATOR> = v3;
+---
+> v2 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v1);
+> v3 = virtualinvoke v2.<java.lang.String: java.lang.String concat(java.lang.String)>("$UnsafeComparator");
+> <com.google.common.primitives.UnsignedBytes$LexicographicalComparatorHolder: java.lang.String UNSAFE_COMPARATOR_NAME> = v3;
+> v4 = staticinvoke <com.google.common.primitives.UnsignedBytes$LexicographicalComparatorHolder: java.util.Comparator getBestComparator()>();
+> <com.google.common.primitives.UnsignedBytes$LexicographicalComparatorHolder: java.util.Comparator BEST_COMPARATOR> = v4;

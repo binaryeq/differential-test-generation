@@ -1,0 +1,66 @@
+16c16
+< java.lang.Throwable v12, v14;
+---
+> java.lang.Throwable v24, v26;
+21d20
+< java.util.concurrent.TimeUnit v6;
+24,25c23,25
+< com.google.common.util.concurrent.TimeoutFuture$TimeoutFutureException v11, v13;
+< java.lang.String v10, v5;
+---
+> int v12, v13, v17, v18, v20, v21;
+> com.google.common.util.concurrent.TimeoutFuture$TimeoutFutureException v23, v25;
+> java.lang.String v10, v11, v14, v15, v16, v19, v22, v5;
+26a27,28
+> java.util.concurrent.TimeUnit v6;
+> java.lang.StringBuilder v27, v28;
+52c54,59
+< v5 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,long)>("Timed out", v8) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001 (timeout delayed by \u0001 ms after scheduled time)");
+---
+> v10 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>("Timed out");
+> v11 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v10);
+> v12 = virtualinvoke v11.<java.lang.String: int length()>();
+> v13 = 66 + v12;
+> specialinvoke v27.<java.lang.StringBuilder: void <init>(int)>(v13);
+> v5 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,long)>(v10, v8) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001 (timeout delayed by \u0001 ms after scheduled time)");
+54c61,70
+< v10 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,com.google.common.util.concurrent.ListenableFuture)>(v5, v2) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001: \u0001");
+---
+> v14 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v5);
+> v15 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v2);
+> v16 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v14);
+> v17 = virtualinvoke v16.<java.lang.String: int length()>();
+> v18 = 2 + v17;
+> v19 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v15);
+> v20 = virtualinvoke v19.<java.lang.String: int length()>();
+> v21 = v18 + v20;
+> specialinvoke v28.<java.lang.StringBuilder: void <init>(int)>(v21);
+> v22 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,java.lang.String)>(v14, v15) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001: \u0001");
+56,58c72,74
+< v11 = new com.google.common.util.concurrent.TimeoutFuture$TimeoutFutureException;
+< specialinvoke v11.<com.google.common.util.concurrent.TimeoutFuture$TimeoutFutureException: void <init>(java.lang.String)>(v10);
+< virtualinvoke v1.<com.google.common.util.concurrent.TimeoutFuture: boolean setException(java.lang.Throwable)>(v11);
+---
+> v23 = new com.google.common.util.concurrent.TimeoutFuture$TimeoutFutureException;
+> specialinvoke v23.<com.google.common.util.concurrent.TimeoutFuture$TimeoutFutureException: void <init>(java.lang.String)>(v22);
+> virtualinvoke v1.<com.google.common.util.concurrent.TimeoutFuture: boolean setException(java.lang.Throwable)>(v23);
+61,65c77,81
+< v12 := @caughtexception;
+< v13 = new com.google.common.util.concurrent.TimeoutFuture$TimeoutFutureException;
+< specialinvoke v13.<com.google.common.util.concurrent.TimeoutFuture$TimeoutFutureException: void <init>(java.lang.String)>(v5);
+< virtualinvoke v1.<com.google.common.util.concurrent.TimeoutFuture: boolean setException(java.lang.Throwable)>(v13);
+< throw v12;
+---
+> v24 := @caughtexception;
+> v25 = new com.google.common.util.concurrent.TimeoutFuture$TimeoutFutureException;
+> specialinvoke v25.<com.google.common.util.concurrent.TimeoutFuture$TimeoutFutureException: void <init>(java.lang.String)>(v5);
+> virtualinvoke v1.<com.google.common.util.concurrent.TimeoutFuture: boolean setException(java.lang.Throwable)>(v25);
+> throw v24;
+70c86
+< v14 := @caughtexception;
+---
+> v26 := @caughtexception;
+72c88
+< throw v14;
+---
+> throw v26;
