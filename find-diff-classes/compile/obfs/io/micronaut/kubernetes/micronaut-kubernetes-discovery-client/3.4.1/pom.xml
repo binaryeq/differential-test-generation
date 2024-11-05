@@ -10,23 +10,18 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>8</maven.compiler.source>
     <maven.compiler.target>8</maven.compiler.target>
+    <classUnderTest>/home/wtwhite/code/craw-redhat-oss/wget/crawl/maven.oracle.com/public/io/micronaut/kubernetes/micronaut-kubernetes-discovery-client/3.4.1-oracle-00001/micronaut-kubernetes-discovery-client-3.4.1-oracle-00001.jar</classUnderTest>
+    <depRoot>/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/obfs/io/micronaut/kubernetes/micronaut-kubernetes-discovery-client/3.4.1/t/dependency</depRoot>
+    <evosuiteRuntimeJarPath>/home/wtwhite/code/regression-test-generation/evosuite/evosuite-standalone-runtime-1.2.0.jar</evosuiteRuntimeJarPath>
   </properties>
 
   <dependencies>
     <dependency>
       <groupId>bogus-groupId-for-dep</groupId>
-      <artifactId>_home_wtwhite_code_craw-redhat-oss_wget_crawl_maven_oracle_com_public_io_micronaut_kubernetes_micronaut-kubernetes-discovery-client_3_4_1-oracle-00001_micronaut-kubernetes-discovery-client-3_4_1-oracle-00001_jar</artifactId>
+      <artifactId>__classUnderTest_</artifactId>
       <version>42</version>
       <scope>system</scope>
-      <systemPath>/home/wtwhite/code/craw-redhat-oss/wget/crawl/maven.oracle.com/public/io/micronaut/kubernetes/micronaut-kubernetes-discovery-client/3.4.1-oracle-00001/micronaut-kubernetes-discovery-client-3.4.1-oracle-00001.jar</systemPath>
-    </dependency>
-
-    <dependency>
-      <groupId>bogus-groupId-for-dep</groupId>
-      <artifactId>_home_wtwhite_code_regression-test-generation_find-diff-classes_compile_obfs_io_micronaut_kubernetes_micronaut-kubernetes-discovery-client_3_4_1_t_dependency__</artifactId>
-      <version>42</version>
-      <scope>system</scope>
-      <systemPath>/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/obfs/io/micronaut/kubernetes/micronaut-kubernetes-discovery-client/3.4.1/t/dependency/*</systemPath>
+      <systemPath>${classUnderTest}</systemPath>
     </dependency>
 
     <dependency>
@@ -34,7 +29,7 @@
       <artifactId>evosuite</artifactId>
       <version>1.2.0</version>
       <scope>system</scope>
-      <systemPath>/home/wtwhite/code/regression-test-generation/evosuite/evosuite-standalone-runtime-1.2.0.jar</systemPath>
+      <systemPath>${evosuiteRuntimeJarPath}</systemPath>
     </dependency>
 
     <dependency>
