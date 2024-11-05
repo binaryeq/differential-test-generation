@@ -92,7 +92,7 @@ sub evosuiteCompileDir($$$$) {
 
 sub evosuiteRunDir($$$$) {
 	my ($p, $g, $a, $v) = @_;
-	return join("/", '$RUNDIR', $p, $g =~ s|\.|/|gr, $a, $v);       # NOTE: Includes an env var that we intend the shell to expand, so don't single-quote
+	return join("/", '${RUNDIR}', $p, $g =~ s|\.|/|gr, $a, $v);       # NOTE: Includes an env var that we intend the shell to expand, so don't single-quote. Also works as a Maven property!
 }
 
 sub generateComparisons() {
@@ -136,7 +136,7 @@ sub writeFile($$) {
 }
 
 sub writePom($$@) {
-    my ($pomFn, $origArtifactId, $evoSuiteTestSourcePath, $properties, @depJarPaths) = @_;
+    my ($pomFn, $origArtifactId, $evoSuiteTestSourcePath, $outputDirectory, $properties, @depJarPaths) = @_;
     print STDERR "writePom(pomFn=<$pomFn>, evoSuiteTestSourcePath=<$evoSuiteTestSourcePath>, depJarPaths=<" . join(", ", @depJarPaths) . ">.\n";    #DEBUG
 
     my $genDeps = join("\n", map { my $bn = $_; $bn =~ tr|-A-Za-z0-9|_|c; <<THE_END } @depJarPaths);
@@ -227,6 +227,7 @@ $genDeps
           <!-- Specify EvoSuite jars here to guarantee they appear at the end of the classpath -->
           <additionalClasspathElements>
           </additionalClasspathElements>
+          <outputDirectory>$outputDirectory</outputDirectory>
         </configuration>
       </plugin>
     </plugins>
@@ -313,6 +314,7 @@ THE_END
                 chomp(my $pwd = `pwd`);
 
                 my $evoSuiteTestSourcePath = "$testGenPath/evosuite-tests";
+                my $testRunPath = evosuiteRunDir($opts->{targetOtherProvider}, $g, $a, $v);
 				foreach my $providerPair (@{$providersForJar{$jarPath}}) {
 #                    print STDERR "providerPair=<" . join(", ", @{$providerPair}) . ">. otherProvider=<$opts->{targetOtherProvider}>, shouldBeUndefined=<$opts->{shouldBeUndefined}>\n";     #DEBUG
 					if (grep { $_ eq $opts->{targetOtherProvider} } @{$providerPair}) {
@@ -347,9 +349,9 @@ THE_END
                                 my @deps = ('${classUnderTest}', @gatheredDeps);   # Class-under-test should be first in classpath. Note it's a property name for Maven to expand
 
                                 my $pomFn = "$testCompilePath/pom.xml";
-                                writePom($pomFn, "$g-$a-$v", "$pwd/$evoSuiteTestSourcePath", { classUnderTest => $classOwnCP, depRoot => "$pwd/$testCompilePath/t/dependency" }, @deps);
+                                writePom($pomFn, "$g-$a-$v", "$pwd/$evoSuiteTestSourcePath", $testRunPath, { classUnderTest => $classOwnCP, depRoot => "$pwd/$testCompilePath/t/dependency" }, @deps);
                                 my $mvnPhase = ($opts->{shouldRunTests} ? 'test' : 'test-compile');     # Yuck
-                                my $runMvnCmd = "mvn -f '$pomFn' $mvnPhase";
+                                my $runMvnCmd = "mvn -DRUNDIR=\"\${RUNDIR:-run}\" -f '$pomFn' $mvnPhase";
                                 print $runMvnCmd, "\n";
                             } else {
                                 print "( ", $mvnCopyDepsCmd, "\n";
