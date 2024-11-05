@@ -149,7 +149,7 @@ sub writePom($$@) {
     </dependency>
 THE_END
 
-    my $genProperties = join("\n", map { "    <$_>${$properties}{$_}</$_>" } keys %$properties);
+    my $genProperties = join("\n", map { "    <$_>${$properties}{$_}</$_>" } sort keys %$properties);
 
     my $origArtifactIdBn = $origArtifactId;
     $origArtifactIdBn =~ tr|-A-Za-z0-9|_|c;
@@ -168,6 +168,7 @@ THE_END
     <maven.compiler.source>$JDKVERSION</maven.compiler.source>
     <maven.compiler.target>$JDKVERSION</maven.compiler.target>
 $genProperties
+    <evosuiteRuntimeJarPath>$evosuiteRuntimeJarPath</evosuiteRuntimeJarPath>
   </properties>
 
   <dependencies>
@@ -177,7 +178,7 @@ $genDeps
       <artifactId>evosuite</artifactId>
       <version>1.2.0</version>
       <scope>system</scope>
-      <systemPath>$evosuiteRuntimeJarPath</systemPath>
+      <systemPath>\${evosuiteRuntimeJarPath}</systemPath>
     </dependency>
 
     <dependency>
@@ -337,16 +338,16 @@ THE_END
                                 print STDERR "Immediately running: <$mvnCopyDepsAndGatherDepsCmd>\n";
                                 system $mvnCopyDepsAndGatherDepsCmd;
 
-                                my $gatherDepsCmd = "cd '$testCompilePath' && $gatherDepsCmd";
-                                print STDERR "Immediately running: <$gatherDepsCmd>\n";
-                                my $gatheredDepsStr = `$gatherDepsCmd`;
+                                my $gatherDepBasenamesCmd = "cd '$testCompilePath/t/dependency' && echo *";     # Exclude the t/dependency/ prefix
+                                print STDERR "Immediately running: <$gatherDepBasenamesCmd>\n";
+                                my $gatheredDepsStr = `$gatherDepBasenamesCmd`;
                                 chomp $gatheredDepsStr;
 #                                my @gatheredDeps = split /\s+/, $gatheredDepsStr;
-                                my @gatheredDeps = map { "\${depRoot}/$_" } split /\s+/, $gatheredDepsStr;     # Maven requires systemPaths to be absolute
-                                my @deps = ($classOwnCP, @gatheredDeps);   # Class-under-test should be first in classpath
+                                my @gatheredDeps = map { "\${depRoot}/$_" } split /\s+/, $gatheredDepsStr;     # Maven requires systemPaths to be absolute, and warns if no variable (property) is used
+                                my @deps = ('${classUnderTest}', @gatheredDeps);   # Class-under-test should be first in classpath. Note it's a property name for Maven to expand
 
                                 my $pomFn = "$testCompilePath/pom.xml";
-                                writePom($pomFn, "$g-$a-$v", "$pwd/$evoSuiteTestSourcePath", { depRoot => "$pwd/$testCompilePath" }, @deps);
+                                writePom($pomFn, "$g-$a-$v", "$pwd/$evoSuiteTestSourcePath", { classUnderTest => $classOwnCP, depRoot => "$pwd/$testCompilePath/t/dependency" }, @deps);
                                 my $mvnPhase = ($opts->{shouldRunTests} ? 'test' : 'test-compile');     # Yuck
                                 my $runMvnCmd = "mvn -f '$pomFn' $mvnPhase";
                                 print $runMvnCmd, "\n";
