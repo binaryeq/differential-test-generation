@@ -227,7 +227,7 @@ $genDeps
           <!-- Specify EvoSuite jars here to guarantee they appear at the end of the classpath -->
           <additionalClasspathElements>
           </additionalClasspathElements>
-          <outputDirectory>$outputDirectory</outputDirectory>
+          <reportsDirectory>$outputDirectory</reportsDirectory>
         </configuration>
       </plugin>
     </plugins>
@@ -330,7 +330,7 @@ THE_END
                             my $basePath = $pomPath =~ s|/[^/]+$||r;
                             my $classOwnCP = providerPath($opts->{targetOtherProvider}, $g, $a, $v);
 
-                            print "# Compile " . scalar(@generatedClasses) . " generated test classes for $jarPath for $opts->{targetOtherProvider}\n";
+                            print "# Compile " . ($opts->{viaMvn} && $opts->{shouldRunTests} ? "and run " : "") . scalar(@generatedClasses) . " generated test classes for $jarPath for $opts->{targetOtherProvider}\n";
                             my $mvnCopyDepsCmd = "mkdir -p '$testCompilePath' && cd '$testCompilePath' && mvn -f $pomPath dependency:copy-dependencies >&2 && ln -sT $basePath/target t";	# Symlink to make classpath shorter
                             my $gatherDepsCmd = "echo t/dependency/*";
 
@@ -351,7 +351,7 @@ THE_END
                                 my $pomFn = "$testCompilePath/pom.xml";
                                 writePom($pomFn, "$g-$a-$v", "$pwd/$evoSuiteTestSourcePath", $testRunPath, { classUnderTest => $classOwnCP, depRoot => "$pwd/$testCompilePath/t/dependency" }, @deps);
                                 my $mvnPhase = ($opts->{shouldRunTests} ? 'test' : 'test-compile');     # Yuck
-                                my $runMvnCmd = "mvn -DRUNDIR=\"\${RUNDIR:-run}\" -f '$pomFn' $mvnPhase";
+                                my $runMvnCmd = "mvn -DRUNDIR=\"\${RUNDIR:-\$(pwd)/run-mvn}\" -f '$pomFn' $mvnPhase";
                                 print $runMvnCmd, "\n";
                             } else {
                                 print "( ", $mvnCopyDepsCmd, "\n";
