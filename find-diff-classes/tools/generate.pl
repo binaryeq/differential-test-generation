@@ -235,6 +235,7 @@ sub generateOrRunTests($) {
 	my ($opts) = @_;        # Should be a hashref
 #	print STDERR "targetOtherProvider=<$opts->{targetOtherProvider}>\n";   #DEBUG
     die if (($opts->{shouldCompileTests} || $opts->{shouldRunTests}) && !defined($opts->{targetOtherProvider}));
+    die "To run Maven tests you must specify compilation at the same time" if ($opts->{shouldRunTests} && $opts->{viaMvn} && !$opts->{shouldCompileTests});
 
     print <<THE_END;
 #!/bin/bash
@@ -343,7 +344,8 @@ THE_END
 
                                 my $pomFn = "$testCompilePath/pom.xml";
                                 writePom($pomFn, "$g-$a-$v", "$pwd/$evoSuiteTestSourcePath", @deps);
-                                my $runMvnCmd = "mvn $pomFn";
+                                my $mvnPhase = ($opts->{shouldRunTests} ? 'test' : 'test-compile');     # Yuck
+                                my $runMvnCmd = "mvn -f '$pomFn' $mvnPhase";
                                 print $runMvnCmd, "\n";
                             } else {
                                 print "( ", $mvnCopyDepsCmd, "\n";
@@ -366,7 +368,7 @@ THE_END
 				}
             }
 
-			if ($opts->{shouldRunTests}) {
+			if ($opts->{shouldRunTests} && !$opts->{viaMvn}) {      # Running Maven-based tests requires shouldCompileTests to also be specified and is handled earlier
 				#TODO: Do per-provider-pair work
                 chomp(my $pwd = `pwd`);
 
@@ -453,13 +455,13 @@ if (!defined $mode) {
 } elsif ($mode eq '--compile-tests') {
     die unless @ARGV == 1;
 	generateOrRunTests({ shouldCompileTests => 1, targetOtherProvider => shift });
-} elsif ($mode eq '--compile-tests-mvn') {
+} elsif ($mode eq '--compile-and-run-tests-mvn') {
     die unless @ARGV == 1;
-	generateOrRunTests({ shouldCompileTests => 1, targetOtherProvider => shift, viaMvn => 1 });
+	generateOrRunTests({ shouldCompileTests => 1, shouldRunTests => 1, targetOtherProvider => shift, viaMvn => 1 });
 } elsif ($mode eq '--run-tests') {
     die unless @ARGV == 1;
 	generateOrRunTests({ shouldRunTests => 1, targetOtherProvider => shift });
-} elsif ($mode eq '--generate-and-run-tests') {
+} elsif ($mode eq '--compile-and-run-tests') {
     die unless @ARGV == 1;
 	generateOrRunTests({ shouldCompileTests => 1, shouldRunTests => 1, targetOtherProvider => shift });
 } else {
