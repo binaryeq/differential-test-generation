@@ -136,7 +136,7 @@ sub writeFile($$) {
 }
 
 sub writePom($$@) {
-    my ($pomFn, $origArtifactId, $evoSuiteTestSourcePath, @depJarPaths) = @_;
+    my ($pomFn, $origArtifactId, $evoSuiteTestSourcePath, $properties, @depJarPaths) = @_;
     print STDERR "writePom(pomFn=<$pomFn>, evoSuiteTestSourcePath=<$evoSuiteTestSourcePath>, depJarPaths=<" . join(", ", @depJarPaths) . ">.\n";    #DEBUG
 
     my $genDeps = join("\n", map { my $bn = $_; $bn =~ tr|-A-Za-z0-9|_|c; <<THE_END } @depJarPaths);
@@ -148,6 +148,8 @@ sub writePom($$@) {
       <systemPath>$_</systemPath>
     </dependency>
 THE_END
+
+    my $genProperties = join("\n", map { "    <$_>${$properties}{$_}</$_>" } keys %$properties);
 
     my $origArtifactIdBn = $origArtifactId;
     $origArtifactIdBn =~ tr|-A-Za-z0-9|_|c;
@@ -165,6 +167,7 @@ THE_END
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>$JDKVERSION</maven.compiler.source>
     <maven.compiler.target>$JDKVERSION</maven.compiler.target>
+$genProperties
   </properties>
 
   <dependencies>
@@ -339,11 +342,11 @@ THE_END
                                 my $gatheredDepsStr = `$gatherDepsCmd`;
                                 chomp $gatheredDepsStr;
 #                                my @gatheredDeps = split /\s+/, $gatheredDepsStr;
-                                my @gatheredDeps = map { "$pwd/$testCompilePath/$_" } split /\s+/, $gatheredDepsStr;     # Maven requires systemPaths to be absolute
+                                my @gatheredDeps = map { "\${depRoot}/$_" } split /\s+/, $gatheredDepsStr;     # Maven requires systemPaths to be absolute
                                 my @deps = ($classOwnCP, @gatheredDeps);   # Class-under-test should be first in classpath
 
                                 my $pomFn = "$testCompilePath/pom.xml";
-                                writePom($pomFn, "$g-$a-$v", "$pwd/$evoSuiteTestSourcePath", @deps);
+                                writePom($pomFn, "$g-$a-$v", "$pwd/$evoSuiteTestSourcePath", { depRoot => "$pwd/$testCompilePath" }, @deps);
                                 my $mvnPhase = ($opts->{shouldRunTests} ? 'test' : 'test-compile');     # Yuck
                                 my $runMvnCmd = "mvn -f '$pomFn' $mvnPhase";
                                 print $runMvnCmd, "\n";
