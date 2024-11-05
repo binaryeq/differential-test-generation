@@ -224,9 +224,6 @@ $genDeps
         <artifactId>maven-surefire-plugin</artifactId>
         <version>3.2.5</version>
         <configuration>
-          <!-- Specify EvoSuite jars here to guarantee they appear at the end of the classpath -->
-          <additionalClasspathElements>
-          </additionalClasspathElements>
           <reportsDirectory>$outputDirectory</reportsDirectory>
         </configuration>
       </plugin>
