@@ -39,3 +39,19 @@ tools/generate.pl --generate-tests > generate_all_tests.sh
 
 # Run the script. Creates a testgen/ subdirectory with a mvnc/ subdirectory inside it.
 time bash generate_all_tests.sh
+
+# Create shell scripts to compile tests against each provider.
+tools/generate.pl --compile-tests obfs > compile_tests_for_obfs.sh
+tools/generate.pl --compile-tests mvnc > compile_tests_for_mvnc.sh
+
+# Run the scripts.
+time bash compile_tests_for_obfs.sh
+time bash compile_tests_for_mvnc.sh
+
+# Create shell scripts to run tests against each provider.
+tools/generate.pl --run-tests obfs > run_all_tests_for_obfs.sh
+tools/generate.pl --run-tests mvnc > run_all_tests_for_mvnc.sh
+
+# Run the scripts.
+time bash run_all_tests_for_obfs.sh
+time bash run_all_tests_for_mvnc.sh
