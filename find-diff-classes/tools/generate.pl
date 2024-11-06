@@ -92,7 +92,7 @@ sub evosuiteCompileDir($$$$) {
 
 sub evosuiteRunDir($$$$) {
 	my ($p, $g, $a, $v) = @_;
-	return join("/", '$RUNDIR', $p, $g =~ s|\.|/|gr, $a, $v);       # NOTE: Includes an env var that we intend the shell to expand, so don't single-quote
+	return join("/", '${RUNDIR}', $p, $g =~ s|\.|/|gr, $a, $v);       # NOTE: Includes an env var that we intend the shell to expand, so don't single-quote. Also works as a Maven property!
 }
 
 sub generateComparisons() {
@@ -136,7 +136,7 @@ sub writeFile($$) {
 }
 
 sub writePom($$@) {
-    my ($pomFn, $origArtifactId, $evoSuiteTestSourcePath, @depJarPaths) = @_;
+    my ($pomFn, $origArtifactId, $evoSuiteTestSourcePath, $outputDirectory, $properties, @depJarPaths) = @_;
     print STDERR "writePom(pomFn=<$pomFn>, evoSuiteTestSourcePath=<$evoSuiteTestSourcePath>, depJarPaths=<" . join(", ", @depJarPaths) . ">.\n";    #DEBUG
 
     my $genDeps = join("\n", map { my $bn = $_; $bn =~ tr|-A-Za-z0-9|_|c; <<THE_END } @depJarPaths);
@@ -148,6 +148,8 @@ sub writePom($$@) {
       <systemPath>$_</systemPath>
     </dependency>
 THE_END
+
+    my $genProperties = join("\n", map { "    <$_>${$properties}{$_}</$_>" } sort keys %$properties);
 
     my $origArtifactIdBn = $origArtifactId;
     $origArtifactIdBn =~ tr|-A-Za-z0-9|_|c;
@@ -165,6 +167,8 @@ THE_END
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>$JDKVERSION</maven.compiler.source>
     <maven.compiler.target>$JDKVERSION</maven.compiler.target>
+$genProperties
+    <evosuiteRuntimeJarPath>$evosuiteRuntimeJarPath</evosuiteRuntimeJarPath>
   </properties>
 
   <dependencies>
@@ -174,7 +178,7 @@ $genDeps
       <artifactId>evosuite</artifactId>
       <version>1.2.0</version>
       <scope>system</scope>
-      <systemPath>$evosuiteRuntimeJarPath</systemPath>
+      <systemPath>\${evosuiteRuntimeJarPath}</systemPath>
     </dependency>
 
     <dependency>
@@ -220,9 +224,7 @@ $genDeps
         <artifactId>maven-surefire-plugin</artifactId>
         <version>3.2.5</version>
         <configuration>
-          <!-- Specify EvoSuite jars here to guarantee they appear at the end of the classpath -->
-          <additionalClasspathElements>
-          </additionalClasspathElements>
+          <reportsDirectory>$outputDirectory</reportsDirectory>
         </configuration>
       </plugin>
     </plugins>
@@ -235,6 +237,7 @@ sub generateOrRunTests($) {
 	my ($opts) = @_;        # Should be a hashref
 #	print STDERR "targetOtherProvider=<$opts->{targetOtherProvider}>\n";   #DEBUG
     die if (($opts->{shouldCompileTests} || $opts->{shouldRunTests}) && !defined($opts->{targetOtherProvider}));
+    die "To run Maven tests you must specify compilation at the same time" if ($opts->{shouldRunTests} && $opts->{viaMvn} && !$opts->{shouldCompileTests});
 
     print <<THE_END;
 #!/bin/bash
@@ -242,7 +245,8 @@ set -v
 THE_END
 
     if ($opts->{shouldRunTests}) {
-        print "echo \"Will write test results under RUNDIR=\${RUNDIR:=run}\"   # Default to 'run' if not overridden\n";
+        my $defaultRunDir = ($opts->{viaMvn} ? "\$(pwd)/run-mvn" : "run");      # Maven needs absolute path
+        print "echo \"Will write test results under RUNDIR=\${RUNDIR:=$defaultRunDir}\"   # Default to '$defaultRunDir' if not overridden\n";
     }
 
 	my (@classesFiltered) = `find '$COMPARISONSDIR' -name 'classes.filtered'`;
@@ -308,6 +312,7 @@ THE_END
                 chomp(my $pwd = `pwd`);
 
                 my $evoSuiteTestSourcePath = "$testGenPath/evosuite-tests";
+                my $testRunPath = evosuiteRunDir($opts->{targetOtherProvider}, $g, $a, $v);
 				foreach my $providerPair (@{$providersForJar{$jarPath}}) {
 #                    print STDERR "providerPair=<" . join(", ", @{$providerPair}) . ">. otherProvider=<$opts->{targetOtherProvider}>, shouldBeUndefined=<$opts->{shouldBeUndefined}>\n";     #DEBUG
 					if (grep { $_ eq $opts->{targetOtherProvider} } @{$providerPair}) {
@@ -323,7 +328,7 @@ THE_END
                             my $basePath = $pomPath =~ s|/[^/]+$||r;
                             my $classOwnCP = providerPath($opts->{targetOtherProvider}, $g, $a, $v);
 
-                            print "# Compile " . scalar(@generatedClasses) . " generated test classes for $jarPath for $opts->{targetOtherProvider}\n";
+                            print "# Compile " . ($opts->{viaMvn} && $opts->{shouldRunTests} ? "and run " : "") . scalar(@generatedClasses) . " generated test classes for $jarPath for $opts->{targetOtherProvider}\n";
                             my $mvnCopyDepsCmd = "mkdir -p '$testCompilePath' && cd '$testCompilePath' && mvn -f $pomPath dependency:copy-dependencies >&2 && ln -sT $basePath/target t";	# Symlink to make classpath shorter
                             my $gatherDepsCmd = "echo t/dependency/*";
 
@@ -333,17 +338,18 @@ THE_END
                                 print STDERR "Immediately running: <$mvnCopyDepsAndGatherDepsCmd>\n";
                                 system $mvnCopyDepsAndGatherDepsCmd;
 
-                                my $gatherDepsCmd = "cd '$testCompilePath' && $gatherDepsCmd";
-                                print STDERR "Immediately running: <$gatherDepsCmd>\n";
-                                my $gatheredDepsStr = `$gatherDepsCmd`;
+                                my $gatherDepBasenamesCmd = "cd '$testCompilePath/t/dependency' && echo *";     # Exclude the t/dependency/ prefix
+                                print STDERR "Immediately running: <$gatherDepBasenamesCmd>\n";
+                                my $gatheredDepsStr = `$gatherDepBasenamesCmd`;
                                 chomp $gatheredDepsStr;
 #                                my @gatheredDeps = split /\s+/, $gatheredDepsStr;
-                                my @gatheredDeps = map { "$pwd/$testCompilePath/$_" } split /\s+/, $gatheredDepsStr;     # Maven requires systemPaths to be absolute
-                                my @deps = ($classOwnCP, @gatheredDeps);   # Class-under-test should be first in classpath
+                                my @gatheredDeps = map { "\${depRoot}/$_" } split /\s+/, $gatheredDepsStr;     # Maven requires systemPaths to be absolute, and warns if no variable (property) is used
+                                my @deps = ('${classUnderTest}', @gatheredDeps);   # Class-under-test should be first in classpath. Note it's a property name for Maven to expand
 
                                 my $pomFn = "$testCompilePath/pom.xml";
-                                writePom($pomFn, "$g-$a-$v", "$pwd/$evoSuiteTestSourcePath", @deps);
-                                my $runMvnCmd = "mvn $pomFn";
+                                writePom($pomFn, "$g-$a-$v", "$pwd/$evoSuiteTestSourcePath", $testRunPath, { classUnderTest => $classOwnCP, depRoot => "$pwd/$testCompilePath/t/dependency" }, @deps);
+                                my $mvnPhase = ($opts->{shouldRunTests} ? 'test' : 'test-compile');     # Yuck
+                                my $runMvnCmd = "mvn -DRUNDIR=\"\${RUNDIR}\" -f '$pomFn' $mvnPhase";
                                 print $runMvnCmd, "\n";
                             } else {
                                 print "( ", $mvnCopyDepsCmd, "\n";
@@ -366,7 +372,7 @@ THE_END
 				}
             }
 
-			if ($opts->{shouldRunTests}) {
+			if ($opts->{shouldRunTests} && !$opts->{viaMvn}) {      # Running Maven-based tests requires shouldCompileTests to also be specified and is handled earlier
 				#TODO: Do per-provider-pair work
                 chomp(my $pwd = `pwd`);
 
@@ -453,13 +459,13 @@ if (!defined $mode) {
 } elsif ($mode eq '--compile-tests') {
     die unless @ARGV == 1;
 	generateOrRunTests({ shouldCompileTests => 1, targetOtherProvider => shift });
-} elsif ($mode eq '--compile-tests-mvn') {
+} elsif ($mode eq '--compile-and-run-tests-mvn') {
     die unless @ARGV == 1;
-	generateOrRunTests({ shouldCompileTests => 1, targetOtherProvider => shift, viaMvn => 1 });
+	generateOrRunTests({ shouldCompileTests => 1, shouldRunTests => 1, targetOtherProvider => shift, viaMvn => 1 });
 } elsif ($mode eq '--run-tests') {
     die unless @ARGV == 1;
 	generateOrRunTests({ shouldRunTests => 1, targetOtherProvider => shift });
-} elsif ($mode eq '--generate-and-run-tests') {
+} elsif ($mode eq '--compile-and-run-tests') {
     die unless @ARGV == 1;
 	generateOrRunTests({ shouldCompileTests => 1, shouldRunTests => 1, targetOtherProvider => shift });
 } else {

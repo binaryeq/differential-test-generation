@@ -10,31 +10,34 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>8</maven.compiler.source>
     <maven.compiler.target>8</maven.compiler.target>
+    <classUnderTest>/home/wtwhite/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/zxing/core/3.5.1/core-3.5.1.jar</classUnderTest>
+    <depRoot>/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/com/google/zxing/core/3.5.1/t/dependency</depRoot>
+    <evosuiteRuntimeJarPath>/home/wtwhite/code/regression-test-generation/evosuite/evosuite-standalone-runtime-1.2.0.jar</evosuiteRuntimeJarPath>
   </properties>
 
   <dependencies>
     <dependency>
       <groupId>bogus-groupId-for-dep</groupId>
-      <artifactId>_home_wtwhite_code_craw-redhat-oss_wget_crawl_repo1_maven_org_maven2_com_google_zxing_core_3_5_1_core-3_5_1_jar</artifactId>
+      <artifactId>__classUnderTest_</artifactId>
       <version>42</version>
       <scope>system</scope>
-      <systemPath>/home/wtwhite/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/zxing/core/3.5.1/core-3.5.1.jar</systemPath>
+      <systemPath>${classUnderTest}</systemPath>
     </dependency>
 
     <dependency>
       <groupId>bogus-groupId-for-dep</groupId>
-      <artifactId>_home_wtwhite_code_regression-test-generation_find-diff-classes_compile_mvnc_com_google_zxing_core_3_5_1_t_dependency_hamcrest-core-1_3_jar</artifactId>
+      <artifactId>__depRoot__hamcrest-core-1_3_jar</artifactId>
       <version>42</version>
       <scope>system</scope>
-      <systemPath>/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/com/google/zxing/core/3.5.1/t/dependency/hamcrest-core-1.3.jar</systemPath>
+      <systemPath>${depRoot}/hamcrest-core-1.3.jar</systemPath>
     </dependency>
 
     <dependency>
       <groupId>bogus-groupId-for-dep</groupId>
-      <artifactId>_home_wtwhite_code_regression-test-generation_find-diff-classes_compile_mvnc_com_google_zxing_core_3_5_1_t_dependency_junit-4_13_2_jar</artifactId>
+      <artifactId>__depRoot__junit-4_13_2_jar</artifactId>
       <version>42</version>
       <scope>system</scope>
-      <systemPath>/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/com/google/zxing/core/3.5.1/t/dependency/junit-4.13.2.jar</systemPath>
+      <systemPath>${depRoot}/junit-4.13.2.jar</systemPath>
     </dependency>
 
     <dependency>
@@ -42,7 +45,7 @@
       <artifactId>evosuite</artifactId>
       <version>1.2.0</version>
       <scope>system</scope>
-      <systemPath>/home/wtwhite/code/regression-test-generation/evosuite/evosuite-standalone-runtime-1.2.0.jar</systemPath>
+      <systemPath>${evosuiteRuntimeJarPath}</systemPath>
     </dependency>
 
     <dependency>
@@ -88,9 +91,7 @@
         <artifactId>maven-surefire-plugin</artifactId>
         <version>3.2.5</version>
         <configuration>
-          <!-- Specify EvoSuite jars here to guarantee they appear at the end of the classpath -->
-          <additionalClasspathElements>
-          </additionalClasspathElements>
+          <reportsDirectory>${RUNDIR}/mvnc/com/google/zxing/core/3.5.1</reportsDirectory>
         </configuration>
       </plugin>
     </plugins>
