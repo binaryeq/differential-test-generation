@@ -44,9 +44,11 @@ time bash generate_all_tests.sh
 # Immediately creates pom.xml files and t/ subdirs with dependencies below the compile/ directory.
 tools/generate.pl --compile-and-run-tests-mvn obfs > compile_and_run_mvn_tests_for_obfs.sh
 tools/generate.pl --compile-and-run-tests-mvn mvnc > compile_and_run_mvn_tests_for_mvnc.sh
+tools/generate.pl --compile-and-run-tests-mvn gaoss > compile_and_run_mvn_tests_for_gaoss.sh
 
 # Run the scripts. These produce compiled test classes below compile/ and Surefire test results below run-mvn/.
 time bash compile_and_run_mvn_tests_for_obfs.sh
 time bash compile_and_run_mvn_tests_for_mvnc.sh
+time bash compile_and_run_mvn_tests_for_gaoss.sh
 # Test results can be written to a different location by setting $RUNDIR to an absolute path, e.g.:
 # RUNDIR=`pwd`/other/test/results time bash compile_and_run_mvn_tests_for_obfs.sh
