@@ -1,0 +1,163 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>regression-test-generation.binaryeq.github.io</groupId>
+  <artifactId>evosuite-tests-for-com_squareup_okhttp-okhttp-2_7_5</artifactId>
+  <version>1.0-SNAPSHOT</version>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>8</maven.compiler.source>
+    <maven.compiler.target>8</maven.compiler.target>
+    <classUnderTest>/home/wtwhite/code/craw-redhat-oss/wget/crawl/google-aoss/com/squareup/okhttp/okhttp/2.7.5/okhttp-2.7.5.jar</classUnderTest>
+    <depRoot>/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/gaoss/com/squareup/okhttp/okhttp/2.7.5/t/dependency</depRoot>
+    <evosuiteRuntimeJarPath>/home/wtwhite/code/regression-test-generation/evosuite/evosuite-standalone-runtime-1.2.0.jar</evosuiteRuntimeJarPath>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__classUnderTest_</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${classUnderTest}</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__android-4_1_1_4_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/android-4.1.1.4.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__commons-codec-1_6_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/commons-codec-1.6.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__commons-logging-1_1_1_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/commons-logging-1.1.1.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__httpclient-4_2_2_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/httpclient-4.2.2.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__httpcore-4_2_2_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/httpcore-4.2.2.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__json-20080701_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/json-20080701.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__okio-1_6_0_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/okio-1.6.0.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__opengl-api-gl1_1-android-2_1_r1_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/opengl-api-gl1.1-android-2.1_r1.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__xmlParserAPIs-2_6_2_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/xmlParserAPIs-2.6.2.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__xpp3-1_1_4c_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/xpp3-1.1.4c.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-evosuite-jar</groupId>
+      <artifactId>evosuite</artifactId>
+      <version>1.2.0</version>
+      <scope>system</scope>
+      <systemPath>${evosuiteRuntimeJarPath}</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.13.2</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.hamcrest</groupId>
+      <artifactId>hamcrest-core</artifactId>
+      <version>1.3</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <!-- Add path to EvoSuite-generated test sources (instead of copying them to src/test/java) -->
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>build-helper-maven-plugin</artifactId>
+        <version>3.6.0</version>
+        <executions>
+          <execution>
+            <id>add-test-source</id>
+            <phase>generate-test-sources</phase>
+            <goals>
+              <goal>add-test-source</goal>
+            </goals>
+            <configuration>
+              <sources>
+                <source>/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/squareup/okhttp/okhttp/2.7.5/evosuite-tests</source>
+              </sources>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>3.2.5</version>
+        <configuration>
+          <reportsDirectory>${RUNDIR}/gaoss/com/squareup/okhttp/okhttp/2.7.5</reportsDirectory>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>

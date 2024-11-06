@@ -1,0 +1,131 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>regression-test-generation.binaryeq.github.io</groupId>
+  <artifactId>evosuite-tests-for-com_google_guava-guava-31_0_1-jre</artifactId>
+  <version>1.0-SNAPSHOT</version>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>8</maven.compiler.source>
+    <maven.compiler.target>8</maven.compiler.target>
+    <classUnderTest>/home/wtwhite/code/craw-redhat-oss/wget/crawl/google-aoss/com/google/guava/guava/31.0.1-jre/guava-31.0.1-jre.jar</classUnderTest>
+    <depRoot>/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/gaoss/com/google/guava/guava/31.0.1-jre/t/dependency</depRoot>
+    <evosuiteRuntimeJarPath>/home/wtwhite/code/regression-test-generation/evosuite/evosuite-standalone-runtime-1.2.0.jar</evosuiteRuntimeJarPath>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__classUnderTest_</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${classUnderTest}</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__checker-qual-3_12_0_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/checker-qual-3.12.0.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__error_prone_annotations-2_7_1_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/error_prone_annotations-2.7.1.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__failureaccess-1_0_1_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/failureaccess-1.0.1.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__j2objc-annotations-1_3_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/j2objc-annotations-1.3.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__jsr305-3_0_2_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/jsr305-3.0.2.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__listenablefuture-9999_0-empty-to-avoid-conflict-with-guava_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-evosuite-jar</groupId>
+      <artifactId>evosuite</artifactId>
+      <version>1.2.0</version>
+      <scope>system</scope>
+      <systemPath>${evosuiteRuntimeJarPath}</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.13.2</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.hamcrest</groupId>
+      <artifactId>hamcrest-core</artifactId>
+      <version>1.3</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <!-- Add path to EvoSuite-generated test sources (instead of copying them to src/test/java) -->
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>build-helper-maven-plugin</artifactId>
+        <version>3.6.0</version>
+        <executions>
+          <execution>
+            <id>add-test-source</id>
+            <phase>generate-test-sources</phase>
+            <goals>
+              <goal>add-test-source</goal>
+            </goals>
+            <configuration>
+              <sources>
+                <source>/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/com/google/guava/guava/31.0.1-jre/evosuite-tests</source>
+              </sources>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>3.2.5</version>
+        <configuration>
+          <reportsDirectory>${RUNDIR}/gaoss/com/google/guava/guava/31.0.1-jre</reportsDirectory>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>

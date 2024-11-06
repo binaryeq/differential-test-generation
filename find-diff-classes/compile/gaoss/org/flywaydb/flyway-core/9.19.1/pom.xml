@@ -1,0 +1,859 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>regression-test-generation.binaryeq.github.io</groupId>
+  <artifactId>evosuite-tests-for-org_flywaydb-flyway-core-9_19_1</artifactId>
+  <version>1.0-SNAPSHOT</version>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>8</maven.compiler.source>
+    <maven.compiler.target>8</maven.compiler.target>
+    <classUnderTest>/home/wtwhite/code/craw-redhat-oss/wget/crawl/google-aoss/org/flywaydb/flyway-core/9.19.1/flyway-core-9.19.1.jar</classUnderTest>
+    <depRoot>/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/gaoss/org/flywaydb/flyway-core/9.19.1/t/dependency</depRoot>
+    <evosuiteRuntimeJarPath>/home/wtwhite/code/regression-test-generation/evosuite/evosuite-standalone-runtime-1.2.0.jar</evosuiteRuntimeJarPath>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__classUnderTest_</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${classUnderTest}</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__annotations-2_19_0_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/annotations-2.19.0.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__apache-client-2_19_0_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/apache-client-2.19.0.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__api-common-2_2_1_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/api-common-2.2.1.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__arns-2_19_0_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/arns-2.19.0.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__auth-2_19_0_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/auth-2.19.0.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__auto-value-annotations-1_9_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/auto-value-annotations-1.9.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__aws-core-2_19_0_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/aws-core-2.19.0.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__aws-java-sdk-core-1_12_252_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/aws-java-sdk-core-1.12.252.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__aws-java-sdk-secretsmanager-1_12_252_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/aws-java-sdk-secretsmanager-1.12.252.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__aws-query-protocol-2_19_0_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/aws-query-protocol-2.19.0.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__aws-secretsmanager-caching-java-1_0_2_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/aws-secretsmanager-caching-java-1.0.2.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__aws-secretsmanager-jdbc-1_0_9_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/aws-secretsmanager-jdbc-1.0.9.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__aws-xml-protocol-2_19_0_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/aws-xml-protocol-2.19.0.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__checker-qual-3_25_0_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/checker-qual-3.25.0.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__commons-codec-1_11_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/commons-codec-1.11.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__commons-lang3-3_12_0_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/commons-lang3-3.12.0.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__commons-logging-1_2_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/commons-logging-1.2.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__commons-text-1_10_0_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/commons-text-1.10.0.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__endpoints-spi-2_19_0_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/endpoints-spi-2.19.0.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__eventstream-1_0_1_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/eventstream-1.0.1.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__failureaccess-1_0_1_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/failureaccess-1.0.1.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__gax-2_19_2_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/gax-2.19.2.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__gax-httpjson-0_104_2_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/gax-httpjson-0.104.2.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__google-api-client-2_0_0_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/google-api-client-2.0.0.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__google-api-services-storage-v1-rev20220705-2_0_0_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/google-api-services-storage-v1-rev20220705-2.0.0.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__google-auth-library-credentials-1_11_0_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/google-auth-library-credentials-1.11.0.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__google-auth-library-oauth2-http-1_11_0_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/google-auth-library-oauth2-http-1.11.0.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__google-cloud-core-2_8_20_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/google-cloud-core-2.8.20.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__google-cloud-core-http-2_8_20_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/google-cloud-core-http-2.8.20.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__google-cloud-storage-2_13_0_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/google-cloud-storage-2.13.0.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__google-http-client-1_42_2_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/google-http-client-1.42.2.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__google-http-client-apache-v2-1_42_2_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/google-http-client-apache-v2-1.42.2.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__google-http-client-appengine-1_42_2_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/google-http-client-appengine-1.42.2.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__google-http-client-gson-1_42_2_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/google-http-client-gson-1.42.2.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__google-http-client-jackson2-1_42_2_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/google-http-client-jackson2-1.42.2.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__google-oauth-client-1_34_1_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/google-oauth-client-1.34.1.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__grpc-context-1_49_2_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/grpc-context-1.49.2.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__gson-2_10_1_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/gson-2.10.1.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__guava-31_1-jre_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/guava-31.1-jre.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__http-client-spi-2_19_0_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/http-client-spi-2.19.0.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__httpclient-4_5_13_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/httpclient-4.5.13.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__httpcore-4_4_13_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/httpcore-4.4.13.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__ion-java-1_0_2_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/ion-java-1.0.2.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__j2objc-annotations-1_3_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/j2objc-annotations-1.3.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__jackson-annotations-2_14_0_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/jackson-annotations-2.14.0.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__jackson-core-2_14_0_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/jackson-core-2.14.0.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__jackson-databind-2_14_0_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/jackson-databind-2.14.0.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__jackson-dataformat-cbor-2_12_6_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/jackson-dataformat-cbor-2.12.6.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__jackson-dataformat-toml-2_14_0_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/jackson-dataformat-toml-2.14.0.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__javax_annotation-api-1_3_2_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/javax.annotation-api-1.3.2.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__jboss-logging-3_1_4_GA_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/jboss-logging-3.1.4.GA.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__jboss-vfs-3_2_15_Final_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/jboss-vfs-3.2.15.Final.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__jmespath-java-1_12_252_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/jmespath-java-1.12.252.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__joda-time-2_8_1_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/joda-time-2.8.1.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__json-utils-2_19_0_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/json-utils-2.19.0.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__jsr305-3_0_2_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/jsr305-3.0.2.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__listenablefuture-9999_0-empty-to-avoid-conflict-with-guava_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__log4j-api-2_17_1_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/log4j-api-2.17.1.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__lombok-1_18_20_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/lombok-1.18.20.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__metrics-spi-2_19_0_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/metrics-spi-2.19.0.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__netty-buffer-4_1_86_Final_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/netty-buffer-4.1.86.Final.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__netty-codec-4_1_86_Final_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/netty-codec-4.1.86.Final.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__netty-codec-http-4_1_86_Final_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/netty-codec-http-4.1.86.Final.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__netty-codec-http2-4_1_86_Final_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/netty-codec-http2-4.1.86.Final.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__netty-common-4_1_86_Final_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/netty-common-4.1.86.Final.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__netty-handler-4_1_86_Final_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/netty-handler-4.1.86.Final.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__netty-nio-client-2_19_0_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/netty-nio-client-2.19.0.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__netty-resolver-4_1_86_Final_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/netty-resolver-4.1.86.Final.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__netty-transport-4_1_86_Final_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/netty-transport-4.1.86.Final.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__netty-transport-classes-epoll-4_1_86_Final_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/netty-transport-classes-epoll-4.1.86.Final.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__netty-transport-native-unix-common-4_1_86_Final_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/netty-transport-native-unix-common-4.1.86.Final.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__ojdbc8-19_6_0_0_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/ojdbc8-19.6.0.0.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__ons-19_6_0_0_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/ons-19.6.0.0.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__opencensus-api-0_31_1_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/opencensus-api-0.31.1.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__opencensus-contrib-http-util-0_31_1_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/opencensus-contrib-http-util-0.31.1.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__oraclepki-19_6_0_0_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/oraclepki-19.6.0.0.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__org_jacoco_agent-0_8_8-runtime_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/org.jacoco.agent-0.8.8-runtime.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__org_osgi_core-4_3_1_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/org.osgi.core-4.3.1.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__osdt_cert-19_6_0_0_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/osdt_cert-19.6.0.0.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__osdt_core-19_6_0_0_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/osdt_core-19.6.0.0.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__postgresql-42_4_3_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/postgresql-42.4.3.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__profiles-2_19_0_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/profiles-2.19.0.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__proto-google-common-protos-2_9_6_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/proto-google-common-protos-2.9.6.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__proto-google-iam-v1-1_6_2_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/proto-google-iam-v1-1.6.2.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__protobuf-java-3_21_7_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/protobuf-java-3.21.7.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__protobuf-java-util-3_21_7_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/protobuf-java-util-3.21.7.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__protocol-core-2_19_0_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/protocol-core-2.19.0.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__reactive-streams-1_0_3_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/reactive-streams-1.0.3.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__regions-2_19_0_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/regions-2.19.0.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__s3-2_19_0_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/s3-2.19.0.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__sdk-core-2_19_0_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/sdk-core-2.19.0.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__simplefan-19_6_0_0_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/simplefan-19.6.0.0.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__slf4j-api-1_7_30_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/slf4j-api-1.7.30.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__third-party-jackson-core-2_19_0_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/third-party-jackson-core-2.19.0.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__threetenbp-1_6_2_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/threetenbp-1.6.2.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__ucp-19_6_0_0_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/ucp-19.6.0.0.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__utils-2_19_0_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/utils-2.19.0.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-evosuite-jar</groupId>
+      <artifactId>evosuite</artifactId>
+      <version>1.2.0</version>
+      <scope>system</scope>
+      <systemPath>${evosuiteRuntimeJarPath}</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.13.2</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.hamcrest</groupId>
+      <artifactId>hamcrest-core</artifactId>
+      <version>1.3</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <!-- Add path to EvoSuite-generated test sources (instead of copying them to src/test/java) -->
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>build-helper-maven-plugin</artifactId>
+        <version>3.6.0</version>
+        <executions>
+          <execution>
+            <id>add-test-source</id>
+            <phase>generate-test-sources</phase>
+            <goals>
+              <goal>add-test-source</goal>
+            </goals>
+            <configuration>
+              <sources>
+                <source>/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/org/flywaydb/flyway-core/9.19.1/evosuite-tests</source>
+              </sources>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>3.2.5</version>
+        <configuration>
+          <reportsDirectory>${RUNDIR}/gaoss/org/flywaydb/flyway-core/9.19.1</reportsDirectory>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
