@@ -245,7 +245,8 @@ set -v
 THE_END
 
     if ($opts->{shouldRunTests}) {
-        print "echo \"Will write test results under RUNDIR=\${RUNDIR:=run}\"   # Default to 'run' if not overridden\n";
+        my $defaultRunDir = ($opts->{viaMvn} ? "\$(pwd)/run-mvn" : "run");      # Maven needs absolute path
+        print "echo \"Will write test results under RUNDIR=\${RUNDIR:=$defaultRunDir}\"   # Default to '$defaultRunDir' if not overridden\n";
     }
 
 	my (@classesFiltered) = `find '$COMPARISONSDIR' -name 'classes.filtered'`;
@@ -348,7 +349,7 @@ THE_END
                                 my $pomFn = "$testCompilePath/pom.xml";
                                 writePom($pomFn, "$g-$a-$v", "$pwd/$evoSuiteTestSourcePath", $testRunPath, { classUnderTest => $classOwnCP, depRoot => "$pwd/$testCompilePath/t/dependency" }, @deps);
                                 my $mvnPhase = ($opts->{shouldRunTests} ? 'test' : 'test-compile');     # Yuck
-                                my $runMvnCmd = "mvn -DRUNDIR=\"\${RUNDIR:-\$(pwd)/run-mvn}\" -f '$pomFn' $mvnPhase";
+                                my $runMvnCmd = "mvn -DRUNDIR=\"\${RUNDIR}\" -f '$pomFn' $mvnPhase";
                                 print $runMvnCmd, "\n";
                             } else {
                                 print "( ", $mvnCopyDepsCmd, "\n";
