@@ -1,0 +1,1294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="io.netty.handler.codec.compression.BrotliDecoder_ESTest" time="2.423" tests="1" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="java.specification.version" value="1.8"/>
+    <property name="sun.cpu.isalist" value=""/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/target/test-classes:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/target/classes:/home/wtwhite/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/io/netty/netty-codec/4.1.102.Final/netty-codec-4.1.102.Final.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/Saxon-HE-9.9.1-6.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/antlr-2.7.7.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/antlr4-runtime-4.8-1.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/apiguardian-api-1.1.2.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/assertj-core-3.18.0.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/brotli4j-1.13.0.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/byte-buddy-1.8.5.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/byte-buddy-agent-1.8.5.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/checker-qual-2.10.0.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/checkstyle-8.29.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/commons-beanutils-1.9.4.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/commons-collections-3.2.2.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/commons-compress-1.21.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/commons-logging-1.2.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/compress-lzf-1.0.3.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/error_prone_annotations-2.3.4.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/failureaccess-1.0.1.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/gson-2.8.9.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/guava-28.2-jre.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/hamcrest-core-1.3.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/hamcrest-library-1.3.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/j2objc-annotations-1.3.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/javassist-3.28.0-GA.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/jboss-marshalling-1.4.11.Final.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/jboss-marshalling-2.0.5.Final.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/jboss-marshalling-river-1.4.11.Final.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/jboss-marshalling-river-2.0.5.Final.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/jboss-marshalling-serial-1.4.11.Final.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/jboss-marshalling-serial-2.0.5.Final.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/jsr305-3.0.2.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/junit-jupiter-api-5.9.0.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/junit-jupiter-engine-5.9.0.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/junit-jupiter-params-5.9.0.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/junit-platform-commons-1.9.0.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/junit-platform-engine-1.9.0.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/jzlib-1.1.3.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/logback-classic-1.2.13.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/logback-core-1.2.13.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/lz4-1.3.0.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/lzma-java-1.3.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/mockito-core-2.18.3.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/native-linux-aarch64-1.13.0.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/native-linux-riscv64-1.13.0.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/native-linux-x86_64-1.13.0.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/native-osx-aarch64-1.13.0.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/native-osx-x86_64-1.13.0.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/native-windows-x86_64-1.13.0.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/netty-buffer-4.1.102.Final.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/netty-build-common-31.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/netty-common-4.1.102.Final.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/netty-resolver-4.1.102.Final.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/netty-transport-4.1.102.Final-tests.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/netty-transport-4.1.102.Final.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/objenesis-2.6.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/opentest4j-1.2.0.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/picocli-4.1.4.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/protobuf-java-2.6.1.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/protobuf-javanano-3.0.0-alpha-5.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/reflections-0.10.2.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/service-1.13.0.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/slf4j-api-1.7.30.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/zstd-jni-1.5.0-2.jar:/home/wtwhite/code/regression-test-generation/evosuite/evosuite-standalone-runtime-1.2.0.jar:/home/wtwhite/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar:/home/wtwhite/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:"/>
+    <property name="java.vm.vendor" value="Private Build"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="user.timezone" value=""/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="os.name" value="Linux"/>
+    <property name="RUNDIR" value="/home/wtwhite/code/regression-test-generation/find-diff-classes/run-mvn"/>
+    <property name="user.country" value="NZ"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.boot.library.path" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64"/>
+    <property name="sun.java.command" value="/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/target/surefire/surefirebooter-20241106133521186_3.jar /home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/target/surefire 2024-11-06T13-35-20_979-jvmRun1 surefire-20241106133521186_1tmp surefire_0-20241106133521186_2tmp"/>
+    <property name="surefire.test.class.path" value="/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/target/test-classes:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/target/classes:/home/wtwhite/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/io/netty/netty-codec/4.1.102.Final/netty-codec-4.1.102.Final.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/Saxon-HE-9.9.1-6.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/antlr-2.7.7.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/antlr4-runtime-4.8-1.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/apiguardian-api-1.1.2.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/assertj-core-3.18.0.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/brotli4j-1.13.0.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/byte-buddy-1.8.5.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/byte-buddy-agent-1.8.5.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/checker-qual-2.10.0.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/checkstyle-8.29.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/commons-beanutils-1.9.4.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/commons-collections-3.2.2.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/commons-compress-1.21.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/commons-logging-1.2.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/compress-lzf-1.0.3.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/error_prone_annotations-2.3.4.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/failureaccess-1.0.1.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/gson-2.8.9.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/guava-28.2-jre.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/hamcrest-core-1.3.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/hamcrest-library-1.3.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/j2objc-annotations-1.3.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/javassist-3.28.0-GA.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/jboss-marshalling-1.4.11.Final.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/jboss-marshalling-2.0.5.Final.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/jboss-marshalling-river-1.4.11.Final.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/jboss-marshalling-river-2.0.5.Final.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/jboss-marshalling-serial-1.4.11.Final.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/jboss-marshalling-serial-2.0.5.Final.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/jsr305-3.0.2.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/junit-jupiter-api-5.9.0.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/junit-jupiter-engine-5.9.0.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/junit-jupiter-params-5.9.0.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/junit-platform-commons-1.9.0.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/junit-platform-engine-1.9.0.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/jzlib-1.1.3.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/logback-classic-1.2.13.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/logback-core-1.2.13.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/lz4-1.3.0.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/lzma-java-1.3.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/mockito-core-2.18.3.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/native-linux-aarch64-1.13.0.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/native-linux-riscv64-1.13.0.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/native-linux-x86_64-1.13.0.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/native-osx-aarch64-1.13.0.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/native-osx-x86_64-1.13.0.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/native-windows-x86_64-1.13.0.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/netty-buffer-4.1.102.Final.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/netty-build-common-31.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/netty-common-4.1.102.Final.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/netty-resolver-4.1.102.Final.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/netty-transport-4.1.102.Final-tests.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/netty-transport-4.1.102.Final.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/objenesis-2.6.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/opentest4j-1.2.0.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/picocli-4.1.4.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/protobuf-java-2.6.1.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/protobuf-javanano-3.0.0-alpha-5.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/reflections-0.10.2.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/service-1.13.0.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/slf4j-api-1.7.30.jar:/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/t/dependency/zstd-jni-1.5.0-2.jar:/home/wtwhite/code/regression-test-generation/evosuite/evosuite-standalone-runtime-1.2.0.jar:/home/wtwhite/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar:/home/wtwhite/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/home/wtwhite"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.home" value="/usr/lib/jvm/java-8-openjdk-amd64/jre"/>
+    <property name="basedir" value="/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final"/>
+    <property name="file.separator" value="/"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/>
+    <property name="surefire.real.class.path" value="/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final/target/surefire/surefirebooter-20241106133521186_3.jar"/>
+    <property name="sun.boot.class.path" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jfr.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/classes"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="1.8.0_382-8u382-ga-1~22.04.1-b05"/>
+    <property name="user.name" value="wtwhite"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="5.15.0-87-generic"/>
+    <property name="java.endorsed.dirs" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/endorsed"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="localRepository" value="/home/wtwhite/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="java.version" value="1.8.0_382"/>
+    <property name="user.dir" value="/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty-codec/4.1.102.Final"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="java.awt.printerjob" value="sun.print.PSPrinterJob"/>
+    <property name="sun.os.patch.level" value="unknown"/>
+    <property name="java.library.path" value="/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.vendor" value="Private Build"/>
+    <property name="java.vm.version" value="25.382-b05"/>
+    <property name="java.specification.maintenance.version" value="5"/>
+    <property name="java.ext.dirs" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext:/usr/java/packages/lib/ext"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="52.0"/>
+  </properties>
+  <testcase name="test0" classname="io.netty.handler.codec.compression.BrotliDecoder_ESTest" time="0.15">
+    <system-out><![CDATA[13:35:22.031 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.handler.codec.compression.BrotliDecoder_ESTest
+13:35:22.035 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.handler.codec.compression.BrotliDecoder_ESTest'.
+13:35:22.086 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.handler.codec.compression.BrotliDecoder_ESTest_scaffolding
+13:35:22.087 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.handler.codec.compression.BrotliDecoder_ESTest_scaffolding'.
+13:35:22.092 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.handler.codec.compression.BrotliDecoder_ESTest_scaffolding
+13:35:22.092 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.handler.codec.compression.BrotliDecoder_ESTest
+13:35:22.432 [main] DEBUG org.evosuite.runtime.sandbox.MSecurityManager - Adding privileged thread: "Reference Handler"
+13:35:22.433 [main] DEBUG org.evosuite.runtime.sandbox.MSecurityManager - Adding privileged thread: "Finalizer"
+13:35:22.433 [main] DEBUG org.evosuite.runtime.sandbox.MSecurityManager - Adding privileged thread: "Signal Dispatcher"
+13:35:22.433 [main] DEBUG org.evosuite.runtime.sandbox.MSecurityManager - Adding privileged thread: "Java2D Disposer"
+13:35:22.433 [main] DEBUG org.evosuite.runtime.sandbox.MSecurityManager - Adding privileged thread: "AWT-XAWT"
+13:35:22.433 [main] DEBUG org.evosuite.runtime.sandbox.MSecurityManager - Adding privileged thread: "process reaper"
+13:35:22.433 [main] DEBUG org.evosuite.runtime.sandbox.MSecurityManager - Adding privileged thread: "main"
+13:35:22.433 [main] DEBUG org.evosuite.runtime.sandbox.MSecurityManager - Adding privileged thread: "surefire-forkedjvm-stream-flusher"
+13:35:22.433 [main] DEBUG org.evosuite.runtime.sandbox.MSecurityManager - Adding privileged thread: "surefire-forkedjvm-command-thread"
+13:35:22.495 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.util.internal.SystemPropertyUtil$1
+13:35:22.495 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.util.internal.SystemPropertyUtil$1'.
+13:35:22.513 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/util/internal/SystemPropertyUtil$1
+13:35:22.742 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Defined package (3): package io.netty.util.internal, 1713044053
+13:35:22.743 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.util.internal.SystemPropertyUtil$1
+13:35:22.743 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.util.internal.shaded.org.jctools.queues.atomic.BaseLinkedAtomicQueueConsumerNodeRef
+13:35:22.743 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.util.internal.shaded.org.jctools.queues.atomic.BaseLinkedAtomicQueueConsumerNodeRef'.
+13:35:22.744 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/util/internal/shaded/org/jctools/queues/atomic/BaseLinkedAtomicQueueConsumerNodeRef
+13:35:22.746 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Found static initializer in class io/netty/util/internal/shaded/org/jctools/queues/atomic/BaseLinkedAtomicQueueConsumerNodeRef
+13:35:22.747 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Defined package (3): package io.netty.util.internal.shaded.org.jctools.queues.atomic, 1662774531
+13:35:22.747 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.util.internal.shaded.org.jctools.queues.atomic.BaseLinkedAtomicQueuePad1
+13:35:22.747 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.util.internal.shaded.org.jctools.queues.atomic.BaseLinkedAtomicQueuePad1'.
+13:35:22.749 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/util/internal/shaded/org/jctools/queues/atomic/BaseLinkedAtomicQueuePad1
+13:35:22.751 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Creating brand-new static initializer in class io/netty/util/internal/shaded/org/jctools/queues/atomic/BaseLinkedAtomicQueuePad1
+13:35:22.752 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.util.internal.shaded.org.jctools.queues.atomic.BaseLinkedAtomicQueueProducerNodeRef
+13:35:22.752 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.util.internal.shaded.org.jctools.queues.atomic.BaseLinkedAtomicQueueProducerNodeRef'.
+13:35:22.754 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/util/internal/shaded/org/jctools/queues/atomic/BaseLinkedAtomicQueueProducerNodeRef
+13:35:22.756 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Found static initializer in class io/netty/util/internal/shaded/org/jctools/queues/atomic/BaseLinkedAtomicQueueProducerNodeRef
+13:35:22.757 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.util.internal.shaded.org.jctools.queues.atomic.BaseLinkedAtomicQueuePad0
+13:35:22.758 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.util.internal.shaded.org.jctools.queues.atomic.BaseLinkedAtomicQueuePad0'.
+13:35:22.760 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/util/internal/shaded/org/jctools/queues/atomic/BaseLinkedAtomicQueuePad0
+13:35:22.762 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Creating brand-new static initializer in class io/netty/util/internal/shaded/org/jctools/queues/atomic/BaseLinkedAtomicQueuePad0
+13:35:22.762 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.util.internal.shaded.org.jctools.queues.MessagePassingQueue
+13:35:22.762 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.util.internal.shaded.org.jctools.queues.MessagePassingQueue'.
+13:35:22.764 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Defined package (3): package io.netty.util.internal.shaded.org.jctools.queues, 1012279830
+13:35:22.765 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.util.internal.shaded.org.jctools.queues.MessagePassingQueue
+13:35:22.765 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.util.internal.shaded.org.jctools.queues.atomic.BaseLinkedAtomicQueuePad0
+13:35:22.765 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.util.internal.shaded.org.jctools.queues.atomic.BaseLinkedAtomicQueueProducerNodeRef
+13:35:22.765 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.util.internal.shaded.org.jctools.queues.atomic.BaseLinkedAtomicQueuePad1
+13:35:22.765 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.util.internal.shaded.org.jctools.queues.atomic.BaseLinkedAtomicQueueConsumerNodeRef
+13:35:22.766 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.util.internal.shaded.org.jctools.queues.atomic.LinkedQueueAtomicNode
+13:35:22.766 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.util.internal.shaded.org.jctools.queues.atomic.LinkedQueueAtomicNode'.
+13:35:22.767 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/util/internal/shaded/org/jctools/queues/atomic/LinkedQueueAtomicNode
+13:35:22.768 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Creating brand-new static initializer in class io/netty/util/internal/shaded/org/jctools/queues/atomic/LinkedQueueAtomicNode
+13:35:22.768 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.util.internal.shaded.org.jctools.queues.atomic.LinkedQueueAtomicNode
+13:35:22.769 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.util.internal.shaded.org.jctools.queues.IndexedQueueSizeUtil$IndexedQueue
+13:35:22.769 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.util.internal.shaded.org.jctools.queues.IndexedQueueSizeUtil$IndexedQueue'.
+13:35:22.770 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.util.internal.shaded.org.jctools.queues.IndexedQueueSizeUtil$IndexedQueue
+13:35:22.770 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.util.internal.Cleaner
+13:35:22.770 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.util.internal.Cleaner'.
+13:35:22.771 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.util.internal.Cleaner
+13:35:22.772 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.util.IllegalReferenceCountException
+13:35:22.772 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.util.IllegalReferenceCountException'.
+13:35:22.772 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/util/IllegalReferenceCountException
+13:35:22.775 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Creating brand-new static initializer in class io/netty/util/IllegalReferenceCountException
+13:35:22.775 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.util.IllegalReferenceCountException
+13:35:22.776 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.util.internal.shaded.org.jctools.queues.MpscArrayQueueL1Pad
+13:35:22.776 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.util.internal.shaded.org.jctools.queues.MpscArrayQueueL1Pad'.
+13:35:22.777 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/util/internal/shaded/org/jctools/queues/MpscArrayQueueL1Pad
+13:35:22.778 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Creating brand-new static initializer in class io/netty/util/internal/shaded/org/jctools/queues/MpscArrayQueueL1Pad
+13:35:22.779 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.util.internal.shaded.org.jctools.queues.ConcurrentCircularArrayQueue
+13:35:22.779 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.util.internal.shaded.org.jctools.queues.ConcurrentCircularArrayQueue'.
+13:35:22.780 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/util/internal/shaded/org/jctools/queues/ConcurrentCircularArrayQueue
+13:35:22.782 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Creating brand-new static initializer in class io/netty/util/internal/shaded/org/jctools/queues/ConcurrentCircularArrayQueue
+13:35:22.783 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.util.internal.shaded.org.jctools.queues.QueueProgressIndicators
+13:35:22.783 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.util.internal.shaded.org.jctools.queues.QueueProgressIndicators'.
+13:35:22.784 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.util.internal.shaded.org.jctools.queues.QueueProgressIndicators
+13:35:22.785 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.util.internal.shaded.org.jctools.queues.SupportsIterator
+13:35:22.785 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.util.internal.shaded.org.jctools.queues.SupportsIterator'.
+13:35:22.798 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.util.internal.shaded.org.jctools.queues.SupportsIterator
+13:35:22.799 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.util.internal.shaded.org.jctools.queues.ConcurrentCircularArrayQueueL0Pad
+13:35:22.799 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.util.internal.shaded.org.jctools.queues.ConcurrentCircularArrayQueueL0Pad'.
+13:35:22.801 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/util/internal/shaded/org/jctools/queues/ConcurrentCircularArrayQueueL0Pad
+13:35:22.803 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Creating brand-new static initializer in class io/netty/util/internal/shaded/org/jctools/queues/ConcurrentCircularArrayQueueL0Pad
+13:35:22.803 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.util.internal.shaded.org.jctools.queues.ConcurrentCircularArrayQueueL0Pad
+13:35:22.804 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.util.internal.shaded.org.jctools.queues.ConcurrentCircularArrayQueue
+13:35:22.804 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.util.internal.shaded.org.jctools.queues.MpscArrayQueueL1Pad
+13:35:22.805 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.channel.ChannelInboundHandlerAdapter
+13:35:22.805 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.channel.ChannelInboundHandlerAdapter'.
+13:35:22.806 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/channel/ChannelInboundHandlerAdapter
+13:35:22.808 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Creating brand-new static initializer in class io/netty/channel/ChannelInboundHandlerAdapter
+13:35:22.809 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Defined package (3): package io.netty.channel, -1443455697
+13:35:22.809 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.channel.ChannelInboundHandler
+13:35:22.809 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.channel.ChannelInboundHandler'.
+13:35:22.811 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.channel.ChannelHandler
+13:35:22.811 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.channel.ChannelHandler'.
+13:35:22.812 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.channel.ChannelHandler
+13:35:22.812 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.channel.ChannelInboundHandler
+13:35:22.812 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.channel.ChannelHandlerAdapter
+13:35:22.812 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.channel.ChannelHandlerAdapter'.
+13:35:22.814 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/channel/ChannelHandlerAdapter
+13:35:22.821 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Creating brand-new static initializer in class io/netty/channel/ChannelHandlerAdapter
+13:35:22.822 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.channel.ChannelHandlerAdapter
+13:35:22.822 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.channel.ChannelInboundHandlerAdapter
+13:35:22.825 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.util.internal.logging.LocationAwareSlf4JLogger
+13:35:22.825 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.util.internal.logging.LocationAwareSlf4JLogger'.
+13:35:22.827 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/util/internal/logging/LocationAwareSlf4JLogger
+13:35:22.833 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Found static initializer in class io/netty/util/internal/logging/LocationAwareSlf4JLogger
+13:35:22.834 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Defined package (3): package io.netty.util.internal.logging, 2048307398
+13:35:22.834 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.util.internal.logging.AbstractInternalLogger
+13:35:22.834 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.util.internal.logging.AbstractInternalLogger'.
+13:35:22.837 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/util/internal/logging/AbstractInternalLogger
+13:35:22.847 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Creating brand-new static initializer in class io/netty/util/internal/logging/AbstractInternalLogger
+13:35:22.847 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Adding bytecode for initializing field EXCEPTION_MESSAGE
+13:35:22.848 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.util.internal.logging.InternalLogger
+13:35:22.848 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.util.internal.logging.InternalLogger'.
+13:35:22.851 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.util.internal.logging.InternalLogger
+13:35:22.852 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.util.internal.logging.AbstractInternalLogger
+13:35:22.852 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.util.internal.logging.LocationAwareSlf4JLogger
+13:35:22.854 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.util.internal.PlatformDependent0
+13:35:22.854 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.util.internal.PlatformDependent0'.
+13:35:22.858 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/util/internal/PlatformDependent0
+13:35:22.874 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Found static initializer in class io/netty/util/internal/PlatformDependent0
+13:35:22.898 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.util.internal.PlatformDependent0
+13:35:22.901 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.util.internal.logging.InternalLoggerFactory
+13:35:22.901 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.util.internal.logging.InternalLoggerFactory'.
+13:35:22.903 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/util/internal/logging/InternalLoggerFactory
+13:35:22.905 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Creating brand-new static initializer in class io/netty/util/internal/logging/InternalLoggerFactory
+13:35:22.905 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Adding bytecode for initializing field defaultFactory
+13:35:22.906 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.util.internal.logging.InternalLoggerFactory
+13:35:22.906 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.util.internal.logging.Slf4JLoggerFactory
+13:35:22.907 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.util.internal.logging.Slf4JLoggerFactory'.
+13:35:22.908 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/util/internal/logging/Slf4JLoggerFactory
+13:35:22.913 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Found static initializer in class io/netty/util/internal/logging/Slf4JLoggerFactory
+13:35:22.913 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.util.internal.logging.Slf4JLoggerFactory
+13:35:22.914 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.util.internal.logging.Slf4JLogger
+13:35:22.914 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.util.internal.logging.Slf4JLogger'.
+13:35:22.915 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/util/internal/logging/Slf4JLogger
+13:35:22.918 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Creating brand-new static initializer in class io/netty/util/internal/logging/Slf4JLogger
+13:35:22.918 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.util.internal.logging.Slf4JLogger
+13:35:22.919 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.util.internal.logging.Slf4JLoggerFactory$NopInstanceHolder
+13:35:22.919 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.util.internal.logging.Slf4JLoggerFactory$NopInstanceHolder'.
+13:35:22.921 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/util/internal/logging/Slf4JLoggerFactory$NopInstanceHolder
+13:35:22.921 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Found static initializer in class io/netty/util/internal/logging/Slf4JLoggerFactory$NopInstanceHolder
+13:35:22.922 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.util.internal.logging.Slf4JLoggerFactory$NopInstanceHolder
+13:35:22.923 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.util.internal.ObjectUtil
+13:35:22.923 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.util.internal.ObjectUtil'.
+13:35:22.925 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/util/internal/ObjectUtil
+13:35:22.936 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Creating brand-new static initializer in class io/netty/util/internal/ObjectUtil
+13:35:22.936 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Adding bytecode for initializing field FLOAT_ZERO
+13:35:22.936 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Adding bytecode for initializing field DOUBLE_ZERO
+13:35:22.936 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Adding bytecode for initializing field LONG_ZERO
+13:35:22.936 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Adding bytecode for initializing field INT_ZERO
+13:35:22.937 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.util.internal.ObjectUtil
+13:35:22.938 [main] DEBUG io.netty.util.internal.logging.InternalLoggerFactory - Using SLF4J as the default logging framework
+13:35:22.938 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.util.internal.SystemPropertyUtil
+13:35:22.938 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.util.internal.SystemPropertyUtil'.
+13:35:22.941 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/util/internal/SystemPropertyUtil
+13:35:22.943 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Found static initializer in class io/netty/util/internal/SystemPropertyUtil
+13:35:22.944 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.util.internal.SystemPropertyUtil
+13:35:22.949 [main] DEBUG io.netty.util.internal.PlatformDependent0 - -Dio.netty.noUnsafe: false
+13:35:22.950 [main] DEBUG io.netty.util.internal.PlatformDependent0 - Java version: 8
+13:35:22.951 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.util.internal.PlatformDependent0$1
+13:35:22.952 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.util.internal.PlatformDependent0$1'.
+13:35:22.969 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/util/internal/PlatformDependent0$1
+13:35:22.971 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.util.internal.PlatformDependent0$1
+13:35:22.974 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.util.internal.ReflectionUtil
+13:35:22.974 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.util.internal.ReflectionUtil'.
+13:35:22.976 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/util/internal/ReflectionUtil
+13:35:22.978 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Creating brand-new static initializer in class io/netty/util/internal/ReflectionUtil
+13:35:22.979 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.util.internal.ReflectionUtil
+13:35:22.980 [main] DEBUG io.netty.util.internal.PlatformDependent0 - sun.misc.Unsafe.theUnsafe: available
+13:35:22.980 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.util.internal.PlatformDependent0$2
+13:35:22.980 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.util.internal.PlatformDependent0$2'.
+13:35:22.982 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/util/internal/PlatformDependent0$2
+13:35:22.985 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.util.internal.PlatformDependent0$2
+13:35:22.986 [main] DEBUG io.netty.util.internal.PlatformDependent0 - sun.misc.Unsafe.copyMemory: available
+13:35:22.987 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.util.internal.PlatformDependent0$3
+13:35:22.987 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.util.internal.PlatformDependent0$3'.
+13:35:22.989 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/util/internal/PlatformDependent0$3
+13:35:22.991 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.util.internal.PlatformDependent0$3
+13:35:22.991 [main] DEBUG io.netty.util.internal.PlatformDependent0 - sun.misc.Unsafe.storeFence: available
+13:35:22.992 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.util.internal.PlatformDependent0$4
+13:35:22.992 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.util.internal.PlatformDependent0$4'.
+13:35:22.994 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/util/internal/PlatformDependent0$4
+13:35:22.997 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.util.internal.PlatformDependent0$4
+13:35:22.999 [main] DEBUG io.netty.util.internal.PlatformDependent0 - java.nio.Buffer.address: available
+13:35:22.999 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.util.internal.PlatformDependent0$5
+13:35:22.999 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.util.internal.PlatformDependent0$5'.
+13:35:23.002 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/util/internal/PlatformDependent0$5
+13:35:23.004 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.util.internal.PlatformDependent0$5
+13:35:23.005 [main] DEBUG io.netty.util.internal.PlatformDependent0 - direct buffer constructor: available
+13:35:23.006 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.util.internal.PlatformDependent0$6
+13:35:23.006 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.util.internal.PlatformDependent0$6'.
+13:35:23.007 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/util/internal/PlatformDependent0$6
+13:35:23.011 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.util.internal.PlatformDependent0$6
+13:35:23.012 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.util.internal.PlatformDependent0$12
+13:35:23.012 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.util.internal.PlatformDependent0$12'.
+13:35:23.013 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/util/internal/PlatformDependent0$12
+13:35:23.014 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.util.internal.PlatformDependent0$12
+13:35:23.015 [main] DEBUG io.netty.util.internal.PlatformDependent0 - java.nio.Bits.unaligned: available, true
+13:35:23.016 [main] DEBUG io.netty.util.internal.PlatformDependent0 - jdk.internal.misc.Unsafe.allocateUninitializedArray(int): unavailable prior to Java9
+13:35:23.016 [main] DEBUG io.netty.util.internal.PlatformDependent0 - java.nio.DirectByteBuffer.<init>(long, {int,long}): available
+13:35:23.016 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.handler.codec.compression.BrotliDecoder
+13:35:23.017 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.handler.codec.compression.BrotliDecoder'.
+13:35:23.018 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/handler/codec/compression/BrotliDecoder
+13:35:23.020 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Found static initializer in class io/netty/handler/codec/compression/BrotliDecoder
+13:35:23.021 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.handler.codec.ByteToMessageDecoder
+13:35:23.021 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.handler.codec.ByteToMessageDecoder'.
+13:35:23.024 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/handler/codec/ByteToMessageDecoder
+13:35:23.028 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Found static initializer in class io/netty/handler/codec/ByteToMessageDecoder
+13:35:23.042 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Defined package (3): package io.netty.handler.codec, -1568242786
+13:35:23.042 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.handler.codec.ByteToMessageDecoder
+13:35:23.043 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.handler.codec.compression.BrotliDecoder
+13:35:23.056 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.handler.codec.ByteToMessageDecoder$Cumulator
+13:35:23.056 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.handler.codec.ByteToMessageDecoder$Cumulator'.
+13:35:23.058 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.handler.codec.ByteToMessageDecoder$Cumulator
+13:35:23.058 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.handler.codec.DecoderException
+13:35:23.059 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.handler.codec.DecoderException'.
+13:35:23.060 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/handler/codec/DecoderException
+13:35:23.061 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Creating brand-new static initializer in class io/netty/handler/codec/DecoderException
+13:35:23.061 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.handler.codec.CodecException
+13:35:23.061 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.handler.codec.CodecException'.
+13:35:23.061 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/handler/codec/CodecException
+13:35:23.062 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Creating brand-new static initializer in class io/netty/handler/codec/CodecException
+13:35:23.062 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.handler.codec.CodecException
+13:35:23.062 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.handler.codec.DecoderException
+13:35:23.063 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.handler.codec.compression.DecompressionException
+13:35:23.063 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.handler.codec.compression.DecompressionException'.
+13:35:23.064 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/handler/codec/compression/DecompressionException
+13:35:23.064 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Creating brand-new static initializer in class io/netty/handler/codec/compression/DecompressionException
+13:35:23.064 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.handler.codec.compression.DecompressionException
+13:35:23.065 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.handler.codec.ByteToMessageDecoder$1
+13:35:23.065 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.handler.codec.ByteToMessageDecoder$1'.
+13:35:23.065 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/handler/codec/ByteToMessageDecoder$1
+13:35:23.067 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.handler.codec.ByteToMessageDecoder$1
+13:35:23.067 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.handler.codec.ByteToMessageDecoder$2
+13:35:23.067 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.handler.codec.ByteToMessageDecoder$2'.
+13:35:23.069 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/handler/codec/ByteToMessageDecoder$2
+13:35:23.070 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.handler.codec.ByteToMessageDecoder$2
+13:35:23.070 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.buffer.ByteBuf
+13:35:23.071 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.buffer.ByteBuf'.
+13:35:23.072 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/buffer/ByteBuf
+13:35:23.076 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Creating brand-new static initializer in class io/netty/buffer/ByteBuf
+13:35:23.077 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.util.ReferenceCounted
+13:35:23.077 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.util.ReferenceCounted'.
+13:35:23.079 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.util.ReferenceCounted
+13:35:23.079 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.buffer.ByteBufConvertible
+13:35:23.079 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.buffer.ByteBufConvertible'.
+13:35:23.080 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.buffer.ByteBufConvertible
+13:35:23.081 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.buffer.ByteBuf
+13:35:23.081 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.buffer.CompositeByteBuf
+13:35:23.081 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.buffer.CompositeByteBuf'.
+13:35:23.084 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/buffer/CompositeByteBuf
+13:35:23.122 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Found static initializer in class io/netty/buffer/CompositeByteBuf
+13:35:23.127 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.buffer.AbstractReferenceCountedByteBuf
+13:35:23.129 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.buffer.AbstractReferenceCountedByteBuf'.
+13:35:23.130 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/buffer/AbstractReferenceCountedByteBuf
+13:35:23.131 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Found static initializer in class io/netty/buffer/AbstractReferenceCountedByteBuf
+13:35:23.132 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.buffer.AbstractByteBuf
+13:35:23.133 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.buffer.AbstractByteBuf'.
+13:35:23.137 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/buffer/AbstractByteBuf
+13:35:23.152 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Found static initializer in class io/netty/buffer/AbstractByteBuf
+13:35:23.154 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.buffer.AbstractByteBuf
+13:35:23.154 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.buffer.AbstractReferenceCountedByteBuf
+13:35:23.155 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.buffer.CompositeByteBuf
+13:35:23.155 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.handler.codec.compression.Brotli
+13:35:23.155 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.handler.codec.compression.Brotli'.
+13:35:23.157 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/handler/codec/compression/Brotli
+13:35:23.158 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Found static initializer in class io/netty/handler/codec/compression/Brotli
+13:35:23.159 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.handler.codec.compression.Brotli
+13:35:23.159 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.util.internal.PlatformDependent
+13:35:23.160 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.util.internal.PlatformDependent'.
+13:35:23.162 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/util/internal/PlatformDependent
+13:35:23.203 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Found static initializer in class io/netty/util/internal/PlatformDependent
+13:35:23.208 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.util.internal.PlatformDependent
+13:35:23.208 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.util.internal.PlatformDependent$ThreadLocalRandomProvider
+13:35:23.208 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.util.internal.PlatformDependent$ThreadLocalRandomProvider'.
+13:35:23.209 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.util.internal.PlatformDependent$ThreadLocalRandomProvider
+13:35:23.210 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.util.internal.OutOfDirectMemoryError
+13:35:23.210 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.util.internal.OutOfDirectMemoryError'.
+13:35:23.211 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/util/internal/OutOfDirectMemoryError
+13:35:23.212 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Creating brand-new static initializer in class io/netty/util/internal/OutOfDirectMemoryError
+13:35:23.213 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.util.internal.OutOfDirectMemoryError
+13:35:23.215 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.util.internal.LongCounter
+13:35:23.215 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.util.internal.LongCounter'.
+13:35:23.217 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.util.internal.LongCounter
+13:35:23.217 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.util.internal.shaded.org.jctools.queues.SpscLinkedQueue
+13:35:23.217 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.util.internal.shaded.org.jctools.queues.SpscLinkedQueue'.
+13:35:23.219 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/util/internal/shaded/org/jctools/queues/SpscLinkedQueue
+13:35:23.225 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Creating brand-new static initializer in class io/netty/util/internal/shaded/org/jctools/queues/SpscLinkedQueue
+13:35:23.226 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.util.internal.shaded.org.jctools.queues.BaseLinkedQueue
+13:35:23.226 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.util.internal.shaded.org.jctools.queues.BaseLinkedQueue'.
+13:35:23.227 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/util/internal/shaded/org/jctools/queues/BaseLinkedQueue
+13:35:23.230 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Creating brand-new static initializer in class io/netty/util/internal/shaded/org/jctools/queues/BaseLinkedQueue
+13:35:23.230 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.util.internal.shaded.org.jctools.queues.BaseLinkedQueuePad2
+13:35:23.231 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.util.internal.shaded.org.jctools.queues.BaseLinkedQueuePad2'.
+13:35:23.231 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/util/internal/shaded/org/jctools/queues/BaseLinkedQueuePad2
+13:35:23.232 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Creating brand-new static initializer in class io/netty/util/internal/shaded/org/jctools/queues/BaseLinkedQueuePad2
+13:35:23.232 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.util.internal.shaded.org.jctools.queues.BaseLinkedQueueConsumerNodeRef
+13:35:23.232 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.util.internal.shaded.org.jctools.queues.BaseLinkedQueueConsumerNodeRef'.
+13:35:23.233 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/util/internal/shaded/org/jctools/queues/BaseLinkedQueueConsumerNodeRef
+13:35:23.234 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Found static initializer in class io/netty/util/internal/shaded/org/jctools/queues/BaseLinkedQueueConsumerNodeRef
+13:35:23.235 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.util.internal.shaded.org.jctools.queues.BaseLinkedQueuePad1
+13:35:23.235 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.util.internal.shaded.org.jctools.queues.BaseLinkedQueuePad1'.
+13:35:23.236 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/util/internal/shaded/org/jctools/queues/BaseLinkedQueuePad1
+13:35:23.236 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Creating brand-new static initializer in class io/netty/util/internal/shaded/org/jctools/queues/BaseLinkedQueuePad1
+13:35:23.237 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.util.internal.shaded.org.jctools.queues.BaseLinkedQueueProducerNodeRef
+13:35:23.237 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.util.internal.shaded.org.jctools.queues.BaseLinkedQueueProducerNodeRef'.
+13:35:23.238 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/util/internal/shaded/org/jctools/queues/BaseLinkedQueueProducerNodeRef
+13:35:23.238 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Found static initializer in class io/netty/util/internal/shaded/org/jctools/queues/BaseLinkedQueueProducerNodeRef
+13:35:23.239 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.util.internal.shaded.org.jctools.queues.BaseLinkedQueuePad0
+13:35:23.239 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.util.internal.shaded.org.jctools.queues.BaseLinkedQueuePad0'.
+13:35:23.240 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/util/internal/shaded/org/jctools/queues/BaseLinkedQueuePad0
+13:35:23.240 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Creating brand-new static initializer in class io/netty/util/internal/shaded/org/jctools/queues/BaseLinkedQueuePad0
+13:35:23.241 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.util.internal.shaded.org.jctools.queues.BaseLinkedQueuePad0
+13:35:23.241 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.util.internal.shaded.org.jctools.queues.BaseLinkedQueueProducerNodeRef
+13:35:23.241 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.util.internal.shaded.org.jctools.queues.BaseLinkedQueuePad1
+13:35:23.242 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.util.internal.shaded.org.jctools.queues.BaseLinkedQueueConsumerNodeRef
+13:35:23.242 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.util.internal.shaded.org.jctools.queues.BaseLinkedQueuePad2
+13:35:23.242 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.util.internal.shaded.org.jctools.queues.BaseLinkedQueue
+13:35:23.242 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.util.internal.shaded.org.jctools.queues.SpscLinkedQueue
+13:35:23.242 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.util.internal.shaded.org.jctools.queues.atomic.SpscLinkedAtomicQueue
+13:35:23.242 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.util.internal.shaded.org.jctools.queues.atomic.SpscLinkedAtomicQueue'.
+13:35:23.244 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/util/internal/shaded/org/jctools/queues/atomic/SpscLinkedAtomicQueue
+13:35:23.248 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Creating brand-new static initializer in class io/netty/util/internal/shaded/org/jctools/queues/atomic/SpscLinkedAtomicQueue
+13:35:23.249 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.util.internal.shaded.org.jctools.queues.atomic.BaseLinkedAtomicQueue
+13:35:23.249 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.util.internal.shaded.org.jctools.queues.atomic.BaseLinkedAtomicQueue'.
+13:35:23.250 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/util/internal/shaded/org/jctools/queues/atomic/BaseLinkedAtomicQueue
+13:35:23.253 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Creating brand-new static initializer in class io/netty/util/internal/shaded/org/jctools/queues/atomic/BaseLinkedAtomicQueue
+13:35:23.253 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.util.internal.shaded.org.jctools.queues.atomic.BaseLinkedAtomicQueuePad2
+13:35:23.254 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.util.internal.shaded.org.jctools.queues.atomic.BaseLinkedAtomicQueuePad2'.
+13:35:23.255 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/util/internal/shaded/org/jctools/queues/atomic/BaseLinkedAtomicQueuePad2
+13:35:23.255 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Creating brand-new static initializer in class io/netty/util/internal/shaded/org/jctools/queues/atomic/BaseLinkedAtomicQueuePad2
+13:35:23.256 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.util.internal.shaded.org.jctools.queues.atomic.BaseLinkedAtomicQueuePad2
+13:35:23.256 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.util.internal.shaded.org.jctools.queues.atomic.BaseLinkedAtomicQueue
+13:35:23.256 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.util.internal.shaded.org.jctools.queues.atomic.SpscLinkedAtomicQueue
+13:35:23.257 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.util.internal.shaded.org.jctools.queues.MpscArrayQueue
+13:35:23.257 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.util.internal.shaded.org.jctools.queues.MpscArrayQueue'.
+13:35:23.258 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/util/internal/shaded/org/jctools/queues/MpscArrayQueue
+13:35:23.263 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Creating brand-new static initializer in class io/netty/util/internal/shaded/org/jctools/queues/MpscArrayQueue
+13:35:23.263 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.util.internal.shaded.org.jctools.queues.MpscArrayQueueL3Pad
+13:35:23.263 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.util.internal.shaded.org.jctools.queues.MpscArrayQueueL3Pad'.
+13:35:23.264 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/util/internal/shaded/org/jctools/queues/MpscArrayQueueL3Pad
+13:35:23.265 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Creating brand-new static initializer in class io/netty/util/internal/shaded/org/jctools/queues/MpscArrayQueueL3Pad
+13:35:23.265 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.util.internal.shaded.org.jctools.queues.MpscArrayQueueConsumerIndexField
+13:35:23.265 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.util.internal.shaded.org.jctools.queues.MpscArrayQueueConsumerIndexField'.
+13:35:23.266 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/util/internal/shaded/org/jctools/queues/MpscArrayQueueConsumerIndexField
+13:35:23.267 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Found static initializer in class io/netty/util/internal/shaded/org/jctools/queues/MpscArrayQueueConsumerIndexField
+13:35:23.267 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.util.internal.shaded.org.jctools.queues.MpscArrayQueueL2Pad
+13:35:23.268 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.util.internal.shaded.org.jctools.queues.MpscArrayQueueL2Pad'.
+13:35:23.268 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/util/internal/shaded/org/jctools/queues/MpscArrayQueueL2Pad
+13:35:23.269 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Creating brand-new static initializer in class io/netty/util/internal/shaded/org/jctools/queues/MpscArrayQueueL2Pad
+13:35:23.269 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.util.internal.shaded.org.jctools.queues.MpscArrayQueueProducerLimitField
+13:35:23.269 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.util.internal.shaded.org.jctools.queues.MpscArrayQueueProducerLimitField'.
+13:35:23.270 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/util/internal/shaded/org/jctools/queues/MpscArrayQueueProducerLimitField
+13:35:23.271 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Found static initializer in class io/netty/util/internal/shaded/org/jctools/queues/MpscArrayQueueProducerLimitField
+13:35:23.271 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.util.internal.shaded.org.jctools.queues.MpscArrayQueueMidPad
+13:35:23.271 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.util.internal.shaded.org.jctools.queues.MpscArrayQueueMidPad'.
+13:35:23.272 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/util/internal/shaded/org/jctools/queues/MpscArrayQueueMidPad
+13:35:23.273 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Creating brand-new static initializer in class io/netty/util/internal/shaded/org/jctools/queues/MpscArrayQueueMidPad
+13:35:23.273 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.util.internal.shaded.org.jctools.queues.MpscArrayQueueProducerIndexField
+13:35:23.273 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.util.internal.shaded.org.jctools.queues.MpscArrayQueueProducerIndexField'.
+13:35:23.274 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/util/internal/shaded/org/jctools/queues/MpscArrayQueueProducerIndexField
+13:35:23.276 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Found static initializer in class io/netty/util/internal/shaded/org/jctools/queues/MpscArrayQueueProducerIndexField
+13:35:23.276 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.util.internal.shaded.org.jctools.queues.MpscArrayQueueProducerIndexField
+13:35:23.276 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.util.internal.shaded.org.jctools.queues.MpscArrayQueueMidPad
+13:35:23.277 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.util.internal.shaded.org.jctools.queues.MpscArrayQueueProducerLimitField
+13:35:23.277 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.util.internal.shaded.org.jctools.queues.MpscArrayQueueL2Pad
+13:35:23.277 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.util.internal.shaded.org.jctools.queues.MpscArrayQueueConsumerIndexField
+13:35:23.278 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.util.internal.shaded.org.jctools.queues.MpscArrayQueueL3Pad
+13:35:23.278 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.util.internal.shaded.org.jctools.queues.MpscArrayQueue
+13:35:23.278 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.util.internal.shaded.org.jctools.queues.atomic.MpscAtomicArrayQueue
+13:35:23.278 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.util.internal.shaded.org.jctools.queues.atomic.MpscAtomicArrayQueue'.
+13:35:23.280 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/util/internal/shaded/org/jctools/queues/atomic/MpscAtomicArrayQueue
+13:35:23.285 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Creating brand-new static initializer in class io/netty/util/internal/shaded/org/jctools/queues/atomic/MpscAtomicArrayQueue
+13:35:23.286 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.util.internal.shaded.org.jctools.queues.atomic.MpscAtomicArrayQueueL3Pad
+13:35:23.286 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.util.internal.shaded.org.jctools.queues.atomic.MpscAtomicArrayQueueL3Pad'.
+13:35:23.287 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/util/internal/shaded/org/jctools/queues/atomic/MpscAtomicArrayQueueL3Pad
+13:35:23.288 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Creating brand-new static initializer in class io/netty/util/internal/shaded/org/jctools/queues/atomic/MpscAtomicArrayQueueL3Pad
+13:35:23.288 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.util.internal.shaded.org.jctools.queues.atomic.MpscAtomicArrayQueueConsumerIndexField
+13:35:23.288 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.util.internal.shaded.org.jctools.queues.atomic.MpscAtomicArrayQueueConsumerIndexField'.
+13:35:23.289 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/util/internal/shaded/org/jctools/queues/atomic/MpscAtomicArrayQueueConsumerIndexField
+13:35:23.290 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Found static initializer in class io/netty/util/internal/shaded/org/jctools/queues/atomic/MpscAtomicArrayQueueConsumerIndexField
+13:35:23.290 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.util.internal.shaded.org.jctools.queues.atomic.MpscAtomicArrayQueueL2Pad
+13:35:23.290 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.util.internal.shaded.org.jctools.queues.atomic.MpscAtomicArrayQueueL2Pad'.
+13:35:23.291 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/util/internal/shaded/org/jctools/queues/atomic/MpscAtomicArrayQueueL2Pad
+13:35:23.292 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Creating brand-new static initializer in class io/netty/util/internal/shaded/org/jctools/queues/atomic/MpscAtomicArrayQueueL2Pad
+13:35:23.292 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.util.internal.shaded.org.jctools.queues.atomic.MpscAtomicArrayQueueProducerLimitField
+13:35:23.292 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.util.internal.shaded.org.jctools.queues.atomic.MpscAtomicArrayQueueProducerLimitField'.
+13:35:23.293 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/util/internal/shaded/org/jctools/queues/atomic/MpscAtomicArrayQueueProducerLimitField
+13:35:23.293 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Found static initializer in class io/netty/util/internal/shaded/org/jctools/queues/atomic/MpscAtomicArrayQueueProducerLimitField
+13:35:23.294 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.util.internal.shaded.org.jctools.queues.atomic.MpscAtomicArrayQueueMidPad
+13:35:23.294 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.util.internal.shaded.org.jctools.queues.atomic.MpscAtomicArrayQueueMidPad'.
+13:35:23.295 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/util/internal/shaded/org/jctools/queues/atomic/MpscAtomicArrayQueueMidPad
+13:35:23.295 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Creating brand-new static initializer in class io/netty/util/internal/shaded/org/jctools/queues/atomic/MpscAtomicArrayQueueMidPad
+13:35:23.296 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.util.internal.shaded.org.jctools.queues.atomic.MpscAtomicArrayQueueProducerIndexField
+13:35:23.296 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.util.internal.shaded.org.jctools.queues.atomic.MpscAtomicArrayQueueProducerIndexField'.
+13:35:23.296 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/util/internal/shaded/org/jctools/queues/atomic/MpscAtomicArrayQueueProducerIndexField
+13:35:23.297 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Found static initializer in class io/netty/util/internal/shaded/org/jctools/queues/atomic/MpscAtomicArrayQueueProducerIndexField
+13:35:23.297 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.util.internal.shaded.org.jctools.queues.atomic.MpscAtomicArrayQueueL1Pad
+13:35:23.297 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.util.internal.shaded.org.jctools.queues.atomic.MpscAtomicArrayQueueL1Pad'.
+13:35:23.298 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/util/internal/shaded/org/jctools/queues/atomic/MpscAtomicArrayQueueL1Pad
+13:35:23.299 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Creating brand-new static initializer in class io/netty/util/internal/shaded/org/jctools/queues/atomic/MpscAtomicArrayQueueL1Pad
+13:35:23.299 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.util.internal.shaded.org.jctools.queues.atomic.AtomicReferenceArrayQueue
+13:35:23.299 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.util.internal.shaded.org.jctools.queues.atomic.AtomicReferenceArrayQueue'.
+13:35:23.301 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/util/internal/shaded/org/jctools/queues/atomic/AtomicReferenceArrayQueue
+13:35:23.302 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Creating brand-new static initializer in class io/netty/util/internal/shaded/org/jctools/queues/atomic/AtomicReferenceArrayQueue
+13:35:23.302 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.util.internal.shaded.org.jctools.queues.atomic.AtomicReferenceArrayQueue
+13:35:23.303 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.util.internal.shaded.org.jctools.queues.atomic.MpscAtomicArrayQueueL1Pad
+13:35:23.303 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.util.internal.shaded.org.jctools.queues.atomic.MpscAtomicArrayQueueProducerIndexField
+13:35:23.303 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.util.internal.shaded.org.jctools.queues.atomic.MpscAtomicArrayQueueMidPad
+13:35:23.304 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.util.internal.shaded.org.jctools.queues.atomic.MpscAtomicArrayQueueProducerLimitField
+13:35:23.304 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.util.internal.shaded.org.jctools.queues.atomic.MpscAtomicArrayQueueL2Pad
+13:35:23.304 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.util.internal.shaded.org.jctools.queues.atomic.MpscAtomicArrayQueueConsumerIndexField
+13:35:23.305 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.util.internal.shaded.org.jctools.queues.atomic.MpscAtomicArrayQueueL3Pad
+13:35:23.305 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.util.internal.shaded.org.jctools.queues.atomic.MpscAtomicArrayQueue
+13:35:23.307 [main] DEBUG io.netty.util.internal.PlatformDependent - sun.misc.Unsafe: available
+13:35:23.309 [main] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.tmpdir: /tmp (java.io.tmpdir)
+13:35:23.309 [main] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+13:35:23.310 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.util.internal.PlatformDependent$1
+13:35:23.310 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.util.internal.PlatformDependent$1'.
+13:35:23.311 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/util/internal/PlatformDependent$1
+13:35:23.312 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.util.internal.PlatformDependent$1
+13:35:23.312 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.util.internal.PlatformDependent$2
+13:35:23.312 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.util.internal.PlatformDependent$2'.
+13:35:23.313 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/util/internal/PlatformDependent$2
+13:35:23.314 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.util.internal.PlatformDependent$2
+13:35:23.315 [main] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.maxDirectMemory: 11420041216 bytes
+13:35:23.315 [main] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.uninitializedArrayAllocationThreshold: -1
+13:35:23.315 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.util.internal.CleanerJava6
+13:35:23.316 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.util.internal.CleanerJava6'.
+13:35:23.317 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/util/internal/CleanerJava6
+13:35:23.319 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Found static initializer in class io/netty/util/internal/CleanerJava6
+13:35:23.321 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.util.internal.CleanerJava6
+13:35:23.322 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.util.internal.CleanerJava6$1
+13:35:23.322 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.util.internal.CleanerJava6$1'.
+13:35:23.323 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/util/internal/CleanerJava6$1
+13:35:23.325 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.util.internal.CleanerJava6$1
+13:35:23.325 [main] DEBUG io.netty.util.internal.CleanerJava6 - java.nio.ByteBuffer.cleaner(): available
+13:35:23.326 [main] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.noPreferDirect: false
+13:35:23.327 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.util.internal.PlatformDependent$4
+13:35:23.327 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.util.internal.PlatformDependent$4'.
+13:35:23.328 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/util/internal/PlatformDependent$4
+13:35:23.341 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.util.internal.PlatformDependent$4
+13:35:23.343 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.util.internal.PlatformDependent0$10
+13:35:23.343 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.util.internal.PlatformDependent0$10'.
+13:35:23.344 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/util/internal/PlatformDependent0$10
+13:35:23.346 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.util.internal.PlatformDependent0$10
+13:35:23.346 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: com.aayushatharva.brotli4j.Brotli4jLoader
+13:35:23.346 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'com.aayushatharva.brotli4j.Brotli4jLoader'.
+13:35:23.348 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class com/aayushatharva/brotli4j/Brotli4jLoader
+13:35:23.349 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Found static initializer in class com/aayushatharva/brotli4j/Brotli4jLoader
+13:35:23.353 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Defined package (3): package com.aayushatharva.brotli4j, -1612209437
+13:35:23.354 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: com.aayushatharva.brotli4j.Brotli4jLoader
+13:35:23.355 [main] DEBUG org.evosuite.runtime.sandbox.MSecurityManager - Security manager blocks permission ("java.lang.RuntimePermission" "loadLibrary.brotli")
+java.lang.Thread.getStackTrace(Thread.java:1564)
+org.evosuite.runtime.sandbox.MSecurityManager.checkPermission(MSecurityManager.java:424)
+java.lang.SecurityManager.checkLink(SecurityManager.java:835)
+java.lang.Runtime.loadLibrary0(Runtime.java:837)
+java.lang.System.loadLibrary(System.java:1136)
+com.aayushatharva.brotli4j.Brotli4jLoader.<clinit>(Brotli4jLoader.java)
+io.netty.handler.codec.compression.Brotli.<clinit>(Brotli.java)
+io.netty.handler.codec.compression.BrotliDecoder.<clinit>(BrotliDecoder.java)
+java.lang.Class.forName0(Native Method)
+java.lang.Class.forName(Class.java:348)
+org.evosuite.runtime.classhandling.ClassStateSupport.loadClasses(ClassStateSupport.java:163)
+org.evosuite.runtime.classhandling.ClassStateSupport.initializeClasses(ClassStateSupport.java:64)
+io.netty.handler.codec.compression.BrotliDecoder_ESTest_scaffolding.initializeClasses(BrotliDecoder_ESTest_scaffolding.java:82)
+io.netty.handler.codec.compression.BrotliDecoder_ESTest_scaffolding.initEvoSuiteFramework(BrotliDecoder_ESTest_scaffolding.java:39)
+sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+java.lang.reflect.Method.invoke(Method.java:498)
+org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+org.junit.internal.runners.statements.RunBefores.invokeMethod(RunBefores.java:33)
+org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:316)
+org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:240)
+org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:214)
+org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:155)
+org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+
+13:35:23.356 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: com.aayushatharva.brotli4j.service.BrotliNativeProvider
+13:35:23.356 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'com.aayushatharva.brotli4j.service.BrotliNativeProvider'.
+13:35:23.358 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Defined package (3): package com.aayushatharva.brotli4j.service, -1332877654
+13:35:23.359 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: com.aayushatharva.brotli4j.service.BrotliNativeProvider
+13:35:23.364 [main] DEBUG org.evosuite.runtime.sandbox.MSecurityManager - Security manager blocks permission ("java.io.FilePermission" "/tmp/com_aayushatharva_brotli4j_1392409281320000/libbrotli.so" "delete")
+java.lang.Thread.getStackTrace(Thread.java:1564)
+org.evosuite.runtime.sandbox.MSecurityManager.checkPermission(MSecurityManager.java:424)
+java.lang.SecurityManager.checkDelete(SecurityManager.java:1007)
+sun.nio.fs.UnixPath.checkDelete(UnixPath.java:807)
+sun.nio.fs.UnixFileSystemProvider.implDelete(UnixFileSystemProvider.java:222)
+sun.nio.fs.AbstractFileSystemProvider.deleteIfExists(AbstractFileSystemProvider.java:108)
+java.nio.file.Files.deleteIfExists(Files.java:1165)
+java.nio.file.Files.copy(Files.java:3004)
+com.aayushatharva.brotli4j.Brotli4jLoader.<clinit>(Brotli4jLoader.java)
+io.netty.handler.codec.compression.Brotli.<clinit>(Brotli.java)
+io.netty.handler.codec.compression.BrotliDecoder.<clinit>(BrotliDecoder.java)
+java.lang.Class.forName0(Native Method)
+java.lang.Class.forName(Class.java:348)
+org.evosuite.runtime.classhandling.ClassStateSupport.loadClasses(ClassStateSupport.java:163)
+org.evosuite.runtime.classhandling.ClassStateSupport.initializeClasses(ClassStateSupport.java:64)
+io.netty.handler.codec.compression.BrotliDecoder_ESTest_scaffolding.initializeClasses(BrotliDecoder_ESTest_scaffolding.java:82)
+io.netty.handler.codec.compression.BrotliDecoder_ESTest_scaffolding.initEvoSuiteFramework(BrotliDecoder_ESTest_scaffolding.java:39)
+sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+java.lang.reflect.Method.invoke(Method.java:498)
+org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+org.junit.internal.runners.statements.RunBefores.invokeMethod(RunBefores.java:33)
+org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:316)
+org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:240)
+org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:214)
+org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:155)
+org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+
+13:35:23.368 [main] DEBUG org.evosuite.runtime.sandbox.MSecurityManager - Security manager blocks permission ("java.io.FilePermission" "/tmp/com_aayushatharva_brotli4j_1392409281320000/libbrotli.so" "write")
+java.lang.Thread.getStackTrace(Thread.java:1564)
+org.evosuite.runtime.sandbox.MSecurityManager.checkPermission(MSecurityManager.java:424)
+java.lang.SecurityManager.checkWrite(SecurityManager.java:979)
+sun.nio.fs.UnixChannelFactory.open(UnixChannelFactory.java:247)
+sun.nio.fs.UnixChannelFactory.newFileChannel(UnixChannelFactory.java:136)
+sun.nio.fs.UnixChannelFactory.newFileChannel(UnixChannelFactory.java:148)
+sun.nio.fs.UnixFileSystemProvider.newByteChannel(UnixFileSystemProvider.java:212)
+java.nio.file.spi.FileSystemProvider.newOutputStream(FileSystemProvider.java:434)
+java.nio.file.Files.newOutputStream(Files.java:216)
+java.nio.file.Files.copy(Files.java:3016)
+com.aayushatharva.brotli4j.Brotli4jLoader.<clinit>(Brotli4jLoader.java)
+io.netty.handler.codec.compression.Brotli.<clinit>(Brotli.java)
+io.netty.handler.codec.compression.BrotliDecoder.<clinit>(BrotliDecoder.java)
+java.lang.Class.forName0(Native Method)
+java.lang.Class.forName(Class.java:348)
+org.evosuite.runtime.classhandling.ClassStateSupport.loadClasses(ClassStateSupport.java:163)
+org.evosuite.runtime.classhandling.ClassStateSupport.initializeClasses(ClassStateSupport.java:64)
+io.netty.handler.codec.compression.BrotliDecoder_ESTest_scaffolding.initializeClasses(BrotliDecoder_ESTest_scaffolding.java:82)
+io.netty.handler.codec.compression.BrotliDecoder_ESTest_scaffolding.initEvoSuiteFramework(BrotliDecoder_ESTest_scaffolding.java:39)
+sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+java.lang.reflect.Method.invoke(Method.java:498)
+org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+org.junit.internal.runners.statements.RunBefores.invokeMethod(RunBefores.java:33)
+org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:316)
+org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:240)
+org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:214)
+org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:155)
+org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+
+13:35:23.374 [main] DEBUG io.netty.handler.codec.compression.Brotli - Failed to load brotli4j; Brotli support will be unavailable.
+java.lang.SecurityException: Security manager blocks ("java.io.FilePermission" "/tmp/com_aayushatharva_brotli4j_1392409281320000/libbrotli.so" "write")
+java.lang.Thread.getStackTrace(Thread.java:1564)
+org.evosuite.runtime.sandbox.MSecurityManager.checkPermission(MSecurityManager.java:424)
+java.lang.SecurityManager.checkWrite(SecurityManager.java:979)
+sun.nio.fs.UnixChannelFactory.open(UnixChannelFactory.java:247)
+sun.nio.fs.UnixChannelFactory.newFileChannel(UnixChannelFactory.java:136)
+sun.nio.fs.UnixChannelFactory.newFileChannel(UnixChannelFactory.java:148)
+sun.nio.fs.UnixFileSystemProvider.newByteChannel(UnixFileSystemProvider.java:212)
+java.nio.file.spi.FileSystemProvider.newOutputStream(FileSystemProvider.java:434)
+java.nio.file.Files.newOutputStream(Files.java:216)
+java.nio.file.Files.copy(Files.java:3016)
+com.aayushatharva.brotli4j.Brotli4jLoader.<clinit>(Brotli4jLoader.java)
+io.netty.handler.codec.compression.Brotli.<clinit>(Brotli.java)
+io.netty.handler.codec.compression.BrotliDecoder.<clinit>(BrotliDecoder.java)
+java.lang.Class.forName0(Native Method)
+java.lang.Class.forName(Class.java:348)
+org.evosuite.runtime.classhandling.ClassStateSupport.loadClasses(ClassStateSupport.java:163)
+org.evosuite.runtime.classhandling.ClassStateSupport.initializeClasses(ClassStateSupport.java:64)
+io.netty.handler.codec.compression.BrotliDecoder_ESTest_scaffolding.initializeClasses(BrotliDecoder_ESTest_scaffolding.java:82)
+io.netty.handler.codec.compression.BrotliDecoder_ESTest_scaffolding.initEvoSuiteFramework(BrotliDecoder_ESTest_scaffolding.java:39)
+sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+java.lang.reflect.Method.invoke(Method.java:498)
+org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+org.junit.internal.runners.statements.RunBefores.invokeMethod(RunBefores.java:33)
+org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:316)
+org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:240)
+org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:214)
+org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:155)
+org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+
+	at org.evosuite.runtime.sandbox.MSecurityManager.checkPermission(MSecurityManager.java:436)
+	at java.lang.SecurityManager.checkWrite(SecurityManager.java:979)
+	at sun.nio.fs.UnixChannelFactory.open(UnixChannelFactory.java:247)
+	at sun.nio.fs.UnixChannelFactory.newFileChannel(UnixChannelFactory.java:136)
+	at sun.nio.fs.UnixChannelFactory.newFileChannel(UnixChannelFactory.java:148)
+	at sun.nio.fs.UnixFileSystemProvider.newByteChannel(UnixFileSystemProvider.java:212)
+	at java.nio.file.spi.FileSystemProvider.newOutputStream(FileSystemProvider.java:434)
+	at java.nio.file.Files.newOutputStream(Files.java:216)
+	at java.nio.file.Files.copy(Files.java:3016)
+	at com.aayushatharva.brotli4j.Brotli4jLoader.<clinit>(Brotli4jLoader.java)
+	at io.netty.handler.codec.compression.Brotli.<clinit>(Brotli.java)
+	at io.netty.handler.codec.compression.BrotliDecoder.<clinit>(BrotliDecoder.java)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:348)
+	at org.evosuite.runtime.classhandling.ClassStateSupport.loadClasses(ClassStateSupport.java:163)
+	at org.evosuite.runtime.classhandling.ClassStateSupport.initializeClasses(ClassStateSupport.java:64)
+	at io.netty.handler.codec.compression.BrotliDecoder_ESTest_scaffolding.initializeClasses(BrotliDecoder_ESTest_scaffolding.java:82)
+	at io.netty.handler.codec.compression.BrotliDecoder_ESTest_scaffolding.initEvoSuiteFramework(BrotliDecoder_ESTest_scaffolding.java:39)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.RunBefores.invokeMethod(RunBefores.java:33)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:316)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:240)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:214)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:155)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+13:35:23.377 [main] ERROR org.evosuite.runtime.classhandling.ClassStateSupport - Could not initialize io.netty.handler.codec.compression.BrotliDecoder: null
+13:35:23.384 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.util.internal.shaded.org.jctools.util.UnsafeAccess
+13:35:23.384 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.util.internal.shaded.org.jctools.util.UnsafeAccess'.
+13:35:23.386 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/util/internal/shaded/org/jctools/util/UnsafeAccess
+13:35:23.395 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Found static initializer in class io/netty/util/internal/shaded/org/jctools/util/UnsafeAccess
+13:35:23.395 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Defined package (3): package io.netty.util.internal.shaded.org.jctools.util, -1500502634
+13:35:23.396 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.util.internal.shaded.org.jctools.util.UnsafeAccess
+13:35:23.399 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.util.internal.shaded.org.jctools.queues.LinkedQueueNode
+13:35:23.399 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.util.internal.shaded.org.jctools.queues.LinkedQueueNode'.
+13:35:23.400 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/util/internal/shaded/org/jctools/queues/LinkedQueueNode
+13:35:23.402 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Found static initializer in class io/netty/util/internal/shaded/org/jctools/queues/LinkedQueueNode
+13:35:23.402 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.util.internal.shaded.org.jctools.queues.LinkedQueueNode
+13:35:23.411 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.buffer.UnpooledDuplicatedByteBuf
+13:35:23.417 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.buffer.UnpooledDuplicatedByteBuf'.
+13:35:23.422 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/buffer/UnpooledDuplicatedByteBuf
+13:35:23.423 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Creating brand-new static initializer in class io/netty/buffer/UnpooledDuplicatedByteBuf
+13:35:23.424 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.buffer.DuplicatedByteBuf
+13:35:23.424 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.buffer.DuplicatedByteBuf'.
+13:35:23.425 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/buffer/DuplicatedByteBuf
+13:35:23.427 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Creating brand-new static initializer in class io/netty/buffer/DuplicatedByteBuf
+13:35:23.428 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.buffer.AbstractDerivedByteBuf
+13:35:23.428 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.buffer.AbstractDerivedByteBuf'.
+13:35:23.429 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/buffer/AbstractDerivedByteBuf
+13:35:23.430 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Creating brand-new static initializer in class io/netty/buffer/AbstractDerivedByteBuf
+13:35:23.431 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.buffer.AbstractDerivedByteBuf
+13:35:23.431 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.buffer.DuplicatedByteBuf
+13:35:23.431 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.buffer.UnpooledDuplicatedByteBuf
+13:35:23.431 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.buffer.UnpooledSlicedByteBuf
+13:35:23.431 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.buffer.UnpooledSlicedByteBuf'.
+13:35:23.432 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/buffer/UnpooledSlicedByteBuf
+13:35:23.433 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Creating brand-new static initializer in class io/netty/buffer/UnpooledSlicedByteBuf
+13:35:23.433 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.buffer.AbstractUnpooledSlicedByteBuf
+13:35:23.433 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.buffer.AbstractUnpooledSlicedByteBuf'.
+13:35:23.435 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/buffer/AbstractUnpooledSlicedByteBuf
+13:35:23.436 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Creating brand-new static initializer in class io/netty/buffer/AbstractUnpooledSlicedByteBuf
+13:35:23.437 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.buffer.AbstractUnpooledSlicedByteBuf
+13:35:23.437 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.buffer.UnpooledSlicedByteBuf
+13:35:23.438 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.buffer.SwappedByteBuf
+13:35:23.438 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.buffer.SwappedByteBuf'.
+13:35:23.439 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/buffer/SwappedByteBuf
+13:35:23.443 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Creating brand-new static initializer in class io/netty/buffer/SwappedByteBuf
+13:35:23.444 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.buffer.SwappedByteBuf
+13:35:23.446 [main] DEBUG io.netty.buffer.AbstractByteBuf - -Dio.netty.buffer.checkAccessible: true
+13:35:23.446 [main] DEBUG io.netty.buffer.AbstractByteBuf - -Dio.netty.buffer.checkBounds: true
+13:35:23.446 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.util.ResourceLeakDetectorFactory
+13:35:23.446 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.util.ResourceLeakDetectorFactory'.
+13:35:23.448 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/util/ResourceLeakDetectorFactory
+13:35:23.449 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Found static initializer in class io/netty/util/ResourceLeakDetectorFactory
+13:35:23.449 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.util.ResourceLeakDetectorFactory
+13:35:23.449 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.util.ResourceLeakDetectorFactory$DefaultResourceLeakDetectorFactory
+13:35:23.449 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.util.ResourceLeakDetectorFactory$DefaultResourceLeakDetectorFactory'.
+13:35:23.450 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/util/ResourceLeakDetectorFactory$DefaultResourceLeakDetectorFactory
+13:35:23.452 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Creating brand-new static initializer in class io/netty/util/ResourceLeakDetectorFactory$DefaultResourceLeakDetectorFactory
+13:35:23.453 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.util.ResourceLeakDetectorFactory$DefaultResourceLeakDetectorFactory
+13:35:23.454 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.util.ResourceLeakDetector
+13:35:23.454 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.util.ResourceLeakDetector'.
+13:35:23.456 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/util/ResourceLeakDetector
+13:35:23.460 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Found static initializer in class io/netty/util/ResourceLeakDetector
+13:35:23.462 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.util.ResourceLeakDetector
+13:35:23.462 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.util.ResourceLeakTracker
+13:35:23.462 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.util.ResourceLeakTracker'.
+13:35:23.464 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.util.ResourceLeakTracker
+13:35:23.465 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.util.ResourceLeak
+13:35:23.465 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.util.ResourceLeak'.
+13:35:23.466 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.util.ResourceLeak
+13:35:23.467 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.util.ResourceLeakDetector$Level
+13:35:23.467 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.util.ResourceLeakDetector$Level'.
+13:35:23.468 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/util/ResourceLeakDetector$Level
+13:35:23.469 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Found static initializer in class io/netty/util/ResourceLeakDetector$Level
+13:35:23.470 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.util.ResourceLeakDetector$Level
+13:35:23.471 [main] DEBUG io.netty.util.ResourceLeakDetector - -Dio.netty.leakDetection.level: simple
+13:35:23.471 [main] DEBUG io.netty.util.ResourceLeakDetector - -Dio.netty.leakDetection.targetRecords: 4
+13:35:23.471 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.util.internal.EmptyArrays
+13:35:23.471 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.util.internal.EmptyArrays'.
+13:35:23.472 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/util/internal/EmptyArrays
+13:35:23.473 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Found static initializer in class io/netty/util/internal/EmptyArrays
+13:35:23.474 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.util.internal.EmptyArrays
+13:35:23.474 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.util.AsciiString
+13:35:23.474 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.util.AsciiString'.
+13:35:23.478 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/util/AsciiString
+13:35:23.492 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Found static initializer in class io/netty/util/AsciiString
+13:35:23.494 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.util.AsciiString
+13:35:23.496 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.util.internal.StringUtil
+13:35:23.496 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.util.internal.StringUtil'.
+13:35:23.498 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/util/internal/StringUtil
+13:35:23.503 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Found static initializer in class io/netty/util/internal/StringUtil
+13:35:23.505 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.util.internal.StringUtil
+13:35:23.508 [main] DEBUG io.netty.util.ResourceLeakDetectorFactory - Loaded default ResourceLeakDetector: io.netty.util.ResourceLeakDetector@13
+13:35:23.512 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.util.internal.ReferenceCountUpdater
+13:35:23.512 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.util.internal.ReferenceCountUpdater'.
+13:35:23.513 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/util/internal/ReferenceCountUpdater
+13:35:23.515 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Creating brand-new static initializer in class io/netty/util/internal/ReferenceCountUpdater
+13:35:23.519 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.util.internal.ReferenceCountUpdater
+13:35:23.519 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.buffer.AbstractReferenceCountedByteBuf$1
+13:35:23.519 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.buffer.AbstractReferenceCountedByteBuf$1'.
+13:35:23.520 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/buffer/AbstractReferenceCountedByteBuf$1
+13:35:23.521 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.buffer.AbstractReferenceCountedByteBuf$1
+13:35:23.523 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.buffer.CompositeByteBuf$ByteWrapper
+13:35:23.523 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.buffer.CompositeByteBuf$ByteWrapper'.
+13:35:23.524 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.buffer.CompositeByteBuf$ByteWrapper
+13:35:23.528 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.buffer.Unpooled
+13:35:23.528 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.buffer.Unpooled'.
+13:35:23.529 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/buffer/Unpooled
+13:35:23.537 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Found static initializer in class io/netty/buffer/Unpooled
+13:35:23.539 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.buffer.Unpooled
+13:35:23.539 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.buffer.ReadOnlyByteBuf
+13:35:23.539 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.buffer.ReadOnlyByteBuf'.
+13:35:23.541 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/buffer/ReadOnlyByteBuf
+13:35:23.543 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Creating brand-new static initializer in class io/netty/buffer/ReadOnlyByteBuf
+13:35:23.544 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.buffer.ReadOnlyByteBuf
+13:35:23.545 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.buffer.ByteBufAllocator
+13:35:23.545 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.buffer.ByteBufAllocator'.
+13:35:23.547 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.buffer.ByteBufAllocator
+13:35:23.548 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.buffer.UnreleasableByteBuf
+13:35:23.548 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.buffer.UnreleasableByteBuf'.
+13:35:23.549 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/buffer/UnreleasableByteBuf
+13:35:23.550 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Creating brand-new static initializer in class io/netty/buffer/UnreleasableByteBuf
+13:35:23.551 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.buffer.WrappedByteBuf
+13:35:23.551 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.buffer.WrappedByteBuf'.
+13:35:23.553 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/buffer/WrappedByteBuf
+13:35:23.560 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Creating brand-new static initializer in class io/netty/buffer/WrappedByteBuf
+13:35:23.563 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.buffer.WrappedByteBuf
+13:35:23.563 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.buffer.UnreleasableByteBuf
+13:35:23.563 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.buffer.FixedCompositeByteBuf
+13:35:23.563 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.buffer.FixedCompositeByteBuf'.
+13:35:23.565 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/buffer/FixedCompositeByteBuf
+13:35:23.571 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Found static initializer in class io/netty/buffer/FixedCompositeByteBuf
+13:35:23.572 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.buffer.FixedCompositeByteBuf
+13:35:23.572 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.buffer.UnpooledHeapByteBuf
+13:35:23.573 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.buffer.UnpooledHeapByteBuf'.
+13:35:23.574 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/buffer/UnpooledHeapByteBuf
+13:35:23.581 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Creating brand-new static initializer in class io/netty/buffer/UnpooledHeapByteBuf
+13:35:23.582 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.buffer.UnpooledHeapByteBuf
+13:35:23.582 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.buffer.ReadOnlyUnsafeDirectByteBuf
+13:35:23.582 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.buffer.ReadOnlyUnsafeDirectByteBuf'.
+13:35:23.584 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/buffer/ReadOnlyUnsafeDirectByteBuf
+13:35:23.585 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Creating brand-new static initializer in class io/netty/buffer/ReadOnlyUnsafeDirectByteBuf
+13:35:23.587 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.buffer.ReadOnlyByteBufferBuf
+13:35:23.587 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.buffer.ReadOnlyByteBufferBuf'.
+13:35:23.589 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/buffer/ReadOnlyByteBufferBuf
+13:35:23.593 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Creating brand-new static initializer in class io/netty/buffer/ReadOnlyByteBufferBuf
+13:35:23.594 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.buffer.ReadOnlyByteBufferBuf
+13:35:23.594 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.buffer.ReadOnlyUnsafeDirectByteBuf
+13:35:23.594 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.buffer.UnpooledUnsafeDirectByteBuf
+13:35:23.594 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.buffer.UnpooledUnsafeDirectByteBuf'.
+13:35:23.595 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/buffer/UnpooledUnsafeDirectByteBuf
+13:35:23.597 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Creating brand-new static initializer in class io/netty/buffer/UnpooledUnsafeDirectByteBuf
+13:35:23.597 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.buffer.UnpooledDirectByteBuf
+13:35:23.597 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.buffer.UnpooledDirectByteBuf'.
+13:35:23.599 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/buffer/UnpooledDirectByteBuf
+13:35:23.603 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Creating brand-new static initializer in class io/netty/buffer/UnpooledDirectByteBuf
+13:35:23.604 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.buffer.UnpooledDirectByteBuf
+13:35:23.604 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.buffer.UnpooledUnsafeDirectByteBuf
+13:35:23.604 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.buffer.WrappedUnpooledUnsafeDirectByteBuf
+13:35:23.604 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.buffer.WrappedUnpooledUnsafeDirectByteBuf'.
+13:35:23.606 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/buffer/WrappedUnpooledUnsafeDirectByteBuf
+13:35:23.606 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Creating brand-new static initializer in class io/netty/buffer/WrappedUnpooledUnsafeDirectByteBuf
+13:35:23.607 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.buffer.WrappedUnpooledUnsafeDirectByteBuf
+13:35:23.607 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.buffer.UnpooledByteBufAllocator
+13:35:23.607 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.buffer.UnpooledByteBufAllocator'.
+13:35:23.609 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/buffer/UnpooledByteBufAllocator
+13:35:23.657 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Found static initializer in class io/netty/buffer/UnpooledByteBufAllocator
+13:35:23.657 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.buffer.ByteBufAllocatorMetricProvider
+13:35:23.657 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.buffer.ByteBufAllocatorMetricProvider'.
+13:35:23.659 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.buffer.ByteBufAllocatorMetricProvider
+13:35:23.660 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.buffer.AbstractByteBufAllocator
+13:35:23.660 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.buffer.AbstractByteBufAllocator'.
+13:35:23.662 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/buffer/AbstractByteBufAllocator
+13:35:23.689 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Found static initializer in class io/netty/buffer/AbstractByteBufAllocator
+13:35:23.690 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.buffer.AbstractByteBufAllocator
+13:35:23.690 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.buffer.UnpooledByteBufAllocator
+13:35:23.691 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.buffer.SimpleLeakAwareByteBuf
+13:35:23.691 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.buffer.SimpleLeakAwareByteBuf'.
+13:35:23.692 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/buffer/SimpleLeakAwareByteBuf
+13:35:23.694 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Found static initializer in class io/netty/buffer/SimpleLeakAwareByteBuf
+13:35:23.694 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.buffer.SimpleLeakAwareByteBuf
+13:35:23.694 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.buffer.AdvancedLeakAwareByteBuf
+13:35:23.695 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.buffer.AdvancedLeakAwareByteBuf'.
+13:35:23.696 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/buffer/AdvancedLeakAwareByteBuf
+13:35:23.699 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Found static initializer in class io/netty/buffer/AdvancedLeakAwareByteBuf
+13:35:23.700 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.buffer.AdvancedLeakAwareByteBuf
+13:35:23.701 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.buffer.SimpleLeakAwareCompositeByteBuf
+13:35:23.701 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.buffer.SimpleLeakAwareCompositeByteBuf'.
+13:35:23.702 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/buffer/SimpleLeakAwareCompositeByteBuf
+13:35:23.703 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Found static initializer in class io/netty/buffer/SimpleLeakAwareCompositeByteBuf
+13:35:23.704 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.buffer.WrappedCompositeByteBuf
+13:35:23.704 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.buffer.WrappedCompositeByteBuf'.
+13:35:23.706 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/buffer/WrappedCompositeByteBuf
+13:35:23.710 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Creating brand-new static initializer in class io/netty/buffer/WrappedCompositeByteBuf
+13:35:23.712 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.buffer.WrappedCompositeByteBuf
+13:35:23.714 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.buffer.SimpleLeakAwareCompositeByteBuf
+13:35:23.714 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.buffer.AdvancedLeakAwareCompositeByteBuf
+13:35:23.714 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.buffer.AdvancedLeakAwareCompositeByteBuf'.
+13:35:23.716 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/buffer/AdvancedLeakAwareCompositeByteBuf
+13:35:23.719 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Creating brand-new static initializer in class io/netty/buffer/AdvancedLeakAwareCompositeByteBuf
+13:35:23.721 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.buffer.AdvancedLeakAwareCompositeByteBuf
+13:35:23.721 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.buffer.EmptyByteBuf
+13:35:23.721 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.buffer.EmptyByteBuf'.
+13:35:23.723 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/buffer/EmptyByteBuf
+13:35:23.726 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Found static initializer in class io/netty/buffer/EmptyByteBuf
+13:35:23.727 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.buffer.EmptyByteBuf
+13:35:23.728 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.buffer.UnpooledByteBufAllocator$InstrumentedUnpooledUnsafeNoCleanerDirectByteBuf
+13:35:23.728 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.buffer.UnpooledByteBufAllocator$InstrumentedUnpooledUnsafeNoCleanerDirectByteBuf'.
+13:35:23.729 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/buffer/UnpooledByteBufAllocator$InstrumentedUnpooledUnsafeNoCleanerDirectByteBuf
+13:35:23.729 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Creating brand-new static initializer in class io/netty/buffer/UnpooledByteBufAllocator$InstrumentedUnpooledUnsafeNoCleanerDirectByteBuf
+13:35:23.730 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.buffer.UnpooledUnsafeNoCleanerDirectByteBuf
+13:35:23.730 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.buffer.UnpooledUnsafeNoCleanerDirectByteBuf'.
+13:35:23.731 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/buffer/UnpooledUnsafeNoCleanerDirectByteBuf
+13:35:23.731 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Creating brand-new static initializer in class io/netty/buffer/UnpooledUnsafeNoCleanerDirectByteBuf
+13:35:23.732 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.buffer.UnpooledUnsafeNoCleanerDirectByteBuf
+13:35:23.732 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.buffer.UnpooledByteBufAllocator$InstrumentedUnpooledUnsafeNoCleanerDirectByteBuf
+13:35:23.732 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.buffer.UnpooledByteBufAllocator$InstrumentedUnpooledUnsafeDirectByteBuf
+13:35:23.732 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.buffer.UnpooledByteBufAllocator$InstrumentedUnpooledUnsafeDirectByteBuf'.
+13:35:23.732 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/buffer/UnpooledByteBufAllocator$InstrumentedUnpooledUnsafeDirectByteBuf
+13:35:23.733 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Creating brand-new static initializer in class io/netty/buffer/UnpooledByteBufAllocator$InstrumentedUnpooledUnsafeDirectByteBuf
+13:35:23.733 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.buffer.UnpooledByteBufAllocator$InstrumentedUnpooledUnsafeDirectByteBuf
+13:35:23.733 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.buffer.UnpooledByteBufAllocator$InstrumentedUnpooledDirectByteBuf
+13:35:23.733 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.buffer.UnpooledByteBufAllocator$InstrumentedUnpooledDirectByteBuf'.
+13:35:23.734 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/buffer/UnpooledByteBufAllocator$InstrumentedUnpooledDirectByteBuf
+13:35:23.735 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Creating brand-new static initializer in class io/netty/buffer/UnpooledByteBufAllocator$InstrumentedUnpooledDirectByteBuf
+13:35:23.735 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.buffer.UnpooledByteBufAllocator$InstrumentedUnpooledDirectByteBuf
+13:35:23.736 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.buffer.UnpooledByteBufAllocator$InstrumentedUnpooledUnsafeHeapByteBuf
+13:35:23.736 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.buffer.UnpooledByteBufAllocator$InstrumentedUnpooledUnsafeHeapByteBuf'.
+13:35:23.737 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/buffer/UnpooledByteBufAllocator$InstrumentedUnpooledUnsafeHeapByteBuf
+13:35:23.738 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Creating brand-new static initializer in class io/netty/buffer/UnpooledByteBufAllocator$InstrumentedUnpooledUnsafeHeapByteBuf
+13:35:23.738 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.buffer.UnpooledUnsafeHeapByteBuf
+13:35:23.738 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.buffer.UnpooledUnsafeHeapByteBuf'.
+13:35:23.740 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/buffer/UnpooledUnsafeHeapByteBuf
+13:35:23.742 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Creating brand-new static initializer in class io/netty/buffer/UnpooledUnsafeHeapByteBuf
+13:35:23.742 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.buffer.UnpooledUnsafeHeapByteBuf
+13:35:23.743 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.buffer.UnpooledByteBufAllocator$InstrumentedUnpooledUnsafeHeapByteBuf
+13:35:23.743 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.buffer.UnpooledByteBufAllocator$InstrumentedUnpooledHeapByteBuf
+13:35:23.743 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.buffer.UnpooledByteBufAllocator$InstrumentedUnpooledHeapByteBuf'.
+13:35:23.744 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/buffer/UnpooledByteBufAllocator$InstrumentedUnpooledHeapByteBuf
+13:35:23.745 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Creating brand-new static initializer in class io/netty/buffer/UnpooledByteBufAllocator$InstrumentedUnpooledHeapByteBuf
+13:35:23.745 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.buffer.UnpooledByteBufAllocator$InstrumentedUnpooledHeapByteBuf
+13:35:23.745 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.buffer.ByteBufAllocatorMetric
+13:35:23.745 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.buffer.ByteBufAllocatorMetric'.
+13:35:23.747 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.buffer.ByteBufAllocatorMetric
+13:35:23.754 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.buffer.UnpooledByteBufAllocator$UnpooledByteBufAllocatorMetric
+13:35:23.755 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.buffer.UnpooledByteBufAllocator$UnpooledByteBufAllocatorMetric'.
+13:35:23.756 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/buffer/UnpooledByteBufAllocator$UnpooledByteBufAllocatorMetric
+13:35:23.756 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Creating brand-new static initializer in class io/netty/buffer/UnpooledByteBufAllocator$UnpooledByteBufAllocatorMetric
+13:35:23.757 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.buffer.UnpooledByteBufAllocator$UnpooledByteBufAllocatorMetric
+13:35:23.757 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.util.internal.LongAdderCounter
+13:35:23.757 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.util.internal.LongAdderCounter'.
+13:35:23.758 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/util/internal/LongAdderCounter
+13:35:23.758 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Creating brand-new static initializer in class io/netty/util/internal/LongAdderCounter
+13:35:23.759 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.util.internal.LongAdderCounter
+13:35:23.760 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.buffer.CompositeByteBuf$1
+13:35:23.760 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.buffer.CompositeByteBuf$1'.
+13:35:23.761 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/buffer/CompositeByteBuf$1
+13:35:23.763 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.buffer.CompositeByteBuf$1
+13:35:23.763 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.buffer.CompositeByteBuf$2
+13:35:23.763 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.buffer.CompositeByteBuf$2'.
+13:35:23.764 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/buffer/CompositeByteBuf$2
+13:35:23.765 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.buffer.CompositeByteBuf$2
+13:35:23.775 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.channel.ChannelHandlerContext
+13:35:23.775 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.channel.ChannelHandlerContext'.
+13:35:23.777 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.util.AttributeMap
+13:35:23.777 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.util.AttributeMap'.
+13:35:23.779 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.util.AttributeMap
+13:35:23.779 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.channel.ChannelInboundInvoker
+13:35:23.779 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.channel.ChannelInboundInvoker'.
+13:35:23.780 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.channel.ChannelInboundInvoker
+13:35:23.781 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.channel.ChannelOutboundInvoker
+13:35:23.781 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.channel.ChannelOutboundInvoker'.
+13:35:23.782 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.channel.ChannelOutboundInvoker
+13:35:23.782 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.channel.ChannelHandlerContext
+13:35:23.783 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.util.internal.shaded.org.jctools.queues.MessagePassingQueue$Consumer
+13:35:23.783 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.util.internal.shaded.org.jctools.queues.MessagePassingQueue$Consumer'.
+13:35:23.784 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.util.internal.shaded.org.jctools.queues.MessagePassingQueue$Consumer
+13:35:23.784 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.util.internal.shaded.org.jctools.queues.MessagePassingQueue$WaitStrategy
+13:35:23.784 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.util.internal.shaded.org.jctools.queues.MessagePassingQueue$WaitStrategy'.
+13:35:23.785 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.util.internal.shaded.org.jctools.queues.MessagePassingQueue$WaitStrategy
+13:35:23.785 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.util.internal.shaded.org.jctools.queues.MessagePassingQueue$ExitCondition
+13:35:23.785 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.util.internal.shaded.org.jctools.queues.MessagePassingQueue$ExitCondition'.
+13:35:23.787 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.util.internal.shaded.org.jctools.queues.MessagePassingQueue$ExitCondition
+13:35:23.787 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.util.internal.shaded.org.jctools.queues.MessagePassingQueue$Supplier
+13:35:23.787 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.util.internal.shaded.org.jctools.queues.MessagePassingQueue$Supplier'.
+13:35:23.789 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.util.internal.shaded.org.jctools.queues.MessagePassingQueue$Supplier
+13:35:23.790 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.util.ByteProcessor
+13:35:23.790 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.util.ByteProcessor'.
+13:35:23.791 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.util.ByteProcessor
+13:35:23.793 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.buffer.CompositeByteBuf$Component
+13:35:23.793 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.buffer.CompositeByteBuf$Component'.
+13:35:23.793 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/buffer/CompositeByteBuf$Component
+13:35:23.794 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Creating brand-new static initializer in class io/netty/buffer/CompositeByteBuf$Component
+13:35:23.795 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.buffer.CompositeByteBuf$Component
+13:35:23.795 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.util.internal.logging.InternalLogLevel
+13:35:23.795 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.util.internal.logging.InternalLogLevel'.
+13:35:23.796 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/util/internal/logging/InternalLogLevel
+13:35:23.797 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Found static initializer in class io/netty/util/internal/logging/InternalLogLevel
+13:35:23.797 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.util.internal.logging.InternalLogLevel
+13:35:23.799 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.handler.codec.CodecOutputList
+13:35:23.799 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.handler.codec.CodecOutputList'.
+13:35:23.800 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/handler/codec/CodecOutputList
+13:35:23.801 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Found static initializer in class io/netty/handler/codec/CodecOutputList
+13:35:23.801 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.handler.codec.CodecOutputList
+13:35:23.837 [main] DEBUG io.netty.util.internal.logging.InternalLoggerFactory - Using SLF4J as the default logging framework
+13:35:23.839 [main] DEBUG io.netty.util.internal.PlatformDependent0 - -Dio.netty.noUnsafe: false
+13:35:23.840 [main] DEBUG io.netty.util.internal.PlatformDependent0 - Java version: 8
+13:35:23.840 [main] DEBUG io.netty.util.internal.PlatformDependent0 - sun.misc.Unsafe.theUnsafe: available
+13:35:23.841 [main] DEBUG io.netty.util.internal.PlatformDependent0 - sun.misc.Unsafe.copyMemory: available
+13:35:23.841 [main] DEBUG io.netty.util.internal.PlatformDependent0 - sun.misc.Unsafe.storeFence: available
+13:35:23.841 [main] DEBUG io.netty.util.internal.PlatformDependent0 - java.nio.Buffer.address: available
+13:35:23.841 [main] DEBUG io.netty.util.internal.PlatformDependent0 - direct buffer constructor: available
+13:35:23.842 [main] DEBUG io.netty.util.internal.PlatformDependent0 - java.nio.Bits.unaligned: available, true
+13:35:23.842 [main] DEBUG io.netty.util.internal.PlatformDependent0 - jdk.internal.misc.Unsafe.allocateUninitializedArray(int): unavailable prior to Java9
+13:35:23.842 [main] DEBUG io.netty.util.internal.PlatformDependent0 - java.nio.DirectByteBuffer.<init>(long, {int,long}): available
+13:35:23.844 [main] DEBUG io.netty.util.internal.CleanerJava6 - java.nio.ByteBuffer.cleaner(): available
+13:35:23.845 [main] DEBUG io.netty.util.internal.PlatformDependent - sun.misc.Unsafe: available
+13:35:23.846 [main] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.tmpdir: /tmp (java.io.tmpdir)
+13:35:23.847 [main] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+13:35:23.848 [main] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.maxDirectMemory: 11420041216 bytes
+13:35:23.848 [main] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.uninitializedArrayAllocationThreshold: -1
+13:35:23.849 [main] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.noPreferDirect: false
+13:35:23.852 [main] DEBUG org.evosuite.runtime.sandbox.MSecurityManager - Security manager blocks permission ("java.lang.RuntimePermission" "loadLibrary.brotli")
+java.lang.Thread.getStackTrace(Thread.java:1564)
+org.evosuite.runtime.sandbox.MSecurityManager.checkPermission(MSecurityManager.java:424)
+java.lang.SecurityManager.checkLink(SecurityManager.java:835)
+java.lang.Runtime.loadLibrary0(Runtime.java:837)
+java.lang.System.loadLibrary(System.java:1136)
+com.aayushatharva.brotli4j.Brotli4jLoader.__STATIC_RESET(Brotli4jLoader.java:49)
+sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+java.lang.reflect.Method.invoke(Method.java:498)
+org.evosuite.runtime.classhandling.ClassResetter.reset(ClassResetter.java:159)
+org.evosuite.runtime.classhandling.ClassStateSupport.resetClasses(ClassStateSupport.java:137)
+io.netty.handler.codec.compression.BrotliDecoder_ESTest_scaffolding.resetClasses(BrotliDecoder_ESTest_scaffolding.java:178)
+io.netty.handler.codec.compression.BrotliDecoder_ESTest_scaffolding.doneWithTestCase(BrotliDecoder_ESTest_scaffolding.java:66)
+sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+java.lang.reflect.Method.invoke(Method.java:498)
+org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+org.junit.internal.runners.statements.RunAfters.invokeMethod(RunAfters.java:46)
+org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:33)
+org.evosuite.runtime.vnet.NonFunctionalRequirementRule$1.evaluate(NonFunctionalRequirementRule.java:41)
+org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:316)
+org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:240)
+org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:214)
+org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:155)
+org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+
+13:35:23.858 [main] DEBUG org.evosuite.runtime.sandbox.MSecurityManager - Security manager blocks permission ("java.io.FilePermission" "/tmp/com_aayushatharva_brotli4j_1392409281320000/libbrotli.so" "delete")
+java.lang.Thread.getStackTrace(Thread.java:1564)
+org.evosuite.runtime.sandbox.MSecurityManager.checkPermission(MSecurityManager.java:424)
+java.lang.SecurityManager.checkDelete(SecurityManager.java:1007)
+sun.nio.fs.UnixPath.checkDelete(UnixPath.java:807)
+sun.nio.fs.UnixFileSystemProvider.implDelete(UnixFileSystemProvider.java:222)
+sun.nio.fs.AbstractFileSystemProvider.deleteIfExists(AbstractFileSystemProvider.java:108)
+java.nio.file.Files.deleteIfExists(Files.java:1165)
+java.nio.file.Files.copy(Files.java:3004)
+com.aayushatharva.brotli4j.Brotli4jLoader.__STATIC_RESET(Brotli4jLoader.java:80)
+sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+java.lang.reflect.Method.invoke(Method.java:498)
+org.evosuite.runtime.classhandling.ClassResetter.reset(ClassResetter.java:159)
+org.evosuite.runtime.classhandling.ClassStateSupport.resetClasses(ClassStateSupport.java:137)
+io.netty.handler.codec.compression.BrotliDecoder_ESTest_scaffolding.resetClasses(BrotliDecoder_ESTest_scaffolding.java:178)
+io.netty.handler.codec.compression.BrotliDecoder_ESTest_scaffolding.doneWithTestCase(BrotliDecoder_ESTest_scaffolding.java:66)
+sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+java.lang.reflect.Method.invoke(Method.java:498)
+org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+org.junit.internal.runners.statements.RunAfters.invokeMethod(RunAfters.java:46)
+org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:33)
+org.evosuite.runtime.vnet.NonFunctionalRequirementRule$1.evaluate(NonFunctionalRequirementRule.java:41)
+org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:316)
+org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:240)
+org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:214)
+org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:155)
+org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+
+13:35:23.861 [main] DEBUG org.evosuite.runtime.sandbox.MSecurityManager - Security manager blocks permission ("java.io.FilePermission" "/tmp/com_aayushatharva_brotli4j_1392409281320000/libbrotli.so" "write")
+java.lang.Thread.getStackTrace(Thread.java:1564)
+org.evosuite.runtime.sandbox.MSecurityManager.checkPermission(MSecurityManager.java:424)
+java.lang.SecurityManager.checkWrite(SecurityManager.java:979)
+sun.nio.fs.UnixChannelFactory.open(UnixChannelFactory.java:247)
+sun.nio.fs.UnixChannelFactory.newFileChannel(UnixChannelFactory.java:136)
+sun.nio.fs.UnixChannelFactory.newFileChannel(UnixChannelFactory.java:148)
+sun.nio.fs.UnixFileSystemProvider.newByteChannel(UnixFileSystemProvider.java:212)
+java.nio.file.spi.FileSystemProvider.newOutputStream(FileSystemProvider.java:434)
+java.nio.file.Files.newOutputStream(Files.java:216)
+java.nio.file.Files.copy(Files.java:3016)
+com.aayushatharva.brotli4j.Brotli4jLoader.__STATIC_RESET(Brotli4jLoader.java:80)
+sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+java.lang.reflect.Method.invoke(Method.java:498)
+org.evosuite.runtime.classhandling.ClassResetter.reset(ClassResetter.java:159)
+org.evosuite.runtime.classhandling.ClassStateSupport.resetClasses(ClassStateSupport.java:137)
+io.netty.handler.codec.compression.BrotliDecoder_ESTest_scaffolding.resetClasses(BrotliDecoder_ESTest_scaffolding.java:178)
+io.netty.handler.codec.compression.BrotliDecoder_ESTest_scaffolding.doneWithTestCase(BrotliDecoder_ESTest_scaffolding.java:66)
+sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+java.lang.reflect.Method.invoke(Method.java:498)
+org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+org.junit.internal.runners.statements.RunAfters.invokeMethod(RunAfters.java:46)
+org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:33)
+org.evosuite.runtime.vnet.NonFunctionalRequirementRule$1.evaluate(NonFunctionalRequirementRule.java:41)
+org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:316)
+org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:240)
+org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:214)
+org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:155)
+org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+
+13:35:23.863 [main] DEBUG io.netty.handler.codec.compression.Brotli - Failed to load brotli4j; Brotli support will be unavailable.
+java.lang.SecurityException: Security manager blocks ("java.io.FilePermission" "/tmp/com_aayushatharva_brotli4j_1392409281320000/libbrotli.so" "write")
+java.lang.Thread.getStackTrace(Thread.java:1564)
+org.evosuite.runtime.sandbox.MSecurityManager.checkPermission(MSecurityManager.java:424)
+java.lang.SecurityManager.checkWrite(SecurityManager.java:979)
+sun.nio.fs.UnixChannelFactory.open(UnixChannelFactory.java:247)
+sun.nio.fs.UnixChannelFactory.newFileChannel(UnixChannelFactory.java:136)
+sun.nio.fs.UnixChannelFactory.newFileChannel(UnixChannelFactory.java:148)
+sun.nio.fs.UnixFileSystemProvider.newByteChannel(UnixFileSystemProvider.java:212)
+java.nio.file.spi.FileSystemProvider.newOutputStream(FileSystemProvider.java:434)
+java.nio.file.Files.newOutputStream(Files.java:216)
+java.nio.file.Files.copy(Files.java:3016)
+com.aayushatharva.brotli4j.Brotli4jLoader.__STATIC_RESET(Brotli4jLoader.java:80)
+sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+java.lang.reflect.Method.invoke(Method.java:498)
+org.evosuite.runtime.classhandling.ClassResetter.reset(ClassResetter.java:159)
+org.evosuite.runtime.classhandling.ClassStateSupport.resetClasses(ClassStateSupport.java:137)
+io.netty.handler.codec.compression.BrotliDecoder_ESTest_scaffolding.resetClasses(BrotliDecoder_ESTest_scaffolding.java:178)
+io.netty.handler.codec.compression.BrotliDecoder_ESTest_scaffolding.doneWithTestCase(BrotliDecoder_ESTest_scaffolding.java:66)
+sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+java.lang.reflect.Method.invoke(Method.java:498)
+org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+org.junit.internal.runners.statements.RunAfters.invokeMethod(RunAfters.java:46)
+org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:33)
+org.evosuite.runtime.vnet.NonFunctionalRequirementRule$1.evaluate(NonFunctionalRequirementRule.java:41)
+org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:316)
+org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:240)
+org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:214)
+org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:155)
+org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+
+	at org.evosuite.runtime.sandbox.MSecurityManager.checkPermission(MSecurityManager.java:436)
+	at java.lang.SecurityManager.checkWrite(SecurityManager.java:979)
+	at sun.nio.fs.UnixChannelFactory.open(UnixChannelFactory.java:247)
+	at sun.nio.fs.UnixChannelFactory.newFileChannel(UnixChannelFactory.java:136)
+	at sun.nio.fs.UnixChannelFactory.newFileChannel(UnixChannelFactory.java:148)
+	at sun.nio.fs.UnixFileSystemProvider.newByteChannel(UnixFileSystemProvider.java:212)
+	at java.nio.file.spi.FileSystemProvider.newOutputStream(FileSystemProvider.java:434)
+	at java.nio.file.Files.newOutputStream(Files.java:216)
+	at java.nio.file.Files.copy(Files.java:3016)
+	at com.aayushatharva.brotli4j.Brotli4jLoader.__STATIC_RESET(Brotli4jLoader.java:80)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.evosuite.runtime.classhandling.ClassResetter.reset(ClassResetter.java:159)
+	at org.evosuite.runtime.classhandling.ClassStateSupport.resetClasses(ClassStateSupport.java:137)
+	at io.netty.handler.codec.compression.BrotliDecoder_ESTest_scaffolding.resetClasses(BrotliDecoder_ESTest_scaffolding.java:178)
+	at io.netty.handler.codec.compression.BrotliDecoder_ESTest_scaffolding.doneWithTestCase(BrotliDecoder_ESTest_scaffolding.java:66)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.RunAfters.invokeMethod(RunAfters.java:46)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:33)
+	at org.evosuite.runtime.vnet.NonFunctionalRequirementRule$1.evaluate(NonFunctionalRequirementRule.java:41)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:316)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:240)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:214)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:155)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+13:35:23.864 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: io.netty.handler.codec.compression.BrotliDecoder$State
+13:35:23.865 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'io.netty.handler.codec.compression.BrotliDecoder$State'.
+13:35:23.866 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class io/netty/handler/codec/compression/BrotliDecoder$State
+13:35:23.867 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Found static initializer in class io/netty/handler/codec/compression/BrotliDecoder$State
+13:35:23.868 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: io.netty.handler.codec.compression.BrotliDecoder$State
+13:35:23.869 [main] ERROR org.evosuite.runtime.classhandling.ClassResetter - java.lang.NoClassDefFoundError: Could not initialize class io.netty.handler.codec.compression.BrotliDecoder
+]]></system-out>
+  </testcase>
+</testsuite>
