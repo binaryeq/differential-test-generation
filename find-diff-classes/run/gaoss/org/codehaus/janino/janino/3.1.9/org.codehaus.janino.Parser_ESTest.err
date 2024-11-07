@@ -1,0 +1,26 @@
+Exception in thread "main" java.lang.SecurityException: class "org.codehaus.janino.TokenStream"'s signer information does not match signer information of other classes in the same package
+	at java.lang.ClassLoader.checkCerts(ClassLoader.java:891)
+	at java.lang.ClassLoader.preDefineClass(ClassLoader.java:661)
+	at java.lang.ClassLoader.defineClass(ClassLoader.java:754)
+	at java.security.SecureClassLoader.defineClass(SecureClassLoader.java:142)
+	at java.net.URLClassLoader.defineClass(URLClassLoader.java:473)
+	at java.net.URLClassLoader.access$100(URLClassLoader.java:74)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:369)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:363)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:362)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:418)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:352)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:351)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:348)
+	at org.junit.internal.Classes.getClass(Classes.java:42)
+	at org.junit.internal.Classes.getClass(Classes.java:27)
+	at org.junit.runner.JUnitCommandLineParseResult.parseParameters(JUnitCommandLineParseResult.java:98)
+	at org.junit.runner.JUnitCommandLineParseResult.parseArgs(JUnitCommandLineParseResult.java:50)
+	at org.junit.runner.JUnitCommandLineParseResult.parse(JUnitCommandLineParseResult.java:44)
+	at org.junit.runner.JUnitCore.runMain(JUnitCore.java:72)
+	at org.junit.runner.JUnitCore.main(JUnitCore.java:36)
+Command exited with non-zero status 1
+0.16user 0.02system 0:00.12elapsed 157%CPU (0avgtext+0avgdata 41440maxresident)k
+0inputs+80outputs (8major+6170minor)pagefaults 0swaps

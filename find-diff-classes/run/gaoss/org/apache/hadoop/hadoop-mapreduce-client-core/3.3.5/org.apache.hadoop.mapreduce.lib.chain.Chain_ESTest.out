@@ -1,0 +1,49 @@
+JUnit version 4.13.2
+.....................E.....E.E...E..E...E.E..........E...............
+Time: 11.156
+There were 8 failures:
+1) test24(org.apache.hadoop.mapreduce.lib.chain.Chain_ESTest)
+java.lang.AssertionError: Expecting exception: ClassCastException
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.apache.hadoop.mapreduce.lib.chain.Chain_ESTest.test24(Chain_ESTest.java:498)
+2) test18(org.apache.hadoop.mapreduce.lib.chain.Chain_ESTest)
+java.lang.NullPointerException
+	at java.util.Hashtable.get(Hashtable.java:364)
+	at java.util.Properties.getProperty(Properties.java:969)
+	at java.util.Properties.getProperty(Properties.java:988)
+	at org.apache.hadoop.conf.Configuration.get(Configuration.java:1508)
+	at org.apache.hadoop.mapreduce.lib.chain.Chain.getChainElementConf(Chain.java:580)
+	at org.apache.hadoop.mapreduce.lib.chain.Chain_ESTest.test18(Chain_ESTest.java:372)
+3) test17(org.apache.hadoop.mapreduce.lib.chain.Chain_ESTest)
+java.lang.NullPointerException
+	at java.util.Hashtable.get(Hashtable.java:364)
+	at java.util.Properties.getProperty(Properties.java:969)
+	at java.util.Properties.getProperty(Properties.java:988)
+	at org.apache.hadoop.conf.Configuration.get(Configuration.java:1508)
+	at org.apache.hadoop.mapreduce.lib.chain.Chain.getChainElementConf(Chain.java:580)
+	at org.apache.hadoop.mapreduce.lib.chain.Chain_ESTest.test17(Chain_ESTest.java:354)
+4) test11(org.apache.hadoop.mapreduce.lib.chain.Chain_ESTest)
+java.lang.AssertionError: Expecting exception: ClassCastException
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.apache.hadoop.mapreduce.lib.chain.Chain_ESTest.test11(Chain_ESTest.java:250)
+5) test10(org.apache.hadoop.mapreduce.lib.chain.Chain_ESTest)
+java.lang.AssertionError: Expecting exception: ClassCastException
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.apache.hadoop.mapreduce.lib.chain.Chain_ESTest.test10(Chain_ESTest.java:232)
+6) test16(org.apache.hadoop.mapreduce.lib.chain.Chain_ESTest)
+java.lang.AssertionError: Expecting exception: ClassCastException
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.apache.hadoop.mapreduce.lib.chain.Chain_ESTest.test16(Chain_ESTest.java:339)
+7) test15(org.apache.hadoop.mapreduce.lib.chain.Chain_ESTest)
+java.lang.NullPointerException
+	at java.lang.Class.isAssignableFrom(Native Method)
+	at org.apache.hadoop.mapreduce.lib.chain.Chain.validateKeyValueTypes(Chain.java:692)
+	at org.apache.hadoop.mapreduce.lib.chain.Chain_ESTest.test15(Chain_ESTest.java:316)
+8) test07(org.apache.hadoop.mapreduce.lib.chain.Chain_ESTest)
+java.lang.AssertionError: Expecting exception: ClassCastException
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.apache.hadoop.mapreduce.lib.chain.Chain_ESTest.test07(Chain_ESTest.java:183)
+
+FAILURES!!!
+Tests run: 61,  Failures: 8
+

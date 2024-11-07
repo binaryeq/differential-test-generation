@@ -1,0 +1,27 @@
+JUnit version 4.13.2
+..................................................................................................................E......E...............................................................................................................E..........................................
+Time: 15.911
+There were 3 failures:
+1) test053(org.flywaydb.core.api.configuration.ClassicConfiguration_ESTest)
+org.flywaydb.core.api.FlywayException: Unable to resolve location classpath:report.
+	at org.flywaydb.core.internal.scanner.classpath.ClassPathScanner.findResourceNamesAndParentURLs(ClassPathScanner.java:220)
+	at org.flywaydb.core.internal.scanner.classpath.ClassPathScanner.<init>(ClassPathScanner.java:75)
+	at org.flywaydb.core.internal.scanner.ClasspathClassScanner.scanForType(ClasspathClassScanner.java:37)
+	at org.flywaydb.core.api.configuration.ClassicConfiguration.loadCallbackLocation(ClassicConfiguration.java:1198)
+	at org.flywaydb.core.api.configuration.ClassicConfiguration.loadCallbackPath(ClassicConfiguration.java:1184)
+	at org.flywaydb.core.api.configuration.ClassicConfiguration.setCallbacksAsClassNames(ClassicConfiguration.java:1156)
+	at org.flywaydb.core.api.configuration.ClassicConfiguration_ESTest.test053(ClassicConfiguration_ESTest.java:656)
+2) test056(org.flywaydb.core.api.configuration.ClassicConfiguration_ESTest)
+java.lang.AssertionError: Exception was not thrown in org.flywaydb.core.internal.logging.buffered.BufferedLog but in org.flywaydb.core.internal.logging.EvolvingLog.debug(EvolvingLog.java:52): java.lang.NullPointerException
+	at org.evosuite.runtime.EvoAssertions.assertThrownBy(EvoAssertions.java:111)
+	at org.evosuite.runtime.EvoAssertions.verifyException(EvoAssertions.java:48)
+	at org.flywaydb.core.api.configuration.ClassicConfiguration_ESTest.test056(ClassicConfiguration_ESTest.java:711)
+3) test062(org.flywaydb.core.api.configuration.ClassicConfiguration_ESTest)
+java.lang.AssertionError: Exception was not thrown in org.flywaydb.core.internal.logging.buffered.BufferedLog but in org.flywaydb.core.internal.logging.EvolvingLog.debug(EvolvingLog.java:52): java.lang.NullPointerException
+	at org.evosuite.runtime.EvoAssertions.assertThrownBy(EvoAssertions.java:111)
+	at org.evosuite.runtime.EvoAssertions.verifyException(EvoAssertions.java:48)
+	at org.flywaydb.core.api.configuration.ClassicConfiguration_ESTest.test062(ClassicConfiguration_ESTest.java:802)
+
+FAILURES!!!
+Tests run: 273,  Failures: 3
+
