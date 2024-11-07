@@ -46,9 +46,36 @@ tools/generate.pl --compile-and-run-tests-mvn obfs > compile_and_run_mvn_tests_f
 tools/generate.pl --compile-and-run-tests-mvn mvnc > compile_and_run_mvn_tests_for_mvnc.sh
 tools/generate.pl --compile-and-run-tests-mvn gaoss > compile_and_run_mvn_tests_for_gaoss.sh
 
-# Run the scripts. These produce compiled test classes below compile/ and Surefire test results below run-mvn/.
+# Run the scripts. These produce compiled test classes below compile/<provider>/<gav-path>/target/test-classes/ and Surefire test results below run-mvn/.
 time bash compile_and_run_mvn_tests_for_obfs.sh
 time bash compile_and_run_mvn_tests_for_mvnc.sh
 time bash compile_and_run_mvn_tests_for_gaoss.sh
 # Test results can be written to a different location by setting $RUNDIR to an absolute path, e.g.:
 # RUNDIR=`pwd`/other/test/results time bash compile_and_run_mvn_tests_for_obfs.sh
+
+# Also compile and then run the tests the old way, using raw JUnit4 runners, since that's the only output we can currently parse.
+
+# First generate scripts to compile the tests the old way.
+tools/generate.pl --compile-tests obfs > compile_tests_for_obfs.sh
+tools/generate.pl --compile-tests mvnc > compile_tests_for_mvnc.sh
+tools/generate.pl --compile-tests gaoss > compile_tests_for_gaoss.sh
+
+# Run the scripts. Creates compiled test classes directly below compile/<provider>/<gav-path>/.
+time bash compile_tests_for_obfs.sh
+time bash compile_tests_for_mvnc.sh
+time bash compile_tests_for_gaoss.sh
+
+# Generate scripts to run the tests the old way.
+tools/generate.pl --run-tests obfs > run_all_tests_for_obfs.sh
+tools/generate.pl --run-tests mvnc > run_all_tests_for_mvnc.sh
+tools/generate.pl --run-tests gaoss > run_all_tests_for_gaoss.sh
+
+# Run the scripts. Creates raw JUnit4 runner test results below run/<provider>/<gav-path>/.
+time bash run_all_tests_for_obfs.sh
+time bash run_all_tests_for_mvnc.sh
+time bash run_all_tests_for_gaoss.sh
+
+# Parse the results into TSV format in test_results_obfs.tsv, etc.
+tools/summarise_test_results_to_tsv.sh obfs
+tools/summarise_test_results_to_tsv.sh mvnc
+tools/summarise_test_results_to_tsv.sh gaoss
