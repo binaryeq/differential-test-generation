@@ -385,7 +385,7 @@ THE_END
                     my $testCompilePath = evosuiteCompileDir($opts->{targetOtherProvider}, $g, $a, $v);
                     my $testRunPath = evosuiteRunDir($opts->{targetOtherProvider}, $g, $a, $v);
 #                        my @compiledClasses = `find '$testGenPath' -name '*_ESTest.class'`;
-                    my $findCompiledClassesCmd = "find '$testCompilePath' -name '*_ESTest.class'";
+                    my $findCompiledClassesCmd = "find '$testCompilePath' -name '*_ESTest.class' | grep -vF /target/test-classes/";     # grep to ignore any classfiles produced by Maven-based compilation
                     print STDERR "findCompiledClassesCmd=<$findCompiledClassesCmd>\n";     #DEBUG
                     my @compiledClasses = `$findCompiledClassesCmd`;
                     chomp @compiledClasses;
