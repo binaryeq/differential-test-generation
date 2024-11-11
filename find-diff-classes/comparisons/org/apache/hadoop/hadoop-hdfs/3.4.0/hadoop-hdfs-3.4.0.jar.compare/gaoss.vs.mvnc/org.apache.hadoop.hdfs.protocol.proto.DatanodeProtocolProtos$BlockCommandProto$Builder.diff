@@ -1,0 +1,10 @@
+283c283
+< int v2, v4, v5, v6;
+---
+> int v2, v4, v5, v6, v8, v9;
+301c301,303
+< v1.<org.apache.hadoop.hdfs.protocol.proto.DatanodeProtocolProtos$BlockCommandProto: int bitField0_> = v3;
+---
+> v8 = v1.<org.apache.hadoop.hdfs.protocol.proto.DatanodeProtocolProtos$BlockCommandProto: int bitField0_>;
+> v9 = v8 | v3;
+> v1.<org.apache.hadoop.hdfs.protocol.proto.DatanodeProtocolProtos$BlockCommandProto: int bitField0_> = v9;

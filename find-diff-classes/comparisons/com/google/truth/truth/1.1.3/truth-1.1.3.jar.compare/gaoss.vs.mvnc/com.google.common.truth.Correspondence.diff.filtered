@@ -1,0 +1,66 @@
+132,135d131
+< com.google.common.collect.ImmutableList v4, v5;
+< java.lang.String v2;
+< com.google.common.truth.Fact v3;
+< boolean v1;
+136a133,138
+> com.google.common.collect.ImmutableList v8, v9;
+> int v4, v5;
+> java.lang.StringBuilder v10;
+> java.lang.String v2, v3, v6;
+> com.google.common.truth.Fact v7;
+> boolean v1;
+140,143c142,150
+< v2 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (com.google.common.truth.Correspondence)>(v0) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("actual element \u0001 expected element");
+< v3 = staticinvoke <com.google.common.truth.Fact: com.google.common.truth.Fact fact(java.lang.String,java.lang.Object)>("testing whether", v2);
+< v4 = staticinvoke <com.google.common.collect.ImmutableList: com.google.common.collect.ImmutableList of(java.lang.Object)>(v3);
+< return v4;
+---
+> v2 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v0);
+> v3 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v2);
+> v4 = virtualinvoke v3.<java.lang.String: int length()>();
+> v5 = 32 + v4;
+> specialinvoke v10.<java.lang.StringBuilder: void <init>(int)>(v5);
+> v6 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v2) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("actual element \u0001 expected element");
+> v7 = staticinvoke <com.google.common.truth.Fact: com.google.common.truth.Fact fact(java.lang.String,java.lang.Object)>("testing whether", v6);
+> v8 = staticinvoke <com.google.common.collect.ImmutableList: com.google.common.collect.ImmutableList of(java.lang.Object)>(v7);
+> return v8;
+145,146c152,153
+< v5 = staticinvoke <com.google.common.collect.ImmutableList: com.google.common.collect.ImmutableList of()>();
+< return v5;
+---
+> v9 = staticinvoke <com.google.common.collect.ImmutableList: com.google.common.collect.ImmutableList of()>();
+> return v9;
+150,153d156
+< com.google.common.collect.ImmutableList v4, v5;
+< java.lang.String v2;
+< com.google.common.truth.Fact v3;
+< boolean v1;
+154a158,163
+> com.google.common.collect.ImmutableList v8, v9;
+> int v4, v5;
+> java.lang.StringBuilder v10;
+> java.lang.String v2, v3, v6;
+> com.google.common.truth.Fact v7;
+> boolean v1;
+158,161c167,175
+< v2 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (com.google.common.truth.Correspondence)>(v0) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("actual value \u0001 expected value");
+< v3 = staticinvoke <com.google.common.truth.Fact: com.google.common.truth.Fact fact(java.lang.String,java.lang.Object)>("testing whether", v2);
+< v4 = staticinvoke <com.google.common.collect.ImmutableList: com.google.common.collect.ImmutableList of(java.lang.Object)>(v3);
+< return v4;
+---
+> v2 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v0);
+> v3 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v2);
+> v4 = virtualinvoke v3.<java.lang.String: int length()>();
+> v5 = 28 + v4;
+> specialinvoke v10.<java.lang.StringBuilder: void <init>(int)>(v5);
+> v6 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v2) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("actual value \u0001 expected value");
+> v7 = staticinvoke <com.google.common.truth.Fact: com.google.common.truth.Fact fact(java.lang.String,java.lang.Object)>("testing whether", v6);
+> v8 = staticinvoke <com.google.common.collect.ImmutableList: com.google.common.collect.ImmutableList of(java.lang.Object)>(v7);
+> return v8;
+163,164c177,178
+< v5 = staticinvoke <com.google.common.collect.ImmutableList: com.google.common.collect.ImmutableList of()>();
+< return v5;
+---
+> v9 = staticinvoke <com.google.common.collect.ImmutableList: com.google.common.collect.ImmutableList of()>();
+> return v9;

@@ -1,0 +1,225 @@
+6c6
+< private void <init>()
+---
+> public void <init>()
+13c13
+< public static org.glassfish.jersey.internal.l10n.Localizable localizableERROR_UNMARSHALLING_JAXB(java.lang.Object)
+---
+> public static org.glassfish.jersey.internal.l10n.Localizable localizableSAX_CANNOT_DISABLE_PARAMETER_ENTITY_PROCESSING_FEATURE(java.lang.Object)
+23c23
+< v3 = virtualinvoke v1.<org.glassfish.jersey.internal.l10n.LocalizableMessageFactory: org.glassfish.jersey.internal.l10n.Localizable getMessage(java.lang.String,java.lang.Object[])>("error.unmarshalling.jaxb", v2);
+---
+> v3 = virtualinvoke v1.<org.glassfish.jersey.internal.l10n.LocalizableMessageFactory: org.glassfish.jersey.internal.l10n.Localizable getMessage(java.lang.String,java.lang.Object[])>("sax.cannot.disable.parameter.entity.processing.feature", v2);
+26c26
+< public static java.lang.String ERROR_UNMARSHALLING_JAXB(java.lang.Object)
+---
+> public static java.lang.String SAX_CANNOT_DISABLE_PARAMETER_ENTITY_PROCESSING_FEATURE(java.lang.Object)
+34c34
+< v2 = staticinvoke <org.glassfish.jersey.jaxb.internal.LocalizationMessages: org.glassfish.jersey.internal.l10n.Localizable localizableERROR_UNMARSHALLING_JAXB(java.lang.Object)>(v0);
+---
+> v2 = staticinvoke <org.glassfish.jersey.jaxb.internal.LocalizationMessages: org.glassfish.jersey.internal.l10n.Localizable localizableSAX_CANNOT_DISABLE_PARAMETER_ENTITY_PROCESSING_FEATURE(java.lang.Object)>(v0);
+38c38
+< public static org.glassfish.jersey.internal.l10n.Localizable localizableCANNOT_SET_PROPERTY(java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object)
+---
+> public static org.glassfish.jersey.internal.l10n.Localizable localizableERROR_READING_ENTITY_MISSING()
+40,55c40,46
+< java.lang.Object[] v5;
+< org.glassfish.jersey.internal.l10n.LocalizableMessageFactory v4;
+< java.lang.Object v0, v1, v2, v3;
+< org.glassfish.jersey.internal.l10n.Localizable v6;
+< v0 := @parameter0: java.lang.Object;
+< v1 := @parameter1: java.lang.Object;
+< v2 := @parameter2: java.lang.Object;
+< v3 := @parameter3: java.lang.Object;
+< v4 = <org.glassfish.jersey.jaxb.internal.LocalizationMessages: org.glassfish.jersey.internal.l10n.LocalizableMessageFactory MESSAGE_FACTORY>;
+< v5 = newarray (java.lang.Object)[4];
+< v5[0] = v0;
+< v5[1] = v1;
+< v5[2] = v2;
+< v5[3] = v3;
+< v6 = virtualinvoke v4.<org.glassfish.jersey.internal.l10n.LocalizableMessageFactory: org.glassfish.jersey.internal.l10n.Localizable getMessage(java.lang.String,java.lang.Object[])>("cannot.set.property", v5);
+< return v6;
+---
+> org.glassfish.jersey.internal.l10n.LocalizableMessageFactory v0;
+> java.lang.Object[] v1;
+> org.glassfish.jersey.internal.l10n.Localizable v2;
+> v0 = <org.glassfish.jersey.jaxb.internal.LocalizationMessages: org.glassfish.jersey.internal.l10n.LocalizableMessageFactory MESSAGE_FACTORY>;
+> v1 = newarray (java.lang.Object)[0];
+> v2 = virtualinvoke v0.<org.glassfish.jersey.internal.l10n.LocalizableMessageFactory: org.glassfish.jersey.internal.l10n.Localizable getMessage(java.lang.String,java.lang.Object[])>("error.reading.entity.missing", v1);
+> return v2;
+57c48
+< public static java.lang.String CANNOT_SET_PROPERTY(java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object)
+---
+> public static java.lang.String ERROR_READING_ENTITY_MISSING()
+59,70c50,56
+< org.glassfish.jersey.internal.l10n.Localizer v4;
+< java.lang.Object v0, v1, v2, v3;
+< java.lang.String v6;
+< org.glassfish.jersey.internal.l10n.Localizable v5;
+< v0 := @parameter0: java.lang.Object;
+< v1 := @parameter1: java.lang.Object;
+< v2 := @parameter2: java.lang.Object;
+< v3 := @parameter3: java.lang.Object;
+< v4 = <org.glassfish.jersey.jaxb.internal.LocalizationMessages: org.glassfish.jersey.internal.l10n.Localizer LOCALIZER>;
+< v5 = staticinvoke <org.glassfish.jersey.jaxb.internal.LocalizationMessages: org.glassfish.jersey.internal.l10n.Localizable localizableCANNOT_SET_PROPERTY(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>(v0, v1, v2, v3);
+< v6 = virtualinvoke v4.<org.glassfish.jersey.internal.l10n.Localizer: java.lang.String localize(org.glassfish.jersey.internal.l10n.Localizable)>(v5);
+< return v6;
+---
+> org.glassfish.jersey.internal.l10n.Localizer v0;
+> java.lang.String v2;
+> org.glassfish.jersey.internal.l10n.Localizable v1;
+> v0 = <org.glassfish.jersey.jaxb.internal.LocalizationMessages: org.glassfish.jersey.internal.l10n.Localizer LOCALIZER>;
+> v1 = staticinvoke <org.glassfish.jersey.jaxb.internal.LocalizationMessages: org.glassfish.jersey.internal.l10n.Localizable localizableERROR_READING_ENTITY_MISSING()>();
+> v2 = virtualinvoke v0.<org.glassfish.jersey.internal.l10n.Localizer: java.lang.String localize(org.glassfish.jersey.internal.l10n.Localizable)>(v1);
+> return v2;
+72c58
+< public static org.glassfish.jersey.internal.l10n.Localizable localizableSAX_CANNOT_DISABLE_PARAMETER_ENTITY_PROCESSING_FEATURE(java.lang.Object)
+---
+> public static org.glassfish.jersey.internal.l10n.Localizable localizableERROR_UNMARSHALLING_JAXB(java.lang.Object)
+82c68
+< v3 = virtualinvoke v1.<org.glassfish.jersey.internal.l10n.LocalizableMessageFactory: org.glassfish.jersey.internal.l10n.Localizable getMessage(java.lang.String,java.lang.Object[])>("sax.cannot.disable.parameter.entity.processing.feature", v2);
+---
+> v3 = virtualinvoke v1.<org.glassfish.jersey.internal.l10n.LocalizableMessageFactory: org.glassfish.jersey.internal.l10n.Localizable getMessage(java.lang.String,java.lang.Object[])>("error.unmarshalling.jaxb", v2);
+85c71
+< public static java.lang.String SAX_CANNOT_DISABLE_PARAMETER_ENTITY_PROCESSING_FEATURE(java.lang.Object)
+---
+> public static java.lang.String ERROR_UNMARSHALLING_JAXB(java.lang.Object)
+93c79
+< v2 = staticinvoke <org.glassfish.jersey.jaxb.internal.LocalizationMessages: org.glassfish.jersey.internal.l10n.Localizable localizableSAX_CANNOT_DISABLE_PARAMETER_ENTITY_PROCESSING_FEATURE(java.lang.Object)>(v0);
+---
+> v2 = staticinvoke <org.glassfish.jersey.jaxb.internal.LocalizationMessages: org.glassfish.jersey.internal.l10n.Localizable localizableERROR_UNMARSHALLING_JAXB(java.lang.Object)>(v0);
+97,117c83
+< public static org.glassfish.jersey.internal.l10n.Localizable localizableERROR_READING_ENTITY_MISSING()
+< {
+< org.glassfish.jersey.internal.l10n.LocalizableMessageFactory v0;
+< java.lang.Object[] v1;
+< org.glassfish.jersey.internal.l10n.Localizable v2;
+< v0 = <org.glassfish.jersey.jaxb.internal.LocalizationMessages: org.glassfish.jersey.internal.l10n.LocalizableMessageFactory MESSAGE_FACTORY>;
+< v1 = newarray (java.lang.Object)[0];
+< v2 = virtualinvoke v0.<org.glassfish.jersey.internal.l10n.LocalizableMessageFactory: org.glassfish.jersey.internal.l10n.Localizable getMessage(java.lang.String,java.lang.Object[])>("error.reading.entity.missing", v1);
+< return v2;
+< }
+< public static java.lang.String ERROR_READING_ENTITY_MISSING()
+< {
+< org.glassfish.jersey.internal.l10n.Localizer v0;
+< java.lang.String v2;
+< org.glassfish.jersey.internal.l10n.Localizable v1;
+< v0 = <org.glassfish.jersey.jaxb.internal.LocalizationMessages: org.glassfish.jersey.internal.l10n.Localizer LOCALIZER>;
+< v1 = staticinvoke <org.glassfish.jersey.jaxb.internal.LocalizationMessages: org.glassfish.jersey.internal.l10n.Localizable localizableERROR_READING_ENTITY_MISSING()>();
+< v2 = virtualinvoke v0.<org.glassfish.jersey.internal.l10n.Localizer: java.lang.String localize(org.glassfish.jersey.internal.l10n.Localizable)>(v1);
+< return v2;
+< }
+< public static org.glassfish.jersey.internal.l10n.Localizable localizableSAX_CANNOT_ENABLE_DISALLOW_DOCTYPE_DECLARATION_FEATURE(java.lang.Object)
+---
+> public static org.glassfish.jersey.internal.l10n.Localizable localizableSAX_CANNOT_DISABLE_GENERAL_ENTITY_PROCESSING_FEATURE(java.lang.Object)
+127c93
+< v3 = virtualinvoke v1.<org.glassfish.jersey.internal.l10n.LocalizableMessageFactory: org.glassfish.jersey.internal.l10n.Localizable getMessage(java.lang.String,java.lang.Object[])>("sax.cannot.enable.disallow.doctype.declaration.feature", v2);
+---
+> v3 = virtualinvoke v1.<org.glassfish.jersey.internal.l10n.LocalizableMessageFactory: org.glassfish.jersey.internal.l10n.Localizable getMessage(java.lang.String,java.lang.Object[])>("sax.cannot.disable.general.entity.processing.feature", v2);
+130c96
+< public static java.lang.String SAX_CANNOT_ENABLE_DISALLOW_DOCTYPE_DECLARATION_FEATURE(java.lang.Object)
+---
+> public static java.lang.String SAX_CANNOT_DISABLE_GENERAL_ENTITY_PROCESSING_FEATURE(java.lang.Object)
+138c104
+< v2 = staticinvoke <org.glassfish.jersey.jaxb.internal.LocalizationMessages: org.glassfish.jersey.internal.l10n.Localizable localizableSAX_CANNOT_ENABLE_DISALLOW_DOCTYPE_DECLARATION_FEATURE(java.lang.Object)>(v0);
+---
+> v2 = staticinvoke <org.glassfish.jersey.jaxb.internal.LocalizationMessages: org.glassfish.jersey.internal.l10n.Localizable localizableSAX_CANNOT_DISABLE_GENERAL_ENTITY_PROCESSING_FEATURE(java.lang.Object)>(v0);
+167c133
+< public static org.glassfish.jersey.internal.l10n.Localizable localizableNO_PARAM_CONSTRUCTOR_MISSING(java.lang.Object)
+---
+> public static org.glassfish.jersey.internal.l10n.Localizable localizableSAX_CANNOT_ENABLE_SECURE_PROCESSING_FEATURE(java.lang.Object)
+177c143
+< v3 = virtualinvoke v1.<org.glassfish.jersey.internal.l10n.LocalizableMessageFactory: org.glassfish.jersey.internal.l10n.Localizable getMessage(java.lang.String,java.lang.Object[])>("no.param.constructor.missing", v2);
+---
+> v3 = virtualinvoke v1.<org.glassfish.jersey.internal.l10n.LocalizableMessageFactory: org.glassfish.jersey.internal.l10n.Localizable getMessage(java.lang.String,java.lang.Object[])>("sax.cannot.enable.secure.processing.feature", v2);
+180c146
+< public static java.lang.String NO_PARAM_CONSTRUCTOR_MISSING(java.lang.Object)
+---
+> public static java.lang.String SAX_CANNOT_ENABLE_SECURE_PROCESSING_FEATURE(java.lang.Object)
+188c154
+< v2 = staticinvoke <org.glassfish.jersey.jaxb.internal.LocalizationMessages: org.glassfish.jersey.internal.l10n.Localizable localizableNO_PARAM_CONSTRUCTOR_MISSING(java.lang.Object)>(v0);
+---
+> v2 = staticinvoke <org.glassfish.jersey.jaxb.internal.LocalizationMessages: org.glassfish.jersey.internal.l10n.Localizable localizableSAX_CANNOT_ENABLE_SECURE_PROCESSING_FEATURE(java.lang.Object)>(v0);
+192c158
+< public static org.glassfish.jersey.internal.l10n.Localizable localizableSAX_CANNOT_DISABLE_GENERAL_ENTITY_PROCESSING_FEATURE(java.lang.Object)
+---
+> public static org.glassfish.jersey.internal.l10n.Localizable localizableSAX_CANNOT_ENABLE_DISALLOW_DOCTYPE_DECLARATION_FEATURE(java.lang.Object)
+202c168
+< v3 = virtualinvoke v1.<org.glassfish.jersey.internal.l10n.LocalizableMessageFactory: org.glassfish.jersey.internal.l10n.Localizable getMessage(java.lang.String,java.lang.Object[])>("sax.cannot.disable.general.entity.processing.feature", v2);
+---
+> v3 = virtualinvoke v1.<org.glassfish.jersey.internal.l10n.LocalizableMessageFactory: org.glassfish.jersey.internal.l10n.Localizable getMessage(java.lang.String,java.lang.Object[])>("sax.cannot.enable.disallow.doctype.declaration.feature", v2);
+205c171
+< public static java.lang.String SAX_CANNOT_DISABLE_GENERAL_ENTITY_PROCESSING_FEATURE(java.lang.Object)
+---
+> public static java.lang.String SAX_CANNOT_ENABLE_DISALLOW_DOCTYPE_DECLARATION_FEATURE(java.lang.Object)
+213c179
+< v2 = staticinvoke <org.glassfish.jersey.jaxb.internal.LocalizationMessages: org.glassfish.jersey.internal.l10n.Localizable localizableSAX_CANNOT_DISABLE_GENERAL_ENTITY_PROCESSING_FEATURE(java.lang.Object)>(v0);
+---
+> v2 = staticinvoke <org.glassfish.jersey.jaxb.internal.LocalizationMessages: org.glassfish.jersey.internal.l10n.Localizable localizableSAX_CANNOT_ENABLE_DISALLOW_DOCTYPE_DECLARATION_FEATURE(java.lang.Object)>(v0);
+257c223
+< public static org.glassfish.jersey.internal.l10n.Localizable localizableSAX_CANNOT_ENABLE_SECURE_PROCESSING_FEATURE(java.lang.Object)
+---
+> public static org.glassfish.jersey.internal.l10n.Localizable localizableUNABLE_TO_ACCESS_METHODS_OF_CLASS(java.lang.Object)
+267c233
+< v3 = virtualinvoke v1.<org.glassfish.jersey.internal.l10n.LocalizableMessageFactory: org.glassfish.jersey.internal.l10n.Localizable getMessage(java.lang.String,java.lang.Object[])>("sax.cannot.enable.secure.processing.feature", v2);
+---
+> v3 = virtualinvoke v1.<org.glassfish.jersey.internal.l10n.LocalizableMessageFactory: org.glassfish.jersey.internal.l10n.Localizable getMessage(java.lang.String,java.lang.Object[])>("unable.to.access.methods.of.class", v2);
+270c236
+< public static java.lang.String SAX_CANNOT_ENABLE_SECURE_PROCESSING_FEATURE(java.lang.Object)
+---
+> public static java.lang.String UNABLE_TO_ACCESS_METHODS_OF_CLASS(java.lang.Object)
+278c244
+< v2 = staticinvoke <org.glassfish.jersey.jaxb.internal.LocalizationMessages: org.glassfish.jersey.internal.l10n.Localizable localizableSAX_CANNOT_ENABLE_SECURE_PROCESSING_FEATURE(java.lang.Object)>(v0);
+---
+> v2 = staticinvoke <org.glassfish.jersey.jaxb.internal.LocalizationMessages: org.glassfish.jersey.internal.l10n.Localizable localizableUNABLE_TO_ACCESS_METHODS_OF_CLASS(java.lang.Object)>(v0);
+282c248
+< public static org.glassfish.jersey.internal.l10n.Localizable localizableUNABLE_TO_ACCESS_METHODS_OF_CLASS(java.lang.Object)
+---
+> public static org.glassfish.jersey.internal.l10n.Localizable localizableNO_PARAM_CONSTRUCTOR_MISSING(java.lang.Object)
+292c258
+< v3 = virtualinvoke v1.<org.glassfish.jersey.internal.l10n.LocalizableMessageFactory: org.glassfish.jersey.internal.l10n.Localizable getMessage(java.lang.String,java.lang.Object[])>("unable.to.access.methods.of.class", v2);
+---
+> v3 = virtualinvoke v1.<org.glassfish.jersey.internal.l10n.LocalizableMessageFactory: org.glassfish.jersey.internal.l10n.Localizable getMessage(java.lang.String,java.lang.Object[])>("no.param.constructor.missing", v2);
+295c261
+< public static java.lang.String UNABLE_TO_ACCESS_METHODS_OF_CLASS(java.lang.Object)
+---
+> public static java.lang.String NO_PARAM_CONSTRUCTOR_MISSING(java.lang.Object)
+303c269
+< v2 = staticinvoke <org.glassfish.jersey.jaxb.internal.LocalizationMessages: org.glassfish.jersey.internal.l10n.Localizable localizableUNABLE_TO_ACCESS_METHODS_OF_CLASS(java.lang.Object)>(v0);
+---
+> v2 = staticinvoke <org.glassfish.jersey.jaxb.internal.LocalizationMessages: org.glassfish.jersey.internal.l10n.Localizable localizableNO_PARAM_CONSTRUCTOR_MISSING(java.lang.Object)>(v0);
+330a297,330
+> }
+> public static org.glassfish.jersey.internal.l10n.Localizable localizableCANNOT_SET_PROPERTY(java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object)
+> {
+> java.lang.Object[] v5;
+> org.glassfish.jersey.internal.l10n.LocalizableMessageFactory v4;
+> java.lang.Object v0, v1, v2, v3;
+> org.glassfish.jersey.internal.l10n.Localizable v6;
+> v0 := @parameter0: java.lang.Object;
+> v1 := @parameter1: java.lang.Object;
+> v2 := @parameter2: java.lang.Object;
+> v3 := @parameter3: java.lang.Object;
+> v4 = <org.glassfish.jersey.jaxb.internal.LocalizationMessages: org.glassfish.jersey.internal.l10n.LocalizableMessageFactory MESSAGE_FACTORY>;
+> v5 = newarray (java.lang.Object)[4];
+> v5[0] = v0;
+> v5[1] = v1;
+> v5[2] = v2;
+> v5[3] = v3;
+> v6 = virtualinvoke v4.<org.glassfish.jersey.internal.l10n.LocalizableMessageFactory: org.glassfish.jersey.internal.l10n.Localizable getMessage(java.lang.String,java.lang.Object[])>("cannot.set.property", v5);
+> return v6;
+> }
+> public static java.lang.String CANNOT_SET_PROPERTY(java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object)
+> {
+> org.glassfish.jersey.internal.l10n.Localizer v4;
+> java.lang.Object v0, v1, v2, v3;
+> java.lang.String v6;
+> org.glassfish.jersey.internal.l10n.Localizable v5;
+> v0 := @parameter0: java.lang.Object;
+> v1 := @parameter1: java.lang.Object;
+> v2 := @parameter2: java.lang.Object;
+> v3 := @parameter3: java.lang.Object;
+> v4 = <org.glassfish.jersey.jaxb.internal.LocalizationMessages: org.glassfish.jersey.internal.l10n.Localizer LOCALIZER>;
+> v5 = staticinvoke <org.glassfish.jersey.jaxb.internal.LocalizationMessages: org.glassfish.jersey.internal.l10n.Localizable localizableCANNOT_SET_PROPERTY(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>(v0, v1, v2, v3);
+> v6 = virtualinvoke v4.<org.glassfish.jersey.internal.l10n.Localizer: java.lang.String localize(org.glassfish.jersey.internal.l10n.Localizable)>(v5);
+> return v6;

@@ -1,0 +1,82 @@
+256,260c256,260
+< long v18, v19, v20, v21, v22;
+< java.util.Map v12, v15;
+< org.apache.hadoop.hdfs.protocol.SnapshotDiffReport v23;
+< java.lang.String v25, v27, v29;
+< boolean v11, v14, v5;
+---
+> long v19, v20, v21, v22, v23;
+> java.util.Map v13, v16;
+> org.apache.hadoop.hdfs.protocol.SnapshotDiffReport v24;
+> java.lang.String v26, v28, v30;
+> boolean v12, v15, v5;
+264,268c264,269
+< org.apache.hadoop.hdfs.server.namenode.snapshot.Snapshot v26, v28;
+< java.util.List v16;
+< org.apache.hadoop.hdfs.server.namenode.INodeDirectory v24;
+< org.apache.hadoop.hdfs.protocol.SnapshotDiffReport$DiffStats v17;
+< java.lang.Object v13, v6, v7, v8;
+---
+> org.apache.hadoop.hdfs.server.namenode.snapshot.Snapshot v27, v29;
+> byte[][] v11;
+> java.util.List v17;
+> org.apache.hadoop.hdfs.server.namenode.INodeDirectory v25;
+> org.apache.hadoop.hdfs.protocol.SnapshotDiffReport$DiffStats v18;
+> java.lang.Object v14, v6, v7, v8;
+284c285,286
+< specialinvoke v9.<org.apache.hadoop.hdfs.protocol.SnapshotDiffReport$DiffReportEntry: void <init>(org.apache.hadoop.hdfs.protocol.SnapshotDiffReport$DiffType,byte[][],byte[][])>(v10, v8, null);
+---
+> v11 = (byte[][]) null;
+> specialinvoke v9.<org.apache.hadoop.hdfs.protocol.SnapshotDiffReport$DiffReportEntry: void <init>(org.apache.hadoop.hdfs.protocol.SnapshotDiffReport$DiffType,byte[][],byte[][])>(v10, v8, v11);
+286,293c288,295
+< v11 = virtualinvoke v7.<org.apache.hadoop.hdfs.server.namenode.INode: boolean isDirectory()>();
+< if v11 == 0 goto label1;
+< v12 = v0.<org.apache.hadoop.hdfs.server.namenode.snapshot.SnapshotDiffInfo: java.util.Map dirDiffMap>;
+< v13 = interfaceinvoke v12.<java.util.Map: java.lang.Object get(java.lang.Object)>(v7);
+< v14 = virtualinvoke v0.<org.apache.hadoop.hdfs.server.namenode.snapshot.SnapshotDiffInfo: boolean isFromEarlier()>();
+< v15 = v0.<org.apache.hadoop.hdfs.server.namenode.snapshot.SnapshotDiffInfo: java.util.Map renameMap>;
+< v16 = specialinvoke v0.<org.apache.hadoop.hdfs.server.namenode.snapshot.SnapshotDiffInfo: java.util.List generateReport(org.apache.hadoop.hdfs.server.namenode.snapshot.DirectoryWithSnapshotFeature$ChildrenDiff,byte[][],boolean,java.util.Map)>(v13, v8, v14, v15);
+< interfaceinvoke v1.<java.util.List: boolean addAll(java.util.Collection)>(v16);
+---
+> v12 = virtualinvoke v7.<org.apache.hadoop.hdfs.server.namenode.INode: boolean isDirectory()>();
+> if v12 == 0 goto label1;
+> v13 = v0.<org.apache.hadoop.hdfs.server.namenode.snapshot.SnapshotDiffInfo: java.util.Map dirDiffMap>;
+> v14 = interfaceinvoke v13.<java.util.Map: java.lang.Object get(java.lang.Object)>(v7);
+> v15 = virtualinvoke v0.<org.apache.hadoop.hdfs.server.namenode.snapshot.SnapshotDiffInfo: boolean isFromEarlier()>();
+> v16 = v0.<org.apache.hadoop.hdfs.server.namenode.snapshot.SnapshotDiffInfo: java.util.Map renameMap>;
+> v17 = specialinvoke v0.<org.apache.hadoop.hdfs.server.namenode.snapshot.SnapshotDiffInfo: java.util.List generateReport(org.apache.hadoop.hdfs.server.namenode.snapshot.DirectoryWithSnapshotFeature$ChildrenDiff,byte[][],boolean,java.util.Map)>(v14, v8, v15, v16);
+> interfaceinvoke v1.<java.util.List: boolean addAll(java.util.Collection)>(v17);
+296,311c298,313
+< v17 = new org.apache.hadoop.hdfs.protocol.SnapshotDiffReport$DiffStats;
+< v18 = v0.<org.apache.hadoop.hdfs.server.namenode.snapshot.SnapshotDiffInfo: long totalDirsCompared>;
+< v19 = v0.<org.apache.hadoop.hdfs.server.namenode.snapshot.SnapshotDiffInfo: long totalDirsProcessed>;
+< v20 = v0.<org.apache.hadoop.hdfs.server.namenode.snapshot.SnapshotDiffInfo: long totalFilesCompared>;
+< v21 = v0.<org.apache.hadoop.hdfs.server.namenode.snapshot.SnapshotDiffInfo: long totalFilesProcessed>;
+< v22 = v0.<org.apache.hadoop.hdfs.server.namenode.snapshot.SnapshotDiffInfo: long childrenListingTime>;
+< specialinvoke v17.<org.apache.hadoop.hdfs.protocol.SnapshotDiffReport$DiffStats: void <init>(long,long,long,long,long)>(v18, v19, v20, v21, v22);
+< v23 = new org.apache.hadoop.hdfs.protocol.SnapshotDiffReport;
+< v24 = v0.<org.apache.hadoop.hdfs.server.namenode.snapshot.SnapshotDiffInfo: org.apache.hadoop.hdfs.server.namenode.INodeDirectory snapshotRoot>;
+< v25 = virtualinvoke v24.<org.apache.hadoop.hdfs.server.namenode.INodeDirectory: java.lang.String getFullPathName()>();
+< v26 = v0.<org.apache.hadoop.hdfs.server.namenode.snapshot.SnapshotDiffInfo: org.apache.hadoop.hdfs.server.namenode.snapshot.Snapshot 'from'>;
+< v27 = staticinvoke <org.apache.hadoop.hdfs.server.namenode.snapshot.Snapshot: java.lang.String getSnapshotName(org.apache.hadoop.hdfs.server.namenode.snapshot.Snapshot)>(v26);
+< v28 = v0.<org.apache.hadoop.hdfs.server.namenode.snapshot.SnapshotDiffInfo: org.apache.hadoop.hdfs.server.namenode.snapshot.Snapshot 'to'>;
+< v29 = staticinvoke <org.apache.hadoop.hdfs.server.namenode.snapshot.Snapshot: java.lang.String getSnapshotName(org.apache.hadoop.hdfs.server.namenode.snapshot.Snapshot)>(v28);
+< specialinvoke v23.<org.apache.hadoop.hdfs.protocol.SnapshotDiffReport: void <init>(java.lang.String,java.lang.String,java.lang.String,org.apache.hadoop.hdfs.protocol.SnapshotDiffReport$DiffStats,java.util.List)>(v25, v27, v29, v17, v1);
+< return v23;
+---
+> v18 = new org.apache.hadoop.hdfs.protocol.SnapshotDiffReport$DiffStats;
+> v19 = v0.<org.apache.hadoop.hdfs.server.namenode.snapshot.SnapshotDiffInfo: long totalDirsCompared>;
+> v20 = v0.<org.apache.hadoop.hdfs.server.namenode.snapshot.SnapshotDiffInfo: long totalDirsProcessed>;
+> v21 = v0.<org.apache.hadoop.hdfs.server.namenode.snapshot.SnapshotDiffInfo: long totalFilesCompared>;
+> v22 = v0.<org.apache.hadoop.hdfs.server.namenode.snapshot.SnapshotDiffInfo: long totalFilesProcessed>;
+> v23 = v0.<org.apache.hadoop.hdfs.server.namenode.snapshot.SnapshotDiffInfo: long childrenListingTime>;
+> specialinvoke v18.<org.apache.hadoop.hdfs.protocol.SnapshotDiffReport$DiffStats: void <init>(long,long,long,long,long)>(v19, v20, v21, v22, v23);
+> v24 = new org.apache.hadoop.hdfs.protocol.SnapshotDiffReport;
+> v25 = v0.<org.apache.hadoop.hdfs.server.namenode.snapshot.SnapshotDiffInfo: org.apache.hadoop.hdfs.server.namenode.INodeDirectory snapshotRoot>;
+> v26 = virtualinvoke v25.<org.apache.hadoop.hdfs.server.namenode.INodeDirectory: java.lang.String getFullPathName()>();
+> v27 = v0.<org.apache.hadoop.hdfs.server.namenode.snapshot.SnapshotDiffInfo: org.apache.hadoop.hdfs.server.namenode.snapshot.Snapshot 'from'>;
+> v28 = staticinvoke <org.apache.hadoop.hdfs.server.namenode.snapshot.Snapshot: java.lang.String getSnapshotName(org.apache.hadoop.hdfs.server.namenode.snapshot.Snapshot)>(v27);
+> v29 = v0.<org.apache.hadoop.hdfs.server.namenode.snapshot.SnapshotDiffInfo: org.apache.hadoop.hdfs.server.namenode.snapshot.Snapshot 'to'>;
+> v30 = staticinvoke <org.apache.hadoop.hdfs.server.namenode.snapshot.Snapshot: java.lang.String getSnapshotName(org.apache.hadoop.hdfs.server.namenode.snapshot.Snapshot)>(v29);
+> specialinvoke v24.<org.apache.hadoop.hdfs.protocol.SnapshotDiffReport: void <init>(java.lang.String,java.lang.String,java.lang.String,org.apache.hadoop.hdfs.protocol.SnapshotDiffReport$DiffStats,java.util.List)>(v26, v28, v30, v18, v1);
+> return v24;

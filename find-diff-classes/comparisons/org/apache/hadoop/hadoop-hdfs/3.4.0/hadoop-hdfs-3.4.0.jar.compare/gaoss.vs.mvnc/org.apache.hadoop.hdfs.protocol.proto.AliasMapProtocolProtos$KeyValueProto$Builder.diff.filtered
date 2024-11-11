@@ -1,0 +1,10 @@
+126c126
+< int v2, v4, v8;
+---
+> int v12, v13, v2, v4, v8;
+154c154,156
+< v1.<org.apache.hadoop.hdfs.protocol.proto.AliasMapProtocolProtos$KeyValueProto: int bitField0_> = v3;
+---
+> v12 = v1.<org.apache.hadoop.hdfs.protocol.proto.AliasMapProtocolProtos$KeyValueProto: int bitField0_>;
+> v13 = v12 | v3;
+> v1.<org.apache.hadoop.hdfs.protocol.proto.AliasMapProtocolProtos$KeyValueProto: int bitField0_> = v13;

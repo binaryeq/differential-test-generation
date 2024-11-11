@@ -1,0 +1,50 @@
+3a4
+> private final java.util.List exceptionStacks;
+7c8,9
+< com.google.common.collect.HashMultimap v1;
+---
+> java.util.List v2;
+> com.google.common.collect.HashMultimap v3;
+8a11
+> java.util.ArrayList v1;
+11,12c14,19
+< v1 = staticinvoke <com.google.common.collect.HashMultimap: com.google.common.collect.HashMultimap create()>();
+< v0.<com.google.auto.service.processor.AutoServiceProcessor: com.google.common.collect.Multimap providers> = v1;
+---
+> v1 = new java.util.ArrayList;
+> specialinvoke v1.<java.util.ArrayList: void <init>()>();
+> v2 = staticinvoke <java.util.Collections: java.util.List synchronizedList(java.util.List)>(v1);
+> v0.<com.google.auto.service.processor.AutoServiceProcessor: java.util.List exceptionStacks> = v2;
+> v3 = staticinvoke <com.google.common.collect.HashMultimap: com.google.common.collect.HashMultimap create()>();
+> v0.<com.google.auto.service.processor.AutoServiceProcessor: com.google.common.collect.Multimap providers> = v3;
+36a44
+> java.util.List v5;
+51a60,61
+> v5 = v0.<com.google.auto.service.processor.AutoServiceProcessor: java.util.List exceptionStacks>;
+> interfaceinvoke v5.<java.util.List: boolean add(java.lang.Object)>(v4);
+56a67,76
+> com.google.common.collect.ImmutableList exceptionStacks()
+> {
+> java.util.List v1;
+> com.google.common.collect.ImmutableList v2;
+> com.google.auto.service.processor.AutoServiceProcessor v0;
+> v0 := @this: com.google.auto.service.processor.AutoServiceProcessor;
+> v1 = v0.<com.google.auto.service.processor.AutoServiceProcessor: java.util.List exceptionStacks>;
+> v2 = staticinvoke <com.google.common.collect.ImmutableList: com.google.common.collect.ImmutableList copyOf(java.util.Collection)>(v1);
+> return v2;
+> }
+350a371
+> com.google.common.collect.ImmutableSet v4;
+353c374
+< java.lang.Object v4;
+---
+> java.lang.Object v5;
+360,362c381,384
+< specialinvoke v3.<com.google.auto.service.processor.AutoServiceProcessor$1: void <init>(com.google.auto.service.processor.AutoServiceProcessor)>(v0);
+< v4 = interfaceinvoke v2.<javax.lang.model.element.AnnotationValue: java.lang.Object accept(javax.lang.model.element.AnnotationValueVisitor,java.lang.Object)>(v3, null);
+< return v4;
+---
+> v4 = staticinvoke <com.google.common.collect.ImmutableSet: com.google.common.collect.ImmutableSet of()>();
+> specialinvoke v3.<com.google.auto.service.processor.AutoServiceProcessor$1: void <init>(com.google.auto.service.processor.AutoServiceProcessor,com.google.common.collect.ImmutableSet)>(v0, v4);
+> v5 = interfaceinvoke v2.<javax.lang.model.element.AnnotationValue: java.lang.Object accept(javax.lang.model.element.AnnotationValueVisitor,java.lang.Object)>(v3, null);
+> return v5;

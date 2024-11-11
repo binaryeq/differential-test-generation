@@ -1,0 +1,10 @@
+211c211
+< int v10, v12, v14, v2, v4, v8;
+---
+> int v10, v12, v14, v16, v17, v2, v4, v8;
+255c255,257
+< v1.<org.apache.hadoop.hdfs.protocol.proto.DatanodeProtocolProtos$CommitBlockSynchronizationRequestProto: int bitField0_> = v3;
+---
+> v16 = v1.<org.apache.hadoop.hdfs.protocol.proto.DatanodeProtocolProtos$CommitBlockSynchronizationRequestProto: int bitField0_>;
+> v17 = v16 | v3;
+> v1.<org.apache.hadoop.hdfs.protocol.proto.DatanodeProtocolProtos$CommitBlockSynchronizationRequestProto: int bitField0_> = v17;

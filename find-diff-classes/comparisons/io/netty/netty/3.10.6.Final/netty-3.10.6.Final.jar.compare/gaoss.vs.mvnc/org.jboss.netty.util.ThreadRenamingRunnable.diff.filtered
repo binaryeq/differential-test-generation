@@ -1,0 +1,32 @@
+94,96d93
+< label5:
+< if v4 == 0 goto label8;
+< virtualinvoke v1.<java.lang.Thread: void setName(java.lang.String)>(v2);
+98c95
+< label6:
+---
+> label5:
+100,102c97,98
+< if v4 == 0 goto label7;
+< virtualinvoke v1.<java.lang.Thread: void setName(java.lang.String)>(v2);
+< label7:
+---
+> goto label9;
+> label6:
+104c100
+< label8:
+---
+> label7:
+105a102,109
+> label8:
+> if v4 == 0 goto label7;
+> virtualinvoke v1.<java.lang.Thread: void setName(java.lang.String)>(v2);
+> goto label7;
+> label9:
+> if v4 == 0 goto label6;
+> virtualinvoke v1.<java.lang.Thread: void setName(java.lang.String)>(v2);
+> goto label6;
+107c111
+< catch java.lang.Throwable from label4 to label5 with label6;
+---
+> catch java.lang.Throwable from label4 to label5 with label5;

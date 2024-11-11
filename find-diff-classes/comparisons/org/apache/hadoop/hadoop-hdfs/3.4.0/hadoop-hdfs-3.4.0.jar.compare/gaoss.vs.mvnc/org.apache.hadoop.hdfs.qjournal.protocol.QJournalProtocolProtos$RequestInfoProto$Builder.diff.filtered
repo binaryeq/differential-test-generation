@@ -1,0 +1,10 @@
+126c126
+< int v10, v12, v14, v2, v4, v8;
+---
+> int v10, v12, v14, v16, v17, v2, v4, v8;
+170c170,172
+< v1.<org.apache.hadoop.hdfs.qjournal.protocol.QJournalProtocolProtos$RequestInfoProto: int bitField0_> = v3;
+---
+> v16 = v1.<org.apache.hadoop.hdfs.qjournal.protocol.QJournalProtocolProtos$RequestInfoProto: int bitField0_>;
+> v17 = v16 | v3;
+> v1.<org.apache.hadoop.hdfs.qjournal.protocol.QJournalProtocolProtos$RequestInfoProto: int bitField0_> = v17;

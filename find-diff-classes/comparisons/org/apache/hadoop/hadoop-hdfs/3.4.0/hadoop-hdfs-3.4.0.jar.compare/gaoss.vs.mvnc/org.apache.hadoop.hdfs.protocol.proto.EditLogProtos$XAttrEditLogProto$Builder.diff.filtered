@@ -1,0 +1,14 @@
+154d153
+< byte v3;
+156c155
+< int v2, v4;
+---
+> int v2, v4, v6, v7;
+157a157
+> boolean v3;
+168c168,170
+< v1.<org.apache.hadoop.hdfs.protocol.proto.EditLogProtos$XAttrEditLogProto: int bitField0_> = v3;
+---
+> v6 = v1.<org.apache.hadoop.hdfs.protocol.proto.EditLogProtos$XAttrEditLogProto: int bitField0_>;
+> v7 = v6 | v3;
+> v1.<org.apache.hadoop.hdfs.protocol.proto.EditLogProtos$XAttrEditLogProto: int bitField0_> = v7;

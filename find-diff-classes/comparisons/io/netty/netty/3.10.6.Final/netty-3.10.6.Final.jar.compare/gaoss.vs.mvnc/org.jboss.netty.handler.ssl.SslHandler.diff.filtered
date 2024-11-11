@@ -1,0 +1,129 @@
+390c390
+< boolean v10, v12, v14, v15, v17, v19, v3, v35;
+---
+> boolean v10, v12, v14, v15, v17, v19, v3, v33;
+392c392
+< java.lang.Throwable v31;
+---
+> java.lang.Throwable v30;
+397c397
+< org.jboss.netty.channel.ChannelFuture v21, v27, v33, v34;
+---
+> org.jboss.netty.channel.ChannelFuture v21, v27, v31, v32;
+400,401c400,401
+< org.jboss.netty.util.internal.NonReentrantLock v28, v30, v32;
+< org.jboss.netty.channel.Channel v36;
+---
+> org.jboss.netty.util.internal.NonReentrantLock v28, v35, v36;
+> org.jboss.netty.channel.Channel v34;
+471a472
+> goto label15;
+473,475c474,475
+< v30 = v0.<org.jboss.netty.handler.ssl.SslHandler: org.jboss.netty.util.internal.NonReentrantLock pendingUnencryptedWritesLock>;
+< virtualinvoke v30.<org.jboss.netty.util.internal.NonReentrantLock: void unlock()>();
+< goto label12;
+---
+> v30 := @caughtexception;
+> goto label16;
+477,480c477
+< v31 := @caughtexception;
+< v32 = v0.<org.jboss.netty.handler.ssl.SslHandler: org.jboss.netty.util.internal.NonReentrantLock pendingUnencryptedWritesLock>;
+< virtualinvoke v32.<org.jboss.netty.util.internal.NonReentrantLock: void unlock()>();
+< throw v31;
+---
+> throw v30;
+482,486c479,483
+< v33 = v0.<org.jboss.netty.handler.ssl.SslHandler: org.jboss.netty.channel.ChannelFuture handshakeFuture>;
+< if v33 == null goto label13;
+< v34 = v0.<org.jboss.netty.handler.ssl.SslHandler: org.jboss.netty.channel.ChannelFuture handshakeFuture>;
+< v35 = interfaceinvoke v34.<org.jboss.netty.channel.ChannelFuture: boolean isDone()>();
+< if v35 != 0 goto label14;
+---
+> v31 = v0.<org.jboss.netty.handler.ssl.SslHandler: org.jboss.netty.channel.ChannelFuture handshakeFuture>;
+> if v31 == null goto label13;
+> v32 = v0.<org.jboss.netty.handler.ssl.SslHandler: org.jboss.netty.channel.ChannelFuture handshakeFuture>;
+> v33 = interfaceinvoke v32.<org.jboss.netty.channel.ChannelFuture: boolean isDone()>();
+> if v33 != 0 goto label14;
+490,491c487,488
+< v36 = interfaceinvoke v2.<org.jboss.netty.channel.ChannelEvent: org.jboss.netty.channel.Channel getChannel()>();
+< specialinvoke v0.<org.jboss.netty.handler.ssl.SslHandler: void wrap(org.jboss.netty.channel.ChannelHandlerContext,org.jboss.netty.channel.Channel)>(v1, v36);
+---
+> v34 = interfaceinvoke v2.<org.jboss.netty.channel.ChannelEvent: org.jboss.netty.channel.Channel getChannel()>();
+> specialinvoke v0.<org.jboss.netty.handler.ssl.SslHandler: void wrap(org.jboss.netty.channel.ChannelHandlerContext,org.jboss.netty.channel.Channel)>(v1, v34);
+493c490,498
+< catch java.lang.Throwable from label09 to label10 with label11;
+---
+> label15:
+> v35 = v0.<org.jboss.netty.handler.ssl.SslHandler: org.jboss.netty.util.internal.NonReentrantLock pendingUnencryptedWritesLock>;
+> virtualinvoke v35.<org.jboss.netty.util.internal.NonReentrantLock: void unlock()>();
+> goto label12;
+> label16:
+> v36 = v0.<org.jboss.netty.handler.ssl.SslHandler: org.jboss.netty.util.internal.NonReentrantLock pendingUnencryptedWritesLock>;
+> virtualinvoke v36.<org.jboss.netty.util.internal.NonReentrantLock: void unlock()>();
+> goto label11;
+> catch java.lang.Throwable from label09 to label10 with label10;
+509c514
+< java.lang.Throwable v7, v9;
+---
+> java.lang.Throwable v7, v8;
+512c517
+< org.jboss.netty.channel.Channel v10, v8;
+---
+> org.jboss.netty.channel.Channel v10, v9;
+523c528
+< label1:
+---
+> label01:
+525c530
+< if v4 == 0 goto label2;
+---
+> if v4 == 0 goto label02;
+531c536
+< label2:
+---
+> label02:
+533,535c538,540
+< label3:
+< goto label5;
+< label4:
+---
+> label03:
+> goto label05;
+> label04:
+539c544
+< label5:
+---
+> label05:
+541,543c546,556
+< label6:
+< v8 = interfaceinvoke v2.<org.jboss.netty.channel.ChannelStateEvent: org.jboss.netty.channel.Channel getChannel()>();
+< specialinvoke v0.<org.jboss.netty.handler.ssl.SslHandler: void unwrapNonAppData(org.jboss.netty.channel.ChannelHandlerContext,org.jboss.netty.channel.Channel,boolean)>(v1, v8, 0);
+---
+> goto label09;
+> label06:
+> v8 := @caughtexception;
+> goto label10;
+> label07:
+> throw v8;
+> label08:
+> return;
+> label09:
+> v9 = interfaceinvoke v2.<org.jboss.netty.channel.ChannelStateEvent: org.jboss.netty.channel.Channel getChannel()>();
+> specialinvoke v0.<org.jboss.netty.handler.ssl.SslHandler: void unwrapNonAppData(org.jboss.netty.channel.ChannelHandlerContext,org.jboss.netty.channel.Channel,boolean)>(v1, v9, 0);
+545,547c558,559
+< goto label8;
+< label7:
+< v9 := @caughtexception;
+---
+> goto label08;
+> label10:
+551,555c563,565
+< throw v9;
+< label8:
+< return;
+< catch java.lang.Throwable from label1 to label3 with label4;
+< catch java.lang.Throwable from label5 to label6 with label7;
+---
+> goto label07;
+> catch java.lang.Throwable from label01 to label03 with label04;
+> catch java.lang.Throwable from label05 to label06 with label06;

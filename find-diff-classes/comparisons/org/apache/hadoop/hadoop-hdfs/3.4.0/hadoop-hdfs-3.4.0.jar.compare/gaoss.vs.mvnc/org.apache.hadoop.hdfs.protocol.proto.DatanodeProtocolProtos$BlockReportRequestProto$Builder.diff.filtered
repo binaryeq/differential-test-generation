@@ -1,0 +1,13 @@
+190c190,191
+< int v10, v2, v4, v8;
+---
+> int v10, v14, v15, v2, v4, v8;
+> org.apache.hadoop.thirdparty.protobuf.AbstractMessage v13, v7;
+193d193
+< org.apache.hadoop.thirdparty.protobuf.AbstractMessage v13, v7;
+224c224,226
+< v1.<org.apache.hadoop.hdfs.protocol.proto.DatanodeProtocolProtos$BlockReportRequestProto: int bitField0_> = v3;
+---
+> v14 = v1.<org.apache.hadoop.hdfs.protocol.proto.DatanodeProtocolProtos$BlockReportRequestProto: int bitField0_>;
+> v15 = v14 | v3;
+> v1.<org.apache.hadoop.hdfs.protocol.proto.DatanodeProtocolProtos$BlockReportRequestProto: int bitField0_> = v15;

@@ -1,0 +1,10 @@
+112c112
+< int v10, v2, v4, v6, v8;
+---
+> int v10, v12, v13, v2, v4, v6, v8;
+141c141,143
+< v1.<org.apache.hadoop.hdfs.server.namenode.FsImageProto$INodeSection$INodeSymlink: int bitField0_> = v3;
+---
+> v12 = v1.<org.apache.hadoop.hdfs.server.namenode.FsImageProto$INodeSection$INodeSymlink: int bitField0_>;
+> v13 = v12 | v3;
+> v1.<org.apache.hadoop.hdfs.server.namenode.FsImageProto$INodeSection$INodeSymlink: int bitField0_> = v13;

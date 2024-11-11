@@ -1,0 +1,19 @@
+388c388
+< int v1;
+---
+> int v1, v6, v7;
+390c390,391
+< java.lang.String v4, v5;
+---
+> java.lang.StringBuilder v9;
+> java.lang.String v4, v5, v8;
+397,398c398,403
+< v5 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,int)>(v4, v1) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("[[\u0001: \u0001 frames collapsed (https://goo.gl/aH3UyP)]]");
+< specialinvoke v3.<java.lang.StackTraceElement: void <init>(java.lang.String,java.lang.String,java.lang.String,int)>(v5, "", "", 0);
+---
+> v5 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v4);
+> v6 = virtualinvoke v5.<java.lang.String: int length()>();
+> v7 = 58 + v6;
+> specialinvoke v9.<java.lang.StringBuilder: void <init>(int)>(v7);
+> v8 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,int)>(v4, v1) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("[[\u0001: \u0001 frames collapsed (https://goo.gl/aH3UyP)]]");
+> specialinvoke v3.<java.lang.StackTraceElement: void <init>(java.lang.String,java.lang.String,java.lang.String,int)>(v8, "", "", 0);

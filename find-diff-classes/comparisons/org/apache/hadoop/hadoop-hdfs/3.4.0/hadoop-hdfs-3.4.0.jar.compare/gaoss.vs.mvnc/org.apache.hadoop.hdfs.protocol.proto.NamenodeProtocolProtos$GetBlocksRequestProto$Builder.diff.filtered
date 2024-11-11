@@ -1,0 +1,10 @@
+128c128
+< int v10, v12, v14, v15, v2, v4, v8;
+---
+> int v10, v12, v14, v15, v16, v17, v2, v4, v8;
+171c171,173
+< v1.<org.apache.hadoop.hdfs.protocol.proto.NamenodeProtocolProtos$GetBlocksRequestProto: int bitField0_> = v3;
+---
+> v16 = v1.<org.apache.hadoop.hdfs.protocol.proto.NamenodeProtocolProtos$GetBlocksRequestProto: int bitField0_>;
+> v17 = v16 | v3;
+> v1.<org.apache.hadoop.hdfs.protocol.proto.NamenodeProtocolProtos$GetBlocksRequestProto: int bitField0_> = v17;

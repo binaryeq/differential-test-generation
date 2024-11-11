@@ -1,0 +1,13 @@
+151d150
+< byte v3;
+153d151
+< int v2, v4;
+155a154,155
+> int v2, v4, v6, v7;
+> boolean v3;
+166c166,168
+< v1.<org.apache.hadoop.hdfs.protocol.proto.HdfsServerProtos$RemoteEditLogManifestProto: int bitField0_> = v3;
+---
+> v6 = v1.<org.apache.hadoop.hdfs.protocol.proto.HdfsServerProtos$RemoteEditLogManifestProto: int bitField0_>;
+> v7 = v6 | v3;
+> v1.<org.apache.hadoop.hdfs.protocol.proto.HdfsServerProtos$RemoteEditLogManifestProto: int bitField0_> = v7;

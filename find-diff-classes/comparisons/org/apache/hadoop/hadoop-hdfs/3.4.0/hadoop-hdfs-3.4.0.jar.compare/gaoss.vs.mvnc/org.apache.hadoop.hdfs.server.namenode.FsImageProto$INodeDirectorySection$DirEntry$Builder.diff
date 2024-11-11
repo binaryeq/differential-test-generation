@@ -1,0 +1,12 @@
+150,151d149
+< byte v3;
+< int v2, v4;
+153a152,153
+> int v2, v4, v6, v7;
+> boolean v3;
+164c164,166
+< v1.<org.apache.hadoop.hdfs.server.namenode.FsImageProto$INodeDirectorySection$DirEntry: int bitField0_> = v3;
+---
+> v6 = v1.<org.apache.hadoop.hdfs.server.namenode.FsImageProto$INodeDirectorySection$DirEntry: int bitField0_>;
+> v7 = v6 | v3;
+> v1.<org.apache.hadoop.hdfs.server.namenode.FsImageProto$INodeDirectorySection$DirEntry: int bitField0_> = v7;

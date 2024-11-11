@@ -1,0 +1,130 @@
+44,48c44,48
+< com.google.common.collect.ImmutableList v29;
+< int v12, v13, v14, v15, v16, v17, v19, v2, v20, v22, v23, v25, v26, v4, v5, v6, v7;
+< java.lang.String v0, v1, v10, v11, v21, v24, v3, v9;
+< com.google.common.truth.Fact v27, v28;
+< boolean v18, v8;
+---
+> boolean v28, v8;
+> com.google.common.collect.ImmutableList v41;
+> int v12, v18, v2, v22, v23, v24, v25, v26, v27, v29, v30, v33, v34, v37, v38, v4, v5, v6, v7;
+> java.lang.String v0, v1, v10, v11, v13, v14, v15, v16, v17, v19, v20, v21, v3, v31, v32, v35, v36, v9;
+> com.google.common.truth.Fact v39, v40;
+56,57c56,57
+< label1:
+< if v6 <= 0 goto label2;
+---
+> label01:
+> if v6 <= 0 goto label02;
+60c60
+< if v8 == 0 goto label2;
+---
+> if v8 == 0 goto label02;
+62,70c62,67
+< goto label1;
+< label2:
+< if v6 <= 3 goto label3;
+< v9 = virtualinvoke v0.<java.lang.String: java.lang.String substring(int)>(v6);
+< v0 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v9) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u2026\u0001");
+< v10 = virtualinvoke v1.<java.lang.String: java.lang.String substring(int)>(v6);
+< v1 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v10) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u2026\u0001");
+< label3:
+< v11 = staticinvoke <com.google.common.base.Strings: java.lang.String commonSuffix(java.lang.CharSequence,java.lang.CharSequence)>(v0, v1);
+---
+> goto label01;
+> label02:
+> if v6 <= 3 goto label07;
+> v9 = "\u2026";
+> v10 = virtualinvoke v0.<java.lang.String: java.lang.String substring(int)>(v6);
+> v11 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v10);
+72,93c69,97
+< v13 = v12 - 20;
+< v14 = staticinvoke <java.lang.Math: int max(int,int)>(0, v13);
+< label4:
+< if v14 <= 0 goto label5;
+< v15 = virtualinvoke v0.<java.lang.String: int length()>();
+< v16 = v15 - v14;
+< v17 = v16 - 1;
+< v18 = staticinvoke <com.google.common.truth.ComparisonFailures: boolean validSurrogatePairAt(java.lang.CharSequence,int)>(v0, v17);
+< if v18 == 0 goto label5;
+< v14 = v14 - 1;
+< goto label4;
+< label5:
+< if v14 <= 3 goto label6;
+< v19 = virtualinvoke v0.<java.lang.String: int length()>();
+< v20 = v19 - v14;
+< v21 = virtualinvoke v0.<java.lang.String: java.lang.String substring(int,int)>(0, v20);
+< v0 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v21) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001\u2026");
+< v22 = virtualinvoke v1.<java.lang.String: int length()>();
+< v23 = v22 - v14;
+< v24 = virtualinvoke v1.<java.lang.String: java.lang.String substring(int,int)>(0, v23);
+< v1 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v24) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001\u2026");
+< label6:
+---
+> if v12 == 0 goto label03;
+> v13 = virtualinvoke v9.<java.lang.String: java.lang.String concat(java.lang.String)>(v11);
+> goto label04;
+> label03:
+> v14 = new java.lang.String;
+> v13 = v14;
+> specialinvoke v14.<java.lang.String: void <init>(java.lang.String)>("\u2026");
+> label04:
+> v0 = v13;
+> v15 = "\u2026";
+> v16 = virtualinvoke v1.<java.lang.String: java.lang.String substring(int)>(v6);
+> v17 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v16);
+> v18 = virtualinvoke v17.<java.lang.String: int length()>();
+> if v18 == 0 goto label05;
+> v19 = virtualinvoke v15.<java.lang.String: java.lang.String concat(java.lang.String)>(v17);
+> goto label06;
+> label05:
+> v20 = new java.lang.String;
+> v19 = v20;
+> specialinvoke v20.<java.lang.String: void <init>(java.lang.String)>("\u2026");
+> label06:
+> v1 = v19;
+> label07:
+> v21 = staticinvoke <com.google.common.base.Strings: java.lang.String commonSuffix(java.lang.CharSequence,java.lang.CharSequence)>(v0, v1);
+> v22 = virtualinvoke v21.<java.lang.String: int length()>();
+> v23 = v22 - 20;
+> v24 = staticinvoke <java.lang.Math: int max(int,int)>(0, v23);
+> label08:
+> if v24 <= 0 goto label09;
+95,96c99,120
+< v26 = v2 - v25;
+< if v26 >= 60 goto label7;
+---
+> v26 = v25 - v24;
+> v27 = v26 - 1;
+> v28 = staticinvoke <com.google.common.truth.ComparisonFailures: boolean validSurrogatePairAt(java.lang.CharSequence,int)>(v0, v27);
+> if v28 == 0 goto label09;
+> v24 = v24 - 1;
+> goto label08;
+> label09:
+> if v24 <= 3 goto label10;
+> v29 = virtualinvoke v0.<java.lang.String: int length()>();
+> v30 = v29 - v24;
+> v31 = virtualinvoke v0.<java.lang.String: java.lang.String substring(int,int)>(0, v30);
+> v32 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v31);
+> v0 = virtualinvoke v32.<java.lang.String: java.lang.String concat(java.lang.String)>("\u2026");
+> v33 = virtualinvoke v1.<java.lang.String: int length()>();
+> v34 = v33 - v24;
+> v35 = virtualinvoke v1.<java.lang.String: java.lang.String substring(int,int)>(0, v34);
+> v36 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v35);
+> v1 = virtualinvoke v36.<java.lang.String: java.lang.String concat(java.lang.String)>("\u2026");
+> label10:
+> v37 = virtualinvoke v0.<java.lang.String: int length()>();
+> v38 = v2 - v37;
+> if v38 >= 60 goto label11;
+98,102c122,126
+< label7:
+< v27 = staticinvoke <com.google.common.truth.Fact: com.google.common.truth.Fact fact(java.lang.String,java.lang.Object)>("expected", v0);
+< v28 = staticinvoke <com.google.common.truth.Fact: com.google.common.truth.Fact fact(java.lang.String,java.lang.Object)>("but was", v1);
+< v29 = staticinvoke <com.google.common.collect.ImmutableList: com.google.common.collect.ImmutableList of(java.lang.Object,java.lang.Object)>(v27, v28);
+< return v29;
+---
+> label11:
+> v39 = staticinvoke <com.google.common.truth.Fact: com.google.common.truth.Fact fact(java.lang.String,java.lang.Object)>("expected", v0);
+> v40 = staticinvoke <com.google.common.truth.Fact: com.google.common.truth.Fact fact(java.lang.String,java.lang.Object)>("but was", v1);
+> v41 = staticinvoke <com.google.common.collect.ImmutableList: com.google.common.collect.ImmutableList of(java.lang.Object,java.lang.Object)>(v39, v40);
+> return v41;

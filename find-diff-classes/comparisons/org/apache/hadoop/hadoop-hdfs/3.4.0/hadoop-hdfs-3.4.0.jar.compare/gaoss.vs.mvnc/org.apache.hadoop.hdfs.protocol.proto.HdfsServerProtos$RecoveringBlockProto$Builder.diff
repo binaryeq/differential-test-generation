@@ -1,0 +1,10 @@
+149c149
+< int v10, v14, v18, v2, v4, v6;
+---
+> int v10, v14, v18, v2, v20, v21, v4, v6;
+200c200,202
+< v1.<org.apache.hadoop.hdfs.protocol.proto.HdfsServerProtos$RecoveringBlockProto: int bitField0_> = v3;
+---
+> v20 = v1.<org.apache.hadoop.hdfs.protocol.proto.HdfsServerProtos$RecoveringBlockProto: int bitField0_>;
+> v21 = v20 | v3;
+> v1.<org.apache.hadoop.hdfs.protocol.proto.HdfsServerProtos$RecoveringBlockProto: int bitField0_> = v21;

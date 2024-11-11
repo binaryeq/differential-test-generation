@@ -1,0 +1,890 @@
+{
+        "jar1": {
+            "file": "~/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar",
+            "classcount": 2415,
+            "md5": "afbd98d823bafa495faa49509c39f6de",
+            "sha1": "e9786a48a7bdb5d56eb51ceff3209af3d5cbf3e5",
+            "size": "5 MB",
+            "manifest": {
+                "Manifest-Version": "1.0",
+                "Archiver-Version": "Plexus Archiver",
+                "Created-By": "Apache Maven 3.9.6",
+                "Built-By": "root",
+                "Build-Jdk": "11.0.22"
+            },
+            "services": {"org.apache.hadoop.security.token.DtFetcher": [
+                "org.apache.hadoop.hdfs.HdfsDtFetcher",
+                "org.apache.hadoop.hdfs.WebHdfsDtFetcher",
+                "org.apache.hadoop.hdfs.SWebHdfsDtFetcher"
+            ]}
+        },
+        "jar2": {
+            "file": "~/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar",
+            "classcount": 2417,
+            "md5": "f67f3a5613c885e1622b1056fd94262b",
+            "sha1": "ba40aca60f39599d5b1f1d32b35295bfde1f3c8b",
+            "size": "6 MB",
+            "manifest": {
+                "Manifest-Version": "1.0",
+                "Archiver-Version": "Plexus Archiver",
+                "Built-By": "ubuntu",
+                "Created-By": "Apache Maven 3.6.0",
+                "Build-Jdk": "1.8.0_362"
+            },
+            "services": {"org.apache.hadoop.security.token.DtFetcher": [
+                "org.apache.hadoop.hdfs.HdfsDtFetcher",
+                "org.apache.hadoop.hdfs.WebHdfsDtFetcher",
+                "org.apache.hadoop.hdfs.SWebHdfsDtFetcher"
+            ]}
+        },
+        "contentset-comparisons": [
+            {
+                "content-type": "sources",
+                "jar1.count": 0,
+                "jar2.count": 0,
+                "intersection": 0,
+                "union": 0,
+                "jar1-jar2": [],
+                "jar2-jar1": []
+            },
+            {
+                "content-type": "bytecode",
+                "jar1.count": 2343,
+                "jar2.count": 2343,
+                "intersection": 2343,
+                "union": 2343,
+                "jar1-jar2": [],
+                "jar2-jar1": []
+            },
+            {
+                "content-type": "metadata",
+                "jar1.count": 9,
+                "jar2.count": 11,
+                "intersection": 9,
+                "union": 11,
+                "jar1-jar2": [],
+                "jar2-jar1": [
+                    "META-INF/LICENSE.txt",
+                    "META-INF/NOTICE.txt"
+                ]
+            },
+            {
+                "content-type": "other",
+                "jar1.count": 63,
+                "jar2.count": 63,
+                "intersection": 63,
+                "union": 63,
+                "jar1-jar2": [],
+                "jar2-jar1": []
+            }
+        ],
+        "content-pairwise-comparisons": [{
+            "equivalence": {
+                "class": "io.github.bineq.equivalences.bytecode.JNormEquivalence2",
+                "name": "jnorm2"
+            },
+            "summary": {
+                "description": "comparison results of jar/folder content (pairwise comparison of content in both jars/folders)",
+                "equivalent": 2299,
+                "non-equivalent": 44,
+                "errors": 0
+            },
+            "details": {
+                "non-equivalent": [
+                    {
+                        "class": "org/apache/hadoop/hdfs/server/namenode/FsckServlet.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.namenode.FsckServlet.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.namenode.FsckServlet.jimple",
+                            "transformed-class1": {
+                                "value": "public class org.apache.hadoop.hdfs.server.namenode.FsckServlet extends org.apache.hadoop.hdfs.serve ..  [abbreviated, 2844 chars]",
+                                "sha1": "b3c181b2784f58851bd4ffc7682f5367913409f8",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.namenode.FsckServlet.jimple",
+                                "md5": "e3b54ff6db54b6d0b7367cd8bde77583"
+                            },
+                            "transformed-class2": {
+                                "value": "public class org.apache.hadoop.hdfs.server.namenode.FsckServlet extends org.apache.hadoop.hdfs.serve ..  [abbreviated, 2843 chars]",
+                                "sha1": "415560b6030cb71ab05f5fd24ca6f90c4f292c47",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.namenode.FsckServlet.jimple",
+                                "md5": "d8793212e705b78a10c23217c9f27e1b"
+                            }
+                        }
+                    },
+                    {
+                        "class": "org/apache/hadoop/hdfs/tools/DFSAdmin.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.tools.DFSAdmin.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.tools.DFSAdmin.jimple",
+                            "transformed-class1": {
+                                "value": "public class org.apache.hadoop.hdfs.tools.DFSAdmin extends org.apache.hadoop.fs.FsShell\n{\nprivate st ..  [abbreviated, 236358 chars]",
+                                "sha1": "abeeaba5f968d5ef98a7f62a39e07b602c2af5ca",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.tools.DFSAdmin.jimple",
+                                "md5": "2be7bdb78c1d329ed76c43952fec7544"
+                            },
+                            "transformed-class2": {
+                                "value": "public class org.apache.hadoop.hdfs.tools.DFSAdmin extends org.apache.hadoop.fs.FsShell\n{\nprivate st ..  [abbreviated, 236408 chars]",
+                                "sha1": "6c871c6a2b13e618e900230ed16727304b9e3d74",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.tools.DFSAdmin.jimple",
+                                "md5": "1bd487a33ea4866bd8f5e82fe9a920d3"
+                            }
+                        }
+                    },
+                    {
+                        "class": "org/apache/hadoop/hdfs/server/datanode/fsdataset/impl/ReplicaMap.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.datanode.fsdataset.impl.ReplicaMap.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.datanode.fsdataset.impl.ReplicaMap.jimple",
+                            "transformed-class1": {
+                                "value": "class org.apache.hadoop.hdfs.server.datanode.fsdataset.impl.ReplicaMap extends java.lang.Object\n{\npr ..  [abbreviated, 23273 chars]",
+                                "sha1": "0994f95a42fc5198c14b80fe63c2d5147d1ff835",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.datanode.fsdataset.impl.ReplicaMap.jimple",
+                                "md5": "145e8034aeedf650a33e02ac69355fec"
+                            },
+                            "transformed-class2": {
+                                "value": "class org.apache.hadoop.hdfs.server.datanode.fsdataset.impl.ReplicaMap extends java.lang.Object\n{\npr ..  [abbreviated, 23273 chars]",
+                                "sha1": "d2adf63c2dc4ade88fded5f69728869e7201d96f",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.datanode.fsdataset.impl.ReplicaMap.jimple",
+                                "md5": "5ccf9f4a9c23e840ce373043074c0dbd"
+                            }
+                        }
+                    },
+                    {
+                        "class": "org/apache/hadoop/hdfs/server/datanode/DataNode.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.datanode.DataNode.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.datanode.DataNode.jimple",
+                            "transformed-class1": {
+                                "value": "public class org.apache.hadoop.hdfs.server.datanode.DataNode extends org.apache.hadoop.conf.Reconfig ..  [abbreviated, 383417 chars]",
+                                "sha1": "3816bcdae38960e52fe175007c82882b212b06ad",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.datanode.DataNode.jimple",
+                                "md5": "39707296bc27f8aeb4414310505f08e5"
+                            },
+                            "transformed-class2": {
+                                "value": "public class org.apache.hadoop.hdfs.server.datanode.DataNode extends org.apache.hadoop.conf.Reconfig ..  [abbreviated, 383417 chars]",
+                                "sha1": "fd84dbda57a76ac670b80119920a6e460f5885b4",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.datanode.DataNode.jimple",
+                                "md5": "6318d9ded7064f3450846a1639308dd2"
+                            }
+                        }
+                    },
+                    {
+                        "class": "org/apache/hadoop/hdfs/tools/offlineImageViewer/FSImageLoader.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.tools.offlineImageViewer.FSImageLoader.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.tools.offlineImageViewer.FSImageLoader.jimple",
+                            "transformed-class1": {
+                                "value": "class org.apache.hadoop.hdfs.tools.offlineImageViewer.FSImageLoader extends java.lang.Object\n{\npubli ..  [abbreviated, 74116 chars]",
+                                "sha1": "94d3e35feb3b9a8b183a7a90686ca46d103a53e0",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.tools.offlineImageViewer.FSImageLoader.jimple",
+                                "md5": "e58a3cd1fc048e5d6b4c407df2255f3b"
+                            },
+                            "transformed-class2": {
+                                "value": "class org.apache.hadoop.hdfs.tools.offlineImageViewer.FSImageLoader extends java.lang.Object\n{\npubli ..  [abbreviated, 74127 chars]",
+                                "sha1": "9c62da79a84b9534475a0ad131709a29f8ef05f9",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.tools.offlineImageViewer.FSImageLoader.jimple",
+                                "md5": "d18423c62e76ef4bde8f63b2a64f174d"
+                            }
+                        }
+                    },
+                    {
+                        "class": "org/apache/hadoop/hdfs/server/balancer/Dispatcher$Source.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.balancer.Dispatcher$Source.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.balancer.Dispatcher$Source.jimple",
+                            "transformed-class1": {
+                                "value": "public class org.apache.hadoop.hdfs.server.balancer.Dispatcher$Source extends org.apache.hadoop.hdfs ..  [abbreviated, 33704 chars]",
+                                "sha1": "11b907664b647c559055fe31364b5c75e67937b5",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.balancer.Dispatcher$Source.jimple",
+                                "md5": "2303dead4fb5314416c3a6fbd9bc28ef"
+                            },
+                            "transformed-class2": {
+                                "value": "public class org.apache.hadoop.hdfs.server.balancer.Dispatcher$Source extends org.apache.hadoop.hdfs ..  [abbreviated, 33809 chars]",
+                                "sha1": "5065dd925cce09d6d3973ae483f8323f80b323f3",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.balancer.Dispatcher$Source.jimple",
+                                "md5": "108b966a12cccede75f7a92ea3f42491"
+                            }
+                        }
+                    },
+                    {
+                        "class": "org/apache/hadoop/hdfs/server/blockmanagement/DatanodeManager.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.blockmanagement.DatanodeManager.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.blockmanagement.DatanodeManager.jimple",
+                            "transformed-class1": {
+                                "value": "public class org.apache.hadoop.hdfs.server.blockmanagement.DatanodeManager extends java.lang.Object\n ..  [abbreviated, 207754 chars]",
+                                "sha1": "9975130904a67460f4d581e7bf793d744fe9210d",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.blockmanagement.DatanodeManager.jimple",
+                                "md5": "abc81d9af7adb2e26549ce9bc76279ac"
+                            },
+                            "transformed-class2": {
+                                "value": "public class org.apache.hadoop.hdfs.server.blockmanagement.DatanodeManager extends java.lang.Object\n ..  [abbreviated, 207759 chars]",
+                                "sha1": "1a706fd8b34bf1bb0cf6ae80dbe09f161e88306e",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.blockmanagement.DatanodeManager.jimple",
+                                "md5": "e8f7966fde6365575d97a2aebf30bb17"
+                            }
+                        }
+                    },
+                    {
+                        "class": "org/apache/hadoop/hdfs/server/common/HostRestrictingAuthorizationFilter.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.common.HostRestrictingAuthorizationFilter.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.common.HostRestrictingAuthorizationFilter.jimple",
+                            "transformed-class1": {
+                                "value": "public class org.apache.hadoop.hdfs.server.common.HostRestrictingAuthorizationFilter extends java.la ..  [abbreviated, 23797 chars]",
+                                "sha1": "4f08c9c6b0cd6089f44816005c675cfe1e0ae83d",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.common.HostRestrictingAuthorizationFilter.jimple",
+                                "md5": "6cb6a70347822a5660c5fdb121ac2d90"
+                            },
+                            "transformed-class2": {
+                                "value": "public class org.apache.hadoop.hdfs.server.common.HostRestrictingAuthorizationFilter extends java.la ..  [abbreviated, 23791 chars]",
+                                "sha1": "4cb2f6e87c6c6de616df4aed05f40d826d5ff9a9",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.common.HostRestrictingAuthorizationFilter.jimple",
+                                "md5": "590e71c8f0386c4daa2be615876cd219"
+                            }
+                        }
+                    },
+                    {
+                        "class": "org/apache/hadoop/hdfs/server/datanode/DataStorage.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.datanode.DataStorage.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.datanode.DataStorage.jimple",
+                            "transformed-class1": {
+                                "value": "public class org.apache.hadoop.hdfs.server.datanode.DataStorage extends org.apache.hadoop.hdfs.serve ..  [abbreviated, 124419 chars]",
+                                "sha1": "2baf98fc31f9dd991848f19a1963bb63cb8867f0",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.datanode.DataStorage.jimple",
+                                "md5": "1497c3dea9036bf3b2fc1855be47221f"
+                            },
+                            "transformed-class2": {
+                                "value": "public class org.apache.hadoop.hdfs.server.datanode.DataStorage extends org.apache.hadoop.hdfs.serve ..  [abbreviated, 124419 chars]",
+                                "sha1": "c45d88cb7f83cc529d35d1daaa22206d3dbe376b",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.datanode.DataStorage.jimple",
+                                "md5": "eb46dc71190bb9c12702fad594c87a10"
+                            }
+                        }
+                    },
+                    {
+                        "class": "org/apache/hadoop/hdfs/qjournal/server/JournalNodeSyncer.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.qjournal.server.JournalNodeSyncer.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.qjournal.server.JournalNodeSyncer.jimple",
+                            "transformed-class1": {
+                                "value": "public class org.apache.hadoop.hdfs.qjournal.server.JournalNodeSyncer extends java.lang.Object\n{\npub ..  [abbreviated, 47185 chars]",
+                                "sha1": "d088b364e7b2fe6226d6a1ec79c80864e34acd1c",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.qjournal.server.JournalNodeSyncer.jimple",
+                                "md5": "a43f8973177a4313c2056eb9d9e9d840"
+                            },
+                            "transformed-class2": {
+                                "value": "public class org.apache.hadoop.hdfs.qjournal.server.JournalNodeSyncer extends java.lang.Object\n{\npub ..  [abbreviated, 47182 chars]",
+                                "sha1": "1d5b07946d6476b9697401258e1694722082f220",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.qjournal.server.JournalNodeSyncer.jimple",
+                                "md5": "db998abbf23a67c11cfbabca6852229b"
+                            }
+                        }
+                    },
+                    {
+                        "class": "org/apache/hadoop/hdfs/server/namenode/FSDirErasureCodingOp.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.namenode.FSDirErasureCodingOp.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.namenode.FSDirErasureCodingOp.jimple",
+                            "transformed-class1": {
+                                "value": "final class org.apache.hadoop.hdfs.server.namenode.FSDirErasureCodingOp extends java.lang.Object\n{\ns ..  [abbreviated, 45202 chars]",
+                                "sha1": "d89b8b8459b0157c1a0d688c0da866c6028f54f2",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.namenode.FSDirErasureCodingOp.jimple",
+                                "md5": "2a45da169882682d7bca57333708b634"
+                            },
+                            "transformed-class2": {
+                                "value": "final class org.apache.hadoop.hdfs.server.namenode.FSDirErasureCodingOp extends java.lang.Object\n{\ns ..  [abbreviated, 45202 chars]",
+                                "sha1": "f7c1d8b9cdc4f906ccb41a83a76d09fb1ca22968",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.namenode.FSDirErasureCodingOp.jimple",
+                                "md5": "48b6e52ddfd48652f7700a6f77806887"
+                            }
+                        }
+                    },
+                    {
+                        "class": "org/apache/hadoop/hdfs/server/namenode/snapshot/SnapshotDiffListingInfo.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.namenode.snapshot.SnapshotDiffListingInfo.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.namenode.snapshot.SnapshotDiffListingInfo.jimple",
+                            "transformed-class1": {
+                                "value": "class org.apache.hadoop.hdfs.server.namenode.snapshot.SnapshotDiffListingInfo extends java.lang.Obje ..  [abbreviated, 21593 chars]",
+                                "sha1": "c089f2858f5c0c6fb9c9714a712c91c8ed7b3d69",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.namenode.snapshot.SnapshotDiffListingInfo.jimple",
+                                "md5": "d395cb0f4c55a9dd53553baefb8b6267"
+                            },
+                            "transformed-class2": {
+                                "value": "class org.apache.hadoop.hdfs.server.namenode.snapshot.SnapshotDiffListingInfo extends java.lang.Obje ..  [abbreviated, 21722 chars]",
+                                "sha1": "04e3881fec897be78b2a7ec36d4e541e02e42b5f",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.namenode.snapshot.SnapshotDiffListingInfo.jimple",
+                                "md5": "cd1211aed3b09c2881eb2568ac7144a1"
+                            }
+                        }
+                    },
+                    {
+                        "class": "org/apache/hadoop/hdfs/server/blockmanagement/DatanodeAdminDefaultMonitor.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.blockmanagement.DatanodeAdminDefaultMonitor.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.blockmanagement.DatanodeAdminDefaultMonitor.jimple",
+                            "transformed-class1": {
+                                "value": "public class org.apache.hadoop.hdfs.server.blockmanagement.DatanodeAdminDefaultMonitor extends org.a ..  [abbreviated, 46210 chars]",
+                                "sha1": "cb6f1fec78f3215539fd6837e9d7fc8ef8aee1ea",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.blockmanagement.DatanodeAdminDefaultMonitor.jimple",
+                                "md5": "3f3cab2bc69834efe40960d44a96a201"
+                            },
+                            "transformed-class2": {
+                                "value": "public class org.apache.hadoop.hdfs.server.blockmanagement.DatanodeAdminDefaultMonitor extends org.a ..  [abbreviated, 46210 chars]",
+                                "sha1": "79c58f74141e0531215b2e473bd0b60ffc1ef397",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.blockmanagement.DatanodeAdminDefaultMonitor.jimple",
+                                "md5": "af947e6d53226a16c8755d3bce67275d"
+                            }
+                        }
+                    },
+                    {
+                        "class": "org/apache/hadoop/hdfs/server/datanode/BPServiceActor$CommandProcessingThread.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.datanode.BPServiceActor$CommandProcessingThread.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.datanode.BPServiceActor$CommandProcessingThread.jimple",
+                            "transformed-class1": {
+                                "value": "class org.apache.hadoop.hdfs.server.datanode.BPServiceActor$CommandProcessingThread extends java.lan ..  [abbreviated, 20139 chars]",
+                                "sha1": "b0e426dbef3a8863902a943fd7115f585fc1e41d",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.datanode.BPServiceActor$CommandProcessingThread.jimple",
+                                "md5": "cf6694321902beb1c2e71571c2504ced"
+                            },
+                            "transformed-class2": {
+                                "value": "class org.apache.hadoop.hdfs.server.datanode.BPServiceActor$CommandProcessingThread extends java.lan ..  [abbreviated, 20139 chars]",
+                                "sha1": "01b5aae86cdf837cdf51688a2eb2af3252ed9476",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.datanode.BPServiceActor$CommandProcessingThread.jimple",
+                                "md5": "0e9d5267cfe959ee80770deace26bcb5"
+                            }
+                        }
+                    },
+                    {
+                        "class": "org/apache/hadoop/hdfs/server/blockmanagement/BlockPlacementPolicyDefault.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.blockmanagement.BlockPlacementPolicyDefault.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.blockmanagement.BlockPlacementPolicyDefault.jimple",
+                            "transformed-class1": {
+                                "value": "public class org.apache.hadoop.hdfs.server.blockmanagement.BlockPlacementPolicyDefault extends org.a ..  [abbreviated, 110889 chars]",
+                                "sha1": "0bb7e81f177da97c9b6c7bda3f576b575490af23",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.blockmanagement.BlockPlacementPolicyDefault.jimple",
+                                "md5": "af04d85166c9755e04367d5e1535a6af"
+                            },
+                            "transformed-class2": {
+                                "value": "public class org.apache.hadoop.hdfs.server.blockmanagement.BlockPlacementPolicyDefault extends org.a ..  [abbreviated, 110889 chars]",
+                                "sha1": "2e9ee74e124ed5fc6a7731846a89cd89d43374b0",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.blockmanagement.BlockPlacementPolicyDefault.jimple",
+                                "md5": "a8495af1313891ab4c83aede9d485ee0"
+                            }
+                        }
+                    },
+                    {
+                        "class": "org/apache/hadoop/hdfs/server/blockmanagement/DatanodeAdminBackoffMonitor.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.blockmanagement.DatanodeAdminBackoffMonitor.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.blockmanagement.DatanodeAdminBackoffMonitor.jimple",
+                            "transformed-class1": {
+                                "value": "public class org.apache.hadoop.hdfs.server.blockmanagement.DatanodeAdminBackoffMonitor extends org.a ..  [abbreviated, 66751 chars]",
+                                "sha1": "125bd6b443e6d0a1748d9b874f9f3c47db982d15",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.blockmanagement.DatanodeAdminBackoffMonitor.jimple",
+                                "md5": "df3dfc40fe5dcaf2648af0a1052a3e25"
+                            },
+                            "transformed-class2": {
+                                "value": "public class org.apache.hadoop.hdfs.server.blockmanagement.DatanodeAdminBackoffMonitor extends org.a ..  [abbreviated, 66751 chars]",
+                                "sha1": "c6b74e0ba75ae0536e4a358d8245e9beed776e63",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.blockmanagement.DatanodeAdminBackoffMonitor.jimple",
+                                "md5": "652a9f2dbdec731ac8c25b139fee8d51"
+                            }
+                        }
+                    },
+                    {
+                        "class": "org/apache/hadoop/hdfs/server/blockmanagement/SlowPeerTracker.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.blockmanagement.SlowPeerTracker.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.blockmanagement.SlowPeerTracker.jimple",
+                            "transformed-class1": {
+                                "value": "public class org.apache.hadoop.hdfs.server.blockmanagement.SlowPeerTracker extends java.lang.Object\n ..  [abbreviated, 18794 chars]",
+                                "sha1": "de8d3dba60d8e6f7c23b81ee81c4d5e0d0d0ca4a",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.blockmanagement.SlowPeerTracker.jimple",
+                                "md5": "0d2ca7968303aaa52ca1fe9c1d7bbca5"
+                            },
+                            "transformed-class2": {
+                                "value": "public class org.apache.hadoop.hdfs.server.blockmanagement.SlowPeerTracker extends java.lang.Object\n ..  [abbreviated, 18794 chars]",
+                                "sha1": "3e100c9841a3240f76a573f7b6825548a60cd1b2",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.blockmanagement.SlowPeerTracker.jimple",
+                                "md5": "eee29277e14dfb9970eecac62cc40837"
+                            }
+                        }
+                    },
+                    {
+                        "class": "org/apache/hadoop/hdfs/server/datanode/fsdataset/impl/FsDatasetImpl.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.datanode.fsdataset.impl.FsDatasetImpl.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.datanode.fsdataset.impl.FsDatasetImpl.jimple",
+                            "transformed-class1": {
+                                "value": "class org.apache.hadoop.hdfs.server.datanode.fsdataset.impl.FsDatasetImpl extends java.lang.Object i ..  [abbreviated, 421591 chars]",
+                                "sha1": "914f0efbfe810d9aee3d3b31fb78660ec36008f1",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.datanode.fsdataset.impl.FsDatasetImpl.jimple",
+                                "md5": "fd3cafd8d131bd9fdfc2dce2ce10c75c"
+                            },
+                            "transformed-class2": {
+                                "value": "class org.apache.hadoop.hdfs.server.datanode.fsdataset.impl.FsDatasetImpl extends java.lang.Object i ..  [abbreviated, 421591 chars]",
+                                "sha1": "6a2975ce47840eafc794eb270fbca2af909f780f",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.datanode.fsdataset.impl.FsDatasetImpl.jimple",
+                                "md5": "3684463b3cc11629e10b4d2855f33192"
+                            }
+                        }
+                    },
+                    {
+                        "class": "org/apache/hadoop/hdfs/server/namenode/ErasureCodingPolicyManager.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.namenode.ErasureCodingPolicyManager.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.namenode.ErasureCodingPolicyManager.jimple",
+                            "transformed-class1": {
+                                "value": "public final class org.apache.hadoop.hdfs.server.namenode.ErasureCodingPolicyManager extends java.la ..  [abbreviated, 55162 chars]",
+                                "sha1": "32cb8b5ba97bd2c470c7804a70650f0cbd705c2e",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.namenode.ErasureCodingPolicyManager.jimple",
+                                "md5": "7d08225beb491f91aeb61c444236975d"
+                            },
+                            "transformed-class2": {
+                                "value": "public final class org.apache.hadoop.hdfs.server.namenode.ErasureCodingPolicyManager extends java.la ..  [abbreviated, 55162 chars]",
+                                "sha1": "de213841fc962db8959282353a8b5742142a990c",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.namenode.ErasureCodingPolicyManager.jimple",
+                                "md5": "6e874feab48007f7331e62e3418986ab"
+                            }
+                        }
+                    },
+                    {
+                        "class": "org/apache/hadoop/hdfs/tools/DebugAdmin$VerifyECCommand.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.tools.DebugAdmin$VerifyECCommand.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.tools.DebugAdmin$VerifyECCommand.jimple",
+                            "transformed-class1": {
+                                "value": "class org.apache.hadoop.hdfs.tools.DebugAdmin$VerifyECCommand extends org.apache.hadoop.hdfs.tools.D ..  [abbreviated, 29038 chars]",
+                                "sha1": "a4558faf44256ed7b79c5d843f3175917ca0919f",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.tools.DebugAdmin$VerifyECCommand.jimple",
+                                "md5": "2a6e133f96300d212e95ccee9f1e1087"
+                            },
+                            "transformed-class2": {
+                                "value": "class org.apache.hadoop.hdfs.tools.DebugAdmin$VerifyECCommand extends org.apache.hadoop.hdfs.tools.D ..  [abbreviated, 29039 chars]",
+                                "sha1": "5e864037848256041eb40adceeefea6e7a76f345",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.tools.DebugAdmin$VerifyECCommand.jimple",
+                                "md5": "8492e2ab2f68fc5deb52f2a683a55130"
+                            }
+                        }
+                    },
+                    {
+                        "class": "org/apache/hadoop/hdfs/protocolPB/InMemoryAliasMapProtocolClientSideTranslatorPB.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.protocolPB.InMemoryAliasMapProtocolClientSideTranslatorPB.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.protocolPB.InMemoryAliasMapProtocolClientSideTranslatorPB.jimple",
+                            "transformed-class1": {
+                                "value": "public class org.apache.hadoop.hdfs.protocolPB.InMemoryAliasMapProtocolClientSideTranslatorPB extend ..  [abbreviated, 23137 chars]",
+                                "sha1": "13d2b92d077f1801200b05aa69f0810a35043410",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.protocolPB.InMemoryAliasMapProtocolClientSideTranslatorPB.jimple",
+                                "md5": "bf434a07db6ab40d70327955c47ce256"
+                            },
+                            "transformed-class2": {
+                                "value": "public class org.apache.hadoop.hdfs.protocolPB.InMemoryAliasMapProtocolClientSideTranslatorPB extend ..  [abbreviated, 23137 chars]",
+                                "sha1": "fae14d23c3c992a5f6b46e00122c3dd7750b83b9",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.protocolPB.InMemoryAliasMapProtocolClientSideTranslatorPB.jimple",
+                                "md5": "720cfba594aa4da3a6a14503776675b3"
+                            }
+                        }
+                    },
+                    {
+                        "class": "org/apache/hadoop/hdfs/server/blockmanagement/CombinedHostFileManager$HostProperties.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.blockmanagement.CombinedHostFileManager$HostProperties.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.blockmanagement.CombinedHostFileManager$HostProperties.jimple",
+                            "transformed-class1": {
+                                "value": "class org.apache.hadoop.hdfs.server.blockmanagement.CombinedHostFileManager$HostProperties extends j ..  [abbreviated, 10898 chars]",
+                                "sha1": "91d590c377278ac1fe09c6ae8cc9380677e552c2",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.blockmanagement.CombinedHostFileManager$HostProperties.jimple",
+                                "md5": "531d76f7d8e072a8da877741785fb9e1"
+                            },
+                            "transformed-class2": {
+                                "value": "class org.apache.hadoop.hdfs.server.blockmanagement.CombinedHostFileManager$HostProperties extends j ..  [abbreviated, 10899 chars]",
+                                "sha1": "84e0a5d356c558242787e8e9b57486534e6f66af",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.blockmanagement.CombinedHostFileManager$HostProperties.jimple",
+                                "md5": "45afc890dbf6d8eb43434c00c48b3dc0"
+                            }
+                        }
+                    },
+                    {
+                        "class": "org/apache/hadoop/hdfs/server/namenode/NameNode.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.namenode.NameNode.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.namenode.NameNode.jimple",
+                            "transformed-class1": {
+                                "value": "public class org.apache.hadoop.hdfs.server.namenode.NameNode extends org.apache.hadoop.conf.Reconfig ..  [abbreviated, 249120 chars]",
+                                "sha1": "fbca38ae5f2261bf501cde213f7b1789cde98157",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.namenode.NameNode.jimple",
+                                "md5": "e0fb4e9e3cae7e68e581126cf989dd55"
+                            },
+                            "transformed-class2": {
+                                "value": "public class org.apache.hadoop.hdfs.server.namenode.NameNode extends org.apache.hadoop.conf.Reconfig ..  [abbreviated, 249120 chars]",
+                                "sha1": "cf457a20fea73e6be0a37bf194aa79c2884042e5",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.namenode.NameNode.jimple",
+                                "md5": "99195f21ba556f6a0fc899a3ad5563d7"
+                            }
+                        }
+                    },
+                    {
+                        "class": "org/apache/hadoop/hdfs/protocolPB/AliasMapProtocolServerSideTranslatorPB.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.protocolPB.AliasMapProtocolServerSideTranslatorPB.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.protocolPB.AliasMapProtocolServerSideTranslatorPB.jimple",
+                            "transformed-class1": {
+                                "value": "public class org.apache.hadoop.hdfs.protocolPB.AliasMapProtocolServerSideTranslatorPB extends java.l ..  [abbreviated, 15423 chars]",
+                                "sha1": "9a2cf5f2fe8e590720f533794bbb21b5ca90b53d",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.protocolPB.AliasMapProtocolServerSideTranslatorPB.jimple",
+                                "md5": "5268b4fc4f706de51accdf764fce0816"
+                            },
+                            "transformed-class2": {
+                                "value": "public class org.apache.hadoop.hdfs.protocolPB.AliasMapProtocolServerSideTranslatorPB extends java.l ..  [abbreviated, 15423 chars]",
+                                "sha1": "a2843a5e4bf092d7bdf81f1a096254388a4e9af0",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.protocolPB.AliasMapProtocolServerSideTranslatorPB.jimple",
+                                "md5": "3ca7eceefe07a867ed26f56210079b30"
+                            }
+                        }
+                    },
+                    {
+                        "class": "org/apache/hadoop/hdfs/server/namenode/snapshot/SnapshotDiffInfo.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.namenode.snapshot.SnapshotDiffInfo.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.namenode.snapshot.SnapshotDiffInfo.jimple",
+                            "transformed-class1": {
+                                "value": "class org.apache.hadoop.hdfs.server.namenode.snapshot.SnapshotDiffInfo extends java.lang.Object\n{\npu ..  [abbreviated, 25278 chars]",
+                                "sha1": "94ae29e78cf182068bfb9783ef03abe88a3b2445",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.namenode.snapshot.SnapshotDiffInfo.jimple",
+                                "md5": "b6b055726de00276af0d823b34f70860"
+                            },
+                            "transformed-class2": {
+                                "value": "class org.apache.hadoop.hdfs.server.namenode.snapshot.SnapshotDiffInfo extends java.lang.Object\n{\npu ..  [abbreviated, 25314 chars]",
+                                "sha1": "430653d2536b74712d7846c46660acd11587e6db",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.namenode.snapshot.SnapshotDiffInfo.jimple",
+                                "md5": "5cd9c1ff4578595e41ab7c19495b14bb"
+                            }
+                        }
+                    },
+                    {
+                        "class": "org/apache/hadoop/hdfs/server/namenode/QuotaCounts.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.namenode.QuotaCounts.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.namenode.QuotaCounts.jimple",
+                            "transformed-class1": {
+                                "value": "public class org.apache.hadoop.hdfs.server.namenode.QuotaCounts extends java.lang.Object\n{\nstatic fi ..  [abbreviated, 25668 chars]",
+                                "sha1": "71171acb233d50fb8d6576b3e78328b2deb0d575",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.namenode.QuotaCounts.jimple",
+                                "md5": "7206deb44d73fe649bdf0a7fe8ae2916"
+                            },
+                            "transformed-class2": {
+                                "value": "public class org.apache.hadoop.hdfs.server.namenode.QuotaCounts extends java.lang.Object\n{\nstatic fi ..  [abbreviated, 25668 chars]",
+                                "sha1": "c99791ed072ac3e9489b842f955ca92b42d74638",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.namenode.QuotaCounts.jimple",
+                                "md5": "fc8a272b5892d929334b034a98b11f9b"
+                            }
+                        }
+                    },
+                    {
+                        "class": "org/apache/hadoop/hdfs/server/datanode/DataXceiverServer.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.datanode.DataXceiverServer.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.datanode.DataXceiverServer.jimple",
+                            "transformed-class1": {
+                                "value": "class org.apache.hadoop.hdfs.server.datanode.DataXceiverServer extends java.lang.Object implements j ..  [abbreviated, 43681 chars]",
+                                "sha1": "ac4908cdb4a95e4f5f3e24e1cb003c2aa510a335",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.datanode.DataXceiverServer.jimple",
+                                "md5": "3f650672c054b8b2191d10bc659f068a"
+                            },
+                            "transformed-class2": {
+                                "value": "class org.apache.hadoop.hdfs.server.datanode.DataXceiverServer extends java.lang.Object implements j ..  [abbreviated, 43681 chars]",
+                                "sha1": "bdc252587c5f119c516f8a09d0b671aa8f330239",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.datanode.DataXceiverServer.jimple",
+                                "md5": "e9b7bdf74688d8289daec2cb7d391091"
+                            }
+                        }
+                    },
+                    {
+                        "class": "org/apache/hadoop/hdfs/server/namenode/FSImageFormatPBINode$Loader.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.namenode.FSImageFormatPBINode$Loader.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.namenode.FSImageFormatPBINode$Loader.jimple",
+                            "transformed-class1": {
+                                "value": "public final class org.apache.hadoop.hdfs.server.namenode.FSImageFormatPBINode$Loader extends java.l ..  [abbreviated, 86746 chars]",
+                                "sha1": "48cbd086a89b3bb7b11e242c69022c8db7282967",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.namenode.FSImageFormatPBINode$Loader.jimple",
+                                "md5": "64d92d827453c79b99569de55db868ab"
+                            },
+                            "transformed-class2": {
+                                "value": "public final class org.apache.hadoop.hdfs.server.namenode.FSImageFormatPBINode$Loader extends java.l ..  [abbreviated, 86746 chars]",
+                                "sha1": "d3218a1189795a026ca92d711c326d5865781997",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.namenode.FSImageFormatPBINode$Loader.jimple",
+                                "md5": "90d6291e7090d582209fef43b4456545"
+                            }
+                        }
+                    },
+                    {
+                        "class": "org/apache/hadoop/hdfs/server/namenode/snapshot/DirectorySnapshottableFeature.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.namenode.snapshot.DirectorySnapshottableFeature.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.namenode.snapshot.DirectorySnapshottableFeature.jimple",
+                            "transformed-class1": {
+                                "value": "public class org.apache.hadoop.hdfs.server.namenode.snapshot.DirectorySnapshottableFeature extends o ..  [abbreviated, 55028 chars]",
+                                "sha1": "405fac23a71a9de7693fa45a8ab96f3b719b6d19",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.namenode.snapshot.DirectorySnapshottableFeature.jimple",
+                                "md5": "73c1bc429092a02141ae050b6f2947ad"
+                            },
+                            "transformed-class2": {
+                                "value": "public class org.apache.hadoop.hdfs.server.namenode.snapshot.DirectorySnapshottableFeature extends o ..  [abbreviated, 55082 chars]",
+                                "sha1": "f3aa322c91c231427998d5d885d491d94963badb",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.namenode.snapshot.DirectorySnapshottableFeature.jimple",
+                                "md5": "ca75420b78f27c4d18ab7309ca3a969d"
+                            }
+                        }
+                    },
+                    {
+                        "class": "org/apache/hadoop/hdfs/server/protocol/RemoteEditLog.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.protocol.RemoteEditLog.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.protocol.RemoteEditLog.jimple",
+                            "transformed-class1": {
+                                "value": "public class org.apache.hadoop.hdfs.server.protocol.RemoteEditLog extends java.lang.Object implement ..  [abbreviated, 7099 chars]",
+                                "sha1": "73e5fce324067490c399c85b570770e5ef1b4750",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.protocol.RemoteEditLog.jimple",
+                                "md5": "fe20b85ea2708d412bcbfde884e28f48"
+                            },
+                            "transformed-class2": {
+                                "value": "public class org.apache.hadoop.hdfs.server.protocol.RemoteEditLog extends java.lang.Object implement ..  [abbreviated, 7099 chars]",
+                                "sha1": "6cc10eb1113dd3d5f4495747544b62d3516fb376",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.protocol.RemoteEditLog.jimple",
+                                "md5": "2c32dcacfa926179413534f04ac31eaf"
+                            }
+                        }
+                    },
+                    {
+                        "class": "org/apache/hadoop/hdfs/server/namenode/startupprogress/StartupProgress.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.namenode.startupprogress.StartupProgress.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.namenode.startupprogress.StartupProgress.jimple",
+                            "transformed-class1": {
+                                "value": "public class org.apache.hadoop.hdfs.server.namenode.startupprogress.StartupProgress extends java.lan ..  [abbreviated, 20011 chars]",
+                                "sha1": "cd7ba0044a7371e4cfd6ffc4bc610d66179bd527",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.namenode.startupprogress.StartupProgress.jimple",
+                                "md5": "640e26a7d2a07cd3fc073fd2fbc18374"
+                            },
+                            "transformed-class2": {
+                                "value": "public class org.apache.hadoop.hdfs.server.namenode.startupprogress.StartupProgress extends java.lan ..  [abbreviated, 20011 chars]",
+                                "sha1": "5c10e4ab9fc116eaf44c522749d1eb72e41071ed",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.namenode.startupprogress.StartupProgress.jimple",
+                                "md5": "bccd995f56e6956803c6dff66c3abddb"
+                            }
+                        }
+                    },
+                    {
+                        "class": "org/apache/hadoop/hdfs/server/namenode/NameNodeResourceChecker.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.namenode.NameNodeResourceChecker.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.namenode.NameNodeResourceChecker.jimple",
+                            "transformed-class1": {
+                                "value": "public class org.apache.hadoop.hdfs.server.namenode.NameNodeResourceChecker extends java.lang.Object ..  [abbreviated, 10057 chars]",
+                                "sha1": "88f81664fa7c80bce980da3325154b5bae7e0679",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.namenode.NameNodeResourceChecker.jimple",
+                                "md5": "42dbad0ed1c8df2bc1ebc3af8f38c9fa"
+                            },
+                            "transformed-class2": {
+                                "value": "public class org.apache.hadoop.hdfs.server.namenode.NameNodeResourceChecker extends java.lang.Object ..  [abbreviated, 10057 chars]",
+                                "sha1": "12345d1646e9601ac12b7e5a7a2ccc32c9f5ddcf",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.namenode.NameNodeResourceChecker.jimple",
+                                "md5": "9260bf3b3937dba7007536e16edf977a"
+                            }
+                        }
+                    },
+                    {
+                        "class": "org/apache/hadoop/hdfs/server/namenode/NameNodeRpcServer.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.namenode.NameNodeRpcServer.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.namenode.NameNodeRpcServer.jimple",
+                            "transformed-class1": {
+                                "value": "public class org.apache.hadoop.hdfs.server.namenode.NameNodeRpcServer extends java.lang.Object imple ..  [abbreviated, 309600 chars]",
+                                "sha1": "f11f6a8a5ae0fa82f31417899b9d5250587cdddc",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.namenode.NameNodeRpcServer.jimple",
+                                "md5": "c8303eb37821ff640844d49d69b4a989"
+                            },
+                            "transformed-class2": {
+                                "value": "public class org.apache.hadoop.hdfs.server.namenode.NameNodeRpcServer extends java.lang.Object imple ..  [abbreviated, 309600 chars]",
+                                "sha1": "64816ef67f0c0800cfca255e3b8ea6d1ad61fac6",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.namenode.NameNodeRpcServer.jimple",
+                                "md5": "5cb2887e7ea4d1bd0406c43bb43d82a8"
+                            }
+                        }
+                    },
+                    {
+                        "class": "org/apache/hadoop/hdfs/server/common/ECTopologyVerifier.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.common.ECTopologyVerifier.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.common.ECTopologyVerifier.jimple",
+                            "transformed-class1": {
+                                "value": "public final class org.apache.hadoop.hdfs.server.common.ECTopologyVerifier extends java.lang.Object\n ..  [abbreviated, 8332 chars]",
+                                "sha1": "518d7149b25cf80f1e270ba7648522fe226337a5",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.common.ECTopologyVerifier.jimple",
+                                "md5": "f4a5601b168374f1e4586b1867f4ea09"
+                            },
+                            "transformed-class2": {
+                                "value": "public final class org.apache.hadoop.hdfs.server.common.ECTopologyVerifier extends java.lang.Object\n ..  [abbreviated, 8331 chars]",
+                                "sha1": "34b35c2bb21da77ebdbeffa26d0496c8bc357bb0",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.common.ECTopologyVerifier.jimple",
+                                "md5": "977de2b0bb48bec04dcb1010a2994155"
+                            }
+                        }
+                    },
+                    {
+                        "class": "org/apache/hadoop/hdfs/server/namenode/FSImage$FSImageSaver.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.namenode.FSImage$FSImageSaver.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.namenode.FSImage$FSImageSaver.jimple",
+                            "transformed-class1": {
+                                "value": "class org.apache.hadoop.hdfs.server.namenode.FSImage$FSImageSaver extends java.lang.Object implement ..  [abbreviated, 9115 chars]",
+                                "sha1": "e011a89962fe9ccd54ce00dc17644fab5c3dfc17",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.namenode.FSImage$FSImageSaver.jimple",
+                                "md5": "85ba071b5aaedaad8ae37847624414e3"
+                            },
+                            "transformed-class2": {
+                                "value": "class org.apache.hadoop.hdfs.server.namenode.FSImage$FSImageSaver extends java.lang.Object implement ..  [abbreviated, 9115 chars]",
+                                "sha1": "572c324517ad889124fed813426493ac72c42da3",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.namenode.FSImage$FSImageSaver.jimple",
+                                "md5": "d0c9146ebaf97e2916c9ec9d8cb4e702"
+                            }
+                        }
+                    },
+                    {
+                        "class": "org/apache/hadoop/hdfs/server/datanode/metrics/OutlierDetector.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.datanode.metrics.OutlierDetector.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.datanode.metrics.OutlierDetector.jimple",
+                            "transformed-class1": {
+                                "value": "public class org.apache.hadoop.hdfs.server.datanode.metrics.OutlierDetector extends java.lang.Object ..  [abbreviated, 10965 chars]",
+                                "sha1": "9cdc4ccabcbd390eb0620dad5df6d749078cfffe",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.datanode.metrics.OutlierDetector.jimple",
+                                "md5": "cdc68759ec6a8a459123f85e95e29405"
+                            },
+                            "transformed-class2": {
+                                "value": "public class org.apache.hadoop.hdfs.server.datanode.metrics.OutlierDetector extends java.lang.Object ..  [abbreviated, 10965 chars]",
+                                "sha1": "b55222d6cf41a569353d3d13f2ca14b155811906",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.datanode.metrics.OutlierDetector.jimple",
+                                "md5": "2e6a3dacd174e5497b9d89fa1201728d"
+                            }
+                        }
+                    },
+                    {
+                        "class": "org/apache/hadoop/hdfs/server/blockmanagement/BlockManager.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.blockmanagement.BlockManager.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.blockmanagement.BlockManager.jimple",
+                            "transformed-class1": {
+                                "value": "public class org.apache.hadoop.hdfs.server.blockmanagement.BlockManager extends java.lang.Object imp ..  [abbreviated, 606306 chars]",
+                                "sha1": "5897342e60d444d76f331b437147e46ef286d639",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.blockmanagement.BlockManager.jimple",
+                                "md5": "1c70f354c3362dcc2613a323011301bc"
+                            },
+                            "transformed-class2": {
+                                "value": "public class org.apache.hadoop.hdfs.server.blockmanagement.BlockManager extends java.lang.Object imp ..  [abbreviated, 606306 chars]",
+                                "sha1": "6180c2e19436d17b478b1193b72cf36c6161fd38",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.blockmanagement.BlockManager.jimple",
+                                "md5": "90f5bc57cd02e933148f04ca0c92d1f4"
+                            }
+                        }
+                    },
+                    {
+                        "class": "org/apache/hadoop/hdfs/server/datanode/fsdataset/impl/FsVolumeList.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.datanode.fsdataset.impl.FsVolumeList.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.datanode.fsdataset.impl.FsVolumeList.jimple",
+                            "transformed-class1": {
+                                "value": "class org.apache.hadoop.hdfs.server.datanode.fsdataset.impl.FsVolumeList extends java.lang.Object\n{\n ..  [abbreviated, 47429 chars]",
+                                "sha1": "2773372ea53fadaac9fa3e6a3d0b7a882d7e3dc0",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.datanode.fsdataset.impl.FsVolumeList.jimple",
+                                "md5": "e1aeff3ba8418fbe17507dac41a774d3"
+                            },
+                            "transformed-class2": {
+                                "value": "class org.apache.hadoop.hdfs.server.datanode.fsdataset.impl.FsVolumeList extends java.lang.Object\n{\n ..  [abbreviated, 47429 chars]",
+                                "sha1": "d24b5b765e0cfd631703850ea3739a9aa38efd80",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.datanode.fsdataset.impl.FsVolumeList.jimple",
+                                "md5": "f7cc495f29a1afa4e9fe7f4b586ebe34"
+                            }
+                        }
+                    },
+                    {
+                        "class": "org/apache/hadoop/hdfs/protocolPB/ClientNamenodeProtocolServerSideTranslatorPB.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolServerSideTranslatorPB.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolServerSideTranslatorPB.jimple",
+                            "transformed-class1": {
+                                "value": "public class org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolServerSideTranslatorPB extends  ..  [abbreviated, 372696 chars]",
+                                "sha1": "673153f88a28dca42b565dd2a2c9426f7caee876",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolServerSideTranslatorPB.jimple",
+                                "md5": "5504bb0e59d07feef2b53ef69bb0fa48"
+                            },
+                            "transformed-class2": {
+                                "value": "public class org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolServerSideTranslatorPB extends  ..  [abbreviated, 372696 chars]",
+                                "sha1": "9435bb4b1dce7a81d0441b8d2ef64381efbe73ed",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolServerSideTranslatorPB.jimple",
+                                "md5": "e66cae361c16044a6acf421041c4b000"
+                            }
+                        }
+                    },
+                    {
+                        "class": "org/apache/hadoop/hdfs/server/datanode/metrics/DataNodeDiskMetrics$1.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.datanode.metrics.DataNodeDiskMetrics$1.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.datanode.metrics.DataNodeDiskMetrics$1.jimple",
+                            "transformed-class1": {
+                                "value": "class org.apache.hadoop.hdfs.server.datanode.metrics.DataNodeDiskMetrics$1 extends java.lang.Object  ..  [abbreviated, 10161 chars]",
+                                "sha1": "07f6f2d10f728bec7b2bc7a4bb6b540d48ea6ffe",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.datanode.metrics.DataNodeDiskMetrics$1.jimple",
+                                "md5": "20801ef73e925e1d08d4d21c363f9efb"
+                            },
+                            "transformed-class2": {
+                                "value": "class org.apache.hadoop.hdfs.server.datanode.metrics.DataNodeDiskMetrics$1 extends java.lang.Object  ..  [abbreviated, 10161 chars]",
+                                "sha1": "72133596ebb70270eb846d9a1d1249acad88fd9f",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.datanode.metrics.DataNodeDiskMetrics$1.jimple",
+                                "md5": "d707fc04633d7f48a9fb765b0324d117"
+                            }
+                        }
+                    },
+                    {
+                        "class": "org/apache/hadoop/hdfs/server/blockmanagement/CorruptReplicasMap.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.blockmanagement.CorruptReplicasMap.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.blockmanagement.CorruptReplicasMap.jimple",
+                            "transformed-class1": {
+                                "value": "public class org.apache.hadoop.hdfs.server.blockmanagement.CorruptReplicasMap extends java.lang.Obje ..  [abbreviated, 18719 chars]",
+                                "sha1": "5c26f090c7b3c761a2df129a37a89cfa7559fc7a",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.blockmanagement.CorruptReplicasMap.jimple",
+                                "md5": "45831a0f243f5ffd651d6ae4299d3f2b"
+                            },
+                            "transformed-class2": {
+                                "value": "public class org.apache.hadoop.hdfs.server.blockmanagement.CorruptReplicasMap extends java.lang.Obje ..  [abbreviated, 18721 chars]",
+                                "sha1": "e9c115835c8a8a91a338569fd409c1d759f7467c",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.blockmanagement.CorruptReplicasMap.jimple",
+                                "md5": "f4ac403683bc19121090ca743d46fc3b"
+                            }
+                        }
+                    },
+                    {
+                        "class": "org/apache/hadoop/hdfs/server/datanode/fsdataset/impl/FsDatasetAsyncDiskService.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.datanode.fsdataset.impl.FsDatasetAsyncDiskService.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.datanode.fsdataset.impl.FsDatasetAsyncDiskService.jimple",
+                            "transformed-class1": {
+                                "value": "class org.apache.hadoop.hdfs.server.datanode.fsdataset.impl.FsDatasetAsyncDiskService extends java.l ..  [abbreviated, 24898 chars]",
+                                "sha1": "eeb10812a2e1ebcbfe90aeb29ba7c3e905cf986c",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.datanode.fsdataset.impl.FsDatasetAsyncDiskService.jimple",
+                                "md5": "089a5bb20b585270d92730afa6d0b4d1"
+                            },
+                            "transformed-class2": {
+                                "value": "class org.apache.hadoop.hdfs.server.datanode.fsdataset.impl.FsDatasetAsyncDiskService extends java.l ..  [abbreviated, 24898 chars]",
+                                "sha1": "ec02fa71da14d9cfd77939db38c2c9e6a815b410",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.datanode.fsdataset.impl.FsDatasetAsyncDiskService.jimple",
+                                "md5": "f36a5b1d0b150ccc0fa5a5745bf8425a"
+                            }
+                        }
+                    },
+                    {
+                        "class": "org/apache/hadoop/hdfs/server/namenode/JournalSet.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.namenode.JournalSet.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.namenode.JournalSet.jimple",
+                            "transformed-class1": {
+                                "value": "public class org.apache.hadoop.hdfs.server.namenode.JournalSet extends java.lang.Object implements o ..  [abbreviated, 39539 chars]",
+                                "sha1": "b5b9d47c01826fa6ee28699f10a43b758aff3389",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.namenode.JournalSet.jimple",
+                                "md5": "bd9aa8e5a74788592aecba7e01306080"
+                            },
+                            "transformed-class2": {
+                                "value": "public class org.apache.hadoop.hdfs.server.namenode.JournalSet extends java.lang.Object implements o ..  [abbreviated, 39539 chars]",
+                                "sha1": "16eafbf7ddab99a65f3a984ada491815a9b8787b",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.namenode.JournalSet.jimple",
+                                "md5": "1390e31e181b5c4569fb7437e770e4b1"
+                            }
+                        }
+                    },
+                    {
+                        "class": "org/apache/hadoop/hdfs/server/namenode/snapshot/DirectoryDiffListFactory.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.namenode.snapshot.DirectoryDiffListFactory.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.namenode.snapshot.DirectoryDiffListFactory.jimple",
+                            "transformed-class1": {
+                                "value": "public abstract class org.apache.hadoop.hdfs.server.namenode.snapshot.DirectoryDiffListFactory exten ..  [abbreviated, 3873 chars]",
+                                "sha1": "47143850503be4bb34301b81b9843d872f8aac4c",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.namenode.snapshot.DirectoryDiffListFactory.jimple",
+                                "md5": "7bd335ffebce491d17209a3ee76c2afc"
+                            },
+                            "transformed-class2": {
+                                "value": "public abstract class org.apache.hadoop.hdfs.server.namenode.snapshot.DirectoryDiffListFactory exten ..  [abbreviated, 3873 chars]",
+                                "sha1": "f978ad80aec068a9d526b8512d40e997c884b928",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-hdfs/3.3.6/hadoop-hdfs-3.3.6.jar/org.apache.hadoop.hdfs.server.namenode.snapshot.DirectoryDiffListFactory.jimple",
+                                "md5": "7b390fe3ec81a6230d9955aa9f57c624"
+                            }
+                        }
+                    }
+                ],
+                "errors": []
+            }
+        }]
+    }

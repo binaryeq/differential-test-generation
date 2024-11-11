@@ -1,0 +1,59 @@
+58c58
+< java.lang.IllegalStateException v4;
+---
+> java.lang.IllegalStateException v5;
+60,63c60,64
+< com.google.common.truth.AutoValue_ActualValueInference_Invocation v6;
+< java.lang.String v1, v10, v2, v5;
+< boolean v3;
+< com.google.common.truth.ActualValueInference$StackEntry v7, v8, v9;
+---
+> com.google.common.truth.AutoValue_ActualValueInference_Invocation v10;
+> int v8;
+> java.lang.String v1, v14, v2, v3, v6, v7, v9;
+> boolean v4;
+> com.google.common.truth.ActualValueInference$StackEntry v11, v12, v13;
+68c69,70
+< v1 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>("") <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001 name");
+---
+> v3 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>("");
+> v1 = virtualinvoke v3.<java.lang.String: java.lang.String concat(java.lang.String)>(" name");
+70,75c72,80
+< v3 = virtualinvoke v1.<java.lang.String: boolean isEmpty()>();
+< if v3 != 0 goto label2;
+< v4 = new java.lang.IllegalStateException;
+< v5 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v1) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Missing required properties:\u0001");
+< specialinvoke v4.<java.lang.IllegalStateException: void <init>(java.lang.String)>(v5);
+< throw v4;
+---
+> v4 = virtualinvoke v1.<java.lang.String: boolean isEmpty()>();
+> if v4 != 0 goto label4;
+> v5 = new java.lang.IllegalStateException;
+> v6 = "Missing required properties:";
+> v7 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v1);
+> v8 = virtualinvoke v7.<java.lang.String: int length()>();
+> if v8 == 0 goto label2;
+> v9 = virtualinvoke v6.<java.lang.String: java.lang.String concat(java.lang.String)>(v7);
+> goto label3;
+77,83c82,94
+< v6 = new com.google.common.truth.AutoValue_ActualValueInference_Invocation;
+< v7 = v0.<com.google.common.truth.AutoValue_ActualValueInference_Invocation$Builder: com.google.common.truth.ActualValueInference$StackEntry receiver>;
+< v8 = v0.<com.google.common.truth.AutoValue_ActualValueInference_Invocation$Builder: com.google.common.truth.ActualValueInference$StackEntry actualValue>;
+< v9 = v0.<com.google.common.truth.AutoValue_ActualValueInference_Invocation$Builder: com.google.common.truth.ActualValueInference$StackEntry boxingInput>;
+< v10 = v0.<com.google.common.truth.AutoValue_ActualValueInference_Invocation$Builder: java.lang.String name>;
+< specialinvoke v6.<com.google.common.truth.AutoValue_ActualValueInference_Invocation: void <init>(com.google.common.truth.ActualValueInference$StackEntry,com.google.common.truth.ActualValueInference$StackEntry,com.google.common.truth.ActualValueInference$StackEntry,java.lang.String)>(v7, v8, v9, v10);
+< return v6;
+---
+> v9 = new java.lang.String;
+> specialinvoke v9.<java.lang.String: void <init>(java.lang.String)>("Missing required properties:");
+> label3:
+> specialinvoke v5.<java.lang.IllegalStateException: void <init>(java.lang.String)>(v9);
+> throw v5;
+> label4:
+> v10 = new com.google.common.truth.AutoValue_ActualValueInference_Invocation;
+> v11 = v0.<com.google.common.truth.AutoValue_ActualValueInference_Invocation$Builder: com.google.common.truth.ActualValueInference$StackEntry receiver>;
+> v12 = v0.<com.google.common.truth.AutoValue_ActualValueInference_Invocation$Builder: com.google.common.truth.ActualValueInference$StackEntry actualValue>;
+> v13 = v0.<com.google.common.truth.AutoValue_ActualValueInference_Invocation$Builder: com.google.common.truth.ActualValueInference$StackEntry boxingInput>;
+> v14 = v0.<com.google.common.truth.AutoValue_ActualValueInference_Invocation$Builder: java.lang.String name>;
+> specialinvoke v10.<com.google.common.truth.AutoValue_ActualValueInference_Invocation: void <init>(com.google.common.truth.ActualValueInference$StackEntry,com.google.common.truth.ActualValueInference$StackEntry,com.google.common.truth.ActualValueInference$StackEntry,java.lang.String)>(v11, v12, v13, v14);
+> return v10;

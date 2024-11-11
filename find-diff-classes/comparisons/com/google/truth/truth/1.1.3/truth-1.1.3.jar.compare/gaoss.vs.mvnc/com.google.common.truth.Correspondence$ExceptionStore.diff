@@ -1,0 +1,134 @@
+155c155
+< com.google.common.collect.ImmutableList v13;
+---
+> com.google.common.collect.ImmutableList v16;
+157,159c157,159
+< java.lang.String v11, v7, v8;
+< com.google.common.truth.Correspondence$StoredException v1, v10, v3, v5;
+< com.google.common.truth.Fact v12, v9;
+---
+> int v10;
+> java.lang.String v11, v14, v7, v8, v9;
+> com.google.common.truth.Fact v12, v15;
+160a161
+> com.google.common.truth.Correspondence$StoredException v1, v13, v3, v5;
+186,193c187,203
+< v7 = v0.<com.google.common.truth.Correspondence$ExceptionStore: java.lang.String argumentLabel>;
+< v8 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v7) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("one or more exceptions were thrown while comparing \u0001");
+< v9 = staticinvoke <com.google.common.truth.Fact: com.google.common.truth.Fact simpleFact(java.lang.String)>(v8);
+< v10 = v0.<com.google.common.truth.Correspondence$ExceptionStore: com.google.common.truth.Correspondence$StoredException firstCompareException>;
+< v11 = specialinvoke v10.<com.google.common.truth.Correspondence$StoredException: java.lang.String describe()>();
+< v12 = staticinvoke <com.google.common.truth.Fact: com.google.common.truth.Fact fact(java.lang.String,java.lang.Object)>("first exception", v11);
+< v13 = staticinvoke <com.google.common.collect.ImmutableList: com.google.common.collect.ImmutableList of(java.lang.Object,java.lang.Object)>(v9, v12);
+< return v13;
+---
+> v7 = "one or more exceptions were thrown while comparing ";
+> v8 = v0.<com.google.common.truth.Correspondence$ExceptionStore: java.lang.String argumentLabel>;
+> v9 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v8);
+> v10 = virtualinvoke v9.<java.lang.String: int length()>();
+> if v10 == 0 goto label7;
+> v11 = virtualinvoke v7.<java.lang.String: java.lang.String concat(java.lang.String)>(v9);
+> goto label8;
+> label7:
+> v11 = new java.lang.String;
+> specialinvoke v11.<java.lang.String: void <init>(java.lang.String)>("one or more exceptions were thrown while comparing ");
+> label8:
+> v12 = staticinvoke <com.google.common.truth.Fact: com.google.common.truth.Fact simpleFact(java.lang.String)>(v11);
+> v13 = v0.<com.google.common.truth.Correspondence$ExceptionStore: com.google.common.truth.Correspondence$StoredException firstCompareException>;
+> v14 = specialinvoke v13.<com.google.common.truth.Correspondence$StoredException: java.lang.String describe()>();
+> v15 = staticinvoke <com.google.common.truth.Fact: com.google.common.truth.Fact fact(java.lang.String,java.lang.Object)>("first exception", v14);
+> v16 = staticinvoke <com.google.common.collect.ImmutableList: com.google.common.collect.ImmutableList of(java.lang.Object,java.lang.Object)>(v12, v15);
+> return v16;
+197c207
+< com.google.common.collect.ImmutableList v21;
+---
+> com.google.common.collect.ImmutableList v27;
+199,201c209,213
+< java.lang.String v10, v11, v14, v19, v3, v4, v7;
+< com.google.common.truth.Fact v12, v15, v17, v20, v5, v8;
+< com.google.common.truth.Correspondence$StoredException v13, v16, v18, v2, v6, v9;
+---
+> int v15, v16, v6;
+> java.lang.String v10, v13, v14, v17, v20, v25, v3, v4, v5, v7;
+> com.google.common.truth.Fact v11, v18, v21, v23, v26, v8;
+> java.lang.StringBuilder v28;
+> com.google.common.truth.Correspondence$StoredException v12, v19, v2, v22, v24, v9;
+206,214c218,225
+< if v2 == null goto label1;
+< v3 = v0.<com.google.common.truth.Correspondence$ExceptionStore: java.lang.String argumentLabel>;
+< v4 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v3) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("additionally, one or more exceptions were thrown while comparing \u0001");
+< v5 = staticinvoke <com.google.common.truth.Fact: com.google.common.truth.Fact simpleFact(java.lang.String)>(v4);
+< virtualinvoke v1.<com.google.common.collect.ImmutableList$Builder: com.google.common.collect.ImmutableList$Builder add(java.lang.Object)>(v5);
+< v6 = v0.<com.google.common.truth.Correspondence$ExceptionStore: com.google.common.truth.Correspondence$StoredException firstCompareException>;
+< v7 = specialinvoke v6.<com.google.common.truth.Correspondence$StoredException: java.lang.String describe()>();
+< v8 = staticinvoke <com.google.common.truth.Fact: com.google.common.truth.Fact fact(java.lang.String,java.lang.Object)>("first exception", v7);
+< virtualinvoke v1.<com.google.common.collect.ImmutableList$Builder: com.google.common.collect.ImmutableList$Builder add(java.lang.Object)>(v8);
+---
+> if v2 == null goto label3;
+> v3 = "additionally, one or more exceptions were thrown while comparing ";
+> v4 = v0.<com.google.common.truth.Correspondence$ExceptionStore: java.lang.String argumentLabel>;
+> v5 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v4);
+> v6 = virtualinvoke v5.<java.lang.String: int length()>();
+> if v6 == 0 goto label1;
+> v7 = virtualinvoke v3.<java.lang.String: java.lang.String concat(java.lang.String)>(v5);
+> goto label2;
+216,225c227,228
+< v9 = v0.<com.google.common.truth.Correspondence$ExceptionStore: com.google.common.truth.Correspondence$StoredException firstPairingException>;
+< if v9 == null goto label2;
+< v10 = v0.<com.google.common.truth.Correspondence$ExceptionStore: java.lang.String argumentLabel>;
+< v11 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v10) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("additionally, one or more exceptions were thrown while keying \u0001 for pairing");
+< v12 = staticinvoke <com.google.common.truth.Fact: com.google.common.truth.Fact simpleFact(java.lang.String)>(v11);
+< virtualinvoke v1.<com.google.common.collect.ImmutableList$Builder: com.google.common.collect.ImmutableList$Builder add(java.lang.Object)>(v12);
+< v13 = v0.<com.google.common.truth.Correspondence$ExceptionStore: com.google.common.truth.Correspondence$StoredException firstPairingException>;
+< v14 = specialinvoke v13.<com.google.common.truth.Correspondence$StoredException: java.lang.String describe()>();
+< v15 = staticinvoke <com.google.common.truth.Fact: com.google.common.truth.Fact fact(java.lang.String,java.lang.Object)>("first exception", v14);
+< virtualinvoke v1.<com.google.common.collect.ImmutableList$Builder: com.google.common.collect.ImmutableList$Builder add(java.lang.Object)>(v15);
+---
+> v7 = new java.lang.String;
+> specialinvoke v7.<java.lang.String: void <init>(java.lang.String)>("additionally, one or more exceptions were thrown while comparing ");
+227,234c230,235
+< v16 = v0.<com.google.common.truth.Correspondence$ExceptionStore: com.google.common.truth.Correspondence$StoredException firstFormatDiffException>;
+< if v16 == null goto label3;
+< v17 = staticinvoke <com.google.common.truth.Fact: com.google.common.truth.Fact simpleFact(java.lang.String)>("additionally, one or more exceptions were thrown while formatting diffs");
+< virtualinvoke v1.<com.google.common.collect.ImmutableList$Builder: com.google.common.collect.ImmutableList$Builder add(java.lang.Object)>(v17);
+< v18 = v0.<com.google.common.truth.Correspondence$ExceptionStore: com.google.common.truth.Correspondence$StoredException firstFormatDiffException>;
+< v19 = specialinvoke v18.<com.google.common.truth.Correspondence$StoredException: java.lang.String describe()>();
+< v20 = staticinvoke <com.google.common.truth.Fact: com.google.common.truth.Fact fact(java.lang.String,java.lang.Object)>("first exception", v19);
+< virtualinvoke v1.<com.google.common.collect.ImmutableList$Builder: com.google.common.collect.ImmutableList$Builder add(java.lang.Object)>(v20);
+---
+> v8 = staticinvoke <com.google.common.truth.Fact: com.google.common.truth.Fact simpleFact(java.lang.String)>(v7);
+> virtualinvoke v1.<com.google.common.collect.ImmutableList$Builder: com.google.common.collect.ImmutableList$Builder add(java.lang.Object)>(v8);
+> v9 = v0.<com.google.common.truth.Correspondence$ExceptionStore: com.google.common.truth.Correspondence$StoredException firstCompareException>;
+> v10 = specialinvoke v9.<com.google.common.truth.Correspondence$StoredException: java.lang.String describe()>();
+> v11 = staticinvoke <com.google.common.truth.Fact: com.google.common.truth.Fact fact(java.lang.String,java.lang.Object)>("first exception", v10);
+> virtualinvoke v1.<com.google.common.collect.ImmutableList$Builder: com.google.common.collect.ImmutableList$Builder add(java.lang.Object)>(v11);
+236,237c237,262
+< v21 = virtualinvoke v1.<com.google.common.collect.ImmutableList$Builder: com.google.common.collect.ImmutableList build()>();
+< return v21;
+---
+> v12 = v0.<com.google.common.truth.Correspondence$ExceptionStore: com.google.common.truth.Correspondence$StoredException firstPairingException>;
+> if v12 == null goto label4;
+> v13 = v0.<com.google.common.truth.Correspondence$ExceptionStore: java.lang.String argumentLabel>;
+> v14 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v13);
+> v15 = virtualinvoke v14.<java.lang.String: int length()>();
+> v16 = 74 + v15;
+> specialinvoke v28.<java.lang.StringBuilder: void <init>(int)>(v16);
+> v17 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v13) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("additionally, one or more exceptions were thrown while keying \u0001 for pairing");
+> v18 = staticinvoke <com.google.common.truth.Fact: com.google.common.truth.Fact simpleFact(java.lang.String)>(v17);
+> virtualinvoke v1.<com.google.common.collect.ImmutableList$Builder: com.google.common.collect.ImmutableList$Builder add(java.lang.Object)>(v18);
+> v19 = v0.<com.google.common.truth.Correspondence$ExceptionStore: com.google.common.truth.Correspondence$StoredException firstPairingException>;
+> v20 = specialinvoke v19.<com.google.common.truth.Correspondence$StoredException: java.lang.String describe()>();
+> v21 = staticinvoke <com.google.common.truth.Fact: com.google.common.truth.Fact fact(java.lang.String,java.lang.Object)>("first exception", v20);
+> virtualinvoke v1.<com.google.common.collect.ImmutableList$Builder: com.google.common.collect.ImmutableList$Builder add(java.lang.Object)>(v21);
+> label4:
+> v22 = v0.<com.google.common.truth.Correspondence$ExceptionStore: com.google.common.truth.Correspondence$StoredException firstFormatDiffException>;
+> if v22 == null goto label5;
+> v23 = staticinvoke <com.google.common.truth.Fact: com.google.common.truth.Fact simpleFact(java.lang.String)>("additionally, one or more exceptions were thrown while formatting diffs");
+> virtualinvoke v1.<com.google.common.collect.ImmutableList$Builder: com.google.common.collect.ImmutableList$Builder add(java.lang.Object)>(v23);
+> v24 = v0.<com.google.common.truth.Correspondence$ExceptionStore: com.google.common.truth.Correspondence$StoredException firstFormatDiffException>;
+> v25 = specialinvoke v24.<com.google.common.truth.Correspondence$StoredException: java.lang.String describe()>();
+> v26 = staticinvoke <com.google.common.truth.Fact: com.google.common.truth.Fact fact(java.lang.String,java.lang.Object)>("first exception", v25);
+> virtualinvoke v1.<com.google.common.collect.ImmutableList$Builder: com.google.common.collect.ImmutableList$Builder add(java.lang.Object)>(v26);
+> label5:
+> v27 = virtualinvoke v1.<com.google.common.collect.ImmutableList$Builder: com.google.common.collect.ImmutableList build()>();
+> return v27;

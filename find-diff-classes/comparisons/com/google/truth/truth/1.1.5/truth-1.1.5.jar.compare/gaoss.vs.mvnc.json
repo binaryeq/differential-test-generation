@@ -1,0 +1,299 @@
+{
+        "jar1": {
+            "file": "~/code/craw-redhat-oss/wget/crawl/google-aoss/com/google/truth/truth/1.1.5/truth-1.1.5.jar",
+            "classcount": 160,
+            "md5": "080625cc1d0d719ed14a561f231e3695",
+            "sha1": "18659494f3891041e0da92bbd8713f392aadc219",
+            "size": "239 KB",
+            "manifest": {
+                "Manifest-Version": "1.0",
+                "Build-Jdk-Spec": "1.8",
+                "Created-By": "Maven JAR Plugin 3.3.0"
+            },
+            "services": {}
+        },
+        "jar2": {
+            "file": "~/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/truth/truth/1.1.5/truth-1.1.5.jar",
+            "classcount": 160,
+            "md5": "26a56eb27f5b723dc95af5d3630a2fad",
+            "sha1": "93c2e0d029cea42ab21cfcaf8084a2ccfd10feef",
+            "size": "238 KB",
+            "manifest": {
+                "Manifest-Version": "1.0",
+                "Created-By": "Maven JAR Plugin 3.3.0",
+                "Build-Jdk-Spec": "11"
+            },
+            "services": {}
+        },
+        "contentset-comparisons": [
+            {
+                "content-type": "sources",
+                "jar1.count": 0,
+                "jar2.count": 0,
+                "intersection": 0,
+                "union": 0,
+                "jar1-jar2": [],
+                "jar2-jar1": []
+            },
+            {
+                "content-type": "bytecode",
+                "jar1.count": 148,
+                "jar2.count": 148,
+                "intersection": 148,
+                "union": 148,
+                "jar1-jar2": [],
+                "jar2-jar1": []
+            },
+            {
+                "content-type": "metadata",
+                "jar1.count": 8,
+                "jar2.count": 8,
+                "intersection": 8,
+                "union": 8,
+                "jar1-jar2": [],
+                "jar2-jar1": []
+            },
+            {
+                "content-type": "other",
+                "jar1.count": 4,
+                "jar2.count": 4,
+                "intersection": 4,
+                "union": 4,
+                "jar1-jar2": [],
+                "jar2-jar1": []
+            }
+        ],
+        "content-pairwise-comparisons": [{
+            "equivalence": {
+                "class": "io.github.bineq.equivalences.bytecode.JNormEquivalence2",
+                "name": "jnorm2"
+            },
+            "summary": {
+                "description": "comparison results of jar/folder content (pairwise comparison of content in both jars/folders)",
+                "equivalent": 136,
+                "non-equivalent": 12,
+                "errors": 0
+            },
+            "details": {
+                "non-equivalent": [
+                    {
+                        "class": "com/google/common/truth/MapSubject.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/com/google/truth/truth/1.1.5/truth-1.1.5.jar/com.google.common.truth.MapSubject.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/truth/truth/1.1.5/truth-1.1.5.jar/com.google.common.truth.MapSubject.jimple",
+                            "transformed-class1": {
+                                "value": "public class com.google.common.truth.MapSubject extends com.google.common.truth.Subject\n{\nprivate fi ..  [abbreviated, 29296 chars]",
+                                "sha1": "39592029fb6c3b9477737035471c248fffc9a647",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/com/google/truth/truth/1.1.5/truth-1.1.5.jar/com.google.common.truth.MapSubject.jimple",
+                                "md5": "0937bb2f5347508dfd73aedf2f4e621e"
+                            },
+                            "transformed-class2": {
+                                "value": "public class com.google.common.truth.MapSubject extends com.google.common.truth.Subject\n{\nprivate fi ..  [abbreviated, 29299 chars]",
+                                "sha1": "28805d6a940ffb092e512068367569daef8f6909",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/truth/truth/1.1.5/truth-1.1.5.jar/com.google.common.truth.MapSubject.jimple",
+                                "md5": "5351fd3f2fa0ff6aeefb858996a087b0"
+                            }
+                        }
+                    },
+                    {
+                        "class": "com/google/common/truth/ThrowableSubject$1.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/com/google/truth/truth/1.1.5/truth-1.1.5.jar/com.google.common.truth.ThrowableSubject$1.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/truth/truth/1.1.5/truth-1.1.5.jar/com.google.common.truth.ThrowableSubject$1.jimple",
+                            "transformed-class1": {
+                                "value": "class com.google.common.truth.ThrowableSubject$1 extends java.lang.Throwable\n{\nfinal com.google.comm ..  [abbreviated, 936 chars]",
+                                "sha1": "9255c32191c6919283d82660da15449378df1f67",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/com/google/truth/truth/1.1.5/truth-1.1.5.jar/com.google.common.truth.ThrowableSubject$1.jimple",
+                                "md5": "4817e2b26c1abd1b841494e9067a883f"
+                            },
+                            "transformed-class2": {
+                                "value": "class com.google.common.truth.ThrowableSubject$1 extends java.lang.Throwable\n{\nvoid <init>(com.googl ..  [abbreviated, 778 chars]",
+                                "sha1": "28c954755ac69261140e3c227eaed5c241bc30ec",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/truth/truth/1.1.5/truth-1.1.5.jar/com.google.common.truth.ThrowableSubject$1.jimple",
+                                "md5": "04a710b40762f26f444238ad27c16bf4"
+                            }
+                        }
+                    },
+                    {
+                        "class": "com/google/common/truth/SubjectUtils$NonHashingMultiset.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/com/google/truth/truth/1.1.5/truth-1.1.5.jar/com.google.common.truth.SubjectUtils$NonHashingMultiset.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/truth/truth/1.1.5/truth-1.1.5.jar/com.google.common.truth.SubjectUtils$NonHashingMultiset.jimple",
+                            "transformed-class1": {
+                                "value": "final class com.google.common.truth.SubjectUtils$NonHashingMultiset extends java.lang.Object\n{\npriva ..  [abbreviated, 5979 chars]",
+                                "sha1": "db8a69f8d2cbfd5386df8fdf165073a492fbeb20",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/com/google/truth/truth/1.1.5/truth-1.1.5.jar/com.google.common.truth.SubjectUtils$NonHashingMultiset.jimple",
+                                "md5": "14c19834f20b5117a74e7ccebcf17811"
+                            },
+                            "transformed-class2": {
+                                "value": "final class com.google.common.truth.SubjectUtils$NonHashingMultiset extends java.lang.Object\n{\npriva ..  [abbreviated, 5978 chars]",
+                                "sha1": "81a6119ad52a717dfed01be7014558f2d19c9c43",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/truth/truth/1.1.5/truth-1.1.5.jar/com.google.common.truth.SubjectUtils$NonHashingMultiset.jimple",
+                                "md5": "f17346aab604dfac2121cf041d72fd22"
+                            }
+                        }
+                    },
+                    {
+                        "class": "com/google/common/truth/IterableSubject$4.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/com/google/truth/truth/1.1.5/truth-1.1.5.jar/com.google.common.truth.IterableSubject$4.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/truth/truth/1.1.5/truth-1.1.5.jar/com.google.common.truth.IterableSubject$4.jimple",
+                            "transformed-class1": {
+                                "value": "class com.google.common.truth.IterableSubject$4 extends java.lang.Object implements com.google.commo ..  [abbreviated, 1424 chars]",
+                                "sha1": "69188a95413b51fa815ec49a9b190f1b5e2e4aa7",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/com/google/truth/truth/1.1.5/truth-1.1.5.jar/com.google.common.truth.IterableSubject$4.jimple",
+                                "md5": "1190d25a62dca10e6585241ab30cba76"
+                            },
+                            "transformed-class2": {
+                                "value": "class com.google.common.truth.IterableSubject$4 extends java.lang.Object implements com.google.commo ..  [abbreviated, 1269 chars]",
+                                "sha1": "01d7dfd5814d4358e485450d369b2fc35284a3a6",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/truth/truth/1.1.5/truth-1.1.5.jar/com.google.common.truth.IterableSubject$4.jimple",
+                                "md5": "3a1a00dcc01fc33b3fb07ef8a488f0d2"
+                            }
+                        }
+                    },
+                    {
+                        "class": "com/google/common/truth/Subject.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/com/google/truth/truth/1.1.5/truth-1.1.5.jar/com.google.common.truth.Subject.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/truth/truth/1.1.5/truth-1.1.5.jar/com.google.common.truth.Subject.jimple",
+                            "transformed-class1": {
+                                "value": "public class com.google.common.truth.Subject extends java.lang.Object\n{\nprivate final com.google.com ..  [abbreviated, 74893 chars]",
+                                "sha1": "718909f3b0da4b3709e02e8c811d865209c15482",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/com/google/truth/truth/1.1.5/truth-1.1.5.jar/com.google.common.truth.Subject.jimple",
+                                "md5": "35e0e72378608b6603ef9cf02cf966ad"
+                            },
+                            "transformed-class2": {
+                                "value": "public class com.google.common.truth.Subject extends java.lang.Object\n{\nprivate final com.google.com ..  [abbreviated, 74892 chars]",
+                                "sha1": "18f76210e635f74d4b53b1f3b9d85a689f5775ce",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/truth/truth/1.1.5/truth-1.1.5.jar/com.google.common.truth.Subject.jimple",
+                                "md5": "0e77af819d784b398ab7744f67eda6a6"
+                            }
+                        }
+                    },
+                    {
+                        "class": "com/google/common/truth/MapSubject$UsingCorrespondence.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/com/google/truth/truth/1.1.5/truth-1.1.5.jar/com.google.common.truth.MapSubject$UsingCorrespondence.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/truth/truth/1.1.5/truth-1.1.5.jar/com.google.common.truth.MapSubject$UsingCorrespondence.jimple",
+                            "transformed-class1": {
+                                "value": "public final class com.google.common.truth.MapSubject$UsingCorrespondence extends java.lang.Object\n{ ..  [abbreviated, 33281 chars]",
+                                "sha1": "5e5662f354a36eae245c3cb627010351a359026f",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/com/google/truth/truth/1.1.5/truth-1.1.5.jar/com.google.common.truth.MapSubject$UsingCorrespondence.jimple",
+                                "md5": "92ebee5b9d781b5db9362a8507117d4c"
+                            },
+                            "transformed-class2": {
+                                "value": "public final class com.google.common.truth.MapSubject$UsingCorrespondence extends java.lang.Object\n{ ..  [abbreviated, 33280 chars]",
+                                "sha1": "fe3916709c50fd6d08c4b320ffb4af842b5b9909",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/truth/truth/1.1.5/truth-1.1.5.jar/com.google.common.truth.MapSubject$UsingCorrespondence.jimple",
+                                "md5": "cb7be6d9396046298a2c2c6236fcb671"
+                            }
+                        }
+                    },
+                    {
+                        "class": "com/google/common/truth/Platform.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/com/google/truth/truth/1.1.5/truth-1.1.5.jar/com.google.common.truth.Platform.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/truth/truth/1.1.5/truth-1.1.5.jar/com.google.common.truth.Platform.jimple",
+                            "transformed-class1": {
+                                "value": "final class com.google.common.truth.Platform extends java.lang.Object\n{\nprivate static final java.la ..  [abbreviated, 18124 chars]",
+                                "sha1": "79fdb6caa5df82819ce0a96689661414dbdfc066",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/com/google/truth/truth/1.1.5/truth-1.1.5.jar/com.google.common.truth.Platform.jimple",
+                                "md5": "3d75460502707720f15119399acb6e4d"
+                            },
+                            "transformed-class2": {
+                                "value": "final class com.google.common.truth.Platform extends java.lang.Object\n{\nprivate static final java.la ..  [abbreviated, 18124 chars]",
+                                "sha1": "a3790cc2e30514fd0b10508febf00a693ec8d139",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/truth/truth/1.1.5/truth-1.1.5.jar/com.google.common.truth.Platform.jimple",
+                                "md5": "3329905ed3d7f46fa464c5b976518c64"
+                            }
+                        }
+                    },
+                    {
+                        "class": "com/google/common/truth/StandardSubjectBuilder$1.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/com/google/truth/truth/1.1.5/truth-1.1.5.jar/com.google.common.truth.StandardSubjectBuilder$1.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/truth/truth/1.1.5/truth-1.1.5.jar/com.google.common.truth.StandardSubjectBuilder$1.jimple",
+                            "transformed-class1": {
+                                "value": "class com.google.common.truth.StandardSubjectBuilder$1 extends com.google.common.truth.ComparableSub ..  [abbreviated, 968 chars]",
+                                "sha1": "4086f2704664750dfaa182f65af64ff4d8da8c58",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/com/google/truth/truth/1.1.5/truth-1.1.5.jar/com.google.common.truth.StandardSubjectBuilder$1.jimple",
+                                "md5": "f6e347fca95823386f08cf23a37399f5"
+                            },
+                            "transformed-class2": {
+                                "value": "class com.google.common.truth.StandardSubjectBuilder$1 extends com.google.common.truth.ComparableSub ..  [abbreviated, 792 chars]",
+                                "sha1": "05732732dd5eb89009df8fff144ab59460091531",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/truth/truth/1.1.5/truth-1.1.5.jar/com.google.common.truth.StandardSubjectBuilder$1.jimple",
+                                "md5": "4d89a917edefbe8bd562c4b3d69560da"
+                            }
+                        }
+                    },
+                    {
+                        "class": "com/google/common/truth/IterableSubject$3.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/com/google/truth/truth/1.1.5/truth-1.1.5.jar/com.google.common.truth.IterableSubject$3.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/truth/truth/1.1.5/truth-1.1.5.jar/com.google.common.truth.IterableSubject$3.jimple",
+                            "transformed-class1": {
+                                "value": "class com.google.common.truth.IterableSubject$3 extends java.lang.Object implements com.google.commo ..  [abbreviated, 1425 chars]",
+                                "sha1": "97b5ace621dd90cd7da80bcbddd628d366ebbc72",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/com/google/truth/truth/1.1.5/truth-1.1.5.jar/com.google.common.truth.IterableSubject$3.jimple",
+                                "md5": "8ef7e626159b1b9c8855210f47ee2c17"
+                            },
+                            "transformed-class2": {
+                                "value": "class com.google.common.truth.IterableSubject$3 extends java.lang.Object implements com.google.commo ..  [abbreviated, 1270 chars]",
+                                "sha1": "07724d19db7f2b5e4a826b0a684083a93eff2cbd",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/truth/truth/1.1.5/truth-1.1.5.jar/com.google.common.truth.IterableSubject$3.jimple",
+                                "md5": "b6de3b1473ee78335d3de9f199b89789"
+                            }
+                        }
+                    },
+                    {
+                        "class": "com/google/common/truth/MultimapSubject.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/com/google/truth/truth/1.1.5/truth-1.1.5.jar/com.google.common.truth.MultimapSubject.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/truth/truth/1.1.5/truth-1.1.5.jar/com.google.common.truth.MultimapSubject.jimple",
+                            "transformed-class1": {
+                                "value": "public class com.google.common.truth.MultimapSubject extends com.google.common.truth.Subject\n{\npriva ..  [abbreviated, 46984 chars]",
+                                "sha1": "3d751226fa0b534bd479a44d0f206c380e21aef0",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/com/google/truth/truth/1.1.5/truth-1.1.5.jar/com.google.common.truth.MultimapSubject.jimple",
+                                "md5": "d396a8c06346e483b5ffe7045fd1e311"
+                            },
+                            "transformed-class2": {
+                                "value": "public class com.google.common.truth.MultimapSubject extends com.google.common.truth.Subject\n{\npriva ..  [abbreviated, 46984 chars]",
+                                "sha1": "dbfe22702d09c74199176be571edac3cf9866f27",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/truth/truth/1.1.5/truth-1.1.5.jar/com.google.common.truth.MultimapSubject.jimple",
+                                "md5": "3ac4b02464dfd3d8661f14acfd5e7d3c"
+                            }
+                        }
+                    },
+                    {
+                        "class": "com/google/common/truth/IterableSubject.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/com/google/truth/truth/1.1.5/truth-1.1.5.jar/com.google.common.truth.IterableSubject.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/truth/truth/1.1.5/truth-1.1.5.jar/com.google.common.truth.IterableSubject.jimple",
+                            "transformed-class1": {
+                                "value": "public class com.google.common.truth.IterableSubject extends com.google.common.truth.Subject\n{\npriva ..  [abbreviated, 62334 chars]",
+                                "sha1": "37e59fb8890cb34c968eee1ee80bd5759bd47b24",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/com/google/truth/truth/1.1.5/truth-1.1.5.jar/com.google.common.truth.IterableSubject.jimple",
+                                "md5": "a2c471461e810efca89e3cc269ff6a83"
+                            },
+                            "transformed-class2": {
+                                "value": "public class com.google.common.truth.IterableSubject extends com.google.common.truth.Subject\n{\npriva ..  [abbreviated, 62332 chars]",
+                                "sha1": "ae7dda9fd50f1cdbeba082d9accfb460d486bbb7",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/truth/truth/1.1.5/truth-1.1.5.jar/com.google.common.truth.IterableSubject.jimple",
+                                "md5": "02d10479343f7de11262d0f08fb26cb1"
+                            }
+                        }
+                    },
+                    {
+                        "class": "com/google/common/truth/IterableSubject$UsingCorrespondence$Pairing.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/com/google/truth/truth/1.1.5/truth-1.1.5.jar/com.google.common.truth.IterableSubject$UsingCorrespondence$Pairing.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/truth/truth/1.1.5/truth-1.1.5.jar/com.google.common.truth.IterableSubject$UsingCorrespondence$Pairing.jimple",
+                            "transformed-class1": {
+                                "value": "final class com.google.common.truth.IterableSubject$UsingCorrespondence$Pairing extends java.lang.Ob ..  [abbreviated, 2017 chars]",
+                                "sha1": "f2e11d14647007cb7da9af010c92870ae4c32171",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/com/google/truth/truth/1.1.5/truth-1.1.5.jar/com.google.common.truth.IterableSubject$UsingCorrespondence$Pairing.jimple",
+                                "md5": "60add90f0da9ec7e637702a75dc82187"
+                            },
+                            "transformed-class2": {
+                                "value": "final class com.google.common.truth.IterableSubject$UsingCorrespondence$Pairing extends java.lang.Ob ..  [abbreviated, 1796 chars]",
+                                "sha1": "516bd2d97f493c9e3f66b7bbe7df788714de3113",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/truth/truth/1.1.5/truth-1.1.5.jar/com.google.common.truth.IterableSubject$UsingCorrespondence$Pairing.jimple",
+                                "md5": "6e38367ddba97c45b1cebd010bc3f502"
+                            }
+                        }
+                    }
+                ],
+                "errors": []
+            }
+        }]
+    }

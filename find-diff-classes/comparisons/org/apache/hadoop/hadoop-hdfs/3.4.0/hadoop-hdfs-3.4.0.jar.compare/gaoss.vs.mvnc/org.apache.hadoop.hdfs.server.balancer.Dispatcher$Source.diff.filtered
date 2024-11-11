@@ -1,0 +1,17 @@
+316,317c316,317
+< long v13, v14, v15;
+< byte v16;
+---
+> long v13, v14, v15, v16, v17;
+> byte v18;
+349d348
+< v4.<org.apache.hadoop.hdfs.server.balancer.Dispatcher$Task: long size> = v13;
+351,352c350,354
+< v16 = v15 cmp 0L;
+< if v16 > 0 goto label2;
+---
+> v16 = v15 - v13;
+> v4.<org.apache.hadoop.hdfs.server.balancer.Dispatcher$Task: long size> = v16;
+> v17 = v4.<org.apache.hadoop.hdfs.server.balancer.Dispatcher$Task: long size>;
+> v18 = v17 cmp 0L;
+> if v18 > 0 goto label2;

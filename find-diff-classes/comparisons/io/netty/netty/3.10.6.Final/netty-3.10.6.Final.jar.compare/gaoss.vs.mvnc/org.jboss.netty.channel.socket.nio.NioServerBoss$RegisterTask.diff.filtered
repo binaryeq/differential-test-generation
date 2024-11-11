@@ -1,0 +1,134 @@
+28,37c28,37
+< java.lang.Throwable v18, v24;
+< org.jboss.netty.channel.socket.nio.NioServerSocketChannel v10, v11, v13, v17, v2, v20, v22, v26, v6;
+< java.net.SocketAddress v5;
+< java.nio.channels.Selector v16;
+< java.net.ServerSocket v4;
+< org.jboss.netty.channel.socket.nio.NioServerBoss v15, v21, v25;
+< org.jboss.netty.channel.ChannelFuture v19, v23, v27, v9;
+< int v8;
+< boolean v1;
+< org.jboss.netty.channel.socket.ServerSocketChannelConfig v7;
+---
+> java.lang.Throwable v19, v22;
+> org.jboss.netty.channel.socket.nio.NioServerSocketChannel v11, v12, v14, v18, v21, v24, v27, v3, v7;
+> java.net.SocketAddress v6;
+> java.nio.channels.Selector v17;
+> java.net.ServerSocket v5;
+> org.jboss.netty.channel.socket.nio.NioServerBoss v16, v23, v26;
+> org.jboss.netty.channel.ChannelFuture v10, v20, v25, v28;
+> int v9;
+> boolean v1, v2;
+> org.jboss.netty.channel.socket.ServerSocketChannelConfig v8;
+39,40c39,40
+< java.net.InetSocketAddress v12;
+< java.nio.channels.ServerSocketChannel v14, v3;
+---
+> java.net.InetSocketAddress v13;
+> java.nio.channels.ServerSocketChannel v15, v4;
+42a43
+> v2 = 0;
+44,51c45,52
+< v2 = v0.<org.jboss.netty.channel.socket.nio.NioServerBoss$RegisterTask: org.jboss.netty.channel.socket.nio.NioServerSocketChannel channel>;
+< v3 = v2.<org.jboss.netty.channel.socket.nio.NioServerSocketChannel: java.nio.channels.ServerSocketChannel socket>;
+< v4 = virtualinvoke v3.<java.nio.channels.ServerSocketChannel: java.net.ServerSocket socket()>();
+< v5 = v0.<org.jboss.netty.channel.socket.nio.NioServerBoss$RegisterTask: java.net.SocketAddress localAddress>;
+< v6 = v0.<org.jboss.netty.channel.socket.nio.NioServerBoss$RegisterTask: org.jboss.netty.channel.socket.nio.NioServerSocketChannel channel>;
+< v7 = virtualinvoke v6.<org.jboss.netty.channel.socket.nio.NioServerSocketChannel: org.jboss.netty.channel.socket.ServerSocketChannelConfig getConfig()>();
+< v8 = interfaceinvoke v7.<org.jboss.netty.channel.socket.ServerSocketChannelConfig: int getBacklog()>();
+< virtualinvoke v4.<java.net.ServerSocket: void bind(java.net.SocketAddress,int)>(v5, v8);
+---
+> v3 = v0.<org.jboss.netty.channel.socket.nio.NioServerBoss$RegisterTask: org.jboss.netty.channel.socket.nio.NioServerSocketChannel channel>;
+> v4 = v3.<org.jboss.netty.channel.socket.nio.NioServerSocketChannel: java.nio.channels.ServerSocketChannel socket>;
+> v5 = virtualinvoke v4.<java.nio.channels.ServerSocketChannel: java.net.ServerSocket socket()>();
+> v6 = v0.<org.jboss.netty.channel.socket.nio.NioServerBoss$RegisterTask: java.net.SocketAddress localAddress>;
+> v7 = v0.<org.jboss.netty.channel.socket.nio.NioServerBoss$RegisterTask: org.jboss.netty.channel.socket.nio.NioServerSocketChannel channel>;
+> v8 = virtualinvoke v7.<org.jboss.netty.channel.socket.nio.NioServerSocketChannel: org.jboss.netty.channel.socket.ServerSocketChannelConfig getConfig()>();
+> v9 = interfaceinvoke v8.<org.jboss.netty.channel.socket.ServerSocketChannelConfig: int getBacklog()>();
+> virtualinvoke v5.<java.net.ServerSocket: void bind(java.net.SocketAddress,int)>(v6, v9);
+53,55c54,55
+< v9 = v0.<org.jboss.netty.channel.socket.nio.NioServerBoss$RegisterTask: org.jboss.netty.channel.ChannelFuture future>;
+< interfaceinvoke v9.<org.jboss.netty.channel.ChannelFuture: boolean setSuccess()>();
+< v10 = v0.<org.jboss.netty.channel.socket.nio.NioServerBoss$RegisterTask: org.jboss.netty.channel.socket.nio.NioServerSocketChannel channel>;
+---
+> v10 = v0.<org.jboss.netty.channel.socket.nio.NioServerBoss$RegisterTask: org.jboss.netty.channel.ChannelFuture future>;
+> interfaceinvoke v10.<org.jboss.netty.channel.ChannelFuture: boolean setSuccess()>();
+57,64c57,66
+< v12 = virtualinvoke v11.<org.jboss.netty.channel.socket.nio.NioServerSocketChannel: java.net.InetSocketAddress getLocalAddress()>();
+< staticinvoke <org.jboss.netty.channel.Channels: void fireChannelBound(org.jboss.netty.channel.Channel,java.net.SocketAddress)>(v10, v12);
+< v13 = v0.<org.jboss.netty.channel.socket.nio.NioServerBoss$RegisterTask: org.jboss.netty.channel.socket.nio.NioServerSocketChannel channel>;
+< v14 = v13.<org.jboss.netty.channel.socket.nio.NioServerSocketChannel: java.nio.channels.ServerSocketChannel socket>;
+< v15 = v0.<org.jboss.netty.channel.socket.nio.NioServerBoss$RegisterTask: org.jboss.netty.channel.socket.nio.NioServerBoss this$0>;
+< v16 = v15.<org.jboss.netty.channel.socket.nio.NioServerBoss: java.nio.channels.Selector selector>;
+< v17 = v0.<org.jboss.netty.channel.socket.nio.NioServerBoss$RegisterTask: org.jboss.netty.channel.socket.nio.NioServerSocketChannel channel>;
+< virtualinvoke v14.<java.nio.channels.ServerSocketChannel: java.nio.channels.SelectionKey register(java.nio.channels.Selector,int,java.lang.Object)>(v16, 16, v17);
+---
+> v12 = v0.<org.jboss.netty.channel.socket.nio.NioServerBoss$RegisterTask: org.jboss.netty.channel.socket.nio.NioServerSocketChannel channel>;
+> v13 = virtualinvoke v12.<org.jboss.netty.channel.socket.nio.NioServerSocketChannel: java.net.InetSocketAddress getLocalAddress()>();
+> staticinvoke <org.jboss.netty.channel.Channels: void fireChannelBound(org.jboss.netty.channel.Channel,java.net.SocketAddress)>(v11, v13);
+> v14 = v0.<org.jboss.netty.channel.socket.nio.NioServerBoss$RegisterTask: org.jboss.netty.channel.socket.nio.NioServerSocketChannel channel>;
+> v15 = v14.<org.jboss.netty.channel.socket.nio.NioServerSocketChannel: java.nio.channels.ServerSocketChannel socket>;
+> v16 = v0.<org.jboss.netty.channel.socket.nio.NioServerBoss$RegisterTask: org.jboss.netty.channel.socket.nio.NioServerBoss this$0>;
+> v17 = v16.<org.jboss.netty.channel.socket.nio.NioServerBoss: java.nio.channels.Selector selector>;
+> v18 = v0.<org.jboss.netty.channel.socket.nio.NioServerBoss$RegisterTask: org.jboss.netty.channel.socket.nio.NioServerSocketChannel channel>;
+> virtualinvoke v15.<java.nio.channels.ServerSocketChannel: java.nio.channels.SelectionKey register(java.nio.channels.Selector,int,java.lang.Object)>(v17, 16, v18);
+> v2 = 1;
+66c68
+< goto label7;
+---
+> goto label6;
+68,78c70,74
+< v18 := @caughtexception;
+< v19 = v0.<org.jboss.netty.channel.socket.nio.NioServerBoss$RegisterTask: org.jboss.netty.channel.ChannelFuture future>;
+< interfaceinvoke v19.<org.jboss.netty.channel.ChannelFuture: boolean setFailure(java.lang.Throwable)>(v18);
+< v20 = v0.<org.jboss.netty.channel.socket.nio.NioServerBoss$RegisterTask: org.jboss.netty.channel.socket.nio.NioServerSocketChannel channel>;
+< staticinvoke <org.jboss.netty.channel.Channels: void fireExceptionCaught(org.jboss.netty.channel.Channel,java.lang.Throwable)>(v20, v18);
+< label4:
+< if v1 == 0 goto label7;
+< v21 = v0.<org.jboss.netty.channel.socket.nio.NioServerBoss$RegisterTask: org.jboss.netty.channel.socket.nio.NioServerBoss this$0>;
+< v22 = v0.<org.jboss.netty.channel.socket.nio.NioServerBoss$RegisterTask: org.jboss.netty.channel.socket.nio.NioServerSocketChannel channel>;
+< v23 = v0.<org.jboss.netty.channel.socket.nio.NioServerBoss$RegisterTask: org.jboss.netty.channel.ChannelFuture future>;
+< virtualinvoke v21.<org.jboss.netty.channel.socket.nio.NioServerBoss: void close(org.jboss.netty.channel.socket.nio.NioServerSocketChannel,org.jboss.netty.channel.ChannelFuture)>(v22, v23);
+---
+> v19 := @caughtexception;
+> v20 = v0.<org.jboss.netty.channel.socket.nio.NioServerBoss$RegisterTask: org.jboss.netty.channel.ChannelFuture future>;
+> interfaceinvoke v20.<org.jboss.netty.channel.ChannelFuture: boolean setFailure(java.lang.Throwable)>(v19);
+> v21 = v0.<org.jboss.netty.channel.socket.nio.NioServerBoss$RegisterTask: org.jboss.netty.channel.socket.nio.NioServerSocketChannel channel>;
+> staticinvoke <org.jboss.netty.channel.Channels: void fireExceptionCaught(org.jboss.netty.channel.Channel,java.lang.Throwable)>(v21, v19);
+79a76,78
+> label4:
+> v22 := @caughtexception;
+> goto label8;
+81,86c80
+< v24 := @caughtexception;
+< if v1 == 0 goto label6;
+< v25 = v0.<org.jboss.netty.channel.socket.nio.NioServerBoss$RegisterTask: org.jboss.netty.channel.socket.nio.NioServerBoss this$0>;
+< v26 = v0.<org.jboss.netty.channel.socket.nio.NioServerBoss$RegisterTask: org.jboss.netty.channel.socket.nio.NioServerSocketChannel channel>;
+< v27 = v0.<org.jboss.netty.channel.socket.nio.NioServerBoss$RegisterTask: org.jboss.netty.channel.ChannelFuture future>;
+< virtualinvoke v25.<org.jboss.netty.channel.socket.nio.NioServerBoss: void close(org.jboss.netty.channel.socket.nio.NioServerSocketChannel,org.jboss.netty.channel.ChannelFuture)>(v26, v27);
+---
+> throw v22;
+88,89d81
+< throw v24;
+< label7:
+90a83,97
+> label7:
+> if v1 == 0 goto label6;
+> v23 = v0.<org.jboss.netty.channel.socket.nio.NioServerBoss$RegisterTask: org.jboss.netty.channel.socket.nio.NioServerBoss this$0>;
+> v24 = v0.<org.jboss.netty.channel.socket.nio.NioServerBoss$RegisterTask: org.jboss.netty.channel.socket.nio.NioServerSocketChannel channel>;
+> v25 = v0.<org.jboss.netty.channel.socket.nio.NioServerBoss$RegisterTask: org.jboss.netty.channel.ChannelFuture future>;
+> virtualinvoke v23.<org.jboss.netty.channel.socket.nio.NioServerBoss: void close(org.jboss.netty.channel.socket.nio.NioServerSocketChannel,org.jboss.netty.channel.ChannelFuture)>(v24, v25);
+> goto label6;
+> label8:
+> if v2 != 0 goto label5;
+> if v1 == 0 goto label5;
+> v26 = v0.<org.jboss.netty.channel.socket.nio.NioServerBoss$RegisterTask: org.jboss.netty.channel.socket.nio.NioServerBoss this$0>;
+> v27 = v0.<org.jboss.netty.channel.socket.nio.NioServerBoss$RegisterTask: org.jboss.netty.channel.socket.nio.NioServerSocketChannel channel>;
+> v28 = v0.<org.jboss.netty.channel.socket.nio.NioServerBoss$RegisterTask: org.jboss.netty.channel.ChannelFuture future>;
+> virtualinvoke v26.<org.jboss.netty.channel.socket.nio.NioServerBoss: void close(org.jboss.netty.channel.socket.nio.NioServerSocketChannel,org.jboss.netty.channel.ChannelFuture)>(v27, v28);
+> goto label5;
+92c99,100
+< catch java.lang.Throwable from label3 to label4 with label5;
+---
+> catch java.lang.Throwable from label1 to label3 with label4;
+> catch java.lang.Throwable from label3 to label4 with label4;

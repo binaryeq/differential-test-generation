@@ -1,0 +1,10 @@
+101c101
+< int v2, v4, v5, v6;
+---
+> int v2, v4, v5, v6, v8, v9;
+118c118,120
+< v1.<org.apache.hadoop.hdfs.protocol.proto.HdfsServerProtos$NNHAStatusHeartbeatProto: int bitField0_> = v3;
+---
+> v8 = v1.<org.apache.hadoop.hdfs.protocol.proto.HdfsServerProtos$NNHAStatusHeartbeatProto: int bitField0_>;
+> v9 = v8 | v3;
+> v1.<org.apache.hadoop.hdfs.protocol.proto.HdfsServerProtos$NNHAStatusHeartbeatProto: int bitField0_> = v9;

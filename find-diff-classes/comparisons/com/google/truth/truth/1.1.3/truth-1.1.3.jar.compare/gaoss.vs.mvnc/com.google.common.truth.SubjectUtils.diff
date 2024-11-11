@@ -1,0 +1,25 @@
+80,82d79
+< int v1;
+< java.lang.Object v2;
+< java.lang.String v3, v4;
+83a81,84
+> int v1, v5, v6;
+> java.lang.Object v2;
+> java.lang.StringBuilder v8;
+> java.lang.String v3, v4, v7;
+89c90,94
+< v4 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,int)>(v3, v1) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001 [\u0001 copies]");
+---
+> v4 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v3);
+> v5 = virtualinvoke v4.<java.lang.String: int length()>();
+> v6 = 21 + v5;
+> specialinvoke v8.<java.lang.StringBuilder: void <init>(int)>(v6);
+> v7 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,int)>(v3, v1) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001 [\u0001 copies]");
+92c97
+< v4 = v3;
+---
+> v7 = v3;
+94c99
+< return v4;
+---
+> return v7;

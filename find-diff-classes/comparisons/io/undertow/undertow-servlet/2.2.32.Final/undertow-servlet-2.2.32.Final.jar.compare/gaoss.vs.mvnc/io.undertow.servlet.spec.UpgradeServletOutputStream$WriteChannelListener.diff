@@ -1,0 +1,53 @@
+16c16
+< io.undertow.servlet.spec.UpgradeServletOutputStream v12, v15, v16, v19, v2, v21, v22, v25, v6, v8;
+---
+> io.undertow.servlet.spec.UpgradeServletOutputStream v12, v15, v16, v19, v2, v20, v24, v25, v28, v31, v6, v8;
+18,19d17
+< javax.servlet.WriteListener v23, v26;
+< int v10, v17, v3;
+23c21,23
+< java.io.IOException v11, v20, v24, v5;
+---
+> javax.servlet.WriteListener v29, v32;
+> int v10, v17, v21, v22, v26, v27, v3;
+> java.io.IOException v11, v23, v30, v5;
+66c66,69
+< v19.<io.undertow.servlet.spec.UpgradeServletOutputStream: int state> = 4;
+---
+> v20 = v0.<io.undertow.servlet.spec.UpgradeServletOutputStream$WriteChannelListener: io.undertow.servlet.spec.UpgradeServletOutputStream this$0>;
+> v21 = v20.<io.undertow.servlet.spec.UpgradeServletOutputStream: int state>;
+> v22 = v21 | 4;
+> v19.<io.undertow.servlet.spec.UpgradeServletOutputStream: int state> = v22;
+71,72c74,75
+< v20 := @caughtexception;
+< specialinvoke v0.<io.undertow.servlet.spec.UpgradeServletOutputStream$WriteChannelListener: void handleError(org.xnio.channels.StreamSinkChannel,java.io.IOException)>(v1, v20);
+---
+> v23 := @caughtexception;
+> specialinvoke v0.<io.undertow.servlet.spec.UpgradeServletOutputStream$WriteChannelListener: void handleError(org.xnio.channels.StreamSinkChannel,java.io.IOException)>(v1, v23);
+75,76c78,82
+< v21 = v0.<io.undertow.servlet.spec.UpgradeServletOutputStream$WriteChannelListener: io.undertow.servlet.spec.UpgradeServletOutputStream this$0>;
+< v21.<io.undertow.servlet.spec.UpgradeServletOutputStream: int state> = 1;
+---
+> v24 = v0.<io.undertow.servlet.spec.UpgradeServletOutputStream$WriteChannelListener: io.undertow.servlet.spec.UpgradeServletOutputStream this$0>;
+> v25 = v0.<io.undertow.servlet.spec.UpgradeServletOutputStream$WriteChannelListener: io.undertow.servlet.spec.UpgradeServletOutputStream this$0>;
+> v26 = v25.<io.undertow.servlet.spec.UpgradeServletOutputStream: int state>;
+> v27 = v26 | 1;
+> v24.<io.undertow.servlet.spec.UpgradeServletOutputStream: int state> = v27;
+79,81c85,87
+< v22 = v0.<io.undertow.servlet.spec.UpgradeServletOutputStream$WriteChannelListener: io.undertow.servlet.spec.UpgradeServletOutputStream this$0>;
+< v23 = v22.<io.undertow.servlet.spec.UpgradeServletOutputStream: javax.servlet.WriteListener listener>;
+< interfaceinvoke v23.<javax.servlet.WriteListener: void onWritePossible()>();
+---
+> v28 = v0.<io.undertow.servlet.spec.UpgradeServletOutputStream$WriteChannelListener: io.undertow.servlet.spec.UpgradeServletOutputStream this$0>;
+> v29 = v28.<io.undertow.servlet.spec.UpgradeServletOutputStream: javax.servlet.WriteListener listener>;
+> interfaceinvoke v29.<javax.servlet.WriteListener: void onWritePossible()>();
+85,88c91,94
+< v24 := @caughtexception;
+< v25 = v0.<io.undertow.servlet.spec.UpgradeServletOutputStream$WriteChannelListener: io.undertow.servlet.spec.UpgradeServletOutputStream this$0>;
+< v26 = v25.<io.undertow.servlet.spec.UpgradeServletOutputStream: javax.servlet.WriteListener listener>;
+< interfaceinvoke v26.<javax.servlet.WriteListener: void onError(java.lang.Throwable)>(v24);
+---
+> v30 := @caughtexception;
+> v31 = v0.<io.undertow.servlet.spec.UpgradeServletOutputStream$WriteChannelListener: io.undertow.servlet.spec.UpgradeServletOutputStream this$0>;
+> v32 = v31.<io.undertow.servlet.spec.UpgradeServletOutputStream: javax.servlet.WriteListener listener>;
+> interfaceinvoke v32.<javax.servlet.WriteListener: void onError(java.lang.Throwable)>(v30);

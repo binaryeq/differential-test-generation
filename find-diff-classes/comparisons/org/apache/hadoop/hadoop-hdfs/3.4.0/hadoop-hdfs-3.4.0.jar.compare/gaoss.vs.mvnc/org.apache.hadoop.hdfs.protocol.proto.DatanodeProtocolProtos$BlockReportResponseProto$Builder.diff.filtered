@@ -1,0 +1,13 @@
+116,117c116
+< byte v3;
+< int v2, v4;
+---
+> int v2, v4, v8, v9;
+119a119
+> boolean v3;
+134c134,136
+< v1.<org.apache.hadoop.hdfs.protocol.proto.DatanodeProtocolProtos$BlockReportResponseProto: int bitField0_> = v3;
+---
+> v8 = v1.<org.apache.hadoop.hdfs.protocol.proto.DatanodeProtocolProtos$BlockReportResponseProto: int bitField0_>;
+> v9 = v8 | v3;
+> v1.<org.apache.hadoop.hdfs.protocol.proto.DatanodeProtocolProtos$BlockReportResponseProto: int bitField0_> = v9;

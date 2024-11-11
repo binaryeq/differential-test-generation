@@ -1,0 +1,10 @@
+101c101
+< int v2, v4, v6, v8;
+---
+> int v10, v11, v2, v4, v6, v8;
+125c125,127
+< v1.<org.apache.hadoop.hdfs.protocol.proto.JournalProtocolProtos$FenceResponseProto: int bitField0_> = v3;
+---
+> v10 = v1.<org.apache.hadoop.hdfs.protocol.proto.JournalProtocolProtos$FenceResponseProto: int bitField0_>;
+> v11 = v10 | v3;
+> v1.<org.apache.hadoop.hdfs.protocol.proto.JournalProtocolProtos$FenceResponseProto: int bitField0_> = v11;
