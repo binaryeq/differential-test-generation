@@ -1,0 +1,45 @@
+* EvoSuite 1.2.0
+* Going to generate test cases for class: org.apache.zookeeper.Version
+* Starting Client-0
+* Connecting to master process on port 9759
+* Analyzing classpath: 
+  - /home/wtwhite/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/zookeeper/zookeeper/3.9.1/zookeeper-3.9.1.jar
+  - t/dependency/accessors-smart-1.2.jar
+  - t/dependency/apiguardian-api-1.1.0.jar
+  - t/dependency/asm-5.0.4.jar
+  - t/dependency/audience-annotations-0.12.0.jar
+  - t/dependency/bcpkix-jdk18on-1.75.jar
+  - t/dependency/bcprov-jdk18on-1.75.jar
+  - t/dependency/bcutil-jdk18on-1.75.jar
+  - t/dependency/byte-buddy-1.12.16.jar
+  - t/dependency/byte-buddy-agent-1.12.16.jar
+  - t/dependency/commons-cli-1.5.0.jar
+  - t/dependency/commons-collections4-4.4.jar
+  - t/dependency/commons-io-2.11.0.jar
+  - t/dependency/core-12.62.5.jar
+  - t/dependency/hamcrest-2.2.jar
+  - t/dependency/hamcrest-core-2.2.jar
+  - t/dependency/hamcrest-library-2.2.jar
+  - t/dependency/jackson-annotations-2.15.2.jar
+  - t/dependency/jackson-core-2.15.2.jar
+* Error while initializing target class: Unsupported class file major version 63
+[MASTER] 13:21:04.366 [logback-2] ERROR TestSuiteGenerator - Problem for org.apache.zookeeper.Version. Full stack:
+java.lang.IllegalArgumentException: Unsupported class file major version 63
+	at org.evosuite.shaded.org.objectweb.asm.ClassReader.<init>(ClassReader.java:199)
+	at org.evosuite.shaded.org.objectweb.asm.ClassReader.<init>(ClassReader.java:180)
+	at org.evosuite.shaded.org.objectweb.asm.ClassReader.<init>(ClassReader.java:166)
+	at org.evosuite.shaded.org.objectweb.asm.ClassReader.<init>(ClassReader.java:287)
+	at org.evosuite.setup.InheritanceTreeGenerator.analyzeClassStream(InheritanceTreeGenerator.java:233)
+	at org.evosuite.setup.InheritanceTreeGenerator.createFromClassPath(InheritanceTreeGenerator.java:98)
+	at org.evosuite.setup.DependencyAnalysis.initInheritanceTree(DependencyAnalysis.java:75)
+	at org.evosuite.TestSuiteGenerator.initializeTargetClass(TestSuiteGenerator.java:93)
+	at org.evosuite.TestSuiteGenerator.generateTestSuite(TestSuiteGenerator.java:135)
+	at org.evosuite.rmi.service.ClientNodeImpl.lambda$startNewSearch$0(ClientNodeImpl.java:140)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+* Computation finished
+[MASTER] 13:21:04.507 [main] ERROR SearchStatistics - No statistics has been saved because EvoSuite failed to generate any test case
+[MASTER] 13:21:04.615 [main] ERROR TestGeneration - failed to write statistics data

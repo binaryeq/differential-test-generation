@@ -1,0 +1,250 @@
+* EvoSuite 1.2.0
+* Going to generate test cases for class: org.apache.hadoop.hdfs.protocol.proto.InterDatanodeProtocolProtos
+* Starting Client-0
+* Connecting to master process on port 4769
+* Analyzing classpath: 
+  - /home/wtwhite/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-hdfs/3.4.0/hadoop-hdfs-3.4.0.jar
+  - t/dependency/animal-sniffer-annotations-1.17.jar
+  - t/dependency/apiguardian-api-1.1.2.jar
+  - t/dependency/AppleJavaExtensions-1.4.jar
+  - t/dependency/asm-5.0.4.jar
+  - t/dependency/asm-commons-5.0.2.jar
+  - t/dependency/asm-debug-all-5.0.2.jar
+  - t/dependency/asm-tree-5.0.2.jar
+  - t/dependency/assertj-core-3.12.2.jar
+  - t/dependency/audience-annotations-0.12.0.jar
+  - t/dependency/avro-1.9.2.jar
+  - t/dependency/bcel-findbugs-6.0.jar
+  - t/dependency/bcprov-jdk15on-1.70.jar
+  - t/dependency/byte-buddy-1.9.10.jar
+  - t/dependency/byte-buddy-agent-1.9.10.jar
+  - t/dependency/checker-qual-2.5.2.jar
+  - t/dependency/commons-beanutils-1.9.4.jar
+  - t/dependency/commons-cli-1.5.0.jar
+  - t/dependency/commons-codec-1.15.jar
+  - t/dependency/commons-collections-3.2.2.jar
+  - t/dependency/commons-compress-1.24.0.jar
+  - t/dependency/commons-configuration2-2.8.0.jar
+  - t/dependency/commons-daemon-1.0.13.jar
+  - t/dependency/commons-io-2.14.0.jar
+  - t/dependency/commons-lang-2.6.jar
+  - t/dependency/commons-lang3-3.12.0.jar
+  - t/dependency/commons-logging-1.2.jar
+  - t/dependency/commons-math3-3.6.1.jar
+  - t/dependency/commons-net-3.9.0.jar
+  - t/dependency/commons-text-1.10.0.jar
+  - t/dependency/curator-client-5.2.0.jar
+  - t/dependency/curator-framework-5.2.0.jar
+  - t/dependency/curator-recipes-5.2.0.jar
+  - t/dependency/curator-test-5.2.0.jar
+  - t/dependency/dnsjava-3.4.0.jar
+  - t/dependency/dom4j-1.6.1.jar
+  - t/dependency/failureaccess-1.0.jar
+  - t/dependency/findbugs-3.0.1.jar
+  - t/dependency/gson-2.9.0.jar
+  - t/dependency/guava-27.0-jre.jar
+  - t/dependency/hadoop-annotations-3.4.0.jar
+  - t/dependency/hadoop-auth-3.4.0.jar
+  - t/dependency/hadoop-common-3.4.0.jar
+  - t/dependency/hadoop-common-3.4.0-tests.jar
+  - t/dependency/hadoop-hdfs-client-3.4.0.jar
+  - t/dependency/hadoop-kms-3.4.0.jar
+  - t/dependency/hadoop-kms-3.4.0-tests.jar
+  - t/dependency/hadoop-minikdc-3.4.0.jar
+  - t/dependency/hadoop-shaded-guava-1.2.0.jar
+  - t/dependency/hadoop-shaded-protobuf_3_21-1.2.0.jar
+  - t/dependency/hamcrest-core-1.3.jar
+  - t/dependency/httpclient-4.5.13.jar
+  - t/dependency/httpcore-4.4.13.jar
+  - t/dependency/j2objc-annotations-1.1.jar
+  - t/dependency/jackson-annotations-2.12.7.jar
+  - t/dependency/jackson-core-2.12.7.jar
+  - t/dependency/jackson-databind-2.12.7.1.jar
+  - t/dependency/jakarta.activation-api-1.2.1.jar
+  - t/dependency/javax.servlet-api-3.1.0.jar
+  - t/dependency/jaxb-api-2.2.11.jar
+  - t/dependency/jaxb-impl-2.2.3-1.jar
+  - t/dependency/jaxen-1.1.6.jar
+  - t/dependency/jcip-annotations-1.0-1.jar
+  - t/dependency/jcip-annotations-1.0.jar
+  - t/dependency/jdk.tools-1.8.jar
+  - t/dependency/jersey-core-1.19.4.jar
+  - t/dependency/jersey-json-1.20.jar
+  - t/dependency/jersey-server-1.19.4.jar
+  - t/dependency/jersey-servlet-1.19.4.jar
+  - t/dependency/jettison-1.5.4.jar
+  - t/dependency/jetty-http-9.4.53.v20231009.jar
+  - t/dependency/jetty-io-9.4.53.v20231009.jar
+  - t/dependency/jetty-security-9.4.53.v20231009.jar
+  - t/dependency/jetty-server-9.4.53.v20231009.jar
+  - t/dependency/jetty-servlet-9.4.53.v20231009.jar
+  - t/dependency/jetty-util-9.4.53.v20231009.jar
+  - t/dependency/jetty-util-ajax-9.4.53.v20231009.jar
+  - t/dependency/jetty-webapp-9.4.53.v20231009.jar
+  - t/dependency/jetty-xml-9.4.53.v20231009.jar
+  - t/dependency/jFormatString-2.0.1.jar
+  - t/dependency/jline-3.9.0.jar
+  - t/dependency/jsch-0.1.55.jar
+  - t/dependency/jsp-api-2.1.jar
+  - t/dependency/jsr305-3.0.2.jar
+  - t/dependency/jsr311-api-1.1.1.jar
+  - t/dependency/jul-to-slf4j-1.7.36.jar
+  - t/dependency/junit-4.13.2.jar
+  - t/dependency/junit-jupiter-api-5.8.2.jar
+  - t/dependency/junit-platform-commons-1.8.2.jar
+  - t/dependency/kerb-admin-2.0.3.jar
+  - t/dependency/kerb-client-2.0.3.jar
+  - t/dependency/kerb-common-2.0.3.jar
+  - t/dependency/kerb-core-2.0.3.jar
+  - t/dependency/kerb-crypto-2.0.3.jar
+  - t/dependency/kerb-identity-2.0.3.jar
+  - t/dependency/kerb-server-2.0.3.jar
+  - t/dependency/kerb-simplekdc-2.0.3.jar
+  - t/dependency/kerb-util-2.0.3.jar
+  - t/dependency/kerby-asn1-2.0.3.jar
+  - t/dependency/kerby-config-2.0.3.jar
+  - t/dependency/kerby-pkix-2.0.3.jar
+  - t/dependency/kerby-util-2.0.3.jar
+  - t/dependency/kerby-xdr-2.0.3.jar
+  - t/dependency/leveldbjni-all-1.8.jar
+  - t/dependency/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar
+  - t/dependency/lz4-java-1.7.1.jar
+  - t/dependency/metrics-core-3.2.4.jar
+  - t/dependency/mockito-core-2.28.2.jar
+  - t/dependency/netty-all-4.1.100.Final.jar
+  - t/dependency/netty-buffer-4.1.100.Final.jar
+  - t/dependency/netty-codec-4.1.100.Final.jar
+  - t/dependency/netty-codec-dns-4.1.100.Final.jar
+  - t/dependency/netty-codec-haproxy-4.1.100.Final.jar
+  - t/dependency/netty-codec-http2-4.1.100.Final.jar
+  - t/dependency/netty-codec-http-4.1.100.Final.jar
+  - t/dependency/netty-codec-memcache-4.1.100.Final.jar
+  - t/dependency/netty-codec-mqtt-4.1.100.Final.jar
+  - t/dependency/netty-codec-redis-4.1.100.Final.jar
+  - t/dependency/netty-codec-smtp-4.1.100.Final.jar
+  - t/dependency/netty-codec-socks-4.1.100.Final.jar
+  - t/dependency/netty-codec-stomp-4.1.100.Final.jar
+  - t/dependency/netty-codec-xml-4.1.100.Final.jar
+  - t/dependency/netty-common-4.1.100.Final.jar
+  - t/dependency/netty-handler-4.1.100.Final.jar
+  - t/dependency/netty-handler-proxy-4.1.100.Final.jar
+  - t/dependency/netty-handler-ssl-ocsp-4.1.100.Final.jar
+  - t/dependency/netty-resolver-4.1.100.Final.jar
+  - t/dependency/netty-resolver-dns-4.1.100.Final.jar
+  - t/dependency/netty-resolver-dns-classes-macos-4.1.100.Final.jar
+  - t/dependency/netty-resolver-dns-native-macos-4.1.100.Final-osx-aarch_64.jar
+  - t/dependency/netty-resolver-dns-native-macos-4.1.100.Final-osx-x86_64.jar
+  - t/dependency/netty-transport-4.1.100.Final.jar
+  - t/dependency/netty-transport-classes-epoll-4.1.100.Final.jar
+  - t/dependency/netty-transport-classes-kqueue-4.1.100.Final.jar
+  - t/dependency/netty-transport-native-epoll-4.1.100.Final.jar
+  - t/dependency/netty-transport-native-epoll-4.1.100.Final-linux-aarch_64.jar
+  - t/dependency/netty-transport-native-epoll-4.1.100.Final-linux-x86_64.jar
+  - t/dependency/netty-transport-native-kqueue-4.1.100.Final-osx-aarch_64.jar
+  - t/dependency/netty-transport-native-kqueue-4.1.100.Final-osx-x86_64.jar
+  - t/dependency/netty-transport-native-unix-common-4.1.100.Final.jar
+  - t/dependency/netty-transport-rxtx-4.1.100.Final.jar
+  - t/dependency/netty-transport-sctp-4.1.100.Final.jar
+  - t/dependency/netty-transport-udt-4.1.100.Final.jar
+  - t/dependency/nimbus-jose-jwt-9.31.jar
+  - t/dependency/objenesis-2.6.jar
+  - t/dependency/opentest4j-1.2.0.jar
+  - t/dependency/protobuf-java-2.5.0.jar
+  - t/dependency/re2j-1.1.jar
+  - t/dependency/reload4j-1.2.22.jar
+  - t/dependency/slf4j-api-1.7.36.jar
+  - t/dependency/slf4j-reload4j-1.7.36.jar
+  - t/dependency/snappy-java-1.1.10.4.jar
+  - t/dependency/stax2-api-4.2.1.jar
+  - t/dependency/token-provider-2.0.3.jar
+  - t/dependency/woodstox-core-5.4.0.jar
+  - t/dependency/zookeeper-3.8.3.jar
+  - t/dependency/zookeeper-3.8.3-tests.jar
+  - t/dependency/zookeeper-jute-3.8.3.jar
+[MASTER] 12:50:02.813 [logback-1] WARN  CheapPurityAnalyzer - io.netty.internal.tcnative.SSL was not found in the inheritance tree. Using DEFAULT value for cheap-purity analysis
+[MASTER] 12:50:02.813 [logback-1] WARN  InheritanceTree - Class not in inheritance graph: io.netty.internal.tcnative.SSL
+[MASTER] 12:50:02.814 [logback-1] WARN  CheapPurityAnalyzer - io.netty.internal.tcnative.SSL was not found in the inheritance tree. Using DEFAULT value for cheap-purity analysis
+[MASTER] 12:50:02.814 [logback-1] WARN  CheapPurityAnalyzer - io.netty.internal.tcnative.SSL was not found in the inheritance tree. Using DEFAULT value for cheap-purity analysis
+[MASTER] 12:50:02.818 [logback-1] WARN  CheapPurityAnalyzer - io.netty.internal.tcnative.SSL was not found in the inheritance tree. Using DEFAULT value for cheap-purity analysis
+[MASTER] 12:50:02.819 [logback-1] WARN  CheapPurityAnalyzer - io.netty.internal.tcnative.SSL was not found in the inheritance tree. Using DEFAULT value for cheap-purity analysis
+* Finished analyzing classpath
+* Generating tests for class org.apache.hadoop.hdfs.protocol.proto.InterDatanodeProtocolProtos
+* Test criteria:
+  - Line Coverage
+  - Branch Coverage
+  - Exception
+  - Mutation testing (weak)
+  - Method-Output Coverage
+  - Top-Level Method Coverage
+  - No-Exception Top-Level Method Coverage
+  - Context Branch Coverage
+* Total number of test goals for DYNAMOSA: 3761
+* Using seed 1731282590614
+* Starting evolution
+[Progress:>                             0%] [Cov:>                                  0%]* Initial Number of Goals in DynaMOSA = 1424 / 3761
+[Progress:===>                          13%] [Cov:=======>                           20%][Progress:=======>                      25%] [Cov:=======>                           20%][MASTER] 12:50:21.998 [logback-1] WARN  TestCluster - Failed to check cache for java.util.Enumeration<E> : Type points to itself
+[Progress:=======>                      25%] [Cov:=======>                           20%][Progress:=======>                      26%] [Cov:=======>                           21%][Progress:=======>                      26%] [Cov:=======>                           21%][Progress:========>                     28%] [Cov:=======>                           22%][Progress:========>                     28%] [Cov:=======>                           22%][Progress:=========>                    30%] [Cov:=======>                           22%][Progress:=========>                    30%] [Cov:=======>                           22%][Progress:=========>                    30%] [Cov:========>                          23%][Progress:=========>                    31%] [Cov:========>                          23%][Progress:=========>                    31%] [Cov:========>                          23%][Progress:============>                 41%] [Cov:========>                          23%][Progress:============>                 41%] [Cov:========>                          23%][MASTER] 12:50:32.239 [logback-1] WARN  TestCluster - Failed to check cache for java.util.Optional<T> : Type points to itself
+[Progress:============>                 41%] [Cov:========>                          23%][Progress:============>                 43%] [Cov:========>                          24%][Progress:============>                 43%] [Cov:========>                          24%][Progress:=============>                45%] [Cov:========>                          24%][Progress:=============>                45%] [Cov:========>                          24%][Progress:=============>                45%] [Cov:========>                          24%][Progress:=============>                46%] [Cov:========>                          25%][Progress:==============>               48%] [Cov:========>                          25%][Progress:==============>               48%] [Cov:========>                          25%][Progress:===============>              50%] [Cov:=========>                         26%][MASTER] 12:50:36.878 [logback-1] WARN  TestCluster - Failed to check cache for org.apache.hadoop.io.WritableComparable<T> : Type points to itself
+[Progress:===============>              50%] [Cov:=========>                         26%][Progress:===============>              51%] [Cov:=========>                         26%][Progress:===============>              51%] [Cov:=========>                         27%][Progress:===============>              51%] [Cov:=========>                         27%][Progress:===============>              53%] [Cov:=========>                         27%][Progress:===============>              53%] [Cov:=========>                         27%][Progress:===============>              53%] [Cov:=========>                         27%][Progress:================>             55%] [Cov:=========>                         27%][Progress:================>             55%] [Cov:=========>                         27%][Progress:================>             56%] [Cov:=========>                         28%][Progress:================>             56%] [Cov:=========>                         28%][Progress:================>             56%] [Cov:=========>                         28%][Progress:===================>          66%] [Cov:=========>                         28%][Progress:===================>          66%] [Cov:=========>                         28%][Progress:===================>          66%] [Cov:==========>                        29%][Progress:====================>         68%] [Cov:============>                      36%][Progress:======================>       76%] [Cov:============>                      36%][Progress:=======================>      78%] [Cov:============>                      36%][Progress:=======================>      78%] [Cov:============>                      37%][Progress:=======================>      78%] [Cov:============>                      37%][Progress:==========================>   88%] [Cov:============>                      37%][Progress:==========================>   88%] [Cov:=============>                     38%][Progress:===========================>  90%] [Cov:=============>                     38%][Progress:===========================>  90%] [Cov:=============>                     39%][Progress:===========================>  90%] [Cov:=============>                     39%][Progress:===========================>  91%] [Cov:=============>                     39%][Progress:==============================100%] [Cov:=============>                     39%][Progress:==============================100%] [Cov:==============>                    40%][Progress:==============================100%] [Cov:==============>                    40%]
+* Search finished after 62s and 52 generations, 21688 statements, best individual has fitness: 2263.0
+* Minimizing test suite
+* Going to analyze the coverage criteria
+* Coverage analysis for criterion LINE
+* Coverage of criterion LINE: 50%
+* Total number of goals: 1173
+* Number of covered goals: 582
+* Coverage analysis for criterion BRANCH
+* Coverage of criterion BRANCH: 42%
+* Total number of goals: 745
+* Number of covered goals: 311
+* Coverage analysis for criterion EXCEPTION
+* Coverage of criterion EXCEPTION: 100% (no goals)
+* Coverage analysis for criterion WEAKMUTATION
+* Coverage of criterion WEAKMUTATION: 27%
+* Total number of goals: 808
+* Number of covered goals: 219
+* Coverage analysis for criterion OUTPUT
+* Coverage of criterion OUTPUT: 50%
+* Total number of goals: 2
+* Number of covered goals: 1
+* Coverage analysis for criterion METHOD
+* Coverage of criterion METHOD: 64%
+* Total number of goals: 144
+* Number of covered goals: 92
+* Coverage analysis for criterion METHODNOEXCEPTION
+* Coverage of criterion METHODNOEXCEPTION: 38%
+* Total number of goals: 144
+* Number of covered goals: 54
+* Coverage analysis for criterion CBRANCH
+* Coverage of criterion CBRANCH: 42%
+* Total number of goals: 745
+* Number of covered goals: 311
+* Generated 138 tests with total length 365
+* Resulting test suite's coverage: 40% (average coverage for all fitness functions)
+* Generating assertions
+* Resulting test suite's mutation score: 14%
+* Compiling and checking tests
+[MASTER] 12:51:40.070 [logback-2] ERROR ClientNodeImpl - Error when generating tests for: org.apache.hadoop.hdfs.protocol.proto.InterDatanodeProtocolProtos with seed 1731282590614. Configuration id : null
+java.lang.NoClassDefFoundError: jdk.internal.misc.TerminatingThreadLocal
+	at sun.nio.fs.NativeBuffers.<clinit>(NativeBuffers.java:41)
+	at sun.nio.fs.UnixNativeDispatcher.copyToNativeBuffer(UnixNativeDispatcher.java:42)
+	at sun.nio.fs.UnixNativeDispatcher.lstat(UnixNativeDispatcher.java:303)
+	at sun.nio.fs.UnixFileAttributes.get(UnixFileAttributes.java:72)
+	at sun.nio.fs.UnixFileAttributeViews$Basic.readAttributes(UnixFileAttributeViews.java:52)
+	at sun.nio.fs.UnixFileSystemProvider.readAttributes(UnixFileSystemProvider.java:144)
+	at sun.nio.fs.LinuxFileSystemProvider.readAttributes(LinuxFileSystemProvider.java:99)
+	at java.nio.file.Files.readAttributes(Files.java:1737)
+	at java.nio.file.Files.isSymbolicLink(Files.java:2153)
+	at org.evosuite.shaded.org.apache.commons.io.FileUtils.isSymlink(FileUtils.java:1879)
+	at org.evosuite.shaded.org.apache.commons.io.FileUtils.deleteDirectory(FileUtils.java:1191)
+	at org.evosuite.junit.JUnitAnalyzer.removeTestsThatDoNotCompile(JUnitAnalyzer.java:124)
+	at org.evosuite.TestSuiteGenerator.compileAndCheckTests(TestSuiteGenerator.java:559)
+	at org.evosuite.TestSuiteGenerator.postProcessTests(TestSuiteGenerator.java:516)
+	at org.evosuite.TestSuiteGenerator.generateTestSuite(TestSuiteGenerator.java:218)
+	at org.evosuite.rmi.service.ClientNodeImpl.lambda$startNewSearch$0(ClientNodeImpl.java:140)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+* Computation finished
