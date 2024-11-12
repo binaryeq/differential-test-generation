@@ -322,8 +322,15 @@ THE_END
                         my @generatedClasses = `find '$testGenPath' -name '*_ESTest*.java'`;
                         chomp @generatedClasses;
 
+                        my $testCompilePath = evosuiteCompileDir($opts->{targetOtherProvider}, $g, $a, $v);
+                        my $fullTestCompilePath = $testCompilePath . ($opts->{viaMvn} ? '/target/test-classes' : '');          # Maven puts its classes in a slightly different place
+                        my @DEBUGprocessedPathsChecked;
+                        my %alreadyProcessed = map { $_ => 1 } grep { my $target = $_; $target =~ s|\Q$testGenPath\E/evosuite-tests/|$fullTestCompilePath/| or die; $target =~ s/\.java$/.class/ or die; push @DEBUGprocessedPathsChecked, $target; -e $target } @generatedClasses;
+                        print STDERR "# Removing " . scalar(keys %alreadyProcessed) . " already-compiled classes from the original set of " . scalar(@generatedClasses) . ", leaving " . (scalar(@generatedClasses) - scalar(keys %alreadyProcessed)) . ".\n";
+                        print STDERR "# Checked path: $_\n" foreach @DEBUGprocessedPathsChecked;	#DEBUG
+			@generatedClasses = grep { !exists $alreadyProcessed{$_} } @generatedClasses;
+
                         if (@generatedClasses) {
-                            my $testCompilePath = evosuiteCompileDir($opts->{targetOtherProvider}, $g, $a, $v);
                             my $pomPath = providerPath($opts->{targetOtherProvider}, $g, $a, $v) =~ s/\.jar$/.pom/r;
                             my $basePath = $pomPath =~ s|/[^/]+$||r;
                             my $classOwnCP = providerPath($opts->{targetOtherProvider}, $g, $a, $v);
