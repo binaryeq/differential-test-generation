@@ -396,7 +396,7 @@ THE_END
                     chomp @compiledClasses;
 
                     my @DEBUG;
-                    my %alreadyProcessed = map { $_ => 1 } grep { my $target = "$testRunPath/" . convertClassNameToDotted($_, $testCompilePath); push @DEBUG, $target; -e $target } @compiledClasses;
+                    my %alreadyProcessed = map { $_ => 1 } grep { my $target = "$testRunPath/" . convertClassNameToDotted($_, $testCompilePath) . ".out"; $target =~ s|^.\{RUNDIR\}/|run/| or die; push @DEBUG, $target; -e $target } @compiledClasses;
                     print STDERR "# Removing " . scalar(keys %alreadyProcessed) . " already-compiled classes from the original set of " . scalar(@compiledClasses) . ", leaving " . (scalar(@compiledClasses) - scalar(keys %alreadyProcessed)) . ".\n";
                     print STDERR "# Checked: $_\n" foreach @DEBUG;    #DEBUG
                     @compiledClasses = grep { !exists $alreadyProcessed{$_} } @compiledClasses;
