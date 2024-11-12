@@ -1,0 +1,31 @@
+JUnit version 4.13.1
+..............E
+Time: 2.691
+There was 1 failure:
+1) test09(io.restassured.internal.support.Prettifier_ESTest)
+java.util.ServiceConfigurationError: org.apache.groovy.json.FastStringServiceFactory: Provider org.apache.groovy.json.DefaultFastStringServiceFactory not a subtype
+	at java.util.ServiceLoader.fail(ServiceLoader.java:239)
+	at java.util.ServiceLoader.access$300(ServiceLoader.java:185)
+	at java.util.ServiceLoader$LazyIterator.nextService(ServiceLoader.java:376)
+	at java.util.ServiceLoader$LazyIterator.access$700(ServiceLoader.java:323)
+	at java.util.ServiceLoader$LazyIterator$2.run(ServiceLoader.java:407)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.util.ServiceLoader$LazyIterator.next(ServiceLoader.java:409)
+	at java.util.ServiceLoader$1.next(ServiceLoader.java:480)
+	at org.apache.groovy.json.internal.FastStringUtils$ServiceHolder.loadService(FastStringUtils.java:41)
+	at org.apache.groovy.json.internal.FastStringUtils$ServiceHolder.<clinit>(FastStringUtils.java:33)
+	at org.apache.groovy.json.internal.FastStringUtils.getService(FastStringUtils.java:55)
+	at org.apache.groovy.json.internal.FastStringUtils.toCharArray(FastStringUtils.java:66)
+	at org.apache.groovy.json.internal.CharBuf.addString(CharBuf.java:107)
+	at groovy.json.JsonOutput.prettyPrint(JsonOutput.java:220)
+	at io.restassured.internal.path.json.JsonPrettifier.prettifyJson(JsonPrettifier.java:8)
+	at io.restassured.internal.path.json.JsonPrettifier$prettifyJson.call(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:46)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:125)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:139)
+	at io.restassured.internal.support.Prettifier.prettify(Prettifier.groovy:60)
+	at io.restassured.internal.support.Prettifier_ESTest.test09(Prettifier_ESTest.java:143)
+
+FAILURES!!!
+Tests run: 14,  Failures: 1
+

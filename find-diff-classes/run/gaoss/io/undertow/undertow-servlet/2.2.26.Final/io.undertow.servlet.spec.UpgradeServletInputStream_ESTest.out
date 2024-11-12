@@ -1,0 +1,45 @@
+JUnit version 4.13
+....E........E..E.E....E..E...
+Time: 4.107
+There were 6 failures:
+1) test13(io.undertow.servlet.spec.UpgradeServletInputStream_ESTest)
+java.lang.NoSuchMethodError: java.nio.ByteBuffer.flip()Ljava/nio/ByteBuffer;
+	at io.undertow.servlet.spec.UpgradeServletInputStream.readIntoBuffer(UpgradeServletInputStream.java:151)
+	at io.undertow.servlet.spec.UpgradeServletInputStream.read(UpgradeServletInputStream.java:125)
+	at io.undertow.servlet.spec.UpgradeServletInputStream_ESTest.test13(UpgradeServletInputStream_ESTest.java:241)
+2) test01(io.undertow.servlet.spec.UpgradeServletInputStream_ESTest)
+java.lang.NoSuchMethodError: java.nio.ByteBuffer.flip()Ljava/nio/ByteBuffer;
+	at io.undertow.servlet.spec.UpgradeServletInputStream.readIntoBufferNonBlocking(UpgradeServletInputStream.java:170)
+	at io.undertow.servlet.spec.UpgradeServletInputStream.available(UpgradeServletInputStream.java:210)
+	at io.undertow.servlet.spec.UpgradeServletInputStream_ESTest.test01(UpgradeServletInputStream_ESTest.java:46)
+3) test23(io.undertow.servlet.spec.UpgradeServletInputStream_ESTest)
+java.lang.NoSuchMethodError: java.nio.ByteBuffer.flip()Ljava/nio/ByteBuffer;
+	at io.undertow.servlet.spec.UpgradeServletInputStream.readIntoBuffer(UpgradeServletInputStream.java:151)
+	at io.undertow.servlet.spec.UpgradeServletInputStream.read(UpgradeServletInputStream.java:125)
+	at io.undertow.servlet.spec.UpgradeServletInputStream.read(UpgradeServletInputStream.java:112)
+	at io.undertow.servlet.spec.UpgradeServletInputStream.read(UpgradeServletInputStream.java:103)
+	at javax.servlet.ServletInputStream.readLine(ServletInputStream.java:81)
+	at io.undertow.servlet.spec.UpgradeServletInputStream_ESTest.test23(UpgradeServletInputStream_ESTest.java:365)
+4) test00(io.undertow.servlet.spec.UpgradeServletInputStream_ESTest)
+java.lang.NoSuchMethodError: java.nio.ByteBuffer.flip()Ljava/nio/ByteBuffer;
+	at io.undertow.servlet.spec.UpgradeServletInputStream.readIntoBuffer(UpgradeServletInputStream.java:151)
+	at io.undertow.servlet.spec.UpgradeServletInputStream.read(UpgradeServletInputStream.java:125)
+	at io.undertow.servlet.spec.UpgradeServletInputStream.read(UpgradeServletInputStream.java:112)
+	at io.undertow.servlet.spec.UpgradeServletInputStream_ESTest.test00(UpgradeServletInputStream_ESTest.java:37)
+5) test18(io.undertow.servlet.spec.UpgradeServletInputStream_ESTest)
+java.lang.NoSuchMethodError: java.nio.ByteBuffer.flip()Ljava/nio/ByteBuffer;
+	at io.undertow.servlet.spec.UpgradeServletInputStream.readIntoBufferNonBlocking(UpgradeServletInputStream.java:170)
+	at io.undertow.servlet.spec.UpgradeServletInputStream.available(UpgradeServletInputStream.java:210)
+	at io.undertow.servlet.spec.UpgradeServletInputStream_ESTest.test18(UpgradeServletInputStream_ESTest.java:311)
+6) test17(io.undertow.servlet.spec.UpgradeServletInputStream_ESTest)
+java.lang.NoSuchMethodError: java.nio.ByteBuffer.flip()Ljava/nio/ByteBuffer;
+	at io.undertow.servlet.spec.UpgradeServletInputStream.readIntoBuffer(UpgradeServletInputStream.java:151)
+	at io.undertow.servlet.spec.UpgradeServletInputStream.read(UpgradeServletInputStream.java:125)
+	at io.undertow.servlet.spec.UpgradeServletInputStream.read(UpgradeServletInputStream.java:112)
+	at io.undertow.servlet.spec.UpgradeServletInputStream.read(UpgradeServletInputStream.java:103)
+	at javax.servlet.ServletInputStream.readLine(ServletInputStream.java:81)
+	at io.undertow.servlet.spec.UpgradeServletInputStream_ESTest.test17(UpgradeServletInputStream_ESTest.java:301)
+
+FAILURES!!!
+Tests run: 24,  Failures: 6
+

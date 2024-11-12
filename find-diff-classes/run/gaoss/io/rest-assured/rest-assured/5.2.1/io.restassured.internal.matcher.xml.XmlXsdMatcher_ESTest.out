@@ -1,0 +1,33 @@
+JUnit version 4.13.1
+.....E.........E........
+Time: 1.419
+There were 2 failures:
+1) test04(io.restassured.internal.matcher.xml.XmlXsdMatcher_ESTest)
+java.lang.AssertionError: Expecting exception: GroovyRuntimeException
+	at org.junit.Assert.fail(Assert.java:89)
+	at io.restassured.internal.matcher.xml.XmlXsdMatcher_ESTest.test04(XmlXsdMatcher_ESTest.java:68)
+2) test01(io.restassured.internal.matcher.xml.XmlXsdMatcher_ESTest)
+groovy.lang.GroovyRuntimeException: Ambiguous method overloading for method io.restassured.internal.matcher.xml.XmlXsdMatcher#matchesXsd.
+Cannot resolve which method to invoke for [null] due to overlapping prototypes between:
+	[class java.io.File]
+	[class java.io.InputStream]
+	[class java.io.Reader]
+	[class java.lang.String]
+	[class java.net.URL]
+	at groovy.lang.MetaClassImpl.doChooseMostSpecificParams(MetaClassImpl.java:3426)
+	at groovy.lang.MetaClassImpl.chooseMostSpecificParams(MetaClassImpl.java:3402)
+	at groovy.lang.MetaClassImpl.chooseMethodInternal(MetaClassImpl.java:3392)
+	at groovy.lang.MetaClassImpl.chooseMethod(MetaClassImpl.java:3336)
+	at groovy.lang.MetaClassImpl.pickStaticMethod(MetaClassImpl.java:1687)
+	at groovy.lang.MetaClassImpl.retrieveStaticMethod(MetaClassImpl.java:1583)
+	at groovy.lang.MetaClassImpl.createStaticSite(MetaClassImpl.java:3593)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.createCallStaticSite(CallSiteArray.java:73)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallStatic(CallSiteArray.java:54)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callStatic(AbstractCallSite.java:217)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callStatic(AbstractCallSite.java:231)
+	at io.restassured.internal.matcher.xml.XmlXsdMatcher.matchesXsdInClasspath(XmlXsdMatcher.groovy:95)
+	at io.restassured.internal.matcher.xml.XmlXsdMatcher_ESTest.test01(XmlXsdMatcher_ESTest.java:43)
+
+FAILURES!!!
+Tests run: 22,  Failures: 2
+
