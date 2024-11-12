@@ -1,0 +1,35 @@
+244c244
+< com.google.common.collect.ImmutableList v16, v23, v3;
+---
+> com.google.common.collect.ImmutableList v16, v24, v3;
+246,247c246,247
+< java.lang.String v18, v19, v21;
+< com.google.common.truth.Fact v22;
+---
+> java.lang.String v18, v19, v20, v22;
+> com.google.common.truth.Fact v23;
+252c252
+< com.google.common.truth.Subject v13, v17, v20;
+---
+> com.google.common.truth.Subject v13, v17, v21;
+294,298c294,299
+< v19 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v18) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001 was");
+< v20 = v1.<com.google.common.truth.FailureMetadata$Step: com.google.common.truth.Subject subject>;
+< v21 = virtualinvoke v20.<com.google.common.truth.Subject: java.lang.String actualCustomStringRepresentationForPackageMembersToCall()>();
+< v22 = staticinvoke <com.google.common.truth.Fact: com.google.common.truth.Fact fact(java.lang.String,java.lang.Object)>(v19, v21);
+< v23 = staticinvoke <com.google.common.collect.ImmutableList: com.google.common.collect.ImmutableList of(java.lang.Object)>(v22);
+---
+> v19 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v18);
+> v20 = virtualinvoke v19.<java.lang.String: java.lang.String concat(java.lang.String)>(" was");
+> v21 = v1.<com.google.common.truth.FailureMetadata$Step: com.google.common.truth.Subject subject>;
+> v22 = virtualinvoke v21.<com.google.common.truth.Subject: java.lang.String actualCustomStringRepresentationForPackageMembersToCall()>();
+> v23 = staticinvoke <com.google.common.truth.Fact: com.google.common.truth.Fact fact(java.lang.String,java.lang.Object)>(v20, v22);
+> v24 = staticinvoke <com.google.common.collect.ImmutableList: com.google.common.collect.ImmutableList of(java.lang.Object)>(v23);
+301c302
+< v23 = staticinvoke <com.google.common.collect.ImmutableList: com.google.common.collect.ImmutableList of()>();
+---
+> v24 = staticinvoke <com.google.common.collect.ImmutableList: com.google.common.collect.ImmutableList of()>();
+303c304
+< return v23;
+---
+> return v24;

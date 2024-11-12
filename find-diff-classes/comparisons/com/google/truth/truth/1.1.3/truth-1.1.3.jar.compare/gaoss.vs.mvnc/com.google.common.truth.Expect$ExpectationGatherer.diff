@@ -1,0 +1,115 @@
+110,117c110,117
+< int v10, v12, v13, v4, v9;
+< java.lang.String v11, v18, v19, v20, v24, v25, v6, v7;
+< boolean v16, v2;
+< java.util.Iterator v15;
+< java.util.List v1, v14, v21, v3, v8;
+< java.lang.StackTraceElement[] v23;
+< java.lang.Object v17, v22;
+< java.lang.StringBuilder v5;
+---
+> int v12, v13, v15, v16, v4, v8, v9;
+> java.lang.String v10, v14, v21, v22, v23, v27, v28, v6, v7;
+> boolean v19, v2;
+> java.util.Iterator v18;
+> java.util.List v1, v11, v17, v24, v3;
+> java.lang.StackTraceElement[] v26;
+> java.lang.Object v20, v25;
+> java.lang.StringBuilder v29, v5;
+133,142c133,146
+< v7 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (int,java.lang.String)>(v4, v6) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001\u0001 failed:\n");
+< specialinvoke v5.<java.lang.StringBuilder: void <init>(java.lang.String)>(v7);
+< v8 = v0.<com.google.common.truth.Expect$ExpectationGatherer: java.util.List failures>;
+< v9 = interfaceinvoke v8.<java.util.List: int size()>();
+< v10 = v9 + 1;
+< v11 = staticinvoke <java.lang.String: java.lang.String valueOf(int)>(v10);
+< v12 = virtualinvoke v11.<java.lang.String: int length()>();
+< v13 = 0;
+< v14 = v0.<com.google.common.truth.Expect$ExpectationGatherer: java.util.List failures>;
+< v15 = interfaceinvoke v14.<java.util.List: java.util.Iterator iterator()>();
+---
+> v7 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v6);
+> v8 = virtualinvoke v7.<java.lang.String: int length()>();
+> v9 = 20 + v8;
+> specialinvoke v29.<java.lang.StringBuilder: void <init>(int)>(v9);
+> v10 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (int,java.lang.String)>(v4, v6) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001\u0001 failed:\n");
+> specialinvoke v5.<java.lang.StringBuilder: void <init>(java.lang.String)>(v10);
+> v11 = v0.<com.google.common.truth.Expect$ExpectationGatherer: java.util.List failures>;
+> v12 = interfaceinvoke v11.<java.util.List: int size()>();
+> v13 = v12 + 1;
+> v14 = staticinvoke <java.lang.String: java.lang.String valueOf(int)>(v13);
+> v15 = virtualinvoke v14.<java.lang.String: int length()>();
+> v16 = 0;
+> v17 = v0.<com.google.common.truth.Expect$ExpectationGatherer: java.util.List failures>;
+> v18 = interfaceinvoke v17.<java.util.List: java.util.Iterator iterator()>();
+144,147c148,151
+< v16 = interfaceinvoke v15.<java.util.Iterator: boolean hasNext()>();
+< if v16 == 0 goto label7;
+< v17 = interfaceinvoke v15.<java.util.Iterator: java.lang.Object next()>();
+< v13 = v13 + 1;
+---
+> v19 = interfaceinvoke v18.<java.util.Iterator: boolean hasNext()>();
+> if v19 == 0 goto label7;
+> v20 = interfaceinvoke v18.<java.util.Iterator: java.lang.Object next()>();
+> v16 = v16 + 1;
+149,151c153,155
+< v18 = staticinvoke <java.lang.String: java.lang.String valueOf(int)>(v13);
+< v19 = staticinvoke <com.google.common.base.Strings: java.lang.String padStart(java.lang.String,int,char)>(v18, v12, 32);
+< virtualinvoke v5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(v19);
+---
+> v21 = staticinvoke <java.lang.String: java.lang.String valueOf(int)>(v16);
+> v22 = staticinvoke <com.google.common.base.Strings: java.lang.String padStart(java.lang.String,int,char)>(v21, v15, 32);
+> virtualinvoke v5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(v22);
+153,155c157,159
+< if v13 != 1 goto label5;
+< v20 = staticinvoke <com.google.common.base.Throwables: java.lang.String getStackTraceAsString(java.lang.Throwable)>(v17);
+< staticinvoke <com.google.common.truth.Expect$ExpectationGatherer: void appendIndented(int,java.lang.StringBuilder,java.lang.String)>(v12, v5, v20);
+---
+> if v16 != 1 goto label5;
+> v23 = staticinvoke <com.google.common.base.Throwables: java.lang.String getStackTraceAsString(java.lang.Throwable)>(v20);
+> staticinvoke <com.google.common.truth.Expect$ExpectationGatherer: void appendIndented(int,java.lang.StringBuilder,java.lang.String)>(v15, v5, v23);
+158,162c162,166
+< v21 = v0.<com.google.common.truth.Expect$ExpectationGatherer: java.util.List failures>;
+< v22 = interfaceinvoke v21.<java.util.List: java.lang.Object get(int)>(0);
+< v23 = virtualinvoke v22.<java.lang.AssertionError: java.lang.StackTraceElement[] getStackTrace()>();
+< v24 = specialinvoke v0.<com.google.common.truth.Expect$ExpectationGatherer: java.lang.String printSubsequentFailure(java.lang.StackTraceElement[],java.lang.AssertionError)>(v23, v17);
+< staticinvoke <com.google.common.truth.Expect$ExpectationGatherer: void appendIndented(int,java.lang.StringBuilder,java.lang.String)>(v12, v5, v24);
+---
+> v24 = v0.<com.google.common.truth.Expect$ExpectationGatherer: java.util.List failures>;
+> v25 = interfaceinvoke v24.<java.util.List: java.lang.Object get(int)>(0);
+> v26 = virtualinvoke v25.<java.lang.AssertionError: java.lang.StackTraceElement[] getStackTrace()>();
+> v27 = specialinvoke v0.<com.google.common.truth.Expect$ExpectationGatherer: java.lang.String printSubsequentFailure(java.lang.StackTraceElement[],java.lang.AssertionError)>(v26, v20);
+> staticinvoke <com.google.common.truth.Expect$ExpectationGatherer: void appendIndented(int,java.lang.StringBuilder,java.lang.String)>(v15, v5, v27);
+167,168c171,172
+< v25 = virtualinvoke v5.<java.lang.StringBuilder: java.lang.String toString()>();
+< return v25;
+---
+> v28 = virtualinvoke v5.<java.lang.StringBuilder: java.lang.String toString()>();
+> return v28;
+172c176
+< int v0, v3;
+---
+> int v0, v3, v7;
+174c178
+< java.lang.String v2, v4, v5, v6;
+---
+> java.lang.String v2, v4, v5, v6, v8, v9;
+179,182c183,195
+< v4 = staticinvoke <com.google.common.base.Strings: java.lang.String repeat(java.lang.String,int)>(" ", v3);
+< v5 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v4) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\n\u0001");
+< v6 = virtualinvoke v2.<java.lang.String: java.lang.String replace(java.lang.CharSequence,java.lang.CharSequence)>("\n", v5);
+< virtualinvoke v1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(v6);
+---
+> v4 = "\n";
+> v5 = staticinvoke <com.google.common.base.Strings: java.lang.String repeat(java.lang.String,int)>(" ", v3);
+> v6 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v5);
+> v7 = virtualinvoke v6.<java.lang.String: int length()>();
+> if v7 == 0 goto label1;
+> v8 = virtualinvoke v4.<java.lang.String: java.lang.String concat(java.lang.String)>(v6);
+> goto label2;
+> label1:
+> v8 = new java.lang.String;
+> specialinvoke v8.<java.lang.String: void <init>(java.lang.String)>("\n");
+> label2:
+> v9 = virtualinvoke v2.<java.lang.String: java.lang.String replace(java.lang.CharSequence,java.lang.CharSequence)>("\n", v8);
+> virtualinvoke v1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(v9);

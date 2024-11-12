@@ -1,0 +1,2067 @@
+* EvoSuite 1.2.0
+* Going to generate test cases for class: org.apache.hadoop.hdfs.tools.DFSAdmin
+* Starting Client-0
+* Connecting to master process on port 3795
+* Analyzing classpath: 
+  - /home/wtwhite/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-hdfs/3.3.5/hadoop-hdfs-3.3.5.jar
+  - t/dependency/accessors-smart-2.4.7.jar
+  - t/dependency/animal-sniffer-annotations-1.17.jar
+  - t/dependency/AppleJavaExtensions-1.4.jar
+  - t/dependency/asm-5.0.4.jar
+  - t/dependency/asm-commons-5.0.2.jar
+  - t/dependency/asm-debug-all-5.0.2.jar
+  - t/dependency/asm-tree-5.0.2.jar
+  - t/dependency/assertj-core-3.12.2.jar
+  - t/dependency/audience-annotations-0.5.0.jar
+  - t/dependency/avro-1.7.7.jar
+  - t/dependency/bcel-findbugs-6.0.jar
+  - t/dependency/bcprov-jdk15on-1.68.jar
+  - t/dependency/byte-buddy-1.9.10.jar
+  - t/dependency/byte-buddy-agent-1.9.10.jar
+  - t/dependency/checker-qual-2.5.2.jar
+  - t/dependency/commons-beanutils-1.9.4.jar
+  - t/dependency/commons-cli-1.2.jar
+  - t/dependency/commons-codec-1.15.jar
+  - t/dependency/commons-collections-3.2.2.jar
+  - t/dependency/commons-compress-1.21.jar
+  - t/dependency/commons-configuration2-2.8.0.jar
+  - t/dependency/commons-daemon-1.0.13.jar
+  - t/dependency/commons-io-2.8.0.jar
+  - t/dependency/commons-lang-2.6.jar
+  - t/dependency/commons-lang3-3.12.0.jar
+  - t/dependency/commons-logging-1.1.3.jar
+  - t/dependency/commons-math3-3.1.1.jar
+  - t/dependency/commons-net-3.9.0.jar
+  - t/dependency/commons-text-1.10.0.jar
+  - t/dependency/curator-client-4.2.0.jar
+  - t/dependency/curator-framework-4.2.0.jar
+  - t/dependency/curator-recipes-4.2.0.jar
+  - t/dependency/curator-test-4.2.0.jar
+  - t/dependency/dnsjava-2.1.7.jar
+  - t/dependency/dom4j-1.6.1.jar
+  - t/dependency/failureaccess-1.0.jar
+  - t/dependency/findbugs-3.0.1.jar
+  - t/dependency/gson-2.9.0.jar
+  - t/dependency/guava-27.0-jre.jar
+  - t/dependency/hadoop-annotations-3.3.5.jar
+  - t/dependency/hadoop-auth-3.3.5.jar
+  - t/dependency/hadoop-common-3.3.5.jar
+  - t/dependency/hadoop-common-3.3.5-tests.jar
+  - t/dependency/hadoop-hdfs-client-3.3.5.jar
+  - t/dependency/hadoop-kms-3.3.5.jar
+  - t/dependency/hadoop-kms-3.3.5-tests.jar
+  - t/dependency/hadoop-minikdc-3.3.5.jar
+  - t/dependency/hadoop-shaded-guava-1.1.1.jar
+  - t/dependency/hadoop-shaded-protobuf_3_7-1.1.1.jar
+  - t/dependency/hamcrest-core-1.3.jar
+  - t/dependency/httpclient-4.5.13.jar
+  - t/dependency/httpcore-4.4.13.jar
+  - t/dependency/j2objc-annotations-1.1.jar
+  - t/dependency/jackson-annotations-2.12.7.jar
+  - t/dependency/jackson-core-2.12.7.jar
+  - t/dependency/jackson-core-asl-1.9.13.jar
+  - t/dependency/jackson-databind-2.12.7.1.jar
+  - t/dependency/jackson-mapper-asl-1.9.13.jar
+  - t/dependency/jakarta.activation-api-1.2.1.jar
+  - t/dependency/javax.servlet-api-3.1.0.jar
+  - t/dependency/jaxb-api-2.2.11.jar
+  - t/dependency/jaxb-impl-2.2.3-1.jar
+  - t/dependency/jaxen-1.1.6.jar
+  - t/dependency/jcip-annotations-1.0-1.jar
+  - t/dependency/jcip-annotations-1.0.jar
+  - t/dependency/jdk.tools-1.8.jar
+  - t/dependency/jersey-core-1.19.4.jar
+  - t/dependency/jersey-json-1.20.jar
+  - t/dependency/jersey-server-1.19.4.jar
+  - t/dependency/jersey-servlet-1.19.4.jar
+  - t/dependency/jettison-1.5.3.jar
+  - t/dependency/jetty-http-9.4.48.v20220622.jar
+  - t/dependency/jetty-io-9.4.48.v20220622.jar
+  - t/dependency/jetty-security-9.4.48.v20220622.jar
+  - t/dependency/jetty-server-9.4.48.v20220622.jar
+  - t/dependency/jetty-servlet-9.4.48.v20220622.jar
+  - t/dependency/jetty-util-9.4.48.v20220622.jar
+  - t/dependency/jetty-util-ajax-9.4.48.v20220622.jar
+  - t/dependency/jetty-webapp-9.4.48.v20220622.jar
+  - t/dependency/jetty-xml-9.4.48.v20220622.jar
+  - t/dependency/jFormatString-2.0.1.jar
+  - t/dependency/jsch-0.1.55.jar
+  - t/dependency/json-smart-2.4.7.jar
+  - t/dependency/jsp-api-2.1.jar
+  - t/dependency/jsr305-3.0.2.jar
+  - t/dependency/jsr311-api-1.1.1.jar
+  - t/dependency/jul-to-slf4j-1.7.36.jar
+  - t/dependency/junit-4.13.2.jar
+  - t/dependency/kerb-admin-1.0.1.jar
+  - t/dependency/kerb-client-1.0.1.jar
+  - t/dependency/kerb-common-1.0.1.jar
+  - t/dependency/kerb-core-1.0.1.jar
+  - t/dependency/kerb-crypto-1.0.1.jar
+  - t/dependency/kerb-identity-1.0.1.jar
+  - t/dependency/kerb-server-1.0.1.jar
+  - t/dependency/kerb-simplekdc-1.0.1.jar
+  - t/dependency/kerb-util-1.0.1.jar
+  - t/dependency/kerby-asn1-1.0.1.jar
+  - t/dependency/kerby-config-1.0.1.jar
+  - t/dependency/kerby-pkix-1.0.1.jar
+  - t/dependency/kerby-util-1.0.1.jar
+  - t/dependency/kerby-xdr-1.0.1.jar
+  - t/dependency/kotlin-stdlib-1.4.10.jar
+  - t/dependency/kotlin-stdlib-common-1.4.10.jar
+  - t/dependency/leveldbjni-all-1.8.jar
+  - t/dependency/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar
+  - t/dependency/lz4-java-1.7.1.jar
+  - t/dependency/metrics-core-3.2.4.jar
+  - t/dependency/mockito-core-2.28.2.jar
+  - t/dependency/netty-3.10.6.Final.jar
+  - t/dependency/netty-all-4.1.77.Final.jar
+  - t/dependency/netty-buffer-4.1.77.Final.jar
+  - t/dependency/netty-codec-4.1.77.Final.jar
+  - t/dependency/netty-codec-dns-4.1.77.Final.jar
+  - t/dependency/netty-codec-haproxy-4.1.77.Final.jar
+  - t/dependency/netty-codec-http2-4.1.77.Final.jar
+  - t/dependency/netty-codec-http-4.1.77.Final.jar
+  - t/dependency/netty-codec-memcache-4.1.77.Final.jar
+  - t/dependency/netty-codec-mqtt-4.1.77.Final.jar
+  - t/dependency/netty-codec-redis-4.1.77.Final.jar
+  - t/dependency/netty-codec-smtp-4.1.77.Final.jar
+  - t/dependency/netty-codec-socks-4.1.77.Final.jar
+  - t/dependency/netty-codec-stomp-4.1.77.Final.jar
+  - t/dependency/netty-codec-xml-4.1.77.Final.jar
+  - t/dependency/netty-common-4.1.77.Final.jar
+  - t/dependency/netty-handler-4.1.77.Final.jar
+  - t/dependency/netty-handler-proxy-4.1.77.Final.jar
+  - t/dependency/netty-resolver-4.1.77.Final.jar
+  - t/dependency/netty-resolver-dns-4.1.77.Final.jar
+  - t/dependency/netty-resolver-dns-classes-macos-4.1.77.Final.jar
+  - t/dependency/netty-resolver-dns-native-macos-4.1.77.Final-osx-aarch_64.jar
+  - t/dependency/netty-resolver-dns-native-macos-4.1.77.Final-osx-x86_64.jar
+  - t/dependency/netty-transport-4.1.77.Final.jar
+  - t/dependency/netty-transport-classes-epoll-4.1.77.Final.jar
+  - t/dependency/netty-transport-classes-kqueue-4.1.77.Final.jar
+  - t/dependency/netty-transport-native-epoll-4.1.77.Final-linux-aarch_64.jar
+  - t/dependency/netty-transport-native-epoll-4.1.77.Final-linux-x86_64.jar
+  - t/dependency/netty-transport-native-kqueue-4.1.77.Final-osx-aarch_64.jar
+  - t/dependency/netty-transport-native-kqueue-4.1.77.Final-osx-x86_64.jar
+  - t/dependency/netty-transport-native-unix-common-4.1.77.Final.jar
+  - t/dependency/netty-transport-rxtx-4.1.77.Final.jar
+  - t/dependency/netty-transport-sctp-4.1.77.Final.jar
+  - t/dependency/netty-transport-udt-4.1.77.Final.jar
+  - t/dependency/nimbus-jose-jwt-9.8.1.jar
+  - t/dependency/objenesis-2.6.jar
+  - t/dependency/okhttp-4.9.3.jar
+  - t/dependency/okio-2.8.0.jar
+  - t/dependency/paranamer-2.3.jar
+  - t/dependency/protobuf-java-2.5.0.jar
+  - t/dependency/re2j-1.1.jar
+  - t/dependency/reload4j-1.2.22.jar
+  - t/dependency/slf4j-api-1.7.36.jar
+  - t/dependency/slf4j-reload4j-1.7.36.jar
+  - t/dependency/snappy-java-1.1.8.2.jar
+  - t/dependency/stax2-api-4.2.1.jar
+  - t/dependency/token-provider-1.0.1.jar
+  - t/dependency/woodstox-core-5.4.0.jar
+  - t/dependency/zookeeper-3.5.6.jar
+  - t/dependency/zookeeper-3.5.6-tests.jar
+  - t/dependency/zookeeper-jute-3.5.6.jar
+[MASTER] 12:19:26.293 [logback-1] WARN  CheapPurityAnalyzer - io.netty.internal.tcnative.SSL was not found in the inheritance tree. Using DEFAULT value for cheap-purity analysis
+[MASTER] 12:19:26.293 [logback-1] WARN  InheritanceTree - Class not in inheritance graph: io.netty.internal.tcnative.SSL
+[MASTER] 12:19:26.293 [logback-1] WARN  CheapPurityAnalyzer - io.netty.internal.tcnative.SSL was not found in the inheritance tree. Using DEFAULT value for cheap-purity analysis
+[MASTER] 12:19:26.293 [logback-1] WARN  CheapPurityAnalyzer - io.netty.internal.tcnative.SSL was not found in the inheritance tree. Using DEFAULT value for cheap-purity analysis
+[MASTER] 12:19:26.295 [logback-1] WARN  CheapPurityAnalyzer - io.netty.internal.tcnative.SSL was not found in the inheritance tree. Using DEFAULT value for cheap-purity analysis
+[MASTER] 12:19:26.296 [logback-1] WARN  CheapPurityAnalyzer - io.netty.internal.tcnative.SSL was not found in the inheritance tree. Using DEFAULT value for cheap-purity analysis
+* Finished analyzing classpath
+* Generating tests for class org.apache.hadoop.hdfs.tools.DFSAdmin
+* Test criteria:
+  - Line Coverage
+  - Branch Coverage
+  - Exception
+  - Mutation testing (weak)
+  - Method-Output Coverage
+  - Top-Level Method Coverage
+  - No-Exception Top-Level Method Coverage
+  - Context Branch Coverage
+[Progress:>                             0%] [Cov:>                                  0%]* Total number of test goals for DYNAMOSA: 3939
+* Using seed 1731280754534
+* Starting evolution
+* Initial Number of Goals in DynaMOSA = 1060 / 3939
+[MASTER] 12:19:29.961 [logback-1] WARN  TestCluster - Failed to check cache for java.util.AbstractMap<K, V>.SimpleImmutableEntry<K, V> : Type points to itself
+[MASTER] 12:19:30.597 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:19:30.597 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 12:19:30.975 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:19:30.975 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[Progress:>                             1%] [Cov:=======>                           20%][Progress:=>                            5%] [Cov:=======>                           21%][Progress:=>                            6%] [Cov:=======>                           21%][Progress:==>                           8%] [Cov:=======>                           22%][Progress:==>                           8%] [Cov:========>                          23%][Progress:===>                          11%] [Cov:========>                          24%][MASTER] 12:19:36.809 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:19:36.809 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[Progress:===>                          11%] [Cov:=========>                         26%][MASTER] 12:19:36.922 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:19:36.922 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 12:19:37.165 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:19:37.165 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[Progress:===>                          11%] [Cov:========>                          25%][MASTER] 12:19:37.303 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:19:37.304 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 12:19:37.349 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:19:37.349 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 12:19:37.503 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:19:37.503 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 12:19:37.530 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:19:37.530 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[Progress:===>                          13%] [Cov:=========>                         26%][MASTER] 12:19:37.692 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:19:37.692 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 12:19:37.713 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:19:37.713 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 12:19:38.004 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:19:38.004 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 12:19:38.018 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:19:38.018 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[Progress:===>                          13%] [Cov:========>                          25%][Progress:====>                         15%] [Cov:=========>                         27%][MASTER] 12:19:38.900 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:19:38.900 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[Progress:====>                         15%] [Cov:=========>                         27%][Progress:====>                         16%] [Cov:=========>                         27%][MASTER] 12:19:39.876 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:19:39.876 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 12:19:39.882 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:19:39.882 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[Progress:====>                         16%] [Cov:=========>                         27%][MASTER] 12:19:40.392 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:19:40.392 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[Progress:=====>                        18%] [Cov:=========>                         27%][MASTER] 12:19:40.617 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:19:40.617 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 12:19:40.771 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:19:40.771 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 12:19:40.774 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:19:40.774 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 12:19:40.836 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:19:40.836 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 12:19:40.859 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:19:40.859 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[Progress:=====>                        18%] [Cov:=========>                         27%][MASTER] 12:19:40.957 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:19:40.957 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[Progress:=====>                        18%] [Cov:=========>                         27%][MASTER] 12:19:41.952 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:19:41.953 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[Progress:======>                       20%] [Cov:=========>                         27%][Progress:======>                       20%] [Cov:=========>                         27%][MASTER] 12:19:42.795 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:19:42.795 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[Progress:======>                       21%] [Cov:=========>                         27%][MASTER] 12:19:42.909 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:19:42.909 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 12:19:43.024 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:19:43.024 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 12:19:43.037 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:19:43.037 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 12:19:43.128 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:19:43.128 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[Progress:======>                       21%] [Cov:=========>                         27%][MASTER] 12:19:43.277 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:19:43.277 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 12:19:43.740 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:19:43.740 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[Progress:======>                       23%] [Cov:=========>                         27%][MASTER] 12:19:44.044 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:19:44.044 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[Progress:======>                       23%] [Cov:=========>                         27%][MASTER] 12:19:44.223 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:19:44.223 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 12:19:44.379 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:19:44.379 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 12:19:44.487 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:19:44.487 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 12:19:44.493 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:19:44.493 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 12:19:44.525 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:19:44.525 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 12:19:44.535 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:19:44.535 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[Progress:=======>                      25%] [Cov:=========>                         27%][MASTER] 12:19:45.045 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:19:45.045 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[Progress:=======>                      25%] [Cov:=========>                         27%][MASTER] 12:19:45.433 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:19:45.433 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 12:19:45.533 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:19:45.533 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 12:19:45.672 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:19:45.672 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 12:19:45.798 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:19:45.799 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[Progress:=======>                      26%] [Cov:=========>                         27%][MASTER] 12:19:45.922 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:19:45.922 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 12:19:45.926 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:19:45.926 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 12:19:46.303 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:19:46.303 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 12:19:46.473 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:19:46.473 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[Progress:=======>                      26%] [Cov:=========>                         27%][MASTER] 12:19:46.712 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:19:46.712 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 12:19:46.717 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:19:46.717 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 12:19:47.133 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:19:47.133 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 12:19:47.193 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:19:47.193 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[Progress:========>                     28%] [Cov:=========>                         28%][MASTER] 12:19:47.356 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:19:47.356 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 12:19:47.390 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:19:47.390 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 12:19:47.489 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:19:47.489 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 12:19:47.623 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:19:47.623 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 12:19:47.666 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:19:47.666 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 12:19:47.705 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:19:47.705 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[Progress:=========>                    30%] [Cov:=========>                         28%][MASTER] 12:19:47.994 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:19:47.994 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[Progress:=========>                    30%] [Cov:=========>                         28%][MASTER] 12:19:48.498 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:19:48.498 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 12:19:48.663 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:19:48.663 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[Progress:=========>                    31%] [Cov:=========>                         28%][MASTER] 12:19:49.137 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:19:49.137 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 12:19:49.211 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:19:49.211 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 12:19:49.359 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:19:49.359 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[Progress:=========>                    33%] [Cov:==========>                        29%][MASTER] 12:19:49.970 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:19:49.970 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[Progress:=========>                    33%] [Cov:==========>                        29%][MASTER] 12:19:50.522 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:19:50.522 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 12:19:50.583 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:19:50.583 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 12:19:50.979 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:19:50.979 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[Progress:==========>                   35%] [Cov:==========>                        29%][MASTER] 12:19:51.399 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:19:51.399 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[Progress:==========>                   36%] [Cov:==========>                        29%][MASTER] 12:19:52.007 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:19:52.007 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 12:19:52.142 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:19:52.142 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 12:19:52.167 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:19:52.167 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[Progress:==========>                   36%] [Cov:==========>                        29%][MASTER] 12:19:52.720 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:19:52.720 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[Progress:===========>                  38%] [Cov:==========>                        29%][MASTER] 12:19:53.058 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:19:53.058 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 12:19:53.214 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:19:53.214 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[Progress:===========>                  38%] [Cov:==========>                        29%][MASTER] 12:19:53.631 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:19:53.631 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 12:19:53.784 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:19:53.784 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 12:19:54.096 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:19:54.096 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[Progress:============>                 40%] [Cov:==========>                        29%][MASTER] 12:19:54.407 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:19:54.407 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[Progress:============>                 41%] [Cov:==========>                        29%][MASTER] 12:19:55.347 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:19:55.347 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[Progress:============>                 43%] [Cov:==========>                        29%][MASTER] 12:19:55.617 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:19:55.617 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 12:19:55.724 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:19:55.724 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 12:19:55.782 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:19:55.782 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 12:19:56.007 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:19:56.007 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 12:19:56.151 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:19:56.151 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[Progress:============>                 43%] [Cov:==========>                        29%][MASTER] 12:19:56.384 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:19:56.384 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 12:19:56.605 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:19:56.605 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[Progress:=============>                45%] [Cov:==========>                        29%][Progress:=============>                46%] [Cov:==========>                        29%][Progress:=============>                46%] [Cov:==========>                        29%][Progress:==============>               48%] [Cov:==========>                        29%][Progress:===============>              50%] [Cov:==========>                        29%][MASTER] 12:19:59.959 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:19:59.959 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 12:20:00.003 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:20:00.003 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 12:20:00.074 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:20:00.074 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[Progress:===============>              51%] [Cov:==========>                        29%][MASTER] 12:20:00.796 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:20:00.796 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 12:20:01.145 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:20:01.145 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[Progress:===============>              51%] [Cov:==========>                        29%][MASTER] 12:20:01.286 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:20:01.286 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[Progress:===============>              53%] [Cov:==========>                        29%][MASTER] 12:20:02.017 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:20:02.017 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 12:20:02.118 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:20:02.118 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 12:20:02.121 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:20:02.121 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 12:20:02.611 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:20:02.611 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 12:20:02.616 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:20:02.616 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[Progress:================>             55%] [Cov:==========>                        29%][MASTER] 12:20:03.071 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:20:03.071 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[Progress:================>             55%] [Cov:==========>                        29%][MASTER] 12:20:03.543 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:20:03.543 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 12:20:03.579 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:20:03.579 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 12:20:03.616 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:20:03.616 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 12:20:03.785 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:20:03.785 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[Progress:================>             56%] [Cov:==========>                        29%][MASTER] 12:20:04.086 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:20:04.086 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 12:20:04.146 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:20:04.146 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 12:20:04.232 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:20:04.232 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 12:20:04.434 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:20:04.434 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 12:20:04.493 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:20:04.493 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 12:20:04.582 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:20:04.582 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[Progress:=================>            58%] [Cov:==========>                        29%][Progress:=================>            58%] [Cov:==========>                        29%][MASTER] 12:20:05.525 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:20:05.525 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[Progress:==================>           60%] [Cov:==========>                        29%][Progress:==================>           61%] [Cov:==========>                        29%][MASTER] 12:20:07.074 [logback-1] WARN  TestCluster - Failed to check cache for java.util.Comparator<T> : Type points to itself
+[MASTER] 12:20:07.606 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:20:07.606 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[Progress:==================>           63%] [Cov:==========>                        29%][Progress:==================>           63%] [Cov:==========>                        29%][MASTER] 12:20:08.751 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:20:08.751 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 12:20:08.861 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:20:08.861 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[Progress:===================>          65%] [Cov:==========>                        30%][Progress:===================>          66%] [Cov:==========>                        30%][Progress:===================>          66%] [Cov:==========>                        30%][MASTER] 12:20:10.510 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:20:10.510 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 12:20:10.615 [logback-1] WARN  TestCluster - Failed to check cache for java.util.Enumeration<E> : Type points to itself
+[MASTER] 12:20:10.689 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:20:10.689 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 12:20:10.814 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:20:10.814 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[Progress:====================>         68%] [Cov:==========>                        30%][MASTER] 12:20:11.320 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:20:11.320 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 12:20:11.409 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:20:11.409 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[Progress:=====================>        70%] [Cov:==========>                        30%][Progress:=====================>        70%] [Cov:==========>                        30%][Progress:=====================>        71%] [Cov:==========>                        30%][Progress:=====================>        73%] [Cov:==========>                        30%][MASTER] 12:20:14.052 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:20:14.052 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 12:20:14.308 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:20:14.308 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[Progress:=====================>        73%] [Cov:==========>                        30%][Progress:======================>       75%] [Cov:==========>                        30%][MASTER] 12:20:15.557 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:20:15.557 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 12:20:15.655 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:20:15.655 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 12:20:15.708 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:20:15.708 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 12:20:15.866 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:20:15.866 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 12:20:15.870 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:20:15.870 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[Progress:======================>       76%] [Cov:==========>                        30%][MASTER] 12:20:16.223 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:20:16.223 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[Progress:=======================>      78%] [Cov:==========>                        30%][MASTER] 12:20:17.114 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:20:17.114 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 12:20:17.349 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:20:17.349 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 12:20:17.430 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:20:17.430 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[Progress:========================>     80%] [Cov:==========>                        30%][MASTER] 12:20:17.834 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:20:17.834 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[Progress:========================>     80%] [Cov:==========>                        30%][MASTER] 12:20:18.610 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:20:18.610 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 12:20:18.739 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:20:18.739 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[Progress:========================>     81%] [Cov:==========>                        30%][MASTER] 12:20:19.232 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:20:19.232 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[Progress:========================>     83%] [Cov:==========>                        30%][MASTER] 12:20:20.450 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:20:20.450 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[Progress:=========================>    85%] [Cov:==========>                        30%][Progress:=========================>    85%] [Cov:==========>                        30%][MASTER] 12:20:21.427 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:20:21.427 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 12:20:21.948 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:20:21.948 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[Progress:=========================>    86%] [Cov:==========>                        30%][MASTER] 12:20:22.002 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:20:22.002 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 12:20:22.336 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:20:22.336 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[Progress:==========================>   88%] [Cov:==========>                        30%][Progress:==========================>   88%] [Cov:==========>                        30%][MASTER] 12:20:23.598 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:20:23.598 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[Progress:===========================>  90%] [Cov:==========>                        30%][MASTER] 12:20:24.028 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:20:24.028 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 12:20:24.283 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:20:24.284 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 12:20:24.422 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:20:24.422 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 12:20:24.734 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:20:24.734 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[Progress:===========================>  91%] [Cov:==========>                        30%][Progress:===========================>  91%] [Cov:==========>                        30%][MASTER] 12:20:25.493 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:20:25.493 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 12:20:25.749 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:20:25.749 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 12:20:25.930 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:20:25.930 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 12:20:25.934 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:20:25.934 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 12:20:25.963 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:20:25.963 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 12:20:26.075 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:20:26.075 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[Progress:===========================>  93%] [Cov:==========>                        30%][MASTER] 12:20:26.187 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:20:26.187 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 12:20:26.427 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:20:26.427 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[Progress:===========================>  93%] [Cov:==========>                        30%][MASTER] 12:20:26.537 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:20:26.537 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 12:20:27.067 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:20:27.067 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[Progress:============================> 95%] [Cov:==========>                        30%][MASTER] 12:20:27.631 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:20:27.631 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[Progress:============================> 96%] [Cov:==========>                        30%][MASTER] 12:20:27.940 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:20:27.940 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 12:20:28.383 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:20:28.383 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[Progress:============================> 96%] [Cov:==========>                        31%][Progress:=============================>98%] [Cov:==========>                        31%][MASTER] 12:20:29.261 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:20:29.261 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 12:20:29.264 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:20:29.264 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 12:20:29.477 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:20:29.477 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 12:20:29.543 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:20:29.543 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[Progress:==============================100%] [Cov:==========>                        31%][MASTER] 12:20:29.777 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:20:29.777 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 12:20:29.843 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:20:29.843 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 12:20:29.971 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:20:29.971 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[Progress:==============================100%] [Cov:==========>                        31%][Progress:==============================100%] [Cov:==========>                        31%]
+* Search finished after 62s and 91 generations, 44133 statements, best individual has fitness: 3014.0
+[MASTER] 12:20:31.966 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:20:31.966 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 12:20:31.969 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:20:31.969 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 12:20:32.023 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:20:32.023 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 12:20:32.104 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:20:32.104 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 12:20:32.144 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:20:32.144 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+* Minimizing test suite
+[MASTER] 12:20:32.375 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:20:32.375 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 12:20:32.378 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:20:32.378 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 12:20:32.430 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:20:32.430 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 12:20:32.524 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:20:32.524 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 12:20:32.573 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:20:32.573 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 12:20:32.619 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:20:32.619 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 12:20:41.814 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:20:41.814 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 12:20:42.915 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:20:42.915 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+* Going to analyze the coverage criteria
+* Coverage analysis for criterion LINE
+* Coverage of criterion LINE: 22%
+* Total number of goals: 1395
+* Number of covered goals: 303
+* Coverage analysis for criterion BRANCH
+* Coverage of criterion BRANCH: 26%
+* Total number of goals: 747
+* Number of covered goals: 197
+* Coverage analysis for criterion EXCEPTION
+* Coverage of criterion EXCEPTION: 100%
+* Total number of goals: 81
+* Number of covered goals: 81
+* Coverage analysis for criterion WEAKMUTATION
+* Coverage of criterion WEAKMUTATION: 29%
+* Total number of goals: 838
+* Number of covered goals: 245
+* Coverage analysis for criterion OUTPUT
+* Coverage of criterion OUTPUT: 14%
+* Total number of goals: 106
+* Number of covered goals: 15
+* Coverage analysis for criterion METHOD
+* Coverage of criterion METHOD: 72%
+* Total number of goals: 53
+* Number of covered goals: 38
+* Coverage analysis for criterion METHODNOEXCEPTION
+* Coverage of criterion METHODNOEXCEPTION: 34%
+* Total number of goals: 53
+* Number of covered goals: 18
+* Coverage analysis for criterion CBRANCH
+* Coverage of criterion CBRANCH: 26%
+* Total number of goals: 747
+* Number of covered goals: 193
+* Generated 133 tests with total length 409
+* Resulting test suite's coverage: 31% (average coverage for all fitness functions)
+* Generating assertions
+[MASTER] 12:20:46.558 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:20:46.558 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 12:20:54.196 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:20:54.196 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+* Resulting test suite's mutation score: 13%
+* Compiling and checking tests
+[MASTER] 12:20:55.474 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:20:55.474 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 12:21:03.461 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:21:03.461 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 12:21:05.706 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:21:05.706 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+* Permissions denied during test execution: 
+  - java.security.SecurityPermission: 
+         insertProvider.SaslPlainServer: 12
+         insertProvider: 12
+  - java.io.FilePermission: 
+         execute <<ALL FILES>>: 73
+  - java.lang.RuntimePermission: 
+         loadLibrary.hadoop: 73
+         writeFileDescriptor: 8
+  - javax.security.auth.AuthPermission: 
+         modifyPrincipals: 5
+* Writing tests to file
+* Writing JUnit test case 'DFSAdmin_ESTest' to evosuite-tests
+[MASTER] 12:21:52.784 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:21:52.784 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+[MASTER] 12:21:52.945 [logback-1] WARN  ExecutionTrace - Popping method main([Ljava/lang/String;)V because we were looking for <init>()V
+[MASTER] 12:21:52.945 [logback-1] WARN  ExecutionTrace - Current stack: [org.apache.hadoop.hdfs.tools.DFSAdmin:main([Ljava/lang/String;)V
+Branches: 
+True Distances: 
+False Distances: 
+, :
+Branches: 
+True Distances: 
+False Distances: 
+]
+* Done!
+
+* Computation finished

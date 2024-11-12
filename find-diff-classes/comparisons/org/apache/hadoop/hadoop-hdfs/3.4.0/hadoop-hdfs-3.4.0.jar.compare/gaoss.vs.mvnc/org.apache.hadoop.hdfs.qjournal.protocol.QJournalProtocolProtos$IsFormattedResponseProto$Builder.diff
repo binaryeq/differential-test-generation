@@ -1,0 +1,16 @@
+93d92
+< byte v3;
+95c94
+< int v2, v4;
+---
+> int v2, v4, v6, v7;
+97c96
+< boolean v5;
+---
+> boolean v3, v5;
+108c107,109
+< v1.<org.apache.hadoop.hdfs.qjournal.protocol.QJournalProtocolProtos$IsFormattedResponseProto: int bitField0_> = v3;
+---
+> v6 = v1.<org.apache.hadoop.hdfs.qjournal.protocol.QJournalProtocolProtos$IsFormattedResponseProto: int bitField0_>;
+> v7 = v6 | v3;
+> v1.<org.apache.hadoop.hdfs.qjournal.protocol.QJournalProtocolProtos$IsFormattedResponseProto: int bitField0_> = v7;

@@ -1,0 +1,16 @@
+93c93
+< byte v3;
+---
+> long v5;
+96,97c96,97
+< int v2, v4;
+< long v5;
+---
+> int v2, v4, v6, v7;
+> boolean v3;
+108c108,110
+< v1.<org.apache.hadoop.hdfs.protocol.proto.NamenodeProtocolProtos$GetTransactionIdResponseProto: int bitField0_> = v3;
+---
+> v6 = v1.<org.apache.hadoop.hdfs.protocol.proto.NamenodeProtocolProtos$GetTransactionIdResponseProto: int bitField0_>;
+> v7 = v6 | v3;
+> v1.<org.apache.hadoop.hdfs.protocol.proto.NamenodeProtocolProtos$GetTransactionIdResponseProto: int bitField0_> = v7;

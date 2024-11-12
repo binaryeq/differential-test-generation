@@ -1,0 +1,10 @@
+283c283
+< int v10, v11, v12, v13, v14, v16, v18, v2, v22, v4, v8, v9;
+---
+> int v10, v11, v12, v13, v14, v16, v18, v2, v22, v24, v25, v4, v8, v9;
+347c347,349
+< v1.<org.apache.hadoop.hdfs.protocol.proto.DatanodeProtocolProtos$HeartbeatRequestProto: int bitField0_> = v3;
+---
+> v24 = v1.<org.apache.hadoop.hdfs.protocol.proto.DatanodeProtocolProtos$HeartbeatRequestProto: int bitField0_>;
+> v25 = v24 | v3;
+> v1.<org.apache.hadoop.hdfs.protocol.proto.DatanodeProtocolProtos$HeartbeatRequestProto: int bitField0_> = v25;

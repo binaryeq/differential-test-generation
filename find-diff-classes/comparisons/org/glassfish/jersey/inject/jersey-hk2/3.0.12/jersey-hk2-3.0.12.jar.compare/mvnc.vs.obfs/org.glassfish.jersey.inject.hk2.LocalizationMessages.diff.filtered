@@ -1,0 +1,165 @@
+6c6
+< private void <init>()
+---
+> public void <init>()
+13c13
+< public static org.glassfish.jersey.internal.l10n.Localizable localizableHK_2_UNKNOWN_ERROR(java.lang.Object)
+---
+> public static org.glassfish.jersey.internal.l10n.Localizable localizableHK_2_PROVIDER_NOT_REGISTRABLE(java.lang.Object)
+23c23
+< v3 = virtualinvoke v1.<org.glassfish.jersey.internal.l10n.LocalizableMessageFactory: org.glassfish.jersey.internal.l10n.Localizable getMessage(java.lang.String,java.lang.Object[])>("hk2.unknown.error", v2);
+---
+> v3 = virtualinvoke v1.<org.glassfish.jersey.internal.l10n.LocalizableMessageFactory: org.glassfish.jersey.internal.l10n.Localizable getMessage(java.lang.String,java.lang.Object[])>("hk2.provider.not.registrable", v2);
+26c26
+< public static java.lang.String HK_2_UNKNOWN_ERROR(java.lang.Object)
+---
+> public static java.lang.String HK_2_PROVIDER_NOT_REGISTRABLE(java.lang.Object)
+34c34
+< v2 = staticinvoke <org.glassfish.jersey.inject.hk2.LocalizationMessages: org.glassfish.jersey.internal.l10n.Localizable localizableHK_2_UNKNOWN_ERROR(java.lang.Object)>(v0);
+---
+> v2 = staticinvoke <org.glassfish.jersey.inject.hk2.LocalizationMessages: org.glassfish.jersey.internal.l10n.Localizable localizableHK_2_PROVIDER_NOT_REGISTRABLE(java.lang.Object)>(v0);
+38c38,94
+< public static org.glassfish.jersey.internal.l10n.Localizable localizableHK_2_UNKNOWN_PARENT_INJECTION_MANAGER(java.lang.Object)
+---
+> public static org.glassfish.jersey.internal.l10n.Localizable localizableHK_2_REIFICATION_ERROR(java.lang.Object, java.lang.Object)
+> {
+> java.lang.Object[] v3;
+> org.glassfish.jersey.internal.l10n.LocalizableMessageFactory v2;
+> java.lang.Object v0, v1;
+> org.glassfish.jersey.internal.l10n.Localizable v4;
+> v0 := @parameter0: java.lang.Object;
+> v1 := @parameter1: java.lang.Object;
+> v2 = <org.glassfish.jersey.inject.hk2.LocalizationMessages: org.glassfish.jersey.internal.l10n.LocalizableMessageFactory MESSAGE_FACTORY>;
+> v3 = newarray (java.lang.Object)[2];
+> v3[0] = v0;
+> v3[1] = v1;
+> v4 = virtualinvoke v2.<org.glassfish.jersey.internal.l10n.LocalizableMessageFactory: org.glassfish.jersey.internal.l10n.Localizable getMessage(java.lang.String,java.lang.Object[])>("hk2.reification.error", v3);
+> return v4;
+> }
+> public static java.lang.String HK_2_REIFICATION_ERROR(java.lang.Object, java.lang.Object)
+> {
+> org.glassfish.jersey.internal.l10n.Localizer v2;
+> java.lang.Object v0, v1;
+> java.lang.String v4;
+> org.glassfish.jersey.internal.l10n.Localizable v3;
+> v0 := @parameter0: java.lang.Object;
+> v1 := @parameter1: java.lang.Object;
+> v2 = <org.glassfish.jersey.inject.hk2.LocalizationMessages: org.glassfish.jersey.internal.l10n.Localizer LOCALIZER>;
+> v3 = staticinvoke <org.glassfish.jersey.inject.hk2.LocalizationMessages: org.glassfish.jersey.internal.l10n.Localizable localizableHK_2_REIFICATION_ERROR(java.lang.Object,java.lang.Object)>(v0, v1);
+> v4 = virtualinvoke v2.<org.glassfish.jersey.internal.l10n.Localizer: java.lang.String localize(org.glassfish.jersey.internal.l10n.Localizable)>(v3);
+> return v4;
+> }
+> public static org.glassfish.jersey.internal.l10n.Localizable localizableHK_2_CLEARING_CACHE(java.lang.Object, java.lang.Object)
+> {
+> java.lang.Object[] v3;
+> org.glassfish.jersey.internal.l10n.LocalizableMessageFactory v2;
+> java.lang.Object v0, v1;
+> org.glassfish.jersey.internal.l10n.Localizable v4;
+> v0 := @parameter0: java.lang.Object;
+> v1 := @parameter1: java.lang.Object;
+> v2 = <org.glassfish.jersey.inject.hk2.LocalizationMessages: org.glassfish.jersey.internal.l10n.LocalizableMessageFactory MESSAGE_FACTORY>;
+> v3 = newarray (java.lang.Object)[2];
+> v3[0] = v0;
+> v3[1] = v1;
+> v4 = virtualinvoke v2.<org.glassfish.jersey.internal.l10n.LocalizableMessageFactory: org.glassfish.jersey.internal.l10n.Localizable getMessage(java.lang.String,java.lang.Object[])>("hk2.clearing.cache", v3);
+> return v4;
+> }
+> public static java.lang.String HK_2_CLEARING_CACHE(java.lang.Object, java.lang.Object)
+> {
+> org.glassfish.jersey.internal.l10n.Localizer v2;
+> java.lang.Object v0, v1;
+> java.lang.String v4;
+> org.glassfish.jersey.internal.l10n.Localizable v3;
+> v0 := @parameter0: java.lang.Object;
+> v1 := @parameter1: java.lang.Object;
+> v2 = <org.glassfish.jersey.inject.hk2.LocalizationMessages: org.glassfish.jersey.internal.l10n.Localizer LOCALIZER>;
+> v3 = staticinvoke <org.glassfish.jersey.inject.hk2.LocalizationMessages: org.glassfish.jersey.internal.l10n.Localizable localizableHK_2_CLEARING_CACHE(java.lang.Object,java.lang.Object)>(v0, v1);
+> v4 = virtualinvoke v2.<org.glassfish.jersey.internal.l10n.Localizer: java.lang.String localize(org.glassfish.jersey.internal.l10n.Localizable)>(v3);
+> return v4;
+> }
+> public static org.glassfish.jersey.internal.l10n.Localizable localizableHK_2_UNKNOWN_ERROR(java.lang.Object)
+48c104
+< v3 = virtualinvoke v1.<org.glassfish.jersey.internal.l10n.LocalizableMessageFactory: org.glassfish.jersey.internal.l10n.Localizable getMessage(java.lang.String,java.lang.Object[])>("hk2.unknown.parent.injection.manager", v2);
+---
+> v3 = virtualinvoke v1.<org.glassfish.jersey.internal.l10n.LocalizableMessageFactory: org.glassfish.jersey.internal.l10n.Localizable getMessage(java.lang.String,java.lang.Object[])>("hk2.unknown.error", v2);
+51c107
+< public static java.lang.String HK_2_UNKNOWN_PARENT_INJECTION_MANAGER(java.lang.Object)
+---
+> public static java.lang.String HK_2_UNKNOWN_ERROR(java.lang.Object)
+59c115
+< v2 = staticinvoke <org.glassfish.jersey.inject.hk2.LocalizationMessages: org.glassfish.jersey.internal.l10n.Localizable localizableHK_2_UNKNOWN_PARENT_INJECTION_MANAGER(java.lang.Object)>(v0);
+---
+> v2 = staticinvoke <org.glassfish.jersey.inject.hk2.LocalizationMessages: org.glassfish.jersey.internal.l10n.Localizable localizableHK_2_UNKNOWN_ERROR(java.lang.Object)>(v0);
+83c139
+< public static org.glassfish.jersey.internal.l10n.Localizable localizableHK_2_PROVIDER_NOT_REGISTRABLE(java.lang.Object)
+---
+> public static org.glassfish.jersey.internal.l10n.Localizable localizableHK_2_UNKNOWN_PARENT_INJECTION_MANAGER(java.lang.Object)
+93c149
+< v3 = virtualinvoke v1.<org.glassfish.jersey.internal.l10n.LocalizableMessageFactory: org.glassfish.jersey.internal.l10n.Localizable getMessage(java.lang.String,java.lang.Object[])>("hk2.provider.not.registrable", v2);
+---
+> v3 = virtualinvoke v1.<org.glassfish.jersey.internal.l10n.LocalizableMessageFactory: org.glassfish.jersey.internal.l10n.Localizable getMessage(java.lang.String,java.lang.Object[])>("hk2.unknown.parent.injection.manager", v2);
+96c152
+< public static java.lang.String HK_2_PROVIDER_NOT_REGISTRABLE(java.lang.Object)
+---
+> public static java.lang.String HK_2_UNKNOWN_PARENT_INJECTION_MANAGER(java.lang.Object)
+104c160
+< v2 = staticinvoke <org.glassfish.jersey.inject.hk2.LocalizationMessages: org.glassfish.jersey.internal.l10n.Localizable localizableHK_2_PROVIDER_NOT_REGISTRABLE(java.lang.Object)>(v0);
+---
+> v2 = staticinvoke <org.glassfish.jersey.inject.hk2.LocalizationMessages: org.glassfish.jersey.internal.l10n.Localizable localizableHK_2_UNKNOWN_PARENT_INJECTION_MANAGER(java.lang.Object)>(v0);
+107,162d162
+< }
+< public static org.glassfish.jersey.internal.l10n.Localizable localizableHK_2_CLEARING_CACHE(java.lang.Object, java.lang.Object)
+< {
+< java.lang.Object[] v3;
+< org.glassfish.jersey.internal.l10n.LocalizableMessageFactory v2;
+< java.lang.Object v0, v1;
+< org.glassfish.jersey.internal.l10n.Localizable v4;
+< v0 := @parameter0: java.lang.Object;
+< v1 := @parameter1: java.lang.Object;
+< v2 = <org.glassfish.jersey.inject.hk2.LocalizationMessages: org.glassfish.jersey.internal.l10n.LocalizableMessageFactory MESSAGE_FACTORY>;
+< v3 = newarray (java.lang.Object)[2];
+< v3[0] = v0;
+< v3[1] = v1;
+< v4 = virtualinvoke v2.<org.glassfish.jersey.internal.l10n.LocalizableMessageFactory: org.glassfish.jersey.internal.l10n.Localizable getMessage(java.lang.String,java.lang.Object[])>("hk2.clearing.cache", v3);
+< return v4;
+< }
+< public static java.lang.String HK_2_CLEARING_CACHE(java.lang.Object, java.lang.Object)
+< {
+< org.glassfish.jersey.internal.l10n.Localizer v2;
+< java.lang.Object v0, v1;
+< java.lang.String v4;
+< org.glassfish.jersey.internal.l10n.Localizable v3;
+< v0 := @parameter0: java.lang.Object;
+< v1 := @parameter1: java.lang.Object;
+< v2 = <org.glassfish.jersey.inject.hk2.LocalizationMessages: org.glassfish.jersey.internal.l10n.Localizer LOCALIZER>;
+< v3 = staticinvoke <org.glassfish.jersey.inject.hk2.LocalizationMessages: org.glassfish.jersey.internal.l10n.Localizable localizableHK_2_CLEARING_CACHE(java.lang.Object,java.lang.Object)>(v0, v1);
+< v4 = virtualinvoke v2.<org.glassfish.jersey.internal.l10n.Localizer: java.lang.String localize(org.glassfish.jersey.internal.l10n.Localizable)>(v3);
+< return v4;
+< }
+< public static org.glassfish.jersey.internal.l10n.Localizable localizableHK_2_REIFICATION_ERROR(java.lang.Object, java.lang.Object)
+< {
+< java.lang.Object[] v3;
+< org.glassfish.jersey.internal.l10n.LocalizableMessageFactory v2;
+< java.lang.Object v0, v1;
+< org.glassfish.jersey.internal.l10n.Localizable v4;
+< v0 := @parameter0: java.lang.Object;
+< v1 := @parameter1: java.lang.Object;
+< v2 = <org.glassfish.jersey.inject.hk2.LocalizationMessages: org.glassfish.jersey.internal.l10n.LocalizableMessageFactory MESSAGE_FACTORY>;
+< v3 = newarray (java.lang.Object)[2];
+< v3[0] = v0;
+< v3[1] = v1;
+< v4 = virtualinvoke v2.<org.glassfish.jersey.internal.l10n.LocalizableMessageFactory: org.glassfish.jersey.internal.l10n.Localizable getMessage(java.lang.String,java.lang.Object[])>("hk2.reification.error", v3);
+< return v4;
+< }
+< public static java.lang.String HK_2_REIFICATION_ERROR(java.lang.Object, java.lang.Object)
+< {
+< org.glassfish.jersey.internal.l10n.Localizer v2;
+< java.lang.Object v0, v1;
+< java.lang.String v4;
+< org.glassfish.jersey.internal.l10n.Localizable v3;
+< v0 := @parameter0: java.lang.Object;
+< v1 := @parameter1: java.lang.Object;
+< v2 = <org.glassfish.jersey.inject.hk2.LocalizationMessages: org.glassfish.jersey.internal.l10n.Localizer LOCALIZER>;
+< v3 = staticinvoke <org.glassfish.jersey.inject.hk2.LocalizationMessages: org.glassfish.jersey.internal.l10n.Localizable localizableHK_2_REIFICATION_ERROR(java.lang.Object,java.lang.Object)>(v0, v1);
+< v4 = virtualinvoke v2.<org.glassfish.jersey.internal.l10n.Localizer: java.lang.String localize(org.glassfish.jersey.internal.l10n.Localizable)>(v3);
+< return v4;

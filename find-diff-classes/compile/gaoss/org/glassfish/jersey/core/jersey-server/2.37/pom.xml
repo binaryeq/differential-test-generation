@@ -1,0 +1,259 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>regression-test-generation.binaryeq.github.io</groupId>
+  <artifactId>evosuite-tests-for-org_glassfish_jersey_core-jersey-server-2_37</artifactId>
+  <version>1.0-SNAPSHOT</version>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>8</maven.compiler.source>
+    <maven.compiler.target>8</maven.compiler.target>
+    <classUnderTest>/home/wtwhite/code/craw-redhat-oss/wget/crawl/google-aoss/org/glassfish/jersey/core/jersey-server/2.37/jersey-server-2.37.jar</classUnderTest>
+    <depRoot>/home/wtwhite/code/regression-test-generation-NON-SOURCE-EQUIV/find-diff-classes/compile/gaoss/org/glassfish/jersey/core/jersey-server/2.37/t/dependency</depRoot>
+    <evosuiteRuntimeJarPath>/home/wtwhite/code/regression-test-generation/evosuite/evosuite-standalone-runtime-1.2.0.jar</evosuiteRuntimeJarPath>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__classUnderTest_</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${classUnderTest}</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__aopalliance-repackaged-2_6_1_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/aopalliance-repackaged-2.6.1.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__hamcrest-2_2_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/hamcrest-2.2.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__hamcrest-core-1_3_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/hamcrest-core-1.3.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__hk2-api-2_6_1_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/hk2-api-2.6.1.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__hk2-locator-2_6_1_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/hk2-locator-2.6.1.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__hk2-utils-2_6_1_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/hk2-utils-2.6.1.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__jakarta_activation-api-1_2_2_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/jakarta.activation-api-1.2.2.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__jakarta_annotation-api-1_3_5_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/jakarta.annotation-api-1.3.5.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__jakarta_inject-2_6_1_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/jakarta.inject-2.6.1.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__jakarta_validation-api-2_0_2_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/jakarta.validation-api-2.0.2.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__jakarta_ws_rs-api-2_1_6_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/jakarta.ws.rs-api-2.1.6.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__jakarta_xml_bind-api-2_3_3_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/jakarta.xml.bind-api-2.3.3.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__javassist-3_25_0-GA_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/javassist-3.25.0-GA.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__jboss-logging-3_3_0_Final_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/jboss-logging-3.3.0.Final.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__jboss-vfs-3_2_6_Final_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/jboss-vfs-3.2.6.Final.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__jersey-client-2_37_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/jersey-client-2.37.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__jersey-common-2_37_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/jersey-common-2.37.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__jersey-hk2-2_37_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/jersey-hk2-2.37.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__jersey-media-jaxb-2_37_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/jersey-media-jaxb-2.37.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__junit-4_13_1_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/junit-4.13.1.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__org_osgi_core-6_0_0_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/org.osgi.core-6.0.0.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__osgi-resource-locator-1_0_3_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/osgi-resource-locator-1.0.3.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-evosuite-jar</groupId>
+      <artifactId>evosuite</artifactId>
+      <version>1.2.0</version>
+      <scope>system</scope>
+      <systemPath>${evosuiteRuntimeJarPath}</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.13.2</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.hamcrest</groupId>
+      <artifactId>hamcrest-core</artifactId>
+      <version>1.3</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <!-- Add path to EvoSuite-generated test sources (instead of copying them to src/test/java) -->
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>build-helper-maven-plugin</artifactId>
+        <version>3.6.0</version>
+        <executions>
+          <execution>
+            <id>add-test-source</id>
+            <phase>generate-test-sources</phase>
+            <goals>
+              <goal>add-test-source</goal>
+            </goals>
+            <configuration>
+              <sources>
+                <source>/home/wtwhite/code/regression-test-generation-NON-SOURCE-EQUIV/find-diff-classes/testgen/mvnc/org/glassfish/jersey/core/jersey-server/2.37/evosuite-tests</source>
+              </sources>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>3.2.5</version>
+        <configuration>
+          <reportsDirectory>${RUNDIR}/gaoss/org/glassfish/jersey/core/jersey-server/2.37</reportsDirectory>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>

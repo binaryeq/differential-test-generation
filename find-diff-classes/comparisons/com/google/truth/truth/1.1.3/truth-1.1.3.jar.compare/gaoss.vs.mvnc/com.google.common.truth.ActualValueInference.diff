@@ -1,0 +1,83 @@
+7,9c7,9
+< java.lang.Throwable v23;
+< java.lang.Integer v16;
+< com.google.common.collect.ImmutableSetMultimap$Builder v14;
+---
+> java.lang.Throwable v24;
+> java.lang.Integer v17;
+> com.google.common.collect.ImmutableSetMultimap$Builder v15;
+11,16c11,16
+< int v18, v2;
+< java.lang.SecurityException v22;
+< java.lang.String v0, v1, v11, v12, v20;
+< com.google.common.collect.ImmutableSetMultimap v15;
+< com.google.common.collect.ImmutableSet v17;
+< java.io.IOException v21;
+---
+> int v19, v2;
+> java.lang.SecurityException v23;
+> java.lang.String v0, v1, v11, v12, v13, v21;
+> com.google.common.collect.ImmutableSetMultimap v16;
+> com.google.common.collect.ImmutableSet v18;
+> java.io.IOException v22;
+18c18
+< org.objectweb.asm.ClassReader v13;
+---
+> org.objectweb.asm.ClassReader v14;
+21c21
+< java.lang.Object v19, v9;
+---
+> java.lang.Object v20, v9;
+44,56c44,57
+< v12 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v11) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001.class");
+< v10 = virtualinvoke v9.<java.lang.ClassLoader: java.io.InputStream getResourceAsStream(java.lang.String)>(v12);
+< v13 = new org.objectweb.asm.ClassReader;
+< specialinvoke v13.<org.objectweb.asm.ClassReader: void <init>(java.io.InputStream)>(v10);
+< virtualinvoke v13.<org.objectweb.asm.ClassReader: void accept(org.objectweb.asm.ClassVisitor,int)>(v3, 0);
+< v14 = v3.<com.google.common.truth.ActualValueInference$InferenceClassVisitor: com.google.common.collect.ImmutableSetMultimap$Builder actualValueAtLine>;
+< v15 = virtualinvoke v14.<com.google.common.collect.ImmutableSetMultimap$Builder: com.google.common.collect.ImmutableSetMultimap build()>();
+< v16 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(v2);
+< v17 = virtualinvoke v15.<com.google.common.collect.ImmutableSetMultimap: com.google.common.collect.ImmutableSet get(java.lang.Object)>(v16);
+< v18 = virtualinvoke v17.<com.google.common.collect.ImmutableSet: int size()>();
+< if v18 != 1 goto label06;
+< v19 = staticinvoke <com.google.common.collect.Iterables: java.lang.Object getOnlyElement(java.lang.Iterable)>(v17);
+< v20 = virtualinvoke v19.<com.google.common.truth.ActualValueInference$StackEntry: java.lang.String description()>();
+---
+> v12 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v11);
+> v13 = virtualinvoke v12.<java.lang.String: java.lang.String concat(java.lang.String)>(".class");
+> v10 = virtualinvoke v9.<java.lang.ClassLoader: java.io.InputStream getResourceAsStream(java.lang.String)>(v13);
+> v14 = new org.objectweb.asm.ClassReader;
+> specialinvoke v14.<org.objectweb.asm.ClassReader: void <init>(java.io.InputStream)>(v10);
+> virtualinvoke v14.<org.objectweb.asm.ClassReader: void accept(org.objectweb.asm.ClassVisitor,int)>(v3, 0);
+> v15 = v3.<com.google.common.truth.ActualValueInference$InferenceClassVisitor: com.google.common.collect.ImmutableSetMultimap$Builder actualValueAtLine>;
+> v16 = virtualinvoke v15.<com.google.common.collect.ImmutableSetMultimap$Builder: com.google.common.collect.ImmutableSetMultimap build()>();
+> v17 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(v2);
+> v18 = virtualinvoke v16.<com.google.common.collect.ImmutableSetMultimap: com.google.common.collect.ImmutableSet get(java.lang.Object)>(v17);
+> v19 = virtualinvoke v18.<com.google.common.collect.ImmutableSet: int size()>();
+> if v19 != 1 goto label06;
+> v20 = staticinvoke <com.google.common.collect.Iterables: java.lang.Object getOnlyElement(java.lang.Iterable)>(v18);
+> v21 = virtualinvoke v20.<com.google.common.truth.ActualValueInference$StackEntry: java.lang.String description()>();
+59c60
+< v20 = null;
+---
+> v21 = null;
+62c63
+< return v20;
+---
+> return v21;
+64c65
+< v21 := @caughtexception;
+---
+> v22 := @caughtexception;
+68c69
+< v22 := @caughtexception;
+---
+> v23 := @caughtexception;
+72c73
+< v23 := @caughtexception;
+---
+> v24 := @caughtexception;
+74c75
+< throw v23;
+---
+> throw v24;

@@ -1,0 +1,54 @@
+29c29
+< java.lang.Throwable v32, v45;
+---
+> java.lang.Throwable v32, v43;
+35c35
+< org.jboss.netty.channel.socket.oio.OioServerSocketChannel v1, v13, v14, v21, v23, v3, v33, v36, v43, v46, v5, v8;
+---
+> org.jboss.netty.channel.socket.oio.OioServerSocketChannel v1, v13, v14, v21, v23, v3, v33, v36, v44, v46, v5, v8;
+39c39
+< java.util.concurrent.locks.Lock v2, v44, v47;
+---
+> java.util.concurrent.locks.Lock v2, v45, v47;
+50c50
+< if v4 == 0 goto label12;
+---
+> if v4 == 0 goto label15;
+98c98
+< if v35 == 0 goto label12;
+---
+> if v35 == 0 goto label15;
+102c102
+< if v38 != 0 goto label12;
+---
+> if v38 != 0 goto label15;
+116,119c116,117
+< v43 = v0.<org.jboss.netty.channel.socket.oio.OioServerSocketPipelineSink$Boss: org.jboss.netty.channel.socket.oio.OioServerSocketChannel channel>;
+< v44 = v43.<org.jboss.netty.channel.socket.oio.OioServerSocketChannel: java.util.concurrent.locks.Lock shutdownLock>;
+< interfaceinvoke v44.<java.util.concurrent.locks.Lock: void unlock()>();
+< goto label14;
+---
+> v43 := @caughtexception;
+> goto label16;
+121c119,127
+< v45 := @caughtexception;
+---
+> throw v43;
+> label14:
+> return;
+> label15:
+> v44 = v0.<org.jboss.netty.channel.socket.oio.OioServerSocketPipelineSink$Boss: org.jboss.netty.channel.socket.oio.OioServerSocketChannel channel>;
+> v45 = v44.<org.jboss.netty.channel.socket.oio.OioServerSocketChannel: java.util.concurrent.locks.Lock shutdownLock>;
+> interfaceinvoke v45.<java.util.concurrent.locks.Lock: void unlock()>();
+> goto label14;
+> label16:
+125,127c131
+< throw v45;
+< label14:
+< return;
+---
+> goto label13;
+132c136
+< catch java.lang.Throwable from label01 to label12 with label13;
+---
+> catch java.lang.Throwable from label01 to label12 with label12;

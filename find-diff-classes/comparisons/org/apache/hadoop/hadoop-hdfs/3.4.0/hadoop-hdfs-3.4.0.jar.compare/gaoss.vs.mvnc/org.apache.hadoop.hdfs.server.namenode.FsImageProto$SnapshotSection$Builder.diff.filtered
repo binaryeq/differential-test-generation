@@ -1,0 +1,10 @@
+130c130
+< int v2, v4, v5, v6, v7;
+---
+> int v2, v4, v5, v6, v7, v8, v9;
+148c148,150
+< v1.<org.apache.hadoop.hdfs.server.namenode.FsImageProto$SnapshotSection: int bitField0_> = v3;
+---
+> v8 = v1.<org.apache.hadoop.hdfs.server.namenode.FsImageProto$SnapshotSection: int bitField0_>;
+> v9 = v8 | v3;
+> v1.<org.apache.hadoop.hdfs.server.namenode.FsImageProto$SnapshotSection: int bitField0_> = v9;

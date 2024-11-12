@@ -1,0 +1,14 @@
+174d173
+< byte v3;
+176c175
+< int v2, v4;
+---
+> int v2, v4, v8, v9;
+178a178
+> boolean v3;
+193c193,195
+< v1.<org.apache.hadoop.hdfs.protocol.proto.AliasMapProtocolProtos$ListResponseProto: int bitField0_> = v3;
+---
+> v8 = v1.<org.apache.hadoop.hdfs.protocol.proto.AliasMapProtocolProtos$ListResponseProto: int bitField0_>;
+> v9 = v8 | v3;
+> v1.<org.apache.hadoop.hdfs.protocol.proto.AliasMapProtocolProtos$ListResponseProto: int bitField0_> = v9;

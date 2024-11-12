@@ -1,0 +1,14 @@
+95d94
+< byte v3;
+97c96
+< int v2, v4;
+---
+> int v2, v4, v6, v7;
+99a99
+> boolean v3;
+110c110,112
+< v1.<org.apache.hadoop.hdfs.protocol.proto.InterDatanodeProtocolProtos$UpdateReplicaUnderRecoveryResponseProto: int bitField0_> = v3;
+---
+> v6 = v1.<org.apache.hadoop.hdfs.protocol.proto.InterDatanodeProtocolProtos$UpdateReplicaUnderRecoveryResponseProto: int bitField0_>;
+> v7 = v6 | v3;
+> v1.<org.apache.hadoop.hdfs.protocol.proto.InterDatanodeProtocolProtos$UpdateReplicaUnderRecoveryResponseProto: int bitField0_> = v7;

@@ -1,0 +1,14 @@
+94d93
+< byte v3;
+96,97c95,96
+< int v2, v4;
+< boolean v5;
+---
+> int v2, v4, v6, v7;
+> boolean v3, v5;
+108c107,109
+< v1.<org.apache.hadoop.hdfs.qjournal.protocol.QJournalProtocolProtos$CanRollBackResponseProto: int bitField0_> = v3;
+---
+> v6 = v1.<org.apache.hadoop.hdfs.qjournal.protocol.QJournalProtocolProtos$CanRollBackResponseProto: int bitField0_>;
+> v7 = v6 | v3;
+> v1.<org.apache.hadoop.hdfs.qjournal.protocol.QJournalProtocolProtos$CanRollBackResponseProto: int bitField0_> = v7;

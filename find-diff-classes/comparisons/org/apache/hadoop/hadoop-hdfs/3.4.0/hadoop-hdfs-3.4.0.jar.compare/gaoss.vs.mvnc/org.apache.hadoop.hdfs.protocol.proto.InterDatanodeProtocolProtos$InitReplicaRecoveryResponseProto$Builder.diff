@@ -1,0 +1,10 @@
+123c123
+< int v2, v4, v6, v7, v8;
+---
+> int v12, v13, v2, v4, v6, v7, v8;
+153c153,155
+< v1.<org.apache.hadoop.hdfs.protocol.proto.InterDatanodeProtocolProtos$InitReplicaRecoveryResponseProto: int bitField0_> = v3;
+---
+> v12 = v1.<org.apache.hadoop.hdfs.protocol.proto.InterDatanodeProtocolProtos$InitReplicaRecoveryResponseProto: int bitField0_>;
+> v13 = v12 | v3;
+> v1.<org.apache.hadoop.hdfs.protocol.proto.InterDatanodeProtocolProtos$InitReplicaRecoveryResponseProto: int bitField0_> = v13;

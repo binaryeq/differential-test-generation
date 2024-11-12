@@ -1,0 +1,56 @@
+667,669d666
+< java.util.Iterator v3;
+< java.util.Collection v6;
+< java.util.Set v2;
+672,674c669,670
+< java.lang.Object v5;
+< java.lang.StringBuilder v9;
+< java.lang.String v11, v7, v8;
+---
+> int v10, v11, v13, v14;
+> java.lang.String v12, v15, v18, v6, v8, v9;
+676c672,677
+< com.google.common.base.Joiner v10;
+---
+> java.util.Iterator v3;
+> java.util.Collection v7;
+> java.util.Set v2;
+> java.lang.Object v5;
+> java.lang.StringBuilder v16, v19;
+> com.google.common.base.Joiner v17;
+686,689c687,698
+< v6 = staticinvoke <com.google.common.truth.MultimapSubject: java.util.Collection get(com.google.common.collect.Multimap,java.lang.Object)>(v0, v5);
+< v7 = staticinvoke <com.google.common.truth.SubjectUtils: java.lang.String countDuplicates(java.lang.Iterable)>(v6);
+< v8 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.Object,java.lang.String)>(v5, v7) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001=\u0001");
+< interfaceinvoke v1.<java.util.List: boolean add(java.lang.Object)>(v8);
+---
+> v6 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v5);
+> v7 = staticinvoke <com.google.common.truth.MultimapSubject: java.util.Collection get(com.google.common.collect.Multimap,java.lang.Object)>(v0, v5);
+> v8 = staticinvoke <com.google.common.truth.SubjectUtils: java.lang.String countDuplicates(java.lang.Iterable)>(v7);
+> v9 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v6);
+> v10 = virtualinvoke v9.<java.lang.String: int length()>();
+> v11 = 1 + v10;
+> v12 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v8);
+> v13 = virtualinvoke v12.<java.lang.String: int length()>();
+> v14 = v11 + v13;
+> specialinvoke v19.<java.lang.StringBuilder: void <init>(int)>(v14);
+> v15 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,java.lang.String)>(v6, v8) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001=\u0001");
+> interfaceinvoke v1.<java.util.List: boolean add(java.lang.Object)>(v15);
+692,699c701,708
+< v9 = new java.lang.StringBuilder;
+< specialinvoke v9.<java.lang.StringBuilder: void <init>()>();
+< virtualinvoke v9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("{");
+< v10 = staticinvoke <com.google.common.base.Joiner: com.google.common.base.Joiner on(java.lang.String)>(", ");
+< virtualinvoke v10.<com.google.common.base.Joiner: java.lang.StringBuilder appendTo(java.lang.StringBuilder,java.lang.Iterable)>(v9, v1);
+< virtualinvoke v9.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("}");
+< v11 = virtualinvoke v9.<java.lang.StringBuilder: java.lang.String toString()>();
+< return v11;
+---
+> v16 = new java.lang.StringBuilder;
+> specialinvoke v16.<java.lang.StringBuilder: void <init>()>();
+> virtualinvoke v16.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("{");
+> v17 = staticinvoke <com.google.common.base.Joiner: com.google.common.base.Joiner on(java.lang.String)>(", ");
+> virtualinvoke v17.<com.google.common.base.Joiner: java.lang.StringBuilder appendTo(java.lang.StringBuilder,java.lang.Iterable)>(v16, v1);
+> virtualinvoke v16.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>("}");
+> v18 = virtualinvoke v16.<java.lang.StringBuilder: java.lang.String toString()>();
+> return v18;

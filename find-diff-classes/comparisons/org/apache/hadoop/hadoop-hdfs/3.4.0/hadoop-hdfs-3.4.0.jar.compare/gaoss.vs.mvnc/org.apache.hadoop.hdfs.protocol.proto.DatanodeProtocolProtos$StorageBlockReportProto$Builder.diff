@@ -1,0 +1,10 @@
+176c176
+< int v2, v4, v8;
+---
+> int v10, v11, v2, v4, v8;
+200c200,202
+< v1.<org.apache.hadoop.hdfs.protocol.proto.DatanodeProtocolProtos$StorageBlockReportProto: int bitField0_> = v3;
+---
+> v10 = v1.<org.apache.hadoop.hdfs.protocol.proto.DatanodeProtocolProtos$StorageBlockReportProto: int bitField0_>;
+> v11 = v10 | v3;
+> v1.<org.apache.hadoop.hdfs.protocol.proto.DatanodeProtocolProtos$StorageBlockReportProto: int bitField0_> = v11;

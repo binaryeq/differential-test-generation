@@ -1,0 +1,10 @@
+146c146
+< int v10, v12, v16, v2, v20, v4, v6, v8;
+---
+> int v10, v12, v16, v2, v20, v24, v25, v4, v6, v8;
+207c207,209
+< v1.<org.apache.hadoop.hdfs.server.namenode.FsImageProto$INodeSection$INodeDirectory: int bitField0_> = v3;
+---
+> v24 = v1.<org.apache.hadoop.hdfs.server.namenode.FsImageProto$INodeSection$INodeDirectory: int bitField0_>;
+> v25 = v24 | v3;
+> v1.<org.apache.hadoop.hdfs.server.namenode.FsImageProto$INodeSection$INodeDirectory: int bitField0_> = v25;

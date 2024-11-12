@@ -1,0 +1,424 @@
+6c6
+< private void <init>()
+---
+> public void <init>()
+13c13
+< public static org.glassfish.jersey.internal.l10n.Localizable localizablePARAMS_NULL()
+---
+> public static org.glassfish.jersey.internal.l10n.Localizable localizableEVENT_SOURCE_OPEN_CONNECTION_INTERRUPTED()
+20c20
+< v2 = virtualinvoke v0.<org.glassfish.jersey.internal.l10n.LocalizableMessageFactory: org.glassfish.jersey.internal.l10n.Localizable getMessage(java.lang.String,java.lang.Object[])>("params.null", v1);
+---
+> v2 = virtualinvoke v0.<org.glassfish.jersey.internal.l10n.LocalizableMessageFactory: org.glassfish.jersey.internal.l10n.Localizable getMessage(java.lang.String,java.lang.Object[])>("event.source.open.connection.interrupted", v1);
+23c23
+< public static java.lang.String PARAMS_NULL()
+---
+> public static java.lang.String EVENT_SOURCE_OPEN_CONNECTION_INTERRUPTED()
+29c29
+< v1 = staticinvoke <org.glassfish.jersey.media.sse.LocalizationMessages: org.glassfish.jersey.internal.l10n.Localizable localizablePARAMS_NULL()>();
+---
+> v1 = staticinvoke <org.glassfish.jersey.media.sse.LocalizationMessages: org.glassfish.jersey.internal.l10n.Localizable localizableEVENT_SOURCE_OPEN_CONNECTION_INTERRUPTED()>();
+33c33
+< public static org.glassfish.jersey.internal.l10n.Localizable localizableOUT_EVENT_NOT_BUILDABLE()
+---
+> public static org.glassfish.jersey.internal.l10n.Localizable localizableOUT_EVENT_DATA_NULL()
+40c40
+< v2 = virtualinvoke v0.<org.glassfish.jersey.internal.l10n.LocalizableMessageFactory: org.glassfish.jersey.internal.l10n.Localizable getMessage(java.lang.String,java.lang.Object[])>("out.event.not.buildable", v1);
+---
+> v2 = virtualinvoke v0.<org.glassfish.jersey.internal.l10n.LocalizableMessageFactory: org.glassfish.jersey.internal.l10n.Localizable getMessage(java.lang.String,java.lang.Object[])>("out.event.data.null", v1);
+43c43
+< public static java.lang.String OUT_EVENT_NOT_BUILDABLE()
+---
+> public static java.lang.String OUT_EVENT_DATA_NULL()
+49c49
+< v1 = staticinvoke <org.glassfish.jersey.media.sse.LocalizationMessages: org.glassfish.jersey.internal.l10n.Localizable localizableOUT_EVENT_NOT_BUILDABLE()>();
+---
+> v1 = staticinvoke <org.glassfish.jersey.media.sse.LocalizationMessages: org.glassfish.jersey.internal.l10n.Localizable localizableOUT_EVENT_DATA_NULL()>();
+53c53
+< public static org.glassfish.jersey.internal.l10n.Localizable localizablePARAM_NULL(java.lang.Object)
+---
+> public static org.glassfish.jersey.internal.l10n.Localizable localizableIN_EVENT_RETRY_PARSE_ERROR(java.lang.Object)
+63c63
+< v3 = virtualinvoke v1.<org.glassfish.jersey.internal.l10n.LocalizableMessageFactory: org.glassfish.jersey.internal.l10n.Localizable getMessage(java.lang.String,java.lang.Object[])>("param.null", v2);
+---
+> v3 = virtualinvoke v1.<org.glassfish.jersey.internal.l10n.LocalizableMessageFactory: org.glassfish.jersey.internal.l10n.Localizable getMessage(java.lang.String,java.lang.Object[])>("in.event.retry.parse.error", v2);
+66c66
+< public static java.lang.String PARAM_NULL(java.lang.Object)
+---
+> public static java.lang.String IN_EVENT_RETRY_PARSE_ERROR(java.lang.Object)
+74c74
+< v2 = staticinvoke <org.glassfish.jersey.media.sse.LocalizationMessages: org.glassfish.jersey.internal.l10n.Localizable localizablePARAM_NULL(java.lang.Object)>(v0);
+---
+> v2 = staticinvoke <org.glassfish.jersey.media.sse.LocalizationMessages: org.glassfish.jersey.internal.l10n.Localizable localizableIN_EVENT_RETRY_PARSE_ERROR(java.lang.Object)>(v0);
+78c78,103
+< public static org.glassfish.jersey.internal.l10n.Localizable localizableEVENT_SINK_CLOSE_FAILED()
+---
+> public static org.glassfish.jersey.internal.l10n.Localizable localizableEVENT_SOURCE_SHUTDOWN_TIMEOUT(java.lang.Object)
+> {
+> java.lang.Object[] v2;
+> org.glassfish.jersey.internal.l10n.LocalizableMessageFactory v1;
+> java.lang.Object v0;
+> org.glassfish.jersey.internal.l10n.Localizable v3;
+> v0 := @parameter0: java.lang.Object;
+> v1 = <org.glassfish.jersey.media.sse.LocalizationMessages: org.glassfish.jersey.internal.l10n.LocalizableMessageFactory MESSAGE_FACTORY>;
+> v2 = newarray (java.lang.Object)[1];
+> v2[0] = v0;
+> v3 = virtualinvoke v1.<org.glassfish.jersey.internal.l10n.LocalizableMessageFactory: org.glassfish.jersey.internal.l10n.Localizable getMessage(java.lang.String,java.lang.Object[])>("event.source.shutdown.timeout", v2);
+> return v3;
+> }
+> public static java.lang.String EVENT_SOURCE_SHUTDOWN_TIMEOUT(java.lang.Object)
+> {
+> org.glassfish.jersey.internal.l10n.Localizer v1;
+> java.lang.Object v0;
+> java.lang.String v3;
+> org.glassfish.jersey.internal.l10n.Localizable v2;
+> v0 := @parameter0: java.lang.Object;
+> v1 = <org.glassfish.jersey.media.sse.LocalizationMessages: org.glassfish.jersey.internal.l10n.Localizer LOCALIZER>;
+> v2 = staticinvoke <org.glassfish.jersey.media.sse.LocalizationMessages: org.glassfish.jersey.internal.l10n.Localizable localizableEVENT_SOURCE_SHUTDOWN_TIMEOUT(java.lang.Object)>(v0);
+> v3 = virtualinvoke v1.<org.glassfish.jersey.internal.l10n.Localizer: java.lang.String localize(org.glassfish.jersey.internal.l10n.Localizable)>(v2);
+> return v3;
+> }
+> public static org.glassfish.jersey.internal.l10n.Localizable localizableEVENT_SINK_NEXT_FAILED()
+85c110
+< v2 = virtualinvoke v0.<org.glassfish.jersey.internal.l10n.LocalizableMessageFactory: org.glassfish.jersey.internal.l10n.Localizable getMessage(java.lang.String,java.lang.Object[])>("event.sink.close.failed", v1);
+---
+> v2 = virtualinvoke v0.<org.glassfish.jersey.internal.l10n.LocalizableMessageFactory: org.glassfish.jersey.internal.l10n.Localizable getMessage(java.lang.String,java.lang.Object[])>("event.sink.next.failed", v1);
+88c113
+< public static java.lang.String EVENT_SINK_CLOSE_FAILED()
+---
+> public static java.lang.String EVENT_SINK_NEXT_FAILED()
+94c119
+< v1 = staticinvoke <org.glassfish.jersey.media.sse.LocalizationMessages: org.glassfish.jersey.internal.l10n.Localizable localizableEVENT_SINK_CLOSE_FAILED()>();
+---
+> v1 = staticinvoke <org.glassfish.jersey.media.sse.LocalizationMessages: org.glassfish.jersey.internal.l10n.Localizable localizableEVENT_SINK_NEXT_FAILED()>();
+98c123
+< public static org.glassfish.jersey.internal.l10n.Localizable localizableEVENT_SOURCE_DEFAULT_ONERROR()
+---
+> public static org.glassfish.jersey.internal.l10n.Localizable localizableOUT_EVENT_MEDIA_TYPE_NULL()
+105c130
+< v2 = virtualinvoke v0.<org.glassfish.jersey.internal.l10n.LocalizableMessageFactory: org.glassfish.jersey.internal.l10n.Localizable getMessage(java.lang.String,java.lang.Object[])>("event.source.default.onerror", v1);
+---
+> v2 = virtualinvoke v0.<org.glassfish.jersey.internal.l10n.LocalizableMessageFactory: org.glassfish.jersey.internal.l10n.Localizable getMessage(java.lang.String,java.lang.Object[])>("out.event.media.type.null", v1);
+108c133
+< public static java.lang.String EVENT_SOURCE_DEFAULT_ONERROR()
+---
+> public static java.lang.String OUT_EVENT_MEDIA_TYPE_NULL()
+114c139
+< v1 = staticinvoke <org.glassfish.jersey.media.sse.LocalizationMessages: org.glassfish.jersey.internal.l10n.Localizable localizableEVENT_SOURCE_DEFAULT_ONERROR()>();
+---
+> v1 = staticinvoke <org.glassfish.jersey.media.sse.LocalizationMessages: org.glassfish.jersey.internal.l10n.Localizable localizableOUT_EVENT_MEDIA_TYPE_NULL()>();
+118c143
+< public static org.glassfish.jersey.internal.l10n.Localizable localizableEVENT_SOURCE_SHUTDOWN_TIMEOUT(java.lang.Object)
+---
+> public static org.glassfish.jersey.internal.l10n.Localizable localizablePARAM_NULL(java.lang.Object)
+128c153
+< v3 = virtualinvoke v1.<org.glassfish.jersey.internal.l10n.LocalizableMessageFactory: org.glassfish.jersey.internal.l10n.Localizable getMessage(java.lang.String,java.lang.Object[])>("event.source.shutdown.timeout", v2);
+---
+> v3 = virtualinvoke v1.<org.glassfish.jersey.internal.l10n.LocalizableMessageFactory: org.glassfish.jersey.internal.l10n.Localizable getMessage(java.lang.String,java.lang.Object[])>("param.null", v2);
+131c156
+< public static java.lang.String EVENT_SOURCE_SHUTDOWN_TIMEOUT(java.lang.Object)
+---
+> public static java.lang.String PARAM_NULL(java.lang.Object)
+139c164
+< v2 = staticinvoke <org.glassfish.jersey.media.sse.LocalizationMessages: org.glassfish.jersey.internal.l10n.Localizable localizableEVENT_SOURCE_SHUTDOWN_TIMEOUT(java.lang.Object)>(v0);
+---
+> v2 = staticinvoke <org.glassfish.jersey.media.sse.LocalizationMessages: org.glassfish.jersey.internal.l10n.Localizable localizablePARAM_NULL(java.lang.Object)>(v0);
+143c168
+< public static org.glassfish.jersey.internal.l10n.Localizable localizableOUT_EVENT_DATA_TYPE_NULL()
+---
+> public static org.glassfish.jersey.internal.l10n.Localizable localizableEVENT_SINK_CLOSE_FAILED()
+150c175
+< v2 = virtualinvoke v0.<org.glassfish.jersey.internal.l10n.LocalizableMessageFactory: org.glassfish.jersey.internal.l10n.Localizable getMessage(java.lang.String,java.lang.Object[])>("out.event.data.type.null", v1);
+---
+> v2 = virtualinvoke v0.<org.glassfish.jersey.internal.l10n.LocalizableMessageFactory: org.glassfish.jersey.internal.l10n.Localizable getMessage(java.lang.String,java.lang.Object[])>("event.sink.close.failed", v1);
+153c178
+< public static java.lang.String OUT_EVENT_DATA_TYPE_NULL()
+---
+> public static java.lang.String EVENT_SINK_CLOSE_FAILED()
+159c184
+< v1 = staticinvoke <org.glassfish.jersey.media.sse.LocalizationMessages: org.glassfish.jersey.internal.l10n.Localizable localizableOUT_EVENT_DATA_TYPE_NULL()>();
+---
+> v1 = staticinvoke <org.glassfish.jersey.media.sse.LocalizationMessages: org.glassfish.jersey.internal.l10n.Localizable localizableEVENT_SINK_CLOSE_FAILED()>();
+163c188
+< public static org.glassfish.jersey.internal.l10n.Localizable localizableEVENT_SOURCE_SHUTDOWN_INTERRUPTED(java.lang.Object)
+---
+> public static org.glassfish.jersey.internal.l10n.Localizable localizablePARAMS_NULL()
+165,168c190,213
+< java.lang.Object[] v2;
+< org.glassfish.jersey.internal.l10n.LocalizableMessageFactory v1;
+< java.lang.Object v0;
+< org.glassfish.jersey.internal.l10n.Localizable v3;
+---
+> org.glassfish.jersey.internal.l10n.LocalizableMessageFactory v0;
+> java.lang.Object[] v1;
+> org.glassfish.jersey.internal.l10n.Localizable v2;
+> v0 = <org.glassfish.jersey.media.sse.LocalizationMessages: org.glassfish.jersey.internal.l10n.LocalizableMessageFactory MESSAGE_FACTORY>;
+> v1 = newarray (java.lang.Object)[0];
+> v2 = virtualinvoke v0.<org.glassfish.jersey.internal.l10n.LocalizableMessageFactory: org.glassfish.jersey.internal.l10n.Localizable getMessage(java.lang.String,java.lang.Object[])>("params.null", v1);
+> return v2;
+> }
+> public static java.lang.String PARAMS_NULL()
+> {
+> org.glassfish.jersey.internal.l10n.Localizer v0;
+> java.lang.String v2;
+> org.glassfish.jersey.internal.l10n.Localizable v1;
+> v0 = <org.glassfish.jersey.media.sse.LocalizationMessages: org.glassfish.jersey.internal.l10n.Localizer LOCALIZER>;
+> v1 = staticinvoke <org.glassfish.jersey.media.sse.LocalizationMessages: org.glassfish.jersey.internal.l10n.Localizable localizablePARAMS_NULL()>();
+> v2 = virtualinvoke v0.<org.glassfish.jersey.internal.l10n.Localizer: java.lang.String localize(org.glassfish.jersey.internal.l10n.Localizable)>(v1);
+> return v2;
+> }
+> public static org.glassfish.jersey.internal.l10n.Localizable localizableIN_EVENT_FIELD_NOT_RECOGNIZED(java.lang.Object, java.lang.Object)
+> {
+> java.lang.Object[] v3;
+> org.glassfish.jersey.internal.l10n.LocalizableMessageFactory v2;
+> java.lang.Object v0, v1;
+> org.glassfish.jersey.internal.l10n.Localizable v4;
+170,174c215,221
+< v1 = <org.glassfish.jersey.media.sse.LocalizationMessages: org.glassfish.jersey.internal.l10n.LocalizableMessageFactory MESSAGE_FACTORY>;
+< v2 = newarray (java.lang.Object)[1];
+< v2[0] = v0;
+< v3 = virtualinvoke v1.<org.glassfish.jersey.internal.l10n.LocalizableMessageFactory: org.glassfish.jersey.internal.l10n.Localizable getMessage(java.lang.String,java.lang.Object[])>("event.source.shutdown.interrupted", v2);
+< return v3;
+---
+> v1 := @parameter1: java.lang.Object;
+> v2 = <org.glassfish.jersey.media.sse.LocalizationMessages: org.glassfish.jersey.internal.l10n.LocalizableMessageFactory MESSAGE_FACTORY>;
+> v3 = newarray (java.lang.Object)[2];
+> v3[0] = v0;
+> v3[1] = v1;
+> v4 = virtualinvoke v2.<org.glassfish.jersey.internal.l10n.LocalizableMessageFactory: org.glassfish.jersey.internal.l10n.Localizable getMessage(java.lang.String,java.lang.Object[])>("in.event.field.not.recognized", v3);
+> return v4;
+176c223
+< public static java.lang.String EVENT_SOURCE_SHUTDOWN_INTERRUPTED(java.lang.Object)
+---
+> public static java.lang.String IN_EVENT_FIELD_NOT_RECOGNIZED(java.lang.Object, java.lang.Object)
+178,181c225,228
+< org.glassfish.jersey.internal.l10n.Localizer v1;
+< java.lang.Object v0;
+< java.lang.String v3;
+< org.glassfish.jersey.internal.l10n.Localizable v2;
+---
+> org.glassfish.jersey.internal.l10n.Localizer v2;
+> java.lang.Object v0, v1;
+> java.lang.String v4;
+> org.glassfish.jersey.internal.l10n.Localizable v3;
+183,186c230,234
+< v1 = <org.glassfish.jersey.media.sse.LocalizationMessages: org.glassfish.jersey.internal.l10n.Localizer LOCALIZER>;
+< v2 = staticinvoke <org.glassfish.jersey.media.sse.LocalizationMessages: org.glassfish.jersey.internal.l10n.Localizable localizableEVENT_SOURCE_SHUTDOWN_INTERRUPTED(java.lang.Object)>(v0);
+< v3 = virtualinvoke v1.<org.glassfish.jersey.internal.l10n.Localizer: java.lang.String localize(org.glassfish.jersey.internal.l10n.Localizable)>(v2);
+< return v3;
+---
+> v1 := @parameter1: java.lang.Object;
+> v2 = <org.glassfish.jersey.media.sse.LocalizationMessages: org.glassfish.jersey.internal.l10n.Localizer LOCALIZER>;
+> v3 = staticinvoke <org.glassfish.jersey.media.sse.LocalizationMessages: org.glassfish.jersey.internal.l10n.Localizable localizableIN_EVENT_FIELD_NOT_RECOGNIZED(java.lang.Object,java.lang.Object)>(v0, v1);
+> v4 = virtualinvoke v2.<org.glassfish.jersey.internal.l10n.Localizer: java.lang.String localize(org.glassfish.jersey.internal.l10n.Localizable)>(v3);
+> return v4;
+188c236
+< public static org.glassfish.jersey.internal.l10n.Localizable localizableIN_EVENT_RETRY_PARSE_ERROR(java.lang.Object)
+---
+> public static org.glassfish.jersey.internal.l10n.Localizable localizableUNSUPPORTED_WEBTARGET_TYPE(java.lang.Object)
+198c246
+< v3 = virtualinvoke v1.<org.glassfish.jersey.internal.l10n.LocalizableMessageFactory: org.glassfish.jersey.internal.l10n.Localizable getMessage(java.lang.String,java.lang.Object[])>("in.event.retry.parse.error", v2);
+---
+> v3 = virtualinvoke v1.<org.glassfish.jersey.internal.l10n.LocalizableMessageFactory: org.glassfish.jersey.internal.l10n.Localizable getMessage(java.lang.String,java.lang.Object[])>("unsupported.webtarget.type", v2);
+201c249
+< public static java.lang.String IN_EVENT_RETRY_PARSE_ERROR(java.lang.Object)
+---
+> public static java.lang.String UNSUPPORTED_WEBTARGET_TYPE(java.lang.Object)
+209c257
+< v2 = staticinvoke <org.glassfish.jersey.media.sse.LocalizationMessages: org.glassfish.jersey.internal.l10n.Localizable localizableIN_EVENT_RETRY_PARSE_ERROR(java.lang.Object)>(v0);
+---
+> v2 = staticinvoke <org.glassfish.jersey.media.sse.LocalizationMessages: org.glassfish.jersey.internal.l10n.Localizable localizableUNSUPPORTED_WEBTARGET_TYPE(java.lang.Object)>(v0);
+213c261
+< public static org.glassfish.jersey.internal.l10n.Localizable localizableEVENT_DATA_READER_NOT_FOUND()
+---
+> public static org.glassfish.jersey.internal.l10n.Localizable localizableEVENT_SOURCE_ALREADY_CLOSED()
+220c268
+< v2 = virtualinvoke v0.<org.glassfish.jersey.internal.l10n.LocalizableMessageFactory: org.glassfish.jersey.internal.l10n.Localizable getMessage(java.lang.String,java.lang.Object[])>("event.data.reader.not.found", v1);
+---
+> v2 = virtualinvoke v0.<org.glassfish.jersey.internal.l10n.LocalizableMessageFactory: org.glassfish.jersey.internal.l10n.Localizable getMessage(java.lang.String,java.lang.Object[])>("event.source.already.closed", v1);
+223c271
+< public static java.lang.String EVENT_DATA_READER_NOT_FOUND()
+---
+> public static java.lang.String EVENT_SOURCE_ALREADY_CLOSED()
+229c277
+< v1 = staticinvoke <org.glassfish.jersey.media.sse.LocalizationMessages: org.glassfish.jersey.internal.l10n.Localizable localizableEVENT_DATA_READER_NOT_FOUND()>();
+---
+> v1 = staticinvoke <org.glassfish.jersey.media.sse.LocalizationMessages: org.glassfish.jersey.internal.l10n.Localizable localizableEVENT_SOURCE_ALREADY_CLOSED()>();
+233c281
+< public static org.glassfish.jersey.internal.l10n.Localizable localizableEVENT_SOURCE_OPEN_CONNECTION_INTERRUPTED()
+---
+> public static org.glassfish.jersey.internal.l10n.Localizable localizableEVENT_SOURCE_SHUTDOWN_INTERRUPTED(java.lang.Object)
+235,241c283,292
+< org.glassfish.jersey.internal.l10n.LocalizableMessageFactory v0;
+< java.lang.Object[] v1;
+< org.glassfish.jersey.internal.l10n.Localizable v2;
+< v0 = <org.glassfish.jersey.media.sse.LocalizationMessages: org.glassfish.jersey.internal.l10n.LocalizableMessageFactory MESSAGE_FACTORY>;
+< v1 = newarray (java.lang.Object)[0];
+< v2 = virtualinvoke v0.<org.glassfish.jersey.internal.l10n.LocalizableMessageFactory: org.glassfish.jersey.internal.l10n.Localizable getMessage(java.lang.String,java.lang.Object[])>("event.source.open.connection.interrupted", v1);
+< return v2;
+---
+> java.lang.Object[] v2;
+> org.glassfish.jersey.internal.l10n.LocalizableMessageFactory v1;
+> java.lang.Object v0;
+> org.glassfish.jersey.internal.l10n.Localizable v3;
+> v0 := @parameter0: java.lang.Object;
+> v1 = <org.glassfish.jersey.media.sse.LocalizationMessages: org.glassfish.jersey.internal.l10n.LocalizableMessageFactory MESSAGE_FACTORY>;
+> v2 = newarray (java.lang.Object)[1];
+> v2[0] = v0;
+> v3 = virtualinvoke v1.<org.glassfish.jersey.internal.l10n.LocalizableMessageFactory: org.glassfish.jersey.internal.l10n.Localizable getMessage(java.lang.String,java.lang.Object[])>("event.source.shutdown.interrupted", v2);
+> return v3;
+243c294
+< public static java.lang.String EVENT_SOURCE_OPEN_CONNECTION_INTERRUPTED()
+---
+> public static java.lang.String EVENT_SOURCE_SHUTDOWN_INTERRUPTED(java.lang.Object)
+245,251c296,304
+< org.glassfish.jersey.internal.l10n.Localizer v0;
+< java.lang.String v2;
+< org.glassfish.jersey.internal.l10n.Localizable v1;
+< v0 = <org.glassfish.jersey.media.sse.LocalizationMessages: org.glassfish.jersey.internal.l10n.Localizer LOCALIZER>;
+< v1 = staticinvoke <org.glassfish.jersey.media.sse.LocalizationMessages: org.glassfish.jersey.internal.l10n.Localizable localizableEVENT_SOURCE_OPEN_CONNECTION_INTERRUPTED()>();
+< v2 = virtualinvoke v0.<org.glassfish.jersey.internal.l10n.Localizer: java.lang.String localize(org.glassfish.jersey.internal.l10n.Localizable)>(v1);
+< return v2;
+---
+> org.glassfish.jersey.internal.l10n.Localizer v1;
+> java.lang.Object v0;
+> java.lang.String v3;
+> org.glassfish.jersey.internal.l10n.Localizable v2;
+> v0 := @parameter0: java.lang.Object;
+> v1 = <org.glassfish.jersey.media.sse.LocalizationMessages: org.glassfish.jersey.internal.l10n.Localizer LOCALIZER>;
+> v2 = staticinvoke <org.glassfish.jersey.media.sse.LocalizationMessages: org.glassfish.jersey.internal.l10n.Localizable localizableEVENT_SOURCE_SHUTDOWN_INTERRUPTED(java.lang.Object)>(v0);
+> v3 = virtualinvoke v1.<org.glassfish.jersey.internal.l10n.Localizer: java.lang.String localize(org.glassfish.jersey.internal.l10n.Localizable)>(v2);
+> return v3;
+253c306
+< public static org.glassfish.jersey.internal.l10n.Localizable localizableOUT_EVENT_DATA_NULL()
+---
+> public static org.glassfish.jersey.internal.l10n.Localizable localizableEVENT_SOURCE_ALREADY_CONNECTED()
+260c313
+< v2 = virtualinvoke v0.<org.glassfish.jersey.internal.l10n.LocalizableMessageFactory: org.glassfish.jersey.internal.l10n.Localizable getMessage(java.lang.String,java.lang.Object[])>("out.event.data.null", v1);
+---
+> v2 = virtualinvoke v0.<org.glassfish.jersey.internal.l10n.LocalizableMessageFactory: org.glassfish.jersey.internal.l10n.Localizable getMessage(java.lang.String,java.lang.Object[])>("event.source.already.connected", v1);
+263c316
+< public static java.lang.String OUT_EVENT_DATA_NULL()
+---
+> public static java.lang.String EVENT_SOURCE_ALREADY_CONNECTED()
+269c322
+< v1 = staticinvoke <org.glassfish.jersey.media.sse.LocalizationMessages: org.glassfish.jersey.internal.l10n.Localizable localizableOUT_EVENT_DATA_NULL()>();
+---
+> v1 = staticinvoke <org.glassfish.jersey.media.sse.LocalizationMessages: org.glassfish.jersey.internal.l10n.Localizable localizableEVENT_SOURCE_ALREADY_CONNECTED()>();
+273c326
+< public static org.glassfish.jersey.internal.l10n.Localizable localizableEVENT_SINK_NEXT_FAILED()
+---
+> public static org.glassfish.jersey.internal.l10n.Localizable localizableEVENT_SOURCE_DEFAULT_ONERROR()
+280c333
+< v2 = virtualinvoke v0.<org.glassfish.jersey.internal.l10n.LocalizableMessageFactory: org.glassfish.jersey.internal.l10n.Localizable getMessage(java.lang.String,java.lang.Object[])>("event.sink.next.failed", v1);
+---
+> v2 = virtualinvoke v0.<org.glassfish.jersey.internal.l10n.LocalizableMessageFactory: org.glassfish.jersey.internal.l10n.Localizable getMessage(java.lang.String,java.lang.Object[])>("event.source.default.onerror", v1);
+283c336
+< public static java.lang.String EVENT_SINK_NEXT_FAILED()
+---
+> public static java.lang.String EVENT_SOURCE_DEFAULT_ONERROR()
+289c342
+< v1 = staticinvoke <org.glassfish.jersey.media.sse.LocalizationMessages: org.glassfish.jersey.internal.l10n.Localizable localizableEVENT_SINK_NEXT_FAILED()>();
+---
+> v1 = staticinvoke <org.glassfish.jersey.media.sse.LocalizationMessages: org.glassfish.jersey.internal.l10n.Localizable localizableEVENT_SOURCE_DEFAULT_ONERROR()>();
+293,346c346
+< public static org.glassfish.jersey.internal.l10n.Localizable localizableUNSUPPORTED_WEBTARGET_TYPE(java.lang.Object)
+< {
+< java.lang.Object[] v2;
+< org.glassfish.jersey.internal.l10n.LocalizableMessageFactory v1;
+< java.lang.Object v0;
+< org.glassfish.jersey.internal.l10n.Localizable v3;
+< v0 := @parameter0: java.lang.Object;
+< v1 = <org.glassfish.jersey.media.sse.LocalizationMessages: org.glassfish.jersey.internal.l10n.LocalizableMessageFactory MESSAGE_FACTORY>;
+< v2 = newarray (java.lang.Object)[1];
+< v2[0] = v0;
+< v3 = virtualinvoke v1.<org.glassfish.jersey.internal.l10n.LocalizableMessageFactory: org.glassfish.jersey.internal.l10n.Localizable getMessage(java.lang.String,java.lang.Object[])>("unsupported.webtarget.type", v2);
+< return v3;
+< }
+< public static java.lang.String UNSUPPORTED_WEBTARGET_TYPE(java.lang.Object)
+< {
+< org.glassfish.jersey.internal.l10n.Localizer v1;
+< java.lang.Object v0;
+< java.lang.String v3;
+< org.glassfish.jersey.internal.l10n.Localizable v2;
+< v0 := @parameter0: java.lang.Object;
+< v1 = <org.glassfish.jersey.media.sse.LocalizationMessages: org.glassfish.jersey.internal.l10n.Localizer LOCALIZER>;
+< v2 = staticinvoke <org.glassfish.jersey.media.sse.LocalizationMessages: org.glassfish.jersey.internal.l10n.Localizable localizableUNSUPPORTED_WEBTARGET_TYPE(java.lang.Object)>(v0);
+< v3 = virtualinvoke v1.<org.glassfish.jersey.internal.l10n.Localizer: java.lang.String localize(org.glassfish.jersey.internal.l10n.Localizable)>(v2);
+< return v3;
+< }
+< public static org.glassfish.jersey.internal.l10n.Localizable localizableIN_EVENT_FIELD_NOT_RECOGNIZED(java.lang.Object, java.lang.Object)
+< {
+< java.lang.Object[] v3;
+< org.glassfish.jersey.internal.l10n.LocalizableMessageFactory v2;
+< java.lang.Object v0, v1;
+< org.glassfish.jersey.internal.l10n.Localizable v4;
+< v0 := @parameter0: java.lang.Object;
+< v1 := @parameter1: java.lang.Object;
+< v2 = <org.glassfish.jersey.media.sse.LocalizationMessages: org.glassfish.jersey.internal.l10n.LocalizableMessageFactory MESSAGE_FACTORY>;
+< v3 = newarray (java.lang.Object)[2];
+< v3[0] = v0;
+< v3[1] = v1;
+< v4 = virtualinvoke v2.<org.glassfish.jersey.internal.l10n.LocalizableMessageFactory: org.glassfish.jersey.internal.l10n.Localizable getMessage(java.lang.String,java.lang.Object[])>("in.event.field.not.recognized", v3);
+< return v4;
+< }
+< public static java.lang.String IN_EVENT_FIELD_NOT_RECOGNIZED(java.lang.Object, java.lang.Object)
+< {
+< org.glassfish.jersey.internal.l10n.Localizer v2;
+< java.lang.Object v0, v1;
+< java.lang.String v4;
+< org.glassfish.jersey.internal.l10n.Localizable v3;
+< v0 := @parameter0: java.lang.Object;
+< v1 := @parameter1: java.lang.Object;
+< v2 = <org.glassfish.jersey.media.sse.LocalizationMessages: org.glassfish.jersey.internal.l10n.Localizer LOCALIZER>;
+< v3 = staticinvoke <org.glassfish.jersey.media.sse.LocalizationMessages: org.glassfish.jersey.internal.l10n.Localizable localizableIN_EVENT_FIELD_NOT_RECOGNIZED(java.lang.Object,java.lang.Object)>(v0, v1);
+< v4 = virtualinvoke v2.<org.glassfish.jersey.internal.l10n.Localizer: java.lang.String localize(org.glassfish.jersey.internal.l10n.Localizable)>(v3);
+< return v4;
+< }
+< public static org.glassfish.jersey.internal.l10n.Localizable localizableEVENT_SOURCE_ALREADY_CLOSED()
+---
+> public static org.glassfish.jersey.internal.l10n.Localizable localizableOUT_EVENT_NOT_BUILDABLE()
+353c353
+< v2 = virtualinvoke v0.<org.glassfish.jersey.internal.l10n.LocalizableMessageFactory: org.glassfish.jersey.internal.l10n.Localizable getMessage(java.lang.String,java.lang.Object[])>("event.source.already.closed", v1);
+---
+> v2 = virtualinvoke v0.<org.glassfish.jersey.internal.l10n.LocalizableMessageFactory: org.glassfish.jersey.internal.l10n.Localizable getMessage(java.lang.String,java.lang.Object[])>("out.event.not.buildable", v1);
+356c356
+< public static java.lang.String EVENT_SOURCE_ALREADY_CLOSED()
+---
+> public static java.lang.String OUT_EVENT_NOT_BUILDABLE()
+362c362
+< v1 = staticinvoke <org.glassfish.jersey.media.sse.LocalizationMessages: org.glassfish.jersey.internal.l10n.Localizable localizableEVENT_SOURCE_ALREADY_CLOSED()>();
+---
+> v1 = staticinvoke <org.glassfish.jersey.media.sse.LocalizationMessages: org.glassfish.jersey.internal.l10n.Localizable localizableOUT_EVENT_NOT_BUILDABLE()>();
+366c366
+< public static org.glassfish.jersey.internal.l10n.Localizable localizableEVENT_SOURCE_ALREADY_CONNECTED()
+---
+> public static org.glassfish.jersey.internal.l10n.Localizable localizableEVENT_DATA_READER_NOT_FOUND()
+373c373
+< v2 = virtualinvoke v0.<org.glassfish.jersey.internal.l10n.LocalizableMessageFactory: org.glassfish.jersey.internal.l10n.Localizable getMessage(java.lang.String,java.lang.Object[])>("event.source.already.connected", v1);
+---
+> v2 = virtualinvoke v0.<org.glassfish.jersey.internal.l10n.LocalizableMessageFactory: org.glassfish.jersey.internal.l10n.Localizable getMessage(java.lang.String,java.lang.Object[])>("event.data.reader.not.found", v1);
+376c376
+< public static java.lang.String EVENT_SOURCE_ALREADY_CONNECTED()
+---
+> public static java.lang.String EVENT_DATA_READER_NOT_FOUND()
+382c382
+< v1 = staticinvoke <org.glassfish.jersey.media.sse.LocalizationMessages: org.glassfish.jersey.internal.l10n.Localizable localizableEVENT_SOURCE_ALREADY_CONNECTED()>();
+---
+> v1 = staticinvoke <org.glassfish.jersey.media.sse.LocalizationMessages: org.glassfish.jersey.internal.l10n.Localizable localizableEVENT_DATA_READER_NOT_FOUND()>();
+386c386
+< public static org.glassfish.jersey.internal.l10n.Localizable localizableOUT_EVENT_MEDIA_TYPE_NULL()
+---
+> public static org.glassfish.jersey.internal.l10n.Localizable localizableOUT_EVENT_DATA_TYPE_NULL()
+393c393
+< v2 = virtualinvoke v0.<org.glassfish.jersey.internal.l10n.LocalizableMessageFactory: org.glassfish.jersey.internal.l10n.Localizable getMessage(java.lang.String,java.lang.Object[])>("out.event.media.type.null", v1);
+---
+> v2 = virtualinvoke v0.<org.glassfish.jersey.internal.l10n.LocalizableMessageFactory: org.glassfish.jersey.internal.l10n.Localizable getMessage(java.lang.String,java.lang.Object[])>("out.event.data.type.null", v1);
+396c396
+< public static java.lang.String OUT_EVENT_MEDIA_TYPE_NULL()
+---
+> public static java.lang.String OUT_EVENT_DATA_TYPE_NULL()
+402c402
+< v1 = staticinvoke <org.glassfish.jersey.media.sse.LocalizationMessages: org.glassfish.jersey.internal.l10n.Localizable localizableOUT_EVENT_MEDIA_TYPE_NULL()>();
+---
+> v1 = staticinvoke <org.glassfish.jersey.media.sse.LocalizationMessages: org.glassfish.jersey.internal.l10n.Localizable localizableOUT_EVENT_DATA_TYPE_NULL()>();

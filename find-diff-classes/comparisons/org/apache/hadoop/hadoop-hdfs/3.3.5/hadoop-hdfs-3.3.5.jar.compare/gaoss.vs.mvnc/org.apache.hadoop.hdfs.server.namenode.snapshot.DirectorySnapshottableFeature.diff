@@ -1,0 +1,30 @@
+676c676
+< byte[] v17;
+---
+> byte[] v18;
+684,685c684,685
+< boolean v13, v16, v9;
+< byte[][] v7;
+---
+> boolean v13, v17, v9;
+> byte[][] v16, v19, v7;
+720c720,721
+< return null;
+---
+> v16 = (byte[][]) null;
+> return v16;
+722,725c723,726
+< v16 = v12 instanceof org.apache.hadoop.hdfs.server.namenode.INodeReference$WithCount;
+< if v16 != 0 goto label7;
+< v17 = virtualinvoke v4.<org.apache.hadoop.hdfs.server.namenode.INode: byte[] getLocalNameBytes()>();
+< virtualinvoke v5.<java.util.LinkedList: void addFirst(java.lang.Object)>(v17);
+---
+> v17 = v12 instanceof org.apache.hadoop.hdfs.server.namenode.INodeReference$WithCount;
+> if v17 != 0 goto label7;
+> v18 = virtualinvoke v4.<org.apache.hadoop.hdfs.server.namenode.INode: byte[] getLocalNameBytes()>();
+> virtualinvoke v5.<java.util.LinkedList: void addFirst(java.lang.Object)>(v18);
+730c731,732
+< return null;
+---
+> v19 = (byte[][]) null;
+> return v19;

@@ -1,0 +1,334 @@
+{
+        "jar1": {
+            "file": "~/code/craw-redhat-oss/wget/crawl/google-aoss/com/google/protobuf/protobuf-java/3.25.1/protobuf-java-3.25.1.jar",
+            "classcount": 761,
+            "md5": "addb4ee227a18af8dfc08f130a4e96aa",
+            "sha1": "5f6500f795153c2a7a06bc447e096880d4acc720",
+            "size": "1 MB",
+            "manifest": {
+                "Manifest-Version": "1.0",
+                "Automatic-Module-Name": "com.google.protobuf",
+                "Bnd-LastModified": "1715413893542",
+                "Build-Jdk": "11.0.21",
+                "Built-By": "root",
+                "Bundle-Description": "Core Protocol Buffers library. Protocol Buffers are a way of encoding structured data in an    efficient yet extensible format.",
+                "Bundle-DocURL": "https://developers.google.com/protocol-buffers/",
+                "Bundle-License": "https://opensource.org/licenses/BSD-3-Clause",
+                "Bundle-ManifestVersion": "2",
+                "Bundle-Name": "Protocol Buffers [Core]",
+                "Bundle-SymbolicName": "com.google.protobuf",
+                "Bundle-Version": "3.25.1",
+                "Created-By": "Apache Maven Bundle Plugin",
+                "Export-Package": "com.google.protobuf;version=\"3.25.1\"",
+                "Import-Package": "sun.misc;resolution:=optional,com.google.protobuf;version=\"[3.25,4)\"",
+                "Require-Capability": "osgi.ee;filter:=\"(&(osgi.ee=JavaSE)(version=1.7))\"",
+                "Tool": "Bnd-3.0.0.201509101326"
+            },
+            "services": {}
+        },
+        "jar2": {
+            "file": "~/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/protobuf/protobuf-java/3.25.1/protobuf-java-3.25.1.jar",
+            "classcount": 754,
+            "md5": "7dc81d3c2187ce5627d134a37df88cc0",
+            "sha1": "2933a5c3f022456d8842323fe0d7fb2d25a7e3c7",
+            "size": "1 MB",
+            "manifest": {
+                "Manifest-Version": "1.0",
+                "Created-By": "mergejars",
+                "Bnd-LastModified": "1700075063475",
+                "Bundle-Description": "Core Protocol Buffers library. Protocol Buffers are a way of encoding structured data in an efficient yet extensible format.",
+                "Bundle-DocURL": "https://developers.google.com/protocol-buffers/",
+                "Bundle-License": "https://opensource.org/licenses/BSD-3-Clause",
+                "Bundle-ManifestVersion": "2",
+                "Bundle-Name": "Protocol Buffers [Core]",
+                "Bundle-SymbolicName": "com.google.protobuf",
+                "Bundle-Version": "3.25.1",
+                "Export-Package": "com.google.protobuf;version=\"3.25.1\",com.google.protobuf.compiler;version=\"3.25.1\";uses:=\"com.google.protobuf\"",
+                "Import-Package": "com.google.protobuf;version=\"[3.25,4)\",sun.misc;resolution:=optional",
+                "Require-Capability": "osgi.ee;filter:=\"(&(osgi.ee=JavaSE)(version=1.8))\"",
+                "Tool": "Bnd-6.4.0.202211291949",
+                "Target-Label": "//java/core:lite_runtime_only"
+            },
+            "services": {}
+        },
+        "contentset-comparisons": [
+            {
+                "content-type": "sources",
+                "jar1.count": 0,
+                "jar2.count": 0,
+                "intersection": 0,
+                "union": 0,
+                "jar1-jar2": [],
+                "jar2-jar1": []
+            },
+            {
+                "content-type": "bytecode",
+                "jar1.count": 735,
+                "jar2.count": 735,
+                "intersection": 735,
+                "union": 735,
+                "jar1-jar2": [],
+                "jar2-jar1": []
+            },
+            {
+                "content-type": "metadata",
+                "jar1.count": 7,
+                "jar2.count": 2,
+                "intersection": 2,
+                "union": 7,
+                "jar1-jar2": [
+                    "META-INF/maven/com.google.protobuf/protobuf-java/pom.properties",
+                    "META-INF/maven/com.google.protobuf/protobuf-java/",
+                    "META-INF/maven/com.google.protobuf/protobuf-java/pom.xml",
+                    "META-INF/maven/com.google.protobuf/",
+                    "META-INF/maven/"
+                ],
+                "jar2-jar1": []
+            },
+            {
+                "content-type": "other",
+                "jar1.count": 19,
+                "jar2.count": 17,
+                "intersection": 17,
+                "union": 19,
+                "jar1-jar2": [
+                    "google/protobuf/compiler/",
+                    "google/protobuf/compiler/plugin.proto"
+                ],
+                "jar2-jar1": []
+            }
+        ],
+        "content-pairwise-comparisons": [{
+            "equivalence": {
+                "class": "io.github.bineq.equivalences.bytecode.JNormEquivalence2",
+                "name": "jnorm2"
+            },
+            "summary": {
+                "description": "comparison results of jar/folder content (pairwise comparison of content in both jars/folders)",
+                "equivalent": 723,
+                "non-equivalent": 12,
+                "errors": 0
+            },
+            "details": {
+                "non-equivalent": [
+                    {
+                        "class": "com/google/protobuf/TimestampProto.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/com/google/protobuf/protobuf-java/3.25.1/protobuf-java-3.25.1.jar/com.google.protobuf.TimestampProto.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/protobuf/protobuf-java/3.25.1/protobuf-java-3.25.1.jar/com.google.protobuf.TimestampProto.jimple",
+                            "transformed-class1": {
+                                "value": "public final class com.google.protobuf.TimestampProto extends java.lang.Object\n{\nstatic final com.go ..  [abbreviated, 3553 chars]",
+                                "sha1": "23b03e1151b2a69d7bfdf41ca95b296eba0a433d",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/com/google/protobuf/protobuf-java/3.25.1/protobuf-java-3.25.1.jar/com.google.protobuf.TimestampProto.jimple",
+                                "md5": "23c261d43ad12b7960d7f396fd98304c"
+                            },
+                            "transformed-class2": {
+                                "value": "public final class com.google.protobuf.TimestampProto extends java.lang.Object\n{\nstatic final com.go ..  [abbreviated, 3583 chars]",
+                                "sha1": "d52d231724d34f19169c40b2012afdd375180f78",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/protobuf/protobuf-java/3.25.1/protobuf-java-3.25.1.jar/com.google.protobuf.TimestampProto.jimple",
+                                "md5": "654c46bf0688d02c0a3b72225393ff97"
+                            }
+                        }
+                    },
+                    {
+                        "class": "com/google/protobuf/DurationProto.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/com/google/protobuf/protobuf-java/3.25.1/protobuf-java-3.25.1.jar/com.google.protobuf.DurationProto.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/protobuf/protobuf-java/3.25.1/protobuf-java-3.25.1.jar/com.google.protobuf.DurationProto.jimple",
+                            "transformed-class1": {
+                                "value": "public final class com.google.protobuf.DurationProto extends java.lang.Object\n{\nstatic final com.goo ..  [abbreviated, 3534 chars]",
+                                "sha1": "e437a727daff99c0a7f1b957342f8f6dacdee662",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/com/google/protobuf/protobuf-java/3.25.1/protobuf-java-3.25.1.jar/com.google.protobuf.DurationProto.jimple",
+                                "md5": "20834773612447ad076535523df2cbb7"
+                            },
+                            "transformed-class2": {
+                                "value": "public final class com.google.protobuf.DurationProto extends java.lang.Object\n{\nstatic final com.goo ..  [abbreviated, 3564 chars]",
+                                "sha1": "8ce11ce85b78cdf46867fd3c5720bf5a7a149dca",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/protobuf/protobuf-java/3.25.1/protobuf-java-3.25.1.jar/com.google.protobuf.DurationProto.jimple",
+                                "md5": "3a03500926bbd9cf90b2e85a1d4a9911"
+                            }
+                        }
+                    },
+                    {
+                        "class": "com/google/protobuf/SourceContextProto.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/com/google/protobuf/protobuf-java/3.25.1/protobuf-java-3.25.1.jar/com.google.protobuf.SourceContextProto.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/protobuf/protobuf-java/3.25.1/protobuf-java-3.25.1.jar/com.google.protobuf.SourceContextProto.jimple",
+                            "transformed-class1": {
+                                "value": "public final class com.google.protobuf.SourceContextProto extends java.lang.Object\n{\nstatic final co ..  [abbreviated, 3539 chars]",
+                                "sha1": "01b96b62716fa31958ce737414782b0102a292f4",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/com/google/protobuf/protobuf-java/3.25.1/protobuf-java-3.25.1.jar/com.google.protobuf.SourceContextProto.jimple",
+                                "md5": "e1bc37893470a5dc1b07567df735078b"
+                            },
+                            "transformed-class2": {
+                                "value": "public final class com.google.protobuf.SourceContextProto extends java.lang.Object\n{\nstatic final co ..  [abbreviated, 3553 chars]",
+                                "sha1": "f97dff29c59bf121f2f4855ffc7b2ae2c0252206",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/protobuf/protobuf-java/3.25.1/protobuf-java-3.25.1.jar/com.google.protobuf.SourceContextProto.jimple",
+                                "md5": "5dfefffdde25ef98add32f8f5b7e38d9"
+                            }
+                        }
+                    },
+                    {
+                        "class": "com/google/protobuf/TypeProto.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/com/google/protobuf/protobuf-java/3.25.1/protobuf-java-3.25.1.jar/com.google.protobuf.TypeProto.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/protobuf/protobuf-java/3.25.1/protobuf-java-3.25.1.jar/com.google.protobuf.TypeProto.jimple",
+                            "transformed-class1": {
+                                "value": "public final class com.google.protobuf.TypeProto extends java.lang.Object\n{\nstatic final com.google. ..  [abbreviated, 12507 chars]",
+                                "sha1": "eec37f2574ee07b7d941a91797db59b499fc727b",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/com/google/protobuf/protobuf-java/3.25.1/protobuf-java-3.25.1.jar/com.google.protobuf.TypeProto.jimple",
+                                "md5": "cffe5411be31a46af36617bb73e86b90"
+                            },
+                            "transformed-class2": {
+                                "value": "public final class com.google.protobuf.TypeProto extends java.lang.Object\n{\nstatic final com.google. ..  [abbreviated, 12892 chars]",
+                                "sha1": "8cc9622c5e356ad3509c213d34be620fb6d76859",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/protobuf/protobuf-java/3.25.1/protobuf-java-3.25.1.jar/com.google.protobuf.TypeProto.jimple",
+                                "md5": "5d17df5649bad4ccb53ffb54d60e4f19"
+                            }
+                        }
+                    },
+                    {
+                        "class": "com/google/protobuf/DescriptorProtos.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/com/google/protobuf/protobuf-java/3.25.1/protobuf-java-3.25.1.jar/com.google.protobuf.DescriptorProtos.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/protobuf/protobuf-java/3.25.1/protobuf-java-3.25.1.jar/com.google.protobuf.DescriptorProtos.jimple",
+                            "transformed-class1": {
+                                "value": "public final class com.google.protobuf.DescriptorProtos extends java.lang.Object\n{\nprivate static fi ..  [abbreviated, 69470 chars]",
+                                "sha1": "c14887a15e3dd2e8e7c0fb22c8b5cde10b366c25",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/com/google/protobuf/protobuf-java/3.25.1/protobuf-java-3.25.1.jar/com.google.protobuf.DescriptorProtos.jimple",
+                                "md5": "eead4d4988a70b33e552dc42c12c7600"
+                            },
+                            "transformed-class2": {
+                                "value": "public final class com.google.protobuf.DescriptorProtos extends java.lang.Object\n{\nprivate static fi ..  [abbreviated, 72158 chars]",
+                                "sha1": "856742d301577fa90a362c2d24e74d870d82ae5d",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/protobuf/protobuf-java/3.25.1/protobuf-java-3.25.1.jar/com.google.protobuf.DescriptorProtos.jimple",
+                                "md5": "871332ec36ecd74e1449fe656062dc80"
+                            }
+                        }
+                    },
+                    {
+                        "class": "com/google/protobuf/TextFormat$TextGenerator.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/com/google/protobuf/protobuf-java/3.25.1/protobuf-java-3.25.1.jar/com.google.protobuf.TextFormat$TextGenerator.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/protobuf/protobuf-java/3.25.1/protobuf-java-3.25.1.jar/com.google.protobuf.TextFormat$TextGenerator.jimple",
+                            "transformed-class1": {
+                                "value": "final class com.google.protobuf.TextFormat$TextGenerator extends java.lang.Object\n{\nprivate final ja ..  [abbreviated, 3845 chars]",
+                                "sha1": "b95cd8df91a41883680c0f9c0c46a2d2f474c6af",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/com/google/protobuf/protobuf-java/3.25.1/protobuf-java-3.25.1.jar/com.google.protobuf.TextFormat$TextGenerator.jimple",
+                                "md5": "43e149d91c1ba933cdd5cee350ae7d82"
+                            },
+                            "transformed-class2": {
+                                "value": "final class com.google.protobuf.TextFormat$TextGenerator extends java.lang.Object\n{\nprivate final ja ..  [abbreviated, 3824 chars]",
+                                "sha1": "75d92df9c418c2fbdc176a5d181aa89ad29d0d70",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/protobuf/protobuf-java/3.25.1/protobuf-java-3.25.1.jar/com.google.protobuf.TextFormat$TextGenerator.jimple",
+                                "md5": "05bfc675827ef744f25618ed747fc55c"
+                            }
+                        }
+                    },
+                    {
+                        "class": "com/google/protobuf/StructProto.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/com/google/protobuf/protobuf-java/3.25.1/protobuf-java-3.25.1.jar/com.google.protobuf.StructProto.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/protobuf/protobuf-java/3.25.1/protobuf-java-3.25.1.jar/com.google.protobuf.StructProto.jimple",
+                            "transformed-class1": {
+                                "value": "public final class com.google.protobuf.StructProto extends java.lang.Object\n{\nstatic final com.googl ..  [abbreviated, 8362 chars]",
+                                "sha1": "7f826d90d376e001ee15d342548d795635e04c81",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/com/google/protobuf/protobuf-java/3.25.1/protobuf-java-3.25.1.jar/com.google.protobuf.StructProto.jimple",
+                                "md5": "2908f93051f513593ad0a90ffc8ace89"
+                            },
+                            "transformed-class2": {
+                                "value": "public final class com.google.protobuf.StructProto extends java.lang.Object\n{\nstatic final com.googl ..  [abbreviated, 8490 chars]",
+                                "sha1": "ee7890ba59e1de66b9bdc3be57359ffb4369519b",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/protobuf/protobuf-java/3.25.1/protobuf-java-3.25.1.jar/com.google.protobuf.StructProto.jimple",
+                                "md5": "519956ff7025a0c99ae81f376d22ec3e"
+                            }
+                        }
+                    },
+                    {
+                        "class": "com/google/protobuf/AnyProto.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/com/google/protobuf/protobuf-java/3.25.1/protobuf-java-3.25.1.jar/com.google.protobuf.AnyProto.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/protobuf/protobuf-java/3.25.1/protobuf-java-3.25.1.jar/com.google.protobuf.AnyProto.jimple",
+                            "transformed-class1": {
+                                "value": "public final class com.google.protobuf.AnyProto extends java.lang.Object\n{\nstatic final com.google.p ..  [abbreviated, 3407 chars]",
+                                "sha1": "ea36060309ca295c78955a96ab452c957cf5fcc1",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/com/google/protobuf/protobuf-java/3.25.1/protobuf-java-3.25.1.jar/com.google.protobuf.AnyProto.jimple",
+                                "md5": "06e84e3fc6f3bd3b048ad8ee158509c4"
+                            },
+                            "transformed-class2": {
+                                "value": "public final class com.google.protobuf.AnyProto extends java.lang.Object\n{\nstatic final com.google.p ..  [abbreviated, 3437 chars]",
+                                "sha1": "5fa7cc7dc2501e590686a68e7745f89ace05d741",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/protobuf/protobuf-java/3.25.1/protobuf-java-3.25.1.jar/com.google.protobuf.AnyProto.jimple",
+                                "md5": "cd55eab6ea5f9c863b5789dc634b1011"
+                            }
+                        }
+                    },
+                    {
+                        "class": "com/google/protobuf/FieldMaskProto.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/com/google/protobuf/protobuf-java/3.25.1/protobuf-java-3.25.1.jar/com.google.protobuf.FieldMaskProto.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/protobuf/protobuf-java/3.25.1/protobuf-java-3.25.1.jar/com.google.protobuf.FieldMaskProto.jimple",
+                            "transformed-class1": {
+                                "value": "public final class com.google.protobuf.FieldMaskProto extends java.lang.Object\n{\nstatic final com.go ..  [abbreviated, 3478 chars]",
+                                "sha1": "da33f1055bb019f3c8a707d6d9dfa135b2568365",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/com/google/protobuf/protobuf-java/3.25.1/protobuf-java-3.25.1.jar/com.google.protobuf.FieldMaskProto.jimple",
+                                "md5": "734bc3e396d0ce9946a1ddc5cb8cb87c"
+                            },
+                            "transformed-class2": {
+                                "value": "public final class com.google.protobuf.FieldMaskProto extends java.lang.Object\n{\nstatic final com.go ..  [abbreviated, 3489 chars]",
+                                "sha1": "b38fd83145d05400c4330c96d7ccddd70c5d8969",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/protobuf/protobuf-java/3.25.1/protobuf-java-3.25.1.jar/com.google.protobuf.FieldMaskProto.jimple",
+                                "md5": "62998a84198ea3e581e5120918e5ee7a"
+                            }
+                        }
+                    },
+                    {
+                        "class": "com/google/protobuf/ApiProto.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/com/google/protobuf/protobuf-java/3.25.1/protobuf-java-3.25.1.jar/com.google.protobuf.ApiProto.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/protobuf/protobuf-java/3.25.1/protobuf-java-3.25.1.jar/com.google.protobuf.ApiProto.jimple",
+                            "transformed-class1": {
+                                "value": "public final class com.google.protobuf.ApiProto extends java.lang.Object\n{\nstatic final com.google.p ..  [abbreviated, 7802 chars]",
+                                "sha1": "63d309913bd556ea62e542e315b306b3832d3a6f",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/com/google/protobuf/protobuf-java/3.25.1/protobuf-java-3.25.1.jar/com.google.protobuf.ApiProto.jimple",
+                                "md5": "973c04c82f3035185bc1e07924dc0b3a"
+                            },
+                            "transformed-class2": {
+                                "value": "public final class com.google.protobuf.ApiProto extends java.lang.Object\n{\nstatic final com.google.p ..  [abbreviated, 8041 chars]",
+                                "sha1": "fe6ae15b10c5c9120b9add241231d2a2c04c19a8",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/protobuf/protobuf-java/3.25.1/protobuf-java-3.25.1.jar/com.google.protobuf.ApiProto.jimple",
+                                "md5": "a9adfa506124d24cf1d553b7deee9acc"
+                            }
+                        }
+                    },
+                    {
+                        "class": "com/google/protobuf/WrappersProto.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/com/google/protobuf/protobuf-java/3.25.1/protobuf-java-3.25.1.jar/com.google.protobuf.WrappersProto.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/protobuf/protobuf-java/3.25.1/protobuf-java-3.25.1.jar/com.google.protobuf.WrappersProto.jimple",
+                            "transformed-class1": {
+                                "value": "public final class com.google.protobuf.WrappersProto extends java.lang.Object\n{\nstatic final com.goo ..  [abbreviated, 14582 chars]",
+                                "sha1": "9fe7dffa85e0e872a306c4f747cf62c0e67ba75f",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/com/google/protobuf/protobuf-java/3.25.1/protobuf-java-3.25.1.jar/com.google.protobuf.WrappersProto.jimple",
+                                "md5": "1572c19e389b82d4f0d1c9272697f7c6"
+                            },
+                            "transformed-class2": {
+                                "value": "public final class com.google.protobuf.WrappersProto extends java.lang.Object\n{\nstatic final com.goo ..  [abbreviated, 14685 chars]",
+                                "sha1": "933656ed028dd132af85996a9fc7c21442ec1499",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/protobuf/protobuf-java/3.25.1/protobuf-java-3.25.1.jar/com.google.protobuf.WrappersProto.jimple",
+                                "md5": "16af5959e0488802062757fbc5f8be85"
+                            }
+                        }
+                    },
+                    {
+                        "class": "com/google/protobuf/compiler/PluginProtos.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/com/google/protobuf/protobuf-java/3.25.1/protobuf-java-3.25.1.jar/com.google.protobuf.compiler.PluginProtos.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/protobuf/protobuf-java/3.25.1/protobuf-java-3.25.1.jar/com.google.protobuf.compiler.PluginProtos.jimple",
+                            "transformed-class1": {
+                                "value": "public final class com.google.protobuf.compiler.PluginProtos extends java.lang.Object\n{\nprivate stat ..  [abbreviated, 9825 chars]",
+                                "sha1": "0cde896689222d555c176d11742ecb75a438aec9",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/com/google/protobuf/protobuf-java/3.25.1/protobuf-java-3.25.1.jar/com.google.protobuf.compiler.PluginProtos.jimple",
+                                "md5": "1baa607995d677ccd360caa868ce3840"
+                            },
+                            "transformed-class2": {
+                                "value": "public final class com.google.protobuf.compiler.PluginProtos extends java.lang.Object\n{\nprivate stat ..  [abbreviated, 10099 chars]",
+                                "sha1": "65e1235c88eecd83266d4638a62d2dfd21adfd66",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/protobuf/protobuf-java/3.25.1/protobuf-java-3.25.1.jar/com.google.protobuf.compiler.PluginProtos.jimple",
+                                "md5": "d95742d0f9555cf8d858f06b9c800048"
+                            }
+                        }
+                    }
+                ],
+                "errors": []
+            }
+        }]
+    }

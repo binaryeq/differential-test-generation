@@ -1,0 +1,86 @@
+Node type Usage: hdfs dfsadmin [-setBalancerBandwidth <bandwidth in bytes per second>] does not support reconfiguration.
+Node type Exception encountered: does not support reconfiguration.
+Usage: hdfs dfsadmin
+Note: Administrative commands can only be run as the HDFS superuser.
+	[-report [-live] [-dead] [-decommissioning] [-enteringmaintenance] [-inmaintenance] [-slownodes]]
+	[-safemode <enter | leave | get | wait | forceExit>]
+	[-saveNamespace [-beforeShutdown]]
+	[-rollEdits]
+	[-restoreFailedStorage true|false|check]
+	[-refreshNodes]
+	[-setQuota <quota> <dirname>...<dirname>]
+	[-clrQuota <dirname>...<dirname>]
+	[-setSpaceQuota <quota> [-storageType <storagetype>] <dirname>...<dirname>]
+	[-clrSpaceQuota [-storageType <storagetype>] <dirname>...<dirname>]
+	[-finalizeUpgrade]
+	[-rollingUpgrade [<query|prepare|finalize>]]
+	[-upgrade <query | finalize>]
+	[-refreshServiceAcl]
+	[-refreshUserToGroupsMappings]
+	[-refreshSuperUserGroupsConfiguration]
+	[-refreshCallQueue]
+	[-refresh <host:ipc_port> <key> [arg1..argn]
+	[-reconfig <namenode|datanode> <host:ipc_port|livenodes> <start|status|properties>]
+	[-printTopology]
+	[-refreshNamenodes datanode_host:ipc_port]
+	[-getVolumeReport datanode_host:ipc_port]
+	[-deleteBlockPool datanode_host:ipc_port blockpoolId [force]]
+	[-setBalancerBandwidth <bandwidth in bytes per second>]
+	[-getBalancerBandwidth <datanode_host:ipc_port>]
+	[-fetchImage <local directory>]
+	[-allowSnapshot <snapshotDir>]
+	[-disallowSnapshot <snapshotDir>]
+	[-shutdownDatanode <datanode_host:ipc_port> [upgrade]]
+	[-evictWriters <datanode_host:ipc_port>]
+	[-getDatanodeInfo <datanode_host:ipc_port>]
+	[-metasave filename]
+	[-triggerBlockReport [-incremental] <datanode_host:ipc_port> [-namenode <namenode_host:ipc_port>]]
+	[-listOpenFiles [-blockingDecommission] [-path <path>]]
+	[-help [cmd]]
+
+Generic options supported are:
+-conf <configuration file>        specify an application configuration file
+-D <property=value>               define a value for a given property
+-fs <file:///|hdfs://namenode:port> specify default filesystem URL to use, overrides 'fs.defaultFS' property from configurations.
+-jt <local|resourcemanager:port>  specify a ResourceManager
+-files <file1,...>                specify a comma-separated list of files to be copied to the map reduce cluster
+-libjars <jar1,...>               specify a comma-separated list of jar files to be included in the classpath
+-archives <archive1,...>          specify a comma-separated list of archives to be unarchived on the compute machines
+
+The general command line syntax is:
+command [genericOptions] [commandOptions]
+
+Usage: hdfs dfsadmin [-safemode enter | leave | get | wait | forceExit]
+Usage: hdfs dfsadmin [-safemode enter | leave | get | wait | forceExit]
+You must specify a host:port pair.
+Usage: hdfs dfsadmin [-safemode enter | leave | get | wait | forceExit]
+Usage: hdfs dfsadmin [-safemode enter | leave | get | wait | forceExit]
+NumberFormatException: For input string: "finaliz"
+Usage: hdfs dfsadmin [-setBalancerBandwidth <bandwidth in bytes per second>]
+Node type livenodes does not support reconfiguration.
+Usage: hdfs dfsadmin [-getDatanodeInfo <datanode_host:ipc_port>]
+Usage: hdfs dfsadmin [-triggerBlockReport [-incremental] <datanode_host:ipc_port> [-namenode <namenode_host:ipc_port>]]
+Usage: hdfs dfsadmin [-safemode enter | leave | get | wait | forceExit]
+Node type null does not support reconfiguration.
+Usage: hdfs dfsadmin [-getBalancerBandwidth <datanode_host:ipc_port>]
+Usage: hdfs dfsadmin [-fetchImage <local directory>]
+Usage: hdfs dfsadmin [-shutdownDatanode <datanode_host:ipc_port> [upgrade]]
+Node type Usage: hdfs dfsadmin [-setBalancerBandwidth <bandwidth in bytes per second>] does not support reconfiguration.
+Usage: hdfs dfsadmin [-upgrade query | finalize]
+Unknown operation: null
+Only datanode type supports reconfiguration in bulk.
+Usage: hdfs dfsadmin [-allowSnapshot <snapshotDir>]
+Can't understand arguments: Refresh service acl failed for  org.bouncycastle.asn1.x500.style.BCStyle Refresh service acl failed for  Refresh service acl failed for 
+Usage: hdfs dfsadmin [-disallowSnapshot <snapshotDir>]
+restoreFailedStorage valid args are true|false|check
+Usage: hdfs dfsadmin [-refreshServiceAcl]
+Usage: hdfs dfsadmin [-refresh <hostname:ipc_port> <resource_identifier> [arg1..argn]
+Usage: hdfs dfsadmin [-printTopology]
+Usage: hdfs dfsadmin [-refreshNamenodes datanode-host:ipc_port]
+Usage: hdfs dfsadmin [-report] [-live] [-dead] [-decommissioning] [-enteringmaintenance] [-inmaintenance] [-slownodes]
+Usage: hdfs dfsadmin [-allowSnapshot <snapshotDir>]
+Usage: hdfs dfsadmin [-disallowSnapshot <snapshotDir>]
+Usage: hdfs dfsadmin [-refreshNodes]
+Usage: hdfs dfsadmin [-setBalancerBandwidth <bandwidth in bytes per second>]
+18.38user 0.83system 0:07.64elapsed 251%CPU (0avgtext+0avgdata 765588maxresident)k
+0inputs+2080outputs (8major+197503minor)pagefaults 0swaps

@@ -1,0 +1,155 @@
+17,18c17,18
+< boolean v12, v25, v28, v4, v41;
+< java.lang.Exception v15;
+---
+> boolean v18, v31, v34, v4, v50;
+> java.lang.Exception v21;
+20,24c20,24
+< int v11, v24, v27, v3;
+< io.undertow.connector.PooledByteBuffer v17, v19, v34, v36, v8;
+< io.undertow.servlet.spec.UpgradeServletInputStream v10, v13, v16, v18, v2, v20, v21, v23, v26, v29, v30, v33, v35, v37, v38, v40, v5, v6, v7, v9;
+< java.io.IOException v32;
+< javax.servlet.ReadListener v14, v22, v31, v39;
+---
+> int v14, v15, v17, v3, v30, v33, v37, v38, v7, v8;
+> io.undertow.connector.PooledByteBuffer v11, v23, v25, v43, v45;
+> io.undertow.servlet.spec.UpgradeServletInputStream v10, v12, v13, v16, v19, v2, v22, v24, v26, v27, v29, v32, v35, v36, v39, v42, v44, v46, v47, v49, v5, v6, v9;
+> java.io.IOException v41;
+> javax.servlet.ReadListener v20, v28, v40, v48;
+34,35d33
+< v5.<io.undertow.servlet.spec.UpgradeServletInputStream: int state> = 1;
+< label02:
+37,40c35,38
+< specialinvoke v6.<io.undertow.servlet.spec.UpgradeServletInputStream: void readIntoBufferNonBlocking()>();
+< v7 = v0.<io.undertow.servlet.spec.UpgradeServletInputStream$ServletInputStreamChannelListener: io.undertow.servlet.spec.UpgradeServletInputStream this$0>;
+< v8 = v7.<io.undertow.servlet.spec.UpgradeServletInputStream: io.undertow.connector.PooledByteBuffer pooled>;
+< if v8 == null goto label06;
+---
+> v7 = v6.<io.undertow.servlet.spec.UpgradeServletInputStream: int state>;
+> v8 = v7 | 1;
+> v5.<io.undertow.servlet.spec.UpgradeServletInputStream: int state> = v8;
+> label02:
+42c40
+< v9.<io.undertow.servlet.spec.UpgradeServletInputStream: int state> = 1;
+---
+> specialinvoke v9.<io.undertow.servlet.spec.UpgradeServletInputStream: void readIntoBufferNonBlocking()>();
+44,46c42,44
+< v11 = v10.<io.undertow.servlet.spec.UpgradeServletInputStream: int state>;
+< v12 = staticinvoke <org.xnio.Bits: boolean anyAreSet(int,int)>(v11, 4);
+< if v12 != 0 goto label06;
+---
+> v11 = v10.<io.undertow.servlet.spec.UpgradeServletInputStream: io.undertow.connector.PooledByteBuffer pooled>;
+> if v11 == null goto label06;
+> v12 = v0.<io.undertow.servlet.spec.UpgradeServletInputStream$ServletInputStreamChannelListener: io.undertow.servlet.spec.UpgradeServletInputStream this$0>;
+48,49c46,55
+< v14 = v13.<io.undertow.servlet.spec.UpgradeServletInputStream: javax.servlet.ReadListener listener>;
+< interfaceinvoke v14.<javax.servlet.ReadListener: void onDataAvailable()>();
+---
+> v14 = v13.<io.undertow.servlet.spec.UpgradeServletInputStream: int state>;
+> v15 = v14 | 1;
+> v12.<io.undertow.servlet.spec.UpgradeServletInputStream: int state> = v15;
+> v16 = v0.<io.undertow.servlet.spec.UpgradeServletInputStream$ServletInputStreamChannelListener: io.undertow.servlet.spec.UpgradeServletInputStream this$0>;
+> v17 = v16.<io.undertow.servlet.spec.UpgradeServletInputStream: int state>;
+> v18 = staticinvoke <org.xnio.Bits: boolean anyAreSet(int,int)>(v17, 4);
+> if v18 != 0 goto label06;
+> v19 = v0.<io.undertow.servlet.spec.UpgradeServletInputStream$ServletInputStreamChannelListener: io.undertow.servlet.spec.UpgradeServletInputStream this$0>;
+> v20 = v19.<io.undertow.servlet.spec.UpgradeServletInputStream: javax.servlet.ReadListener listener>;
+> interfaceinvoke v20.<javax.servlet.ReadListener: void onDataAvailable()>();
+53,61c59,67
+< v15 := @caughtexception;
+< v16 = v0.<io.undertow.servlet.spec.UpgradeServletInputStream$ServletInputStreamChannelListener: io.undertow.servlet.spec.UpgradeServletInputStream this$0>;
+< v17 = v16.<io.undertow.servlet.spec.UpgradeServletInputStream: io.undertow.connector.PooledByteBuffer pooled>;
+< if v17 == null goto label05;
+< v18 = v0.<io.undertow.servlet.spec.UpgradeServletInputStream$ServletInputStreamChannelListener: io.undertow.servlet.spec.UpgradeServletInputStream this$0>;
+< v19 = v18.<io.undertow.servlet.spec.UpgradeServletInputStream: io.undertow.connector.PooledByteBuffer pooled>;
+< interfaceinvoke v19.<io.undertow.connector.PooledByteBuffer: void close()>();
+< v20 = v0.<io.undertow.servlet.spec.UpgradeServletInputStream$ServletInputStreamChannelListener: io.undertow.servlet.spec.UpgradeServletInputStream this$0>;
+< v20.<io.undertow.servlet.spec.UpgradeServletInputStream: io.undertow.connector.PooledByteBuffer pooled> = null;
+---
+> v21 := @caughtexception;
+> v22 = v0.<io.undertow.servlet.spec.UpgradeServletInputStream$ServletInputStreamChannelListener: io.undertow.servlet.spec.UpgradeServletInputStream this$0>;
+> v23 = v22.<io.undertow.servlet.spec.UpgradeServletInputStream: io.undertow.connector.PooledByteBuffer pooled>;
+> if v23 == null goto label05;
+> v24 = v0.<io.undertow.servlet.spec.UpgradeServletInputStream$ServletInputStreamChannelListener: io.undertow.servlet.spec.UpgradeServletInputStream this$0>;
+> v25 = v24.<io.undertow.servlet.spec.UpgradeServletInputStream: io.undertow.connector.PooledByteBuffer pooled>;
+> interfaceinvoke v25.<io.undertow.connector.PooledByteBuffer: void close()>();
+> v26 = v0.<io.undertow.servlet.spec.UpgradeServletInputStream$ServletInputStreamChannelListener: io.undertow.servlet.spec.UpgradeServletInputStream this$0>;
+> v26.<io.undertow.servlet.spec.UpgradeServletInputStream: io.undertow.connector.PooledByteBuffer pooled> = null;
+63,65c69,71
+< v21 = v0.<io.undertow.servlet.spec.UpgradeServletInputStream$ServletInputStreamChannelListener: io.undertow.servlet.spec.UpgradeServletInputStream this$0>;
+< v22 = v21.<io.undertow.servlet.spec.UpgradeServletInputStream: javax.servlet.ReadListener listener>;
+< interfaceinvoke v22.<javax.servlet.ReadListener: void onError(java.lang.Throwable)>(v15);
+---
+> v27 = v0.<io.undertow.servlet.spec.UpgradeServletInputStream$ServletInputStreamChannelListener: io.undertow.servlet.spec.UpgradeServletInputStream this$0>;
+> v28 = v27.<io.undertow.servlet.spec.UpgradeServletInputStream: javax.servlet.ReadListener listener>;
+> interfaceinvoke v28.<javax.servlet.ReadListener: void onError(java.lang.Throwable)>(v21);
+68,76d73
+< v23 = v0.<io.undertow.servlet.spec.UpgradeServletInputStream$ServletInputStreamChannelListener: io.undertow.servlet.spec.UpgradeServletInputStream this$0>;
+< v24 = v23.<io.undertow.servlet.spec.UpgradeServletInputStream: int state>;
+< v25 = staticinvoke <org.xnio.Bits: boolean anyAreSet(int,int)>(v24, 4);
+< if v25 == 0 goto label11;
+< v26 = v0.<io.undertow.servlet.spec.UpgradeServletInputStream$ServletInputStreamChannelListener: io.undertow.servlet.spec.UpgradeServletInputStream this$0>;
+< v27 = v26.<io.undertow.servlet.spec.UpgradeServletInputStream: int state>;
+< v28 = staticinvoke <org.xnio.Bits: boolean anyAreClear(int,int)>(v27, 8);
+< if v28 == 0 goto label12;
+< label07:
+78c75,87
+< v29.<io.undertow.servlet.spec.UpgradeServletInputStream: int state> = 8;
+---
+> v30 = v29.<io.undertow.servlet.spec.UpgradeServletInputStream: int state>;
+> v31 = staticinvoke <org.xnio.Bits: boolean anyAreSet(int,int)>(v30, 4);
+> if v31 == 0 goto label11;
+> v32 = v0.<io.undertow.servlet.spec.UpgradeServletInputStream$ServletInputStreamChannelListener: io.undertow.servlet.spec.UpgradeServletInputStream this$0>;
+> v33 = v32.<io.undertow.servlet.spec.UpgradeServletInputStream: int state>;
+> v34 = staticinvoke <org.xnio.Bits: boolean anyAreClear(int,int)>(v33, 8);
+> if v34 == 0 goto label12;
+> label07:
+> v35 = v0.<io.undertow.servlet.spec.UpgradeServletInputStream$ServletInputStreamChannelListener: io.undertow.servlet.spec.UpgradeServletInputStream this$0>;
+> v36 = v0.<io.undertow.servlet.spec.UpgradeServletInputStream$ServletInputStreamChannelListener: io.undertow.servlet.spec.UpgradeServletInputStream this$0>;
+> v37 = v36.<io.undertow.servlet.spec.UpgradeServletInputStream: int state>;
+> v38 = v37 | 8;
+> v35.<io.undertow.servlet.spec.UpgradeServletInputStream: int state> = v38;
+80,82c89,91
+< v30 = v0.<io.undertow.servlet.spec.UpgradeServletInputStream$ServletInputStreamChannelListener: io.undertow.servlet.spec.UpgradeServletInputStream this$0>;
+< v31 = v30.<io.undertow.servlet.spec.UpgradeServletInputStream: javax.servlet.ReadListener listener>;
+< interfaceinvoke v31.<javax.servlet.ReadListener: void onAllDataRead()>();
+---
+> v39 = v0.<io.undertow.servlet.spec.UpgradeServletInputStream$ServletInputStreamChannelListener: io.undertow.servlet.spec.UpgradeServletInputStream this$0>;
+> v40 = v39.<io.undertow.servlet.spec.UpgradeServletInputStream: javax.servlet.ReadListener listener>;
+> interfaceinvoke v40.<javax.servlet.ReadListener: void onAllDataRead()>();
+86,94c95,103
+< v32 := @caughtexception;
+< v33 = v0.<io.undertow.servlet.spec.UpgradeServletInputStream$ServletInputStreamChannelListener: io.undertow.servlet.spec.UpgradeServletInputStream this$0>;
+< v34 = v33.<io.undertow.servlet.spec.UpgradeServletInputStream: io.undertow.connector.PooledByteBuffer pooled>;
+< if v34 == null goto label10;
+< v35 = v0.<io.undertow.servlet.spec.UpgradeServletInputStream$ServletInputStreamChannelListener: io.undertow.servlet.spec.UpgradeServletInputStream this$0>;
+< v36 = v35.<io.undertow.servlet.spec.UpgradeServletInputStream: io.undertow.connector.PooledByteBuffer pooled>;
+< interfaceinvoke v36.<io.undertow.connector.PooledByteBuffer: void close()>();
+< v37 = v0.<io.undertow.servlet.spec.UpgradeServletInputStream$ServletInputStreamChannelListener: io.undertow.servlet.spec.UpgradeServletInputStream this$0>;
+< v37.<io.undertow.servlet.spec.UpgradeServletInputStream: io.undertow.connector.PooledByteBuffer pooled> = null;
+---
+> v41 := @caughtexception;
+> v42 = v0.<io.undertow.servlet.spec.UpgradeServletInputStream$ServletInputStreamChannelListener: io.undertow.servlet.spec.UpgradeServletInputStream this$0>;
+> v43 = v42.<io.undertow.servlet.spec.UpgradeServletInputStream: io.undertow.connector.PooledByteBuffer pooled>;
+> if v43 == null goto label10;
+> v44 = v0.<io.undertow.servlet.spec.UpgradeServletInputStream$ServletInputStreamChannelListener: io.undertow.servlet.spec.UpgradeServletInputStream this$0>;
+> v45 = v44.<io.undertow.servlet.spec.UpgradeServletInputStream: io.undertow.connector.PooledByteBuffer pooled>;
+> interfaceinvoke v45.<io.undertow.connector.PooledByteBuffer: void close()>();
+> v46 = v0.<io.undertow.servlet.spec.UpgradeServletInputStream$ServletInputStreamChannelListener: io.undertow.servlet.spec.UpgradeServletInputStream this$0>;
+> v46.<io.undertow.servlet.spec.UpgradeServletInputStream: io.undertow.connector.PooledByteBuffer pooled> = null;
+96,98c105,107
+< v38 = v0.<io.undertow.servlet.spec.UpgradeServletInputStream$ServletInputStreamChannelListener: io.undertow.servlet.spec.UpgradeServletInputStream this$0>;
+< v39 = v38.<io.undertow.servlet.spec.UpgradeServletInputStream: javax.servlet.ReadListener listener>;
+< interfaceinvoke v39.<javax.servlet.ReadListener: void onError(java.lang.Throwable)>(v32);
+---
+> v47 = v0.<io.undertow.servlet.spec.UpgradeServletInputStream$ServletInputStreamChannelListener: io.undertow.servlet.spec.UpgradeServletInputStream this$0>;
+> v48 = v47.<io.undertow.servlet.spec.UpgradeServletInputStream: javax.servlet.ReadListener listener>;
+> interfaceinvoke v48.<javax.servlet.ReadListener: void onError(java.lang.Throwable)>(v41);
+102,104c111,113
+< v40 = v0.<io.undertow.servlet.spec.UpgradeServletInputStream$ServletInputStreamChannelListener: io.undertow.servlet.spec.UpgradeServletInputStream this$0>;
+< v41 = virtualinvoke v40.<io.undertow.servlet.spec.UpgradeServletInputStream: boolean isReady()>();
+< if v41 == 0 goto label12;
+---
+> v49 = v0.<io.undertow.servlet.spec.UpgradeServletInputStream$ServletInputStreamChannelListener: io.undertow.servlet.spec.UpgradeServletInputStream this$0>;
+> v50 = virtualinvoke v49.<io.undertow.servlet.spec.UpgradeServletInputStream: boolean isReady()>();
+> if v50 == 0 goto label12;

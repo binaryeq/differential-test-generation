@@ -1,0 +1,82 @@
+366c366
+< java.lang.Throwable v10, v3, v8;
+---
+> java.lang.Throwable v15, v3, v8;
+369,371c369,371
+< org.jboss.netty.logging.InternalLogger v11;
+< java.nio.channels.Selector v13, v14, v2, v9;
+< java.lang.AssertionError v16;
+---
+> org.jboss.netty.logging.InternalLogger v16;
+> java.nio.channels.Selector v10, v11, v14, v2;
+> java.lang.AssertionError v13;
+373c373
+< boolean v12, v15;
+---
+> boolean v12, v9;
+393a394
+> goto label07;
+395,396d395
+< goto label11;
+< label06:
+397a397,399
+> goto label10;
+> label06:
+> throw v8;
+399,400c401,407
+< v9 = v0.<org.jboss.netty.channel.socket.nio.AbstractNioSelector: java.nio.channels.Selector selector>;
+< virtualinvoke v9.<java.nio.channels.Selector: void close()>();
+---
+> v9 = <org.jboss.netty.channel.socket.nio.AbstractNioSelector: boolean $assertionsDisabled>;
+> if v9 != 0 goto label09;
+> v10 = v0.<org.jboss.netty.channel.socket.nio.AbstractNioSelector: java.nio.channels.Selector selector>;
+> if v10 == null goto label08;
+> v11 = v0.<org.jboss.netty.channel.socket.nio.AbstractNioSelector: java.nio.channels.Selector selector>;
+> v12 = virtualinvoke v11.<java.nio.channels.Selector: boolean isOpen()>();
+> if v12 != 0 goto label09;
+402c409,411
+< goto label10;
+---
+> v13 = new java.lang.AssertionError;
+> specialinvoke v13.<java.lang.AssertionError: void <init>()>();
+> throw v13;
+404,406c413
+< v10 := @caughtexception;
+< v11 = <org.jboss.netty.channel.socket.nio.AbstractNioSelector: org.jboss.netty.logging.InternalLogger logger>;
+< interfaceinvoke v11.<org.jboss.netty.logging.InternalLogger: void warn(java.lang.String,java.lang.Throwable)>("Failed to close a selector.", v10);
+---
+> return;
+408,414d414
+< v0.<org.jboss.netty.channel.socket.nio.AbstractNioSelector: java.nio.channels.Selector selector> = null;
+< throw v8;
+< label11:
+< v12 = <org.jboss.netty.channel.socket.nio.AbstractNioSelector: boolean $assertionsDisabled>;
+< if v12 != 0 goto label13;
+< v13 = v0.<org.jboss.netty.channel.socket.nio.AbstractNioSelector: java.nio.channels.Selector selector>;
+< if v13 == null goto label12;
+416,417c416,418
+< v15 = virtualinvoke v14.<java.nio.channels.Selector: boolean isOpen()>();
+< if v15 != 0 goto label13;
+---
+> virtualinvoke v14.<java.nio.channels.Selector: void close()>();
+> label11:
+> goto label13;
+419,421c420,422
+< v16 = new java.lang.AssertionError;
+< specialinvoke v16.<java.lang.AssertionError: void <init>()>();
+< throw v16;
+---
+> v15 := @caughtexception;
+> v16 = <org.jboss.netty.channel.socket.nio.AbstractNioSelector: org.jboss.netty.logging.InternalLogger logger>;
+> interfaceinvoke v16.<org.jboss.netty.logging.InternalLogger: void warn(java.lang.String,java.lang.Throwable)>("Failed to close a selector.", v15);
+423c424,425
+< return;
+---
+> v0.<org.jboss.netty.channel.socket.nio.AbstractNioSelector: java.nio.channels.Selector selector> = null;
+> goto label06;
+425,426c427,428
+< catch java.lang.Throwable from label04 to label05 with label06;
+< catch java.lang.Throwable from label07 to label08 with label09;
+---
+> catch java.lang.Throwable from label04 to label05 with label05;
+> catch java.lang.Throwable from label10 to label11 with label12;

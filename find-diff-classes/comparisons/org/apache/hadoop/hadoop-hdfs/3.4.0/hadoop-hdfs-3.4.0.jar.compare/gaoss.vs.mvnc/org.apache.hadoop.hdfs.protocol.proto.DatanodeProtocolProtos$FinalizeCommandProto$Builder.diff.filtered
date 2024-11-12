@@ -1,0 +1,15 @@
+95,97d94
+< byte v3;
+< int v2, v4;
+< java.lang.Object v5;
+98a96,97
+> int v2, v4, v6, v7;
+> java.lang.Object v5;
+99a99
+> boolean v3;
+110c110,112
+< v1.<org.apache.hadoop.hdfs.protocol.proto.DatanodeProtocolProtos$FinalizeCommandProto: int bitField0_> = v3;
+---
+> v6 = v1.<org.apache.hadoop.hdfs.protocol.proto.DatanodeProtocolProtos$FinalizeCommandProto: int bitField0_>;
+> v7 = v6 | v3;
+> v1.<org.apache.hadoop.hdfs.protocol.proto.DatanodeProtocolProtos$FinalizeCommandProto: int bitField0_> = v7;

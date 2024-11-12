@@ -1,0 +1,184 @@
+142c142
+< java.lang.Throwable v15, v16;
+---
+> java.lang.Throwable v16, v17;
+144,145c144,145
+< org.jboss.netty.util.ThreadNameDeterminer v14;
+< java.net.ServerSocket v5;
+---
+> org.jboss.netty.util.ThreadNameDeterminer v15;
+> java.net.ServerSocket v6;
+148,150c148,150
+< int v7;
+< java.lang.String v13;
+< boolean v4;
+---
+> int v8;
+> java.lang.String v14;
+> boolean v4, v5;
+152,157c152,157
+< java.util.concurrent.Executor v10;
+< org.jboss.netty.channel.socket.oio.OioServerSocketPipelineSink$Boss v12;
+< org.jboss.netty.channel.socket.ServerSocketChannelConfig v6;
+< java.net.InetSocketAddress v8;
+< org.jboss.netty.util.ThreadRenamingRunnable v11;
+< org.jboss.netty.channel.ChannelFactory v9;
+---
+> java.util.concurrent.Executor v11;
+> org.jboss.netty.channel.socket.oio.OioServerSocketPipelineSink$Boss v13;
+> org.jboss.netty.channel.socket.ServerSocketChannelConfig v7;
+> java.net.InetSocketAddress v9;
+> org.jboss.netty.util.ThreadRenamingRunnable v12;
+> org.jboss.netty.channel.ChannelFactory v10;
+162a163
+> v5 = 0;
+164,167c165,168
+< v5 = v1.<org.jboss.netty.channel.socket.oio.OioServerSocketChannel: java.net.ServerSocket socket>;
+< v6 = virtualinvoke v1.<org.jboss.netty.channel.socket.oio.OioServerSocketChannel: org.jboss.netty.channel.socket.ServerSocketChannelConfig getConfig()>();
+< v7 = interfaceinvoke v6.<org.jboss.netty.channel.socket.ServerSocketChannelConfig: int getBacklog()>();
+< virtualinvoke v5.<java.net.ServerSocket: void bind(java.net.SocketAddress,int)>(v3, v7);
+---
+> v6 = v1.<org.jboss.netty.channel.socket.oio.OioServerSocketChannel: java.net.ServerSocket socket>;
+> v7 = virtualinvoke v1.<org.jboss.netty.channel.socket.oio.OioServerSocketChannel: org.jboss.netty.channel.socket.ServerSocketChannelConfig getConfig()>();
+> v8 = interfaceinvoke v7.<org.jboss.netty.channel.socket.ServerSocketChannelConfig: int getBacklog()>();
+> virtualinvoke v6.<java.net.ServerSocket: void bind(java.net.SocketAddress,int)>(v3, v8);
+170,180c171,182
+< v8 = virtualinvoke v1.<org.jboss.netty.channel.socket.oio.OioServerSocketChannel: java.net.InetSocketAddress getLocalAddress()>();
+< staticinvoke <org.jboss.netty.channel.Channels: void fireChannelBound(org.jboss.netty.channel.Channel,java.net.SocketAddress)>(v1, v8);
+< v9 = virtualinvoke v1.<org.jboss.netty.channel.socket.oio.OioServerSocketChannel: org.jboss.netty.channel.ChannelFactory getFactory()>();
+< v10 = v9.<org.jboss.netty.channel.socket.oio.OioServerSocketChannelFactory: java.util.concurrent.Executor bossExecutor>;
+< v11 = new org.jboss.netty.util.ThreadRenamingRunnable;
+< v12 = new org.jboss.netty.channel.socket.oio.OioServerSocketPipelineSink$Boss;
+< specialinvoke v12.<org.jboss.netty.channel.socket.oio.OioServerSocketPipelineSink$Boss: void <init>(org.jboss.netty.channel.socket.oio.OioServerSocketPipelineSink,org.jboss.netty.channel.socket.oio.OioServerSocketChannel)>(v0, v1);
+< v13 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (org.jboss.netty.channel.socket.oio.OioServerSocketChannel)>(v1) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Old I/O server boss (\u0001)");
+< v14 = v0.<org.jboss.netty.channel.socket.oio.OioServerSocketPipelineSink: org.jboss.netty.util.ThreadNameDeterminer determiner>;
+< specialinvoke v11.<org.jboss.netty.util.ThreadRenamingRunnable: void <init>(java.lang.Runnable,java.lang.String,org.jboss.netty.util.ThreadNameDeterminer)>(v12, v13, v14);
+< staticinvoke <org.jboss.netty.util.internal.DeadLockProofWorker: void start(java.util.concurrent.Executor,java.lang.Runnable)>(v10, v11);
+---
+> v9 = virtualinvoke v1.<org.jboss.netty.channel.socket.oio.OioServerSocketChannel: java.net.InetSocketAddress getLocalAddress()>();
+> staticinvoke <org.jboss.netty.channel.Channels: void fireChannelBound(org.jboss.netty.channel.Channel,java.net.SocketAddress)>(v1, v9);
+> v10 = virtualinvoke v1.<org.jboss.netty.channel.socket.oio.OioServerSocketChannel: org.jboss.netty.channel.ChannelFactory getFactory()>();
+> v11 = v10.<org.jboss.netty.channel.socket.oio.OioServerSocketChannelFactory: java.util.concurrent.Executor bossExecutor>;
+> v12 = new org.jboss.netty.util.ThreadRenamingRunnable;
+> v13 = new org.jboss.netty.channel.socket.oio.OioServerSocketPipelineSink$Boss;
+> specialinvoke v13.<org.jboss.netty.channel.socket.oio.OioServerSocketPipelineSink$Boss: void <init>(org.jboss.netty.channel.socket.oio.OioServerSocketPipelineSink,org.jboss.netty.channel.socket.oio.OioServerSocketChannel)>(v0, v1);
+> v14 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (org.jboss.netty.channel.socket.oio.OioServerSocketChannel)>(v1) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Old I/O server boss (\u0001)");
+> v15 = v0.<org.jboss.netty.channel.socket.oio.OioServerSocketPipelineSink: org.jboss.netty.util.ThreadNameDeterminer determiner>;
+> specialinvoke v12.<org.jboss.netty.util.ThreadRenamingRunnable: void <init>(java.lang.Runnable,java.lang.String,org.jboss.netty.util.ThreadNameDeterminer)>(v13, v14, v15);
+> staticinvoke <org.jboss.netty.util.internal.DeadLockProofWorker: void start(java.util.concurrent.Executor,java.lang.Runnable)>(v11, v12);
+> v5 = 1;
+182c184
+< goto label7;
+---
+> goto label6;
+184,189c186,188
+< v15 := @caughtexception;
+< interfaceinvoke v2.<org.jboss.netty.channel.ChannelFuture: boolean setFailure(java.lang.Throwable)>(v15);
+< staticinvoke <org.jboss.netty.channel.Channels: void fireExceptionCaught(org.jboss.netty.channel.Channel,java.lang.Throwable)>(v1, v15);
+< label4:
+< if v4 == 0 goto label7;
+< staticinvoke <org.jboss.netty.channel.socket.oio.OioServerSocketPipelineSink: void close(org.jboss.netty.channel.socket.oio.OioServerSocketChannel,org.jboss.netty.channel.ChannelFuture)>(v1, v2);
+---
+> v16 := @caughtexception;
+> interfaceinvoke v2.<org.jboss.netty.channel.ChannelFuture: boolean setFailure(java.lang.Throwable)>(v16);
+> staticinvoke <org.jboss.netty.channel.Channels: void fireExceptionCaught(org.jboss.netty.channel.Channel,java.lang.Throwable)>(v1, v16);
+190a190,192
+> label4:
+> v17 := @caughtexception;
+> goto label8;
+192,194c194
+< v16 := @caughtexception;
+< if v4 == 0 goto label6;
+< staticinvoke <org.jboss.netty.channel.socket.oio.OioServerSocketPipelineSink: void close(org.jboss.netty.channel.socket.oio.OioServerSocketChannel,org.jboss.netty.channel.ChannelFuture)>(v1, v2);
+---
+> throw v17;
+196,197d195
+< throw v16;
+< label7:
+198a197,205
+> label7:
+> if v4 == 0 goto label6;
+> staticinvoke <org.jboss.netty.channel.socket.oio.OioServerSocketPipelineSink: void close(org.jboss.netty.channel.socket.oio.OioServerSocketChannel,org.jboss.netty.channel.ChannelFuture)>(v1, v2);
+> goto label6;
+> label8:
+> if v5 != 0 goto label5;
+> if v4 == 0 goto label5;
+> staticinvoke <org.jboss.netty.channel.socket.oio.OioServerSocketPipelineSink: void close(org.jboss.netty.channel.socket.oio.OioServerSocketChannel,org.jboss.netty.channel.ChannelFuture)>(v1, v2);
+> goto label5;
+200c207,208
+< catch java.lang.Throwable from label3 to label4 with label5;
+---
+> catch java.lang.Throwable from label1 to label3 with label4;
+> catch java.lang.Throwable from label3 to label4 with label4;
+204c212
+< java.lang.Throwable v7, v9;
+---
+> java.lang.Throwable v6, v7;
+207c215
+< java.util.concurrent.locks.Lock v4, v6, v8;
+---
+> java.util.concurrent.locks.Lock v4, v8, v9;
+213c221
+< label1:
+---
+> label01:
+218c226
+< label2:
+---
+> label02:
+220c228
+< if v5 == 0 goto label4;
+---
+> if v5 == 0 goto label04;
+222c230
+< if v2 == 0 goto label3;
+---
+> if v2 == 0 goto label03;
+224c232
+< label3:
+---
+> label03:
+226,227c234,235
+< goto label5;
+< label4:
+---
+> goto label09;
+> label04:
+229,233c237,243
+< label5:
+< v6 = v0.<org.jboss.netty.channel.socket.oio.OioServerSocketChannel: java.util.concurrent.locks.Lock shutdownLock>;
+< interfaceinvoke v6.<java.util.concurrent.locks.Lock: void unlock()>();
+< goto label8;
+< label6:
+---
+> goto label09;
+> label05:
+> v6 := @caughtexception;
+> goto label10;
+> label06:
+> throw v6;
+> label07:
+234a245,249
+> interfaceinvoke v1.<org.jboss.netty.channel.ChannelFuture: boolean setFailure(java.lang.Throwable)>(v7);
+> staticinvoke <org.jboss.netty.channel.Channels: void fireExceptionCaught(org.jboss.netty.channel.Channel,java.lang.Throwable)>(v0, v7);
+> label08:
+> return;
+> label09:
+237,245c252,258
+< throw v7;
+< label7:
+< v9 := @caughtexception;
+< interfaceinvoke v1.<org.jboss.netty.channel.ChannelFuture: boolean setFailure(java.lang.Throwable)>(v9);
+< staticinvoke <org.jboss.netty.channel.Channels: void fireExceptionCaught(org.jboss.netty.channel.Channel,java.lang.Throwable)>(v0, v9);
+< label8:
+< return;
+< catch java.lang.Throwable from label2 to label5 with label6;
+< catch java.lang.Throwable from label1 to label7 with label7;
+---
+> goto label08;
+> label10:
+> v9 = v0.<org.jboss.netty.channel.socket.oio.OioServerSocketChannel: java.util.concurrent.locks.Lock shutdownLock>;
+> interfaceinvoke v9.<java.util.concurrent.locks.Lock: void unlock()>();
+> goto label06;
+> catch java.lang.Throwable from label02 to label05 with label05;
+> catch java.lang.Throwable from label01 to label07 with label07;

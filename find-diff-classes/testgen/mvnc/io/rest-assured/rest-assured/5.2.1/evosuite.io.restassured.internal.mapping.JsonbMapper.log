@@ -1,0 +1,75 @@
+* EvoSuite 1.2.0
+* Going to generate test cases for class: io.restassured.internal.mapping.JsonbMapper
+* Starting Client-0
+* Connecting to master process on port 15647
+* Analyzing classpath: 
+  - /home/wtwhite/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/io/rest-assured/rest-assured/5.2.1/rest-assured-5.2.1.jar
+  - t/dependency/assertj-core-3.16.1.jar
+  - t/dependency/commons-codec-1.11.jar
+  - t/dependency/commons-io-2.8.0.jar
+  - t/dependency/commons-lang3-3.11.jar
+  - t/dependency/commons-logging-1.2.jar
+  - t/dependency/groovy-4.0.1.jar
+  - t/dependency/groovy-json-4.0.1.jar
+  - t/dependency/groovy-xml-4.0.1.jar
+  - t/dependency/gson-2.9.0.jar
+  - t/dependency/hamcrest-2.1.jar
+  - t/dependency/httpclient-4.5.13.jar
+  - t/dependency/httpcore-4.4.13.jar
+  - t/dependency/httpmime-4.5.13.jar
+  - t/dependency/istack-commons-runtime-4.0.1.jar
+  - t/dependency/jackson-annotations-2.13.2.jar
+  - t/dependency/jackson-core-2.13.2.jar
+  - t/dependency/jackson-core-asl-1.9.11.jar
+  - t/dependency/jackson-databind-2.13.2.jar
+  - t/dependency/jackson-mapper-asl-1.9.11.jar
+  - t/dependency/jakarta.activation-2.0.1.jar
+  - t/dependency/jakarta.json-1.1.6-module.jar
+  - t/dependency/jakarta.json-api-1.1.6.jar
+  - t/dependency/jakarta.json.bind-api-1.0.2.jar
+  - t/dependency/jakarta.xml.bind-api-3.0.1.jar
+  - t/dependency/javax.activation-api-1.2.0.jar
+  - t/dependency/jaxb-api-2.3.1.jar
+  - t/dependency/jaxb-core-3.0.2.jar
+  - t/dependency/jaxb-runtime-3.0.2.jar
+  - t/dependency/johnzon-core-1.1.11.jar
+  - t/dependency/johnzon-mapper-1.1.11.jar
+  - t/dependency/json-path-5.2.1.jar
+  - t/dependency/json-simple-1.1.1.jar
+  - t/dependency/junit-4.13.1.jar
+  - t/dependency/mockito-core-1.10.19.jar
+  - t/dependency/objenesis-2.1.jar
+  - t/dependency/rest-assured-common-5.2.1.jar
+  - t/dependency/scribejava-apis-2.5.3.jar
+  - t/dependency/scribejava-core-2.5.3.jar
+  - t/dependency/tagsoup-1.2.1.jar
+  - t/dependency/txw2-3.0.2.jar
+  - t/dependency/xml-path-5.2.1.jar
+  - t/dependency/yasson-1.0.6.jar
+* Error while initializing target class: Empty className
+[MASTER] 11:10:47.178 [logback-2] ERROR TestSuiteGenerator - Problem for io.restassured.internal.mapping.JsonbMapper. Full stack:
+java.lang.IllegalArgumentException: Empty className
+	at org.evosuite.runtime.mock.MockList.getMockClass(MockList.java:219)
+	at org.evosuite.setup.ConcreteClassAnalyzer.tryReflection(ConcreteClassAnalyzer.java:261)
+	at org.evosuite.setup.ConcreteClassAnalyzer.handleAbstractClassOrInterface(ConcreteClassAnalyzer.java:205)
+	at org.evosuite.setup.ConcreteClassAnalyzer.computeConcreteClasses(ConcreteClassAnalyzer.java:108)
+	at org.evosuite.setup.ConcreteClassAnalyzer.lambda$getConcreteClasses$0(ConcreteClassAnalyzer.java:89)
+	at java.util.HashMap.computeIfAbsent(HashMap.java:1128)
+	at org.evosuite.setup.ConcreteClassAnalyzer.getConcreteClasses(ConcreteClassAnalyzer.java:89)
+	at org.evosuite.setup.TestClusterGenerator.addDependency(TestClusterGenerator.java:829)
+	at org.evosuite.setup.TestClusterGenerator.addDependencies(TestClusterGenerator.java:740)
+	at org.evosuite.setup.TestClusterGenerator.initializeTargetMethods(TestClusterGenerator.java:497)
+	at org.evosuite.setup.TestClusterGenerator.generateCluster(TestClusterGenerator.java:119)
+	at org.evosuite.setup.DependencyAnalysis.analyze(DependencyAnalysis.java:120)
+	at org.evosuite.setup.DependencyAnalysis.analyzeClass(DependencyAnalysis.java:136)
+	at org.evosuite.TestSuiteGenerator.initializeTargetClass(TestSuiteGenerator.java:114)
+	at org.evosuite.TestSuiteGenerator.generateTestSuite(TestSuiteGenerator.java:135)
+	at org.evosuite.rmi.service.ClientNodeImpl.lambda$startNewSearch$0(ClientNodeImpl.java:140)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+* Computation finished
+[MASTER] 11:10:47.309 [main] ERROR SearchStatistics - No statistics has been saved because EvoSuite failed to generate any test case
+[MASTER] 11:10:47.415 [main] ERROR TestGeneration - failed to write statistics data

@@ -1,0 +1,39 @@
+348,349c348,349
+< java.lang.StringBuilder v50, v51, v52, v53, v54, v55, v56, v57, v58;
+< java.lang.String v60, v70;
+---
+> java.lang.StringBuilder v50, v51, v52, v53, v54, v55, v56, v57, v58, v77;
+> java.lang.String v60, v65, v71, v73, v76;
+351,352c351,352
+< java.util.List v13, v25, v29, v33, v39, v5, v59, v62, v63, v65, v66, v7, v9;
+< int v1, v14, v15, v16, v17, v18, v19, v2, v20, v21, v22, v23, v24, v26, v27, v28, v3, v37, v38, v4, v40, v41, v42, v43, v44, v45, v46, v47, v48, v49, v6, v61, v68, v8;
+---
+> java.util.List v13, v25, v29, v33, v39, v5, v59, v62, v63, v66, v67, v7, v9;
+> int v1, v14, v15, v16, v17, v18, v19, v2, v20, v21, v22, v23, v24, v26, v27, v28, v3, v37, v38, v4, v40, v41, v42, v43, v44, v45, v46, v47, v48, v49, v6, v61, v69, v72, v74, v75, v8;
+354c354
+< java.lang.Object v10, v30, v34, v64, v67, v69;
+---
+> java.lang.Object v10, v30, v34, v64, v68, v70;
+456,462c456,469
+< v65 = v0.<com.google.common.truth.DiffUtils: java.util.List stringList>;
+< v66 = v0.<com.google.common.truth.DiffUtils: java.util.List unifiedDiffContentId>;
+< v67 = interfaceinvoke v66.<java.util.List: java.lang.Object get(int)>(v61);
+< v68 = virtualinvoke v67.<java.lang.Integer: int intValue()>();
+< v69 = interfaceinvoke v65.<java.util.List: java.lang.Object get(int)>(v68);
+< v70 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.Object,java.lang.Object)>(v64, v69) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001\u0001");
+< interfaceinvoke v62.<java.util.List: boolean add(java.lang.Object)>(v70);
+---
+> v65 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v64);
+> v66 = v0.<com.google.common.truth.DiffUtils: java.util.List stringList>;
+> v67 = v0.<com.google.common.truth.DiffUtils: java.util.List unifiedDiffContentId>;
+> v68 = interfaceinvoke v67.<java.util.List: java.lang.Object get(int)>(v61);
+> v69 = virtualinvoke v68.<java.lang.Integer: int intValue()>();
+> v70 = interfaceinvoke v66.<java.util.List: java.lang.Object get(int)>(v69);
+> v71 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v65);
+> v72 = virtualinvoke v71.<java.lang.String: int length()>();
+> v73 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v70);
+> v74 = virtualinvoke v73.<java.lang.String: int length()>();
+> v75 = v72 + v74;
+> specialinvoke v77.<java.lang.StringBuilder: void <init>(int)>(v75);
+> v76 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,java.lang.String)>(v65, v70) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001\u0001");
+> interfaceinvoke v62.<java.util.List: boolean add(java.lang.Object)>(v76);

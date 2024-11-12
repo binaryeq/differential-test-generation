@@ -1,0 +1,35 @@
+28c28,29
+< java.lang.String v17, v20, v21, v22, v5, v7;
+---
+> int v24;
+> java.lang.String v17, v20, v21, v22, v23, v25, v5, v7;
+32c33
+< com.google.common.truth.ActualValueInference$StackEntry v10, v11, v13, v14, v15, v19, v23, v3, v4, v6, v8, v9;
+---
+> com.google.common.truth.ActualValueInference$StackEntry v10, v11, v13, v14, v15, v19, v26, v3, v4, v6, v8, v9;
+66a68
+> v21 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v20);
+68c70
+< v21 = "(...)";
+---
+> v22 = "(...)";
+71c73
+< v21 = "()";
+---
+> v22 = "()";
+73,75c75,85
+< v22 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,java.lang.String)>(v20, v21) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001\u0001");
+< v23 = staticinvoke <com.google.common.truth.ActualValueInference: com.google.common.truth.ActualValueInference$StackEntry described(com.google.common.truth.ActualValueInference$InferredType,java.lang.String)>(v1, v22);
+< return v23;
+---
+> v23 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v22);
+> v24 = virtualinvoke v23.<java.lang.String: int length()>();
+> if v24 == 0 goto label7;
+> v25 = virtualinvoke v21.<java.lang.String: java.lang.String concat(java.lang.String)>(v23);
+> goto label8;
+> label7:
+> v25 = new java.lang.String;
+> specialinvoke v25.<java.lang.String: void <init>(java.lang.String)>(v21);
+> label8:
+> v26 = staticinvoke <com.google.common.truth.ActualValueInference: com.google.common.truth.ActualValueInference$StackEntry described(com.google.common.truth.ActualValueInference$InferredType,java.lang.String)>(v1, v25);
+> return v26;

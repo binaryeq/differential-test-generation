@@ -1,0 +1,119 @@
+{
+        "jar1": {
+            "file": "~/code/craw-redhat-oss/wget/crawl/google-aoss/com/google/auto/service/auto-service/1.0.1/auto-service-1.0.1.jar",
+            "classcount": 19,
+            "md5": "019af139d41ad5747f0190b98ca87bfd",
+            "sha1": "82116195e5c3a7154ed04ff5c3b6fa2bb29d9305",
+            "size": "11 KB",
+            "manifest": {
+                "Manifest-Version": "1.0",
+                "Created-By": "Maven Jar Plugin 3.2.0",
+                "Build-Jdk-Spec": "11"
+            },
+            "services": {"javax.annotation.processing.Processor": ["com.google.auto.service.processor.AutoServiceProcessor"]}
+        },
+        "jar2": {
+            "file": "~/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/auto/service/auto-service/1.0.1/auto-service-1.0.1.jar",
+            "classcount": 19,
+            "md5": "cc3dff3b12311d8c8aae5afb0a00204f",
+            "sha1": "c9779f7372192a96c957a3df1faeeabd07881085",
+            "size": "12 KB",
+            "manifest": {
+                "Manifest-Version": "1.0",
+                "Created-By": "Maven Jar Plugin 3.2.0",
+                "Build-Jdk-Spec": "1.8"
+            },
+            "services": {"javax.annotation.processing.Processor": ["com.google.auto.service.processor.AutoServiceProcessor"]}
+        },
+        "contentset-comparisons": [
+            {
+                "content-type": "sources",
+                "jar1.count": 0,
+                "jar2.count": 0,
+                "intersection": 0,
+                "union": 0,
+                "jar1-jar2": [],
+                "jar2-jar1": []
+            },
+            {
+                "content-type": "bytecode",
+                "jar1.count": 3,
+                "jar2.count": 3,
+                "intersection": 3,
+                "union": 3,
+                "jar1-jar2": [],
+                "jar2-jar1": []
+            },
+            {
+                "content-type": "metadata",
+                "jar1.count": 11,
+                "jar2.count": 11,
+                "intersection": 11,
+                "union": 11,
+                "jar1-jar2": [],
+                "jar2-jar1": []
+            },
+            {
+                "content-type": "other",
+                "jar1.count": 5,
+                "jar2.count": 5,
+                "intersection": 5,
+                "union": 5,
+                "jar1-jar2": [],
+                "jar2-jar1": []
+            }
+        ],
+        "content-pairwise-comparisons": [{
+            "equivalence": {
+                "class": "io.github.bineq.equivalences.bytecode.JNormEquivalence2",
+                "name": "jnorm2"
+            },
+            "summary": {
+                "description": "comparison results of jar/folder content (pairwise comparison of content in both jars/folders)",
+                "equivalent": 1,
+                "non-equivalent": 2,
+                "errors": 0
+            },
+            "details": {
+                "non-equivalent": [
+                    {
+                        "class": "com/google/auto/service/processor/AutoServiceProcessor.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/com/google/auto/service/auto-service/1.0.1/auto-service-1.0.1.jar/com.google.auto.service.processor.AutoServiceProcessor.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/auto/service/auto-service/1.0.1/auto-service-1.0.1.jar/com.google.auto.service.processor.AutoServiceProcessor.jimple",
+                            "transformed-class1": {
+                                "value": "public class com.google.auto.service.processor.AutoServiceProcessor extends javax.'annotation'.proce ..  [abbreviated, 29762 chars]",
+                                "sha1": "370ed21d8d3093949f0144b452691277c877795f",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/com/google/auto/service/auto-service/1.0.1/auto-service-1.0.1.jar/com.google.auto.service.processor.AutoServiceProcessor.jimple",
+                                "md5": "87d6943a4d4335e4e9d39778fc53913a"
+                            },
+                            "transformed-class2": {
+                                "value": "public class com.google.auto.service.processor.AutoServiceProcessor extends javax.'annotation'.proce ..  [abbreviated, 31011 chars]",
+                                "sha1": "700616752dee6ce6941630511682693795e187ae",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/auto/service/auto-service/1.0.1/auto-service-1.0.1.jar/com.google.auto.service.processor.AutoServiceProcessor.jimple",
+                                "md5": "7423e099ce60172001f12ef43e30cc08"
+                            }
+                        }
+                    },
+                    {
+                        "class": "com/google/auto/service/processor/AutoServiceProcessor$1.class",
+                        "provenance": {
+                            "diff-command": "kdiff3 .cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/com/google/auto/service/auto-service/1.0.1/auto-service-1.0.1.jar/com.google.auto.service.processor.AutoServiceProcessor$1.jimple .cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/auto/service/auto-service/1.0.1/auto-service-1.0.1.jar/com.google.auto.service.processor.AutoServiceProcessor$1.jimple",
+                            "transformed-class1": {
+                                "value": "class com.google.auto.service.processor.AutoServiceProcessor$1 extends javax.lang.model.util.SimpleA ..  [abbreviated, 2578 chars]",
+                                "sha1": "06c2686cca1b59bb631195833c0d3a736c4f5e8c",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/google-aoss/com/google/auto/service/auto-service/1.0.1/auto-service-1.0.1.jar/com.google.auto.service.processor.AutoServiceProcessor$1.jimple",
+                                "md5": "f2eae0f9fcf7b6e676b5d82157d41697"
+                            },
+                            "transformed-class2": {
+                                "value": "class com.google.auto.service.processor.AutoServiceProcessor$1 extends javax.lang.model.util.SimpleA ..  [abbreviated, 2734 chars]",
+                                "sha1": "18ca7125d6e40f2ab967cb0c82ace7a04dff8a3f",
+                                "cached": ".cache/jnorm2/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/com/google/auto/service/auto-service/1.0.1/auto-service-1.0.1.jar/com.google.auto.service.processor.AutoServiceProcessor$1.jimple",
+                                "md5": "55acbb1064c62abf1d745ff645bc6e7f"
+                            }
+                        }
+                    }
+                ],
+                "errors": []
+            }
+        }]
+    }

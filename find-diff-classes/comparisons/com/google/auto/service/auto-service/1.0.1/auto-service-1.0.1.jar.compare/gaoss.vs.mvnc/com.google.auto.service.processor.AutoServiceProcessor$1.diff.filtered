@@ -1,0 +1,16 @@
+4c4
+< void <init>(com.google.auto.service.processor.AutoServiceProcessor)
+---
+> void <init>(com.google.auto.service.processor.AutoServiceProcessor, com.google.common.collect.ImmutableSet)
+5a6
+> com.google.common.collect.ImmutableSet v2;
+9a11
+> v2 := @parameter1: com.google.common.collect.ImmutableSet;
+11c13
+< specialinvoke v0.<javax.lang.model.util.SimpleAnnotationValueVisitor8: void <init>()>();
+---
+> specialinvoke v0.<javax.lang.model.util.SimpleAnnotationValueVisitor8: void <init>(java.lang.Object)>(v2);
+43c45
+< v6 = staticinvoke <com.google.common.collect.ImmutableSet: java.util.stream.Collector toImmutableSet()>();
+---
+> v6 = staticinvoke <com.google.auto.common.MoreStreams: java.util.stream.Collector toImmutableSet()>();

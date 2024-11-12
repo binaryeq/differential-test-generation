@@ -1,0 +1,403 @@
+19,20c19,20
+< int v1;
+< java.lang.String v15, v2, v3, v4;
+---
+> int v1, v16, v17, v19, v20, v22, v23;
+> java.lang.String v15, v18, v2, v21, v24, v3, v4;
+21a22
+> java.lang.StringBuilder v25;
+47,48c48,59
+< v15 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,java.lang.String,java.lang.String)>(v2, v3, v4) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001.\u0001\u0001");
+< v0.<com.google.common.truth.ActualValueInference$InferenceMethodVisitor: java.lang.String methodSignature> = v15;
+---
+> v15 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v2);
+> v16 = virtualinvoke v15.<java.lang.String: int length()>();
+> v17 = 1 + v16;
+> v18 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v3);
+> v19 = virtualinvoke v18.<java.lang.String: int length()>();
+> v20 = v17 + v19;
+> v21 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v4);
+> v22 = virtualinvoke v21.<java.lang.String: int length()>();
+> v23 = v20 + v22;
+> specialinvoke v25.<java.lang.StringBuilder: void <init>(int)>(v23);
+> v24 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,java.lang.String,java.lang.String)>(v2, v3, v4) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001.\u0001\u0001");
+> v0.<com.google.common.truth.ActualValueInference$InferenceMethodVisitor: java.lang.String methodSignature> = v24;
+198a210
+> java.lang.StringBuilder v51;
+584a597
+> specialinvoke v51.<java.lang.StringBuilder: void <init>(int)>(28);
+597a611
+> java.lang.StringBuilder v8, v9;
+652a667
+> specialinvoke v8.<java.lang.StringBuilder: void <init>(int)>(36);
+657a673
+> specialinvoke v9.<java.lang.StringBuilder: void <init>(int)>(28);
+671a688
+> java.lang.StringBuilder v18;
+732a750
+> specialinvoke v18.<java.lang.StringBuilder: void <init>(int)>(28);
+743,746c761,765
+< java.lang.RuntimeException v6;
+< com.google.common.truth.ActualValueInference$InferredType v5;
+< int v1;
+< java.lang.String v2, v3, v4, v7;
+---
+> java.lang.RuntimeException v9;
+> com.google.common.truth.ActualValueInference$InferredType v8;
+> int v1, v5, v6;
+> java.lang.StringBuilder v11, v12;
+> java.lang.String v10, v2, v3, v4, v7;
+767,768c786,791
+< v4 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v3) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("[\u0001");
+< specialinvoke v0.<com.google.common.truth.ActualValueInference$InferenceMethodVisitor: void pushDescriptor(java.lang.String)>(v4);
+---
+> v4 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v3);
+> v5 = virtualinvoke v4.<java.lang.String: int length()>();
+> v6 = 1 + v5;
+> specialinvoke v11.<java.lang.StringBuilder: void <init>(int)>(v6);
+> v7 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v3) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("[\u0001");
+> specialinvoke v0.<com.google.common.truth.ActualValueInference$InferenceMethodVisitor: void pushDescriptor(java.lang.String)>(v7);
+776,777c799,800
+< v5 = <com.google.common.truth.ActualValueInference$InferredType: com.google.common.truth.ActualValueInference$InferredType INT>;
+< specialinvoke v0.<com.google.common.truth.ActualValueInference$InferenceMethodVisitor: void push(com.google.common.truth.ActualValueInference$InferredType)>(v5);
+---
+> v8 = <com.google.common.truth.ActualValueInference$InferredType: com.google.common.truth.ActualValueInference$InferredType INT>;
+> specialinvoke v0.<com.google.common.truth.ActualValueInference$InferenceMethodVisitor: void push(com.google.common.truth.ActualValueInference$InferredType)>(v8);
+780,783c803,807
+< v6 = new java.lang.RuntimeException;
+< v7 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (int)>(v1) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Unhandled opcode \u0001");
+< specialinvoke v6.<java.lang.RuntimeException: void <init>(java.lang.String)>(v7);
+< throw v6;
+---
+> v9 = new java.lang.RuntimeException;
+> specialinvoke v12.<java.lang.StringBuilder: void <init>(int)>(28);
+> v10 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (int)>(v1) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Unhandled opcode \u0001");
+> specialinvoke v9.<java.lang.RuntimeException: void <init>(java.lang.String)>(v10);
+> throw v9;
+790c814,815
+< int v1;
+---
+> int v1, v10, v11, v13, v14, v7, v8;
+> java.lang.String v12, v15, v2, v3, v4, v6, v9;
+793c818
+< java.lang.String v2, v3, v4, v6;
+---
+> java.lang.StringBuilder v16;
+823,824c848,859
+< v6 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (int,java.lang.String,java.lang.String,java.lang.String)>(v1, v2, v3, v4) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Unhandled opcode \u0001, owner=\u0001, name=\u0001, desc\u0001");
+< specialinvoke v5.<java.lang.RuntimeException: void <init>(java.lang.String)>(v6);
+---
+> v6 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v2);
+> v7 = virtualinvoke v6.<java.lang.String: int length()>();
+> v8 = 49 + v7;
+> v9 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v3);
+> v10 = virtualinvoke v9.<java.lang.String: int length()>();
+> v11 = v8 + v10;
+> v12 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v4);
+> v13 = virtualinvoke v12.<java.lang.String: int length()>();
+> v14 = v11 + v13;
+> specialinvoke v16.<java.lang.StringBuilder: void <init>(int)>(v14);
+> v15 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (int,java.lang.String,java.lang.String,java.lang.String)>(v1, v2, v3, v4) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Unhandled opcode \u0001, owner=\u0001, name=\u0001, desc\u0001");
+> specialinvoke v5.<java.lang.RuntimeException: void <init>(java.lang.String)>(v15);
+832,843c867,879
+< java.lang.Object[] v27;
+< java.lang.Integer v28;
+< com.google.common.truth.ActualValueInference$Invocation$Builder v16;
+< com.google.common.truth.ActualValueInference$InferredType v12, v15, v21, v22;
+< int v1, v10, v8, v9;
+< java.lang.Boolean v29;
+< java.lang.String v14, v2, v3, v30, v4, v6;
+< boolean v13, v17, v19, v5, v7;
+< com.google.common.truth.ActualValueInference$InferenceMethodVisitor v0;
+< java.lang.RuntimeException v26;
+< com.google.common.truth.ActualValueInference$Invocation v25;
+< com.google.common.truth.ActualValueInference$StackEntry v11, v18, v20, v23, v24;
+---
+> java.lang.Integer v31;
+> com.google.common.truth.ActualValueInference$Invocation$Builder v19;
+> boolean v13, v20, v22, v5, v7;
+> com.google.common.truth.ActualValueInference$InferenceMethodVisitor v0;
+> java.lang.StringBuilder v34;
+> java.lang.Object[] v30;
+> com.google.common.truth.ActualValueInference$InferredType v12, v18, v24, v25;
+> int v1, v10, v15, v16, v8, v9;
+> java.lang.Boolean v32;
+> java.lang.String v14, v17, v2, v3, v33, v4, v6;
+> java.lang.RuntimeException v29;
+> com.google.common.truth.ActualValueInference$Invocation v28;
+> com.google.common.truth.ActualValueInference$StackEntry v11, v21, v23, v26, v27;
+861,863c897,903
+< v14 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v2) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("L\u0001;");
+< v15 = staticinvoke <com.google.common.truth.ActualValueInference$InferredType: com.google.common.truth.ActualValueInference$InferredType create(java.lang.String)>(v14);
+< specialinvoke v0.<com.google.common.truth.ActualValueInference$InferenceMethodVisitor: void replaceUninitializedTypeInStack(com.google.common.truth.ActualValueInference$InferredType,com.google.common.truth.ActualValueInference$InferredType)>(v12, v15);
+---
+> v14 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v2);
+> v15 = virtualinvoke v14.<java.lang.String: int length()>();
+> v16 = 2 + v15;
+> specialinvoke v34.<java.lang.StringBuilder: void <init>(int)>(v16);
+> v17 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v2) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("L\u0001;");
+> v18 = staticinvoke <com.google.common.truth.ActualValueInference$InferredType: com.google.common.truth.ActualValueInference$InferredType create(java.lang.String)>(v17);
+> specialinvoke v0.<com.google.common.truth.ActualValueInference$InferenceMethodVisitor: void replaceUninitializedTypeInStack(com.google.common.truth.ActualValueInference$InferredType,com.google.common.truth.ActualValueInference$InferredType)>(v12, v18);
+874,878c914,918
+< v16 = staticinvoke <com.google.common.truth.ActualValueInference$Invocation: com.google.common.truth.ActualValueInference$Invocation$Builder builder(java.lang.String)>(v3);
+< v17 = staticinvoke <com.google.common.truth.ActualValueInference: boolean isThatOrAssertThat(java.lang.String,java.lang.String)>(v2, v3);
+< if v17 == 0 goto label3;
+< v18 = specialinvoke v0.<com.google.common.truth.ActualValueInference$InferenceMethodVisitor: com.google.common.truth.ActualValueInference$StackEntry getOperandFromTop(int)>(0);
+< virtualinvoke v16.<com.google.common.truth.ActualValueInference$Invocation$Builder: com.google.common.truth.ActualValueInference$Invocation$Builder setActualValue(com.google.common.truth.ActualValueInference$StackEntry)>(v18);
+---
+> v19 = staticinvoke <com.google.common.truth.ActualValueInference$Invocation: com.google.common.truth.ActualValueInference$Invocation$Builder builder(java.lang.String)>(v3);
+> v20 = staticinvoke <com.google.common.truth.ActualValueInference: boolean isThatOrAssertThat(java.lang.String,java.lang.String)>(v2, v3);
+> if v20 == 0 goto label3;
+> v21 = specialinvoke v0.<com.google.common.truth.ActualValueInference$InferenceMethodVisitor: com.google.common.truth.ActualValueInference$StackEntry getOperandFromTop(int)>(0);
+> virtualinvoke v19.<com.google.common.truth.ActualValueInference$Invocation$Builder: com.google.common.truth.ActualValueInference$Invocation$Builder setActualValue(com.google.common.truth.ActualValueInference$StackEntry)>(v21);
+881,887c921,927
+< v19 = staticinvoke <com.google.common.truth.ActualValueInference: boolean isBoxing(java.lang.String,java.lang.String,java.lang.String)>(v2, v3, v4);
+< if v19 == 0 goto label6;
+< v20 = specialinvoke v0.<com.google.common.truth.ActualValueInference$InferenceMethodVisitor: com.google.common.truth.ActualValueInference$StackEntry getOperandFromTop(int)>(0);
+< v21 = virtualinvoke v20.<com.google.common.truth.ActualValueInference$StackEntry: com.google.common.truth.ActualValueInference$InferredType type()>();
+< v22 = <com.google.common.truth.ActualValueInference$InferredType: com.google.common.truth.ActualValueInference$InferredType TOP>;
+< if v21 != v22 goto label4;
+< v23 = specialinvoke v0.<com.google.common.truth.ActualValueInference$InferenceMethodVisitor: com.google.common.truth.ActualValueInference$StackEntry getOperandFromTop(int)>(1);
+---
+> v22 = staticinvoke <com.google.common.truth.ActualValueInference: boolean isBoxing(java.lang.String,java.lang.String,java.lang.String)>(v2, v3, v4);
+> if v22 == 0 goto label6;
+> v23 = specialinvoke v0.<com.google.common.truth.ActualValueInference$InferenceMethodVisitor: com.google.common.truth.ActualValueInference$StackEntry getOperandFromTop(int)>(0);
+> v24 = virtualinvoke v23.<com.google.common.truth.ActualValueInference$StackEntry: com.google.common.truth.ActualValueInference$InferredType type()>();
+> v25 = <com.google.common.truth.ActualValueInference$InferredType: com.google.common.truth.ActualValueInference$InferredType TOP>;
+> if v24 != v25 goto label4;
+> v26 = specialinvoke v0.<com.google.common.truth.ActualValueInference$InferenceMethodVisitor: com.google.common.truth.ActualValueInference$StackEntry getOperandFromTop(int)>(1);
+890c930
+< v23 = specialinvoke v0.<com.google.common.truth.ActualValueInference$InferenceMethodVisitor: com.google.common.truth.ActualValueInference$StackEntry getOperandFromTop(int)>(0);
+---
+> v26 = specialinvoke v0.<com.google.common.truth.ActualValueInference$InferenceMethodVisitor: com.google.common.truth.ActualValueInference$StackEntry getOperandFromTop(int)>(0);
+892c932
+< virtualinvoke v16.<com.google.common.truth.ActualValueInference$Invocation$Builder: com.google.common.truth.ActualValueInference$Invocation$Builder setBoxingInput(com.google.common.truth.ActualValueInference$StackEntry)>(v23);
+---
+> virtualinvoke v19.<com.google.common.truth.ActualValueInference$Invocation$Builder: com.google.common.truth.ActualValueInference$Invocation$Builder setBoxingInput(com.google.common.truth.ActualValueInference$StackEntry)>(v26);
+896,897c936,937
+< v24 = specialinvoke v0.<com.google.common.truth.ActualValueInference$InferenceMethodVisitor: com.google.common.truth.ActualValueInference$StackEntry pop()>();
+< virtualinvoke v16.<com.google.common.truth.ActualValueInference$Invocation$Builder: com.google.common.truth.ActualValueInference$Invocation$Builder setReceiver(com.google.common.truth.ActualValueInference$StackEntry)>(v24);
+---
+> v27 = specialinvoke v0.<com.google.common.truth.ActualValueInference$InferenceMethodVisitor: com.google.common.truth.ActualValueInference$StackEntry pop()>();
+> virtualinvoke v19.<com.google.common.truth.ActualValueInference$Invocation$Builder: com.google.common.truth.ActualValueInference$Invocation$Builder setReceiver(com.google.common.truth.ActualValueInference$StackEntry)>(v27);
+899,900c939,940
+< v25 = virtualinvoke v16.<com.google.common.truth.ActualValueInference$Invocation$Builder: com.google.common.truth.ActualValueInference$Invocation build()>();
+< specialinvoke v0.<com.google.common.truth.ActualValueInference$InferenceMethodVisitor: void pushDescriptorAndMaybeProcessMethodCall(java.lang.String,com.google.common.truth.ActualValueInference$Invocation)>(v4, v25);
+---
+> v28 = virtualinvoke v19.<com.google.common.truth.ActualValueInference$Invocation$Builder: com.google.common.truth.ActualValueInference$Invocation build()>();
+> specialinvoke v0.<com.google.common.truth.ActualValueInference$InferenceMethodVisitor: void pushDescriptorAndMaybeProcessMethodCall(java.lang.String,com.google.common.truth.ActualValueInference$Invocation)>(v4, v28);
+903,914c943,954
+< v26 = new java.lang.RuntimeException;
+< v27 = newarray (java.lang.Object)[5];
+< v28 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(v1);
+< v27[0] = v28;
+< v27[1] = v2;
+< v27[2] = v3;
+< v27[3] = v4;
+< v29 = staticinvoke <java.lang.Boolean: java.lang.Boolean valueOf(boolean)>(v5);
+< v27[4] = v29;
+< v30 = staticinvoke <java.lang.String: java.lang.String format(java.lang.String,java.lang.Object[])>("Unhandled opcode %s, owner=%s, name=%s, desc=%s, itf=%s", v27);
+< specialinvoke v26.<java.lang.RuntimeException: void <init>(java.lang.String)>(v30);
+< throw v26;
+---
+> v29 = new java.lang.RuntimeException;
+> v30 = newarray (java.lang.Object)[5];
+> v31 = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(v1);
+> v30[0] = v31;
+> v30[1] = v2;
+> v30[2] = v3;
+> v30[3] = v4;
+> v32 = staticinvoke <java.lang.Boolean: java.lang.Boolean valueOf(boolean)>(v5);
+> v30[4] = v32;
+> v33 = staticinvoke <java.lang.String: java.lang.String format(java.lang.String,java.lang.Object[])>("Unhandled opcode %s, owner=%s, name=%s, desc=%s, itf=%s", v30);
+> specialinvoke v29.<java.lang.RuntimeException: void <init>(java.lang.String)>(v33);
+> throw v29;
+939a980
+> java.lang.StringBuilder v6;
+1011a1053
+> specialinvoke v6.<java.lang.StringBuilder: void <init>(int)>(28);
+1022c1064,1065
+< java.lang.String v14, v17;
+---
+> int v19, v20;
+> java.lang.String v14, v17, v18, v21;
+1026a1070
+> java.lang.StringBuilder v22;
+1074,1075c1118,1124
+< v17 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.Object)>(v1) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Cannot handle constant \u0001 for LDC instruction");
+< specialinvoke v16.<java.lang.RuntimeException: void <init>(java.lang.String)>(v17);
+---
+> v17 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v1);
+> v18 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v17);
+> v19 = virtualinvoke v18.<java.lang.String: int length()>();
+> v20 = 43 + v19;
+> specialinvoke v22.<java.lang.StringBuilder: void <init>(int)>(v20);
+> v21 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v17) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Cannot handle constant \u0001 for LDC instruction");
+> specialinvoke v16.<java.lang.RuntimeException: void <init>(java.lang.String)>(v21);
+1237d1285
+< int v1;
+1239c1287,1289
+< java.lang.String v0, v3;
+---
+> int v1, v4, v5;
+> java.lang.StringBuilder v7;
+> java.lang.String v0, v3, v6;
+1245c1295,1299
+< v3 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v0) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("L\u0001;");
+---
+> v3 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v0);
+> v4 = virtualinvoke v3.<java.lang.String: int length()>();
+> v5 = 2 + v4;
+> specialinvoke v7.<java.lang.StringBuilder: void <init>(int)>(v5);
+> v6 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v0) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("L\u0001;");
+1248c1302
+< v3 = v0;
+---
+> v6 = v0;
+1250c1304
+< return v3;
+---
+> return v6;
+1321,1322c1375,1376
+< int v10, v14, v15, v9;
+< java.lang.String v1, v23, v26;
+---
+> int v10, v14, v15, v28, v9;
+> java.lang.String v1, v23, v26, v27, v29, v30;
+1397c1451
+< goto label13;
+---
+> goto label15;
+1401c1455
+< goto label13;
+---
+> goto label15;
+1407c1461
+< goto label13;
+---
+> goto label15;
+1413c1467
+< goto label13;
+---
+> goto label15;
+1418c1472
+< goto label13;
+---
+> goto label15;
+1421,1423c1475,1480
+< v26 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v1) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Unhandled type: \u0001");
+< specialinvoke v25.<java.lang.RuntimeException: void <init>(java.lang.String)>(v26);
+< throw v25;
+---
+> v26 = "Unhandled type: ";
+> v27 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v1);
+> v28 = virtualinvoke v27.<java.lang.String: int length()>();
+> if v28 == 0 goto label13;
+> v29 = virtualinvoke v26.<java.lang.String: java.lang.String concat(java.lang.String)>(v27);
+> goto label14;
+1424a1482,1488
+> v30 = new java.lang.String;
+> v29 = v30;
+> specialinvoke v30.<java.lang.String: void <init>(java.lang.String)>("Unhandled type: ");
+> label14:
+> specialinvoke v25.<java.lang.RuntimeException: void <init>(java.lang.String)>(v29);
+> throw v25;
+> label15:
+1598,1600d1661
+< java.util.ArrayList v4;
+< com.google.common.truth.ActualValueInference$InferredType v14, v16, v18, v20, v22, v24, v27, v7;
+< int v0, v10, v11, v13;
+1602d1662
+< java.lang.String v1, v2, v26, v3, v30, v6;
+1603a1664,1668
+> java.lang.StringBuilder v44;
+> java.util.ArrayList v4;
+> com.google.common.truth.ActualValueInference$InferredType v14, v16, v18, v20, v22, v24, v27, v7;
+> int v0, v10, v11, v13, v32, v33, v35, v36, v38, v39, v41, v42;
+> java.lang.String v1, v2, v26, v3, v30, v31, v34, v37, v40, v43, v6;
+1674,1675c1739,1754
+< v30 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (org.objectweb.asm.Type,java.lang.String,java.lang.String,java.lang.String)>(v12, v1, v2, v3) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Unhandled argument type: \u0001 in \u0001.\u0001\u0001");
+< specialinvoke v29.<java.lang.RuntimeException: void <init>(java.lang.String)>(v30);
+---
+> v30 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v12);
+> v31 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v30);
+> v32 = virtualinvoke v31.<java.lang.String: int length()>();
+> v33 = 30 + v32;
+> v34 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v1);
+> v35 = virtualinvoke v34.<java.lang.String: int length()>();
+> v36 = v33 + v35;
+> v37 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v2);
+> v38 = virtualinvoke v37.<java.lang.String: int length()>();
+> v39 = v36 + v38;
+> v40 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v3);
+> v41 = virtualinvoke v40.<java.lang.String: int length()>();
+> v42 = v39 + v41;
+> specialinvoke v44.<java.lang.StringBuilder: void <init>(int)>(v42);
+> v43 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,java.lang.String,java.lang.String,java.lang.String)>(v30, v1, v2, v3) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Unhandled argument type: \u0001 in \u0001.\u0001\u0001");
+> specialinvoke v29.<java.lang.RuntimeException: void <init>(java.lang.String)>(v43);
+1767,1770c1846
+< com.google.common.truth.ActualValueInference$InferredType v11, v13, v15, v18, v20, v22, v3, v5, v7, v9;
+< java.lang.String v19, v25, v26;
+< boolean v16, v21;
+< char v17;
+---
+> boolean v16, v24;
+1772,1773c1848,1854
+< java.lang.RuntimeException v23;
+< java.lang.Class v24;
+---
+> java.lang.StringBuilder v41, v42;
+> com.google.common.truth.ActualValueInference$InferredType v11, v13, v15, v18, v23, v25, v3, v5, v7, v9;
+> int v20, v21, v32, v33, v35, v36, v38, v39;
+> java.lang.String v19, v22, v27, v29, v30, v31, v34, v37, v40;
+> char v17;
+> java.lang.RuntimeException v26;
+> java.lang.Class v28;
+1819,1821c1900,1906
+< v19 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v1) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("L\u0001;");
+< v20 = staticinvoke <com.google.common.truth.ActualValueInference$InferredType: com.google.common.truth.ActualValueInference$InferredType create(java.lang.String)>(v19);
+< return v20;
+---
+> v19 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v1);
+> v20 = virtualinvoke v19.<java.lang.String: int length()>();
+> v21 = 2 + v20;
+> specialinvoke v41.<java.lang.StringBuilder: void <init>(int)>(v21);
+> v22 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String)>(v1) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("L\u0001;");
+> v23 = staticinvoke <com.google.common.truth.ActualValueInference$InferredType: com.google.common.truth.ActualValueInference$InferredType create(java.lang.String)>(v22);
+> return v23;
+1823,1826c1908,1911
+< v21 = v1 instanceof org.objectweb.asm.Label;
+< if v21 == 0 goto label10;
+< v22 = <com.google.common.truth.ActualValueInference$InferredType: com.google.common.truth.ActualValueInference$InferredType UNINITIALIZED>;
+< return v22;
+---
+> v24 = v1 instanceof org.objectweb.asm.Label;
+> if v24 == 0 goto label10;
+> v25 = <com.google.common.truth.ActualValueInference$InferredType: com.google.common.truth.ActualValueInference$InferredType UNINITIALIZED>;
+> return v25;
+1828,1833c1913,1930
+< v23 = new java.lang.RuntimeException;
+< v24 = virtualinvoke v1.<java.lang.Object: java.lang.Class getClass()>();
+< v25 = v0.<com.google.common.truth.ActualValueInference$InferenceMethodVisitor: java.lang.String methodSignature>;
+< v26 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.Object,java.lang.Class,java.lang.String)>(v1, v24, v25) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Cannot reach here. Unhandled element: value=\u0001, class=\u0001. The current method being desugared is \u0001");
+< specialinvoke v23.<java.lang.RuntimeException: void <init>(java.lang.String)>(v26);
+< throw v23;
+---
+> v26 = new java.lang.RuntimeException;
+> v27 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v1);
+> v28 = virtualinvoke v1.<java.lang.Object: java.lang.Class getClass()>();
+> v29 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v28);
+> v30 = v0.<com.google.common.truth.ActualValueInference$InferenceMethodVisitor: java.lang.String methodSignature>;
+> v31 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v27);
+> v32 = virtualinvoke v31.<java.lang.String: int length()>();
+> v33 = 92 + v32;
+> v34 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v29);
+> v35 = virtualinvoke v34.<java.lang.String: int length()>();
+> v36 = v33 + v35;
+> v37 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v30);
+> v38 = virtualinvoke v37.<java.lang.String: int length()>();
+> v39 = v36 + v38;
+> specialinvoke v42.<java.lang.StringBuilder: void <init>(int)>(v39);
+> v40 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,java.lang.String,java.lang.String)>(v27, v29, v30) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Cannot reach here. Unhandled element: value=\u0001, class=\u0001. The current method being desugared is \u0001");
+> specialinvoke v26.<java.lang.RuntimeException: void <init>(java.lang.String)>(v40);
+> throw v26;

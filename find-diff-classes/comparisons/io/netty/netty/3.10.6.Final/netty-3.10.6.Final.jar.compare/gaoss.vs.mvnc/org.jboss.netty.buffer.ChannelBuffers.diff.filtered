@@ -1,0 +1,21 @@
+649a650
+> goto label6;
+651,653d651
+< virtualinvoke v0.<java.nio.ByteBuffer: java.nio.ByteBuffer position(int)>(v4);
+< goto label5;
+< label4:
+655c653,654
+< virtualinvoke v0.<java.nio.ByteBuffer: java.nio.ByteBuffer position(int)>(v4);
+---
+> goto label7;
+> label4:
+661c660,666
+< catch java.lang.Throwable from label2 to label3 with label4;
+---
+> label6:
+> virtualinvoke v0.<java.nio.ByteBuffer: java.nio.ByteBuffer position(int)>(v4);
+> goto label5;
+> label7:
+> virtualinvoke v0.<java.nio.ByteBuffer: java.nio.ByteBuffer position(int)>(v4);
+> goto label4;
+> catch java.lang.Throwable from label2 to label3 with label3;

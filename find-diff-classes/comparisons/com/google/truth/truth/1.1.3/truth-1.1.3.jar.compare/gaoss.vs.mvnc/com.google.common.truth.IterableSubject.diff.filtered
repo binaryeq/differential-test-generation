@@ -1,0 +1,73 @@
+20c20
+< java.lang.Iterable v1, v12, v2, v5, v9;
+---
+> java.lang.Iterable v1, v15, v18, v2, v5;
+22c22,24
+< int v6;
+---
+> int v10, v12, v13, v6, v9;
+> java.lang.String v11, v14, v16, v19, v20, v4, v7, v8;
+> boolean v17;
+24,25c26
+< java.lang.String v10, v13, v14, v4, v7, v8;
+< boolean v11;
+---
+> java.lang.StringBuilder v21;
+35,42c36,50
+< v8 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,java.lang.String)>(v4, v7) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001@\u0001");
+< v9 = v0.<com.google.common.truth.IterableSubject: java.lang.Iterable actual>;
+< v10 = virtualinvoke v9.<java.lang.Object: java.lang.String toString()>();
+< v11 = virtualinvoke v10.<java.lang.String: boolean equals(java.lang.Object)>(v8);
+< if v11 == 0 goto label1;
+< v12 = v0.<com.google.common.truth.IterableSubject: java.lang.Iterable actual>;
+< v13 = staticinvoke <com.google.common.collect.Iterables: java.lang.String toString(java.lang.Iterable)>(v12);
+< return v13;
+---
+> v8 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v4);
+> v9 = virtualinvoke v8.<java.lang.String: int length()>();
+> v10 = 1 + v9;
+> v11 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v7);
+> v12 = virtualinvoke v11.<java.lang.String: int length()>();
+> v13 = v10 + v12;
+> specialinvoke v21.<java.lang.StringBuilder: void <init>(int)>(v13);
+> v14 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,java.lang.String)>(v4, v7) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001@\u0001");
+> v15 = v0.<com.google.common.truth.IterableSubject: java.lang.Iterable actual>;
+> v16 = virtualinvoke v15.<java.lang.Object: java.lang.String toString()>();
+> v17 = virtualinvoke v16.<java.lang.String: boolean equals(java.lang.Object)>(v14);
+> if v17 == 0 goto label1;
+> v18 = v0.<com.google.common.truth.IterableSubject: java.lang.Iterable actual>;
+> v19 = staticinvoke <com.google.common.collect.Iterables: java.lang.String toString(java.lang.Iterable)>(v18);
+> return v19;
+44,45c52,53
+< v14 = specialinvoke v0.<com.google.common.truth.Subject: java.lang.String actualCustomStringRepresentation()>();
+< return v14;
+---
+> v20 = specialinvoke v0.<com.google.common.truth.Subject: java.lang.String actualCustomStringRepresentation()>();
+> return v20;
+746d753
+< com.google.common.base.Optional v3, v5;
+748,749c755,759
+< java.lang.Object v6;
+< java.lang.String v0, v2;
+---
+> com.google.common.base.Optional v3, v6;
+> int v10, v12, v13, v9;
+> java.lang.Object v7;
+> java.lang.StringBuilder v14;
+> java.lang.String v0, v11, v2, v5, v8;
+757,759c767,777
+< v5 = v1.<com.google.common.truth.SubjectUtils$DuplicateGroupedAndTyped: com.google.common.base.Optional homogeneousTypeToDisplay>;
+< v6 = virtualinvoke v5.<com.google.common.base.Optional: java.lang.Object get()>();
+< v2 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,java.lang.Object)>(v2, v6) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001 (\u0001)");
+---
+> v5 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v2);
+> v6 = v1.<com.google.common.truth.SubjectUtils$DuplicateGroupedAndTyped: com.google.common.base.Optional homogeneousTypeToDisplay>;
+> v7 = virtualinvoke v6.<com.google.common.base.Optional: java.lang.Object get()>();
+> v8 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v5);
+> v9 = virtualinvoke v8.<java.lang.String: int length()>();
+> v10 = 3 + v9;
+> v11 = staticinvoke <java.lang.String: java.lang.String valueOf(java.lang.Object)>(v7);
+> v12 = virtualinvoke v11.<java.lang.String: int length()>();
+> v13 = v10 + v12;
+> specialinvoke v14.<java.lang.StringBuilder: void <init>(int)>(v13);
+> v2 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (java.lang.String,java.lang.String)>(v5, v7) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("\u0001 (\u0001)");

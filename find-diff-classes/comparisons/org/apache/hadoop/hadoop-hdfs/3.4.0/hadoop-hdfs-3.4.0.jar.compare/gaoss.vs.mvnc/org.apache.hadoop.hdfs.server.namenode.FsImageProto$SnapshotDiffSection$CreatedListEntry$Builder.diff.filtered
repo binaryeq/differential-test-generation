@@ -1,0 +1,14 @@
+101,103d100
+< byte v3;
+< int v2, v4;
+< org.apache.hadoop.hdfs.server.namenode.FsImageProto$SnapshotDiffSection$CreatedListEntry v1;
+105a103,105
+> int v2, v4, v6, v7;
+> org.apache.hadoop.hdfs.server.namenode.FsImageProto$SnapshotDiffSection$CreatedListEntry v1;
+> boolean v3;
+116c116,118
+< v1.<org.apache.hadoop.hdfs.server.namenode.FsImageProto$SnapshotDiffSection$CreatedListEntry: int bitField0_> = v3;
+---
+> v6 = v1.<org.apache.hadoop.hdfs.server.namenode.FsImageProto$SnapshotDiffSection$CreatedListEntry: int bitField0_>;
+> v7 = v6 | v3;
+> v1.<org.apache.hadoop.hdfs.server.namenode.FsImageProto$SnapshotDiffSection$CreatedListEntry: int bitField0_> = v7;

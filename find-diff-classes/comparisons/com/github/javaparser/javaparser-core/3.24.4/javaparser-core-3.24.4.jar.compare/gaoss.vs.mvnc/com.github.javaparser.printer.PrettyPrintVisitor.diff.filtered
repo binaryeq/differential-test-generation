@@ -1,0 +1,351 @@
+1828c1828
+< com.github.javaparser.printer.SourcePrinter v75, v77, v81;
+---
+> com.github.javaparser.printer.SourcePrinter v67, v69, v73;
+1830c1830
+< com.github.javaparser.ast.expr.SimpleName v74;
+---
+> com.github.javaparser.ast.expr.SimpleName v66;
+1832c1832
+< java.util.function.Supplier v52;
+---
+> java.util.function.Supplier v47;
+1834,1837c1834,1837
+< boolean v13, v15, v28, v33, v34, v36, v50, v54, v56, v6, v61, v70, v71, v78, v79, v80;
+< com.github.javaparser.ast.NodeList v76;
+< java.util.function.Predicate v17, v31, v39, v59, v68;
+< java.util.Optional v10, v14, v18, v21, v23, v25, v3, v32, v37, v40, v43, v45, v47, v51, v57, v60, v64, v66, v69, v72, v8;
+---
+> boolean v13, v15, v26, v30, v31, v33, v45, v49, v51, v55, v6, v62, v63, v70, v71, v72;
+> com.github.javaparser.ast.NodeList v68;
+> java.util.function.Predicate v16, v28, v35, v53, v60;
+> java.util.Optional v10, v14, v17, v19, v21, v23, v29, v3, v34, v36, v38, v40, v42, v46, v52, v54, v57, v59, v61, v64, v8;
+1840,1845c1840,1844
+< java.util.concurrent.atomic.AtomicBoolean v35, v4, v55;
+< java.util.function.Function v20, v22, v24, v42, v44, v46, v63, v65, v9;
+< java.lang.Boolean v11, v26, v48;
+< java.util.function.Consumer v73;
+< java.lang.Class v16, v19, v30, v38, v41, v58, v62, v67;
+< java.lang.Object v12, v27, v29, v49, v53;
+---
+> java.util.concurrent.atomic.AtomicBoolean v32, v4, v50;
+> java.util.function.Function v18, v20, v22, v37, v39, v41, v56, v58, v9;
+> java.lang.Boolean v11, v24, v43;
+> java.util.function.Consumer v65;
+> java.lang.Object v12, v25, v27, v44, v48;
+1870,1888c1869,1885
+< v16 = class "Lcom/github/javaparser/ast/nodeTypes/NodeWithTraversableScope;";
+< virtualinvoke v16.<java.lang.Object: java.lang.Class getClass()>();
+< v17 = staticinvoke <com.github.javaparser.printer.PrettyPrintVisitor$isInstance__946: java.util.function.Predicate bootstrap$(java.lang.Class)>(class "Lcom/github/javaparser/ast/nodeTypes/NodeWithTraversableScope;");
+< v18 = virtualinvoke v14.<java.util.Optional: java.util.Optional filter(java.util.function.Predicate)>(v17);
+< v19 = class "Lcom/github/javaparser/ast/nodeTypes/NodeWithTraversableScope;";
+< virtualinvoke v19.<java.lang.Object: java.lang.Class getClass()>();
+< v20 = staticinvoke <com.github.javaparser.printer.PrettyPrintVisitor$cast__947: java.util.function.Function bootstrap$(java.lang.Class)>(class "Lcom/github/javaparser/ast/nodeTypes/NodeWithTraversableScope;");
+< v21 = virtualinvoke v18.<java.util.Optional: java.util.Optional map(java.util.function.Function)>(v20);
+< v22 = staticinvoke <com.github.javaparser.printer.PrettyPrintVisitor$traverseScope__948: java.util.function.Function bootstrap$()>();
+< v23 = virtualinvoke v21.<java.util.Optional: java.util.Optional flatMap(java.util.function.Function)>(v22);
+< virtualinvoke v1.<java.lang.Object: java.lang.Class getClass()>();
+< v24 = staticinvoke <com.github.javaparser.printer.PrettyPrintVisitor$equals__949: java.util.function.Function bootstrap$(com.github.javaparser.ast.Node)>(v1);
+< v25 = virtualinvoke v23.<java.util.Optional: java.util.Optional map(java.util.function.Function)>(v24);
+< v26 = staticinvoke <java.lang.Boolean: java.lang.Boolean valueOf(boolean)>(0);
+< v27 = virtualinvoke v25.<java.util.Optional: java.lang.Object orElse(java.lang.Object)>(v26);
+< v28 = virtualinvoke v27.<java.lang.Boolean: boolean booleanValue()>();
+< if v28 == 0 goto label02;
+< v29 = virtualinvoke v14.<java.util.Optional: java.lang.Object get()>();
+< v14 = virtualinvoke v29.<com.github.javaparser.ast.Node: java.util.Optional getParentNode()>();
+---
+> staticinvoke <java.util.Objects: java.lang.Object requireNonNull(java.lang.Object)>(class "Lcom/github/javaparser/ast/nodeTypes/NodeWithTraversableScope;");
+> v16 = staticinvoke <com.github.javaparser.printer.PrettyPrintVisitor$isInstance__1109: java.util.function.Predicate bootstrap$(java.lang.Class)>(class "Lcom/github/javaparser/ast/nodeTypes/NodeWithTraversableScope;");
+> v17 = virtualinvoke v14.<java.util.Optional: java.util.Optional filter(java.util.function.Predicate)>(v16);
+> staticinvoke <java.util.Objects: java.lang.Object requireNonNull(java.lang.Object)>(class "Lcom/github/javaparser/ast/nodeTypes/NodeWithTraversableScope;");
+> v18 = staticinvoke <com.github.javaparser.printer.PrettyPrintVisitor$cast__1110: java.util.function.Function bootstrap$(java.lang.Class)>(class "Lcom/github/javaparser/ast/nodeTypes/NodeWithTraversableScope;");
+> v19 = virtualinvoke v17.<java.util.Optional: java.util.Optional map(java.util.function.Function)>(v18);
+> v20 = staticinvoke <com.github.javaparser.printer.PrettyPrintVisitor$traverseScope__1111: java.util.function.Function bootstrap$()>();
+> v21 = virtualinvoke v19.<java.util.Optional: java.util.Optional flatMap(java.util.function.Function)>(v20);
+> staticinvoke <java.util.Objects: java.lang.Object requireNonNull(java.lang.Object)>(v1);
+> v22 = staticinvoke <com.github.javaparser.printer.PrettyPrintVisitor$equals__1112: java.util.function.Function bootstrap$(com.github.javaparser.ast.Node)>(v1);
+> v23 = virtualinvoke v21.<java.util.Optional: java.util.Optional map(java.util.function.Function)>(v22);
+> v24 = staticinvoke <java.lang.Boolean: java.lang.Boolean valueOf(boolean)>(0);
+> v25 = virtualinvoke v23.<java.util.Optional: java.lang.Object orElse(java.lang.Object)>(v24);
+> v26 = virtualinvoke v25.<java.lang.Boolean: boolean booleanValue()>();
+> if v26 == 0 goto label02;
+> v27 = virtualinvoke v14.<java.util.Optional: java.lang.Object get()>();
+> v14 = virtualinvoke v27.<com.github.javaparser.ast.Node: java.util.Optional getParentNode()>();
+1891,1897c1888,1893
+< v30 = class "Lcom/github/javaparser/ast/expr/MethodCallExpr;";
+< virtualinvoke v30.<java.lang.Object: java.lang.Class getClass()>();
+< v31 = staticinvoke <com.github.javaparser.printer.PrettyPrintVisitor$isInstance__945: java.util.function.Predicate bootstrap$(java.lang.Class)>(class "Lcom/github/javaparser/ast/expr/MethodCallExpr;");
+< v32 = virtualinvoke v14.<java.util.Optional: java.util.Optional filter(java.util.function.Predicate)>(v31);
+< v33 = virtualinvoke v32.<java.util.Optional: boolean isPresent()>();
+< if v33 != 0 goto label03;
+< v34 = 1;
+---
+> staticinvoke <java.util.Objects: java.lang.Object requireNonNull(java.lang.Object)>(class "Lcom/github/javaparser/ast/expr/MethodCallExpr;");
+> v28 = staticinvoke <com.github.javaparser.printer.PrettyPrintVisitor$isInstance__1108: java.util.function.Predicate bootstrap$(java.lang.Class)>(class "Lcom/github/javaparser/ast/expr/MethodCallExpr;");
+> v29 = virtualinvoke v14.<java.util.Optional: java.util.Optional filter(java.util.function.Predicate)>(v28);
+> v30 = virtualinvoke v29.<java.util.Optional: boolean isPresent()>();
+> if v30 != 0 goto label03;
+> v31 = 1;
+1900c1896
+< v34 = 0;
+---
+> v31 = 0;
+1902c1898
+< virtualinvoke v4.<java.util.concurrent.atomic.AtomicBoolean: void set(boolean)>(v34);
+---
+> virtualinvoke v4.<java.util.concurrent.atomic.AtomicBoolean: void set(boolean)>(v31);
+1904,1907c1900,1903
+< v35 = new java.util.concurrent.atomic.AtomicBoolean;
+< specialinvoke v35.<java.util.concurrent.atomic.AtomicBoolean: void <init>(boolean)>(1);
+< v36 = virtualinvoke v4.<java.util.concurrent.atomic.AtomicBoolean: boolean get()>();
+< if v36 == 0 goto label07;
+---
+> v32 = new java.util.concurrent.atomic.AtomicBoolean;
+> specialinvoke v32.<java.util.concurrent.atomic.AtomicBoolean: void <init>(boolean)>(1);
+> v33 = virtualinvoke v4.<java.util.concurrent.atomic.AtomicBoolean: boolean get()>();
+> if v33 == 0 goto label07;
+1909,1932c1905,1926
+< v37 = virtualinvoke v1.<com.github.javaparser.ast.Node: java.util.Optional getParentNode()>();
+< v38 = class "Lcom/github/javaparser/ast/nodeTypes/NodeWithTraversableScope;";
+< virtualinvoke v38.<java.lang.Object: java.lang.Class getClass()>();
+< v39 = staticinvoke <com.github.javaparser.printer.PrettyPrintVisitor$isInstance__939: java.util.function.Predicate bootstrap$(java.lang.Class)>(class "Lcom/github/javaparser/ast/nodeTypes/NodeWithTraversableScope;");
+< v40 = virtualinvoke v37.<java.util.Optional: java.util.Optional filter(java.util.function.Predicate)>(v39);
+< v41 = class "Lcom/github/javaparser/ast/nodeTypes/NodeWithTraversableScope;";
+< virtualinvoke v41.<java.lang.Object: java.lang.Class getClass()>();
+< v42 = staticinvoke <com.github.javaparser.printer.PrettyPrintVisitor$cast__940: java.util.function.Function bootstrap$(java.lang.Class)>(class "Lcom/github/javaparser/ast/nodeTypes/NodeWithTraversableScope;");
+< v43 = virtualinvoke v40.<java.util.Optional: java.util.Optional map(java.util.function.Function)>(v42);
+< v44 = staticinvoke <com.github.javaparser.printer.PrettyPrintVisitor$traverseScope__941: java.util.function.Function bootstrap$()>();
+< v45 = virtualinvoke v43.<java.util.Optional: java.util.Optional flatMap(java.util.function.Function)>(v44);
+< virtualinvoke v1.<java.lang.Object: java.lang.Class getClass()>();
+< v46 = staticinvoke <com.github.javaparser.printer.PrettyPrintVisitor$equals__942: java.util.function.Function bootstrap$(com.github.javaparser.ast.Node)>(v1);
+< v47 = virtualinvoke v45.<java.util.Optional: java.util.Optional map(java.util.function.Function)>(v46);
+< v48 = staticinvoke <java.lang.Boolean: java.lang.Boolean valueOf(boolean)>(0);
+< v49 = virtualinvoke v47.<java.util.Optional: java.lang.Object orElse(java.lang.Object)>(v48);
+< v50 = virtualinvoke v49.<java.lang.Boolean: boolean booleanValue()>();
+< if v50 == 0 goto label07;
+< v51 = virtualinvoke v1.<com.github.javaparser.ast.Node: java.util.Optional getParentNode()>();
+< v52 = staticinvoke <com.github.javaparser.printer.PrettyPrintVisitor$init__943: java.util.function.Supplier bootstrap$()>();
+< v53 = virtualinvoke v51.<java.util.Optional: java.lang.Object orElseThrow(java.util.function.Supplier)>(v52);
+< v54 = v53 instanceof com.github.javaparser.ast.expr.MethodCallExpr;
+< if v54 == 0 goto label06;
+< virtualinvoke v35.<java.util.concurrent.atomic.AtomicBoolean: void set(boolean)>(0);
+---
+> v34 = virtualinvoke v1.<com.github.javaparser.ast.Node: java.util.Optional getParentNode()>();
+> staticinvoke <java.util.Objects: java.lang.Object requireNonNull(java.lang.Object)>(class "Lcom/github/javaparser/ast/nodeTypes/NodeWithTraversableScope;");
+> v35 = staticinvoke <com.github.javaparser.printer.PrettyPrintVisitor$isInstance__1102: java.util.function.Predicate bootstrap$(java.lang.Class)>(class "Lcom/github/javaparser/ast/nodeTypes/NodeWithTraversableScope;");
+> v36 = virtualinvoke v34.<java.util.Optional: java.util.Optional filter(java.util.function.Predicate)>(v35);
+> staticinvoke <java.util.Objects: java.lang.Object requireNonNull(java.lang.Object)>(class "Lcom/github/javaparser/ast/nodeTypes/NodeWithTraversableScope;");
+> v37 = staticinvoke <com.github.javaparser.printer.PrettyPrintVisitor$cast__1103: java.util.function.Function bootstrap$(java.lang.Class)>(class "Lcom/github/javaparser/ast/nodeTypes/NodeWithTraversableScope;");
+> v38 = virtualinvoke v36.<java.util.Optional: java.util.Optional map(java.util.function.Function)>(v37);
+> v39 = staticinvoke <com.github.javaparser.printer.PrettyPrintVisitor$traverseScope__1104: java.util.function.Function bootstrap$()>();
+> v40 = virtualinvoke v38.<java.util.Optional: java.util.Optional flatMap(java.util.function.Function)>(v39);
+> staticinvoke <java.util.Objects: java.lang.Object requireNonNull(java.lang.Object)>(v1);
+> v41 = staticinvoke <com.github.javaparser.printer.PrettyPrintVisitor$equals__1105: java.util.function.Function bootstrap$(com.github.javaparser.ast.Node)>(v1);
+> v42 = virtualinvoke v40.<java.util.Optional: java.util.Optional map(java.util.function.Function)>(v41);
+> v43 = staticinvoke <java.lang.Boolean: java.lang.Boolean valueOf(boolean)>(0);
+> v44 = virtualinvoke v42.<java.util.Optional: java.lang.Object orElse(java.lang.Object)>(v43);
+> v45 = virtualinvoke v44.<java.lang.Boolean: boolean booleanValue()>();
+> if v45 == 0 goto label07;
+> v46 = virtualinvoke v1.<com.github.javaparser.ast.Node: java.util.Optional getParentNode()>();
+> v47 = staticinvoke <com.github.javaparser.printer.PrettyPrintVisitor$init__1106: java.util.function.Supplier bootstrap$()>();
+> v48 = virtualinvoke v46.<java.util.Optional: java.lang.Object orElseThrow(java.util.function.Supplier)>(v47);
+> v49 = v48 instanceof com.github.javaparser.ast.expr.MethodCallExpr;
+> if v49 == 0 goto label06;
+> virtualinvoke v32.<java.util.concurrent.atomic.AtomicBoolean: void set(boolean)>(0);
+1934,1938c1928,1932
+< v55 = new java.util.concurrent.atomic.AtomicBoolean;
+< specialinvoke v55.<java.util.concurrent.atomic.AtomicBoolean: void <init>()>();
+< v56 = virtualinvoke v4.<java.util.concurrent.atomic.AtomicBoolean: boolean get()>();
+< if v56 == 0 goto label10;
+< v57 = virtualinvoke v1.<com.github.javaparser.ast.expr.MethodCallExpr: java.util.Optional getScope()>();
+---
+> v50 = new java.util.concurrent.atomic.AtomicBoolean;
+> specialinvoke v50.<java.util.concurrent.atomic.AtomicBoolean: void <init>()>();
+> v51 = virtualinvoke v4.<java.util.concurrent.atomic.AtomicBoolean: boolean get()>();
+> if v51 == 0 goto label10;
+> v52 = virtualinvoke v1.<com.github.javaparser.ast.expr.MethodCallExpr: java.util.Optional getScope()>();
+1940,1960c1934,1951
+< v58 = class "Lcom/github/javaparser/ast/nodeTypes/NodeWithTraversableScope;";
+< virtualinvoke v58.<java.lang.Object: java.lang.Class getClass()>();
+< v59 = staticinvoke <com.github.javaparser.printer.PrettyPrintVisitor$isInstance__935: java.util.function.Predicate bootstrap$(java.lang.Class)>(class "Lcom/github/javaparser/ast/nodeTypes/NodeWithTraversableScope;");
+< v60 = virtualinvoke v57.<java.util.Optional: java.util.Optional filter(java.util.function.Predicate)>(v59);
+< v61 = virtualinvoke v60.<java.util.Optional: boolean isPresent()>();
+< if v61 == 0 goto label10;
+< v62 = class "Lcom/github/javaparser/ast/nodeTypes/NodeWithTraversableScope;";
+< virtualinvoke v62.<java.lang.Object: java.lang.Class getClass()>();
+< v63 = staticinvoke <com.github.javaparser.printer.PrettyPrintVisitor$cast__936: java.util.function.Function bootstrap$(java.lang.Class)>(class "Lcom/github/javaparser/ast/nodeTypes/NodeWithTraversableScope;");
+< v64 = virtualinvoke v57.<java.util.Optional: java.util.Optional map(java.util.function.Function)>(v63);
+< v65 = staticinvoke <com.github.javaparser.printer.PrettyPrintVisitor$traverseScope__937: java.util.function.Function bootstrap$()>();
+< v66 = virtualinvoke v64.<java.util.Optional: java.util.Optional flatMap(java.util.function.Function)>(v65);
+< v67 = class "Lcom/github/javaparser/ast/expr/MethodCallExpr;";
+< virtualinvoke v67.<java.lang.Object: java.lang.Class getClass()>();
+< v68 = staticinvoke <com.github.javaparser.printer.PrettyPrintVisitor$isInstance__938: java.util.function.Predicate bootstrap$(java.lang.Class)>(class "Lcom/github/javaparser/ast/expr/MethodCallExpr;");
+< v69 = virtualinvoke v57.<java.util.Optional: java.util.Optional filter(java.util.function.Predicate)>(v68);
+< v70 = virtualinvoke v69.<java.util.Optional: boolean isPresent()>();
+< if v70 == 0 goto label09;
+< v71 = virtualinvoke v66.<java.util.Optional: boolean isPresent()>();
+< if v71 == 0 goto label09;
+< virtualinvoke v55.<java.util.concurrent.atomic.AtomicBoolean: void set(boolean)>(1);
+---
+> staticinvoke <java.util.Objects: java.lang.Object requireNonNull(java.lang.Object)>(class "Lcom/github/javaparser/ast/nodeTypes/NodeWithTraversableScope;");
+> v53 = staticinvoke <com.github.javaparser.printer.PrettyPrintVisitor$isInstance__1098: java.util.function.Predicate bootstrap$(java.lang.Class)>(class "Lcom/github/javaparser/ast/nodeTypes/NodeWithTraversableScope;");
+> v54 = virtualinvoke v52.<java.util.Optional: java.util.Optional filter(java.util.function.Predicate)>(v53);
+> v55 = virtualinvoke v54.<java.util.Optional: boolean isPresent()>();
+> if v55 == 0 goto label10;
+> staticinvoke <java.util.Objects: java.lang.Object requireNonNull(java.lang.Object)>(class "Lcom/github/javaparser/ast/nodeTypes/NodeWithTraversableScope;");
+> v56 = staticinvoke <com.github.javaparser.printer.PrettyPrintVisitor$cast__1099: java.util.function.Function bootstrap$(java.lang.Class)>(class "Lcom/github/javaparser/ast/nodeTypes/NodeWithTraversableScope;");
+> v57 = virtualinvoke v52.<java.util.Optional: java.util.Optional map(java.util.function.Function)>(v56);
+> v58 = staticinvoke <com.github.javaparser.printer.PrettyPrintVisitor$traverseScope__1100: java.util.function.Function bootstrap$()>();
+> v59 = virtualinvoke v57.<java.util.Optional: java.util.Optional flatMap(java.util.function.Function)>(v58);
+> staticinvoke <java.util.Objects: java.lang.Object requireNonNull(java.lang.Object)>(class "Lcom/github/javaparser/ast/expr/MethodCallExpr;");
+> v60 = staticinvoke <com.github.javaparser.printer.PrettyPrintVisitor$isInstance__1101: java.util.function.Predicate bootstrap$(java.lang.Class)>(class "Lcom/github/javaparser/ast/expr/MethodCallExpr;");
+> v61 = virtualinvoke v52.<java.util.Optional: java.util.Optional filter(java.util.function.Predicate)>(v60);
+> v62 = virtualinvoke v61.<java.util.Optional: boolean isPresent()>();
+> if v62 == 0 goto label09;
+> v63 = virtualinvoke v59.<java.util.Optional: boolean isPresent()>();
+> if v63 == 0 goto label09;
+> virtualinvoke v50.<java.util.concurrent.atomic.AtomicBoolean: void set(boolean)>(1);
+1963c1954
+< v57 = v66;
+---
+> v52 = v59;
+1966,1968c1957,1959
+< v72 = virtualinvoke v1.<com.github.javaparser.ast.expr.MethodCallExpr: java.util.Optional getScope()>();
+< v73 = staticinvoke <com.github.javaparser.printer.PrettyPrintVisitor$lambda_visit_8__934: java.util.function.Consumer bootstrap$(com.github.javaparser.printer.PrettyPrintVisitor,java.lang.Void,java.util.concurrent.atomic.AtomicBoolean,java.util.concurrent.atomic.AtomicBoolean,java.util.concurrent.atomic.AtomicBoolean)>(v0, v2, v4, v55, v35);
+< virtualinvoke v72.<java.util.Optional: void ifPresent(java.util.function.Consumer)>(v73);
+---
+> v64 = virtualinvoke v1.<com.github.javaparser.ast.expr.MethodCallExpr: java.util.Optional getScope()>();
+> v65 = staticinvoke <com.github.javaparser.printer.PrettyPrintVisitor$lambda_visit_8__1097: java.util.function.Consumer bootstrap$(com.github.javaparser.printer.PrettyPrintVisitor,java.lang.Void,java.util.concurrent.atomic.AtomicBoolean,java.util.concurrent.atomic.AtomicBoolean,java.util.concurrent.atomic.AtomicBoolean)>(v0, v2, v4, v50, v32);
+> virtualinvoke v64.<java.util.Optional: void ifPresent(java.util.function.Consumer)>(v65);
+1970,1985c1961,1976
+< v74 = virtualinvoke v1.<com.github.javaparser.ast.expr.MethodCallExpr: com.github.javaparser.ast.expr.SimpleName getName()>();
+< virtualinvoke v74.<com.github.javaparser.ast.expr.SimpleName: void accept(com.github.javaparser.ast.visitor.VoidVisitor,java.lang.Object)>(v0, v2);
+< v75 = v0.<com.github.javaparser.printer.PrettyPrintVisitor: com.github.javaparser.printer.SourcePrinter printer>;
+< virtualinvoke v75.<com.github.javaparser.printer.SourcePrinter: void duplicateIndent()>();
+< v76 = virtualinvoke v1.<com.github.javaparser.ast.expr.MethodCallExpr: com.github.javaparser.ast.NodeList getArguments()>();
+< virtualinvoke v0.<com.github.javaparser.printer.PrettyPrintVisitor: void printArguments(com.github.javaparser.ast.NodeList,java.lang.Void)>(v76, v2);
+< v77 = v0.<com.github.javaparser.printer.PrettyPrintVisitor: com.github.javaparser.printer.SourcePrinter printer>;
+< virtualinvoke v77.<com.github.javaparser.printer.SourcePrinter: com.github.javaparser.printer.SourcePrinter unindent()>();
+< v78 = virtualinvoke v4.<java.util.concurrent.atomic.AtomicBoolean: boolean get()>();
+< if v78 == 0 goto label11;
+< v79 = virtualinvoke v55.<java.util.concurrent.atomic.AtomicBoolean: boolean get()>();
+< if v79 == 0 goto label11;
+< v80 = virtualinvoke v35.<java.util.concurrent.atomic.AtomicBoolean: boolean get()>();
+< if v80 == 0 goto label11;
+< v81 = v0.<com.github.javaparser.printer.PrettyPrintVisitor: com.github.javaparser.printer.SourcePrinter printer>;
+< virtualinvoke v81.<com.github.javaparser.printer.SourcePrinter: void reindentToPreviousLevel()>();
+---
+> v66 = virtualinvoke v1.<com.github.javaparser.ast.expr.MethodCallExpr: com.github.javaparser.ast.expr.SimpleName getName()>();
+> virtualinvoke v66.<com.github.javaparser.ast.expr.SimpleName: void accept(com.github.javaparser.ast.visitor.VoidVisitor,java.lang.Object)>(v0, v2);
+> v67 = v0.<com.github.javaparser.printer.PrettyPrintVisitor: com.github.javaparser.printer.SourcePrinter printer>;
+> virtualinvoke v67.<com.github.javaparser.printer.SourcePrinter: void duplicateIndent()>();
+> v68 = virtualinvoke v1.<com.github.javaparser.ast.expr.MethodCallExpr: com.github.javaparser.ast.NodeList getArguments()>();
+> virtualinvoke v0.<com.github.javaparser.printer.PrettyPrintVisitor: void printArguments(com.github.javaparser.ast.NodeList,java.lang.Void)>(v68, v2);
+> v69 = v0.<com.github.javaparser.printer.PrettyPrintVisitor: com.github.javaparser.printer.SourcePrinter printer>;
+> virtualinvoke v69.<com.github.javaparser.printer.SourcePrinter: com.github.javaparser.printer.SourcePrinter unindent()>();
+> v70 = virtualinvoke v4.<java.util.concurrent.atomic.AtomicBoolean: boolean get()>();
+> if v70 == 0 goto label11;
+> v71 = virtualinvoke v50.<java.util.concurrent.atomic.AtomicBoolean: boolean get()>();
+> if v71 == 0 goto label11;
+> v72 = virtualinvoke v32.<java.util.concurrent.atomic.AtomicBoolean: boolean get()>();
+> if v72 == 0 goto label11;
+> v73 = v0.<com.github.javaparser.printer.PrettyPrintVisitor: com.github.javaparser.printer.SourcePrinter printer>;
+> virtualinvoke v73.<com.github.javaparser.printer.SourcePrinter: void reindentToPreviousLevel()>();
+2419,2423c2410,2414
+< java.util.function.Function v6;
+< com.github.javaparser.printer.SourcePrinter v18, v24;
+< java.lang.Boolean v8;
+< boolean v10, v15, v21, v23;
+< com.github.javaparser.ast.NodeList v11, v12, v13, v14, v19;
+---
+> java.util.function.Function v5;
+> com.github.javaparser.printer.SourcePrinter v17, v23;
+> java.lang.Boolean v7;
+> boolean v14, v20, v22, v9;
+> com.github.javaparser.ast.NodeList v10, v11, v12, v13, v18;
+2425c2416
+< java.util.Iterator v20;
+---
+> java.util.Iterator v19;
+2427,2430c2418,2420
+< java.util.function.Consumer v17;
+< java.util.Optional v16, v3, v4, v7;
+< java.lang.Class v5;
+< java.lang.Object v22, v9;
+---
+> java.util.function.Consumer v16;
+> java.util.Optional v15, v3, v4, v6;
+> java.lang.Object v21, v8;
+2438,2447c2428,2436
+< v5 = class "Lcom/github/javaparser/ast/stmt/ExpressionStmt;";
+< virtualinvoke v5.<java.lang.Object: java.lang.Class getClass()>();
+< v6 = staticinvoke <com.github.javaparser.printer.PrettyPrintVisitor$isInstance__951: java.util.function.Function bootstrap$(java.lang.Class)>(class "Lcom/github/javaparser/ast/stmt/ExpressionStmt;");
+< v7 = virtualinvoke v4.<java.util.Optional: java.util.Optional map(java.util.function.Function)>(v6);
+< v8 = staticinvoke <java.lang.Boolean: java.lang.Boolean valueOf(boolean)>(0);
+< v9 = virtualinvoke v7.<java.util.Optional: java.lang.Object orElse(java.lang.Object)>(v8);
+< v10 = virtualinvoke v9.<java.lang.Boolean: boolean booleanValue()>();
+< if v10 == 0 goto label1;
+< v11 = virtualinvoke v1.<com.github.javaparser.ast.expr.VariableDeclarationExpr: com.github.javaparser.ast.NodeList getAnnotations()>();
+< virtualinvoke v0.<com.github.javaparser.printer.PrettyPrintVisitor: void printMemberAnnotations(com.github.javaparser.ast.NodeList,java.lang.Void)>(v11, v2);
+---
+> staticinvoke <java.util.Objects: java.lang.Object requireNonNull(java.lang.Object)>(class "Lcom/github/javaparser/ast/stmt/ExpressionStmt;");
+> v5 = staticinvoke <com.github.javaparser.printer.PrettyPrintVisitor$isInstance__1114: java.util.function.Function bootstrap$(java.lang.Class)>(class "Lcom/github/javaparser/ast/stmt/ExpressionStmt;");
+> v6 = virtualinvoke v4.<java.util.Optional: java.util.Optional map(java.util.function.Function)>(v5);
+> v7 = staticinvoke <java.lang.Boolean: java.lang.Boolean valueOf(boolean)>(0);
+> v8 = virtualinvoke v6.<java.util.Optional: java.lang.Object orElse(java.lang.Object)>(v7);
+> v9 = virtualinvoke v8.<java.lang.Boolean: boolean booleanValue()>();
+> if v9 == 0 goto label1;
+> v10 = virtualinvoke v1.<com.github.javaparser.ast.expr.VariableDeclarationExpr: com.github.javaparser.ast.NodeList getAnnotations()>();
+> virtualinvoke v0.<com.github.javaparser.printer.PrettyPrintVisitor: void printMemberAnnotations(com.github.javaparser.ast.NodeList,java.lang.Void)>(v10, v2);
+2450,2451c2439,2440
+< v12 = virtualinvoke v1.<com.github.javaparser.ast.expr.VariableDeclarationExpr: com.github.javaparser.ast.NodeList getAnnotations()>();
+< virtualinvoke v0.<com.github.javaparser.printer.PrettyPrintVisitor: void printAnnotations(com.github.javaparser.ast.NodeList,boolean,java.lang.Void)>(v12, 0, v2);
+---
+> v11 = virtualinvoke v1.<com.github.javaparser.ast.expr.VariableDeclarationExpr: com.github.javaparser.ast.NodeList getAnnotations()>();
+> virtualinvoke v0.<com.github.javaparser.printer.PrettyPrintVisitor: void printAnnotations(com.github.javaparser.ast.NodeList,boolean,java.lang.Void)>(v11, 0, v2);
+2453,2460c2442,2449
+< v13 = virtualinvoke v1.<com.github.javaparser.ast.expr.VariableDeclarationExpr: com.github.javaparser.ast.NodeList getModifiers()>();
+< virtualinvoke v0.<com.github.javaparser.printer.PrettyPrintVisitor: void printModifiers(com.github.javaparser.ast.NodeList)>(v13);
+< v14 = virtualinvoke v1.<com.github.javaparser.ast.expr.VariableDeclarationExpr: com.github.javaparser.ast.NodeList getVariables()>();
+< v15 = virtualinvoke v14.<com.github.javaparser.ast.NodeList: boolean isEmpty()>();
+< if v15 != 0 goto label3;
+< v16 = virtualinvoke v1.<com.github.javaparser.ast.expr.VariableDeclarationExpr: java.util.Optional getMaximumCommonType()>();
+< v17 = staticinvoke <com.github.javaparser.printer.PrettyPrintVisitor$lambda_visit_10__952: java.util.function.Consumer bootstrap$(com.github.javaparser.printer.PrettyPrintVisitor,java.lang.Void)>(v0, v2);
+< virtualinvoke v16.<java.util.Optional: void ifPresent(java.util.function.Consumer)>(v17);
+---
+> v12 = virtualinvoke v1.<com.github.javaparser.ast.expr.VariableDeclarationExpr: com.github.javaparser.ast.NodeList getModifiers()>();
+> virtualinvoke v0.<com.github.javaparser.printer.PrettyPrintVisitor: void printModifiers(com.github.javaparser.ast.NodeList)>(v12);
+> v13 = virtualinvoke v1.<com.github.javaparser.ast.expr.VariableDeclarationExpr: com.github.javaparser.ast.NodeList getVariables()>();
+> v14 = virtualinvoke v13.<com.github.javaparser.ast.NodeList: boolean isEmpty()>();
+> if v14 != 0 goto label3;
+> v15 = virtualinvoke v1.<com.github.javaparser.ast.expr.VariableDeclarationExpr: java.util.Optional getMaximumCommonType()>();
+> v16 = staticinvoke <com.github.javaparser.printer.PrettyPrintVisitor$lambda_visit_10__1115: java.util.function.Consumer bootstrap$(com.github.javaparser.printer.PrettyPrintVisitor,java.lang.Void)>(v0, v2);
+> virtualinvoke v15.<java.util.Optional: void ifPresent(java.util.function.Consumer)>(v16);
+2462,2465c2451,2454
+< v18 = v0.<com.github.javaparser.printer.PrettyPrintVisitor: com.github.javaparser.printer.SourcePrinter printer>;
+< virtualinvoke v18.<com.github.javaparser.printer.SourcePrinter: com.github.javaparser.printer.SourcePrinter print(java.lang.String)>(" ");
+< v19 = virtualinvoke v1.<com.github.javaparser.ast.expr.VariableDeclarationExpr: com.github.javaparser.ast.NodeList getVariables()>();
+< v20 = virtualinvoke v19.<com.github.javaparser.ast.NodeList: java.util.Iterator iterator()>();
+---
+> v17 = v0.<com.github.javaparser.printer.PrettyPrintVisitor: com.github.javaparser.printer.SourcePrinter printer>;
+> virtualinvoke v17.<com.github.javaparser.printer.SourcePrinter: com.github.javaparser.printer.SourcePrinter print(java.lang.String)>(" ");
+> v18 = virtualinvoke v1.<com.github.javaparser.ast.expr.VariableDeclarationExpr: com.github.javaparser.ast.NodeList getVariables()>();
+> v19 = virtualinvoke v18.<com.github.javaparser.ast.NodeList: java.util.Iterator iterator()>();
+2467,2474c2456,2463
+< v21 = interfaceinvoke v20.<java.util.Iterator: boolean hasNext()>();
+< if v21 == 0 goto label5;
+< v22 = interfaceinvoke v20.<java.util.Iterator: java.lang.Object next()>();
+< virtualinvoke v22.<com.github.javaparser.ast.body.VariableDeclarator: void accept(com.github.javaparser.ast.visitor.VoidVisitor,java.lang.Object)>(v0, v2);
+< v23 = interfaceinvoke v20.<java.util.Iterator: boolean hasNext()>();
+< if v23 == 0 goto label4;
+< v24 = v0.<com.github.javaparser.printer.PrettyPrintVisitor: com.github.javaparser.printer.SourcePrinter printer>;
+< virtualinvoke v24.<com.github.javaparser.printer.SourcePrinter: com.github.javaparser.printer.SourcePrinter print(java.lang.String)>(", ");
+---
+> v20 = interfaceinvoke v19.<java.util.Iterator: boolean hasNext()>();
+> if v20 == 0 goto label5;
+> v21 = interfaceinvoke v19.<java.util.Iterator: java.lang.Object next()>();
+> virtualinvoke v21.<com.github.javaparser.ast.body.VariableDeclarator: void accept(com.github.javaparser.ast.visitor.VoidVisitor,java.lang.Object)>(v0, v2);
+> v22 = interfaceinvoke v19.<java.util.Iterator: boolean hasNext()>();
+> if v22 == 0 goto label4;
+> v23 = v0.<com.github.javaparser.printer.PrettyPrintVisitor: com.github.javaparser.printer.SourcePrinter printer>;
+> virtualinvoke v23.<com.github.javaparser.printer.SourcePrinter: com.github.javaparser.printer.SourcePrinter print(java.lang.String)>(", ");

@@ -1,0 +1,97 @@
+2273c2273
+< v19 = staticinvoke <org.apache.hadoop.hdfs.tools.DFSAdmin$lambda_startReconfigurationUtil_0__50: java.lang.Runnable bootstrap$(org.apache.hadoop.hdfs.tools.DFSAdmin,java.lang.String,org.apache.hadoop.hdfs.protocol.DatanodeInfo,java.io.PrintStream,java.io.PrintStream,java.util.concurrent.atomic.AtomicInteger,java.util.concurrent.atomic.AtomicInteger)>(v0, v1, v18, v3, v4, v14, v15);
+---
+> v19 = staticinvoke <org.apache.hadoop.hdfs.tools.DFSAdmin$lambda_startReconfigurationUtil_0__155: java.lang.Runnable bootstrap$(org.apache.hadoop.hdfs.tools.DFSAdmin,java.lang.String,org.apache.hadoop.hdfs.protocol.DatanodeInfo,java.io.PrintStream,java.io.PrintStream,java.util.concurrent.atomic.AtomicInteger,java.util.concurrent.atomic.AtomicInteger)>(v0, v1, v18, v3, v4, v14, v15);
+2422c2422
+< v19 = staticinvoke <org.apache.hadoop.hdfs.tools.DFSAdmin$lambda_getReconfigurationStatusUtil_1__51: java.lang.Runnable bootstrap$(org.apache.hadoop.hdfs.tools.DFSAdmin,java.lang.String,org.apache.hadoop.hdfs.protocol.DatanodeInfo,java.io.PrintStream,java.io.PrintStream,java.util.concurrent.atomic.AtomicInteger,java.util.concurrent.atomic.AtomicInteger)>(v0, v1, v18, v3, v4, v14, v15);
+---
+> v19 = staticinvoke <org.apache.hadoop.hdfs.tools.DFSAdmin$lambda_getReconfigurationStatusUtil_1__156: java.lang.Runnable bootstrap$(org.apache.hadoop.hdfs.tools.DFSAdmin,java.lang.String,org.apache.hadoop.hdfs.protocol.DatanodeInfo,java.io.PrintStream,java.io.PrintStream,java.util.concurrent.atomic.AtomicInteger,java.util.concurrent.atomic.AtomicInteger)>(v0, v1, v18, v3, v4, v14, v15);
+2692c2692
+< java.lang.Throwable v28, v29;
+---
+> java.lang.Throwable v29, v30;
+2698c2698
+< int v18, v2, v25, v26, v27, v3, v31, v5, v7;
+---
+> int v18, v2, v25, v26, v27, v28, v3, v32, v5, v7;
+2700c2700
+< java.io.PrintStream v19, v23, v30;
+---
+> java.io.PrintStream v19, v23, v31;
+2723c2723
+< label1:
+---
+> label01:
+2726c2726
+< label2:
+---
+> label02:
+2732c2732
+< label3:
+---
+> label03:
+2734c2734
+< if v21 == 0 goto label5;
+---
+> if v21 == 0 goto label05;
+2739c2739
+< if v18 != 0 goto label4;
+---
+> if v18 != 0 goto label04;
+2741c2741
+< if v25 == 0 goto label4;
+---
+> if v25 == 0 goto label04;
+2743,2745c2743,2745
+< goto label3;
+< label4:
+< if v18 == 0 goto label3;
+---
+> goto label03;
+> label04:
+> if v18 == 0 goto label03;
+2747c2747
+< if v26 == 0 goto label3;
+---
+> if v26 == 0 goto label03;
+2750,2751c2750,2753
+< goto label3;
+< label5:
+---
+> goto label03;
+> label05:
+> v28 = v18;
+> label06:
+2753,2758c2755,2757
+< label6:
+< return v18;
+< label7:
+< v28 := @caughtexception;
+< throw v28;
+< label8:
+---
+> label07:
+> return v28;
+> label08:
+2760,2765d2758
+< if v16 != null goto label9;
+< v30 = <java.lang.System: java.io.PrintStream out>;
+< virtualinvoke v30.<java.io.PrintStream: void println(java.lang.String)>("Failed to get response.\n");
+< v31 = (int) -1;
+< return v31;
+< label9:
+2767,2768c2760,2770
+< catch java.lang.Throwable from label2 to label5 with label7;
+< catch java.lang.Throwable from label1 to label6 with label8;
+---
+> label09:
+> v30 := @caughtexception;
+> if v16 != null goto label10;
+> v31 = <java.lang.System: java.io.PrintStream out>;
+> virtualinvoke v31.<java.io.PrintStream: void println(java.lang.String)>("Failed to get response.\n");
+> v32 = (int) -1;
+> return v32;
+> label10:
+> throw v30;
+> catch java.lang.Throwable from label02 to label06 with label08;
+> catch java.lang.Throwable from label01 to label07 with label09;

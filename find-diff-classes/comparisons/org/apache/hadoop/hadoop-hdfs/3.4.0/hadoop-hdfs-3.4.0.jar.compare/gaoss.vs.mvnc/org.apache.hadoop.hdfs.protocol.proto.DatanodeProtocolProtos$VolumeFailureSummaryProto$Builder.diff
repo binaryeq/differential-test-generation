@@ -1,0 +1,10 @@
+138c138
+< int v2, v4, v6;
+---
+> int v2, v4, v6, v8, v9;
+155c155,157
+< v1.<org.apache.hadoop.hdfs.protocol.proto.DatanodeProtocolProtos$VolumeFailureSummaryProto: int bitField0_> = v3;
+---
+> v8 = v1.<org.apache.hadoop.hdfs.protocol.proto.DatanodeProtocolProtos$VolumeFailureSummaryProto: int bitField0_>;
+> v9 = v8 | v3;
+> v1.<org.apache.hadoop.hdfs.protocol.proto.DatanodeProtocolProtos$VolumeFailureSummaryProto: int bitField0_> = v9;

@@ -1,0 +1,233 @@
+61,66c61,63
+< byte[] v26, v50;
+< java.util.ListIterator v20, v21, v44, v45;
+< boolean v22, v31, v46;
+< byte[][] v2, v27, v51, v52;
+< java.util.List v12, v28, v38, v58, v9;
+< long v1, v30, v55, v57;
+---
+> byte[] v27, v52;
+> byte[][] v11, v2, v28, v33, v53, v54, v60;
+> long v1, v31, v57, v59;
+68,70d64
+< int v11, v13, v14, v15, v16, v17, v18, v19, v23, v24, v32, v33, v34, v35, v36, v37, v39, v40, v41, v42, v43, v47, v48, v5, v59, v6, v60, v61, v7, v8;
+< org.apache.hadoop.hdfs.protocol.SnapshotDiffReportListing$DiffReportListingEntry v10, v29, v53, v54, v56;
+< org.apache.hadoop.hdfs.server.namenode.snapshot.Snapshot v4;
+72c66,72
+< java.lang.Object v25, v49;
+---
+> java.util.ListIterator v21, v22, v46, v47;
+> boolean v23, v32, v48;
+> java.util.List v13, v29, v40, v61, v9;
+> int v12, v14, v15, v16, v17, v18, v19, v20, v24, v25, v34, v35, v36, v37, v38, v39, v41, v42, v43, v44, v45, v49, v5, v50, v6, v62, v63, v64, v7, v8;
+> org.apache.hadoop.hdfs.protocol.SnapshotDiffReportListing$DiffReportListingEntry v10, v30, v55, v56, v58;
+> org.apache.hadoop.hdfs.server.namenode.snapshot.Snapshot v4;
+> java.lang.Object v26, v51;
+86c86,87
+< specialinvoke v10.<org.apache.hadoop.hdfs.protocol.SnapshotDiffReportListing$DiffReportListingEntry: void <init>(long,long,byte[][],boolean,byte[][])>(v1, v1, v2, 1, null);
+---
+> v11 = (byte[][]) null;
+> specialinvoke v10.<org.apache.hadoop.hdfs.protocol.SnapshotDiffReportListing$DiffReportListingEntry: void <init>(long,long,byte[][],boolean,byte[][])>(v1, v1, v2, 1, v11);
+91,92c92,93
+< v11 = (int) -1;
+< virtualinvoke v0.<org.apache.hadoop.hdfs.server.namenode.snapshot.SnapshotDiffListingInfo: void setLastIndex(int)>(v11);
+---
+> v12 = (int) -1;
+> virtualinvoke v0.<org.apache.hadoop.hdfs.server.namenode.snapshot.SnapshotDiffListingInfo: void setLastIndex(int)>(v12);
+95,101c96,102
+< v12 = virtualinvoke v3.<org.apache.hadoop.hdfs.server.namenode.snapshot.DirectoryWithSnapshotFeature$ChildrenDiff: java.util.List getCreatedUnmodifiable()>();
+< v13 = v0.<org.apache.hadoop.hdfs.server.namenode.snapshot.SnapshotDiffListingInfo: int lastIndex>;
+< v14 = (int) -1;
+< if v13 == v14 goto label03;
+< v15 = v0.<org.apache.hadoop.hdfs.server.namenode.snapshot.SnapshotDiffListingInfo: int lastIndex>;
+< v16 = interfaceinvoke v12.<java.util.List: int size()>();
+< if v15 >= v16 goto label09;
+---
+> v13 = virtualinvoke v3.<org.apache.hadoop.hdfs.server.namenode.snapshot.DirectoryWithSnapshotFeature$ChildrenDiff: java.util.List getCreatedUnmodifiable()>();
+> v14 = v0.<org.apache.hadoop.hdfs.server.namenode.snapshot.SnapshotDiffListingInfo: int lastIndex>;
+> v15 = (int) -1;
+> if v14 == v15 goto label03;
+> v16 = v0.<org.apache.hadoop.hdfs.server.namenode.snapshot.SnapshotDiffListingInfo: int lastIndex>;
+> v17 = interfaceinvoke v13.<java.util.List: int size()>();
+> if v16 >= v17 goto label09;
+103,107c104,108
+< v17 = v0.<org.apache.hadoop.hdfs.server.namenode.snapshot.SnapshotDiffListingInfo: int lastIndex>;
+< v18 = (int) -1;
+< if v17 == v18 goto label04;
+< v19 = v0.<org.apache.hadoop.hdfs.server.namenode.snapshot.SnapshotDiffListingInfo: int lastIndex>;
+< v20 = interfaceinvoke v12.<java.util.List: java.util.ListIterator listIterator(int)>(v19);
+---
+> v18 = v0.<org.apache.hadoop.hdfs.server.namenode.snapshot.SnapshotDiffListingInfo: int lastIndex>;
+> v19 = (int) -1;
+> if v18 == v19 goto label04;
+> v20 = v0.<org.apache.hadoop.hdfs.server.namenode.snapshot.SnapshotDiffListingInfo: int lastIndex>;
+> v21 = interfaceinvoke v13.<java.util.List: java.util.ListIterator listIterator(int)>(v20);
+110c111
+< v20 = interfaceinvoke v12.<java.util.List: java.util.ListIterator listIterator()>();
+---
+> v21 = interfaceinvoke v13.<java.util.List: java.util.ListIterator listIterator()>();
+112c113
+< v21 = v20;
+---
+> v22 = v21;
+114,127c115,129
+< v22 = interfaceinvoke v21.<java.util.ListIterator: boolean hasNext()>();
+< if v22 == 0 goto label08;
+< v23 = specialinvoke v0.<org.apache.hadoop.hdfs.server.namenode.snapshot.SnapshotDiffListingInfo: int getTotalEntries()>();
+< v24 = v0.<org.apache.hadoop.hdfs.server.namenode.snapshot.SnapshotDiffListingInfo: int maxEntries>;
+< if v23 >= v24 goto label07;
+< v25 = interfaceinvoke v21.<java.util.ListIterator: java.lang.Object next()>();
+< v26 = virtualinvoke v25.<org.apache.hadoop.hdfs.server.namenode.INode: byte[] getLocalNameBytes()>();
+< v27 = staticinvoke <org.apache.hadoop.hdfs.server.namenode.snapshot.SnapshotDiffListingInfo: byte[][] newPath(byte[][],byte[])>(v2, v26);
+< v28 = v0.<org.apache.hadoop.hdfs.server.namenode.snapshot.SnapshotDiffListingInfo: java.util.List createdList>;
+< v29 = new org.apache.hadoop.hdfs.protocol.SnapshotDiffReportListing$DiffReportListingEntry;
+< v30 = virtualinvoke v25.<org.apache.hadoop.hdfs.server.namenode.INode: long getId()>();
+< v31 = virtualinvoke v25.<org.apache.hadoop.hdfs.server.namenode.INode: boolean isReference()>();
+< specialinvoke v29.<org.apache.hadoop.hdfs.protocol.SnapshotDiffReportListing$DiffReportListingEntry: void <init>(long,long,byte[][],boolean,byte[][])>(v1, v30, v27, v31, null);
+< interfaceinvoke v28.<java.util.List: boolean add(java.lang.Object)>(v29);
+---
+> v23 = interfaceinvoke v22.<java.util.ListIterator: boolean hasNext()>();
+> if v23 == 0 goto label08;
+> v24 = specialinvoke v0.<org.apache.hadoop.hdfs.server.namenode.snapshot.SnapshotDiffListingInfo: int getTotalEntries()>();
+> v25 = v0.<org.apache.hadoop.hdfs.server.namenode.snapshot.SnapshotDiffListingInfo: int maxEntries>;
+> if v24 >= v25 goto label07;
+> v26 = interfaceinvoke v22.<java.util.ListIterator: java.lang.Object next()>();
+> v27 = virtualinvoke v26.<org.apache.hadoop.hdfs.server.namenode.INode: byte[] getLocalNameBytes()>();
+> v28 = staticinvoke <org.apache.hadoop.hdfs.server.namenode.snapshot.SnapshotDiffListingInfo: byte[][] newPath(byte[][],byte[])>(v2, v27);
+> v29 = v0.<org.apache.hadoop.hdfs.server.namenode.snapshot.SnapshotDiffListingInfo: java.util.List createdList>;
+> v30 = new org.apache.hadoop.hdfs.protocol.SnapshotDiffReportListing$DiffReportListingEntry;
+> v31 = virtualinvoke v26.<org.apache.hadoop.hdfs.server.namenode.INode: long getId()>();
+> v32 = virtualinvoke v26.<org.apache.hadoop.hdfs.server.namenode.INode: boolean isReference()>();
+> v33 = (byte[][]) null;
+> specialinvoke v30.<org.apache.hadoop.hdfs.protocol.SnapshotDiffReportListing$DiffReportListingEntry: void <init>(long,long,byte[][],boolean,byte[][])>(v1, v31, v28, v32, v33);
+> interfaceinvoke v29.<java.util.List: boolean add(java.lang.Object)>(v30);
+131,132c133,134
+< v32 = interfaceinvoke v21.<java.util.ListIterator: int nextIndex()>();
+< virtualinvoke v0.<org.apache.hadoop.hdfs.server.namenode.snapshot.SnapshotDiffListingInfo: void setLastIndex(int)>(v32);
+---
+> v34 = interfaceinvoke v22.<java.util.ListIterator: int nextIndex()>();
+> virtualinvoke v0.<org.apache.hadoop.hdfs.server.namenode.snapshot.SnapshotDiffListingInfo: void setLastIndex(int)>(v34);
+135,138d136
+< v33 = (int) -1;
+< virtualinvoke v0.<org.apache.hadoop.hdfs.server.namenode.snapshot.SnapshotDiffListingInfo: void setLastIndex(int)>(v33);
+< label09:
+< v34 = v0.<org.apache.hadoop.hdfs.server.namenode.snapshot.SnapshotDiffListingInfo: int lastIndex>;
+140c138,139
+< if v34 == v35 goto label10;
+---
+> virtualinvoke v0.<org.apache.hadoop.hdfs.server.namenode.snapshot.SnapshotDiffListingInfo: void setLastIndex(int)>(v35);
+> label09:
+142,143c141,145
+< v37 = interfaceinvoke v12.<java.util.List: int size()>();
+< if v36 < v37 goto label18;
+---
+> v37 = (int) -1;
+> if v36 == v37 goto label10;
+> v38 = v0.<org.apache.hadoop.hdfs.server.namenode.snapshot.SnapshotDiffListingInfo: int lastIndex>;
+> v39 = interfaceinvoke v13.<java.util.List: int size()>();
+> if v38 < v39 goto label18;
+145,149c147,148
+< v38 = virtualinvoke v3.<org.apache.hadoop.hdfs.server.namenode.snapshot.DirectoryWithSnapshotFeature$ChildrenDiff: java.util.List getDeletedUnmodifiable()>();
+< v39 = interfaceinvoke v12.<java.util.List: int size()>();
+< v40 = v0.<org.apache.hadoop.hdfs.server.namenode.snapshot.SnapshotDiffListingInfo: int lastIndex>;
+< v41 = (int) -1;
+< if v40 == v41 goto label11;
+---
+> v40 = virtualinvoke v3.<org.apache.hadoop.hdfs.server.namenode.snapshot.DirectoryWithSnapshotFeature$ChildrenDiff: java.util.List getDeletedUnmodifiable()>();
+> v41 = interfaceinvoke v13.<java.util.List: int size()>();
+151,152c150,154
+< v43 = v42 - v39;
+< v44 = interfaceinvoke v38.<java.util.List: java.util.ListIterator listIterator(int)>(v43);
+---
+> v43 = (int) -1;
+> if v42 == v43 goto label11;
+> v44 = v0.<org.apache.hadoop.hdfs.server.namenode.snapshot.SnapshotDiffListingInfo: int lastIndex>;
+> v45 = v44 - v41;
+> v46 = interfaceinvoke v40.<java.util.List: java.util.ListIterator listIterator(int)>(v45);
+155c157
+< v44 = interfaceinvoke v38.<java.util.List: java.util.ListIterator listIterator()>();
+---
+> v46 = interfaceinvoke v40.<java.util.List: java.util.ListIterator listIterator()>();
+157c159
+< v45 = v44;
+---
+> v47 = v46;
+159,172c161,174
+< v46 = interfaceinvoke v45.<java.util.ListIterator: boolean hasNext()>();
+< if v46 == 0 goto label17;
+< v47 = specialinvoke v0.<org.apache.hadoop.hdfs.server.namenode.snapshot.SnapshotDiffListingInfo: int getTotalEntries()>();
+< v48 = v0.<org.apache.hadoop.hdfs.server.namenode.snapshot.SnapshotDiffListingInfo: int maxEntries>;
+< if v47 >= v48 goto label16;
+< v49 = interfaceinvoke v45.<java.util.ListIterator: java.lang.Object next()>();
+< v50 = virtualinvoke v49.<org.apache.hadoop.hdfs.server.namenode.INode: byte[] getLocalNameBytes()>();
+< v51 = staticinvoke <org.apache.hadoop.hdfs.server.namenode.snapshot.SnapshotDiffListingInfo: byte[][] newPath(byte[][],byte[])>(v2, v50);
+< v52 = specialinvoke v0.<org.apache.hadoop.hdfs.server.namenode.snapshot.SnapshotDiffListingInfo: byte[][] findRenameTargetPath(org.apache.hadoop.hdfs.server.namenode.INode,org.apache.hadoop.hdfs.server.namenode.snapshot.Snapshot)>(v49, v4);
+< if v52 == null goto label14;
+< v53 = new org.apache.hadoop.hdfs.protocol.SnapshotDiffReportListing$DiffReportListingEntry;
+< v54 = v53;
+< v55 = virtualinvoke v49.<org.apache.hadoop.hdfs.server.namenode.INode: long getId()>();
+< specialinvoke v53.<org.apache.hadoop.hdfs.protocol.SnapshotDiffReportListing$DiffReportListingEntry: void <init>(long,long,byte[][],boolean,byte[][])>(v1, v55, v51, 1, v52);
+---
+> v48 = interfaceinvoke v47.<java.util.ListIterator: boolean hasNext()>();
+> if v48 == 0 goto label17;
+> v49 = specialinvoke v0.<org.apache.hadoop.hdfs.server.namenode.snapshot.SnapshotDiffListingInfo: int getTotalEntries()>();
+> v50 = v0.<org.apache.hadoop.hdfs.server.namenode.snapshot.SnapshotDiffListingInfo: int maxEntries>;
+> if v49 >= v50 goto label16;
+> v51 = interfaceinvoke v47.<java.util.ListIterator: java.lang.Object next()>();
+> v52 = virtualinvoke v51.<org.apache.hadoop.hdfs.server.namenode.INode: byte[] getLocalNameBytes()>();
+> v53 = staticinvoke <org.apache.hadoop.hdfs.server.namenode.snapshot.SnapshotDiffListingInfo: byte[][] newPath(byte[][],byte[])>(v2, v52);
+> v54 = specialinvoke v0.<org.apache.hadoop.hdfs.server.namenode.snapshot.SnapshotDiffListingInfo: byte[][] findRenameTargetPath(org.apache.hadoop.hdfs.server.namenode.INode,org.apache.hadoop.hdfs.server.namenode.snapshot.Snapshot)>(v51, v4);
+> if v54 == null goto label14;
+> v55 = new org.apache.hadoop.hdfs.protocol.SnapshotDiffReportListing$DiffReportListingEntry;
+> v56 = v55;
+> v57 = virtualinvoke v51.<org.apache.hadoop.hdfs.server.namenode.INode: long getId()>();
+> specialinvoke v55.<org.apache.hadoop.hdfs.protocol.SnapshotDiffReportListing$DiffReportListingEntry: void <init>(long,long,byte[][],boolean,byte[][])>(v1, v57, v53, 1, v54);
+175,178c177,181
+< v56 = new org.apache.hadoop.hdfs.protocol.SnapshotDiffReportListing$DiffReportListingEntry;
+< v54 = v56;
+< v57 = virtualinvoke v49.<org.apache.hadoop.hdfs.server.namenode.INode: long getId()>();
+< specialinvoke v56.<org.apache.hadoop.hdfs.protocol.SnapshotDiffReportListing$DiffReportListingEntry: void <init>(long,long,byte[][],boolean,byte[][])>(v1, v57, v51, 0, null);
+---
+> v58 = new org.apache.hadoop.hdfs.protocol.SnapshotDiffReportListing$DiffReportListingEntry;
+> v56 = v58;
+> v59 = virtualinvoke v51.<org.apache.hadoop.hdfs.server.namenode.INode: long getId()>();
+> v60 = (byte[][]) null;
+> specialinvoke v58.<org.apache.hadoop.hdfs.protocol.SnapshotDiffReportListing$DiffReportListingEntry: void <init>(long,long,byte[][],boolean,byte[][])>(v1, v59, v53, 0, v60);
+180,181c183,184
+< v58 = v0.<org.apache.hadoop.hdfs.server.namenode.snapshot.SnapshotDiffListingInfo: java.util.List deletedList>;
+< interfaceinvoke v58.<java.util.List: boolean add(java.lang.Object)>(v54);
+---
+> v61 = v0.<org.apache.hadoop.hdfs.server.namenode.snapshot.SnapshotDiffListingInfo: java.util.List deletedList>;
+> interfaceinvoke v61.<java.util.List: boolean add(java.lang.Object)>(v56);
+185,187c188,190
+< v59 = interfaceinvoke v45.<java.util.ListIterator: int nextIndex()>();
+< v60 = v39 + v59;
+< virtualinvoke v0.<org.apache.hadoop.hdfs.server.namenode.snapshot.SnapshotDiffListingInfo: void setLastIndex(int)>(v60);
+---
+> v62 = interfaceinvoke v47.<java.util.ListIterator: int nextIndex()>();
+> v63 = v41 + v62;
+> virtualinvoke v0.<org.apache.hadoop.hdfs.server.namenode.snapshot.SnapshotDiffListingInfo: void setLastIndex(int)>(v63);
+190,191c193,194
+< v61 = (int) -1;
+< virtualinvoke v0.<org.apache.hadoop.hdfs.server.namenode.snapshot.SnapshotDiffListingInfo: void setLastIndex(int)>(v61);
+---
+> v64 = (int) -1;
+> virtualinvoke v0.<org.apache.hadoop.hdfs.server.namenode.snapshot.SnapshotDiffListingInfo: void setLastIndex(int)>(v64);
+200c203
+< byte[][] v8;
+---
+> byte[][] v8, v9;
+217c220,221
+< return null;
+---
+> v9 = (byte[][]) null;
+> return v9;
+290c294
+< byte[][] v2;
+---
+> byte[][] v2, v9;
+305c309,310
+< specialinvoke v6.<org.apache.hadoop.hdfs.protocol.SnapshotDiffReportListing$DiffReportListingEntry: void <init>(long,long,byte[][],boolean,byte[][])>(v7, v8, v2, 0, null);
+---
+> v9 = (byte[][]) null;
+> specialinvoke v6.<org.apache.hadoop.hdfs.protocol.SnapshotDiffReportListing$DiffReportListingEntry: void <init>(long,long,byte[][],boolean,byte[][])>(v7, v8, v2, 0, v9);

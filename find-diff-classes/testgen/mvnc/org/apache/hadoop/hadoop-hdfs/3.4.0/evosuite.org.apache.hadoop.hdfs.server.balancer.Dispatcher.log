@@ -1,0 +1,234 @@
+* EvoSuite 1.2.0
+* Going to generate test cases for class: org.apache.hadoop.hdfs.server.balancer.Dispatcher
+* Starting Client-0
+* Connecting to master process on port 21472
+* Analyzing classpath: 
+  - /home/wtwhite/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/org/apache/hadoop/hadoop-hdfs/3.4.0/hadoop-hdfs-3.4.0.jar
+  - t/dependency/animal-sniffer-annotations-1.17.jar
+  - t/dependency/apiguardian-api-1.1.2.jar
+  - t/dependency/AppleJavaExtensions-1.4.jar
+  - t/dependency/asm-5.0.4.jar
+  - t/dependency/asm-commons-5.0.2.jar
+  - t/dependency/asm-debug-all-5.0.2.jar
+  - t/dependency/asm-tree-5.0.2.jar
+  - t/dependency/assertj-core-3.12.2.jar
+  - t/dependency/audience-annotations-0.12.0.jar
+  - t/dependency/avro-1.9.2.jar
+  - t/dependency/bcel-findbugs-6.0.jar
+  - t/dependency/bcprov-jdk15on-1.70.jar
+  - t/dependency/byte-buddy-1.9.10.jar
+  - t/dependency/byte-buddy-agent-1.9.10.jar
+  - t/dependency/checker-qual-2.5.2.jar
+  - t/dependency/commons-beanutils-1.9.4.jar
+  - t/dependency/commons-cli-1.5.0.jar
+  - t/dependency/commons-codec-1.15.jar
+  - t/dependency/commons-collections-3.2.2.jar
+  - t/dependency/commons-compress-1.24.0.jar
+  - t/dependency/commons-configuration2-2.8.0.jar
+  - t/dependency/commons-daemon-1.0.13.jar
+  - t/dependency/commons-io-2.14.0.jar
+  - t/dependency/commons-lang-2.6.jar
+  - t/dependency/commons-lang3-3.12.0.jar
+  - t/dependency/commons-logging-1.2.jar
+  - t/dependency/commons-math3-3.6.1.jar
+  - t/dependency/commons-net-3.9.0.jar
+  - t/dependency/commons-text-1.10.0.jar
+  - t/dependency/curator-client-5.2.0.jar
+  - t/dependency/curator-framework-5.2.0.jar
+  - t/dependency/curator-recipes-5.2.0.jar
+  - t/dependency/curator-test-5.2.0.jar
+  - t/dependency/dnsjava-3.4.0.jar
+  - t/dependency/dom4j-1.6.1.jar
+  - t/dependency/failureaccess-1.0.jar
+  - t/dependency/findbugs-3.0.1.jar
+  - t/dependency/gson-2.9.0.jar
+  - t/dependency/guava-27.0-jre.jar
+  - t/dependency/hadoop-annotations-3.4.0.jar
+  - t/dependency/hadoop-auth-3.4.0.jar
+  - t/dependency/hadoop-common-3.4.0.jar
+  - t/dependency/hadoop-common-3.4.0-tests.jar
+  - t/dependency/hadoop-hdfs-client-3.4.0.jar
+  - t/dependency/hadoop-kms-3.4.0.jar
+  - t/dependency/hadoop-kms-3.4.0-tests.jar
+  - t/dependency/hadoop-minikdc-3.4.0.jar
+  - t/dependency/hadoop-shaded-guava-1.2.0.jar
+  - t/dependency/hadoop-shaded-protobuf_3_21-1.2.0.jar
+  - t/dependency/hamcrest-core-1.3.jar
+  - t/dependency/httpclient-4.5.13.jar
+  - t/dependency/httpcore-4.4.13.jar
+  - t/dependency/j2objc-annotations-1.1.jar
+  - t/dependency/jackson-annotations-2.12.7.jar
+  - t/dependency/jackson-core-2.12.7.jar
+  - t/dependency/jackson-databind-2.12.7.1.jar
+  - t/dependency/jakarta.activation-api-1.2.1.jar
+  - t/dependency/javax.servlet-api-3.1.0.jar
+  - t/dependency/jaxb-api-2.2.11.jar
+  - t/dependency/jaxb-impl-2.2.3-1.jar
+  - t/dependency/jaxen-1.1.6.jar
+  - t/dependency/jcip-annotations-1.0-1.jar
+  - t/dependency/jcip-annotations-1.0.jar
+  - t/dependency/jdk.tools-1.8.jar
+  - t/dependency/jersey-core-1.19.4.jar
+  - t/dependency/jersey-json-1.20.jar
+  - t/dependency/jersey-server-1.19.4.jar
+  - t/dependency/jersey-servlet-1.19.4.jar
+  - t/dependency/jettison-1.5.4.jar
+  - t/dependency/jetty-http-9.4.53.v20231009.jar
+  - t/dependency/jetty-io-9.4.53.v20231009.jar
+  - t/dependency/jetty-security-9.4.53.v20231009.jar
+  - t/dependency/jetty-server-9.4.53.v20231009.jar
+  - t/dependency/jetty-servlet-9.4.53.v20231009.jar
+  - t/dependency/jetty-util-9.4.53.v20231009.jar
+  - t/dependency/jetty-util-ajax-9.4.53.v20231009.jar
+  - t/dependency/jetty-webapp-9.4.53.v20231009.jar
+  - t/dependency/jetty-xml-9.4.53.v20231009.jar
+  - t/dependency/jFormatString-2.0.1.jar
+  - t/dependency/jline-3.9.0.jar
+  - t/dependency/jsch-0.1.55.jar
+  - t/dependency/jsp-api-2.1.jar
+  - t/dependency/jsr305-3.0.2.jar
+  - t/dependency/jsr311-api-1.1.1.jar
+  - t/dependency/jul-to-slf4j-1.7.36.jar
+  - t/dependency/junit-4.13.2.jar
+  - t/dependency/junit-jupiter-api-5.8.2.jar
+  - t/dependency/junit-platform-commons-1.8.2.jar
+  - t/dependency/kerb-admin-2.0.3.jar
+  - t/dependency/kerb-client-2.0.3.jar
+  - t/dependency/kerb-common-2.0.3.jar
+  - t/dependency/kerb-core-2.0.3.jar
+  - t/dependency/kerb-crypto-2.0.3.jar
+  - t/dependency/kerb-identity-2.0.3.jar
+  - t/dependency/kerb-server-2.0.3.jar
+  - t/dependency/kerb-simplekdc-2.0.3.jar
+  - t/dependency/kerb-util-2.0.3.jar
+  - t/dependency/kerby-asn1-2.0.3.jar
+  - t/dependency/kerby-config-2.0.3.jar
+  - t/dependency/kerby-pkix-2.0.3.jar
+  - t/dependency/kerby-util-2.0.3.jar
+  - t/dependency/kerby-xdr-2.0.3.jar
+  - t/dependency/leveldbjni-all-1.8.jar
+  - t/dependency/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar
+  - t/dependency/lz4-java-1.7.1.jar
+  - t/dependency/metrics-core-3.2.4.jar
+  - t/dependency/mockito-core-2.28.2.jar
+  - t/dependency/netty-all-4.1.100.Final.jar
+  - t/dependency/netty-buffer-4.1.100.Final.jar
+  - t/dependency/netty-codec-4.1.100.Final.jar
+  - t/dependency/netty-codec-dns-4.1.100.Final.jar
+  - t/dependency/netty-codec-haproxy-4.1.100.Final.jar
+  - t/dependency/netty-codec-http2-4.1.100.Final.jar
+  - t/dependency/netty-codec-http-4.1.100.Final.jar
+  - t/dependency/netty-codec-memcache-4.1.100.Final.jar
+  - t/dependency/netty-codec-mqtt-4.1.100.Final.jar
+  - t/dependency/netty-codec-redis-4.1.100.Final.jar
+  - t/dependency/netty-codec-smtp-4.1.100.Final.jar
+  - t/dependency/netty-codec-socks-4.1.100.Final.jar
+  - t/dependency/netty-codec-stomp-4.1.100.Final.jar
+  - t/dependency/netty-codec-xml-4.1.100.Final.jar
+  - t/dependency/netty-common-4.1.100.Final.jar
+  - t/dependency/netty-handler-4.1.100.Final.jar
+  - t/dependency/netty-handler-proxy-4.1.100.Final.jar
+  - t/dependency/netty-handler-ssl-ocsp-4.1.100.Final.jar
+  - t/dependency/netty-resolver-4.1.100.Final.jar
+  - t/dependency/netty-resolver-dns-4.1.100.Final.jar
+  - t/dependency/netty-resolver-dns-classes-macos-4.1.100.Final.jar
+  - t/dependency/netty-resolver-dns-native-macos-4.1.100.Final-osx-aarch_64.jar
+  - t/dependency/netty-resolver-dns-native-macos-4.1.100.Final-osx-x86_64.jar
+  - t/dependency/netty-transport-4.1.100.Final.jar
+  - t/dependency/netty-transport-classes-epoll-4.1.100.Final.jar
+  - t/dependency/netty-transport-classes-kqueue-4.1.100.Final.jar
+  - t/dependency/netty-transport-native-epoll-4.1.100.Final.jar
+  - t/dependency/netty-transport-native-epoll-4.1.100.Final-linux-aarch_64.jar
+  - t/dependency/netty-transport-native-epoll-4.1.100.Final-linux-x86_64.jar
+  - t/dependency/netty-transport-native-kqueue-4.1.100.Final-osx-aarch_64.jar
+  - t/dependency/netty-transport-native-kqueue-4.1.100.Final-osx-x86_64.jar
+  - t/dependency/netty-transport-native-unix-common-4.1.100.Final.jar
+  - t/dependency/netty-transport-rxtx-4.1.100.Final.jar
+  - t/dependency/netty-transport-sctp-4.1.100.Final.jar
+  - t/dependency/netty-transport-udt-4.1.100.Final.jar
+  - t/dependency/nimbus-jose-jwt-9.31.jar
+  - t/dependency/objenesis-2.6.jar
+  - t/dependency/opentest4j-1.2.0.jar
+  - t/dependency/protobuf-java-2.5.0.jar
+  - t/dependency/re2j-1.1.jar
+  - t/dependency/reload4j-1.2.22.jar
+  - t/dependency/slf4j-api-1.7.36.jar
+  - t/dependency/slf4j-reload4j-1.7.36.jar
+  - t/dependency/snappy-java-1.1.10.4.jar
+  - t/dependency/stax2-api-4.2.1.jar
+  - t/dependency/token-provider-2.0.3.jar
+  - t/dependency/woodstox-core-5.4.0.jar
+  - t/dependency/zookeeper-3.8.3.jar
+  - t/dependency/zookeeper-3.8.3-tests.jar
+  - t/dependency/zookeeper-jute-3.8.3.jar
+[MASTER] 13:02:17.189 [logback-1] WARN  CheapPurityAnalyzer - io.netty.internal.tcnative.SSL was not found in the inheritance tree. Using DEFAULT value for cheap-purity analysis
+[MASTER] 13:02:17.199 [logback-1] WARN  InheritanceTree - Class not in inheritance graph: io.netty.internal.tcnative.SSL
+[MASTER] 13:02:17.200 [logback-1] WARN  CheapPurityAnalyzer - io.netty.internal.tcnative.SSL was not found in the inheritance tree. Using DEFAULT value for cheap-purity analysis
+[MASTER] 13:02:17.201 [logback-1] WARN  CheapPurityAnalyzer - io.netty.internal.tcnative.SSL was not found in the inheritance tree. Using DEFAULT value for cheap-purity analysis
+[MASTER] 13:02:17.207 [logback-1] WARN  CheapPurityAnalyzer - io.netty.internal.tcnative.SSL was not found in the inheritance tree. Using DEFAULT value for cheap-purity analysis
+[MASTER] 13:02:17.208 [logback-1] WARN  CheapPurityAnalyzer - io.netty.internal.tcnative.SSL was not found in the inheritance tree. Using DEFAULT value for cheap-purity analysis
+* Finished analyzing classpath
+* Generating tests for class org.apache.hadoop.hdfs.server.balancer.Dispatcher
+* Test criteria:
+  - Line Coverage
+  - Branch Coverage
+  - Exception
+  - Mutation testing (weak)
+  - Method-Output Coverage
+  - Top-Level Method Coverage
+  - No-Exception Top-Level Method Coverage
+  - Context Branch Coverage
+[Progress:>                             0%] [Cov:>                                  0%]* Total number of test goals for DYNAMOSA: 2327
+* Using seed 1731283329549
+* Starting evolution
+* Initial Number of Goals in DynaMOSA = 821 / 2327
+[Progress:>                             1%] [Cov:====>                              14%][Progress:=>                            6%] [Cov:====>                              12%][Progress:====>                         16%] [Cov:====>                              13%][Progress:====>                         16%] [Cov:====>                              14%][Progress:====>                         16%] [Cov:=====>                             15%][Progress:=====>                        18%] [Cov:=====>                             16%][Progress:=====>                        18%] [Cov:====>                              14%][MASTER] 13:02:29.635 [logback-1] WARN  TestCluster - Failed to check cache for java.util.LinkedHashSet<E> : Type points to itself
+[MASTER] 13:02:29.636 [logback-1] WARN  TestCluster - Failed to check cache for java.util.AbstractMap<K, V>.SimpleImmutableEntry<K, V> : Type points to itself
+[Progress:=====>                        18%] [Cov:=====>                             15%][MASTER] 13:02:29.946 [logback-1] WARN  TestCluster - Failed to check cache for java.util.Comparator<T> : Type points to itself
+[Progress:======>                       20%] [Cov:=====>                             15%][Progress:======>                       20%] [Cov:=====>                             15%][Progress:======>                       20%] [Cov:=====>                             15%][Progress:======>                       21%] [Cov:=====>                             15%][Progress:======>                       21%] [Cov:=====>                             16%][Progress:======>                       21%] [Cov:=====>                             17%][Progress:======>                       23%] [Cov:=====>                             16%][Progress:=======>                      25%] [Cov:=====>                             16%][Progress:=======>                      26%] [Cov:=====>                             16%][Progress:========>                     28%] [Cov:=====>                             17%][Progress:=========>                    30%] [Cov:=====>                             17%][Progress:=========>                    30%] [Cov:======>                            18%][MASTER] 13:02:36.755 [logback-1] WARN  TestCluster - Failed to check cache for java.util.Set<E> : Type points to itself
+[Progress:=========>                    31%] [Cov:=====>                             17%][Progress:=========>                    31%] [Cov:=====>                             17%][Progress:=========>                    33%] [Cov:=====>                             17%][Progress:==========>                   35%] [Cov:=====>                             16%][Progress:==========>                   35%] [Cov:=====>                             16%][Progress:==========>                   36%] [Cov:=====>                             16%][Progress:==========>                   36%] [Cov:=====>                             16%][Progress:===========>                  38%] [Cov:=====>                             17%][Progress:============>                 40%] [Cov:=====>                             17%][Progress:============>                 40%] [Cov:=====>                             17%][Progress:============>                 41%] [Cov:=====>                             17%][Progress:============>                 43%] [Cov:=====>                             17%][Progress:============>                 43%] [Cov:=====>                             17%][Progress:=============>                45%] [Cov:=====>                             17%][Progress:=============>                46%] [Cov:=====>                             17%][Progress:==============>               48%] [Cov:=====>                             17%][Progress:==============>               48%] [Cov:=====>                             17%][Progress:===============>              50%] [Cov:=====>                             17%][Progress:===============>              50%] [Cov:=====>                             17%][Progress:===============>              51%] [Cov:=====>                             17%][Progress:===============>              51%] [Cov:=====>                             17%][Progress:===============>              53%] [Cov:=====>                             17%][Progress:===============>              53%] [Cov:=====>                             17%][Progress:================>             55%] [Cov:=====>                             17%][Progress:================>             55%] [Cov:=====>                             17%][Progress:================>             56%] [Cov:=====>                             17%][Progress:=================>            58%] [Cov:=====>                             17%][Progress:=================>            58%] [Cov:=====>                             17%][Progress:==================>           60%] [Cov:=====>                             17%][Progress:==================>           60%] [Cov:=====>                             17%][Progress:==================>           61%] [Cov:=====>                             17%][Progress:==================>           61%] [Cov:=====>                             17%][Progress:==================>           63%] [Cov:=====>                             17%][Progress:==================>           63%] [Cov:=====>                             17%][Progress:===================>          65%] [Cov:======>                            18%][Progress:===================>          66%] [Cov:======>                            18%][Progress:===================>          66%] [Cov:======>                            18%][Progress:===================>          66%] [Cov:======>                            18%][Progress:====================>         68%] [Cov:======>                            18%][Progress:====================>         68%] [Cov:======>                            18%][Progress:====================>         68%] [Cov:======>                            18%][Progress:=====================>        70%] [Cov:======>                            18%][Progress:=====================>        71%] [Cov:======>                            18%][Progress:=====================>        71%] [Cov:======>                            18%][Progress:=====================>        71%] [Cov:======>                            18%][Progress:=====================>        73%] [Cov:======>                            18%][Progress:======================>       75%] [Cov:======>                            18%][Progress:======================>       75%] [Cov:=====>                             17%][Progress:======================>       76%] [Cov:=====>                             17%][Progress:======================>       76%] [Cov:======>                            18%][Progress:=======================>      78%] [Cov:======>                            18%][Progress:=======================>      78%] [Cov:======>                            18%][Progress:=======================>      78%] [Cov:======>                            18%][Progress:========================>     80%] [Cov:======>                            18%][Progress:========================>     81%] [Cov:======>                            18%][Progress:========================>     81%] [Cov:======>                            18%][Progress:========================>     83%] [Cov:======>                            18%][Progress:========================>     83%] [Cov:======>                            18%][Progress:=========================>    85%] [Cov:======>                            18%][Progress:=========================>    86%] [Cov:======>                            18%][Progress:=========================>    86%] [Cov:======>                            18%][Progress:==========================>   88%] [Cov:======>                            18%][Progress:==========================>   88%] [Cov:======>                            18%][Progress:===========================>  90%] [Cov:======>                            18%][Progress:===========================>  90%] [Cov:======>                            18%][Progress:===========================>  90%] [Cov:======>                            18%][Progress:===========================>  91%] [Cov:======>                            18%][Progress:===========================>  91%] [Cov:======>                            18%][Progress:===========================>  93%] [Cov:======>                            18%][Progress:===========================>  93%] [Cov:======>                            18%][Progress:============================> 95%] [Cov:======>                            18%][Progress:============================> 95%] [Cov:======>                            18%][Progress:============================> 96%] [Cov:======>                            18%][Progress:============================> 96%] [Cov:======>                            18%][Progress:=============================>98%] [Cov:======>                            18%][Progress:==============================100%] [Cov:======>                            18%][Progress:==============================100%] [Cov:======>                            18%][Progress:==============================100%] [Cov:======>                            18%]
+* Search finished after 61s and 97 generations, 36923 statements, best individual has fitness: 1868.0
+* Minimizing test suite
+* Going to analyze the coverage criteria
+* Coverage analysis for criterion LINE
+* Coverage of criterion LINE: 18%
+* Total number of goals: 619
+* Number of covered goals: 109
+* Coverage analysis for criterion BRANCH
+* Coverage of criterion BRANCH: 14%
+* Total number of goals: 353
+* Number of covered goals: 51
+* Coverage analysis for criterion EXCEPTION
+* Coverage of criterion EXCEPTION: 100%
+* Total number of goals: 9
+* Number of covered goals: 9
+* Coverage analysis for criterion WEAKMUTATION
+* Coverage of criterion WEAKMUTATION: 31%
+* Total number of goals: 821
+* Number of covered goals: 256
+* Coverage analysis for criterion OUTPUT
+* Coverage of criterion OUTPUT: 4%
+* Total number of goals: 49
+* Number of covered goals: 2
+* Coverage analysis for criterion METHOD
+* Coverage of criterion METHOD: 44%
+* Total number of goals: 66
+* Number of covered goals: 29
+* Coverage analysis for criterion METHODNOEXCEPTION
+* Coverage of criterion METHODNOEXCEPTION: 38%
+* Total number of goals: 66
+* Number of covered goals: 25
+* Coverage analysis for criterion CBRANCH
+* Coverage of criterion CBRANCH: 14%
+* Total number of goals: 353
+* Number of covered goals: 50
+* Generated 37 tests with total length 108
+* Resulting test suite's coverage: 18% (average coverage for all fitness functions)
+* Generating assertions
+* Resulting test suite's mutation score: 14%
+* Compiling and checking tests
+* Writing tests to file
+* Writing JUnit test case 'Dispatcher_ESTest' to evosuite-tests
+* Done!
+
+* Computation finished

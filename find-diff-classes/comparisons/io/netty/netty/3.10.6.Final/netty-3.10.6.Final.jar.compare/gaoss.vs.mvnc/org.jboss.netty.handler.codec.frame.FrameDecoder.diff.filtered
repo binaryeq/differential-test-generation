@@ -1,0 +1,125 @@
+153d152
+< goto label11;
+155,156c154,155
+< v9 := @caughtexception;
+< goto label12;
+---
+> virtualinvoke v0.<org.jboss.netty.handler.codec.frame.FrameDecoder: org.jboss.netty.buffer.ChannelBuffer updateCumulation(org.jboss.netty.channel.ChannelHandlerContext,org.jboss.netty.buffer.ChannelBuffer)>(v1, v3);
+> goto label10;
+157a157,158
+> v9 := @caughtexception;
+> virtualinvoke v0.<org.jboss.netty.handler.codec.frame.FrameDecoder: org.jboss.netty.buffer.ChannelBuffer updateCumulation(org.jboss.netty.channel.ChannelHandlerContext,org.jboss.netty.buffer.ChannelBuffer)>(v1, v3);
+165d165
+< goto label13;
+167,168c167,168
+< v13 := @caughtexception;
+< goto label14;
+---
+> virtualinvoke v0.<org.jboss.netty.handler.codec.frame.FrameDecoder: org.jboss.netty.buffer.ChannelBuffer updateCumulation(org.jboss.netty.channel.ChannelHandlerContext,org.jboss.netty.buffer.ChannelBuffer)>(v1, v10);
+> goto label10;
+169a170,171
+> v13 := @caughtexception;
+> virtualinvoke v0.<org.jboss.netty.handler.codec.frame.FrameDecoder: org.jboss.netty.buffer.ChannelBuffer updateCumulation(org.jboss.netty.channel.ChannelHandlerContext,org.jboss.netty.buffer.ChannelBuffer)>(v1, v10);
+173,186c175,176
+< label11:
+< virtualinvoke v0.<org.jboss.netty.handler.codec.frame.FrameDecoder: org.jboss.netty.buffer.ChannelBuffer updateCumulation(org.jboss.netty.channel.ChannelHandlerContext,org.jboss.netty.buffer.ChannelBuffer)>(v1, v3);
+< goto label10;
+< label12:
+< virtualinvoke v0.<org.jboss.netty.handler.codec.frame.FrameDecoder: org.jboss.netty.buffer.ChannelBuffer updateCumulation(org.jboss.netty.channel.ChannelHandlerContext,org.jboss.netty.buffer.ChannelBuffer)>(v1, v3);
+< goto label05;
+< label13:
+< virtualinvoke v0.<org.jboss.netty.handler.codec.frame.FrameDecoder: org.jboss.netty.buffer.ChannelBuffer updateCumulation(org.jboss.netty.channel.ChannelHandlerContext,org.jboss.netty.buffer.ChannelBuffer)>(v1, v10);
+< goto label10;
+< label14:
+< virtualinvoke v0.<org.jboss.netty.handler.codec.frame.FrameDecoder: org.jboss.netty.buffer.ChannelBuffer updateCumulation(org.jboss.netty.channel.ChannelHandlerContext,org.jboss.netty.buffer.ChannelBuffer)>(v1, v10);
+< goto label09;
+< catch java.lang.Throwable from label03 to label04 with label04;
+< catch java.lang.Throwable from label07 to label08 with label08;
+---
+> catch java.lang.Throwable from label03 to label04 with label05;
+> catch java.lang.Throwable from label07 to label08 with label09;
+405c395
+< label01:
+---
+> label1:
+407,409c397,399
+< if v3 != null goto label03;
+< goto label08;
+< label02:
+---
+> if v3 != null goto label3;
+> label2:
+> interfaceinvoke v1.<org.jboss.netty.channel.ChannelHandlerContext: void sendUpstream(org.jboss.netty.channel.ChannelEvent)>(v2);
+411c401
+< label03:
+---
+> label3:
+414c404
+< if v4 == 0 goto label04;
+---
+> if v4 == 0 goto label4;
+417c407
+< label04:
+---
+> label4:
+420c410
+< if v7 == null goto label09;
+---
+> if v7 == null goto label5;
+422,423c412,415
+< goto label09;
+< label05:
+---
+> label5:
+> interfaceinvoke v1.<org.jboss.netty.channel.ChannelHandlerContext: void sendUpstream(org.jboss.netty.channel.ChannelEvent)>(v2);
+> goto label7;
+> label6:
+425,426c417
+< goto label10;
+< label06:
+---
+> interfaceinvoke v1.<org.jboss.netty.channel.ChannelHandlerContext: void sendUpstream(org.jboss.netty.channel.ChannelEvent)>(v2);
+428c419
+< label07:
+---
+> label7:
+430,440c421,422
+< label08:
+< interfaceinvoke v1.<org.jboss.netty.channel.ChannelHandlerContext: void sendUpstream(org.jboss.netty.channel.ChannelEvent)>(v2);
+< goto label02;
+< label09:
+< interfaceinvoke v1.<org.jboss.netty.channel.ChannelHandlerContext: void sendUpstream(org.jboss.netty.channel.ChannelEvent)>(v2);
+< goto label07;
+< label10:
+< interfaceinvoke v1.<org.jboss.netty.channel.ChannelHandlerContext: void sendUpstream(org.jboss.netty.channel.ChannelEvent)>(v2);
+< goto label06;
+< catch java.lang.Throwable from label01 to label02 with label05;
+< catch java.lang.Throwable from label03 to label05 with label05;
+---
+> catch java.lang.Throwable from label1 to label2 with label6;
+> catch java.lang.Throwable from label3 to label5 with label6;
+488c470
+< if v9 == null goto label6;
+---
+> if v9 == null goto label3;
+494d475
+< goto label6;
+496,497c477,478
+< v14 := @caughtexception;
+< goto label7;
+---
+> interfaceinvoke v6.<org.jboss.netty.channel.ChannelPipeline: void remove(org.jboss.netty.channel.ChannelHandler)>(v0);
+> goto label5;
+498a480,481
+> v14 := @caughtexception;
+> interfaceinvoke v6.<org.jboss.netty.channel.ChannelPipeline: void remove(org.jboss.netty.channel.ChannelHandler)>(v0);
+502,508c485
+< label6:
+< interfaceinvoke v6.<org.jboss.netty.channel.ChannelPipeline: void remove(org.jboss.netty.channel.ChannelHandler)>(v0);
+< goto label5;
+< label7:
+< interfaceinvoke v6.<org.jboss.netty.channel.ChannelPipeline: void remove(org.jboss.netty.channel.ChannelHandler)>(v0);
+< goto label4;
+< catch java.lang.Throwable from label2 to label3 with label3;
+---
+> catch java.lang.Throwable from label2 to label3 with label4;

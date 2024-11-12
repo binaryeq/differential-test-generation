@@ -1,0 +1,378 @@
+88,89c88,89
+< java.lang.Throwable v26;
+< java.lang.IllegalStateException v28;
+---
+> java.lang.Throwable v24;
+> java.lang.IllegalStateException v25;
+94c94
+< java.lang.String v29;
+---
+> java.lang.String v26;
+97c97
+< org.jboss.netty.handler.ssl.SslBufferPool v12, v24, v25, v27;
+---
+> org.jboss.netty.handler.ssl.SslBufferPool v12, v27, v28, v29;
+105c105
+< if v6 == 0 goto label1;
+---
+> if v6 == 0 goto label01;
+110c110
+< if v10 <= 0 goto label9;
+---
+> if v10 <= 0 goto label09;
+114c114
+< label1:
+---
+> label01:
+117c117
+< label2:
+---
+> label02:
+119c119
+< if v14 != 0 goto label3;
+---
+> if v14 != 0 goto label03;
+121c121
+< if v15 != 0 goto label3;
+---
+> if v15 != 0 goto label03;
+125c125
+< label3:
+---
+> label03:
+127c127
+< if v17 != 0 goto label4;
+---
+> if v17 != 0 goto label04;
+129c129
+< if v5 <= v18 goto label4;
+---
+> if v5 <= v18 goto label04;
+133c133
+< label4:
+---
+> label04:
+141c141
+< if v10 <= 0 goto label6;
+---
+> if v10 <= 0 goto label06;
+144,146c144,145
+< label5:
+< v24 = v0.<org.jboss.netty.handler.ssl.OpenSslEngine: org.jboss.netty.handler.ssl.SslBufferPool bufPool>;
+< virtualinvoke v24.<org.jboss.netty.handler.ssl.SslBufferPool: void releaseBuffer(java.nio.ByteBuffer)>(v13);
+---
+> goto label10;
+> label05:
+148c147
+< label6:
+---
+> label06:
+150,155c149,160
+< label7:
+< v25 = v0.<org.jboss.netty.handler.ssl.OpenSslEngine: org.jboss.netty.handler.ssl.SslBufferPool bufPool>;
+< virtualinvoke v25.<org.jboss.netty.handler.ssl.SslBufferPool: void releaseBuffer(java.nio.ByteBuffer)>(v13);
+< goto label9;
+< label8:
+< v26 := @caughtexception;
+---
+> goto label11;
+> label07:
+> v24 := @caughtexception;
+> goto label12;
+> label08:
+> throw v24;
+> label09:
+> v25 = new java.lang.IllegalStateException;
+> v26 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (int)>(v10) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("SSL.writeToSSL() returned a non-positive value: \u0001");
+> specialinvoke v25.<java.lang.IllegalStateException: void <init>(java.lang.String)>(v26);
+> throw v25;
+> label10:
+158,165c163,173
+< throw v26;
+< label9:
+< v28 = new java.lang.IllegalStateException;
+< v29 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (int)>(v10) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("SSL.writeToSSL() returned a non-positive value: \u0001");
+< specialinvoke v28.<java.lang.IllegalStateException: void <init>(java.lang.String)>(v29);
+< throw v28;
+< catch java.lang.Throwable from label2 to label5 with label8;
+< catch java.lang.Throwable from label6 to label7 with label8;
+---
+> goto label05;
+> label11:
+> v28 = v0.<org.jboss.netty.handler.ssl.OpenSslEngine: org.jboss.netty.handler.ssl.SslBufferPool bufPool>;
+> virtualinvoke v28.<org.jboss.netty.handler.ssl.SslBufferPool: void releaseBuffer(java.nio.ByteBuffer)>(v13);
+> goto label09;
+> label12:
+> v29 = v0.<org.jboss.netty.handler.ssl.OpenSslEngine: org.jboss.netty.handler.ssl.SslBufferPool bufPool>;
+> virtualinvoke v29.<org.jboss.netty.handler.ssl.SslBufferPool: void releaseBuffer(java.nio.ByteBuffer)>(v13);
+> goto label08;
+> catch java.lang.Throwable from label02 to label05 with label07;
+> catch java.lang.Throwable from label06 to label07 with label07;
+169c177
+< java.lang.Throwable v28;
+---
+> java.lang.Throwable v26;
+176c184
+< org.jboss.netty.handler.ssl.SslBufferPool v12, v26, v27, v29;
+---
+> org.jboss.netty.handler.ssl.SslBufferPool v12, v27, v28, v29;
+182c190
+< if v4 == 0 goto label1;
+---
+> if v4 == 0 goto label01;
+187c195
+< if v8 < 0 goto label9;
+---
+> if v8 < 0 goto label09;
+194c202
+< label1:
+---
+> label01:
+197c205
+< label2:
+---
+> label02:
+199c207
+< if v14 != 0 goto label3;
+---
+> if v14 != 0 goto label03;
+201c209
+< if v15 != 0 goto label3;
+---
+> if v15 != 0 goto label03;
+205c213
+< label3:
+---
+> label03:
+207c215
+< if v17 != 0 goto label4;
+---
+> if v17 != 0 goto label04;
+209c217
+< if v3 <= v18 goto label4;
+---
+> if v3 <= v18 goto label04;
+213c221
+< label4:
+---
+> label04:
+218c226
+< if v22 < 0 goto label6;
+---
+> if v22 < 0 goto label06;
+224,226c232,233
+< label5:
+< v26 = v0.<org.jboss.netty.handler.ssl.OpenSslEngine: org.jboss.netty.handler.ssl.SslBufferPool bufPool>;
+< virtualinvoke v26.<org.jboss.netty.handler.ssl.SslBufferPool: void releaseBuffer(java.nio.ByteBuffer)>(v13);
+---
+> goto label10;
+> label05:
+228c235
+< label6:
+---
+> label06:
+230c237,245
+< label7:
+---
+> goto label11;
+> label07:
+> v26 := @caughtexception;
+> goto label12;
+> label08:
+> throw v26;
+> label09:
+> return 0;
+> label10:
+233,235c248,253
+< goto label9;
+< label8:
+< v28 := @caughtexception;
+---
+> goto label05;
+> label11:
+> v28 = v0.<org.jboss.netty.handler.ssl.OpenSslEngine: org.jboss.netty.handler.ssl.SslBufferPool bufPool>;
+> virtualinvoke v28.<org.jboss.netty.handler.ssl.SslBufferPool: void releaseBuffer(java.nio.ByteBuffer)>(v13);
+> goto label09;
+> label12:
+238,242c256,258
+< throw v28;
+< label9:
+< return 0;
+< catch java.lang.Throwable from label2 to label5 with label8;
+< catch java.lang.Throwable from label6 to label7 with label8;
+---
+> goto label08;
+> catch java.lang.Throwable from label02 to label05 with label07;
+> catch java.lang.Throwable from label06 to label07 with label07;
+246c262
+< java.lang.Throwable v24;
+---
+> java.lang.Throwable v22;
+253c269
+< org.jboss.netty.handler.ssl.SslBufferPool v11, v22, v23, v25;
+---
+> org.jboss.netty.handler.ssl.SslBufferPool v11, v23, v24, v25;
+257c273
+< if v2 == 0 goto label1;
+---
+> if v2 == 0 goto label01;
+265c281
+< if v9 <= 0 goto label7;
+---
+> if v9 <= 0 goto label07;
+269c285
+< label1:
+---
+> label01:
+272c288
+< label2:
+---
+> label02:
+274c290
+< if v13 != 0 goto label3;
+---
+> if v13 != 0 goto label03;
+276c292
+< if v14 != 0 goto label3;
+---
+> if v14 != 0 goto label03;
+280c296
+< label3:
+---
+> label03:
+288c304
+< if v21 <= 0 goto label5;
+---
+> if v21 <= 0 goto label09;
+291,293c307,308
+< label4:
+< v22 = v0.<org.jboss.netty.handler.ssl.OpenSslEngine: org.jboss.netty.handler.ssl.SslBufferPool bufPool>;
+< virtualinvoke v22.<org.jboss.netty.handler.ssl.SslBufferPool: void releaseBuffer(java.nio.ByteBuffer)>(v12);
+---
+> goto label08;
+> label04:
+295c310,317
+< label5:
+---
+> label05:
+> v22 := @caughtexception;
+> goto label10;
+> label06:
+> throw v22;
+> label07:
+> return 0;
+> label08:
+298,300c320,325
+< goto label7;
+< label6:
+< v24 := @caughtexception;
+---
+> goto label04;
+> label09:
+> v24 = v0.<org.jboss.netty.handler.ssl.OpenSslEngine: org.jboss.netty.handler.ssl.SslBufferPool bufPool>;
+> virtualinvoke v24.<org.jboss.netty.handler.ssl.SslBufferPool: void releaseBuffer(java.nio.ByteBuffer)>(v12);
+> goto label07;
+> label10:
+303,306c328,330
+< throw v24;
+< label7:
+< return 0;
+< catch java.lang.Throwable from label2 to label4 with label6;
+---
+> goto label06;
+> catch java.lang.Throwable from label02 to label04 with label05;
+> catch java.lang.Throwable from label05 to label05 with label05;
+310c334
+< java.lang.Throwable v26;
+---
+> java.lang.Throwable v24;
+318c342
+< org.jboss.netty.handler.ssl.SslBufferPool v11, v24, v25, v27;
+---
+> org.jboss.netty.handler.ssl.SslBufferPool v11, v25, v26, v27;
+323c347
+< if v3 == 0 goto label1;
+---
+> if v3 == 0 goto label01;
+325c349
+< if v4 < v2 goto label1;
+---
+> if v4 < v2 goto label01;
+331c355
+< if v9 <= 0 goto label8;
+---
+> if v9 <= 0 goto label08;
+335c359
+< label1:
+---
+> label01:
+338c362
+< label2:
+---
+> label02:
+340c364
+< if v13 != 0 goto label3;
+---
+> if v13 != 0 goto label03;
+342c366
+< if v14 != 0 goto label3;
+---
+> if v14 != 0 goto label03;
+346c370
+< label3:
+---
+> label03:
+349c373
+< if v17 != 0 goto label4;
+---
+> if v17 != 0 goto label04;
+351c375
+< if v18 >= v2 goto label4;
+---
+> if v18 >= v2 goto label04;
+357c381
+< label4:
+---
+> label04:
+360c384
+< if v23 <= 0 goto label6;
+---
+> if v23 <= 0 goto label10;
+363,365c387,388
+< label5:
+< v24 = v0.<org.jboss.netty.handler.ssl.OpenSslEngine: org.jboss.netty.handler.ssl.SslBufferPool bufPool>;
+< virtualinvoke v24.<org.jboss.netty.handler.ssl.SslBufferPool: void releaseBuffer(java.nio.ByteBuffer)>(v12);
+---
+> goto label09;
+> label05:
+367c390,397
+< label6:
+---
+> label06:
+> v24 := @caughtexception;
+> goto label11;
+> label07:
+> throw v24;
+> label08:
+> return 0;
+> label09:
+370,372c400,405
+< goto label8;
+< label7:
+< v26 := @caughtexception;
+---
+> goto label05;
+> label10:
+> v26 = v0.<org.jboss.netty.handler.ssl.OpenSslEngine: org.jboss.netty.handler.ssl.SslBufferPool bufPool>;
+> virtualinvoke v26.<org.jboss.netty.handler.ssl.SslBufferPool: void releaseBuffer(java.nio.ByteBuffer)>(v12);
+> goto label08;
+> label11:
+375,378c408,410
+< throw v26;
+< label8:
+< return 0;
+< catch java.lang.Throwable from label2 to label5 with label7;
+---
+> goto label07;
+> catch java.lang.Throwable from label02 to label05 with label06;
+> catch java.lang.Throwable from label06 to label06 with label06;
