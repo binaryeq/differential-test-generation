@@ -17,7 +17,7 @@
 \author{\IEEEauthorblockN{1\textsuperscript{st} Jens Dietrich  \hspace{1cm} 2\textsuperscript{nd} Tim White}
 \IEEEauthorblockA{\textit{Victoria University of Wellington} \\
 Wellington, New Zealand \\
-\{jens.dietrich,time.white\}@vuw.ac.nz}
+\{jens.dietrich,tim.white\}@vuw.ac.nz}
 \and
 \IEEEauthorblockN{3\textsuperscript{rd} Valerio Terrangi}
 \IEEEauthorblockA{\textit{University of Auckland} \\
@@ -47,14 +47,14 @@ regression test generation, reproducible builds, software supply chain security
 Software supply chain security has attracted increasing attention recently after a number of high impact attacks such as \textit{equifax}, \textit{log4shell}, \textit{solarwinds} and \textit{xz}~\cite{ellison2010evaluating,martinez2021software,enck2022top,EO14028}. In general, those fall into two categories - compromising components (such as \textit{equifax} and \textit{log4shell}), and compromising processes (such as \textit{solarwinds} and \textit{xz}). When build processes are compromised, attackers can inject malicious code into a program, resulting in a vulnerable program build from clean source code. The classic approach to achieve this is to compromise the compiler~\cite{thompson1984reflections}. 
 
 A common counter measure are reproducible builds~\cite{reproduciblebuild, lamb2021reproducible}. The idea is to perform a second build leading to the same binary. As an adversary is very unlikely to compromise two build environments, this can confirm the integrity of the binary with a high probability. Establishing that the binaries are identical is usually done by means of bitwise comparison, often using cryptographic hashes as proxies.
-Several organisations have started to provide infrastructures and services to provide such secondary builds at-scale, often meeting additional security-related requirements, such  SLSA compliance~\cite{slsa}. Two such products that include support for Java / Maven artifacts are \textit{Google's Assured Open Source Software (gaoss)}~\footnote{\url{https://cloud.google.com/security/products/assured-open-source-software}}, and \textit{Oracle's Build-From-Source (obfs})~\footnote{\url{https://maven.oracle.com/public/}}.
+Several organisations have started to provide infrastructure and services to provide such secondary builds at-scale, often meeting additional security-related requirements, such as SLSA compliance~\cite{slsa}. Two such products that include support for Java / Maven artifacts are \textit{Google's Assured Open Source Software (gaoss)}~\footnote{\url{https://cloud.google.com/security/products/assured-open-source-software}}, and \textit{Oracle's Build-From-Source (obfs})~\footnote{\url{https://maven.oracle.com/public/}}.
 
-However, there are several challenges with the reproducibility of builds: (1) build environments are difficult to replicate, (2) locating the source code version (commit, tag or release) associated with a binary release versions is not always straight-forward and (3) builds may be non-deterministic~\cite{xiong2022towards,hassanshahi2023macaron,bineqdataset,keshani2024aroma}. In particular, different versions of compilers may employ different compilation strategies, resulting in different, yet functionally equivalent binaries~\cite{xiong2022towards,bineqdataset,schott2024JNorm}.  
-In order to address this, recently byte code normalisation techniques have been proposed ~\cite{xiong2022towards,dietrich2024levelsbinaryequivalencecomparison,schott2024JNorm}. 
+However, there are several challenges with the reproducibility of builds: (1) build environments are difficult to replicate, (2) locating the source code version (commit, tag or release) associated with a binary release version is not always straightforward and (3) builds may be non-deterministic~\cite{xiong2022towards,hassanshahi2023macaron,bineqdataset,keshani2024aroma}. In particular, different versions of compilers may employ different compilation strategies, resulting in different, yet functionally equivalent binaries~\cite{xiong2022towards,bineqdataset,schott2024JNorm}.  
+In order to address this, recently bytecode normalisation techniques have been proposed~\cite{xiong2022towards,dietrich2024levelsbinaryequivalencecomparison,schott2024JNorm}. 
 
 From a security analysis point of view, the comparison of binaries from alternative builds is used to detect vulnerabilities: different binaries may suggest that one of them has been compromised, for instance, by a backdoor being added during the build. A comparison based on strict binary equality is likely to result in poor precision as differences between binaries can be explained by the variability of compilers and other tools used in the build toolchain. Low precision is known to have a serious impact on the acceptance of program analysis tools by engineers~\cite{sadowski2018lessons,distefano2019scaling}. Using bytecode normalisation techniques such as \textit{jnorm}~\cite{schott2024JNorm} can help to reduce the false positive rate by identifying \textit{equivalent} binaries. The question arises whether binaries built from the same sources that are not equivalent actually have behavioural differences.   
 
-This is the question we set out to study. We use test case generation with \textit{evosuite}~\cite{fraser2011evosuite} to synthesise regression tests for a baseline build, and then use those tests to assess whether the these tests behave in the same way on programs that are the result of an alternative  build from the same sources. 
+This is the question we set out to study. We use test case generation with \textit{evosuite}~\cite{fraser2011evosuite} to synthesise regression tests for a baseline build, and then use those tests to assess whether these tests behave in the same way on programs that are the result of an alternative  build from the same sources. 
 
 We find that .. 
 
@@ -65,7 +65,7 @@ We find that ..
 
 \subsection{Overview}
 
-An overview of our methodology is depicted in Figure~\ref{fig:methodology}.  As a baseline build we use (the builds used to produce) the artifact distributed on Maven Central~\footnote{\url{https://central.sonatype.com/}} as this is the default deployment repository for most open source developers.  from there we obtain the binary (jar file containing Java bytecode) \textit{mvnc jar }and the pom \textit{mvnc pom}. From this pom we can extract the \textit{static dependencies} using the Maven dependency plugin~\footnote{\url{https://maven.apache.org/plugins/maven-dependency-plugin/}}.  The \textit{mvnc jar} and the \textit{static dependencies} can then be used as input to generate \textit{tests-sources} with \textit{evosuite}, which are then compiled into test binaries \textit{test-bin}.  Finally, those tests can then be executed against the original jar \textit{mvnc jar} and some alternative jar (from a different build) \textit{alt jar}, and the resulting test reports can be compared.
+An overview of our methodology is depicted in Figure~\ref{fig:methodology}.  As a baseline build we use (the builds used to produce) the artifact distributed on Maven Central~\footnote{\url{https://central.sonatype.com/}} as this is the default deployment repository for most open source developers.  From there we obtain the binary (jar file containing Java bytecode) \textit{mvnc jar} and the pom \textit{mvnc pom}. From this pom we extract the \textit{static dependencies} using the Maven dependency plugin~\footnote{\url{https://maven.apache.org/plugins/maven-dependency-plugin/}}.  The \textit{mvnc jar} and the \textit{static dependencies} can then be used as input to generate \textit{tests-sources} with \textit{evosuite}, which are then compiled into test binaries \textit{test-bin}.  Finally, those tests can then be executed against the original jar \textit{mvnc jar} and some alternative jar (from a different build) \textit{alt jar}, and the resulting test reports can be compared.
 
 \begin{figure}[ht!]
 	\centering
@@ -76,22 +76,22 @@ An overview of our methodology is depicted in Figure~\ref{fig:methodology}.  As 
 
 \subsection{Project Selection}
 
-We started with the dataset from \cite{dietrich2024levelsbinaryequivalencecomparison} that contains jars corresponding to the same artifact identified by the same group id, artifact id and version (i.e., GAV coordinates) build by different parties. This dataset contains the results of builds from Maven Central, Google (gaoss), Oracle (obfs) and  RedHat. We ignored jars built by RedHat as they have an additional patch id that suggests behavioural differences.  We only considered pairs where one of the jars was sourced from Maven Central, i.e. built by the developer(s). There are TODO such pairs.
+We started with the dataset from \cite{dietrich2024levelsbinaryequivalencecomparison} that contains jars corresponding to the same artifact identified by the same group id, artifact id and version (i.e., GAV coordinates) built by different parties. This dataset contains the results of builds from Maven Central, Google (gaoss), Oracle (obfs) and  RedHat. We ignored jars built by RedHat as they have an additional patch id that suggests behavioural differences.  We only considered pairs where one of the jars was sourced from Maven Central, i.e. built by the developer(s). There are TODO such pairs.
 
 
 \subsection{Static Preanalysis}
 
-We them run a static pre-analysis to eliminate pairs that are probably equivalent. We first applied the \textit{jnorm}, and compared jars by comparing the result of the transformation applied to each class. We then added a custom comparison based on a change in the Java 18 compiler~\footnote{\url{https://github.com/openjdk/jdk/pull/5165}} not yet supported by \textit{jnorm}. This resulted in TODO pairs of jars, TODO of those pairs with an alternatively built jar from \textit{gaoss}, TODO with such a jar from \textit{obfs}.
+We then run a static pre-analysis to eliminate pairs that are probably equivalent. We first applied \textit{jnorm}, and compared jars by comparing the result of the transformation applied to each class. We then added a custom comparison based on a change in the Java 18 compiler~\footnote{\url{https://github.com/openjdk/jdk/pull/5165}} not yet supported by \textit{jnorm}. This resulted in TODO pairs of jars, TODO of those pairs with an alternatively built jar from \textit{gaoss}, TODO with such a jar from \textit{obfs}.
 
 
 
 \subsection{Test Generation}
 
-We opted to generate tests for this experiments. The reason is that existing tests that are part of the project are usually executed during builds, i.e. alternative builds would ensure that those tests succeed. 
+We opted to generate tests for these experiments. The reason is that existing tests that are part of the project are usually executed during builds, i.e., alternative builds would ensure that those tests succeed. 
 
 \todo[inline]{Behnaz to confirm that tests are executed in OBF builds}
 
-We have used \textit{evosuite} to generate regression tests. While there are several alternatives available, recent benchmarking has demonstrated the superior performance of \textit{evosuite}~\cite{jahangirova2023sbft}. \textit{Evosuite} can be setup to generate targeted tests for certain classes. Since the static pre-analysis compares \textit{jar} files by comparing the \textit{.class} files they contain, we can use targeted test generation for those classes only.   
+We have used \textit{evosuite} to generate regression tests. While there are several alternatives available, recent benchmarking has demonstrated the superior performance of \textit{evosuite}~\cite{jahangirova2023sbft}. \textit{Evosuite} can be set up to generate targeted tests for certain classes. Since the static pre-analysis compares \textit{jar} files by comparing the \textit{.class} files they contain, we can use targeted test generation for those classes only.   
 
 \todo[inline] {Tim: some stats of how many classes there are that are different, perhaps stats , something like: the average number of such classes is X, Y\% of total classes. Mention how we deal with inner classes.  }
 
