@@ -1,13 +1,15 @@
 SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
 SLF4J: Defaulting to no-operation (NOP) logger implementation
 SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
-Exception in thread "ForkJoinPool.commonPool-worker-1" java.lang.RuntimeException: Kill switch
-	at org.evosuite.runtime.thread.KillSwitchHandler.checkTimeout(KillSwitchHandler.java:51)
-	at org.evosuite.runtime.thread.KillSwitchHandler.killIfTimeout(KillSwitchHandler.java:61)
-	at com.google.common.util.concurrent.FluentFuture$TrustedFuture.isDone(FluentFuture.java:105)
-	at com.google.common.util.concurrent.TrustedListenableFutureTask$TrustedFutureInterruptibleTask.isDone(TrustedListenableFutureTask.java:125)
-	at com.google.common.util.concurrent.InterruptibleTask.run(InterruptibleTask.java:69)
-	at com.google.common.util.concurrent.TrustedListenableFutureTask.run(TrustedListenableFutureTask.java:82)
+Exception in thread "ForkJoinPool.commonPool-worker-1" java.lang.IndexOutOfBoundsException: Index: 201, Size: 0
+	at java.util.ArrayList.rangeCheck(ArrayList.java:659)
+	at java.util.ArrayList.get(ArrayList.java:435)
+	at org.evosuite.runtime.LoopCounter.checkLoop(LoopCounter.java:112)
+	at com.google.common.util.concurrent.AbstractFuture.maybePropagateCancellationTo(AbstractFuture.java:1104)
+	at com.google.common.util.concurrent.AbstractCatchingFuture.afterDone(AbstractCatchingFuture.java:180)
+	at com.google.common.util.concurrent.AbstractFuture.complete(AbstractFuture.java:1006)
+	at com.google.common.util.concurrent.AbstractFuture.setFuture(AbstractFuture.java:851)
+	at com.google.common.util.concurrent.AbstractCatchingFuture.run(AbstractCatchingFuture.java:124)
 	at java.util.concurrent.ForkJoinTask$RunnableExecuteAction.exec(ForkJoinTask.java:1402)
 	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:289)
 	at java.util.concurrent.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1056)
@@ -23,5 +25,5 @@ Exception in thread "ForkJoinPool-1-worker-1" java.lang.RuntimeException: Kill s
 	at java.util.concurrent.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1056)
 	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1692)
 	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:175)
-11.87user 0.89system 0:10.74elapsed 118%CPU (0avgtext+0avgdata 1076392maxresident)k
-0inputs+192outputs (18major+272194minor)pagefaults 0swaps
+13.33user 0.99system 0:10.86elapsed 131%CPU (0avgtext+0avgdata 1697260maxresident)k
+0inputs+104outputs (8major+430565minor)pagefaults 0swaps
