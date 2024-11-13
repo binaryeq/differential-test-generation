@@ -422,7 +422,7 @@ THE_END
 
                     my @DEBUG;
                     my %alreadyProcessed = map { $_ => 1 } grep { my $target = "$testRunPath/" . convertClassNameToDotted($_, $testCompilePath) . ".out"; $target =~ s|^.\{RUNDIR\}/|run/| or die; push @DEBUG, $target; -e $target } @compiledClasses;
-                    print STDERR "# Removing " . scalar(keys %alreadyProcessed) . " already-compiled classes from the original set of " . scalar(@compiledClasses) . ", leaving " . (scalar(@compiledClasses) - scalar(keys %alreadyProcessed)) . ".\n";
+                    print STDERR "# Removing " . scalar(keys %alreadyProcessed) . " already-run classes from the original set of " . scalar(@compiledClasses) . ", leaving " . (scalar(@compiledClasses) - scalar(keys %alreadyProcessed)) . ".\n";
                     print STDERR "# Checked: $_\n" foreach @DEBUG;    #DEBUG
                     @compiledClasses = grep { !exists $alreadyProcessed{$_} } @compiledClasses;
 
@@ -434,9 +434,12 @@ THE_END
 
                     my $createdDirYet = 0;
 
-                    my $classOwnCP = providerPath($opts->{targetOtherProvider}, $g, $a, $v);
+                    my $preJacocoClassOwnCP = providerPath($opts->{targetOtherProvider}, $g, $a, $v);
+                    my $classOwnCP = $preJacocoClassOwnCP;
+                    $classOwnCP = jacocofyJarPath($classOwnCP) if $opts->{useJacoco};
                     my $projectCP = "$classOwnCP:\$(echo t/dependency/*|perl -lpe 's/ /:/g')";
                     my $classPath = join(":",
+                        ($opts->{useJacoco} ? "$pwd/$JACOCOPATH/jacocoagent.jar" : ()),
                         "$projectCP",
                         $evosuiteRuntimeJarPath,
 #                                "$testGenPath/evosuite-tests",
@@ -459,9 +462,17 @@ THE_END
                                 $createdDirYet = 1;
                             }
 
+                            my $jacocoExecFile = "$outBasename.jacoco.exec";
+                            my $jacocoDestSysProp = ($opts->{useJacoco} ? "-Djacoco-agent.destfile=\"$jacocoExecFile\"" : "");
+
                             print "# Run compiled test class $compiledClass for $jarPath for $opts->{targetOtherProvider}\n";
-                            my $javaCmd = "CLASSPATH=\"$classPath\" time $JAVA8 org.junit.runner.JUnitCore \"$dottedClassName\" > \"$outBasename.out\" 2> \"$outBasename.err\"";
+                            my $javaCmd = "CLASSPATH=\"$classPath\" time $JAVA8 $jacocoDestSysProp org.junit.runner.JUnitCore \"$dottedClassName\" > \"$outBasename.out\" 2> \"$outBasename.err\"";
                             print $javaCmd, "\n";
+
+                            if ($opts->{useJacoco}) {
+                                my $jacocoXmlReportCmd = "java -jar $pwd/$JACOCOPATH/jacococli.jar report \"$jacocoExecFile\" --classfiles \"$preJacocoClassOwnCP\" --xml \"$outBasename.jacoco.xml\"";
+                                print $jacocoXmlReportCmd, "\n";
+                            }
                         }
                     }
 
