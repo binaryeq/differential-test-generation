@@ -36,9 +36,6 @@
 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: oshi.software.os.OperatingSystem
 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: oshi.software.common.AbstractOperatingSystem
 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: oshi.software.os.windows.WindowsOperatingSystem
-[main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: oshi.software.os.FileSystem
-[main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'oshi.software.os.FileSystem'.
-[main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: oshi.software.os.FileSystem
 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: oshi.driver.windows.wmi.Win32OperatingSystem$OSVersionProperty
 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'oshi.driver.windows.wmi.Win32OperatingSystem$OSVersionProperty'.
 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class oshi/driver/windows/wmi/Win32OperatingSystem$OSVersionProperty
@@ -76,17 +73,21 @@
 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class oshi/jna/ByRef$CloseableIntByReference
 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Creating brand-new static initializer in class oshi/jna/ByRef$CloseableIntByReference
 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: oshi.jna.ByRef$CloseableIntByReference
+[main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: oshi.software.os.FileSystem
+[main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'oshi.software.os.FileSystem'.
+[main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: oshi.software.os.FileSystem
 [main] ERROR org.evosuite.runtime.classhandling.ClassStateSupport - Could not initialize oshi.software.os.windows.WindowsOperatingSystem: null
-[main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: oshi.software.os.InternetProtocolStats$UdpStats
-[main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'oshi.software.os.InternetProtocolStats$UdpStats'.
-[main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class oshi/software/os/InternetProtocolStats$UdpStats
-[main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Creating brand-new static initializer in class oshi/software/os/InternetProtocolStats$UdpStats
-[main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: oshi.software.os.InternetProtocolStats$UdpStats
 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: oshi.software.os.InternetProtocolStats$TcpStats
 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'oshi.software.os.InternetProtocolStats$TcpStats'.
 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class oshi/software/os/InternetProtocolStats$TcpStats
 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Creating brand-new static initializer in class oshi/software/os/InternetProtocolStats$TcpStats
 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: oshi.software.os.InternetProtocolStats$TcpStats
+[main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: oshi.software.os.InternetProtocolStats$UdpStats
+[main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'oshi.software.os.InternetProtocolStats$UdpStats'.
+[main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class oshi/software/os/InternetProtocolStats$UdpStats
+[main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Creating brand-new static initializer in class oshi/software/os/InternetProtocolStats$UdpStats
+[main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: oshi.software.os.InternetProtocolStats$UdpStats
+[main] ERROR org.evosuite.runtime.classhandling.ClassStateSupport - Found $jacocoInit in class oshi.util.FileUtil
 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: oshi.software.os.OSProcess
 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'oshi.software.os.OSProcess'.
 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: oshi.software.os.OSProcess
@@ -115,5 +116,5 @@
 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: oshi.software.common.AbstractOSProcess
 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: oshi.software.os.windows.WindowsOSProcess
 [main] ERROR org.evosuite.runtime.classhandling.ClassResetter - java.lang.NoClassDefFoundError: Could not initialize class oshi.software.os.windows.WindowsOperatingSystem
-0.72user 0.06system 0:00.44elapsed 179%CPU (0avgtext+0avgdata 113076maxresident)k
-104inputs+104outputs (8major+23375minor)pagefaults 0swaps
+1.19user 0.16system 0:00.82elapsed 165%CPU (0avgtext+0avgdata 115280maxresident)k
+8inputs+112outputs (8major+25555minor)pagefaults 0swaps

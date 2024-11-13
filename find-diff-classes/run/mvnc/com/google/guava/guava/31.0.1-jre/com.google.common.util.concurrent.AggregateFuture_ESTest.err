@@ -1,19 +1,28 @@
 SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
 SLF4J: Defaulting to no-operation (NOP) logger implementation
 SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
-Exception in thread "ForkJoinPool.commonPool-worker-2" java.lang.RuntimeException: Kill switch
-	at org.evosuite.runtime.thread.KillSwitchHandler.checkTimeout(KillSwitchHandler.java:51)
-	at org.evosuite.runtime.thread.KillSwitchHandler.killIfTimeout(KillSwitchHandler.java:61)
-	at com.google.common.util.concurrent.AbstractFuture.isDone(AbstractFuture.java:605)
-	at com.google.common.util.concurrent.AbstractFuture$TrustedFuture.isDone(AbstractFuture.java:126)
-	at com.google.common.util.concurrent.CombinedFuture$CombinedFutureInterruptibleTask.isDone(CombinedFuture.java:103)
-	at com.google.common.util.concurrent.InterruptibleTask.run(InterruptibleTask.java:69)
+Exception in thread "ForkJoinPool.commonPool-worker-1" Exception in thread "ForkJoinPool.commonPool-worker-2" java.lang.NullPointerException
+	at com.google.common.util.concurrent.AbstractFuture$UnsafeAtomicHelper.casValue(AbstractFuture.java:1389)
+	at com.google.common.util.concurrent.AbstractFuture.set(AbstractFuture.java:782)
+	at com.google.common.util.concurrent.CombinedFuture$CallableInterruptibleTask.setValue(CombinedFuture.java:201)
+	at com.google.common.util.concurrent.CombinedFuture$CombinedFutureInterruptibleTask.afterRanInterruptiblySuccess(CombinedFuture.java:129)
+	at com.google.common.util.concurrent.InterruptibleTask.run(InterruptibleTask.java:86)
 	at java.util.concurrent.ForkJoinTask$RunnableExecuteAction.exec(ForkJoinTask.java:1402)
 	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:289)
 	at java.util.concurrent.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1056)
 	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1692)
 	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:175)
-Exception in thread "ForkJoinPool.commonPool-worker-3" java.lang.RuntimeException: Kill switch
+java.lang.NullPointerException
+	at com.google.common.util.concurrent.AbstractFuture$UnsafeAtomicHelper.casValue(AbstractFuture.java:1389)
+	at com.google.common.util.concurrent.AbstractFuture.setException(AbstractFuture.java:807)
+	at com.google.common.util.concurrent.CombinedFuture$CombinedFutureInterruptibleTask.afterRanInterruptiblyFailure(CombinedFuture.java:146)
+	at com.google.common.util.concurrent.InterruptibleTask.run(InterruptibleTask.java:88)
+	at java.util.concurrent.ForkJoinTask$RunnableExecuteAction.exec(ForkJoinTask.java:1402)
+	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:289)
+	at java.util.concurrent.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1056)
+	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1692)
+	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:175)
+Exception in thread "ForkJoinPool.commonPool-worker-4" java.lang.RuntimeException: Kill switch
 	at org.evosuite.runtime.thread.KillSwitchHandler.checkTimeout(KillSwitchHandler.java:51)
 	at org.evosuite.runtime.thread.KillSwitchHandler.killIfTimeout(KillSwitchHandler.java:61)
 	at com.google.common.util.concurrent.InterruptibleTask.run(InterruptibleTask.java:80)
@@ -22,5 +31,23 @@ Exception in thread "ForkJoinPool.commonPool-worker-3" java.lang.RuntimeExceptio
 	at java.util.concurrent.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1056)
 	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1692)
 	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:175)
-3.23user 0.23system 0:10.42elapsed 33%CPU (0avgtext+0avgdata 295816maxresident)k
-0inputs+80outputs (8major+77696minor)pagefaults 0swaps
+Exception in thread "ForkJoinPool-1-worker-441" Exception in thread "ForkJoinPool.commonPool-worker-3" java.lang.RuntimeException: Kill switch
+	at org.evosuite.runtime.thread.KillSwitchHandler.checkTimeout(KillSwitchHandler.java:51)
+	at org.evosuite.runtime.thread.KillSwitchHandler.killIfTimeout(KillSwitchHandler.java:61)
+	at com.google.common.util.concurrent.InterruptibleTask.run(InterruptibleTask.java:80)
+	at java.util.concurrent.ForkJoinTask$RunnableExecuteAction.exec(ForkJoinTask.java:1402)
+	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:289)
+	at java.util.concurrent.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1056)
+	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1692)
+	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:175)
+java.lang.RuntimeException: Kill switch
+	at org.evosuite.runtime.thread.KillSwitchHandler.checkTimeout(KillSwitchHandler.java:51)
+	at org.evosuite.runtime.thread.KillSwitchHandler.killIfTimeout(KillSwitchHandler.java:61)
+	at com.google.common.util.concurrent.InterruptibleTask.run(InterruptibleTask.java:64)
+	at java.util.concurrent.ForkJoinTask$RunnableExecuteAction.exec(ForkJoinTask.java:1402)
+	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:289)
+	at java.util.concurrent.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1056)
+	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1692)
+	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:175)
+5.60user 1.11system 0:08.52elapsed 78%CPU (0avgtext+0avgdata 309732maxresident)k
+0inputs+104outputs (8major+79088minor)pagefaults 0swaps

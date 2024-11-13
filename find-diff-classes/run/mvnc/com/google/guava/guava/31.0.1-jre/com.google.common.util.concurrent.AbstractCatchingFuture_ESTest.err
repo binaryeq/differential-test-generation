@@ -1,5 +1,14 @@
 SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
 SLF4J: Defaulting to no-operation (NOP) logger implementation
 SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
-2.44user 0.22system 0:01.03elapsed 257%CPU (0avgtext+0avgdata 240416maxresident)k
-0inputs+80outputs (8major+59593minor)pagefaults 0swaps
+Exception in thread "ForkJoinPool.commonPool-worker-1" java.lang.RuntimeException: Kill switch
+	at org.evosuite.runtime.thread.KillSwitchHandler.checkTimeout(KillSwitchHandler.java:51)
+	at org.evosuite.runtime.thread.KillSwitchHandler.killIfTimeout(KillSwitchHandler.java:61)
+	at com.google.common.util.concurrent.AbstractCatchingFuture.run(AbstractCatchingFuture.java:85)
+	at java.util.concurrent.ForkJoinTask$RunnableExecuteAction.exec(ForkJoinTask.java:1402)
+	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:289)
+	at java.util.concurrent.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1056)
+	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1692)
+	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:175)
+3.81user 0.57system 0:01.89elapsed 231%CPU (0avgtext+0avgdata 267944maxresident)k
+0inputs+96outputs (8major+67731minor)pagefaults 0swaps

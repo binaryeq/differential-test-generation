@@ -51,6 +51,12 @@
 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class org/tukaani/xz/LZMA2OutputStream
 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Found static initializer in class org/tukaani/xz/LZMA2OutputStream
 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: org.tukaani.xz.LZMA2OutputStream
+[main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: org.tukaani.xz.FilterEncoder
+[main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'org.tukaani.xz.FilterEncoder'.
+[main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: org.tukaani.xz.FilterCoder
+[main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'org.tukaani.xz.FilterCoder'.
+[main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: org.tukaani.xz.FilterCoder
+[main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: org.tukaani.xz.FilterEncoder
 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: org.tukaani.xz.UnsupportedOptionsException
 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'org.tukaani.xz.UnsupportedOptionsException'.
 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class org/tukaani/xz/UnsupportedOptionsException
@@ -69,12 +75,6 @@
 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Adding bytecode for initializing field DICT_SIZE_MAX
 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Adding bytecode for initializing field COMPRESSED_SIZE_MAX
 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: org.tukaani.xz.LZMA2InputStream
-[main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: org.tukaani.xz.FilterEncoder
-[main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'org.tukaani.xz.FilterEncoder'.
-[main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: org.tukaani.xz.FilterCoder
-[main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'org.tukaani.xz.FilterCoder'.
-[main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: org.tukaani.xz.FilterCoder
-[main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: org.tukaani.xz.FilterEncoder
 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: org.tukaani.xz.lzma.LZMAEncoder$LiteralEncoder
 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'org.tukaani.xz.lzma.LZMAEncoder$LiteralEncoder'.
 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class org/tukaani/xz/lzma/LZMAEncoder$LiteralEncoder
@@ -151,16 +151,16 @@
 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class org/tukaani/xz/SingleXZInputStream
 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Creating brand-new static initializer in class org/tukaani/xz/SingleXZInputStream
 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: org.tukaani.xz.SingleXZInputStream
-[main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: org.tukaani.xz.IndexIndicatorException
-[main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'org.tukaani.xz.IndexIndicatorException'.
-[main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class org/tukaani/xz/IndexIndicatorException
-[main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Creating brand-new static initializer in class org/tukaani/xz/IndexIndicatorException
-[main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: org.tukaani.xz.IndexIndicatorException
 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: org.tukaani.xz.CorruptedInputException
 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'org.tukaani.xz.CorruptedInputException'.
 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class org/tukaani/xz/CorruptedInputException
 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Creating brand-new static initializer in class org/tukaani/xz/CorruptedInputException
 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: org.tukaani.xz.CorruptedInputException
+[main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: org.tukaani.xz.IndexIndicatorException
+[main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'org.tukaani.xz.IndexIndicatorException'.
+[main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class org/tukaani/xz/IndexIndicatorException
+[main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Creating brand-new static initializer in class org/tukaani/xz/IndexIndicatorException
+[main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: org.tukaani.xz.IndexIndicatorException
 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: org.tukaani.xz.XZInputStream
 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'org.tukaani.xz.XZInputStream'.
 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class org/tukaani/xz/XZInputStream
@@ -646,6 +646,7 @@ org.junit.runner.JUnitCore.main(JUnitCore.java:36)
 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class org/tukaani/xz/XZOutputStream
 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Creating brand-new static initializer in class org/tukaani/xz/XZOutputStream
 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: org.tukaani.xz.XZOutputStream
+[main] ERROR org.evosuite.runtime.classhandling.ClassStateSupport - Found $jacocoInit in class org.apache.avro.file.Codec
 java.lang.SecurityException: Security manager blocks ("java.lang.RuntimePermission" "loadLibrary./tmp/snappy-1.1.8-00000000-0100-4000-8200-000003000000-libsnappyjava.so")
 java.lang.Thread.getStackTrace(Thread.java:1564)
 org.evosuite.runtime.sandbox.MSecurityManager.checkPermission(MSecurityManager.java:424)
@@ -2410,7 +2411,6 @@ org.junit.runner.JUnitCore.main(JUnitCore.java:36)
 	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
 	at org.junit.runner.JUnitCore.runMain(JUnitCore.java:77)
 	at org.junit.runner.JUnitCore.main(JUnitCore.java:36)
-[main] INFO org.evosuite.runtime.thread.ThreadStopper - Found new thread
 java.lang.SecurityException: Security manager blocks ("java.lang.RuntimePermission" "loadLibrary./tmp/snappy-1.1.8-00000000-0100-4000-8200-000003000000-libsnappyjava.so")
 java.lang.Thread.getStackTrace(Thread.java:1564)
 org.evosuite.runtime.sandbox.MSecurityManager.checkPermission(MSecurityManager.java:424)
@@ -2831,5 +2831,5 @@ org.junit.runner.JUnitCore.main(JUnitCore.java:36)
 	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
 	at org.junit.runner.JUnitCore.runMain(JUnitCore.java:77)
 	at org.junit.runner.JUnitCore.main(JUnitCore.java:36)
-6.57user 0.94system 0:05.12elapsed 146%CPU (0avgtext+0avgdata 1662992maxresident)k
-0inputs+592outputs (13major+416457minor)pagefaults 0swaps
+4.34user 0.68system 0:03.53elapsed 142%CPU (0avgtext+0avgdata 1655720maxresident)k
+24inputs+544outputs (8major+415302minor)pagefaults 0swaps

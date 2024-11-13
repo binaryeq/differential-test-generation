@@ -74,9 +74,6 @@
 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: oshi.software.os.OperatingSystem
 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: oshi.software.common.AbstractOperatingSystem
 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: oshi.software.os.linux.LinuxOperatingSystem
-[main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: oshi.software.os.FileSystem
-[main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'oshi.software.os.FileSystem'.
-[main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: oshi.software.os.FileSystem
 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: oshi.jna.Struct$CloseableSysinfo
 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'oshi.jna.Struct$CloseableSysinfo'.
 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class oshi/jna/Struct$CloseableSysinfo
@@ -92,12 +89,16 @@
 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: oshi.software.os.NetworkParams
 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'oshi.software.os.NetworkParams'.
 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: oshi.software.os.NetworkParams
+[main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: oshi.software.os.FileSystem
+[main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'oshi.software.os.FileSystem'.
+[main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: oshi.software.os.FileSystem
 [main] ERROR org.evosuite.runtime.classhandling.ClassStateSupport - Could not initialize oshi.software.os.linux.LinuxOperatingSystem: null
 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: oshi.util.ParseUtil
 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'oshi.util.ParseUtil'.
 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class oshi/util/ParseUtil
 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Found static initializer in class oshi/util/ParseUtil
 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: oshi.util.ParseUtil
+[main] ERROR org.evosuite.runtime.classhandling.ClassStateSupport - Found $jacocoInit in class oshi.util.Memoizer$1
 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: oshi.software.os.linux.LinuxOSThread
 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'oshi.software.os.linux.LinuxOSThread'.
 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class oshi/software/os/linux/LinuxOSThread
@@ -113,17 +114,17 @@
 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class oshi/software/os/OperatingSystem$OSVersionInfo
 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Creating brand-new static initializer in class oshi/software/os/OperatingSystem$OSVersionInfo
 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: oshi.software.os.OperatingSystem$OSVersionInfo
-[main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: oshi.util.tuples.Triplet
-[main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'oshi.util.tuples.Triplet'.
-[main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class oshi/util/tuples/Triplet
-[main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Creating brand-new static initializer in class oshi/util/tuples/Triplet
-[main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Defined package (3): package oshi.util.tuples, -765019506
-[main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: oshi.util.tuples.Triplet
 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: oshi.util.tuples.Pair
 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'oshi.util.tuples.Pair'.
 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class oshi/util/tuples/Pair
 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Creating brand-new static initializer in class oshi/util/tuples/Pair
+[main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Defined package (3): package oshi.util.tuples, -765019506
 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: oshi.util.tuples.Pair
+[main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: oshi.util.tuples.Triplet
+[main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'oshi.util.tuples.Triplet'.
+[main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class oshi/util/tuples/Triplet
+[main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Creating brand-new static initializer in class oshi/util/tuples/Triplet
+[main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: oshi.util.tuples.Triplet
 [main] ERROR org.evosuite.runtime.classhandling.ClassResetter - java.lang.NoClassDefFoundError: Could not initialize class oshi.util.platform.linux.ProcPath
 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: oshi.software.os.OSThread$ThreadFiltering
 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'oshi.software.os.OSThread$ThreadFiltering'.
@@ -163,5 +164,5 @@
 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class oshi/util/UserGroupInfo
 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Found static initializer in class oshi/util/UserGroupInfo
 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: oshi.util.UserGroupInfo
-1.02user 0.09system 0:00.55elapsed 201%CPU (0avgtext+0avgdata 130008maxresident)k
-0inputs+120outputs (8major+30186minor)pagefaults 0swaps
+1.14user 0.18system 0:00.68elapsed 195%CPU (0avgtext+0avgdata 130748maxresident)k
+40inputs+128outputs (8major+30344minor)pagefaults 0swaps

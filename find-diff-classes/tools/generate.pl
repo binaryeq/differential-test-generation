@@ -24,6 +24,7 @@ my $JAVA17 = findJava("java", 17);   # Code in the tooling repo was compiled wit
 my $COMPAREJARS = "$JAVA17 -cp $CLASSPATH io.github.bineq.cli.CompareJars";
 my $EVOSUITEJAR = "$ROOT/regression-test-generation/evosuite/evosuite-1.2.0.jar";
 my $COMPARISONSDIR = "comparisons"; # Formerly "results"
+my $JACOCOPATH = "jacoco/lib";
 my $evosuiteRuntimeJarPath = "$ROOT/regression-test-generation/evosuite/evosuite-standalone-runtime-1.2.0.jar";
 my $junit4JarPath = "$ENV{HOME}/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar";
 my $hamcrestJarPath = "$ENV{HOME}/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar";
@@ -77,6 +78,12 @@ sub providerPath($$$$) {
         return $_ if defined;
     }
     die "Could not find matching dir for provider $_[0] for $g:$a:$v!";
+}
+
+sub jacocofyJarPath($) {
+    my ($path) = @_;
+    $path =~ s|/([^/]+\.jar)$|/jacocofied/$1| or die;
+    return $path;
 }
 
 sub evosuiteGenDir($$$$) {
@@ -238,6 +245,7 @@ sub generateOrRunTests($) {
 #    print STDERR "targetOtherProvider=<$opts->{targetOtherProvider}>\n";   #DEBUG
     die if (($opts->{shouldCompileTests} || $opts->{shouldRunTests}) && !defined($opts->{targetOtherProvider}));
     die "To run Maven tests you must specify compilation at the same time" if ($opts->{shouldRunTests} && $opts->{viaMvn} && !$opts->{shouldCompileTests});
+    die "Can't handle JaCoCo + Maven yet" if ($opts->{viaMvn} && $opts->{useJacoco});
 
     print <<THE_END;
 #!/bin/bash
@@ -254,6 +262,7 @@ THE_END
     #print scalar @classesFiltered;
 
     my %providersForJar;
+    my %doesJarPathHaveProvider;
     my %jarPathHasMvnc;
     my %interestingClasses;
     foreach my $fn (@classesFiltered) {
@@ -261,6 +270,8 @@ THE_END
         #my ($g, $a, $v) = $jarPath =~ m|^(.*)/([^/]+)/([^/]+)/[^/]+\.jar$| or die;
         #$g =~ tr|/|.|;
         push @{$providersForJar{$jarPath}}, [$p1, $p2];
+        $doesJarPathHaveProvider{$jarPath}{$p1} = 1;
+        $doesJarPathHaveProvider{$jarPath}{$p2} = 1;
         if ($p1 eq 'mvnc' || $p2 eq 'mvnc') {
             $jarPathHasMvnc{$jarPath} = 1;
             my @classes = `cat $fn`;    # Ugh
@@ -326,7 +337,7 @@ THE_END
                         my $fullTestCompilePath = $testCompilePath . ($opts->{viaMvn} ? '/target/test-classes' : '');          # Maven puts its classes in a slightly different place
                         my %alreadyProcessed = map { $_ => 1 } grep { my $target = $_; $target =~ s|\Q$testGenPath\E/evosuite-tests/|$fullTestCompilePath/| or die; $target =~ s/\.java$/.class/ or die; -e $target } @generatedClasses;
                         print STDERR "# Removing " . scalar(keys %alreadyProcessed) . " already-compiled classes from the original set of " . scalar(@generatedClasses) . ", leaving " . (scalar(@generatedClasses) - scalar(keys %alreadyProcessed)) . ".\n";
-			@generatedClasses = grep { !exists $alreadyProcessed{$_} } @generatedClasses;
+                        @generatedClasses = grep { !exists $alreadyProcessed{$_} } @generatedClasses;
 
                         if (@generatedClasses) {
                             my $pomPath = providerPath($opts->{targetOtherProvider}, $g, $a, $v) =~ s/\.jar$/.pom/r;
@@ -377,6 +388,20 @@ THE_END
                 }
             }
 
+            if ($opts->{shouldJacocofy}) {
+                if ($doesJarPathHaveProvider{$jarPath}{$opts->{targetOtherProvider}}) {
+                    # This may produce slightly too many Jacocofied jars, since we produce them even for jars that EvoSuite wasn't able to generate tests for
+                    my $providerJarPath = providerPath($opts->{targetOtherProvider}, $g, $a, $v);
+                    my $jacocofiedJarPath = jacocofyJarPath($providerJarPath);
+                    print STDERR "jarPath=<$jarPath>\n";   #DEBUG
+                    print STDERR "providerJarPath=<$providerJarPath>\n";   #DEBUG
+                    print STDERR "jacocofiedJarPath=<$jacocofiedJarPath>\n";   #DEBUG
+                    my ($jacocofiedJarDir) = $jacocofiedJarPath =~ m|(.*)/| or die;
+                    my $jacocoCmd = "mkdir -p '$jacocofiedJarDir' && java -jar '$JACOCOPATH/jacococli.jar' instrument --dest '$jacocofiedJarDir' '$providerJarPath' && touch '$jacocofiedJarPath.success'";
+                    print $jacocoCmd, "\n";
+                }
+            }
+
             if ($opts->{shouldRunTests} && !$opts->{viaMvn}) {      # Running Maven-based tests requires shouldCompileTests to also be specified and is handled earlier
                 #TODO: Do per-provider-pair work
                 chomp(my $pwd = `pwd`);
@@ -397,7 +422,7 @@ THE_END
 
                     my @DEBUG;
                     my %alreadyProcessed = map { $_ => 1 } grep { my $target = "$testRunPath/" . convertClassNameToDotted($_, $testCompilePath) . ".out"; $target =~ s|^.\{RUNDIR\}/|run/| or die; push @DEBUG, $target; -e $target } @compiledClasses;
-                    print STDERR "# Removing " . scalar(keys %alreadyProcessed) . " already-compiled classes from the original set of " . scalar(@compiledClasses) . ", leaving " . (scalar(@compiledClasses) - scalar(keys %alreadyProcessed)) . ".\n";
+                    print STDERR "# Removing " . scalar(keys %alreadyProcessed) . " already-run classes from the original set of " . scalar(@compiledClasses) . ", leaving " . (scalar(@compiledClasses) - scalar(keys %alreadyProcessed)) . ".\n";
                     print STDERR "# Checked: $_\n" foreach @DEBUG;    #DEBUG
                     @compiledClasses = grep { !exists $alreadyProcessed{$_} } @compiledClasses;
 
@@ -409,9 +434,12 @@ THE_END
 
                     my $createdDirYet = 0;
 
-                    my $classOwnCP = providerPath($opts->{targetOtherProvider}, $g, $a, $v);
+                    my $preJacocoClassOwnCP = providerPath($opts->{targetOtherProvider}, $g, $a, $v);
+                    my $classOwnCP = $preJacocoClassOwnCP;
+                    $classOwnCP = jacocofyJarPath($classOwnCP) if $opts->{useJacoco};
                     my $projectCP = "$classOwnCP:\$(echo t/dependency/*|perl -lpe 's/ /:/g')";
                     my $classPath = join(":",
+                        ($opts->{useJacoco} ? "$pwd/$JACOCOPATH/jacocoagent.jar" : ()),
                         "$projectCP",
                         $evosuiteRuntimeJarPath,
 #                                "$testGenPath/evosuite-tests",
@@ -434,9 +462,17 @@ THE_END
                                 $createdDirYet = 1;
                             }
 
+                            my $jacocoExecFile = "$outBasename.jacoco.exec";
+                            my $jacocoDestSysProp = ($opts->{useJacoco} ? "-Djacoco-agent.destfile=\"$jacocoExecFile\"" : "");
+
                             print "# Run compiled test class $compiledClass for $jarPath for $opts->{targetOtherProvider}\n";
-                            my $javaCmd = "CLASSPATH=\"$classPath\" time $JAVA8 org.junit.runner.JUnitCore \"$dottedClassName\" > \"$outBasename.out\" 2> \"$outBasename.err\"";
+                            my $javaCmd = "CLASSPATH=\"$classPath\" time $JAVA8 $jacocoDestSysProp org.junit.runner.JUnitCore \"$dottedClassName\" > \"$outBasename.out\" 2> \"$outBasename.err\"";
                             print $javaCmd, "\n";
+
+                            if ($opts->{useJacoco}) {
+                                my $jacocoXmlReportCmd = "java -jar $pwd/$JACOCOPATH/jacococli.jar report \"$jacocoExecFile\" --classfiles \"$preJacocoClassOwnCP\" --xml \"$outBasename.jacoco.xml\"";
+                                print $jacocoXmlReportCmd, "\n";
+                            }
                         }
                     }
 
@@ -454,10 +490,18 @@ die "Is \$ROOT set correctly?" if !-d $BASE || !-e $CLASSPATH;
 die "Expected EvoSuite at $EVOSUITEJAR" if !-e $EVOSUITEJAR;
 
 # Main program
-if (@ARGV && $ARGV[0] eq "--keep-run-filter") {
-    shift;
-    my $filterFunc = shift;
-    $keepRunFilter = sub { return eval($filterFunc); };     # It should check the filename in $_[0]
+my $useJacoco = 0;      # Relevant for running tests only
+while (1) {
+    if (@ARGV && $ARGV[0] eq "--keep-run-filter") {
+        shift;
+        my $filterFunc = shift;
+        $keepRunFilter = sub { return eval($filterFunc); };     # It should check the filename in $_[0]
+    } elsif (@ARGV && $ARGV[0] eq '--use-jacoco') {
+        shift;
+        $useJacoco = 1;
+    } else {
+        last;
+    }
 }
 
 my $mode = shift;
@@ -470,12 +514,15 @@ if (!defined $mode) {
 } elsif ($mode eq '--compile-tests') {
     die unless @ARGV == 1;
     generateOrRunTests({ shouldCompileTests => 1, targetOtherProvider => shift });
+} elsif ($mode eq '--jacocofy-jars') {
+    die unless @ARGV == 1;
+    generateOrRunTests({ shouldJacocofy => 1, targetOtherProvider => shift });
 } elsif ($mode eq '--compile-and-run-tests-mvn') {
     die unless @ARGV == 1;
     generateOrRunTests({ shouldCompileTests => 1, shouldRunTests => 1, targetOtherProvider => shift, viaMvn => 1 });
 } elsif ($mode eq '--run-tests') {
     die unless @ARGV == 1;
-    generateOrRunTests({ shouldRunTests => 1, targetOtherProvider => shift });
+    generateOrRunTests({ shouldRunTests => 1, targetOtherProvider => shift, useJacoco => $useJacoco });
 } elsif ($mode eq '--compile-and-run-tests') {
     die unless @ARGV == 1;
     generateOrRunTests({ shouldCompileTests => 1, shouldRunTests => 1, targetOtherProvider => shift });

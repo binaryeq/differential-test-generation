@@ -38,6 +38,7 @@ INFO: JBoss Threads version 3.1.0.Final
 Exception in thread "ForkJoinPool-5-worker-1" java.lang.RuntimeException: Kill switch
 	at org.evosuite.runtime.thread.KillSwitchHandler.checkTimeout(KillSwitchHandler.java:51)
 	at org.evosuite.runtime.thread.KillSwitchHandler.killIfTimeout(KillSwitchHandler.java:61)
+	at org.xnio.channels.NullStreamSinkChannel.resumeWrites(NullStreamSinkChannel.java:184)
 	at io.undertow.servlet.spec.UpgradeServletOutputStream$3.run(UpgradeServletOutputStream.java:191)
 	at java.util.concurrent.ForkJoinTask$RunnableExecuteAction.exec(ForkJoinTask.java:1402)
 	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:289)
@@ -50,5 +51,5 @@ Feb 14, 2014 8:21:21 PM <unknown> <unknown>
 INFO: JBoss Threads version 3.1.0.Final
 Feb 14, 2014 8:21:21 PM <unknown> <unknown>
 INFO: JBoss Threads version 3.1.0.Final
-4.65user 0.33system 0:01.62elapsed 307%CPU (0avgtext+0avgdata 330152maxresident)k
-0inputs+80outputs (8major+85915minor)pagefaults 0swaps
+5.19user 0.47system 0:01.95elapsed 289%CPU (0avgtext+0avgdata 329688maxresident)k
+0inputs+88outputs (8major+87993minor)pagefaults 0swaps

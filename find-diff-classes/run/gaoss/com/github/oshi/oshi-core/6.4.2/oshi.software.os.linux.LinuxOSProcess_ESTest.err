@@ -74,30 +74,31 @@
 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: oshi.software.os.OperatingSystem
 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: oshi.software.common.AbstractOperatingSystem
 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: oshi.software.os.linux.LinuxOperatingSystem
-[main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: oshi.software.os.FileSystem
-[main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'oshi.software.os.FileSystem'.
-[main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: oshi.software.os.FileSystem
 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: oshi.jna.Struct$CloseableSysinfo
 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'oshi.jna.Struct$CloseableSysinfo'.
 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class oshi/jna/Struct$CloseableSysinfo
 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Creating brand-new static initializer in class oshi/jna/Struct$CloseableSysinfo
 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Defined package (3): package oshi.jna, -2056963052
 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: oshi.jna.Struct$CloseableSysinfo
+[main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: oshi.software.os.NetworkParams
+[main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'oshi.software.os.NetworkParams'.
+[main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: oshi.software.os.NetworkParams
 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: oshi.software.os.InternetProtocolStats
 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'oshi.software.os.InternetProtocolStats'.
 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: oshi.software.os.InternetProtocolStats
 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: oshi.software.os.OSThread
 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'oshi.software.os.OSThread'.
 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: oshi.software.os.OSThread
-[main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: oshi.software.os.NetworkParams
-[main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'oshi.software.os.NetworkParams'.
-[main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: oshi.software.os.NetworkParams
+[main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: oshi.software.os.FileSystem
+[main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'oshi.software.os.FileSystem'.
+[main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: oshi.software.os.FileSystem
 [main] ERROR org.evosuite.runtime.classhandling.ClassStateSupport - Could not initialize oshi.software.os.linux.LinuxOperatingSystem: null
 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: oshi.util.ParseUtil
 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'oshi.util.ParseUtil'.
 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class oshi/util/ParseUtil
 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Found static initializer in class oshi/util/ParseUtil
 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: oshi.util.ParseUtil
+[main] ERROR org.evosuite.runtime.classhandling.ClassStateSupport - Found $jacocoInit in class oshi.util.Memoizer$1
 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Seeing class for first time: oshi.software.os.linux.LinuxOSThread
 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Instrumenting class 'oshi.software.os.linux.LinuxOSThread'.
 [main] INFO org.evosuite.runtime.instrumentation.MethodCallReplacementClassAdapter - Adding mock interface to class oshi/software/os/linux/LinuxOSThread
@@ -243,5 +244,5 @@
 [main] INFO org.evosuite.runtime.instrumentation.CreateClassResetClassAdapter - Creating brand-new static initializer in class oshi/jna/Struct$CloseableProcTaskInfo
 [main] INFO org.evosuite.runtime.instrumentation.EvoClassLoader - Keeping class: oshi.jna.Struct$CloseableProcTaskInfo
 [main] ERROR org.evosuite.runtime.classhandling.ClassResetter - java.lang.NoClassDefFoundError: Could not initialize class com.sun.jna.Native
-1.21user 0.13system 0:00.75elapsed 177%CPU (0avgtext+0avgdata 136708maxresident)k
-0inputs+136outputs (8major+31460minor)pagefaults 0swaps
+1.66user 0.29system 0:00.89elapsed 219%CPU (0avgtext+0avgdata 137944maxresident)k
+72inputs+144outputs (8major+33195minor)pagefaults 0swaps
