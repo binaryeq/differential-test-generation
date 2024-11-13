@@ -7,30 +7,17 @@ Exception in thread "ForkJoinPool-1-worker-1" com.google.common.base.Preconditio
 Exception in thread "ForkJoinPool-2-worker-1" java.lang.RuntimeException: Kill switch
 	at org.evosuite.runtime.thread.KillSwitchHandler.checkTimeout(KillSwitchHandler.java:51)
 	at org.evosuite.runtime.thread.KillSwitchHandler.killIfTimeout(KillSwitchHandler.java:61)
-	at com.google.common.util.concurrent.ExecutionSequencer$TaskNonReentrantExecutor.run(ExecutionSequencer.java:376)
+	at com.google.common.util.concurrent.InterruptibleTask.run(InterruptibleTask.java:65)
+	at com.google.common.util.concurrent.TrustedListenableFutureTask.run(TrustedListenableFutureTask.java:82)
+	at com.google.common.util.concurrent.ExecutionSequencer$TaskNonReentrantExecutor.run(ExecutionSequencer.java:384)
 	at java.util.concurrent.ForkJoinTask$RunnableExecuteAction.exec(ForkJoinTask.java:1402)
 	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:289)
 	at java.util.concurrent.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1056)
 	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1692)
 	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:175)
-Oct 24, 2024 11:50:15 PM com.google.common.util.concurrent.AbstractFuture executeListener
-SEVERE: RuntimeException while executing runnable com.google.common.util.concurrent.ExecutionSequencer$3@2 with executor MoreExecutors.directExecutor()
-java.lang.NullPointerException
-	at com.google.common.util.concurrent.AbstractFuture$UnsafeAtomicHelper.casWaiters(AbstractFuture.java:1377)
-	at com.google.common.util.concurrent.AbstractFuture.releaseWaiters(AbstractFuture.java:1114)
-	at com.google.common.util.concurrent.AbstractFuture.complete(AbstractFuture.java:1000)
-	at com.google.common.util.concurrent.AbstractFuture.setFuture(AbstractFuture.java:851)
-	at com.google.common.util.concurrent.SettableFuture.setFuture(SettableFuture.java:61)
-	at com.google.common.util.concurrent.ExecutionSequencer$3.run(ExecutionSequencer.java:222)
-	at com.google.common.util.concurrent.DirectExecutor.execute(DirectExecutor.java:31)
-	at com.google.common.util.concurrent.AbstractFuture.executeListener(AbstractFuture.java:1277)
-	at com.google.common.util.concurrent.AbstractFuture.complete(AbstractFuture.java:1038)
-	at com.google.common.util.concurrent.AbstractFuture.setFuture(AbstractFuture.java:851)
-	at com.google.common.util.concurrent.Futures$NonCancellationPropagatingFuture.run(Futures.java:805)
-	at com.google.common.util.concurrent.DirectExecutor.execute(DirectExecutor.java:31)
-	at com.google.common.util.concurrent.AbstractFuture.executeListener(AbstractFuture.java:1277)
-	at com.google.common.util.concurrent.AbstractFuture.complete(AbstractFuture.java:1038)
-	at com.google.common.util.concurrent.AbstractFuture.setException(AbstractFuture.java:808)
+Exception in thread "ForkJoinPool.commonPool-worker-1" java.lang.NullPointerException
+	at com.google.common.util.concurrent.AbstractFuture$UnsafeAtomicHelper.casValue(AbstractFuture.java:1389)
+	at com.google.common.util.concurrent.AbstractFuture.setException(AbstractFuture.java:807)
 	at com.google.common.util.concurrent.TrustedListenableFutureTask$TrustedFutureInterruptibleAsyncTask.afterRanInterruptiblyFailure(TrustedListenableFutureTask.java:180)
 	at com.google.common.util.concurrent.InterruptibleTask.run(InterruptibleTask.java:88)
 	at com.google.common.util.concurrent.TrustedListenableFutureTask.run(TrustedListenableFutureTask.java:82)
@@ -40,6 +27,5 @@ java.lang.NullPointerException
 	at java.util.concurrent.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1056)
 	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1692)
 	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:175)
-
-5.03user 0.35system 0:07.14elapsed 75%CPU (0avgtext+0avgdata 896620maxresident)k
-0inputs+80outputs (8major+226689minor)pagefaults 0swaps
+11.58user 1.01system 0:07.91elapsed 159%CPU (0avgtext+0avgdata 1692992maxresident)k
+0inputs+88outputs (8major+431899minor)pagefaults 0swaps
