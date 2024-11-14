@@ -4,14 +4,10 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.InputSource;
 
-import javax.xml.XMLConstants;
 import javax.xml.xpath.XPath;
 import javax.xml.xpath.XPathConstants;
 import javax.xml.xpath.XPathExpressionException;
 import javax.xml.xpath.XPathFactory;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.concurrent.Callable;
 import java.util.function.Function;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -24,7 +20,6 @@ public class Main {
      * @param labels an array of strings to be prepended as the leftmost columns
      */
     public static void process(String fName, String[] labels) {
-//    public static void process(String fName, Function<String, String[]> labeler) {
         String initialLabels = "";
         if (labels.length > 0) {
             initialLabels = String.join("\t", labels) + "\t";
@@ -96,6 +91,7 @@ public class Main {
         }
         if (args.length < iArg + 1) {
             System.err.println("Must specify at least one JaCoCo XML report filename.");
+            System.err.println("Usage: java -cp analyse-coverage/target/classes io.github.bineq.Main [--label <label>] [--segment-path] path/to/jacoco-report1.xml [path/to/jacoco-report2.xml ...]");
             System.exit(1);
         }
 
