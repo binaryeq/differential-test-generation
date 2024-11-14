@@ -9,15 +9,27 @@ import javax.xml.xpath.XPath;
 import javax.xml.xpath.XPathConstants;
 import javax.xml.xpath.XPathExpressionException;
 import javax.xml.xpath.XPathFactory;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.concurrent.Callable;
+import java.util.function.Function;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Main {
     /**
      * Read a JaCoCo XML report and write a TSV-formatted list of covered methods to stdout.
      *
      * @param fName name of the JaCoCo XML report file. report.dtd must exist alongside it.
-     * @param label if non-null, will be prepended as the leftmost column
+     * @param labels an array of strings to be prepended as the leftmost columns
      */
-    public static void process(String fName, String label) {
+    public static void process(String fName, String[] labels) {
+//    public static void process(String fName, Function<String, String[]> labeler) {
+        String initialLabels = "";
+        if (labels.length > 0) {
+            initialLabels = String.join("\t", labels) + "\t";
+        }
+
         XPath xpath = XPathFactory.newInstance().newXPath();
         // Doesn't seem to be a way to specify the following options to an XPathFactory or XPath, so a copy of
         // report.dtd needs to live next to each XML file :(
@@ -41,7 +53,7 @@ public class Main {
                 Node packageNode = classNode.getParentNode();
                 String packageName = getAttr(packageNode, "name");
 
-                String record = (label == null ? "" : label + "\t") + String.join("\t", new String[]{packageName, className, methodName, methodDescriptor});
+                String record = initialLabels + String.join("\t", new String[]{packageName, className, methodName, methodDescriptor});
                 if (covered.equals("1")) {
                     System.out.println(record);
                 } else if (!covered.equals("0")) {
@@ -58,18 +70,38 @@ public class Main {
         return node.getAttributes().getNamedItem(attrName).getTextContent();
     }
 
+    private static String[] segmentPath(String fName) {
+        // Provider, groupId (may contain slashes), artifactId, version, test class basename
+        Pattern pattern = Pattern.compile("^run/([^/]+)/(.+)/([^/]+)/([^/]+)/([^/]+)\\.jacoco\\.xml$");
+        Matcher matcher = pattern.matcher(fName);
+        if (matcher.matches()) {
+            return new String[]{ matcher.group(1), matcher.group(2), matcher.group(3), matcher.group(4), matcher.group(5) };
+        } else {
+            throw new RuntimeException("Could not segment path '" + fName + "'");
+        }
+    }
+
     public static void main(String[] args) {
         int iArg = 0;
-        String label = null;
+        Function<String, String[]> labeler = (ignore) -> new String[]{};
         if (args.length >= iArg + 1 && args[iArg].equals("--label")) {
-            label = args[iArg + 1];
+            final String label = args[iArg + 1];
+            labeler = (ignore) -> new String[]{ label };
             iArg += 2;
         }
-        if (args.length != iArg + 1) {
-            System.err.println("Must specify a JaCoCo XML report filename.");
+        if (args.length >= iArg + 1 && args[iArg].equals("--segment-path")) {
+            // Assumes input filenames have the form "run/<provider>/<groupId>/<artifactId>/<version>/<test>.jacoco.xml"
+            labeler = Main::segmentPath;
+            iArg += 1;
+        }
+        if (args.length < iArg + 1) {
+            System.err.println("Must specify at least one JaCoCo XML report filename.");
             System.exit(1);
         }
 
-        process(args[iArg], label);
+        for (; iArg < args.length; ++iArg) {
+            String[] labels = labeler.apply(args[iArg]);
+            process(args[iArg], labels);
+        }
     }
 }

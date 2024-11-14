@@ -17,4 +17,4 @@ all_covered_methods.tsv: generated.covered_methods.mk
 	find run -name '*.covered_methods.tsv' | xargs cat | sort > $@
 
 %.covered_methods.tsv: %.jacoco.xml
-	java -cp analyse-coverage/target/classes io.github.bineq.Main --label $(word 2,$(subst /, ,$<)) $< > $@
+	java -cp analyse-coverage/target/classes io.github.bineq.Main --segment-path $< > $@
