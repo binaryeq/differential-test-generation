@@ -19,28 +19,28 @@ public class Main {
             NodeList nodes = (NodeList) xpath.evaluate(expression, inputSource, XPathConstants.NODESET);
             for (int i = 0; i < nodes.getLength(); ++i) {
                 Node counterNode = nodes.item(i);
-                NamedNodeMap counterAttr = counterNode.getAttributes();
-                Node covered = counterAttr.getNamedItem("covered");
+                String covered = getAttr(counterNode, "covered");
 
                 Node methodNode = counterNode.getParentNode();
-                NamedNodeMap methodAttr = methodNode.getAttributes();
-                Node methodName = methodAttr.getNamedItem("name");
-                Node methodDescriptor = methodAttr.getNamedItem("desc");
+                String methodName = getAttr(methodNode, "name");
+                String methodDescriptor = getAttr(methodNode, "desc");
 
                 Node classNode = methodNode.getParentNode();
-                NamedNodeMap classAttr = classNode.getAttributes();
-                Node className = classAttr.getNamedItem("name");
+                String className = getAttr(classNode, "name");
 
                 Node packageNode = classNode.getParentNode();
-                NamedNodeMap packageAttr = packageNode.getAttributes();
-                Node packageName = packageAttr.getNamedItem("name");
+                String packageName = getAttr(packageNode, "name");
 
-                System.out.println("package: " + packageName + ", class: " + className + ", method: " + methodName + ", covered: " + covered.getTextContent());
+                System.out.println("package: " + packageName + ", class: " + className + ", method: " + methodName + ", covered: " + covered);
             }
         } catch (XPathExpressionException e) {
             throw new RuntimeException("XPathExpressionException occurred:", e);
         }
 
+    }
+
+    private static String getAttr(Node node, String attrName) {
+        return node.getAttributes().getNamedItem(attrName).getTextContent();
     }
 
     public static void main(String[] args) {
