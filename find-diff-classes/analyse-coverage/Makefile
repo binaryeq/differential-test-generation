@@ -4,9 +4,9 @@ DB := /home/wtwhite/code/craw-redhat-oss/sqlite/crawl.sqlite
 
 all: upload-to-db.done
 
-upload-to-db.done: upload-covered-methods-to-db.done upload-tests-to-db.done
-
-upload-covered-methods-to-db.done: all_covered_methods.tsv
+# Have to do these in a single recipe since SQLite forbids concurrent writes
+upload-to-db.done: all_tests.tsv all_covered_methods.tsv
+	sqlite3 $(DB) < analyse-coverage/import_all_tests.sql
 	sqlite3 $(DB) < analyse-coverage/import_all_covered_methods.sql
 	touch $@
 
@@ -20,10 +20,6 @@ all_covered_methods.tsv: generated.covered_methods.mk
 
 %.covered_methods.tsv: %.jacoco.xml
 	java -cp analyse-coverage/target/classes io.github.bineq.Main --segment-path $< > $@
-
-upload-tests-to-db.done: all_tests.tsv
-	sqlite3 $(DB) < analyse-coverage/import_all_tests.sql
-	touch $@
 
 all_tests.tsv:
 	find run -name '*.jacoco.xml' | perl -lne 'print join("\t", $$1, $$2, $$3, $$4, $$5) if m|^run/([^/]+)/(.+)/([^/]+)/([^/]+)/([^/]+)\.jacoco\.xml$$|' > $@
