@@ -11,7 +11,13 @@ import javax.xml.xpath.XPathExpressionException;
 import javax.xml.xpath.XPathFactory;
 
 public class Main {
-    public static void process(String fName) {
+    /**
+     * Read a JaCoCo XML report and write a TSV-formatted list of covered methods to stdout.
+     *
+     * @param fName name of the JaCoCo XML report file. report.dtd must exist alongside it.
+     * @param label if non-null, will be prepended as the leftmost column
+     */
+    public static void process(String fName, String label) {
         XPath xpath = XPathFactory.newInstance().newXPath();
         // Doesn't seem to be a way to specify the following options to an XPathFactory or XPath, so a copy of
         // report.dtd needs to live next to each XML file :(
@@ -35,7 +41,7 @@ public class Main {
                 Node packageNode = classNode.getParentNode();
                 String packageName = getAttr(packageNode, "name");
 
-                String record = String.join("\t", new String[]{packageName, className, methodName, methodDescriptor});
+                String record = (label == null ? "" : label + "\t") + String.join("\t", new String[]{packageName, className, methodName, methodDescriptor});
                 if (covered.equals("1")) {
                     System.out.println(record);
                 } else if (!covered.equals("0")) {
@@ -53,11 +59,17 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        if (args.length != 1) {
+        int iArg = 0;
+        String label = null;
+        if (args.length >= iArg + 1 && args[iArg].equals("--label")) {
+            label = args[iArg + 1];
+            iArg += 2;
+        }
+        if (args.length != iArg + 1) {
             System.err.println("Must specify a JaCoCo XML report filename.");
             System.exit(1);
         }
 
-        process(args[0]);
+        process(args[iArg], label);
     }
 }
