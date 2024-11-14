@@ -1,10 +1,10 @@
 package io.github.bineq;
 
-import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.InputSource;
 
+import javax.xml.XMLConstants;
 import javax.xml.xpath.XPath;
 import javax.xml.xpath.XPathConstants;
 import javax.xml.xpath.XPathExpressionException;
@@ -13,6 +13,10 @@ import javax.xml.xpath.XPathFactory;
 public class Main {
     public static void process(String fName) {
         XPath xpath = XPathFactory.newInstance().newXPath();
+        // Doesn't seem to be a way to specify the following options to an XPathFactory or XPath, so a copy of
+        // report.dtd needs to live next to each XML file :(
+//        sax.setProperty(XMLConstants.ACCESS_EXTERNAL_DTD, "");
+//        sax.setProperty(XMLConstants.ACCESS_EXTERNAL_SCHEMA, "");
         String expression = "/report/package/class/method/counter[@type='METHOD']";
         InputSource inputSource = new InputSource(fName);
         try {
@@ -31,7 +35,12 @@ public class Main {
                 Node packageNode = classNode.getParentNode();
                 String packageName = getAttr(packageNode, "name");
 
-                System.out.println("package: " + packageName + ", class: " + className + ", method: " + methodName + ", covered: " + covered);
+                String record = String.join("\t", new String[]{packageName, className, methodName, methodDescriptor});
+                if (covered.equals("1")) {
+                    System.out.println(record);
+                } else if (!covered.equals("0")) {
+                    throw new RuntimeException("Unexpected coverage count '" + covered + "' for record " + record);
+                }
             }
         } catch (XPathExpressionException e) {
             throw new RuntimeException("XPathExpressionException occurred:", e);
