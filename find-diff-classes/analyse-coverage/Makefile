@@ -4,6 +4,14 @@ DB := /home/wtwhite/code/craw-redhat-oss/sqlite/crawl.sqlite
 
 all: upload-to-db.done
 
+# Leaves any individual *.covered_methods.tsv files in place
+clean:
+	rm -f upload-to-db.done generated.covered_methods.mk all_covered_methods.tsv all_tests.tsv
+
+# Like clean, but also deletes *.covered_methods.tsv files (which were presumably generated)
+really-clean: clean
+	find run -name '*.covered_methods.tsv' -delete
+
 # Have to do these in a single recipe since SQLite forbids concurrent writes
 upload-to-db.done: all_tests.tsv all_covered_methods.tsv
 	sqlite3 $(DB) < analyse-coverage/import_all_tests.sql
