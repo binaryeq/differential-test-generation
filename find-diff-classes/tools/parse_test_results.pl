@@ -73,10 +73,10 @@ sub process($) {
 #    my $nFailures;
 #    if (s/\nFAILURES!!!\nTests run: (\d+),\s*Failures: (\d+)\n\n\z//) {
 #    if (s/\nThere (?:was|were) (\d+) failures?:\n((?:\d+\) test\d+\(.*\)\n[^\t\n][^\n]*\n(?:(?:\t|Caused by: )[^\n]*\n)*)*)\nFAILURES!!!\nTests run: (\d+),\s*Failures: (\d+)\n\n\z//) {
-    if (s/\nThere (?:was|were) (\d+) failures?:\n((?:\d+\) test(?:\d+)\(.*\)\n(?:[^\t\n][^\n]*\n(?:[^\n]*(?:\.java:\d+|Native Method)\)\n|\t[^\n]+\n|\n|Caused by: [^\n]+\n|Cannot resolve which method to invoke[^\n]+\n|\t\[[^\n]+\]\n)*))*)\nFAILURES!!!\nTests run: (\d+),\s*Failures: (\d+)\n\n\z//) {
+    if (s/\nThere (?:was|were) (\d+) failures?:\n((?:\d+\) test(?:\d+)\(.*\)\n(?:[^\t\n][^\n]*\n(?:[^\n]*(?:\.java(?::\d+)?|Native Method)\)\n|\t[^\n]+\n|\n|Caused by: [^\n]+\n|Cannot resolve which method to invoke[^\n]+\n|\t\[[^\n]+\]\n)*))*)\nFAILURES!!!\nTests run: (\d+),\s*Failures: (\d+)\n\n\z//) {
         my ($nFailures1, $failureDetails, $nTests, $nFailures2) = ($1, $2, $3, $4);
         die "$fn: JUnit initially said there were $nFailures1 failures, but then said there were $nFailures2 failures." if $nFailures1 != $nFailures2;   # Sanity check
-        while ($failureDetails =~ s/\A\d+\) test(\d+)\(.*\)\n([^\t\n][^\n]*\n(?:[^\n]*(?:\.java:\d+|Native Method)\)\n|\t[^\n]+\n|\n|Caused by: [^\n]+\n|Cannot resolve which method to invoke[^\n]+\n|\t\[[^\n]+\]\n)*)//) {
+        while ($failureDetails =~ s/\A\d+\) test(\d+)\(.*\)\n([^\t\n][^\n]*\n(?:[^\n]*(?:\.java(?::\d+)?|Native Method)\)\n|\t[^\n]+\n|\n|Caused by: [^\n]+\n|Cannot resolve which method to invoke[^\n]+\n|\t\[[^\n]+\]\n)*)//) {
             push @failures, [ $1, $2 ];
         }
         die "$fn: Expected to get to end of failure list but found the following still there: <$failureDetails>." if length $failureDetails;
