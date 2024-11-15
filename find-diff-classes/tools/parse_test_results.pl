@@ -63,7 +63,7 @@ sub process($) {
 
 #    $_ = removeCruft($_);
 
-    if (!s/\AJUnit version 4\.(?:13\.[12]|1[23])\n//) {       #TODO: Don't know why 4.13.1 or 4.12 or 4.13 sometimes gets used...
+    if (!s/\AJUnit version (?:4\.(?:13\.[12]|1[123])|3\.8\.1)\n//) {       #TODO: Don't know why 4.13.1 or 3.8.1 or 4.11 or 4.12 or 4.13 sometimes gets used...
         die "$fn: Could not parse: <$_>";
     }
 
