@@ -25,7 +25,7 @@
 \newcommand{\tim}[1]{\textbf{\textcolor{violet}{[ \ding{46}Tim: #1]}}}
 \newcommand{\behnaz}[1]
 {\textbf{\textcolor{teal}{[ \ding{46}Behnaz: #1]}}}
-
+\newcommand{\inputgen}[1]{\input{generated/#1}\unskip}
 
 \begin{document}
 
@@ -58,7 +58,7 @@ behnaz.hassanshahi@oracle.com}
 
 \begin{abstract}
 \valerio{For the terminology we need to be a bit careful, if we are assuming that one of the jar we are comparing is correct, then is regression testing, otherwise if we are not making any assumption of what jar version is correct but we are just exposing behavioural differences than we are doing differential testing. Are we assuming that the jars in Maven Central are the correct ones ?  }
-The purpose of generating regression tests is to detect behaviour changes as software evolves, therefore safeguarding against the introduction of bugs, and detecting changes that may break  clients downstream. We explore a different use case for regression testing – to detect behaviour changes  between different builds of the same version. This is motivated by concerns about software supply chain security that have led to the emergence of different binaries built from the same source code. We study this for TODO pairs of binaries built from the same source distributed using Maven Central, Google Assured Open Source Software and Oracle Build-From-Source. 
+The purpose of generating regression tests is to detect behaviour changes as software evolves, therefore safeguarding against the introduction of bugs, and detecting changes that may break  clients downstream. We explore a different use case for regression testing – to detect behaviour changes  between different builds of the same version. This is motivated by concerns about software supply chain security that have led to the emergence of different binaries built from the same source code. We study this for \inputgen{num-pairs-of-binaries} pairs of binaries built from the same source distributed using Maven Central, Google Assured Open Source Software and Oracle Build-From-Source. 
 We find that ..
 
 \end{abstract}
@@ -101,12 +101,12 @@ An overview of our methodology is depicted in Figure~\ref{fig:methodology}.  As 
 
 \subsection{Project Selection}
 
-We started with the dataset from \cite{dietrich2024levelsbinaryequivalencecomparison} that contains jars corresponding to the same artifact identified by the same group id, artifact id and version (i.e., GAV coordinates) built by different parties. This dataset contains the results of builds from Maven Central, Google (gaoss), Oracle (obfs) and  RedHat. We ignored jars built by RedHat as they have an additional patch id that suggests behavioural differences.  We only considered pairs where one of the jars was sourced from Maven Central, i.e. built by the developer(s). There are TODO such pairs.
+We started with the dataset from \cite{dietrich2024levelsbinaryequivalencecomparison} that contains jars corresponding to the same artifact identified by the same group id, artifact id and version (i.e., GAV coordinates) built by different parties. This dataset contains the results of builds from Maven Central, Google (gaoss), Oracle (obfs) and  RedHat. We ignored jars built by RedHat as they have an additional patch id that suggests behavioural differences.  We only considered pairs where one of the jars was sourced from Maven Central, i.e., built by the developer(s). There are \inputgen{num-pairs-of-binaries} such pairs.
 
 
 \subsection{Static Preanalysis}
 
-We then run a static pre-analysis to eliminate pairs that are probably equivalent. We first applied \textit{jnorm}, and compared jars by comparing the result of the transformation applied to each class. We then added a custom comparison based on a change in the Java 18 compiler~\footnote{\url{https://github.com/openjdk/jdk/pull/5165}} not yet supported by \textit{jnorm}. This resulted in TODO pairs of jars, TODO of those pairs with an alternatively built jar from \textit{gaoss}, TODO with such a jar from \textit{obfs}.
+We then run a static pre-analysis to eliminate pairs that are probably equivalent. We first applied \textit{jnorm}, and compared jars by comparing the result of the transformation applied to each class. We then added a custom comparison based on a change in the Java 18 compiler~\footnote{\url{https://github.com/openjdk/jdk/pull/5165}} not yet supported by \textit{jnorm}. This resulted in \inputgen{num-jar-pairs-after-invokevirtual-invokeinterface} pairs of jars, \inputgen{num-jar-pairs-after-invokevirtual-invokeinterface-gaoss} of those pairs with an alternatively built jar from \textit{gaoss}, \inputgen{num-jar-pairs-after-invokevirtual-invokeinterface-obfs} with such a jar from \textit{obfs}.
 
 
 
