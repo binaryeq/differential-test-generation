@@ -14,7 +14,7 @@ SQLITE3 := sqlite3 -tabs $(DB)
 # LaTeX files imported into the main document using \inputgen{}
 ###############################################################
 num-pairs-of-binaries.tex:
-	$(SQLITE3) 'SELECT count(*) FROM gav_interesting_chosen_paths' > $@
+	$(SQLITE3) "SELECT count(*) FROM gav_interesting_chosen_paths g1 JOIN gav_interesting_chosen_paths g2 USING (runId, groupId, artifactId, version) WHERE g1.provider < g2.provider AND g1.provider NOT LIKE 'maven.repository.redhat.com/ga%' AND g2.provider NOT LIKE 'maven.repository.redhat.com/ga%';" > $@
 
 all: num-pairs-of-binaries.tex
 
