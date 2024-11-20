@@ -29,7 +29,7 @@
 
 \begin{document}
 
-\title{Towards Cross-Build Regression Testing}
+\title{Towards Cross-Build Differential Testing}
 
 %\thanks{Identify applicable funding agency here. If none, delete this.}
 % Valerio: this is for the camera ready version
@@ -57,14 +57,22 @@ behnaz.hassanshahi@oracle.com}
 \maketitle
 
 \begin{abstract}
-\valerio{For the terminology we need to be a bit careful, if we are assuming that one of the jar we are comparing is correct, then is regression testing, otherwise if we are not making any assumption of what jar version is correct but we are just exposing behavioural differences than we are doing differential testing. Are we assuming that the jars in Maven Central are the correct ones ?  }
-The purpose of generating regression tests is to detect behaviour changes as software evolves, therefore safeguarding against the introduction of bugs, and detecting changes that may break  clients downstream. We explore a different use case for regression testing – to detect behaviour changes  between different builds of the same version. This is motivated by concerns about software supply chain security that have led to the emergence of different binaries built from the same source code. We study this for \inputgen{num-pairs-of-binaries} pairs of binaries built from the same source distributed using Maven Central, Google Assured Open Source Software and Oracle Build-From-Source. 
-We find that ..
+%\valerio{For the terminology we need to be a bit careful, if we are assuming that one of the jar we are comparing is correct, then is regression testing, otherwise if we are not making any assumption of what jar version is correct but we are just exposing behavioural differences than we are doing differential testing. Are we assuming that the jars in Maven Central are the correct ones ?  }
+
+Recent concerns about software supply chain security  have led to the emergence of different binaries built from the same source code. This will sometimes result in binaries that are not identical and therefore have  different cryptographic hashes. The question arises whether those binaries are still  equivalent, i.e. whether they have the same behaviour.  We explore whether differential testing can be used to provide evidence for non-equivalence.
+
+We study this for \inputgen{num-pairs-of-binaries} pairs of binaries built for the same Maven artifact version,  distributed on Maven Central, Google Assured Open Source Software and/or Oracle Build-From-Source. We use \textit{evosuite} to generate tests for the baseline binary from Maven Central, run those tests against  this baseline binary and any available alternately built binaries, and compare the results for consistency. We argue that any differences may point to differences in program behaviour, and could therefore be used to to detect compromised binaries. 
+
+We find a few cases where the test results show inconsistencies. Those cases can be attributed to errors in the configuration of reproducible builds and shortcomings of the current version of \textit{evosuite}. 
+
+
+%The purpose of generating differential tests is to detect behaviour differences between different programs.   therefore safeguarding against the introduction of bugs, and detecting changes that may break  clients downstream. We explore a different use case for regression testing – to detect behaviour changes  between different builds of the same version. This is motivated by concerns about software supply chain security that have led to the emergence of different binaries built from the same source code. We study this for \inputgen{num-pairs-of-binaries} pairs of binaries built from the same source distributed using Maven Central, Google Assured Open Source Software and Oracle Build-From-Source. 
+%We find that ..
 
 \end{abstract}
 
 \begin{IEEEkeywords}
-regression test generation, reproducible builds, software supply chain security
+test generation, differential testing, reproducible builds, software supply chain security, java, evosuite
 \end{IEEEkeywords}
 
 \section{Introduction}
