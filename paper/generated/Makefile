@@ -39,16 +39,16 @@ num-class-pairs-after-invokevirtual-invokeinterface.tex:
 all: num-class-pairs-after-invokevirtual-invokeinterface.tex
 
 num-classes-with-generated-tests.tex:
-	echo TODO > $@
+	find ../../find-diff-classes/testgen -name '*_ESTest.java' | wc -l > $@
 
 all: num-classes-with-generated-tests.tex
 
 num-generated-tests.tex:
-	echo TODO > $@
+	grep '@Test' `find ../../find-diff-classes/testgen -name '*_ESTest.java'` | wc -l > $@
 
 all: num-generated-tests.tex
 
-avg-tests-per-class.tex:
-	echo TODO > $@
+avg-tests-per-class.tex: num-generated-tests.tex num-class-pairs-after-invokevirtual-invokeinterface.tex
+	perl -le 'printf "%.1f", $$ARGV[0] / $$ARGV[1]' `cat num-generated-tests.tex` `cat num-class-pairs-after-invokevirtual-invokeinterface.tex` > $@
 
 all: avg-tests-per-class.tex
