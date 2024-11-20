@@ -32,3 +32,28 @@ num-jar-pairs-after-invokevirtual-invokeinterface-obfs.tex:
 	find ../../find-diff-classes/comparisons -name classes.filtered|perl -lpe 's|^.*/([^/]+\.vs\.[^/]+)|$$1|' |grep gaoss|wc -l > $@
 
 all: num-jar-pairs-after-invokevirtual-invokeinterface-obfs.tex
+
+num-class-pairs-after-invokevirtual-invokeinterface.tex:
+	find ../../find-diff-classes/comparisons -name classes.filtered|xargs cat|wc -l > $@
+
+all: num-class-pairs-after-invokevirtual-invokeinterface.tex
+
+num-classes-after-invokevirtual-invokeinterface.tex:
+	echo TODO > $@
+
+all: num-classes-after-invokevirtual-invokeinterface.tex
+
+num-classes-with-generated-tests.tex:
+	echo TODO > $@
+
+all: num-classes-with-generated-tests.tex
+
+num-generated-tests:
+	echo TODO > $@
+
+all: num-generated-tests
+
+avg-tests-per-class:
+	echo TODO > $@
+
+all: avg-tests-per-class
