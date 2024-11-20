@@ -138,6 +138,37 @@ Resource settings were informed by \cite{jahangirova2023sbft}.
 
 \section{Results}
 
+\subsection{Overview}
+
+\todo[inline] {@Tim please add some summary data}
+
+\subsection{Discussion}
+
+The first case of test failing occurs in \textit{io.undertow:undertow-servlet:2.2.23}. There are two binaries available for this components, the jar from \textit{Maven Central}, and an alternatively built jar from \textit{gaoss}. When the  \textit{gaoss} jar is tested using the test generated from the Maven version, five tests result in an error, but all succeed when run against the original jar from \textit{Maven Central}.
+
+The respective tests are \textit{test00}, \textit{test01}, \textit{test12},\textit{test15} and \textit{test16}, all in \textit{io.under\-tow.\-servlet.\-spec.UpgradeServletInputStream\_ESTest.} The error occurring is always a \textit{java.lang.NoSuchMethodError}, caused by a reference to \textit{java.nio.ByteBuffer.flip()Ljava/nio/ByteBuffer;}.
+
+The error occurs during linking, and is related to binary compatibility~\cite{JVM17Spec}. I.e. there are call sites for this method in two undertow methods (\textit{UpgradeServletInputStream.readIntoBufferNonBlocking} and \textit{UpgradeServletInputStream.readIntoBuffer}, respectively), however, the method is missing. 
+A closer inspection reveals that the \textit{gaoss} version was build with Java 11~\footnote{The jar manifest contains the entry \textit{Build-Jdk-Spec: 11}}. In Java 11, \textit{java.nio.ByteBuffer.flip()Ljava/nio/ByteBuffer;} exists, and the respective call site is added. The Maven Central jar was built against Java 8, where this method did not exist.  Instead, a call site to invoke \textit{java/nio/ByteBuffer.flip:()Ljava/nio/Buffer;} is added by the compiler~\footnote{Unlike Java source code, Java byte code supports return type overloading, and changing the return types alters the descriptor, and therefore is a binary incompatible change causing linkage errors.~\cite{JVM17Spec,dietrich2014broken}}.
+
+Therefore, this issue is caused by the different JDK versions used during the build. This is surprising, as reproducing builds try to replicate the build environment in order to maximise the chances of the build to succeed and the resulting binary to be identical to the binary from the build to be reproduced. In this case the engineers seem to have attempted this somehow by setting the compiler target level to bytecode version 52, which is associated with Java 8~\cite[Sect. 4.1]{JVM17Spec} instead of using version 55 associated with Java 11.  However, they did not account for the fact that there are changes in the standard library that effect how bytecode is being compiled. The generated tests reveal those changes. 
+
+
+
+\begin{table}[]
+	\begin{tabular}{|p{1.8cm}p{0.9cm}p{1.5cm}p{1.2cm}p{1.2cm}|}
+		\hline
+		build         & bytecode version & JDK version used to build & test results (Java 8)                                                    & test results (Java 11) \\ \hline 
+		Maven Central & 52               & 8                         & pass                                                                     & pass                   \\
+		gaoss         & 52               & 11                        & error & pass                  \\ \hline
+	\end{tabular}
+	\caption{Test results for \textit{UpgradeServletInputStream\_ESTest} tests for  \textit{io.undertow:undertow-servlet:2.2.23}, running tests on the original Maven Central artifact and the alternative build from gaoss}
+\end{table}
+
+
+
+
+
 
 \section{Related Work}
 
