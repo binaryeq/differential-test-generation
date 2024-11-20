@@ -19,16 +19,16 @@ num-pairs-of-binaries.tex:
 all: num-pairs-of-binaries.tex
 
 num-jar-pairs-after-invokevirtual-invokeinterface.tex:
-	echo 'TODO' > $@
+	find ../../find-diff-classes/comparisons -name classes.filtered|wc -l > $@
 
 all: num-jar-pairs-after-invokevirtual-invokeinterface.tex
 
 num-jar-pairs-after-invokevirtual-invokeinterface-gaoss.tex:
-	echo 'TODO' > $@
+	find ../../find-diff-classes/comparisons -name classes.filtered|perl -lpe 's|^.*/([^/]+\.vs\.[^/]+)|$$1|' |grep obfs|wc -l > $@
 
 all: num-jar-pairs-after-invokevirtual-invokeinterface-gaoss.tex
 
 num-jar-pairs-after-invokevirtual-invokeinterface-obfs.tex:
-	echo 'TODO' > $@
+	find ../../find-diff-classes/comparisons -name classes.filtered|perl -lpe 's|^.*/([^/]+\.vs\.[^/]+)|$$1|' |grep gaoss|wc -l > $@
 
 all: num-jar-pairs-after-invokevirtual-invokeinterface-obfs.tex
