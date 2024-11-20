@@ -16,7 +16,7 @@ sub findJava($$) {
 
 my $ROOT = "$ENV{HOME}/code";       # Change as necessary
 my $BASE = "$ROOT/craw-redhat-oss/wget/crawl";
-my $CLASSPATH = "$ROOT/tooling/target/bineq-1.0.0-jar-with-dependencies.jar";
+my $CLASSPATH = "$ROOT/tooling/target/bineq-1.0.0.jar";
 my $JDKVERSION = "8";
 my $JAVA8 = findJava("java", 8);     # EvoSuite prefers JDK 8, sometimes works with JDK 11
 my $JAVAC8 = findJava("javac", 8);
