@@ -34,7 +34,7 @@ num-jar-pairs-after-invokevirtual-invokeinterface-obfs.tex:
 all: num-jar-pairs-after-invokevirtual-invokeinterface-obfs.tex
 
 num-class-pairs-after-invokevirtual-invokeinterface.tex:
-	find ../../find-diff-classes/comparisons -name classes.filtered|xargs cat|wc -l > $@
+	cat ../../find-diff-classes/filtered_classes.tsv | wc -l > $@
 
 all: num-class-pairs-after-invokevirtual-invokeinterface.tex
 
@@ -48,12 +48,12 @@ num-classes-with-generated-tests.tex:
 
 all: num-classes-with-generated-tests.tex
 
-num-generated-tests:
+num-generated-tests.tex:
 	echo TODO > $@
 
-all: num-generated-tests
+all: num-generated-tests.tex
 
-avg-tests-per-class:
+avg-tests-per-class.tex:
 	echo TODO > $@
 
-all: avg-tests-per-class
+all: avg-tests-per-class.tex
