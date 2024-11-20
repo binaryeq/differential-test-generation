@@ -38,11 +38,6 @@ num-class-pairs-after-invokevirtual-invokeinterface.tex:
 
 all: num-class-pairs-after-invokevirtual-invokeinterface.tex
 
-num-classes-after-invokevirtual-invokeinterface.tex:
-	echo TODO > $@
-
-all: num-classes-after-invokevirtual-invokeinterface.tex
-
 num-classes-with-generated-tests.tex:
 	echo TODO > $@
 

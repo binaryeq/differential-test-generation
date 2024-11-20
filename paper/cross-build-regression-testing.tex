@@ -107,7 +107,7 @@ We started with the dataset from \cite{dietrich2024levelsbinaryequivalencecompar
 \subsection{Static Preanalysis}
 
 We then run a static pre-analysis to eliminate pairs that are probably equivalent. We first applied \textit{jnorm}, and compared jars by comparing the result of the transformation applied to each class. We then added a custom comparison based on a change in the Java 18 compiler~\footnote{\url{https://github.com/openjdk/jdk/pull/5165}} not yet supported by \textit{jnorm}. This resulted in \inputgen{num-jar-pairs-after-invokevirtual-invokeinterface} pairs of jars, \inputgen{num-jar-pairs-after-invokevirtual-invokeinterface-gaoss} of those pairs with an alternatively built jar from \textit{gaoss}, \inputgen{num-jar-pairs-after-invokevirtual-invokeinterface-obfs} with such a jar from \textit{obfs}.
-In total there are \inputgen{num-class-pairs-after-invokevirtual-invokeinterface} pairs of classes that differ between providers, representing \inputgen{num-classes-after-invokevirtual-invokeinterface} distinct classes of interest.
+In total there are \inputgen{num-class-pairs-after-invokevirtual-invokeinterface} classes that differ between \textit{mvnc} and one of the other two providers.
 
 
 
@@ -128,7 +128,7 @@ We used \evosuite to generate regression tests. While there are several alternat
 
 \todo[inline] {Tim: some stats of how many classes there are that are different, perhaps stats , something like: the average number of such classes is X, Y\% of total classes. Mention how we deal with inner classes.  }
 
-\evosuite was applied to generate regression tests for the \textit{mvnc} version of each of these \inputgen{num-classes-after-invokevirtual-invokeinterface} distinct classes, resulting in \inputgen{num-classes-with-generated-tests} generated test classes comprising in total \inputgen{num-generated-tests} JUnit4 tests, or \inputgen{avg-tests-per-class} tests per differing class.
+\evosuite was applied to generate regression tests for the \textit{mvnc} version of each of these \inputgen{num-class-pairs-after-invokevirtual-invokeinterface} distinct classes, resulting in \inputgen{num-classes-with-generated-tests} generated test classes comprising in total \inputgen{num-generated-tests} JUnit4 tests, or \inputgen{avg-tests-per-class} tests per differing class.
 
 We run \evosuite test generation with the following settings. 
 
