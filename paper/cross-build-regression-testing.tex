@@ -162,9 +162,7 @@ The respective tests are \textit{test00}, \textit{test01}, \textit{test12},\text
 The error occurs during linking, and is related to binary compatibility~\cite{JVM17Spec}. I.e. there are call sites for this method in two undertow methods (\textit{UpgradeServletInputStream.readIntoBufferNonBlocking} and \textit{UpgradeServletInputStream.readIntoBuffer}, respectively), however, the method is missing. 
 A closer inspection reveals that the \textit{gaoss} version was build with Java 11~\footnote{The jar manifest contains the entry \textit{Build-Jdk-Spec: 11}}. In Java 11, \textit{java.nio.ByteBuffer.flip()Ljava/nio/ByteBuffer;} exists, and the respective call site is added. The Maven Central jar was built against Java 8, where this method did not exist.  Instead, a call site to invoke \textit{java/nio/ByteBuffer.flip:()Ljava/nio/Buffer;} is added by the compiler~\footnote{Unlike Java source code, Java byte code supports return type overloading, and changing the return types alters the descriptor, and therefore is a binary incompatible change causing linkage errors.~\cite{JVM17Spec,dietrich2014broken}}.
 
-Therefore, this issue is caused by the different JDK versions used during the build. This is surprising, as reproducing builds try to replicate the build environment in order to maximise the chances of the build to succeed and the resulting binary to be identical to the binary from the build to be reproduced. In this case the engineers seem to have attempted this somehow by setting the compiler target level to bytecode version 52, which is associated with Java 8~\cite[Sect. 4.1]{JVM17Spec} instead of using version 55 associated with Java 11.  However, they did not account for the fact that there are changes in the standard library that effect how bytecode is being compiled. The generated tests reveal those changes. 
-
-
+Therefore, this issue is caused by the different JDK versions used during the build. This is surprising, as reproducing builds try to replicate the build environment in order to maximise the chances of the build to succeed and the resulting binary to be identical to the binary from the build to be reproduced. In this case the engineers seem to have attempted this somehow by setting the compiler target level to bytecode version 52, which is associated with Java 8~\cite[Sect. 4.1]{JVM17Spec} instead of using version 55 associated with Java 11.  However, they did not account for the fact that there are changes in the standard library that effect how bytecode is being compiled. Since Java 9 (JEP247~\cite{jep247}), there is a \textit{-release} compiler  flag that can be used to avoid issues like this. It is likely that engineers used only \textit{-target} instead. The generated tests reveal those changes.  
 
 \begin{table}[]
 	\begin{tabular}{|p{1.8cm}p{0.9cm}p{1.5cm}p{1.2cm}p{1.2cm}|}
@@ -174,9 +172,10 @@ Therefore, this issue is caused by the different JDK versions used during the bu
 		gaoss         & 52               & 11                        & error & pass                  \\ \hline
 	\end{tabular}
 	\caption{Test results for \textit{UpgradeServletInputStream\_ESTest} tests for  \textit{io.undertow:undertow-servlet:2.2.23}, running tests on the original Maven Central artifact and the alternative build from gaoss}
+	\label{tab:nosuchmethoderror}
 \end{table}
 
-
+Table~\ref{tab:nosuchmethoderror} summarises the results. One might expect different behaviour not revealed by tests when tests are executed with Java 11, as the call sites in those two binaries refer to different methods in the standard libraries. However, this is not the case as the Java 11 compiler does create a synthetic \textit{bridge method} \textit{java.nio.ByteBuffer.flip()Ljava/nio/Buffer;}  that invokes \textit{java.nio.ByteBuffer.flip()Ljava/nio/ByteBuffer;}. This method is used during the  runtime resolution of the virtual call for the binary from Maven Central.  
 
 
 
