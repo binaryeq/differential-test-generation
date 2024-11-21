@@ -1,0 +1,267 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>regression-test-generation.binaryeq.github.io</groupId>
+  <artifactId>evosuite-tests-for-io_netty-netty-3_10_6_Final</artifactId>
+  <version>1.0-SNAPSHOT</version>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>8</maven.compiler.source>
+    <maven.compiler.target>8</maven.compiler.target>
+    <classUnderTest>/home/wtwhite/code/craw-redhat-oss/wget/crawl/repo1.maven.org/maven2/io/netty/netty/3.10.6.Final/netty-3.10.6.Final.jar</classUnderTest>
+    <depRoot>/home/wtwhite/code/regression-test-generation/find-diff-classes/compile/mvnc/io/netty/netty/3.10.6.Final/t/dependency</depRoot>
+    <evosuiteRuntimeJarPath>/home/wtwhite/code/regression-test-generation/evosuite/evosuite-standalone-runtime-1.2.0.jar</evosuiteRuntimeJarPath>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__classUnderTest_</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${classUnderTest}</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__activation-1_1_1_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/activation-1.1.1.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__bcpkix-jdk15on-1_50_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/bcpkix-jdk15on-1.50.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__bcprov-jdk15on-1_50_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/bcprov-jdk15on-1.50.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__cglib-nodep-2_2_2_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/cglib-nodep-2.2.2.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__commons-logging-1_1_1_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/commons-logging-1.1.1.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__easymock-3_1_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/easymock-3.1.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__easymockclassextension-3_1_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/easymockclassextension-3.1.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__hamcrest-core-1_3_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/hamcrest-core-1.3.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__jboss-logging-3_1_4_GA_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/jboss-logging-3.1.4.GA.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__jboss-marshalling-1_3_14_GA_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/jboss-marshalling-1.3.14.GA.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__jboss-marshalling-river-1_3_14_GA_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/jboss-marshalling-river-1.3.14.GA.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__jboss-marshalling-serial-1_3_14_GA_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/jboss-marshalling-serial-1.3.14.GA.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__junit-4_11_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/junit-4.11.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__log4j-1_2_16_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/log4j-1.2.16.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__netty-tcnative-1_1_30_Fork2-windows-x86_64_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/netty-tcnative-1.1.30.Fork2-windows-x86_64.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__npn-api-1_1_0_v20120525_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/npn-api-1.1.0.v20120525.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__objenesis-1_2_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/objenesis-1.2.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__org_osgi_compendium-1_4_0_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/org.osgi.compendium-1.4.0.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__org_osgi_core-1_4_0_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/org.osgi.core-1.4.0.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__protobuf-java-2_5_0_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/protobuf-java-2.5.0.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__servlet-api-2_5_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/servlet-api-2.5.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__slf4j-api-1_6_4_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/slf4j-api-1.6.4.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-dep</groupId>
+      <artifactId>__depRoot__slf4j-simple-1_6_4_jar</artifactId>
+      <version>42</version>
+      <scope>system</scope>
+      <systemPath>${depRoot}/slf4j-simple-1.6.4.jar</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>bogus-groupId-for-evosuite-jar</groupId>
+      <artifactId>evosuite</artifactId>
+      <version>1.2.0</version>
+      <scope>system</scope>
+      <systemPath>${evosuiteRuntimeJarPath}</systemPath>
+    </dependency>
+
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.13.2</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.hamcrest</groupId>
+      <artifactId>hamcrest-core</artifactId>
+      <version>1.3</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <!-- Add path to EvoSuite-generated test sources (instead of copying them to src/test/java) -->
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>build-helper-maven-plugin</artifactId>
+        <version>3.6.0</version>
+        <executions>
+          <execution>
+            <id>add-test-source</id>
+            <phase>generate-test-sources</phase>
+            <goals>
+              <goal>add-test-source</goal>
+            </goals>
+            <configuration>
+              <sources>
+                <source>/home/wtwhite/code/regression-test-generation/find-diff-classes/testgen/mvnc/io/netty/netty/3.10.6.Final/evosuite-tests</source>
+              </sources>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>3.2.5</version>
+        <configuration>
+          <reportsDirectory>${RUNDIR}/mvnc/io/netty/netty/3.10.6.Final</reportsDirectory>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
