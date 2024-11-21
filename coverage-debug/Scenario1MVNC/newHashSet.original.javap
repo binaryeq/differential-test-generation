@@ -1,0 +1,37 @@
+  public static <E extends java.lang.Object> java.util.HashSet<E> newHashSet(java.lang.Iterable<? extends E>);
+    descriptor: (Ljava/lang/Iterable;)Ljava/util/HashSet;
+    flags: (0x0009) ACC_PUBLIC, ACC_STATIC
+    Code:
+      stack=3, locals=1, args_size=1
+         0: aload_0
+         1: instanceof    #5                  // class java/util/Collection
+         4: ifeq          21
+         7: new           #18                 // class java/util/HashSet
+        10: dup
+        11: aload_0
+        12: checkcast     #5                  // class java/util/Collection
+        15: invokespecial #22                 // Method java/util/HashSet."<init>":(Ljava/util/Collection;)V
+        18: goto          30
+        21: aload_0
+        22: invokeinterface #9,  1            // InterfaceMethod java/lang/Iterable.iterator:()Ljava/util/Iterator;
+        27: invokestatic  #23                 // Method newHashSet:(Ljava/util/Iterator;)Ljava/util/HashSet;
+        30: areturn
+      LineNumberTable:
+        line 222: 0
+        line 223: 7
+        line 224: 21
+        line 222: 30
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0      31     0 elements   Ljava/lang/Iterable;
+      LocalVariableTypeTable:
+        Start  Length  Slot  Name   Signature
+            0      31     0 elements   Ljava/lang/Iterable<+TE;>;
+      StackMapTable: number_of_entries = 2
+        frame_type = 21 /* same */
+        frame_type = 72 /* same_locals_1_stack_item */
+          stack = [ class java/util/HashSet ]
+    Signature: #204                         // <E:Ljava/lang/Object;>(Ljava/lang/Iterable<+TE;>;)Ljava/util/HashSet<TE;>;
+    RuntimeVisibleTypeAnnotations:
+      0: #196(): METHOD_TYPE_PARAMETER_BOUND, param_index=0, bound_index=0
+        org.checkerframework.checker.nullness.qual.Nullable
