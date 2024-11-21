@@ -102,25 +102,26 @@ test generation, differential testing, reproducible builds, software supply chai
 Software supply chain security has attracted increasing attention recently after a number of high impact attacks such as \textit{equifax}, \textit{log4shell}, \textit{solarwinds} and \textit{xz}~\cite{ellison2010evaluating,martinez2021software,enck2022top,EO14028}. In general, those fall into two categories - compromising components (such as \textit{equifax} and \textit{log4shell}), and compromising processes (such as \textit{solarwinds} and \textit{xz}). When build processes are compromised, attackers can inject malicious code into a program, resulting in a vulnerable program build from clean source code. The classic approach to achieve this is to compromise the compiler~\cite{thompson1984reflections}. 
 
 A common counter measure are reproducible builds~\cite{reproduciblebuild, lamb2021reproducible}. The idea is to perform a second build leading to the same binary. As an adversary is very unlikely to compromise two build environments, this can confirm the integrity of the binary with a high probability. Establishing that the binaries are identical is usually done by means of bitwise comparison, often using cryptographic hashes as proxies.
-Several organisations have started to provide infrastructure and services to provide such secondary builds at-scale, often meeting additional security-related requirements, such as SLSA compliance~\cite{slsa}. Two such products that include support for Java / Maven artifacts are \textit{Google's Assured Open Source Software (gaoss)}~\footnote{\url{https://cloud.google.com/security/products/assured-open-source-software}}, and \textit{Oracle's Build-From-Source (obfs})~\footnote{\url{https://maven.oracle.com/public/}}.
+Several organisations have started to provide infrastructure and services to provide such secondary builds at-scale, often meeting additional security-related requirements, such as SLSA compliance~\cite{slsa}. Two such products that include support to build Java / Maven artifacts are \textit{Google's Assured Open Source Software (gaoss)}~\footnote{\url{https://cloud.google.com/security/products/assured-open-source-software}}, and \textit{Oracle's Build-From-Source (obfs})~\footnote{\url{https://maven.oracle.com/public/}}.
 
 However, there are several challenges with the reproducibility of builds: (i) build environments are difficult to replicate, (ii) locating the source code version (commit, tag or release) associated with a binary release version is not always straightforward and (iii) builds may be non-deterministic~\cite{xiong2022towards,hassanshahi2023macaron,bineqdataset,keshani2024aroma}. In particular, different versions of compilers may employ different compilation strategies, resulting in different, yet functionally equivalent binaries~\cite{xiong2022towards,bineqdataset,schott2024JNorm}.  
 In order to address this, recently bytecode normalisation techniques have been proposed~\cite{xiong2022towards,dietrich2024levelsbinaryequivalencecomparison,schott2024JNorm}. 
 
-From a security analysis point of view, the comparison of binaries from alternative builds is used to detect vulnerabilities: different binaries may suggest that one of them has been compromised, for instance, by a backdoor being added during the build. A comparison based on strict binary equality is likely to result in poor precision as differences between binaries can be explained by the variability of compilers and other tools used in the build toolchain. Low precision is known to have a serious impact on the acceptance of program analysis tools by engineers~\cite{sadowski2018lessons,distefano2019scaling}. Using bytecode normalisation techniques such as \textit{jnorm}~\cite{schott2024JNorm} can help to reduce the false positive rate by identifying \textit{equivalent} binaries. The question arises whether binaries built from the same sources that are not equivalent actually have behavioural differences.   
+From a security analysis point of view, the comparison of binaries from alternative builds is used to detect vulnerabilities: different binaries may suggest that one of them has been compromised, for instance, by a backdoor being added during the build. A comparison based on strict binary equality is likely to result in poor precision as differences between binaries can be explained by the variability of compilers and other tools used in the build toolchain. Low precision is known to have a serious impact on the acceptance of program analysis tools by engineers~\cite{sadowski2018lessons,distefano2019scaling}. Using bytecode normalisation techniques such as \textit{jnorm}~\cite{schott2024JNorm} can help to reduce the false positive rate by identifying \textit{equivalent} binaries. The question arises whether binaries built from the same sources that are not equivalent actually have behavioural differences. A good way to check this is to find or construct test cases to demonstrate such differences.
 
 This is the question we set out to study. We use test case generation with \evosuite~\cite{fraser2011evosuite} to synthesise regression tests for a baseline build, and then use those tests to assess whether these tests behave in the same way on programs that are the result of an alternative  build from the same sources. 
 
-We find that .. 
-
+% Jens: can drop this if we need space
+The paper is organised as follows: in Section~\ref{sec:methodology} we describe the methodology used in our study.  Results are discussed in Section~\ref{sec:results}, followed by a brief overview of related work in Section~\ref{sec:relatedwork} and the conclusion (Section~\ref{sec:conclusion}.
 
 \section{Methodology}
+\label{sec:methodology}
 
 
 
 \subsection{Overview}
 
-An overview of our methodology is depicted in Figure~\ref{fig:methodology}.  As a baseline build we use (the builds used to produce) the artifact distributed on Maven Central\footnote{\url{https://central.sonatype.com/}} as this is the default deployment repository for most open source developers.  From there we obtain the binary (jar file containing Java bytecode) \textit{mvnc jar} and the pom \textit{mvnc pom}. From this pom we extract the \textit{static dependencies} using the Maven dependency plugin~\footnote{\url{https://maven.apache.org/plugins/maven-dependency-plugin/}}.  The \textit{mvnc jar} and the \textit{static dependencies} can then be used as input to generate \textit{tests-sources} with \evosuite, which are then compiled into test binaries \textit{test-bin}.  Finally, those tests can then be executed against the original jar \textit{mvnc jar} and some alternative jar (from a different build) \textit{alt jar}, and the resulting test reports can be compared.
+An overview of our methodology is depicted in Figure~\ref{fig:methodology}.  As a baseline build we use the artifacts distributed on Maven Central\footnote{\url{https://central.sonatype.com/}} as this is the default deployment repository for most open source developers.  From there we obtain the binary (jar file containing Java bytecode) \textit{mvnc jar} and the pom \textit{mvnc pom}. From this pom we extract the \textit{dependencies} using the Maven dependency plugin~\footnote{\url{https://maven.apache.org/plugins/maven-dependency-plugin/}}.  The \textit{mvnc jar} and the \textit{dependencies} can then be used as input to generate \textit{tests-sources} with \evosuite, which are then compiled into test binaries \textit{test-bin}.  Finally, those tests can then be executed against the original jar \textit{mvnc jar} and some alternative jar (from a different build) \textit{alt jar}, and the resulting test reports can be compared.
 
 \begin{figure}[ht!]
 	\centering
@@ -136,7 +137,7 @@ We started with the dataset from \cite{dietrich2024levelsbinaryequivalencecompar
 
 \subsection{Static Preanalysis}
 
-We then run a static pre-analysis to eliminate pairs that are probably equivalent. We first applied \textit{jnorm}, and compared jars by comparing the result of the transformation applied to each class. We then added a custom comparison based on a change in the Java 18 compiler~\footnote{\url{https://github.com/openjdk/jdk/pull/5165}} not yet supported by \textit{jnorm}. This resulted in \inputgen{num-jar-pairs-after-invokevirtual-invokeinterface} pairs of jars, \inputgen{num-jar-pairs-after-invokevirtual-invokeinterface-gaoss} of those pairs with an alternatively built jar from \textit{gaoss}, \inputgen{num-jar-pairs-after-invokevirtual-invokeinterface-obfs} with such a jar from \textit{obfs}.
+We then run a static pre-analysis to eliminate pairs that are probably equivalent. We first applied \textit{jnorm}~\cite{schott2024JNorm} \jens{Tim: can you add a footnote with version and args used here}, and compared jars by comparing the result of the transformation applied to each class. We then added a custom comparison based on a change in the Java 18 compiler~\footnote{\url{https://github.com/openjdk/jdk/pull/5165}} not yet supported by \textit{jnorm}. This resulted in \inputgen{num-jar-pairs-after-invokevirtual-invokeinterface} pairs of jars, \inputgen{num-jar-pairs-after-invokevirtual-invokeinterface-gaoss} of those pairs with an alternatively built jar from \textit{gaoss}, \inputgen{num-jar-pairs-after-invokevirtual-invokeinterface-obfs} with such a jar from \textit{obfs}.
 In total there are \inputgen{num-class-pairs-after-invokevirtual-invokeinterface} classes that differ between \textit{mvnc} and one of the other two providers.
 
 
@@ -145,35 +146,31 @@ In total there are \inputgen{num-class-pairs-after-invokevirtual-invokeinterface
 
 We opted to generate tests for these experiments. The reason is that existing tests that are part of the project are usually executed during builds, i.e., alternative builds would ensure that those tests succeed. 
 
-\todo[inline]{Behnaz to confirm that tests are executed in OBF builds}
+We used \evosuite to generate regression tests. \jens{@Tim: please add version info} While there are several alternatives available for test generation for Java program, recent benchmarks have shown the superior performance of \evosuite~\cite{jahangirova2023sbft} in achieving higher code coverage and mutation scores. 
 
-We used \evosuite to generate regression tests. While there are several alternatives available for Java, recent benchmarks have shown the superior performance of \evosuite~\cite{jahangirova2023sbft} in achieving higher code coverage and mutation scores. 
+%\valerio{I added some background on evosuite and regression testing in general, not sure where we want to put this but I think is important to explain how \evosuite exposes the behavioural differences}
+\evosuite automatically generates test cases for a given object-oriented class under test (CUT). A test case consists of (i) a method call sequence that instantiates and modifies the state of objects of the CUT through method invocations (ii) one or more assertions that predicate on the values returned by the method invocations. The state of objects often dictates program behaviour, so manipulating these states is crucial for achieving high coverage. It is worth noting that \evosuite may need to create and modify objects that do not instantiate the CUT, as the methods of the CUT might require non-primitive parameters. For primitive parameters, \evosuite uses randomized values guided by heuristics. The tool implements an evolutionary algorithm that evolves populations of test cases to maximize code coverage, typically targeting branch coverage.
 
-\valerio{I added some background on evosuite and regression testing in general, not sure where we want to put this but I think is important to explain how \evosuite exposes the behavioural differences}
-\evosuite automatically generates test cases for a given object-oriented class under test (CUT). A test case consists of (i) a method call sequence that instantiates and modifies the state of objects of the CUT through method invocations (ii) one or more assertions that predicate on the values returned by the method invocations. The state of objects often dictates program behavior, so manipulating these states is crucial for achieving high coverage. It is worth noting that \evosuite may need to create and modify objects that do not instantiate the CUT, as the methods of the CUT might require non-primitive parameters. For primitive parameters, \evosuite uses randomized values guided by heuristics. The tool implements an evolutionary algorithm that evolves populations of test cases to maximize code coverage, typically targeting branch coverage.
-
-\evosuite and similar automated testing tools are most effective when running in regression mode due to the oracle problem. In fact, they are predominantly evaluated in this mode~\cite{jahangirova2023sbft,shamshiri2015automatically}. While the oracle problem is one of the greatest challenges in test automation, it is mitigated in the context of regression testing, where we assume that one version is correct. In regression mode, \evosuite adds assertions to the generated test cases that capture the ``implemented'' behavior of the given version. These assertions are based on the actual values returned by method call invocations during execution, without regard for the ``intended'' behavior of the CUT. This approach can effectively expose behavioral differences between two implementations: if a test generated for one version fails on another version, it indicates a behavioral difference.
+\evosuite and similar automated testing tools are most effective when running in regression mode due to the oracle problem. In fact, they are predominantly evaluated in this mode~\cite{jahangirova2023sbft,shamshiri2015automatically}. While the oracle problem is one of the greatest challenges in test automation, it is mitigated in the context of regression testing, where we assume that one version is correct. In regression mode, \evosuite adds assertions to the generated test cases that capture the ``implemented'' behaviour of the given version. These assertions are based on the actual values returned by method call invocations during execution, without regard for the ``intended'' behaviour of the CUT. This approach can effectively expose behavioural differences between two implementations: if a test generated for one version fails on another version, it indicates a behavioural difference.
 
 \evosuite can be set up to generate targeted tests for certain classes. Since the static pre-analysis compares \textit{jar} files by comparing the \textit{.class} files they contain, we can use targeted test generation for those classes only.   
 
-\todo[inline] {Tim: some stats of how many classes there are that are different, perhaps stats , something like: the average number of such classes is X, Y\% of total classes. Mention how we deal with inner classes.  }
+\jens{Tim: some stats of how many classes there are that are different, perhaps stats , something like: the average number of such classes is X, Y\% of total classes. Mention how we deal with inner classes.  }
 
 \evosuite was applied to generate regression tests for the \textit{mvnc} version of each of these \inputgen{num-class-pairs-after-invokevirtual-invokeinterface} differing classes, resulting in \inputgen{num-classes-with-generated-tests} generated test classes comprising in total \inputgen{num-generated-tests} JUnit4 tests, or \inputgen{avg-tests-per-class} tests per differing class on average.
 
 We run \evosuite test generation with the following settings. 
 
-\todo[inline] {Tim: can you please provide details here, OS, JVM version, HW etc, plus evosuite settings in particular generation time}
-
-
+\jens{Tim: can you please provide details here, OS, JVM version, HW etc, plus evosuite settings in particular generation time}
 Resource settings were informed by \cite{jahangirova2023sbft}. 
 
 
-
 \section{Results}
+\label{sec:results}
 
 \subsection{Overview}
 
-\todo[inline] {@Tim please add some summary data}
+\jens{@Tim please add some summary data}
 
 We now discuss the found inconsistencies in detail.
 
@@ -187,7 +184,7 @@ The respective tests are \textit{test00}, \textit{test01}, \textit{test12},\text
 The error occurs during linking, and is related to binary compatibility~\cite{JVM17Spec}. I.e. there are call sites for this method in two undertow methods (\textit{UpgradeServletInputStream.readIntoBufferNonBlocking} and \textit{UpgradeServletInputStream.readIntoBuffer}, respectively), however, the method is missing. 
 A closer inspection reveals that the \textit{gaoss} version was build with Java 11~\footnote{The jar manifest contains the entry \textit{Build-Jdk-Spec: 11}}. In Java 11, \textit{java.nio.ByteBuffer.flip()Ljava/nio/ByteBuffer;} exists, and the respective call site is added. The Maven Central jar was built against Java 8, where this method did not exist.  Instead, a call site to invoke \textit{java/nio/ByteBuffer.flip:()Ljava/nio/Buffer;} is added by the compiler~\footnote{Unlike Java source code, Java byte code supports return type overloading, and changing the return types alters the descriptor, and therefore is a binary incompatible change causing linkage errors.~\cite{JVM17Spec,dietrich2014broken}}.
 
-Therefore, this issue is caused by the different JDK versions used during the build. This is surprising, as reproducing builds try to replicate the build environment in order to maximise the chances of the build to succeed and the resulting binary to be identical to the binary from the build to be reproduced. In this case the engineers seem to have attempted this somehow by setting the compiler target level to bytecode version 52, which is associated with Java 8~\cite[Sect. 4.1]{JVM17Spec} instead of using version 55 associated with Java 11.  However, they did not account for the fact that there are changes in the standard library that effect how bytecode is being compiled. Since Java 9 (JEP247~\cite{jep247}), there is a \textit{-release} compiler  flag that can be used to avoid issues like this. It is likely that engineers used only \textit{-target} instead. The generated tests reveal those changes.  
+Therefore, this issue is caused by the different JDK versions used during the build. This is surprising, as reproducing builds usually try to replicate the build environment in order to maximise the chances of the build to succeed and the resulting binary to be identical to the binary from the build to be reproduced. In this case the engineers seem to have attempted this somehow by setting the compiler target level to bytecode version 52, which is associated with Java 8~\cite[Sect. 4.1]{JVM17Spec} instead of using version 55 associated with Java 11.  However, they did not account for the fact that there are changes in the standard library that have an impact on how bytecode is being compiled. Since Java 9 (JEP247~\cite{jep247}), there is a \textit{-release} compiler  flag that can be used to avoid issues like this. It is likely that engineers used only \textit{-target} instead. The generated tests reveal those changes.  
 
 \begin{table}[h]
 	\begin{tabular}{|p{1.8cm}p{0.9cm}p{1.5cm}p{1.2cm}p{1.2cm}|}
@@ -200,7 +197,7 @@ Therefore, this issue is caused by the different JDK versions used during the bu
 	\label{tab:nosuchmethoderror}
 \end{table}
 
-Table~\ref{tab:nosuchmethoderror} summarises the results. One might expect different behaviour not revealed by tests when tests are executed with Java 11, as the call sites in those two binaries refer to different methods in the standard libraries. However, this is not the case as the Java 11 compiler does create a synthetic \textit{bridge method} \textit{java.nio.ByteBuffer.flip()Ljava/nio/Buffer;}  that invokes \textit{java.nio.ByteBuffer.flip()Ljava/nio/ByteBuffer;}. This method is used during the  runtime resolution of the virtual call for the binary from Maven Central.  
+Table~\ref{tab:nosuchmethoderror} summarises our analysis. One might expect different behaviour not revealed by tests when tests are executed with Java 11, as the call sites in those two binaries refer to different methods in the standard libraries. However, this is not the case as the Java compiler does create a synthetic \textit{bridge method} when compiling overriding methods with co-variant return types. In this case, it creates the bridge method \textit{java.nio.ByteBuffer.flip()Ljava/nio/Buffer;}  that invokes \textit{java.nio.ByteBuffer.flip()Ljava/nio/ByteBuffer;}. This bridge method is used during the  runtime resolution of the virtual call for the binary from Maven Central.  
 
 
 \subsection{Evosuite Mock Generation}
@@ -217,7 +214,7 @@ Test inconsistencies are all caused by the same pattern.  The \textit{obfs} bina
 
 
 \begin{table}[h]
-	\begin{tabular}{|p{2.0cm}p{1.2cm}p{1.8cm}p{1.5cm}|}
+	\begin{tabular}{|p{2.0cm}p{1.2cm}p{1.5cm}p{1.3cm}|}
 		\hline
 		build         & bytecode version & JDK version used to build & test results (Java 8)                                            \\ \hline 
 		Maven Central & 52       & 21                        & pass                                                                                        \\
@@ -237,9 +234,9 @@ comp.toString();
 
 Up to Java 17, this call was compiled to \textit{invokevirtual Object::toString}~\footnote{Package names and descriptors are omitted for brevity}. Starting with Java 18, this call is now compiled to \textit{invokeinterface Comparable::toString}.
 
-This results in changes to runtime behaviour when using the \textit{evosuite} runtime, as \textit{evosuite} replaces those calls with calls to mocks, such as  \textit{org.evosuite.runtime.System::toString}. This only replaces the older call pattern, not the new one. 
+This results in changes to runtime behaviour when using the \evosuite runtime, as \evosuite replaces those calls with calls to mocks, such as  \textit{org.evosuite.runtime.System::toString}. This only replaces the older call pattern, not the new one. 
 
-An example of such inconsistent behaviour we have encountered  is when a \textit{toString} implementation is recursive. Then \textit{evosuite} generates a test with a self-referential data structure that expects a \textit{StackOverFlowError} to occur. However, when the mock substitution is performed by \textit{evosuite}, this error does not occur as the mock \textit{toString} method is not recursive, and the test fails. I.e. the test outcome now depends on whether \textit{evosuite} does perform the substitution or not, and this depends on the compiler that had been used.
+An example of such inconsistent behaviour we have encountered  is when a \textit{toString} implementation is recursive. Then \evosuite generates a test with a self-referential data structure that expects a \textit{StackOverFlowError} to occur when \textit{toString} is invoked on this data structure. However, when the mock substitution is performed by \evosuite, this error does not occur as the mock \textit{toString} method is not recursive, and the test fails. I.e. the test outcome now depends on whether \evosuite does perform the substitution or not, and this depends on the compiler that had been used.
 
 In this case we think the misconfiguration is on the Maven Central side, where a very recent Java version has been used to create a binary compatible with Java 8, but this hasn't been configured correctly.
 
@@ -251,29 +248,21 @@ In this case we think the misconfiguration is on the Maven Central side, where a
 
 
 \section{Related Work}
+\label{sec:relatedwork}
 
-\emph{Differential Testing}\cite{difftesting} is an automated approach that identifies various errors by comparing the behavior of two or more comparable systems\cite{xie2007towards,jin10
-,diffgen}. In the context of object-oriented (OO) programming, notable techniques include \textsc{Diffut}\cite{xie2007towards}, \textsc{BeRT}\cite{jin10
-}, and \textsc{DiffGen}~\cite{diffgen}. Similar to our approach, these techniques leverage the differences between two software versions to generate test cases that reveal behavioral discrepancies. However, our approach focuses on comparing binaries, which required us to design and implement specialized ad-hoc analyses.
+\emph{Differential Testing}\cite{difftesting} is an automated approach that identifies various errors by comparing the behaviour of two or more comparable systems\cite{xie2007towards,jin10:automated,diffgen}. In the context of object-oriented (OO) programming, notable techniques include \textsc{Diffut}\cite{xie2007towards}, \textsc{BeRT}\cite{jin10:automated}, and \textsc{DiffGen}~\cite{diffgen}. Similar to our approach, these techniques leverage the differences between two software versions to generate test cases that reveal behavioural discrepancies. However, our approach focuses on comparing binaries, which required us to design and implement specialized ad-hoc analyses.
 
-Although the implementation details may differ, all differential testing techniques share the core idea of generating and executing the same test cases on the versions being compared to reveal behavioral differences. % One of the most common applications of differential testing is regression testing, where two versions of the same program are compared. 
+Although the implementation details may differ, all differential testing techniques share the core idea of generating and executing the same test cases on the versions being compared to reveal behavioural differences. % One of the most common applications of differential testing is regression testing, where two versions of the same program are compared. 
 While differential testing has been effective in detecting semantic errors in various domains (e.g., C compilers~\cite{Yang:compiler:pldi:2011} and JVM implementations~\cite{Chen:jvmdiff:pldi:2016}), to the best of our knowledge, it has not yet been applied to identify differences between alternative builds of the same program version.
 
 
-
-
-
-
 \section{Conclusion}
+\label{sec:conclusion}
 
+In this paper we have explored a novel use case for behavioural regression testing: to use differential testing to assess the behavioural equivalence of binaries built independently from the same source code. Our research was motivated by software supply chain security. While we did not find any evidence that components in our data set had been compromised, we did find two interesting cases of build misconfiguration.  
 
+\jens{add some ideas for future work}
 
-
-
-
-
-
- \todo[inline]{complete}
 
 \bibliographystyle{plain}
 \bibliography{references}
