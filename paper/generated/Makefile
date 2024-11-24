@@ -49,6 +49,6 @@ num-generated-tests.tex:
 all: num-generated-tests.tex
 
 avg-tests-per-class.tex: num-generated-tests.tex num-class-pairs-after-invokevirtual-invokeinterface.tex
-	LC_NUMERIC=en_US.utf8 /usr/bin/printf "%'.1f" $$(perl -le 'printf "%.1f", $$ARGV[0] / $$ARGV[1]' `cat num-generated-tests.tex` `cat num-class-pairs-after-invokevirtual-invokeinterface.tex`) > $@
+	LC_NUMERIC=en_US.utf8 /usr/bin/printf "%'.1f" $$(perl -le 'printf "%.1f", $$ARGV[0] / $$ARGV[1]' `tr -d , < num-generated-tests.tex` `tr -d , < num-class-pairs-after-invokevirtual-invokeinterface.tex`) > $@
 
 all: avg-tests-per-class.tex
