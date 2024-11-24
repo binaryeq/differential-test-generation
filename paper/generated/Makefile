@@ -14,41 +14,41 @@ SQLITE3 := sqlite3 -tabs $(DB)
 # LaTeX files imported into the main document using \inputgen{}
 ###############################################################
 num-pairs-of-binaries.tex:
-	$(SQLITE3) "SELECT count(*) FROM gav_interesting_chosen_paths g1 JOIN gav_interesting_chosen_paths g2 USING (runId, groupId, artifactId, version) WHERE g1.provider < g2.provider AND g1.provider NOT LIKE 'maven.repository.redhat.com/ga%' AND g2.provider NOT LIKE 'maven.repository.redhat.com/ga%' AND 'repo1.maven.org/maven2' IN (g1.provider, g2.provider);" > $@
+	LC_NUMERIC=en_US.utf8 /usr/bin/printf "%'d" $$($(SQLITE3) "SELECT count(*) FROM gav_interesting_chosen_paths g1 JOIN gav_interesting_chosen_paths g2 USING (runId, groupId, artifactId, version) WHERE g1.provider < g2.provider AND g1.provider NOT LIKE 'maven.repository.redhat.com/ga%' AND g2.provider NOT LIKE 'maven.repository.redhat.com/ga%' AND 'repo1.maven.org/maven2' IN (g1.provider, g2.provider);") > $@
 
 all: num-pairs-of-binaries.tex
 
 num-jar-pairs-after-invokevirtual-invokeinterface.tex:
-	find ../../find-diff-classes/comparisons -name classes.filtered|wc -l > $@
+	LC_NUMERIC=en_US.utf8 /usr/bin/printf "%'d" $$(find ../../find-diff-classes/comparisons -name classes.filtered|wc -l) > $@
 
 all: num-jar-pairs-after-invokevirtual-invokeinterface.tex
 
 num-jar-pairs-after-invokevirtual-invokeinterface-gaoss.tex:
-	find ../../find-diff-classes/comparisons -name classes.filtered|perl -lpe 's|^.*/([^/]+\.vs\.[^/]+)|$$1|' |grep obfs|wc -l > $@
+	LC_NUMERIC=en_US.utf8 /usr/bin/printf "%'d" $$(find ../../find-diff-classes/comparisons -name classes.filtered|perl -lpe 's|^.*/([^/]+\.vs\.[^/]+)|$$1|' |grep obfs|wc -l) > $@
 
 all: num-jar-pairs-after-invokevirtual-invokeinterface-gaoss.tex
 
 num-jar-pairs-after-invokevirtual-invokeinterface-obfs.tex:
-	find ../../find-diff-classes/comparisons -name classes.filtered|perl -lpe 's|^.*/([^/]+\.vs\.[^/]+)|$$1|' |grep gaoss|wc -l > $@
+	LC_NUMERIC=en_US.utf8 /usr/bin/printf "%'d" $$(find ../../find-diff-classes/comparisons -name classes.filtered|perl -lpe 's|^.*/([^/]+\.vs\.[^/]+)|$$1|' |grep gaoss|wc -l) > $@
 
 all: num-jar-pairs-after-invokevirtual-invokeinterface-obfs.tex
 
 num-class-pairs-after-invokevirtual-invokeinterface.tex:
-	cat ../../find-diff-classes/filtered_classes.tsv | wc -l > $@
+	LC_NUMERIC=en_US.utf8 /usr/bin/printf "%'d" $$(cat ../../find-diff-classes/filtered_classes.tsv | wc -l) > $@
 
 all: num-class-pairs-after-invokevirtual-invokeinterface.tex
 
 num-classes-with-generated-tests.tex:
-	find ../../find-diff-classes/testgen -name '*_ESTest.java' | wc -l > $@
+	LC_NUMERIC=en_US.utf8 /usr/bin/printf "%'d" $$(find ../../find-diff-classes/testgen -name '*_ESTest.java' | wc -l) > $@
 
 all: num-classes-with-generated-tests.tex
 
 num-generated-tests.tex:
-	grep '@Test' `find ../../find-diff-classes/testgen -name '*_ESTest.java'` | wc -l > $@
+	LC_NUMERIC=en_US.utf8 /usr/bin/printf "%'d" $$(grep '@Test' `find ../../find-diff-classes/testgen -name '*_ESTest.java'` | wc -l) > $@
 
 all: num-generated-tests.tex
 
 avg-tests-per-class.tex: num-generated-tests.tex num-class-pairs-after-invokevirtual-invokeinterface.tex
-	perl -le 'printf "%.1f", $$ARGV[0] / $$ARGV[1]' `cat num-generated-tests.tex` `cat num-class-pairs-after-invokevirtual-invokeinterface.tex` > $@
+	LC_NUMERIC=en_US.utf8 /usr/bin/printf "%'.1f" $$(perl -le 'printf "%.1f", $$ARGV[0] / $$ARGV[1]' `cat num-generated-tests.tex` `cat num-class-pairs-after-invokevirtual-invokeinterface.tex`) > $@
 
 all: avg-tests-per-class.tex
