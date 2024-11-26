@@ -34,9 +34,14 @@ num-jar-pairs-after-invokevirtual-invokeinterface-obfs.tex:
 all: num-jar-pairs-after-invokevirtual-invokeinterface-obfs.tex
 
 num-class-pairs-after-invokevirtual-invokeinterface.tex:
-	LC_NUMERIC=en_US.utf8 /usr/bin/printf "%'d" $$(cat ../../find-diff-classes/filtered_classes.tsv | wc -l) > $@
+	LC_NUMERIC=en_US.utf8 /usr/bin/printf "%'d" $$(find ../../find-diff-classes/comparisons -name classes.filtered|xargs cat|wc -l) > $@
 
 all: num-class-pairs-after-invokevirtual-invokeinterface.tex
+
+num-top-level-class-pairs-after-invokevirtual-invokeinterface.tex:
+	LC_NUMERIC=en_US.utf8 /usr/bin/printf "%'d" $$(cat ../../find-diff-classes/filtered_top_level_classes.tsv | wc -l) > $@
+
+all: num-top-level-class-pairs-after-invokevirtual-invokeinterface.tex
 
 num-classes-with-generated-tests.tex:
 	LC_NUMERIC=en_US.utf8 /usr/bin/printf "%'d" $$(find ../../find-diff-classes/testgen -name '*_ESTest.java' | wc -l) > $@
@@ -48,7 +53,7 @@ num-generated-tests.tex:
 
 all: num-generated-tests.tex
 
-avg-tests-per-class.tex: num-generated-tests.tex num-class-pairs-after-invokevirtual-invokeinterface.tex
-	LC_NUMERIC=en_US.utf8 /usr/bin/printf "%'.1f" $$(perl -le 'printf "%.1f", $$ARGV[0] / $$ARGV[1]' `tr -d , < num-generated-tests.tex` `tr -d , < num-class-pairs-after-invokevirtual-invokeinterface.tex`) > $@
+avg-tests-per-class.tex: num-generated-tests.tex num-top-level-class-pairs-after-invokevirtual-invokeinterface.tex
+	LC_NUMERIC=en_US.utf8 /usr/bin/printf "%'.1f" $$(perl -le 'printf "%.1f", $$ARGV[0] / $$ARGV[1]' `tr -d , < num-generated-tests.tex` `tr -d , < num-top-level-class-pairs-after-invokevirtual-invokeinterface.tex`) > $@
 
 all: avg-tests-per-class.tex
