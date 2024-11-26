@@ -156,9 +156,8 @@ We used \evosuite~\footnote{We used \evosuite version 1.2.0, downloaded from \ur
 
 \evosuite was applied to generate regression tests for the \textit{mvnc} version of each of these \inputgen{num-class-pairs-after-invokevirtual-invokeinterface} differing classes, resulting in \inputgen{num-classes-with-generated-tests} generated test classes comprising in total \inputgen{num-generated-tests} JUnit4 tests, or \inputgen{avg-tests-per-class} tests per differing class on average.
 
-We run \evosuite test generation with the following settings. 
-
-\jens{Tim: can you please provide details here, OS, JVM version, HW etc, plus evosuite settings in particular generation time}
+We ran \evosuite test generation per-class with all settings at their defaults, in particular with \texttt{search\_budget} (generation time) set to 1 minute.~\footnote{Extending generation time to 10 minutes on a subset of classes did not generate any additional tests.}
+All computation was performed using a JDK 8 toolchain on an 8-core Linux Mint 21.2 VM with 50GB RAM.~\footnote{JDK 8 was used in order to improve the reliability of \evosuite test generation. Although \evosuite could sometimes generate tests under JDK 11---including for 32 classes-under-test that refused to compile at JDK 8---doing so produced around one third as many tests overall due to widespread failures.}
 Resource settings were informed by \cite{jahangirova2023sbft}. 
 
 
