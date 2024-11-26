@@ -41,7 +41,6 @@ while (<>) {
 	my $filterCmd = "$FILTERCMD < '$basename.diff' > '$basename.diff.filtered'";
 	print $filterCmd, "\n";
 
-	#my $ifCmd = "if [ -s '$basename.diff.filtered' ]; then echo '$classSlashed' >> '$outFName'; fi";
 	my $ifCmd = "if [ -s '$basename.diff.filtered' ]; then echo '$classSlashed' >> '$outFName'; fi";
 	print $ifCmd, "\n";
 }
