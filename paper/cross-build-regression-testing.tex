@@ -139,7 +139,7 @@ We started with the dataset from \cite{dietrich2024levelsbinaryequivalencecompar
 
 \subsection{Static Preanalysis}
 
-We then run a static pre-analysis to eliminate pairs that are probably equivalent. We first applied \textit{jnorm}~\cite{schott2024JNorm} \jens{Tim: can you add a footnote with version and args used here}, and compared jars by comparing the result of the transformation applied to each class. We then added a custom comparison based on a change in the Java 18 compiler~\footnote{\url{https://github.com/openjdk/jdk/pull/5165}} not yet supported by \textit{jnorm}. This resulted in \inputgen{num-jar-pairs-after-invokevirtual-invokeinterface} pairs of jars, \inputgen{num-jar-pairs-after-invokevirtual-invokeinterface-gaoss} of those pairs with an alternatively built jar from \textit{gaoss}, \inputgen{num-jar-pairs-after-invokevirtual-invokeinterface-obfs} with such a jar from \textit{obfs}.
+We then run a static pre-analysis to eliminate pairs that are probably equivalent. We first applied \textit{jnorm}~\cite{schott2024JNorm}~\footnote{We used \textit{jnorm} version 1.0.0, downloaded from \url{https://github.com/stschott/jnorm-tool/releases/tag/v1.0.0}, with the arguments \texttt{-o -n -s -a -p}.}, and compared jars by comparing the result of the transformation applied to each class. We then added a custom comparison based on a change in the Java 18 compiler~\footnote{\url{https://github.com/openjdk/jdk/pull/5165}} not yet supported by \textit{jnorm}. This resulted in \inputgen{num-jar-pairs-after-invokevirtual-invokeinterface} pairs of jars, \inputgen{num-jar-pairs-after-invokevirtual-invokeinterface-gaoss} of those pairs with an alternatively built jar from \textit{gaoss}, \inputgen{num-jar-pairs-after-invokevirtual-invokeinterface-obfs} with such a jar from \textit{obfs}.
 In total there are \inputgen{num-class-pairs-after-invokevirtual-invokeinterface} classes that differ between \textit{mvnc} and one of the other two providers.
 
 
@@ -148,7 +148,7 @@ In total there are \inputgen{num-class-pairs-after-invokevirtual-invokeinterface
 
 We opted to generate tests for these experiments. The reason is that existing tests that are part of the project are usually executed during builds, i.e., alternative builds would ensure that those tests succeed. 
 
-We used \evosuite to generate regression tests. \jens{@Tim: please add version info} While there are several alternatives available for test generation for Java program, recent benchmarks have shown the superior performance of \evosuite~\cite{jahangirova2023sbft} in achieving higher code coverage and mutation scores. 
+We used \evosuite~\footnote{We used \evosuite version 1.2.0, downloaded from \url{https://github.com/EvoSuite/evosuite/releases/tag/v1.2.0}.} to generate regression tests. While there are several alternatives available for test generation for Java program, recent benchmarks have shown the superior performance of \evosuite~\cite{jahangirova2023sbft} in achieving higher code coverage and mutation scores. 
 
 %\valerio{I added some background on evosuite and regression testing in general, not sure where we want to put this but I think is important to explain how \evosuite exposes the behavioural differences}
 \evosuite automatically generates test cases for a given object-oriented class under test (CUT). A test case consists of (i) a method call sequence that instantiates and modifies the state of objects of the CUT through method invocations (ii) one or more assertions that predicate on the values returned by the method invocations. The state of objects often dictates program behaviour, so manipulating these states is crucial for achieving high coverage. It is worth noting that \evosuite may need to create and modify objects that do not instantiate the CUT, as the methods of the CUT might require non-primitive parameters. For primitive parameters, \evosuite uses randomized values guided by heuristics. The tool implements an evolutionary algorithm that evolves populations of test cases to maximize code coverage, typically targeting branch coverage.
@@ -159,9 +159,8 @@ We used \evosuite to generate regression tests. \jens{@Tim: please add version i
 
 \evosuite was applied to generate regression tests for the \textit{mvnc} version of each of these \inputgen{num-class-pairs-after-invokevirtual-invokeinterface} differing classes, resulting in \inputgen{num-classes-with-generated-tests} generated test classes comprising in total \inputgen{num-generated-tests} JUnit4 tests, or \inputgen{avg-tests-per-class} tests per differing class on average.
 
-We run \evosuite test generation with the following settings. 
-
-\jens{Tim: can you please provide details here, OS, JVM version, HW etc, plus evosuite settings in particular generation time}
+We ran \evosuite test generation per-class with all settings at their defaults, in particular with \texttt{search\_budget} (generation time) set to 1 minute.~\footnote{Extending generation time to 10 minutes on a subset of classes did not generate any additional tests.}
+All computation was performed using a JDK 8 toolchain on an 8-core Linux Mint 21.2 VM with 50GB RAM.~\footnote{JDK 8 was used in order to improve the reliability of \evosuite test generation. Although \evosuite could sometimes generate tests under JDK 11---including for 32 classes-under-test that refused to compile at JDK 8---doing so produced around one third as many tests overall due to widespread failures.}
 Resource settings were informed by \cite{jahangirova2023sbft}. 
 
 
