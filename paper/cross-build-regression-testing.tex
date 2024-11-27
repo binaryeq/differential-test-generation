@@ -177,6 +177,26 @@ Resource settings were informed by \cite{jahangirova2023sbft}.
 
 \jens{@Tim please add some summary data}
 
+Table~\ref{tab:data-summary} shows the number of differing test outcomes for each artifact where one or more tests produced a different outcome on one of the two alternate builds than on \textit{mvnc}.
+
+\begin{table*}[h]
+%	\begin{tabular}{|p{2.0cm}p{1.2cm}p{1.5cm}p{1.3cm}|}
+	\begin{tabular}{|p{0.5cm}p{5cm}p{7.5cm}r|}
+%	\begin{tabular}{|p p p p|}
+		\hline
+		build & artifact & test class & tests \\
+		\hline
+%		\inputgen{data-summary-table-body}
+		\input{generated/data-summary-table-body}
+%		\hline
+%		\hrule
+	\end{tabular}
+%	\input{generated/data-summary-table}
+	\caption{Summary of tests with different results between \textit{mvnc} and other builds}
+	\label{tab:data-summary}
+\end{table*}
+
+
 We now discuss the found inconsistencies in detail.
 
 \subsection{Incorrect Build Configurations}
