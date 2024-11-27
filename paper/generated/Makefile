@@ -67,3 +67,8 @@ data-summary-table-body.tex:
 	$(SQLITE3) "select provider1, replace(groupId, '/', '.') || ':' || artifactId || ':' || version as artifact, testClass as 'test class', count(*) as 'tests' from differing_failed_test_methods group by 1, 2, 3 order by 1, 2, 3;" | perl -lpe 's/\t/ & /g; $$_ .= " \\\\"; s/_/\\_/g' > $@
 
 all: data-summary-table-body.tex
+
+num-test-failures-on-mvnc.tex:
+	LC_NUMERIC=en_US.utf8 /usr/bin/printf "%'d" $$($(SQLITE3) "select count(*) from failed_test_methods where provider = 'mvnc';") > $@
+
+all: num-test-failures-on-mvnc.tex
