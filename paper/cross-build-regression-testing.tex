@@ -112,6 +112,13 @@ In order to address this, bytecode normalisation techniques have recently been p
 From a security analysis point of view, the comparison of binaries from alternative builds is used to detect vulnerabilities: two different binaries may suggest that one has been compromised, for instance, by a backdoor being added during the build. A comparison based on strict binary equality is likely to result in poor precision as differences between binaries can be explained by the variability of compilers and other tools used in the build toolchain. Low precision is known to have a serious impact on the acceptance of program analysis tools by engineers~\cite{sadowski2018lessons,distefano2019scaling}. Using bytecode normalisation techniques such as \textit{jnorm}~\cite{schott2024JNorm} can help to reduce the false positive rate by identifying \textit{equivalent} binaries. The question arises whether binaries built from the same sources that are not equivalent actually have behavioural differences. A good way to check this is to find or construct test cases to demonstrate such differences.
 
 \valerio{I think we should frame this paper as Emerging Results paper following the call for papers. what do you think ? We should not present it as a study, but we should focus on the idea itself}
+\tim{Valerio, it looks like the 2 categories for short papers call for papers are:
+\begin{enumerate}
+	\item Groundbreaking research papers: Exciting new directions or techniques that may have yet to be supported by solid experimental results but supported by strong and well-argued scientific intuitions.
+	\item Reflection papers: Bold and unexpected results and reflections that challenge the existing research outcomes and help us look at current research directions in a new light, calling for fundamentally new future research directions.
+\end{enumerate}
+Which are you thinking is more suitable? I'm thinking "reflection paper".
+}
 This is the question we set out to study. We use test case generation with \evosuite~\cite{fraser2011evosuite} to synthesise regression tests for a baseline build, and then assess whether these tests behave in the same way on programs that are the result of an alternative  build from the same sources. 
 
 % Jens: can drop this if we need space
@@ -134,7 +141,7 @@ An overview of our methodology is depicted in Figure~\ref{fig:methodology}.  As 
 
 \subsection{Project Selection}
 
-We started with the dataset from \cite{dietrich2024levelsbinaryequivalencecomparison} that contains jars corresponding to the same artifact identified by the same group id, artifact id and version (i.e., GAV coordinates) built by different parties. This dataset contains the results of builds from Maven Central (mvnc), Google (gaoss), Oracle (obfs) and  RedHat. We ignored jars built by RedHat as they have an additional patch id that suggests behavioural differences.  We only considered pairs where one of the jars was sourced from Maven Central, i.e., built by the developer(s). There are \inputgen{num-pairs-of-binaries} such pairs.
+We started with the dataset from \cite{dietrich2024levelsbinaryequivalencecomparison} that contains jars corresponding to the same artifact identified by the same group id, artifact id and version (i.e., GAV coordinates) built by different parties. This dataset contains the results of builds from Maven Central (\textit{mvnc}), Google (\textit{gaoss}), Oracle (\textit{obfs}) and  RedHat. We ignored jars built by RedHat as they have an additional patch id that suggests behavioural differences.  We only considered pairs where one of the jars was sourced from Maven Central, i.e., built by the developer(s). There are \inputgen{num-pairs-of-binaries} such pairs.
 
 
 \subsection{Static Pre-analysis}
@@ -160,7 +167,7 @@ We used \evosuite~\footnote{We used \evosuite version 1.2.0, downloaded from \ur
 \evosuite was applied to generate regression tests for the \textit{mvnc} version of each of these \inputgen{num-top-level-class-pairs-after-invokevirtual-invokeinterface} differing top-level classes, resulting in \inputgen{num-classes-with-generated-tests} generated test classes comprising in total \inputgen{num-generated-tests} JUnit4 tests, or \inputgen{avg-tests-per-class} tests per differing class on average.
 
 We ran \evosuite test generation per-class with all settings at their defaults, in particular with \texttt{search\_budget} (generation time) set to 1 minute.~\footnote{Extending generation time to 10 minutes on a subset of classes did not generate any additional tests.}
-All computation was performed using a JDK 8 toolchain on an 8-core Linux Mint 21.2 VM with 50GB RAM.~\footnote{JDK 8 was used in order to improve the reliability of \evosuite test generation. Although \evosuite could sometimes generate tests under JDK 11---including for 32 classes-under-test that refused to compile at JDK 8---doing so produced around one third as many tests overall due to widespread failures.}
+All computation was performed using a JDK 8 toolchain on an 8-core Linux Mint 21.2 VM with 50GB RAM.~\footnote{JDK 8 was used in order to improve the reliability of \evosuite test generation. Although \evosuite could sometimes generate tests under JDK 11---including for 32 CUTs that refused to compile at JDK 8---doing so produced around one third as many tests overall due to widespread failures.}
 Resource settings were informed by \cite{jahangirova2023sbft}. 
 
 
@@ -176,40 +183,40 @@ We now discuss the found inconsistencies in detail.
 \subsection{Incorrect Build Configurations}
 
 
-The first case of test failing occurs in \textit{io.undertow:undertow-servlet:2.2.23}. There are two binaries available for this components, the jar from \textit{Maven Central}, and an alternatively built jar from \textit{gaoss}. When the  \textit{gaoss} jar is tested using the test generated from the Maven version, five tests result in an error, but all succeed when run against the original jar from \textit{Maven Central}.
+The first case of test outcome differences occurs in \textit{io.undertow:undertow-servlet:2.2.23}. There are two binaries available for this components, the jar from \textit{mvnc}, and an alternatively built jar from \textit{gaoss}. When the  \textit{gaoss} jar is tested using the test generated from the \textit{mvnc} version, five tests result in an error, but all succeed when run against the original jar from \textit{mvnc}.
 
-The respective tests are \textit{test00}, \textit{test01}, \textit{test12},\textit{test15} and \textit{test16}, all in \textit{io.under\-tow.\-servlet.\-spec.UpgradeServletInputStream\_ESTest}~\footnote{The class under test by an \evosuite-generated test can easily be identified by removing the \textit{\_ESTest}}. The error occurring is always a \textit{java.lang.NoSuchMethodError}, caused by a reference to \textit{java.nio.ByteBuffer.flip()Ljava/nio/ByteBuffer;}.
+The respective tests are \textit{test00}, \textit{test01}, \textit{test12}, \textit{test15} and \textit{test16}, all in \textit{io.under\-tow.\-servlet.\-spec.UpgradeServletInputStream\_ESTest}~\footnote{The class under test by an \evosuite-generated test can easily be identified by removing the \textit{\_ESTest} suffix.}. The error occurring is always a \textit{java.lang.NoSuchMethodError}, caused by a reference to \textit{java.nio.ByteBuffer.flip()Ljava/nio/ByteBuffer;}.
 
-The error occurs during linking, and is related to binary compatibility~\cite{JVM17Spec}. I.e. there are call sites for this method in two undertow methods (\textit{UpgradeServletInputStream.readIntoBufferNonBlocking} and \textit{UpgradeServletInputStream.readIntoBuffer}, respectively), however, the method is missing. 
-A closer inspection reveals that the \textit{gaoss} version was build with Java 11~\footnote{The jar manifest contains the entry \textit{Build-Jdk-Spec: 11}}. In Java 11, \textit{java.nio.ByteBuffer.flip()Ljava/nio/ByteBuffer;} exists, and the respective call site is added. The Maven Central jar was built against Java 8, where this method did not exist.  Instead, a call site to invoke \textit{java/nio/ByteBuffer.flip:()Ljava/nio/Buffer;} is added by the compiler~\footnote{Unlike Java source code, Java byte code supports return type overloading, and changing the return types alters the descriptor, and therefore is a binary incompatible change causing linkage errors.~\cite{JVM17Spec,dietrich2014broken}}.
+The error occurs during linking, and is related to binary compatibility~\cite{JVM17Spec}. I.e., there are call sites for this method in two \textit{undertow} methods (\textit{UpgradeServletInputStream.readIntoBufferNonBlocking} and \textit{UpgradeServletInputStream.readIntoBuffer}, respectively), however, the method is missing. 
+A closer inspection reveals that the \textit{gaoss} version was built with Java 11~\footnote{The jar manifest contains the entry \textit{Build-Jdk-Spec: 11}}. In Java 11, \textit{java.nio.ByteBuffer.flip()Ljava/nio/ByteBuffer;} exists~\footnote{Though its existence is not mentioned in the documentation at \url{https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/nio/ByteBuffer.html}.}, and the respective call site is added. The \textit{mvnc} jar was built against Java 8, where this method did not exist.  Instead, a call site to invoke \textit{java/nio/ByteBuffer.flip:()Ljava/nio/Buffer;} is added by the compiler~\footnote{Unlike Java source code, Java byte code supports return type overloading, and changing the return types alters the descriptor, and therefore is a binary incompatible change causing linkage errors.~\cite{JVM17Spec,dietrich2014broken}}.
 
-Therefore, this issue is caused by the different JDK versions used during the build. This is surprising, as reproducing builds usually try to replicate the build environment in order to maximise the chances of the build to succeed and the resulting binary to be identical to the binary from the build to be reproduced. In this case the engineers seem to have attempted this somehow by setting the compiler target level to bytecode version 52, which is associated with Java 8~\cite[Sect. 4.1]{JVM17Spec} instead of using version 55 associated with Java 11.  However, they did not account for the fact that there are changes in the standard library that have an impact on how bytecode is being compiled. Since Java 9 (JEP247~\cite{jep247}), there is a \textit{-release} compiler  flag that can be used to avoid issues like this. It is likely that engineers used only \textit{-target} instead. The generated tests reveal those changes.  
+Therefore, this issue is caused by the different JDK versions used during the build. This is surprising, as reproducing builds usually try to replicate the build environment in order to maximise the chances of the build to succeed and the resulting binary to be identical to the binary from the build to be reproduced. In this case the engineers seem to have attempted this somehow by setting the compiler target level to bytecode version 52, which is associated with Java 8~\cite[Sect. 4.1]{JVM17Spec} instead of using version 55 associated with Java 11.  However, they did not account for the fact that there are changes in the standard library that have an impact on how bytecode is compiled. Since Java 9 (JEP247~\cite{jep247}), there is a \textit{-release} compiler  flag that can be used to avoid issues like this. It is likely that engineers used only \textit{-target} instead. The generated tests reveal those changes.  
 
 \begin{table}[h]
 	\begin{tabular}{|p{1.8cm}p{0.9cm}p{1.5cm}p{1.2cm}p{1.2cm}|}
 		\hline
 		build         & bytecode version & JDK version used to build & test results (Java 8)                                                    & test results (Java 11) \\ \hline 
-		Maven Central & 52               & 8                         & pass                                                                     & pass                   \\
+		mvnc & 52               & 8                         & pass                                                                     & pass                   \\
 		gaoss         & 52               & 11                        & error & pass                  \\ \hline
 	\end{tabular}
 	\caption{Test results for \textit{UpgradeServletInputStream\_ESTest} tests for  \textit{io.undertow:undertow-servlet:2.2.23}, running tests on the original Maven Central artifact and the alternative build from \textit{gaoss}}
 	\label{tab:nosuchmethoderror}
 \end{table}
 
-Table~\ref{tab:nosuchmethoderror} summarises our analysis. One might expect different behaviour not revealed by tests when tests are executed with Java 11, as the call sites in those two binaries refer to different methods in the standard libraries. However, this is not the case as the Java compiler does create a synthetic \textit{bridge method} when compiling overriding methods with co-variant return types. In this case, it creates the bridge method \textit{java.nio.ByteBuffer.flip()Ljava/nio/Buffer;}  that invokes \textit{java.nio.ByteBuffer.flip()Ljava/nio/ByteBuffer;}. This bridge method is used during the  runtime resolution of the virtual call for the binary from Maven Central.  
+Table~\ref{tab:nosuchmethoderror} summarises our analysis. One might expect different behaviour not revealed by tests when tests are executed with Java 11, as the call sites in these two binaries refer to different methods in the standard libraries. However, this is not the case as the Java compiler does create a synthetic \textit{bridge method} when compiling overriding methods with covariant return types. In this case, it creates the bridge method \textit{java.nio.ByteBuffer.flip()Ljava/nio/Buffer;}  that invokes \textit{java.nio.ByteBuffer.flip()Ljava/nio/ByteBuffer;}. This bridge method is used during the  runtime resolution of the virtual call for the binary from Maven Central.  
 
 
 \subsection{EvoSuite Mock Generation}
 
 
-We have identified three generated test classes with inconsistent behaviour between the \textit{obfs} and Maven Central builds for \textit{commons-io:commons-io:2.15.0}: 
+We have identified three generated test classes with inconsistent behaviour between the \textit{obfs} and \textit{mvnc} builds for \textit{commons-io:commons-io:2.15.0}: 
 \begin{enumerate}
 	\item  \textit{org...io.monitor.FileAlterationObserver\_ESTest}
     \item \textit{org...io.filefilter.NotFileFilter\_ESTest}
     \item  \textit{org...io.output.UncheckedAppendableImpl\_ESTest}
 \end{enumerate}
 
-Test inconsistencies are all caused by the same pattern.  The \textit{obfs} binary was built  with Java 8, while the Maven Central binary was built with Java 21, the target level for both was set to 52 (compatible with Java 8). Table~\ref{tab:stackoverflow} summarises the situation.
+All of these test inconsistencies are caused by the same pattern.  The \textit{obfs} binary was built  with Java 8, while the \textit{mvnc} binary was built with Java 21. The target level for both was set to 52 (compatible with Java 8). Table~\ref{tab:stackoverflow} summarises the situation.
 
 
 \begin{table}[h]
@@ -223,22 +230,22 @@ Test inconsistencies are all caused by the same pattern.  The \textit{obfs} bina
 	\label{tab:stackoverflow}
 \end{table}
 
-In Java 18, a subtle change has occurred   how methods implemented in the root class (\textit{java.lang.Object}) such as \textit{toString}, \textit{equals}, \textit{getClass} and \textit{hashCode} are invoked for interfaces~\footnote{\url{https://github.com/openjdk/jdk/pull/5165}}.
+In Java 18, a subtle change occurred regarding how methods implemented in the root class (\textit{java.lang.Object}) such as \textit{toString}, \textit{equals}, \textit{getClass} and \textit{hashCode} are invoked for interfaces~\footnote{\url{https://github.com/openjdk/jdk/pull/5165}}.
 For instance, consider the code in the following listing:
 
 \begin{lstlisting}[language=Java]
-Comparable comp =  .. ; 
+Comparable comp =  ... ; 
 comp.toString();
 \end{lstlisting}	
 
 Up to Java 17, this call was compiled to \textit{invokevirtual Object::toString}~\footnote{Package names and descriptors are omitted for brevity}. Starting with Java 18, this call is now compiled to \textit{invokeinterface Comparable::toString}.
 
-This results in changes to runtime behaviour when using the \evosuite runtime, as \evosuite replaces those calls with calls to mocks, such as  \textit{org.evosuite.runtime.System::toString}. This only replaces the older call pattern, not the new one. 
+This results in changes to runtime behaviour when using the \evosuite runtime, as \evosuite replaces these calls with calls to its own mocks, such as  \textit{org.evosuite.runtime.System::toString}. But this only replaces the older call pattern, not the new one. 
 
-An example of such inconsistent behaviour we have encountered  is when a \textit{toString} implementation is recursive. Then \evosuite generates a test with a self-referential data structure that expects a \textit{StackOverFlowError} to occur when \textit{toString} is invoked on this data structure. However, when the mock substitution is performed by \evosuite, this error does not occur as the mock \textit{toString} method is not recursive, and the test fails. I.e. the test outcome now depends on whether \evosuite does perform the substitution or not, and this depends on the compiler that had been used.
+An example of such inconsistent behaviour we have encountered  is when a \textit{toString} implementation is recursive. Then \evosuite generates a test with a self-referential data structure that expects a \textit{StackOverFlowError} to occur when \textit{toString} is invoked on this data structure. However, when the mock substitution is performed by \evosuite, this error does not occur as the mock \textit{toString} method is not recursive, and the test fails. I.e., the test outcome now depends on whether \evosuite performs the substitution or not, and this depends on the compiler that had been used.
 
 In this case we think the misconfiguration is on the Maven Central side, where a very recent Java version has been used to create a binary compatible with Java 8, but this hasn't been configured correctly.
-
+%Tim: I would instead say it's a problem caused by EvoSuite not being maintained, but I know this is a delicate issue!
 
 
 
