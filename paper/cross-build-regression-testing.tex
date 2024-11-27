@@ -88,7 +88,6 @@ We study this for \inputgen{num-pairs-of-binaries} pairs of binaries built for t
 
 %While we did not detect any compromised builds in our experiments, our approach successfully identified two build configuration errors that led to changes in runtime behaviour, highlighting areas for improvement.
 Although our preliminary experiments did not reveal any compromised builds, our approach successfully identified two build configuration errors that caused changes in runtime behavior. These findings underscore the potential of our method to uncover subtle build differences, highlighting opportunities for improvement.
-\valerio{I changed the last paragraph see if you like it, otherwise revert to your version}
 
 %The purpose of generating differential tests is to detect behaviour differences between different programs.   therefore safeguarding against the introduction of bugs, and detecting changes that may break  clients downstream. We explore a different use case for regression testing – to detect behaviour changes  between different builds of the same version. This is motivated by concerns about software supply chain security that have led to the emergence of different binaries built from the same source code. We study this for \inputgen{num-pairs-of-binaries} pairs of binaries built from the same source distributed using Maven Central, Google Assured Open Source Software and Oracle Build-From-Source. 
 %We find that ..
@@ -113,11 +112,11 @@ From a security analysis point of view, the comparison of binaries from alternat
 
 \valerio{I think we should frame this paper as Emerging Results paper following the call for papers. what do you think ? We should not present it as a study, but we should focus on the idea itself}
 \tim{Valerio, it looks like the 2 categories for short papers call for papers are:
-\begin{enumerate}
-	\item Groundbreaking research papers: Exciting new directions or techniques that may have yet to be supported by solid experimental results but supported by strong and well-argued scientific intuitions.
-	\item Reflection papers: Bold and unexpected results and reflections that challenge the existing research outcomes and help us look at current research directions in a new light, calling for fundamentally new future research directions.
-\end{enumerate}
-Which are you thinking is more suitable? I'm thinking "reflection paper".
+	\begin{enumerate}
+		\item Groundbreaking research papers: Exciting new directions or techniques that may have yet to be supported by solid experimental results but supported by strong and well-argued scientific intuitions.
+		\item Reflection papers: Bold and unexpected results and reflections that challenge the existing research outcomes and help us look at current research directions in a new light, calling for fundamentally new future research directions.
+	\end{enumerate}
+	Which are you thinking is more suitable? I'm thinking ``reflection paper''.
 }
 This is the question we set out to study. We use test case generation with \evosuite~\cite{fraser2011evosuite} to synthesise regression tests for a baseline build, and then assess whether these tests behave in the same way on programs that are the result of an alternative  build from the same sources. 
 
