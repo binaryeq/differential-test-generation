@@ -62,3 +62,13 @@ avg-tests-per-class.tex: num-generated-tests.tex num-top-level-class-pairs-after
 	LC_NUMERIC=en_US.utf8 /usr/bin/printf "%'.1f" $$(perl -le 'printf "%.1f", $$ARGV[0] / $$ARGV[1]' `tr -d , < num-generated-tests.tex` `tr -d , < num-top-level-class-pairs-after-invokevirtual-invokeinterface.tex`) > $@
 
 all: avg-tests-per-class.tex
+
+data-summary-table-body.tex:
+	$(SQLITE3) "select provider1, replace(groupId, '/', '.') || ':' || artifactId || ':' || version as artifact, testClass as 'test class', count(*) as 'tests' from differing_failed_test_methods group by 1, 2, 3 order by 1, 2, 3;" | perl -lpe 's/\t/ & /g; $$_ .= " \\\\"; s/_/\\_/g' > $@
+
+all: data-summary-table-body.tex
+
+num-test-failures-on-mvnc.tex:
+	LC_NUMERIC=en_US.utf8 /usr/bin/printf "%'d" $$($(SQLITE3) "select count(*) from failed_test_methods where provider = 'mvnc';") > $@
+
+all: num-test-failures-on-mvnc.tex
