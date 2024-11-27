@@ -18,6 +18,11 @@ num-pairs-of-binaries.tex:
 
 all: num-pairs-of-binaries.tex
 
+num-jar-pairs-after-jnorm2.tex:
+	LC_NUMERIC=en_US.utf8 /usr/bin/printf "%'d" $$(find ../../find-diff-classes/comparisons -name classes.unfiltered|wc -l) > $@
+
+all: num-jar-pairs-after-jnorm2.tex
+
 num-jar-pairs-after-invokevirtual-invokeinterface.tex:
 	LC_NUMERIC=en_US.utf8 /usr/bin/printf "%'d" $$(find ../../find-diff-classes/comparisons -name classes.filtered|wc -l) > $@
 
