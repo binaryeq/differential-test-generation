@@ -11,9 +11,8 @@ foreach my $path (@gavs) {
 	chomp @lines;
 	my $gav = $path;
 	$gav =~ s|^comparisons/|| or die;
-	$gav =~ s|\.jar\.compare.*/classes\.filtered|.jar| or die;
+	$gav =~ s|\.jar\.compare.*/classes\.filtered$|.jar| or die;
 	foreach my $class (@lines) {
-		#TODO: Strip '$...'
 		$class =~ s|\$[^\.]*||;
 		$class =~ s|\.class$|| or die;
 		$class =~ tr|/|.|;

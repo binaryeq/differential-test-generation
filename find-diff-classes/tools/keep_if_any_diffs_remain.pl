@@ -16,6 +16,7 @@ while (<>) {
 	my $baseDir = $inFName;
 	$baseDir =~ s/\.tsv$// or die;
 	my $outFName = "$baseDir/classes.filtered";
+	my $unfilteredClassesOutFName = "$baseDir/classes.unfiltered";
 
 	if (!defined($prevInFName) || $prevInFName ne $inFName) {
 		print "# $inFName\n";
@@ -23,7 +24,7 @@ while (<>) {
 		my $mkdirCmd = "mkdir -p '$baseDir'";
 		print $mkdirCmd, "\n";
 
-		my $cleanCmd = "rm -f '$outFName'";
+		my $cleanCmd = "rm -f '$outFName' '$unfilteredClassesOutFName'";
 		print $cleanCmd, "\n";
 	}
 	$prevInFName = $inFName;
@@ -41,7 +42,9 @@ while (<>) {
 	my $filterCmd = "$FILTERCMD < '$basename.diff' > '$basename.diff.filtered'";
 	print $filterCmd, "\n";
 
-	#my $ifCmd = "if [ -s '$basename.diff.filtered' ]; then echo '$classSlashed' >> '$outFName'; fi";
 	my $ifCmd = "if [ -s '$basename.diff.filtered' ]; then echo '$classSlashed' >> '$outFName'; fi";
 	print $ifCmd, "\n";
+
+	my $ifUnfilteredCmd = "if [ -s '$basename.diff' ]; then echo '$classSlashed' >> '$unfilteredClassesOutFName'; fi";
+	print $ifUnfilteredCmd, "\n";
 }

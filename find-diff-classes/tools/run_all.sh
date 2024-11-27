@@ -35,7 +35,7 @@ tools/keep_if_any_diffs_remain.pl $(find comparisons -name '*.vs.*.tsv') > filte
 bash filter_all_diffs.sh
 
 # Just for convenience (the same info is extractable from the generate_all_tests.sh produced by the following step)
-tools/extract_filtered_classes_to_tsv.pl | sort -u > filtered_classes.tsv
+tools/extract_filtered_top_level_classes_to_tsv.pl | sort -u > filtered_top_level_classes.tsv
 
 # Create a shell script to run EvoSuite against the Maven Central version of each class identified in the previous step.
 tools/generate.pl --generate-tests > generate_all_tests.sh
