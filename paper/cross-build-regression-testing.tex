@@ -179,19 +179,19 @@ Table~\ref{tab:data-summary} shows the number of differing test outcomes for eac
 Note that this excludes \inputgen{num-test-failures-on-mvnc} test failures that occurred on \textit{mvnc} itself.
 
 \begin{table*}[h]
+	\centering
 %	\begin{tabular}{|p{2.0cm}p{1.2cm}p{1.5cm}p{1.3cm}|}
 	\begin{tabular}{|p{0.5cm}p{5cm}p{7.5cm}r|}
 %	\begin{tabular}{|p p p p|}
 		\hline
-		build & artifact & test class & tests \\
-		\hline
-%		\inputgen{data-summary-table-body}
-		\input{generated/data-summary-table-body}
-%		\hline
+		build & artifact & test class & tests \\ \hline
+		\inputgen{data-summary-table-body}%
+%		\input{generated/data-summary-table-body}
+%		\\ \hline
 %		\hrule
 	\end{tabular}
 %	\input{generated/data-summary-table}
-	\caption{Summary of tests with different results between \textit{mvnc} and other builds}
+	\caption{Number of tests with different results between \textit{mvnc} and alternative builds}
 	\label{tab:data-summary}
 \end{table*}
 
