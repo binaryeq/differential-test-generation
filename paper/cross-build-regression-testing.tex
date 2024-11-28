@@ -211,20 +211,23 @@ A closer inspection reveals that the \textit{gaoss} version was built with Java 
 Therefore, this issue is caused by the different JDK versions used during the build. This is surprising, as reproducing builds usually try to replicate the build environment in order to maximise the chances of the build to succeed and the resulting binary to be identical to the binary from the build to be reproduced. In this case the engineers seem to have attempted this somehow by setting the compiler target level to bytecode version 52, which is associated with Java 8~\cite[Sect. 4.1]{JVM17Spec} instead of using version 55 associated with Java 11.  However, they did not account for the fact that there are changes in the standard library that have an impact on how bytecode is compiled. Since Java 9 (JEP247~\cite{jep247}), there is a \textit{-release} compiler  flag that can be used to avoid issues like this. It is likely that engineers used only \textit{-target} instead. The generated tests reveal those changes.  
 
 \begin{table}[h]
-	\begin{tabular}{|p{1.8cm}p{0.9cm}p{1.5cm}p{1.2cm}p{1.2cm}|}
+	\centering
+	\begin{tabular}{|p{0.9cm}p{0.6cm}p{0.9cm}p{1.5cm}p{1.2cm}p{1.2cm}|}
 		\hline
-		build         & bytecode version & JDK version used to build & test results (Java 8)                                                    & test results (Java 11) \\ \hline 
-		mvnc & 52               & 8                         & pass                                                                     & pass                   \\
-		gaoss         & 52               & 11                        & error & pass                  \\ \hline
+		artifact & build         & bytecode version & JDK version used to build & test results (Java 8)                                                    & test results (Java 11) \\ \hline 
+		undertow & mvnc & 52               & 8                         & pass                                                                     & pass                   \\
+		undertow & gaoss         & 52               & 11                        & fail & pass                  \\ \hline
+		netty & mvnc & 52               & 19                         & pass                                                                     & fail                   \\
+		netty & gaoss         & 50               & 8                        & fail & fail                  \\ \hline
 	\end{tabular}
-	\caption{Test results for \textit{UpgradeServletInputStream\_ESTest} tests for  \textit{io.undertow:undertow-servlet:2.2.23}, running tests on the original Maven Central artifact and the alternative build from \textit{gaoss}}
+	\caption{Test results for \textit{UpgradeServletInputStream\_ESTest} tests on \textit{io.undertow:undertow-servlet:2.2.23} and for \textit{io.netty.handler.codec.http.multipart.AbstractDiskHttpData\_ESTest} tests on \textit{io.netty.netty-codec-http:4.1.102.Final}, running tests on the original Maven Central artifact and the alternative build from \textit{gaoss}}
 	\label{tab:nosuchmethoderror}
 \end{table}
 
 The two \textit{gaoss} test failures on \textit{io.netty.netty-codec-http:4.1.102.Final} are similar, but ``in reverse'': Here, it is the \textit{mvnc} jar that was built with a newer JDK version (19~\footnote{The jar manifest contains the entry \textit{Build-Jdk-Spec: 19}.}), while \textit{gaoss} was built with JDK 8~\footnote{The jar manifest contains the entry \textit{Build-Jdk-Spec: 1.8}.}.
 This time, the generated tests \textit{expect} \textit{NoSuchMethodError} to be thrown, resulting in test failure on \textit{gaoss} when the call to \textit{java/nio/ByteBuffer.flip:()Ljava/nio/Buffer;} completes normally.~\footnote{Interestingly, the code paths that trigger the \textit{NoSuchMethodError} on \textit{mvnc} seem to occur only as a result of buggy interference between test methods: See \tim{add URL to anonymised description page, or cut} for details.}
 
-Table~\ref{tab:nosuchmethoderror} summarises our analysis.\tim{Add rows for netty-codec-http} One might expect different behaviour not revealed by tests when tests are executed with Java 11, as the call sites in these two binaries refer to different methods in the standard libraries. However, this is not the case as the Java compiler does create a synthetic \textit{bridge method} when compiling overriding methods with covariant return types. In this case, it creates the bridge method \textit{java.nio.ByteBuffer.flip()Ljava/nio/Buffer;}  that invokes \textit{java.nio.ByteBuffer.flip()Ljava/nio/ByteBuffer;}. This bridge method is used during the  runtime resolution of the virtual call for the binary from Maven Central.  
+Table~\ref{tab:nosuchmethoderror} summarises our analysis. One might expect different behaviour not revealed by tests when tests are executed with Java 11, as the call sites in these two binaries refer to different methods in the standard libraries. However, this is not the case as the Java compiler does create a synthetic \textit{bridge method} when compiling overriding methods with covariant return types. In this case, it creates the bridge method \textit{java.nio.ByteBuffer.flip()Ljava/nio/Buffer;}  that invokes \textit{java.nio.ByteBuffer.flip()Ljava/nio/ByteBuffer;}. This bridge method is used during the  runtime resolution of the virtual call for the binary from Maven Central.  
 
 
 \subsection{EvoSuite Mock Generation}
@@ -241,6 +244,7 @@ All of these test inconsistencies are caused by the same pattern.  The \textit{o
 
 
 \begin{table}[h]
+	\centering
 	\begin{tabular}{|p{2.0cm}p{1.2cm}p{1.5cm}p{1.3cm}|}
 		\hline
 		build         & bytecode version & JDK version used to build & test results (Java 8)                                            \\ \hline 
