@@ -185,7 +185,6 @@ Note that this excludes \inputgen{num-test-failures-on-mvnc} test failures that 
 
 \begin{table*}[h]
 	\centering
-%	\input{generated/data-summary-table-tabular}
 	\inputgen{data-summary-table-tabular}
 	\caption{Number of tests with different results between \textit{mvnc} and alternative builds}
 	\label{tab:data-summary}
@@ -245,7 +244,7 @@ All of these test inconsistencies are caused by the same pattern.  The \textit{o
 	\begin{tabular}{|p{2.0cm}p{1.2cm}p{1.5cm}p{1.3cm}|}
 		\hline
 		build         & bytecode version & JDK version used to build & test results (Java 8)                                            \\ \hline 
-		Maven Central & 52       & 21                        & pass                                                                                        \\
+		mvnc & 52       & 21                        & pass                                                                                        \\
 		obfs         & 52               & 8                        & fail              \\ \hline
 	\end{tabular}
 	\caption{Test results for selected tests generated for  \textit{commons-io:commons-io:2.15.0}, running tests on the original Maven Central artifact and the alternative build from \textit{obfs}}
