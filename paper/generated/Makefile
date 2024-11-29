@@ -71,7 +71,7 @@ all: data-summary-table-body.tex
 # It turns out that you can't use \hline after \input inside a \tabular environment: https://stackoverflow.com/questions/73198591/hline-issue-with-latex-when-importing-table-from-different-tex-file-into-a-tab. Obviously.
 # So, do the "macro expansion" ourselves.
 data-summary-table-tabular.tex: data-summary-table-body.tex
-	( /usr/bin/echo '\begin{tabular}{|p{0.5cm}p{5cm}p{7.5cm}r|} \hline build & artifact & test class & tests \\ \hline ' ; cat $< ; /usr/bin/echo ' \hline \end{tabular}' ) > $@
+	( /usr/bin/echo '\begin{tabular}{p{0.5cm}p{5cm}p{7.5cm}r} ' ; /usr/bin/echo '\toprule ' ; /usr/bin/echo '\textbf{build} & \textbf{artifact} & \textbf{test class} & \textbf{tests} \\ \midrule' ; cat $< ; /usr/bin/echo ' \bottomrule \end{tabular}' ) > $@
 
 all: data-summary-table-tabular.tex
 
