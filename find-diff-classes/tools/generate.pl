@@ -14,20 +14,17 @@ sub findJava($$) {
     die "Could not find a path to a JDK $jdk version of the java executable (" . scalar(@possiblePaths) . " possibilities).";
 }
 
-my $ROOT = "$ENV{HOME}/code";       # Change as necessary
-my $BASE = "$ROOT/craw-redhat-oss/wget/crawl";
-my $CLASSPATH = "$ROOT/tooling/target/bineq-1.0.0.jar";
+my $JARROOT = $ENV{JARROOT};
+my $BINEQ_CLASSPATH = $ENV{BINEQ_CLASSPATH};
+my $EVOSUITEJAR = $ENV{EVOSUITEJAR};
+my $EVOSUITERUNTIMEJAR = $ENV{EVOSUITERUNTIMEJAR};
+my $JUNIT4JAR = $ENV{JUNIT4JAR};
+my $HAMCRESTJAR = $ENV{HAMCRESTJAR};
 my $JDKVERSION = "8";
 my $JAVA8 = findJava("java", 8);     # EvoSuite prefers JDK 8, sometimes works with JDK 11
 my $JAVAC8 = findJava("javac", 8);
-my $JAVA17 = findJava("java", 17);   # Code in the tooling repo was compiled with JDK 17
-my $COMPAREJARS = "$JAVA17 -cp $CLASSPATH io.github.bineq.cli.CompareJars";
-my $EVOSUITEJAR = "$ROOT/regression-test-generation/evosuite/evosuite-1.2.0.jar";
 my $COMPARISONSDIR = "comparisons"; # Formerly "results"
 my $JACOCOPATH = "jacoco/lib";
-my $evosuiteRuntimeJarPath = "$ROOT/regression-test-generation/evosuite/evosuite-standalone-runtime-1.2.0.jar";
-my $junit4JarPath = "$ENV{HOME}/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar";
-my $hamcrestJarPath = "$ENV{HOME}/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar";
 
 my $keepRunFilter = sub { 1 };      # By default, keep everything
 
@@ -44,7 +41,7 @@ sub gavToJarPath($$$) {
 #HACK: Only works if there's a unique subpatch-level suffix...
 sub getDir($$$$) {
     my ($provider, $g, $a, $v) = @_;
-    my $path = "$BASE/$provider/$g/$a/$v";
+    my $path = "$JARROOT/$provider/$g/$a/$v";
     print STDERR "Trying path=<$path>\n";        #DEBUG
     #my @possibilities = glob "$path*/*.jar";
     my @possibilities = grep { m|/([^/]+)/([^/]+)/\1-\2\.jar$| } glob "$path*/*.jar";    # Exclude *-sources.jar, *-tests.jar, etc.
@@ -73,7 +70,6 @@ my %providerPathsFor = (
 
 sub providerPath($$$$) {
     my ($provider, $g, $a, $v) = @_;
-    #return "$BASE/$providerPathFor{$_[0]}";
     foreach (map { getDir($_, $g, $a, $v) } @{$providerPathsFor{$provider}}) {
         return $_ if defined;
     }
@@ -103,14 +99,17 @@ sub evosuiteRunDir($$$$) {
 }
 
 sub generateComparisons() {
+    die "Must set env var \$BINEQ_CLASSPATH" if !defined $BINEQ_CLASSPATH;
+    die "Expected bineq at $BINEQ_CLASSPATH" if !-e $BINEQ_CLASSPATH;
+
+    # Delay looking for JDK 17 until here, where we actually need it
+    my $JAVA17 = findJava("java", 17);   # Code in the tooling repo was compiled with JDK 17
+    my $COMPAREJARS = "$JAVA17 -cp $BINEQ_CLASSPATH io.github.bineq.cli.CompareJars";
+
     while (<>) {
         chomp;
         my ($g, $a, $v, $p1, $p2) = split /\t/ or die;
         my $jarPath = gavToJarPath($g, $a, $v);
-        #my $jarPath1 = providerPath($p1) . "/" . $jarPath;
-        #my $jarPath2 = providerPath($p2) . "/" . $jarPath;
-        #my $jarPath1 = providerPath($p1, $jarPath);
-        #my $jarPath2 = providerPath($p2, $jarPath);
         my $jarPath1 = providerPath($p1, $g, $a, $v);
         my $jarPath2 = providerPath($p2, $g, $a, $v);
         my $outDir = "$COMPARISONSDIR/$jarPath.compare";
@@ -175,7 +174,7 @@ THE_END
     <maven.compiler.source>$JDKVERSION</maven.compiler.source>
     <maven.compiler.target>$JDKVERSION</maven.compiler.target>
 $genProperties
-    <evosuiteRuntimeJarPath>$evosuiteRuntimeJarPath</evosuiteRuntimeJarPath>
+    <evosuiteRuntimeJarPath>$EVOSUITERUNTIMEJAR</evosuiteRuntimeJarPath>
   </properties>
 
   <dependencies>
@@ -252,6 +251,9 @@ sub generateOrRunTests($) {
 set -v
 THE_END
 
+    die "Must set env var \$EVOSUITERUNTIMEJAR" if !defined $EVOSUITERUNTIMEJAR;
+    die "Expected EvoSuite runtime jar at $EVOSUITERUNTIMEJAR" if !-e $EVOSUITERUNTIMEJAR;
+
     if ($opts->{shouldRunTests}) {
         my $defaultRunDir = ($opts->{viaMvn} ? "\$(pwd)/run-mvn" : "run");      # Maven needs absolute path
         print "echo \"Will write test results under RUNDIR=\${RUNDIR:=$defaultRunDir}\"   # Default to '$defaultRunDir' if not overridden\n";
@@ -296,6 +298,9 @@ THE_END
             my $genBasePath = $genPomPath =~ s|/[^/]+$||r;
 
             if ($opts->{shouldGenerateTests}) {
+                die "Must set env var \$EVOSUITEJAR" if !defined $EVOSUITEJAR;
+                die "Expected EvoSuite at $EVOSUITEJAR" if !-e $EVOSUITEJAR;
+
                 #print join("\t", $jarPath, $p1, $p2), "\n";        #DEBUG
                 #print join("\t", providerPath($p, $g, $a, $v), $p1, $p2), "\n";        #DEBUG
                 my @classes = @{$interestingClasses{$jarPath}};
@@ -372,10 +377,10 @@ THE_END
                                 my $projectCP = "$classOwnCP:\$($gatherDepsCmd | perl -lpe 's/ /:/g')";
                                 my $classPath = join(":",
                                     "$projectCP",
-                                    $evosuiteRuntimeJarPath,
+                                    $EVOSUITERUNTIMEJAR,
                                     $evoSuiteTestSourcePath,
-                                    $junit4JarPath,
-                                    $hamcrestJarPath
+                                    $JUNIT4JAR,
+                                    $HAMCRESTJAR
                                 );
                                 my %dirsWithClasses = map { $_ => 1 } map { m|(.*)/| } @generatedClasses;
                                 my @condensedClasses = map { "$pwd/$_/*_ESTest*.java" } sort keys %dirsWithClasses;
@@ -441,11 +446,11 @@ THE_END
                     my $classPath = join(":",
                         ($opts->{useJacoco} ? "$pwd/$JACOCOPATH/jacocoagent.jar" : ()),
                         "$projectCP",
-                        $evosuiteRuntimeJarPath,
+                        $EVOSUITERUNTIMEJAR,
 #                                "$testGenPath/evosuite-tests",
                         ".",        # We're running from the compilation directory
-                        $junit4JarPath,
-                        $hamcrestJarPath
+                        $JUNIT4JAR,
+                        $HAMCRESTJAR
                     );
 #                            my %dirsWithClasses = map { $_ => 1 } map { m|(.*)/| } @generatedClasses;
 #                            my @condensedClasses = map { "$pwd/$_/*_ESTest*.java" } sort keys %dirsWithClasses;
@@ -486,8 +491,9 @@ THE_END
 }
 
 # Sanity-check paths
-die "Is \$ROOT set correctly?" if !-d $BASE || !-e $CLASSPATH;
-die "Expected EvoSuite at $EVOSUITEJAR" if !-e $EVOSUITEJAR;
+die "Must set env var \$JARROOT" if !defined $JARROOT;
+die "Expected jar root dir at $JARROOT" if !-d $JARROOT;
+die "Is \$JARROOT set correctly?" if !-d "$JARROOT/repo1.maven.org/maven2";     # mvnc should be there
 
 # Main program
 my $useJacoco = 0;      # Relevant for running tests only
