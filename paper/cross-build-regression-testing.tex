@@ -114,7 +114,7 @@ Several organisations have started to provide infrastructure and services to pro
 However, there are several challenges with the reproducibility of builds: (i) build environments are difficult to replicate, (ii) locating the source code version (commit, tag or release) associated with a binary release version is not always straightforward and (iii) builds may be non-deterministic~\cite{xiong2022towards,hassanshahi2023macaron,bineqdataset,keshani2024aroma}. In particular, different versions of compilers may employ different compilation strategies, resulting in different, yet functionally equivalent binaries~\cite{xiong2022towards,bineqdataset,schott2024JNorm}.  
 In order to address this, bytecode normalisation techniques have recently been proposed~\cite{xiong2022towards,dietrich2024levelsbinaryequivalencecomparison,schott2024JNorm}. 
 
-From a security analysis point of view, the comparison of binaries from alternative builds is used to detect vulnerabilities: two different binaries may suggest that one has been compromised, for instance, by a backdoor being added during the build. A comparison based on strict binary equality is likely to result in poor precision as differences between binaries can be explained by the variability of compilers and other tools used in the build toolchain. Low precision is known to have a serious impact on the acceptance of program analysis tools by engineers~\cite{sadowski2018lessons,distefano2019scaling}. Using bytecode normalisation techniques such as \textit{jnorm}~\cite{schott2024JNorm} can help to reduce the false positive rate by identifying \textit{equivalent} binaries. The question arises whether binaries built from the same sources that are not equivalent actually have behavioural differences. A good way to check this is to find or construct test cases to demonstrate such differences.
+From a security analysis perspective, comparing binaries from alternative builds can help detect potential compromises. If two binaries differ, it may indicate that one has been compromised, potentially by the insertion of a backdoor during the build process. A comparison based on strict binary equality is likely to result in poor precision as differences between binaries can be explained by the variability of compilers and other tools used in the build toolchain. Low precision is known to have a serious impact on the acceptance of program analysis tools by engineers~\cite{sadowski2018lessons,distefano2019scaling}. Using bytecode normalisation techniques such as \textit{jnorm}~\cite{schott2024JNorm} can help to reduce the false positive rate by identifying \textit{equivalent} binaries. The question arises whether binaries built from the same sources that are not equivalent actually have behavioural differences. A good way to check this is to find or construct test cases to demonstrate such differences.
 
 %\valerio{I think we should frame this paper as Emerging Results paper following the call for papers. what do you think ? We should not present it as a study, but we should focus on the idea itself}
 %\tim{Valerio, it looks like the 2 categories for short papers call for papers are:
@@ -135,7 +135,7 @@ The paper is organised as follows: in Section~\ref{sec:methodology} we describe 
 
 \subsection{Overview}
 
-An overview of our methodology is depicted in Figure~\ref{fig:methodology}.  As a baseline build we use the artifacts distributed on Maven Central\footnote{\url{https://central.sonatype.com/}} as this is the default deployment repository for most open source developers.  From there we obtain the binary (jar file containing Java bytecode) \textit{mvnc jar} and the pom \textit{mvnc pom}. From this pom we extract the \textit{dependencies} using the Maven dependency plugin\footnote{\url{https://maven.apache.org/plugins/maven-dependency-plugin/}}.  The \textit{mvnc jar} and the \textit{dependencies} can then be used as input to generate \textit{tests-sources} with \evosuite, which are then compiled into test binaries \textit{tests-bin}.  Finally, those tests can then be executed against the original jar \textit{mvnc jar} and some alternative jar (from a different build) \textit{alt jar}, and the resulting test reports can be compared.
+An overview of our methodology is depicted in Figure~\ref{fig:methodology}.  As a baseline build we use the artifacts distributed on Maven Central\footnote{\url{https://central.sonatype.com/}} as this is the default artifact repository for most open source Java projects.  From there we obtain the binary (jar file containing Java bytecode) \textit{mvnc jar} and the pom \textit{mvnc pom}. From this pom we extract the \textit{dependencies} using the Maven dependency plugin\footnote{\url{https://maven.apache.org/plugins/maven-dependency-plugin/}}. The \textit{mvnc jar} and its \textit{dependencies} can be used as input to generate \textit{tests-sources} with \evosuite, which are then compiled into test binaries (\textit{tests-bin}). Finally, these tests can be executed against both the original \textit{mvnc jar} and an alternative jar (\textit{alt jar}) from a different build, with the resulting test reports compared.
 
 \begin{figure}[t!]
 	\centering
@@ -151,14 +151,14 @@ We started with the dataset from Dietrich et al.~\cite{dietrich2024levelsbinarye
 
 \subsection{Static Pre-analysis}
 
-We then ran a static pre-analysis to eliminate pairs that are probably equivalent. We first applied \textit{jnorm}~\cite{schott2024JNorm}\footnote{We used \textit{jnorm} version 1.0.0, downloaded from \url{https://github.com/stschott/jnorm-tool/releases/tag/v1.0.0}, with the arguments \texttt{-o -n -s -a -p}.}, and compared jars by comparing the result of the transformation applied to each class; we eliminated pairs with equal \textit{jnorm} output, resulting in \inputgen{num-jar-pairs-after-jnorm2} pairs of jars. We then added a custom comparison based on a change in the Java 18 compiler\footnote{\url{https://github.com/openjdk/jdk/pull/5165}} not yet supported by \textit{jnorm}. Applying this additional filtering resulted in \inputgen{num-jar-pairs-after-invokevirtual-invokeinterface} pairs of jars, \inputgen{num-jar-pairs-after-invokevirtual-invokeinterface-gaoss} of those pairs with an alternatively built jar from \textit{gaoss}, \inputgen{num-jar-pairs-after-invokevirtual-invokeinterface-obfs} with such a jar from \textit{obfs}.
+We then ran a static pre-analysis to eliminate pairs that are probably equivalent. We first applied \textit{jnorm}~\cite{schott2024JNorm}\footnote{We used \textit{jnorm} version 1.0.0, downloaded from \url{https://github.com/stschott/jnorm-tool/releases/tag/v1.0.0}, with the arguments \texttt{-o -n -s -a -p}.}, and compared jars by comparing the result of the transformation applied to each class; we eliminated pairs with equal \textit{jnorm} output, resulting in \inputgen{num-jar-pairs-after-jnorm2} pairs of jars. We then applied a filter based on a change in the Java 18 compiler\footnote{\url{https://github.com/openjdk/jdk/pull/5165}}, which is not yet supported by \textit{jnorm}. Applying this additional filtering resulted in \inputgen{num-jar-pairs-after-invokevirtual-invokeinterface} pairs of jars, \inputgen{num-jar-pairs-after-invokevirtual-invokeinterface-gaoss} of those pairs with an alternatively built jar from \textit{gaoss}, \inputgen{num-jar-pairs-after-invokevirtual-invokeinterface-obfs} with such a jar from \textit{obfs}.
 In total there are \inputgen{num-class-pairs-after-invokevirtual-invokeinterface} classes that differ between \textit{mvnc} and one of the other two providers, which reduces to \inputgen{num-top-level-class-pairs-after-invokevirtual-invokeinterface} after condensing classes to top-level classes.
 
 
 
 \subsection{Test Generation}
 
-We opted to automatically generate tests for these experiments. The reason is that existing tests that are part of the project are usually executed during builds, i.e., alternative builds would ensure that those tests succeed. 
+We chose to automatically generate tests for these experiments because the existing tests within the project are typically executed during builds. In other words, alternative builds can ensure that such existing tests pass successfully.
 
 We used \evosuite\footnote{\evosuite version 1.2.0, downloaded from \url{https://github.com/EvoSuite/evosuite/releases/tag/v1.2.0}}
 to generate differential tests. Although various alternatives exist for Java test generation, recent benchmarks demonstrate \evosuite's superior performance in achieving higher code coverage and mutation scores~\cite{jahangirova2023sbft}.
@@ -183,7 +183,7 @@ Resource settings were informed by \cite{jahangirova2023sbft}.
 
 \subsection{Overview}
 
-Table~\ref{tab:data-summary} shows the number of differing test outcomes for each artifact where one or more tests produced a different outcome on an alternate builds than on \textit{mvnc}.
+Table~\ref{tab:data-summary} shows the number of differing test outcomes for each artifact where one or more tests produced a different outcome on an alternative build than on \textit{mvnc}.
 Note that this excludes \inputgen{num-test-failures-on-mvnc} test failures that occurred on \textit{mvnc} itself.
 
 \begin{table*}[h]
@@ -195,7 +195,7 @@ Note that this excludes \inputgen{num-test-failures-on-mvnc} test failures that 
 \end{table*}
 
 
-We now discuss the found inconsistencies in detail.
+We will now discuss the identified inconsistencies in detail.
 
 \subsection{Incorrect Build Configurations}
 
@@ -212,7 +212,7 @@ Concretely, for version \textit{2.2.23.Final}, the 5 failing tests are \textit{t
 The errors occur during linking, and are related to binary compatibility~\cite{JVM17Spec}: Two \textit{undertow} methods (\texttt{UpgradeServletInputStream.readIntoBufferNonBlocking} and \texttt{UpgradeServletInputStream.readIntoBuffer}) have call sites for this method, however, the method is missing. 
 A closer inspection reveals that the \textit{gaoss} version was built with Java 11\footnote{The jar manifest contains the entry \textit{Build-Jdk-Spec: 11}}. In Java 11, \texttt{java.nio.\-ByteBuffer.flip()Ljava/nio/ByteBuffer;}~exists\footnote{Though its existence is not mentioned in the documentation at \url{https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/nio/ByteBuffer.html}.}, and the respective call site is added. The \textit{mvnc} jar was built against Java 8, where this method did not exist, causing the compiler to instead add a call site to invoke \texttt{java/\-nio/ByteBuffer.flip:()Ljava/nio/Buffer;}\footnote{Unlike Java source code, Java byte code supports return type overloading, and changing the return types alters the descriptor, and therefore is a binary incompatible change causing linkage errors.~\cite{JVM17Spec,dietrich2014broken}}.
 
-Therefore, this issue is caused by the different JDK versions used during the build. This is surprising, as reproducing builds usually try to replicate the build environment in order to maximise the chances of the build to succeed and the resulting binary to be identical to the binary from the build to be reproduced. In this case the engineers seem to have attempted this somehow by setting the compiler target level to bytecode version 52, which is associated with Java 8~\cite[Sect. 4.1]{JVM17Spec} instead of using version 55 associated with Java 11.  However, they did not account for the fact that there are changes in the standard library that have an impact on how bytecode is compiled. Since Java 9 (JEP247~\cite{jep247}), there is a \textit{-release} compiler  flag that can be used to avoid issues like this. It is likely that engineers used only \textit{-target} instead. The generated tests reveal those changes.  
+Therefore, this issue is caused by the different JDK versions used during the build. This is surprising, as reproducing builds usually try to replicate the build environment in order to maximise the chances of the build to succeed and the resulting binary to be identical to the original binary. In this case the engineers seem to have attempted this somehow by setting the compiler target level to bytecode version 52, which is associated with Java 8~\cite[Sect. 4.1]{JVM17Spec} instead of using version 55 associated with Java 11.  However, they did not account for the fact that there are changes in the standard library that have an impact on how bytecode is compiled. Since Java 9 (JEP247~\cite{jep247}), there is a \textit{-release} compiler  flag that can be used to avoid issues like this. It is likely that engineers used only \textit{-target} instead. The generated tests reveal those changes.  
 
 \begin{table}[h]
 	\centering
@@ -235,7 +235,7 @@ This time, the generated tests \textit{expect} \texttt{NoSuchMethodError} to be 
 % Tim cutting this for space (and time):
 %\footnote{Interestingly, the code paths that trigger the \textit{NoSuchMethodError} on \textit{mvnc} seem to occur only as a result of buggy interference between test methods: See \tim{add URL to anonymised description page, or cut} for details.}
 
-Table~\ref{tab:nosuchmethoderror} summarises our analysis. One might expect different behaviour not revealed by tests when tests are executed with Java 11, as the call sites in these two binaries refer to different methods in the standard libraries. However, this is not the case as the Java compiler creates a synthetic \textit{bridge method} when compiling overriding methods with covariant return types. In this case, it creates the bridge method \texttt{java.nio.ByteBuffer.flip()Ljava/nio/Buffer;}  that invokes \texttt{java.nio.ByteBuffer.flip()Ljava/nio/ByteBuffer;}. This bridge method is used during the  runtime resolution of the virtual call for the \textit{mvnc} binary.
+Table~\ref{tab:nosuchmethoderror} summarises these findings. One might expect different behaviour not revealed by tests when tests are executed with Java 11, as the call sites in these two binaries refer to different methods in the standard libraries. However, this is not the case as the Java compiler creates a synthetic \textit{bridge method} when compiling overriding methods with covariant return types. In this case, it creates the bridge method \texttt{java.nio.ByteBuffer.flip()Ljava/nio/Buffer;}  that invokes \texttt{java.nio.ByteBuffer.flip()Ljava/nio/ByteBuffer;}. This bridge method is used during the  runtime resolution of the virtual call for the \textit{mvnc} binary.
 
 
 \subsection{EvoSuite Mock Generation}
@@ -297,7 +297,7 @@ While differential testing has been effective in detecting semantic errors in va
 \section{Data Access}
 \label{sec:dataaccess}
 
-The pairs of jars used as input, the generated tests and raw test run reports can be found here %TODO. 
+The pairs of jars used as input, the generated tests and raw test run reports can be found here. \tim{TODO} 
 
 
 \section{Conclusion}
