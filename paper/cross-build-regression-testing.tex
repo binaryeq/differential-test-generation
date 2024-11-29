@@ -135,11 +135,11 @@ The paper is organised as follows: in Section~\ref{sec:methodology} we describe 
 
 \subsection{Overview}
 
-An overview of our methodology is depicted in Figure~\ref{fig:methodology}.  As a baseline build we use the artifacts distributed on Maven Central\footnote{\url{https://central.sonatype.com/}} as this is the default artifact repository for most open source Java projects.  From there we obtain the binary (jar file containing Java bytecode) \textit{mvnc jar} and the pom \textit{mvnc pom}. From this pom we extract the \textit{dependencies} using the Maven dependency plugin\footnote{\url{https://maven.apache.org/plugins/maven-dependency-plugin/}}. The \textit{mvnc jar} and its \textit{dependencies} can be used as input to generate \textit{tests-sources} with \evosuite, which are then compiled into test binaries (\textit{tests-bin}). Finally, these tests can be executed against both the original \textit{mvnc jar} and an alternative jar (\textit{alt jar}) from a different build, with the resulting test reports compared.
+An overview of our methodology is depicted in Figure~\ref{fig:methodology}.  As a baseline build we use the artifacts distributed on Maven Central\footnote{\url{https://central.sonatype.com/}} as this is the default artifact repository for most open source Java projects.  From there we obtain the binary (jar file containing Java bytecode) \textit{mvnc jar} and the pom \textit{mvnc pom}. From this pom we extract the \textit{dependencies} using the Maven dependency plugin\footnote{\url{https://maven.apache.org/plugins/maven-dependency-plugin/}}. The \textit{mvnc jar} and its \textit{dependencies} can be used as input to generate \textit{test sources} with \evosuite, which are then compiled into test binaries (\textit{test bin}). Finally, these tests can be executed against both the original \textit{mvnc jar} and an alternative jar (\textit{alt jar}) from a different build, with the resulting test reports compared.
 
 \begin{figure}[t!]
 	\centering
-	\includegraphics[width=\columnwidth]{methodology.jpg}
+	\includegraphics[width=\columnwidth]{figures/methodology.pdf}
 	\caption{Methodology Overview \label{fig:methodology}}
 \end{figure}
 
