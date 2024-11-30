@@ -340,9 +340,11 @@ THE_END
 
                         my $testCompilePath = evosuiteCompileDir($opts->{targetOtherProvider}, $g, $a, $v);
                         my $fullTestCompilePath = $testCompilePath . ($opts->{viaMvn} ? '/target/test-classes' : '');          # Maven puts its classes in a slightly different place
-                        my %alreadyProcessed = map { $_ => 1 } grep { my $target = $_; $target =~ s|\Q$testGenPath\E/evosuite-tests/|$fullTestCompilePath/| or die; $target =~ s/\.java$/.class/ or die; -e $target } @generatedClasses;
-                        print STDERR "# Removing " . scalar(keys %alreadyProcessed) . " already-compiled classes from the original set of " . scalar(@generatedClasses) . ", leaving " . (scalar(@generatedClasses) - scalar(keys %alreadyProcessed)) . ".\n";
-                        @generatedClasses = grep { !exists $alreadyProcessed{$_} } @generatedClasses;
+                        if ($opts->{skipAlreadyProcessed}) {
+                            my %alreadyProcessed = map { $_ => 1 } grep { my $target = $_; $target =~ s|\Q$testGenPath\E/evosuite-tests/|$fullTestCompilePath/| or die; $target =~ s/\.java$/.class/ or die; -e $target } @generatedClasses;
+                            print STDERR "# Removing " . scalar(keys %alreadyProcessed) . " already-compiled classes from the original set of " . scalar(@generatedClasses) . ", leaving " . (scalar(@generatedClasses) - scalar(keys %alreadyProcessed)) . ".\n";
+                            @generatedClasses = grep { !exists $alreadyProcessed{$_} } @generatedClasses;
+                        }
 
                         if (@generatedClasses) {
                             my $pomPath = providerPath($opts->{targetOtherProvider}, $g, $a, $v) =~ s/\.jar$/.pom/r;
@@ -499,7 +501,7 @@ die "Is \$JARROOT set correctly?" if !-d "$JARROOT/repo1.maven.org/maven2";     
 
 # Main program
 my $useJacoco = 0;      # Relevant for running tests only
-my $skipAlreadyProcessed = 0;      # Relevant for running tests only
+my $skipAlreadyProcessed = 0;      # Relevant for compiling and running tests only
 while (1) {
     if (@ARGV && $ARGV[0] eq "--keep-run-filter") {
         shift;
@@ -525,7 +527,7 @@ if (!defined $mode) {
     generateOrRunTests({ shouldGenerateTests => 1 });
 } elsif ($mode eq '--compile-tests') {
     die unless @ARGV == 1;
-    generateOrRunTests({ shouldCompileTests => 1, targetOtherProvider => shift });
+    generateOrRunTests({ shouldCompileTests => 1, targetOtherProvider => shift, skipAlreadyProcessed => $skipAlreadyProcessed });
 } elsif ($mode eq '--jacocofy-jars') {
     die unless @ARGV == 1;
     generateOrRunTests({ shouldJacocofy => 1, targetOtherProvider => shift });
