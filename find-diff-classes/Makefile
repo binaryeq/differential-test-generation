@@ -195,13 +195,18 @@ drop_%.sql.ALWAYS_DO: tools/drop_%.sql
 # Don't automatically delete intermediate files like *.sh.done at the end
 # (Specialness of .NOTINTERMEDIATE not added until GNU Make 4.4, so explicitly specify all relevant targets)
 .NOTINTERMEDIATE: \
+	compare.sh \
 	compare.sh.done \
 	convert_json_to_tsv.sh.done \
 	filter_all_diffs.sh.done \
+	generate_all_tests.sh \
 	generate_all_tests.sh.done \
 	$(foreach b,$(BUILDS), \
+		compile_and_run_mvn_tests_for_$b.sh \
 		compile_and_run_mvn_tests_for_$b.sh.done \
+		compile_tests_for_$b.sh \
 		compile_tests_for_$b.sh.done \
+		run_all_tests_for_$b.sh \
 		run_all_tests_for_$b.sh.done \
 		test_results_$b.tsv \
 	)
