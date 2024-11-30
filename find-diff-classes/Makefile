@@ -5,7 +5,7 @@
 # If that isn't the case, you'll need to change the definitions of $ROOT in generate.pl and
 # find_jnorm2_distinct_gavs.sh in tools/.
 
-all: test_results.done compile_and_run_all_mvn_tests.done
+all: different_test_outcomes.tsv #compile_and_run_all_mvn_tests.done
 
 BUILDS := mvnc obfs gaoss
 
@@ -49,9 +49,11 @@ clean-run:
 		$(foreach b,$(BUILDS), \
 			run_all_tests_for_$b.sh{,.done} \
 			tests_results_$b.tsv \
+			import_test_results_$b.done \
 		) \
 		run_all_tests.done \
-		test_results.done
+		test_results.done \
+		different_test_outcomes.tsv
 
 # git doesn't care about file modification timestamps, but make does. Run this after a fresh git clone or git checkout
 # to set timestamps appropriately (i.e., to mark every already-existing file as "later than" all of its prerequisites),
@@ -145,13 +147,24 @@ test_results_%.tsv: run_all_tests_for_%.sh.done
 test_results.done: $(foreach b,$(BUILDS),test_results_$b.tsv)
 	touch $@
 
+# Load the results into the SQLite DB
+import_test_results_%.done: test_results_%.tsv create_table_test_classes.sql.done create_table_failed_test_methods.sql.done
+	tools/prepare_test_results_for_db_import.pl --test-classes $< | sqlite3 -tabs "$(DB)" ".import '|cat' test_classes"
+	tools/prepare_test_results_for_db_import.pl --failed-test-methods $< | sqlite3 -tabs "$(DB)" ".import '|cat' failed_test_methods"
+	touch $@
 
+different_test_outcomes.tsv: $(foreach b,$(BUILDS),import_test_results_$b.done) create_view_differing_failed_test_methods.sql.done
+	sqlite3 -tabs "$(DB)" "SELECT * FROM differing_failed_test_methods ORDER BY 1, 2, 3, 4, 5, 6, 7;" > $@
 
 # Pattern rule to run any shell script and produce a .sh.done file afterwards if it succeeded, logging stdout + stderr
 # and timing info to a .sh.pid$$.log file, as well as to stdout.
 # NOTE: "time" behaves differently in Bourne sh vs bash :-/
 %.sh.done: %.sh
 	( ( time bash $< ) 2>&1 ) | tee $<.pid$$$$.log
+	touch $@
+
+%.sql.done: tools/%.sql
+	sqlite3 -tabs "$(DB)" < $< > $*.sql.pid$$$$.log 2>&1
 	touch $@
 
 # Don't automatically delete intermediate files like *.sh.done at the end
