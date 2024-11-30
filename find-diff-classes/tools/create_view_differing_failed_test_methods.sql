@@ -1,4 +1,3 @@
-DROP VIEW IF EXISTS differing_failed_test_methods;
 CREATE VIEW differing_failed_test_methods AS
 SELECT
     c1.provider AS provider1,

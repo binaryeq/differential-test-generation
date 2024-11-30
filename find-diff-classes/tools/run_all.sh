@@ -8,7 +8,7 @@ set -evo pipefail     # Fail fast
 
 # Read the set of GAVs that differ at the jnorm2 level between pairs of non-RedHat providers from the SQLite DB that
 # was already prepared by tools in the craw-redhat-oss repo, and write it to jnorm2_distinct_gavs.tsv.
-tools/find_jnorm2_distinct_gavs.sh
+tools/find_jnorm2_distinct_gavs.sh > jnorm2_distinct_gavs.tsv
 
 # Create a shell script to run CompareJars from the tooling repo to find the individual differing classes in each such GAV.
 tools/generate.pl --generate-comparisons < jnorm2_distinct_gavs.tsv > compare.sh
@@ -79,6 +79,6 @@ time bash run_all_tests_for_mvnc.sh
 time bash run_all_tests_for_gaoss.sh
 
 # Parse the results into TSV format in test_results_obfs.tsv, etc.
-tools/summarise_test_results_to_tsv.sh obfs
-tools/summarise_test_results_to_tsv.sh mvnc
-tools/summarise_test_results_to_tsv.sh gaoss
+tools/summarise_test_results_to_tsv.sh obfs > test_results_obfs.tsv
+tools/summarise_test_results_to_tsv.sh mvnc > test_results_mvnc.tsv
+tools/summarise_test_results_to_tsv.sh gaoss > test_results_gaoss.tsv
