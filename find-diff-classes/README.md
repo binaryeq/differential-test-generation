@@ -10,8 +10,9 @@ In increasing order of thoroughness (and running time):
 3. Generate fresh tests using EvoSuite (time-consuming!), then proceed as above.
 4. Compare all (*mvnc*, *alternative*) pairs of GAVs to determine which of their classes differ according to the `jNorm` tool, then filter out classes that differ only according to compiler changes introduced in JDK18, then proceed as above.
 
-**We recommend starting at stage 2 above.**
-This will take around 40 minutes.
+## Starting from stage 2 (compile and run tests)
+This is the recommended starting point.
+It will take around 40 minutes.
 
 All starting points (except 0) require first downloading several files, then copying `.env.template` to `.env` and changing entries in `.env` to point to their absolute paths:
 
@@ -24,8 +25,6 @@ All starting points (except 0) require first downloading several files, then cop
 
 Also set `DB` in `.env` to the absolute path of an SQLite database file, which will be created if it does not already exist.
 Results will be written to the table `different_test_outcomes` in this database.
-
-Starting at earlier stages requires additional downloads. TODO
 
 You will also need the following tools installed:
 - `sqlite3` 3.37.2 or later
@@ -43,6 +42,15 @@ make clean-compile         # Remove prebuilt results from test compilation onwar
 make                       # Compile existing EvoSuite-generated tests, run them and summarise results
 ```
 
-See [Makefile](Makefile), which has detailed comments explaining each step.
+See also the [Makefile](Makefile), which has detailed comments explaining each step.
 
 Note that all shell scripts in the `find-diff-classes` directory are **generated** by `make`.
+
+## Starting from an earlier stage
+Starting at earlier (higher-numbered) stages requires additional downloads:
+
+| If starting at     | Download                                                                                                                                               | Setting in `.env` |
+|--------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------|
+| 3. Test generation | [EvoSuite 1.2.0 full jar](https://github.com/EvoSuite/evosuite/releases/download/v1.2.0/evosuite-1.2.0.jar)                                            | `EVOSUITEJAR`     |
+| 4. Comparison      | `bineq-1.0.0-jar-with-dependencies.jar` from https://zenodo.org/records/14037542                                                                       | `BINEQ_CLASSPATH` |
+|                    | [`jNorm 1.0.0 client jar`](https://github.com/stschott/jnorm-tool/releases/download/v1.0.0/jnorm-cli-1.0.0.jar), must be downloaded to `tools/` folder | -                 |
