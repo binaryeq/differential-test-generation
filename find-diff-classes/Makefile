@@ -59,9 +59,14 @@ tools/jnorm-jar-with-dependencies.jar:
 # Create a shell script to run CompareJars from the tooling repo to find the individual differing classes in each such GAV.
 # Running it creates a comparisons/ subdirectory hierarchy with a <provider1>.vs.<provider2>.json file per
 # (GAV, provider pair), listing the specific classes that differ in that GAV between those providers.
-# jNorm isn't needed until the generated script is run.
-compare.sh: jnorm2_distinct_gavs.tsv tools/jnorm-jar-with-dependencies.jar
+compare.sh: jnorm2_distinct_gavs.tsv
 	tools/generate.pl --generate-comparisons < $< > $@
+
+# jNorm isn't needed until the generated compare.sh script is run. This dep is in addition to the implicit dep on compare.sh.
+compare.sh.done: tools/jnorm-jar-with-dependencies.jar
+
+# If compare.sh.done already exists, we don't want to bother downloading jNorm. Also, if we *do* download it, don't delete it afterwards.
+.SECONDARY: tools/jnorm-jar-with-dependencies.jar
 
 # Create a shell script to convert the information about different individual classes from JSON to TSV.
 #TODO: Move this work inside the compare.sh run in the previous step
