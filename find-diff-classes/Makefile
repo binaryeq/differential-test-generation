@@ -126,9 +126,11 @@ test_results.done: $(foreach b,$(BUILDS),test_results_$b.tsv)
 
 
 
-# Pattern rule to run any shell script and produce a .sh.done file afterwards if it succeeded
+# Pattern rule to run any shell script and produce a .sh.done file afterwards if it succeeded, logging stdout + stderr
+# and timing info to a .sh.pid$$.log file, as well as to stdout.
+# NOTE: "time" behaves differently in Bourne sh vs bash :-/
 %.sh.done: %.sh
-	time bash $<
+	( ( time bash $< ) 2>&1 ) | tee $<.pid$$$$.log
 	touch $@
 
 # Don't automatically delete intermediate files like *.sh.done at the end
