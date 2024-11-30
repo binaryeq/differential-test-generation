@@ -29,7 +29,15 @@ clean:
 		) \
 		compile_and_run_all_mvn_tests.done \
 		run_all_tests.done \
-		test_results.done
+		test_results.done \
+		fix-timestamps.sh
+
+# git doesn't care about file modification timestamps, but make does. Run this after a fresh git clone or git checkout
+# to set timestamps appropriately (i.e., to mark every already-existing file as "later than" all of its prerequisites),
+# before running plain make.
+fix-timestamps:
+	make -n -t --no-print-directory | perl -lpe 's/^touch /touch --no-create / or die' > fix-timestamps.sh
+	bash ./fix-timestamps.sh
 
 SHELL := /bin/bash
 # Fail fast
