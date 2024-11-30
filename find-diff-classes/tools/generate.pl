@@ -425,11 +425,13 @@ THE_END
                     my @compiledClasses = `$findCompiledClassesCmd`;
                     chomp @compiledClasses;
 
-                    my @DEBUG;
-                    my %alreadyProcessed = map { $_ => 1 } grep { my $target = "$testRunPath/" . convertClassNameToDotted($_, $testCompilePath) . ".out"; $target =~ s|^.\{RUNDIR\}/|run/| or die; push @DEBUG, $target; -e $target } @compiledClasses;
-                    print STDERR "# Removing " . scalar(keys %alreadyProcessed) . " already-run classes from the original set of " . scalar(@compiledClasses) . ", leaving " . (scalar(@compiledClasses) - scalar(keys %alreadyProcessed)) . ".\n";
-                    print STDERR "# Checked: $_\n" foreach @DEBUG;    #DEBUG
-                    @compiledClasses = grep { !exists $alreadyProcessed{$_} } @compiledClasses;
+                    if ($opts->{skipAlreadyProcessed}) {
+                        my @DEBUG;
+                        my %alreadyProcessed = map { $_ => 1 } grep { my $target = "$testRunPath/" . convertClassNameToDotted($_, $testCompilePath) . ".out"; $target =~ s|^.\{RUNDIR\}/|run/| or die; push @DEBUG, $target; -e $target } @compiledClasses;
+                        print STDERR "# Removing " . scalar(keys %alreadyProcessed) . " already-run classes from the original set of " . scalar(@compiledClasses) . ", leaving " . (scalar(@compiledClasses) - scalar(keys %alreadyProcessed)) . ".\n";
+                        print STDERR "# Checked: $_\n" foreach @DEBUG;    #DEBUG
+                        @compiledClasses = grep { !exists $alreadyProcessed{$_} } @compiledClasses;
+                    }
 
 #                        my $pomPath = providerPath($opts->{targetOtherProvider}, $g, $a, $v) =~ s/\.jar$/.pom/r;
 #                        my $basePath = $pomPath =~ s|/[^/]+$||r;
@@ -497,6 +499,7 @@ die "Is \$JARROOT set correctly?" if !-d "$JARROOT/repo1.maven.org/maven2";     
 
 # Main program
 my $useJacoco = 0;      # Relevant for running tests only
+my $skipAlreadyProcessed = 0;      # Relevant for running tests only
 while (1) {
     if (@ARGV && $ARGV[0] eq "--keep-run-filter") {
         shift;
@@ -505,6 +508,9 @@ while (1) {
     } elsif (@ARGV && $ARGV[0] eq '--use-jacoco') {
         shift;
         $useJacoco = 1;
+    } elsif (@ARGV && $ARGV[0] eq '--skip-already-processed') {
+        $skipAlreadyProcessed = 1;
+        shift;
     } else {
         last;
     }
@@ -528,7 +534,7 @@ if (!defined $mode) {
     generateOrRunTests({ shouldCompileTests => 1, shouldRunTests => 1, targetOtherProvider => shift, viaMvn => 1 });
 } elsif ($mode eq '--run-tests') {
     die unless @ARGV == 1;
-    generateOrRunTests({ shouldRunTests => 1, targetOtherProvider => shift, useJacoco => $useJacoco });
+    generateOrRunTests({ shouldRunTests => 1, targetOtherProvider => shift, useJacoco => $useJacoco, skipAlreadyProcessed => $skipAlreadyProcessed });
 } elsif ($mode eq '--compile-and-run-tests') {
     die unless @ARGV == 1;
     generateOrRunTests({ shouldCompileTests => 1, shouldRunTests => 1, targetOtherProvider => shift });
