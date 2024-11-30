@@ -5,8 +5,7 @@
 # If that isn't the case, you'll need to change the definitions of $ROOT in generate.pl and
 # find_jnorm2_distinct_gavs.sh in tools/.
 
-#TODO: Maybe add more things here
-all: test_results.done
+all: test_results.done compile_and_run_all_mvn_tests.done
 
 BUILDS := mvnc obfs gaoss
 
