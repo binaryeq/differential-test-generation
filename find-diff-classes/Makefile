@@ -43,7 +43,7 @@ clean-compile: clean-run
 		) \
 		compile_and_run_all_mvn_tests.done
 
-clean-run:
+clean-run: clean-db
 	rm -rf \
 		run/ \
 		$(foreach b,$(BUILDS), \
@@ -54,6 +54,8 @@ clean-run:
 		run_all_tests.done \
 		test_results.done \
 		different_test_outcomes.tsv
+
+clean-db: drop_table_failed_test_methods.sql.ALWAYS_DO drop_table_test_classes.sql.ALWAYS_DO drop_view_differing_failed_test_methods.sql.ALWAYS_DO
 
 # git doesn't care about file modification timestamps, but make does. Run this after a fresh git clone or git checkout
 # to set timestamps appropriately (i.e., to mark every already-existing file as "later than" all of its prerequisites),
@@ -147,6 +149,13 @@ test_results_%.tsv: run_all_tests_for_%.sh.done
 test_results.done: $(foreach b,$(BUILDS),test_results_$b.tsv)
 	touch $@
 
+# Before creating a table or view, drop it (IF EXISTS)
+# Implicit rules don't work to add prerequisites so must use a static pattern rule instead.
+#create_%.sql.done: drop_%.sql.done
+#create_%.sql.done: drop_%.sql.ALWAYS_DO
+#create_table_test_classes.sql.done: drop_table_test_classes.sql.ALWAYS_DO
+#$(addsuffix .done,$(notdir $(wildcard tools/create_*.sql))): create_%.sql.done: drop_%.sql.ALWAYS_DO
+
 # Load the results into the SQLite DB
 import_test_results_%.done: test_results_%.tsv create_table_test_classes.sql.done create_table_failed_test_methods.sql.done
 	tools/prepare_test_results_for_db_import.pl --test-classes $< | sqlite3 -tabs "$(DB)" ".import '|cat' test_classes"
@@ -163,9 +172,24 @@ different_test_outcomes.tsv: $(foreach b,$(BUILDS),import_test_results_$b.done) 
 	( ( time bash $< ) 2>&1 ) | tee $<.pid$$$$.log
 	touch $@
 
-%.sql.done: tools/%.sql
-	sqlite3 -tabs "$(DB)" < $< > $*.sql.pid$$$$.log 2>&1
+# Before creating a table or view, drop it (if it already exists)
+create_%.sql.done: tools/create_%.sql drop_%.sql.ALWAYS_DO
+	sqlite3 -tabs "$(DB)" < $< > create_$*.sql.pid$$$$.log 2>&1
 	touch $@
+
+## Same as previous rule but doesn't create the target, so will always run if invoked.
+#%.sql.ALWAYS_DO: tools/%.sql
+#	sqlite3 -tabs "$(DB)" < $< > $*.sql.pid$$$$.log 2>&1
+
+# Similar to previous rule but doesn't create the target, so will always run if invoked, and deletes the corresponding create_*.sql.done file.
+drop_%.sql.ALWAYS_DO: tools/drop_%.sql
+	sqlite3 -tabs "$(DB)" < $< > drop_$*.sql.pid$$$$.log 2>&1
+	rm -f create_$*.sql.done
+
+# Don't delete create_*.sql.done files at the end. (No drop_*.sql.ALWAYS_DO files are actually created, but the second
+# line prevents misleading "rm" commands at the end of make -n output.)
+.NOTINTERMEDIATE: $(addsuffix .done,$(notdir $(wildcard tools/create_*.sql)))
+.NOTINTERMEDIATE: $(addsuffix .ALWAYS_DO,$(notdir $(wildcard tools/drop_*.sql)))
 
 # Don't automatically delete intermediate files like *.sh.done at the end
 # (Specialness of .NOTINTERMEDIATE not added until GNU Make 4.4, so explicitly specify all relevant targets)
