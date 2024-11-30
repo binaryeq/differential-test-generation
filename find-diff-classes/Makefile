@@ -186,10 +186,11 @@ drop_%.sql.ALWAYS_DO: tools/drop_%.sql
 	sqlite3 -tabs "$(DB)" < $< > drop_$*.sql.pid$$$$.log 2>&1
 	rm -f create_$*.sql.done
 
-# Don't delete create_*.sql.done files at the end. (No drop_*.sql.ALWAYS_DO files are actually created, but the second
-# line prevents misleading "rm" commands at the end of make -n output.)
+# Don't delete create_*.sql.done files at the end.
 .NOTINTERMEDIATE: $(addsuffix .done,$(notdir $(wildcard tools/create_*.sql)))
-.NOTINTERMEDIATE: $(addsuffix .ALWAYS_DO,$(notdir $(wildcard tools/drop_*.sql)))
+
+# Don't do anything just because an .ALWAYS_DO file doesn't exist (they never do).
+.SECONDARY: $(addsuffix .ALWAYS_DO,$(notdir $(wildcard tools/drop_*.sql)))
 
 # Don't automatically delete intermediate files like *.sh.done at the end
 # (Specialness of .NOTINTERMEDIATE not added until GNU Make 4.4, so explicitly specify all relevant targets)
