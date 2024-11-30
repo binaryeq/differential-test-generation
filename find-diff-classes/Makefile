@@ -1,9 +1,11 @@
-# Goal: Reproduce the workings of tools/run_all.sh, but with more flexibility (e.g., allow starting from already-generated tests).
-
-#TODO: Update following comment in light of .env:
-# This script assumes that the tooling and craw-redhat-oss git repos are already checked out below $HOME/code.
-# If that isn't the case, you'll need to change the definitions of $ROOT in generate.pl and
-# find_jnorm2_distinct_gavs.sh in tools/.
+# Quick start:
+#    $ cp .env.template .env
+#    $ vi .env               # Manually change absolute paths
+#    $ make fix-timestamps
+#    $ make clean-compile
+#    $ make                  # Produces different_test_outcomes.tsv
+#
+# See README.md for more details.
 
 all: different_test_outcomes.tsv #compile_and_run_all_mvn_tests.done
 
@@ -51,8 +53,6 @@ clean-run: clean-db
 			tests_results_$b.tsv \
 			import_test_results_$b.done \
 		) \
-		run_all_tests.done \
-		test_results.done \
 		different_test_outcomes.tsv
 
 clean-db: drop_table_failed_test_methods.sql.ALWAYS_DO drop_table_test_classes.sql.ALWAYS_DO drop_view_differing_failed_test_methods.sql.ALWAYS_DO
@@ -146,16 +146,6 @@ run_all_tests_for_%.sh: compile_tests_for_%.sh.done
 test_results_%.tsv: run_all_tests_for_%.sh.done
 	tools/summarise_test_results_to_tsv.sh $* > $@
 
-test_results.done: $(foreach b,$(BUILDS),test_results_$b.tsv)
-	touch $@
-
-# Before creating a table or view, drop it (IF EXISTS)
-# Implicit rules don't work to add prerequisites so must use a static pattern rule instead.
-#create_%.sql.done: drop_%.sql.done
-#create_%.sql.done: drop_%.sql.ALWAYS_DO
-#create_table_test_classes.sql.done: drop_table_test_classes.sql.ALWAYS_DO
-#$(addsuffix .done,$(notdir $(wildcard tools/create_*.sql))): create_%.sql.done: drop_%.sql.ALWAYS_DO
-
 # Load the results into the SQLite DB
 import_test_results_%.done: test_results_%.tsv create_table_test_classes.sql.done create_table_failed_test_methods.sql.done
 	tools/prepare_test_results_for_db_import.pl --test-classes $< | sqlite3 -tabs "$(DB)" ".import '|cat' test_classes"
@@ -176,10 +166,6 @@ different_test_outcomes.tsv: $(foreach b,$(BUILDS),import_test_results_$b.done) 
 create_%.sql.done: tools/create_%.sql drop_%.sql.ALWAYS_DO
 	sqlite3 -tabs "$(DB)" < $< > create_$*.sql.pid$$$$.log 2>&1
 	touch $@
-
-## Same as previous rule but doesn't create the target, so will always run if invoked.
-#%.sql.ALWAYS_DO: tools/%.sql
-#	sqlite3 -tabs "$(DB)" < $< > $*.sql.pid$$$$.log 2>&1
 
 # Similar to previous rule but doesn't create the target, so will always run if invoked, and deletes the corresponding create_*.sql.done file.
 drop_%.sql.ALWAYS_DO: tools/drop_%.sql
