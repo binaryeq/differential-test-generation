@@ -9,28 +9,49 @@ all: test_results.done compile_and_run_all_mvn_tests.done
 
 BUILDS := mvnc obfs gaoss
 
-clean:
-	rm -f \
-		jnorm2_distinct_gavs.tsv \
+clean-full: clean-distinct-gavs
+	rm -f fix-timestamps.sh
+
+clean-distinct-gavs: clean-compare
+	rm -rf \
+		jnorm2_distinct_gavs.tsv
+
+clean-compare: clean-generate
+	rm -rf \
+		comparisons/ \
 		compare.sh \
 		compare.sh.done \
 		convert_json_to_tsv.sh \
 		convert_json_to_tsv.sh.done \
 		filter_all_diffs.sh \
 		filter_all_diffs.sh.done \
-		filtered_top_level_classes.tsv \
+		filtered_top_level_classes.tsv
+
+clean-generate: clean-compile
+	rm -rf \
+		testgen/ \
 		generate_all_tests.sh \
-		generate_all_tests.sh.done \
+		generate_all_tests.sh.done
+
+# This is a good place to start, if you want to reproduce the results in the paper without making EvoSuite generate tests (which is time-consuming)
+clean-compile: clean-run
+	rm -rf \
+		compile/ \
 		$(foreach b,$(BUILDS), \
 			compile_and_run_mvn_tests_for_$b.sh{,.done} \
 			compile_tests_for_$b.sh{,.done} \
+		) \
+		compile_and_run_all_mvn_tests.done
+
+clean-run:
+	rm -rf \
+		run/ \
+		$(foreach b,$(BUILDS), \
 			run_all_tests_for_$b.sh{,.done} \
 			tests_results_$b.tsv \
 		) \
-		compile_and_run_all_mvn_tests.done \
 		run_all_tests.done \
-		test_results.done \
-		fix-timestamps.sh
+		test_results.done
 
 # git doesn't care about file modification timestamps, but make does. Run this after a fresh git clone or git checkout
 # to set timestamps appropriately (i.e., to mark every already-existing file as "later than" all of its prerequisites),
