@@ -263,7 +263,7 @@ THE_END
     chomp @classesFiltered;
     #print scalar @classesFiltered;
 
-    my %providersForJar;
+    my %providerPairsForJar;
     my %doesJarPathHaveProvider;
     my %jarPathHasMvnc;
     my %interestingClasses;
@@ -271,7 +271,7 @@ THE_END
         my ($jarPath, $p1, $p2) = $fn =~ m|^\Q$COMPARISONSDIR\E/(.*)\.compare/(\w+)\.vs\.(\w+)/classes.filtered$| or die;
         #my ($g, $a, $v) = $jarPath =~ m|^(.*)/([^/]+)/([^/]+)/[^/]+\.jar$| or die;
         #$g =~ tr|/|.|;
-        push @{$providersForJar{$jarPath}}, [$p1, $p2];
+        push @{$providerPairsForJar{$jarPath}}, [$p1, $p2];
         $doesJarPathHaveProvider{$jarPath}{$p1} = 1;
         $doesJarPathHaveProvider{$jarPath}{$p2} = 1;
         if ($p1 eq 'mvnc' || $p2 eq 'mvnc') {
@@ -287,8 +287,8 @@ THE_END
         $interestingClasses{$jarPath} = [ unique(map { s/\$[^\.]*//; $_ } @{$interestingClasses{$jarPath}}) ];
     }
 
-    #print STDERR "providersForJar has " . scalar(keys %providersForJar) . " keys.\n";
-    foreach my $jarPath (sort keys %providersForJar) {
+    #print STDERR "providerPairsForJar has " . scalar(keys %providerPairsForJar) . " keys.\n";
+    foreach my $jarPath (sort keys %providerPairsForJar) {
         my ($g, $a, $v) = $jarPath =~ m|^(.*)/([^/]+)/([^/]+)/[^/]+\.jar$| or die;
         #$g =~ tr|/|.|;
         if ($jarPathHasMvnc{$jarPath}) {
@@ -337,7 +337,7 @@ THE_END
 
                 my $evoSuiteTestSourcePath = "$testGenPath/evosuite-tests";
                 my $testRunPath = evosuiteRunDir($opts->{targetOtherProvider}, $g, $a, $v);
-                foreach my $providerPair (@{$providersForJar{$jarPath}}) {
+                foreach my $providerPair (@{$providerPairsForJar{$jarPath}}) {
 #                    print STDERR "providerPair=<" . join(", ", @{$providerPair}) . ">. otherProvider=<$opts->{targetOtherProvider}>, shouldBeUndefined=<$opts->{shouldBeUndefined}>\n";     #DEBUG
                     if (grep { $_ eq $opts->{targetOtherProvider} } @{$providerPair}) {
                         # Find all actually generated test classes (there may be none). This step requires that we have
@@ -424,7 +424,7 @@ THE_END
                 chomp(my $pwd = `pwd`);
 
                 # If any of the provider pairs for this jar involve the provider that we are interested in:
-                if (grep { $_ eq $opts->{targetOtherProvider} } map { @$_ } @{$providersForJar{$jarPath}}) {
+                if (grep { $_ eq $opts->{targetOtherProvider} } map { @$_ } @{$providerPairsForJar{$jarPath}}) {
 #                    print STDERR "providerPair=<" . join(", ", @{$providerPair}) . ">. otherProvider=<$opts->{targetOtherProvider}>, shouldBeUndefined=<$opts->{shouldBeUndefined}>\n";     #DEBUG
                     # Find all actually generated test classes (there may be none). This step requires that we have
                     # already run the shell script (generated using --generate-tests) that generates these classes.
