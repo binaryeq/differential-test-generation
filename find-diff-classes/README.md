@@ -27,6 +27,8 @@ Also set `DB` in `.env` to the absolute path of an SQLite database file, which w
 Results will be written to the table `different_test_outcomes` in this database.
 
 You will also need the following tools installed:
+- JDK 8 (*not* later; EvoSuite is less reliable even at JDK 11)
+- Maven 3.6.3 or later
 - `sqlite3` 3.37.2 or later
 - `jq` 1.6 or later
 - GNU `make` 4.3 or later (installed by default on ~all Linux systems)
@@ -36,7 +38,6 @@ You will also need the following tools installed:
 Then run:
 
 ```
-cd find-diff-classes
 make fix-timestamps        # Fix file modification times after git clone / git checkout
 make clean-compile         # Remove prebuilt results from test compilation onwards
 make                       # Compile existing EvoSuite-generated tests, run them and summarise results
@@ -44,13 +45,13 @@ make                       # Compile existing EvoSuite-generated tests, run them
 
 See also the [Makefile](Makefile), which has detailed comments explaining each step.
 
-Note that all shell scripts in the `find-diff-classes` directory are **generated** by `make`.
+Note that all shell scripts in the archive root directory are **generated** by `make`.
 
 ## Starting from an earlier stage
 Starting at earlier (higher-numbered) stages requires additional downloads:
 
-| If starting at     | Download                                                                                                                                               | Setting in `.env` |
-|--------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------|
-| 3. Test generation | [EvoSuite 1.2.0 full jar](https://github.com/EvoSuite/evosuite/releases/download/v1.2.0/evosuite-1.2.0.jar)                                            | `EVOSUITEJAR`     |
-| 4. Comparison      | `bineq-1.0.0-jar-with-dependencies.jar` from https://zenodo.org/records/14037542                                                                       | `BINEQ_CLASSPATH` |
-|                    | [`jNorm 1.0.0 client jar`](https://github.com/stschott/jnorm-tool/releases/download/v1.0.0/jnorm-cli-1.0.0.jar), must be downloaded to `tools/` folder | -                 |
+| If starting at     | Download                                                                                                                                                                       | Setting in `.env` |
+|--------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------|
+| 3. Test generation | [EvoSuite 1.2.0 full jar](https://github.com/EvoSuite/evosuite/releases/download/v1.2.0/evosuite-1.2.0.jar)                                                                    | `EVOSUITEJAR`     |
+| 4. Comparison      | `bineq-1.0.0-jar-with-dependencies.jar` from https://zenodo.org/records/14037542                                                                                               | `BINEQ_CLASSPATH` |
+|                    | [`jNorm 1.0.0 client jar`](https://github.com/stschott/jnorm-tool/releases/download/v1.0.0/jnorm-cli-1.0.0.jar), must be downloaded to `tools/jnorm-jar-with-dependencies.jar` | -                 |

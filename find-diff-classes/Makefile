@@ -11,8 +11,11 @@ all: different_test_outcomes.tsv #compile_and_run_all_mvn_tests.done
 
 BUILDS := mvnc obfs gaoss
 
-clean-full: clean-distinct-gavs
+clean-full: clean-distinct-gavs clean-symlinks
 	rm -f fix-timestamps.sh
+
+clean-symlinks:
+	find testgen compile -type l -name t -delete
 
 clean-distinct-gavs: clean-compare
 	rm -rf \
@@ -86,7 +89,9 @@ jnorm2_distinct_gavs.tsv:
 # Download jNorm if it's not already present. It's GPLed, but this is OK to do provided we don't publicly distribute this repo.
 #TODO: Fix this
 tools/jnorm-jar-with-dependencies.jar:
-	curl -L -o $@ https://github.com/stschott/jnorm-tool/releases/download/v1.0.0/jnorm-cli-1.0.0.jar
+	echo 'You need to download the jNorm client jar to $@. The following command should work:'
+	echo 'curl -L -o $@ https://github.com/stschott/jnorm-tool/releases/download/v1.0.0/jnorm-cli-1.0.0.jar'
+	exit 1
 
 # Create a shell script to run CompareJars from the tooling repo to find the individual differing classes in each such GAV.
 # Running it creates a comparisons/ subdirectory hierarchy with a <provider1>.vs.<provider2>.json file per
@@ -113,10 +118,29 @@ filter_all_diffs.sh: convert_json_to_tsv.sh.done
 filtered_top_level_classes.tsv: filter_all_diffs.sh.done
 	tools/extract_filtered_top_level_classes_to_tsv.pl | sort -u > $@
 
+# For mvnc, we need to setup deps for all mvnc GAVs that appear in some GAV pair.
+setup_test_gen_deps_for_mvnc.sh: convert_json_to_tsv.sh.done
+	tools/generate.pl --setup-deps-for-test-gen $* > $@
+
+# Don't do anything just because the setup_deps_for_mvnc_test_gen.sh.done file doesn't exist.
+.SECONDARY: setup_test_gen_deps_for_mvnc.sh setup_test_gen_deps_for_mvnc.sh.done
+
 # Create a shell script to run EvoSuite against the Maven Central version of each class identified by convert_json_to_tsv.sh.
 # It creates a testgen/ subdirectory with a mvnc/ subdirectory inside it.
-generate_all_tests.sh: convert_json_to_tsv.sh.done
+#generate_all_tests.sh: convert_json_to_tsv.sh.done
+#generate_all_tests.sh: convert_json_to_tsv.sh.done | $(foreach b,$(BUILDS),setup_deps_for_$b.sh.done)
+generate_all_tests.sh: convert_json_to_tsv.sh.done | setup_test_gen_deps_for_mvnc.sh.done
 	tools/generate.pl --generate-tests > $@
+
+# For all builds, we need to setup deps for the GAVs in that build for which generated tests exist.
+# This is redundant for mvnc.
+#setup_deps_for_%.sh: generate_all_tests.sh.done
+#setup_deps_for_%.sh: convert_json_to_tsv.sh.done
+setup_compile_or_run_deps_for_%.sh: generate_all_tests.sh.done
+	tools/generate.pl --setup-deps-for-compile-or-run $* > $@
+
+# Don't do anything just because the setup_deps_for_%.sh file doesn't exist.
+.SECONDARY: $(foreach b,$(BUILDS),setup_compile_or_run_deps_for_$b.sh setup_compile_or_run_deps_for_$b.sh.done)
 
 # Create shell scripts to compile and run tests against each provider using Maven.
 # Generating the scripts immediately creates pom.xml files and t/ subdirs with dependencies below the compile/ directory.
@@ -134,12 +158,15 @@ compile_and_run_all_mvn_tests.done: $(foreach b,$(BUILDS),compile_and_run_mvn_te
 
 # First generate scripts to compile the tests the old way.
 # Running the scripts creates compiled test classes directly below compile/<provider>/<gav-path>/.
-compile_tests_for_%.sh: generate_all_tests.sh.done
+# The order-only dependency on setup_compile_or_run_deps_for_%.sh.done enables the archive to be distributed
+# without all the artifacts' dependencies and with setup_deps_for_%.sh.done absent but compile_tests_for_%.sh.done
+# present, enabling the user to run `make clean-run; make` and set up artifacts' dependencies without recompiling.
+compile_tests_for_%.sh: generate_all_tests.sh.done | setup_compile_or_run_deps_for_%.sh.done
 	tools/generate.pl --compile-tests $* > $@
 
 # Generate scripts to run the tests the old way.
 # Running the scripts creates raw JUnit4 runner test results below run/<provider>/<gav-path>/.
-run_all_tests_for_%.sh: compile_tests_for_%.sh.done
+run_all_tests_for_%.sh: compile_tests_for_%.sh.done | setup_compile_or_run_deps_for_%.sh.done
 	tools/generate.pl --run-tests $* > $@
 
 # Parse the results into TSV format in test_results_obfs.tsv, etc.
@@ -185,9 +212,13 @@ drop_%.sql.ALWAYS_DO: tools/drop_%.sql
 	compare.sh.done \
 	convert_json_to_tsv.sh.done \
 	filter_all_diffs.sh.done \
+	setup_test_gen_deps_for_mvnc.sh \
+	setup_test_gen_deps_for_mvnc.sh.done \
 	generate_all_tests.sh \
 	generate_all_tests.sh.done \
 	$(foreach b,$(BUILDS), \
+		setup_compile_or_run_deps_for_$b.sh \
+		setup_compile_or_run_deps_for_$b.sh.done \
 		compile_and_run_mvn_tests_for_$b.sh \
 		compile_and_run_mvn_tests_for_$b.sh.done \
 		compile_tests_for_$b.sh \
