@@ -123,7 +123,7 @@ setup_test_gen_deps_for_mvnc.sh: convert_json_to_tsv.sh.done
 	tools/generate.pl --setup-deps-for-test-gen $* > $@
 
 # Don't do anything just because the setup_deps_for_mvnc_test_gen.sh.done file doesn't exist.
-.SECONDARY: setup_test_gen_deps_for_mvnc.sh.done
+.SECONDARY: setup_test_gen_deps_for_mvnc.sh setup_test_gen_deps_for_mvnc.sh.done
 
 # Create a shell script to run EvoSuite against the Maven Central version of each class identified by convert_json_to_tsv.sh.
 # It creates a testgen/ subdirectory with a mvnc/ subdirectory inside it.
@@ -140,7 +140,7 @@ setup_compile_or_run_deps_for_%.sh: generate_all_tests.sh.done
 	tools/generate.pl --setup-deps-for-compile-or-run $* > $@
 
 # Don't do anything just because the setup_deps_for_%.sh file doesn't exist.
-.SECONDARY: $(foreach b,$(BUILDS),setup_compile_or_run_deps_for_$b.sh.done)
+.SECONDARY: $(foreach b,$(BUILDS),setup_compile_or_run_deps_for_$b.sh setup_compile_or_run_deps_for_$b.sh.done)
 
 # Create shell scripts to compile and run tests against each provider using Maven.
 # Generating the scripts immediately creates pom.xml files and t/ subdirs with dependencies below the compile/ directory.
