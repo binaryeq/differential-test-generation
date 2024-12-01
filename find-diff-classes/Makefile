@@ -119,6 +119,9 @@ filtered_top_level_classes.tsv: filter_all_diffs.sh.done
 setup_deps_for_%.sh: convert_json_to_tsv.sh.done
 	tools/generate.pl --setup-deps $* > $@
 
+# Don't do anything just because the setup_deps_for_%.sh file doesn't exist.
+.SECONDARY: $(foreach b,$(BUILDS),setup_deps_for_$b.sh.done)
+
 # Create a shell script to run EvoSuite against the Maven Central version of each class identified by convert_json_to_tsv.sh.
 # It creates a testgen/ subdirectory with a mvnc/ subdirectory inside it.
 #generate_all_tests.sh: convert_json_to_tsv.sh.done
