@@ -115,9 +115,14 @@ filter_all_diffs.sh: convert_json_to_tsv.sh.done
 filtered_top_level_classes.tsv: filter_all_diffs.sh.done
 	tools/extract_filtered_top_level_classes_to_tsv.pl | sort -u > $@
 
+#setup_deps_for_%.sh: generate_all_tests.sh.done
+setup_deps_for_%.sh: convert_json_to_tsv.sh.done
+	tools/generate.pl --setup-deps $* > $@
+
 # Create a shell script to run EvoSuite against the Maven Central version of each class identified by convert_json_to_tsv.sh.
 # It creates a testgen/ subdirectory with a mvnc/ subdirectory inside it.
-generate_all_tests.sh: convert_json_to_tsv.sh.done
+#generate_all_tests.sh: convert_json_to_tsv.sh.done
+generate_all_tests.sh: convert_json_to_tsv.sh.done | $(foreach b,$(BUILDS),setup_deps_for_$b.sh.done)
 	tools/generate.pl --generate-tests > $@
 
 # Create shell scripts to compile and run tests against each provider using Maven.
@@ -134,15 +139,12 @@ compile_and_run_all_mvn_tests.done: $(foreach b,$(BUILDS),compile_and_run_mvn_te
 
 # Also compile and then run the tests the old way, using raw JUnit4 runners, in order to parse it.
 
-setup_deps_for_%.sh: generate_all_tests.sh.done
-	tools/generate.pl --setup-deps $* > $@
-
 # First generate scripts to compile the tests the old way.
 # Running the scripts creates compiled test classes directly below compile/<provider>/<gav-path>/.
 # The order-only dependency on setup_deps_for_%.sh.done enables the archive to be distributed
 # without all the artifacts' dependencies and with setup_deps_for_%.sh.done absent but compile_tests_for_%.sh.done
 # present, enabling the user to run `make clean-run; make` and set up artifacts' dependencies without recompiling.
-compile_tests_for_%.sh: | setup_deps_for_%.sh.done
+compile_tests_for_%.sh: generate_all_tests.sh.done | setup_deps_for_%.sh.done
 	tools/generate.pl --compile-tests $* > $@
 
 # Generate scripts to run the tests the old way.
@@ -196,6 +198,8 @@ drop_%.sql.ALWAYS_DO: tools/drop_%.sql
 	generate_all_tests.sh \
 	generate_all_tests.sh.done \
 	$(foreach b,$(BUILDS), \
+		setup_deps_for_$b.sh \
+		setup_deps_for_$b.sh.done \
 		compile_and_run_mvn_tests_for_$b.sh \
 		compile_and_run_mvn_tests_for_$b.sh.done \
 		compile_tests_for_$b.sh \

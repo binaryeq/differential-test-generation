@@ -297,6 +297,12 @@ THE_END
             my $genPomPath = providerPath($p, $g, $a, $v) =~ s/\.jar$/.pom/r;
             my $genBasePath = $genPomPath =~ s|/[^/]+$||r;
 
+            if ($opts->{setupDeps}) {
+                # Copy all dependencies just once for the project
+                my $mvnCopyDepsCmd = "mvn -f $genPomPath dependency:copy-dependencies >&2";    # Will be symlinked to from elsewhere
+                print $mvnCopyDepsCmd, "\n";
+            }
+
             if ($opts->{shouldGenerateTests}) {
                 die "Must set env var \$EVOSUITEJAR" if !defined $EVOSUITEJAR;
                 die "Expected EvoSuite at $EVOSUITEJAR" if !-e $EVOSUITEJAR;
@@ -307,7 +313,8 @@ THE_END
                 print "# Generate tests on the " . scalar(@classes) . " classes in the $p version of $jarPath\n";        #TODO
 
                 # Copy all dependencies just once for the project
-                my $mvnCopyDepsCmd = "( mkdir -p '$testGenPath' && cd '$testGenPath' && mvn -f $genPomPath dependency:copy-dependencies && ln -sT $genBasePath/target t";    # Symlink to make classpath shorter
+#                my $mvnCopyDepsCmd = "( mkdir -p '$testGenPath' && cd '$testGenPath' && mvn -f $genPomPath dependency:copy-dependencies && ln -sT $genBasePath/target t";    # Symlink to make classpath shorter
+                my $mvnCopyDepsCmd = "( mkdir -p '$testGenPath' && cd '$testGenPath' && ln -sT $genBasePath/target t";    # Symlink to make classpath shorter
                 print $mvnCopyDepsCmd, "\n";
                 my $classOwnCP = providerPath($p, $g, $a, $v);
                 #my $projectCP = "$classOwnCP:\$(echo target/dependency/*|perl -lpe 's/ /:/g')";
@@ -352,7 +359,8 @@ THE_END
                             my $classOwnCP = providerPath($opts->{targetOtherProvider}, $g, $a, $v);
 
                             print "# Compile " . ($opts->{viaMvn} && $opts->{shouldRunTests} ? "and run " : "") . scalar(@generatedClasses) . " generated test classes for $jarPath for $opts->{targetOtherProvider}\n";
-                            my $mvnCopyDepsCmd = "mkdir -p '$testCompilePath' && cd '$testCompilePath' && mvn -f $pomPath dependency:copy-dependencies >&2 && ln -sT $basePath/target t";    # Symlink to make classpath shorter
+#                            my $mvnCopyDepsCmd = "mkdir -p '$testCompilePath' && cd '$testCompilePath' && mvn -f $pomPath dependency:copy-dependencies >&2 && ln -sT $basePath/target t";    # Symlink to make classpath shorter
+                            my $mvnCopyDepsCmd = "mkdir -p '$testCompilePath' && cd '$testCompilePath' && ln -sT $basePath/target t";    # Symlink to make classpath shorter
                             my $gatherDepsCmd = "echo t/dependency/*";
 
                             if ($opts->{viaMvn}) {
@@ -376,21 +384,19 @@ THE_END
                                 print $runMvnCmd, "\n";
                             } else {
                                 print "( ", $mvnCopyDepsCmd, "\n";
-                                if (!$opts->{onlySetupDeps}) {
-                                    my $projectCP = "$classOwnCP:\$($gatherDepsCmd | perl -lpe 's/ /:/g')";
-                                    my $classPath = join(":",
-                                        "$projectCP",
-                                        $EVOSUITERUNTIMEJAR,
-                                        $evoSuiteTestSourcePath,
-                                        $JUNIT4JAR,
-                                        $HAMCRESTJAR
-                                    );
+                                my $projectCP = "$classOwnCP:\$($gatherDepsCmd | perl -lpe 's/ /:/g')";
+                                my $classPath = join(":",
+                                    "$projectCP",
+                                    $EVOSUITERUNTIMEJAR,
+                                    $evoSuiteTestSourcePath,
+                                    $JUNIT4JAR,
+                                    $HAMCRESTJAR
+                                );
 
-                                    my %dirsWithClasses = map { $_ => 1 } map { m|(.*)/| } @generatedClasses;
-                                    my @condensedClasses = map { "$pwd/$_/*_ESTest*.java" } sort keys %dirsWithClasses;
-                                    my $javacCmd = "CLASSPATH=$classPath $JAVAC8 -d . " . join(" ", @condensedClasses);
-                                    print $javacCmd, "\n";
-                                }
+                                my %dirsWithClasses = map { $_ => 1 } map { m|(.*)/| } @generatedClasses;
+                                my @condensedClasses = map { "$pwd/$_/*_ESTest*.java" } sort keys %dirsWithClasses;
+                                my $javacCmd = "CLASSPATH=$classPath $JAVAC8 -d . " . join(" ", @condensedClasses);
+                                print $javacCmd, "\n";
                                 print ")\n";
                             }
                         }
@@ -469,7 +475,8 @@ THE_END
 
                         if ($keepRunFilter->("$outBasename.out")) {
                             if (!$createdDirYet) {
-                                my $mkdirCmd = "( mkdir -p \"$testRunPath\" && cd '$testCompilePath'";    # Note we *don't* change to the dir we create this time! Symlink should already be there. Double-quote $testRunPath to let shell expand $RUNDIR.
+#                                my $mkdirCmd = "( mkdir -p \"$testRunPath\" && cd '$testCompilePath'";    # Note we *don't* change to the dir we create this time! Symlink should already be there. Double-quote $testRunPath to let shell expand $RUNDIR.
+                                my $mkdirCmd = "( mkdir -p \"$testRunPath\" && cd '$testCompilePath' && ln -sT $genBasePath/target t";    # Note we *don't* change to the dir we create this time! Create the symlink in case we just downloaded the archive and ran make clean-run (it will already be there otherwise). Double-quote $testRunPath to let shell expand $RUNDIR.
                                 print $mkdirCmd, "\n";
                                 $createdDirYet = 1;
                             }
@@ -530,7 +537,8 @@ if (!defined $mode) {
     generateOrRunTests({ shouldGenerateTests => 1 });
 } elsif ($mode eq '--setup-deps') {
     die unless @ARGV == 1;
-    generateOrRunTests({ shouldCompileTests => 1, targetOtherProvider => shift, skipAlreadyProcessed => $skipAlreadyProcessed, onlySetupDeps => 1 });   #HACK: Treating dep setup as a "kind of compilation"
+#    generateOrRunTests({ shouldCompileTests => 1, targetOtherProvider => shift, skipAlreadyProcessed => $skipAlreadyProcessed, onlySetupDeps => 1 });   #HACK: Treating dep setup as a "kind of compilation"
+    generateOrRunTests({ shouldSetupDeps => 1, targetOtherProvider => shift });
 } elsif ($mode eq '--compile-tests') {
     die unless @ARGV == 1;
     generateOrRunTests({ shouldCompileTests => 1, targetOtherProvider => shift, skipAlreadyProcessed => $skipAlreadyProcessed });
