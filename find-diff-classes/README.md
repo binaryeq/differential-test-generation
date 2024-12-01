@@ -27,6 +27,8 @@ Also set `DB` in `.env` to the absolute path of an SQLite database file, which w
 Results will be written to the table `different_test_outcomes` in this database.
 
 You will also need the following tools installed:
+- JDK 8 (*not* later; EvoSuite is less reliable even at JDK 11)
+- Maven 3.6.3 or later
 - `sqlite3` 3.37.2 or later
 - `jq` 1.6 or later
 - GNU `make` 4.3 or later (installed by default on ~all Linux systems)
