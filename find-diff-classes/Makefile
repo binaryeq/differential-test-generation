@@ -86,7 +86,9 @@ jnorm2_distinct_gavs.tsv:
 # Download jNorm if it's not already present. It's GPLed, but this is OK to do provided we don't publicly distribute this repo.
 #TODO: Fix this
 tools/jnorm-jar-with-dependencies.jar:
-	curl -L -o $@ https://github.com/stschott/jnorm-tool/releases/download/v1.0.0/jnorm-cli-1.0.0.jar
+	echo 'You need to download the jNorm client jar to $@. The following command should work:'
+	echo 'curl -L -o $@ https://github.com/stschott/jnorm-tool/releases/download/v1.0.0/jnorm-cli-1.0.0.jar'
+	exit 1
 
 # Create a shell script to run CompareJars from the tooling repo to find the individual differing classes in each such GAV.
 # Running it creates a comparisons/ subdirectory hierarchy with a <provider1>.vs.<provider2>.json file per
