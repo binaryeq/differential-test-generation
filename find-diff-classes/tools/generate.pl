@@ -376,18 +376,21 @@ THE_END
                                 print $runMvnCmd, "\n";
                             } else {
                                 print "( ", $mvnCopyDepsCmd, "\n";
-                                my $projectCP = "$classOwnCP:\$($gatherDepsCmd | perl -lpe 's/ /:/g')";
-                                my $classPath = join(":",
-                                    "$projectCP",
-                                    $EVOSUITERUNTIMEJAR,
-                                    $evoSuiteTestSourcePath,
-                                    $JUNIT4JAR,
-                                    $HAMCRESTJAR
-                                );
-                                my %dirsWithClasses = map { $_ => 1 } map { m|(.*)/| } @generatedClasses;
-                                my @condensedClasses = map { "$pwd/$_/*_ESTest*.java" } sort keys %dirsWithClasses;
-                                my $javacCmd = "CLASSPATH=$classPath $JAVAC8 -d . " . join(" ", @condensedClasses);
-                                print $javacCmd, "\n";
+                                if (!$opts->{onlySetupDeps}) {
+                                    my $projectCP = "$classOwnCP:\$($gatherDepsCmd | perl -lpe 's/ /:/g')";
+                                    my $classPath = join(":",
+                                        "$projectCP",
+                                        $EVOSUITERUNTIMEJAR,
+                                        $evoSuiteTestSourcePath,
+                                        $JUNIT4JAR,
+                                        $HAMCRESTJAR
+                                    );
+
+                                    my %dirsWithClasses = map { $_ => 1 } map { m|(.*)/| } @generatedClasses;
+                                    my @condensedClasses = map { "$pwd/$_/*_ESTest*.java" } sort keys %dirsWithClasses;
+                                    my $javacCmd = "CLASSPATH=$classPath $JAVAC8 -d . " . join(" ", @condensedClasses);
+                                    print $javacCmd, "\n";
+                                }
                                 print ")\n";
                             }
                         }
@@ -525,6 +528,9 @@ if (!defined $mode) {
     generateComparisons();
 } elsif ($mode eq '--generate-tests') {
     generateOrRunTests({ shouldGenerateTests => 1 });
+} elsif ($mode eq '--setup-deps') {
+    die unless @ARGV == 1;
+    generateOrRunTests({ shouldCompileTests => 1, targetOtherProvider => shift, skipAlreadyProcessed => $skipAlreadyProcessed, onlySetupDeps => 1 });   #HACK: Treating dep setup as a "kind of compilation"
 } elsif ($mode eq '--compile-tests') {
     die unless @ARGV == 1;
     generateOrRunTests({ shouldCompileTests => 1, targetOtherProvider => shift, skipAlreadyProcessed => $skipAlreadyProcessed });

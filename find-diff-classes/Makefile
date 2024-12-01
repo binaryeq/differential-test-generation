@@ -134,14 +134,20 @@ compile_and_run_all_mvn_tests.done: $(foreach b,$(BUILDS),compile_and_run_mvn_te
 
 # Also compile and then run the tests the old way, using raw JUnit4 runners, in order to parse it.
 
+setup_deps_for_%.sh: generate_all_tests.sh.done
+	tools/generate.pl --setup-deps $* > $@
+
 # First generate scripts to compile the tests the old way.
 # Running the scripts creates compiled test classes directly below compile/<provider>/<gav-path>/.
-compile_tests_for_%.sh: generate_all_tests.sh.done
+# The order-only dependency on setup_deps_for_%.sh.done enables the archive to be distributed
+# without all the artifacts' dependencies and with setup_deps_for_%.sh.done absent but compile_tests_for_%.sh.done
+# present, enabling the user to run `make clean-run; make` and set up artifacts' dependencies without recompiling.
+compile_tests_for_%.sh: | setup_deps_for_%.sh.done
 	tools/generate.pl --compile-tests $* > $@
 
 # Generate scripts to run the tests the old way.
 # Running the scripts creates raw JUnit4 runner test results below run/<provider>/<gav-path>/.
-run_all_tests_for_%.sh: compile_tests_for_%.sh.done
+run_all_tests_for_%.sh: compile_tests_for_%.sh.done | setup_deps_for_%.sh.done
 	tools/generate.pl --run-tests $* > $@
 
 # Parse the results into TSV format in test_results_obfs.tsv, etc.
