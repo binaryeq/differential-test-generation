@@ -315,7 +315,7 @@ THE_END
 
                 # Copy all dependencies just once for the project
 #                my $mvnCopyDepsCmd = "( mkdir -p '$testGenPath' && cd '$testGenPath' && mvn -f $genPomPath dependency:copy-dependencies && ln -sT $genBasePath/target t";    # Symlink to make classpath shorter
-                my $mvnCopyDepsCmd = "( mkdir -p '$testGenPath' && cd '$testGenPath' && ln -sT $genBasePath/target t";    # Symlink to make classpath shorter
+                my $mvnCopyDepsCmd = "( mkdir -p '$testGenPath' && cd '$testGenPath' && ( ln -sT $genBasePath/target t || true )";    # Symlink to make classpath shorter
                 print $mvnCopyDepsCmd, "\n";
                 my $classOwnCP = providerPath($p, $g, $a, $v);
                 #my $projectCP = "$classOwnCP:\$(echo target/dependency/*|perl -lpe 's/ /:/g')";
@@ -402,7 +402,7 @@ THE_END
                                     # Copy all dependencies just once for the project
 #                                    print $mvnCopyDepsCmd, "\n";
                                     push @commands, $mvnCopyDepsCmd;
-                                    my $symlinkToDepsCmd = "ln -sT $basePath/target t";    # Symlink to make classpath shorter
+                                    my $symlinkToDepsCmd = "( ln -sT $basePath/target t || true )";    # Symlink to make classpath shorter, it's OK if it already exists
                                     push @commands, $symlinkToDepsCmd;
                                 }
 
