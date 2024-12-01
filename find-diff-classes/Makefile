@@ -11,8 +11,11 @@ all: different_test_outcomes.tsv #compile_and_run_all_mvn_tests.done
 
 BUILDS := mvnc obfs gaoss
 
-clean-full: clean-distinct-gavs
+clean-full: clean-distinct-gavs clean-symlinks
 	rm -f fix-timestamps.sh
+
+clean-symlinks:
+	find testgen compile -type l -name t -delete
 
 clean-distinct-gavs: clean-compare
 	rm -rf \
