@@ -287,6 +287,7 @@ THE_END
         $interestingClasses{$jarPath} = [ unique(map { s/\$[^\.]*//; $_ } @{$interestingClasses{$jarPath}}) ];
     }
 
+    #print STDERR "providersForJar has " . scalar(keys %providersForJar) . " keys.\n";
     foreach my $jarPath (sort keys %providersForJar) {
         my ($g, $a, $v) = $jarPath =~ m|^(.*)/([^/]+)/([^/]+)/[^/]+\.jar$| or die;
         #$g =~ tr|/|.|;
@@ -297,7 +298,7 @@ THE_END
             my $genPomPath = providerPath($p, $g, $a, $v) =~ s/\.jar$/.pom/r;
             my $genBasePath = $genPomPath =~ s|/[^/]+$||r;
 
-            if ($opts->{setupDeps}) {
+            if ($opts->{shouldSetupDeps}) {
                 # Copy all dependencies just once for the project
                 my $mvnCopyDepsCmd = "mvn -f $genPomPath dependency:copy-dependencies >&2";    # Will be symlinked to from elsewhere
                 print $mvnCopyDepsCmd, "\n";
