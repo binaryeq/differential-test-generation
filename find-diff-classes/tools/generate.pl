@@ -298,7 +298,7 @@ THE_END
             my $genPomPath = providerPath($p, $g, $a, $v) =~ s/\.jar$/.pom/r;
             my $genBasePath = $genPomPath =~ s|/[^/]+$||r;
 
-            if ($opts->{shouldSetupDeps}) {
+            if ($opts->{shouldSetupDepsForTestGen}) {
                 # Copy all dependencies just once for the project
                 my $mvnCopyDepsCmd = "mvn -f $genPomPath dependency:copy-dependencies >&2";    # Will be symlinked to from elsewhere
                 print $mvnCopyDepsCmd, "\n";
@@ -332,7 +332,7 @@ THE_END
                 print ")\n";        # Drops us back to original subdir
             }
 
-            if ($opts->{shouldCompileTests}) {
+            if ($opts->{shouldCompileTests} || $opts->{shouldSetupDepsForCompileOrRun}) {
                 chomp(my $pwd = `pwd`);
 
                 my $evoSuiteTestSourcePath = "$testGenPath/evosuite-tests";
@@ -359,12 +359,26 @@ THE_END
                             my $basePath = $pomPath =~ s|/[^/]+$||r;
                             my $classOwnCP = providerPath($opts->{targetOtherProvider}, $g, $a, $v);
 
-                            print "# Compile " . ($opts->{viaMvn} && $opts->{shouldRunTests} ? "and run " : "") . scalar(@generatedClasses) . " generated test classes for $jarPath for $opts->{targetOtherProvider}\n";
+                            my $description;
+                            if ($opts->{shouldSetupDepsForCompileOrRun}) {
+                                $description .= "Set up deps for";
+                                if ($opts->{shouldCompileTests}) {
+                                    $description .= "and compile";
+                                }
+                            } else {
+                                $description = "Compile";
+                            }
+
+                            print "# $description " . ($opts->{viaMvn} && $opts->{shouldRunTests} ? "and run " : "") . scalar(@generatedClasses) . " generated test classes for $jarPath for $opts->{targetOtherProvider}\n";
 #                            my $mvnCopyDepsCmd = "mkdir -p '$testCompilePath' && cd '$testCompilePath' && mvn -f $pomPath dependency:copy-dependencies >&2 && ln -sT $basePath/target t";    # Symlink to make classpath shorter
-                            my $mvnCopyDepsCmd = "mkdir -p '$testCompilePath' && cd '$testCompilePath' && ln -sT $basePath/target t";    # Symlink to make classpath shorter
+#                            my $mvnCopyDepsCmd = "mkdir -p '$testCompilePath' && cd '$testCompilePath' && ln -sT $basePath/target t";    # Symlink to make classpath shorter
+                            # Assemble all commands in @commands, which may include dep setup and/or compilation, then print them on one line.
+                            my @commands = ("mkdir -p '$testCompilePath'", "cd '$testCompilePath'");
+                            my $mvnCopyDepsCmd = "mvn -f $pomPath dependency:copy-dependencies >&2";
                             my $gatherDepsCmd = "echo t/dependency/*";
 
                             if ($opts->{viaMvn}) {
+                                die "This is probably broken after changes to when deps are setup"; #TODO
                                 # Immediately run this command -- we need to see what deps are there to generate pom.xml
                                 my $mvnCopyDepsAndGatherDepsCmd = "$mvnCopyDepsCmd";
                                 print STDERR "Immediately running: <$mvnCopyDepsAndGatherDepsCmd>\n";
@@ -384,21 +398,34 @@ THE_END
                                 my $runMvnCmd = "mvn -DRUNDIR=\"\${RUNDIR}\" -f '$pomFn' $mvnPhase";
                                 print $runMvnCmd, "\n";
                             } else {
-                                print "( ", $mvnCopyDepsCmd, "\n";
-                                my $projectCP = "$classOwnCP:\$($gatherDepsCmd | perl -lpe 's/ /:/g')";
-                                my $classPath = join(":",
-                                    "$projectCP",
-                                    $EVOSUITERUNTIMEJAR,
-                                    $evoSuiteTestSourcePath,
-                                    $JUNIT4JAR,
-                                    $HAMCRESTJAR
-                                );
+                                if ($opts->{shouldSetupDepsForCompileOrRun}) {
+                                    # Copy all dependencies just once for the project
+#                                    print $mvnCopyDepsCmd, "\n";
+                                    push @commands, $mvnCopyDepsCmd;
+                                    my $symlinkToDepsCmd = "ln -sT $basePath/target t";    # Symlink to make classpath shorter
+                                    push @commands, $symlinkToDepsCmd;
+                                }
 
-                                my %dirsWithClasses = map { $_ => 1 } map { m|(.*)/| } @generatedClasses;
-                                my @condensedClasses = map { "$pwd/$_/*_ESTest*.java" } sort keys %dirsWithClasses;
-                                my $javacCmd = "CLASSPATH=$classPath $JAVAC8 -d . " . join(" ", @condensedClasses);
-                                print $javacCmd, "\n";
-                                print ")\n";
+                                if ($opts->{shouldCompileTests}) {
+    #                                print "( ", $mvnCopyDepsCmd, "\n";
+                                    my $projectCP = "$classOwnCP:\$($gatherDepsCmd | perl -lpe 's/ /:/g')";
+                                    my $classPath = join(":",
+                                        "$projectCP",
+                                        $EVOSUITERUNTIMEJAR,
+                                        $evoSuiteTestSourcePath,
+                                        $JUNIT4JAR,
+                                        $HAMCRESTJAR
+                                    );
+
+                                    my %dirsWithClasses = map { $_ => 1 } map { m|(.*)/| } @generatedClasses;
+                                    my @condensedClasses = map { "$pwd/$_/*_ESTest*.java" } sort keys %dirsWithClasses;
+                                    my $javacCmd = "CLASSPATH=$classPath $JAVAC8 -d . " . join(" ", @condensedClasses);
+    #                                print $javacCmd, "\n";
+    #                                print ")\n";
+                                    push @commands, $javacCmd;
+                                }
+
+                                print "( " . join(" && ", @commands) . " )\n";
                             }
                         }
                     }
@@ -536,10 +563,12 @@ if (!defined $mode) {
     generateComparisons();
 } elsif ($mode eq '--generate-tests') {
     generateOrRunTests({ shouldGenerateTests => 1 });
-} elsif ($mode eq '--setup-deps') {
+} elsif ($mode eq '--setup-deps-for-test-gen') {
     die unless @ARGV == 1;
-#    generateOrRunTests({ shouldCompileTests => 1, targetOtherProvider => shift, skipAlreadyProcessed => $skipAlreadyProcessed, onlySetupDeps => 1 });   #HACK: Treating dep setup as a "kind of compilation"
-    generateOrRunTests({ shouldSetupDeps => 1, targetOtherProvider => shift });
+    generateOrRunTests({ shouldSetupDepsForTestGen => 1, targetOtherProvider => shift });
+} elsif ($mode eq '--setup-deps-for-compile-or-run') {
+    die unless @ARGV == 1;
+    generateOrRunTests({ shouldSetupDepsForCompileOrRun => 1, targetOtherProvider => shift });
 } elsif ($mode eq '--compile-tests') {
     die unless @ARGV == 1;
     generateOrRunTests({ shouldCompileTests => 1, targetOtherProvider => shift, skipAlreadyProcessed => $skipAlreadyProcessed });
