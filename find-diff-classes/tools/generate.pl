@@ -14,20 +14,17 @@ sub findJava($$) {
     die "Could not find a path to a JDK $jdk version of the java executable (" . scalar(@possiblePaths) . " possibilities).";
 }
 
-my $ROOT = "$ENV{HOME}/code";       # Change as necessary
-my $BASE = "$ROOT/craw-redhat-oss/wget/crawl";
-my $CLASSPATH = "$ROOT/tooling/target/bineq-1.0.0.jar";
+my $JARROOT = $ENV{JARROOT};
+my $BINEQ_CLASSPATH = $ENV{BINEQ_CLASSPATH};
+my $EVOSUITEJAR = $ENV{EVOSUITEJAR};
+my $EVOSUITERUNTIMEJAR = $ENV{EVOSUITERUNTIMEJAR};
+my $JUNIT4JAR = $ENV{JUNIT4JAR};
+my $HAMCRESTJAR = $ENV{HAMCRESTJAR};
 my $JDKVERSION = "8";
 my $JAVA8 = findJava("java", 8);     # EvoSuite prefers JDK 8, sometimes works with JDK 11
 my $JAVAC8 = findJava("javac", 8);
-my $JAVA17 = findJava("java", 17);   # Code in the tooling repo was compiled with JDK 17
-my $COMPAREJARS = "$JAVA17 -cp $CLASSPATH io.github.bineq.cli.CompareJars";
-my $EVOSUITEJAR = "$ROOT/regression-test-generation/evosuite/evosuite-1.2.0.jar";
 my $COMPARISONSDIR = "comparisons"; # Formerly "results"
 my $JACOCOPATH = "jacoco/lib";
-my $evosuiteRuntimeJarPath = "$ROOT/regression-test-generation/evosuite/evosuite-standalone-runtime-1.2.0.jar";
-my $junit4JarPath = "$ENV{HOME}/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar";
-my $hamcrestJarPath = "$ENV{HOME}/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar";
 
 my $keepRunFilter = sub { 1 };      # By default, keep everything
 
@@ -44,7 +41,7 @@ sub gavToJarPath($$$) {
 #HACK: Only works if there's a unique subpatch-level suffix...
 sub getDir($$$$) {
     my ($provider, $g, $a, $v) = @_;
-    my $path = "$BASE/$provider/$g/$a/$v";
+    my $path = "$JARROOT/$provider/$g/$a/$v";
     print STDERR "Trying path=<$path>\n";        #DEBUG
     #my @possibilities = glob "$path*/*.jar";
     my @possibilities = grep { m|/([^/]+)/([^/]+)/\1-\2\.jar$| } glob "$path*/*.jar";    # Exclude *-sources.jar, *-tests.jar, etc.
@@ -73,7 +70,6 @@ my %providerPathsFor = (
 
 sub providerPath($$$$) {
     my ($provider, $g, $a, $v) = @_;
-    #return "$BASE/$providerPathFor{$_[0]}";
     foreach (map { getDir($_, $g, $a, $v) } @{$providerPathsFor{$provider}}) {
         return $_ if defined;
     }
@@ -103,14 +99,17 @@ sub evosuiteRunDir($$$$) {
 }
 
 sub generateComparisons() {
+    die "Must set env var \$BINEQ_CLASSPATH" if !defined $BINEQ_CLASSPATH;
+    die "Expected bineq at $BINEQ_CLASSPATH" if !-e $BINEQ_CLASSPATH;
+
+    # Delay looking for JDK 17 until here, where we actually need it
+    my $JAVA17 = findJava("java", 17);   # Code in the tooling repo was compiled with JDK 17
+    my $COMPAREJARS = "$JAVA17 -cp $BINEQ_CLASSPATH io.github.bineq.cli.CompareJars";
+
     while (<>) {
         chomp;
         my ($g, $a, $v, $p1, $p2) = split /\t/ or die;
         my $jarPath = gavToJarPath($g, $a, $v);
-        #my $jarPath1 = providerPath($p1) . "/" . $jarPath;
-        #my $jarPath2 = providerPath($p2) . "/" . $jarPath;
-        #my $jarPath1 = providerPath($p1, $jarPath);
-        #my $jarPath2 = providerPath($p2, $jarPath);
         my $jarPath1 = providerPath($p1, $g, $a, $v);
         my $jarPath2 = providerPath($p2, $g, $a, $v);
         my $outDir = "$COMPARISONSDIR/$jarPath.compare";
@@ -175,7 +174,7 @@ THE_END
     <maven.compiler.source>$JDKVERSION</maven.compiler.source>
     <maven.compiler.target>$JDKVERSION</maven.compiler.target>
 $genProperties
-    <evosuiteRuntimeJarPath>$evosuiteRuntimeJarPath</evosuiteRuntimeJarPath>
+    <evosuiteRuntimeJarPath>$EVOSUITERUNTIMEJAR</evosuiteRuntimeJarPath>
   </properties>
 
   <dependencies>
@@ -252,6 +251,9 @@ sub generateOrRunTests($) {
 set -v
 THE_END
 
+    die "Must set env var \$EVOSUITERUNTIMEJAR" if !defined $EVOSUITERUNTIMEJAR;
+    die "Expected EvoSuite runtime jar at $EVOSUITERUNTIMEJAR" if !-e $EVOSUITERUNTIMEJAR;
+
     if ($opts->{shouldRunTests}) {
         my $defaultRunDir = ($opts->{viaMvn} ? "\$(pwd)/run-mvn" : "run");      # Maven needs absolute path
         print "echo \"Will write test results under RUNDIR=\${RUNDIR:=$defaultRunDir}\"   # Default to '$defaultRunDir' if not overridden\n";
@@ -261,7 +263,7 @@ THE_END
     chomp @classesFiltered;
     #print scalar @classesFiltered;
 
-    my %providersForJar;
+    my %providerPairsForJar;
     my %doesJarPathHaveProvider;
     my %jarPathHasMvnc;
     my %interestingClasses;
@@ -269,7 +271,7 @@ THE_END
         my ($jarPath, $p1, $p2) = $fn =~ m|^\Q$COMPARISONSDIR\E/(.*)\.compare/(\w+)\.vs\.(\w+)/classes.filtered$| or die;
         #my ($g, $a, $v) = $jarPath =~ m|^(.*)/([^/]+)/([^/]+)/[^/]+\.jar$| or die;
         #$g =~ tr|/|.|;
-        push @{$providersForJar{$jarPath}}, [$p1, $p2];
+        push @{$providerPairsForJar{$jarPath}}, [$p1, $p2];
         $doesJarPathHaveProvider{$jarPath}{$p1} = 1;
         $doesJarPathHaveProvider{$jarPath}{$p2} = 1;
         if ($p1 eq 'mvnc' || $p2 eq 'mvnc') {
@@ -285,7 +287,8 @@ THE_END
         $interestingClasses{$jarPath} = [ unique(map { s/\$[^\.]*//; $_ } @{$interestingClasses{$jarPath}}) ];
     }
 
-    foreach my $jarPath (sort keys %providersForJar) {
+    #print STDERR "providerPairsForJar has " . scalar(keys %providerPairsForJar) . " keys.\n";
+    foreach my $jarPath (sort keys %providerPairsForJar) {
         my ($g, $a, $v) = $jarPath =~ m|^(.*)/([^/]+)/([^/]+)/[^/]+\.jar$| or die;
         #$g =~ tr|/|.|;
         if ($jarPathHasMvnc{$jarPath}) {
@@ -295,14 +298,24 @@ THE_END
             my $genPomPath = providerPath($p, $g, $a, $v) =~ s/\.jar$/.pom/r;
             my $genBasePath = $genPomPath =~ s|/[^/]+$||r;
 
+            if ($opts->{shouldSetupDepsForTestGen}) {
+                # Copy all dependencies just once for the project
+                my $mvnCopyDepsCmd = "mvn -f $genPomPath dependency:copy-dependencies >&2";    # Will be symlinked to from elsewhere
+                print $mvnCopyDepsCmd, "\n";
+            }
+
             if ($opts->{shouldGenerateTests}) {
+                die "Must set env var \$EVOSUITEJAR" if !defined $EVOSUITEJAR;
+                die "Expected EvoSuite at $EVOSUITEJAR" if !-e $EVOSUITEJAR;
+
                 #print join("\t", $jarPath, $p1, $p2), "\n";        #DEBUG
                 #print join("\t", providerPath($p, $g, $a, $v), $p1, $p2), "\n";        #DEBUG
                 my @classes = @{$interestingClasses{$jarPath}};
                 print "# Generate tests on the " . scalar(@classes) . " classes in the $p version of $jarPath\n";        #TODO
 
                 # Copy all dependencies just once for the project
-                my $mvnCopyDepsCmd = "( mkdir -p '$testGenPath' && cd '$testGenPath' && mvn -f $genPomPath dependency:copy-dependencies && ln -sT $genBasePath/target t";    # Symlink to make classpath shorter
+#                my $mvnCopyDepsCmd = "( mkdir -p '$testGenPath' && cd '$testGenPath' && mvn -f $genPomPath dependency:copy-dependencies && ln -sT $genBasePath/target t";    # Symlink to make classpath shorter
+                my $mvnCopyDepsCmd = "( mkdir -p '$testGenPath' && cd '$testGenPath' && ( ln -sT $genBasePath/target t || true )";    # Symlink to make classpath shorter
                 print $mvnCopyDepsCmd, "\n";
                 my $classOwnCP = providerPath($p, $g, $a, $v);
                 #my $projectCP = "$classOwnCP:\$(echo target/dependency/*|perl -lpe 's/ /:/g')";
@@ -319,12 +332,12 @@ THE_END
                 print ")\n";        # Drops us back to original subdir
             }
 
-            if ($opts->{shouldCompileTests}) {
+            if ($opts->{shouldCompileTests} || $opts->{shouldSetupDepsForCompileOrRun}) {
                 chomp(my $pwd = `pwd`);
 
                 my $evoSuiteTestSourcePath = "$testGenPath/evosuite-tests";
                 my $testRunPath = evosuiteRunDir($opts->{targetOtherProvider}, $g, $a, $v);
-                foreach my $providerPair (@{$providersForJar{$jarPath}}) {
+                foreach my $providerPair (@{$providerPairsForJar{$jarPath}}) {
 #                    print STDERR "providerPair=<" . join(", ", @{$providerPair}) . ">. otherProvider=<$opts->{targetOtherProvider}>, shouldBeUndefined=<$opts->{shouldBeUndefined}>\n";     #DEBUG
                     if (grep { $_ eq $opts->{targetOtherProvider} } @{$providerPair}) {
                         # Find all actually generated test classes (there may be none). This step requires that we have
@@ -335,20 +348,37 @@ THE_END
 
                         my $testCompilePath = evosuiteCompileDir($opts->{targetOtherProvider}, $g, $a, $v);
                         my $fullTestCompilePath = $testCompilePath . ($opts->{viaMvn} ? '/target/test-classes' : '');          # Maven puts its classes in a slightly different place
-                        my %alreadyProcessed = map { $_ => 1 } grep { my $target = $_; $target =~ s|\Q$testGenPath\E/evosuite-tests/|$fullTestCompilePath/| or die; $target =~ s/\.java$/.class/ or die; -e $target } @generatedClasses;
-                        print STDERR "# Removing " . scalar(keys %alreadyProcessed) . " already-compiled classes from the original set of " . scalar(@generatedClasses) . ", leaving " . (scalar(@generatedClasses) - scalar(keys %alreadyProcessed)) . ".\n";
-                        @generatedClasses = grep { !exists $alreadyProcessed{$_} } @generatedClasses;
+                        if ($opts->{skipAlreadyProcessed}) {
+                            my %alreadyProcessed = map { $_ => 1 } grep { my $target = $_; $target =~ s|\Q$testGenPath\E/evosuite-tests/|$fullTestCompilePath/| or die; $target =~ s/\.java$/.class/ or die; -e $target } @generatedClasses;
+                            print STDERR "# Removing " . scalar(keys %alreadyProcessed) . " already-compiled classes from the original set of " . scalar(@generatedClasses) . ", leaving " . (scalar(@generatedClasses) - scalar(keys %alreadyProcessed)) . ".\n";
+                            @generatedClasses = grep { !exists $alreadyProcessed{$_} } @generatedClasses;
+                        }
 
                         if (@generatedClasses) {
                             my $pomPath = providerPath($opts->{targetOtherProvider}, $g, $a, $v) =~ s/\.jar$/.pom/r;
                             my $basePath = $pomPath =~ s|/[^/]+$||r;
                             my $classOwnCP = providerPath($opts->{targetOtherProvider}, $g, $a, $v);
 
-                            print "# Compile " . ($opts->{viaMvn} && $opts->{shouldRunTests} ? "and run " : "") . scalar(@generatedClasses) . " generated test classes for $jarPath for $opts->{targetOtherProvider}\n";
-                            my $mvnCopyDepsCmd = "mkdir -p '$testCompilePath' && cd '$testCompilePath' && mvn -f $pomPath dependency:copy-dependencies >&2 && ln -sT $basePath/target t";    # Symlink to make classpath shorter
+                            my $description;
+                            if ($opts->{shouldSetupDepsForCompileOrRun}) {
+                                $description .= "Set up deps for";
+                                if ($opts->{shouldCompileTests}) {
+                                    $description .= "and compile";
+                                }
+                            } else {
+                                $description = "Compile";
+                            }
+
+                            print "# $description " . ($opts->{viaMvn} && $opts->{shouldRunTests} ? "and run " : "") . scalar(@generatedClasses) . " generated test classes for $jarPath for $opts->{targetOtherProvider}\n";
+#                            my $mvnCopyDepsCmd = "mkdir -p '$testCompilePath' && cd '$testCompilePath' && mvn -f $pomPath dependency:copy-dependencies >&2 && ln -sT $basePath/target t";    # Symlink to make classpath shorter
+#                            my $mvnCopyDepsCmd = "mkdir -p '$testCompilePath' && cd '$testCompilePath' && ln -sT $basePath/target t";    # Symlink to make classpath shorter
+                            # Assemble all commands in @commands, which may include dep setup and/or compilation, then print them on one line.
+                            my @commands = ("mkdir -p '$testCompilePath'", "cd '$testCompilePath'");
+                            my $mvnCopyDepsCmd = "mvn -f $pomPath dependency:copy-dependencies >&2";
                             my $gatherDepsCmd = "echo t/dependency/*";
 
                             if ($opts->{viaMvn}) {
+                                die "This is probably broken after changes to when deps are setup"; #TODO
                                 # Immediately run this command -- we need to see what deps are there to generate pom.xml
                                 my $mvnCopyDepsAndGatherDepsCmd = "$mvnCopyDepsCmd";
                                 print STDERR "Immediately running: <$mvnCopyDepsAndGatherDepsCmd>\n";
@@ -368,20 +398,34 @@ THE_END
                                 my $runMvnCmd = "mvn -DRUNDIR=\"\${RUNDIR}\" -f '$pomFn' $mvnPhase";
                                 print $runMvnCmd, "\n";
                             } else {
-                                print "( ", $mvnCopyDepsCmd, "\n";
-                                my $projectCP = "$classOwnCP:\$($gatherDepsCmd | perl -lpe 's/ /:/g')";
-                                my $classPath = join(":",
-                                    "$projectCP",
-                                    $evosuiteRuntimeJarPath,
-                                    $evoSuiteTestSourcePath,
-                                    $junit4JarPath,
-                                    $hamcrestJarPath
-                                );
-                                my %dirsWithClasses = map { $_ => 1 } map { m|(.*)/| } @generatedClasses;
-                                my @condensedClasses = map { "$pwd/$_/*_ESTest*.java" } sort keys %dirsWithClasses;
-                                my $javacCmd = "CLASSPATH=$classPath $JAVAC8 -d . " . join(" ", @condensedClasses);
-                                print $javacCmd, "\n";
-                                print ")\n";
+                                if ($opts->{shouldSetupDepsForCompileOrRun}) {
+                                    # Copy all dependencies just once for the project
+#                                    print $mvnCopyDepsCmd, "\n";
+                                    push @commands, $mvnCopyDepsCmd;
+                                    my $symlinkToDepsCmd = "( ln -sT $basePath/target t || true )";    # Symlink to make classpath shorter, it's OK if it already exists
+                                    push @commands, $symlinkToDepsCmd;
+                                }
+
+                                if ($opts->{shouldCompileTests}) {
+    #                                print "( ", $mvnCopyDepsCmd, "\n";
+                                    my $projectCP = "$classOwnCP:\$($gatherDepsCmd | perl -lpe 's/ /:/g')";
+                                    my $classPath = join(":",
+                                        "$projectCP",
+                                        $EVOSUITERUNTIMEJAR,
+                                        $evoSuiteTestSourcePath,
+                                        $JUNIT4JAR,
+                                        $HAMCRESTJAR
+                                    );
+
+                                    my %dirsWithClasses = map { $_ => 1 } map { m|(.*)/| } @generatedClasses;
+                                    my @condensedClasses = map { "$pwd/$_/*_ESTest*.java" } sort keys %dirsWithClasses;
+                                    my $javacCmd = "CLASSPATH=$classPath $JAVAC8 -d . " . join(" ", @condensedClasses);
+    #                                print $javacCmd, "\n";
+    #                                print ")\n";
+                                    push @commands, $javacCmd;
+                                }
+
+                                print "( " . join(" && ", @commands) . " )\n";
                             }
                         }
                     }
@@ -407,7 +451,7 @@ THE_END
                 chomp(my $pwd = `pwd`);
 
                 # If any of the provider pairs for this jar involve the provider that we are interested in:
-                if (grep { $_ eq $opts->{targetOtherProvider} } map { @$_ } @{$providersForJar{$jarPath}}) {
+                if (grep { $_ eq $opts->{targetOtherProvider} } map { @$_ } @{$providerPairsForJar{$jarPath}}) {
 #                    print STDERR "providerPair=<" . join(", ", @{$providerPair}) . ">. otherProvider=<$opts->{targetOtherProvider}>, shouldBeUndefined=<$opts->{shouldBeUndefined}>\n";     #DEBUG
                     # Find all actually generated test classes (there may be none). This step requires that we have
                     # already run the shell script (generated using --generate-tests) that generates these classes.
@@ -420,11 +464,13 @@ THE_END
                     my @compiledClasses = `$findCompiledClassesCmd`;
                     chomp @compiledClasses;
 
-                    my @DEBUG;
-                    my %alreadyProcessed = map { $_ => 1 } grep { my $target = "$testRunPath/" . convertClassNameToDotted($_, $testCompilePath) . ".out"; $target =~ s|^.\{RUNDIR\}/|run/| or die; push @DEBUG, $target; -e $target } @compiledClasses;
-                    print STDERR "# Removing " . scalar(keys %alreadyProcessed) . " already-run classes from the original set of " . scalar(@compiledClasses) . ", leaving " . (scalar(@compiledClasses) - scalar(keys %alreadyProcessed)) . ".\n";
-                    print STDERR "# Checked: $_\n" foreach @DEBUG;    #DEBUG
-                    @compiledClasses = grep { !exists $alreadyProcessed{$_} } @compiledClasses;
+                    if ($opts->{skipAlreadyProcessed}) {
+                        my @DEBUG;
+                        my %alreadyProcessed = map { $_ => 1 } grep { my $target = "$testRunPath/" . convertClassNameToDotted($_, $testCompilePath) . ".out"; $target =~ s|^.\{RUNDIR\}/|run/| or die; push @DEBUG, $target; -e $target } @compiledClasses;
+                        print STDERR "# Removing " . scalar(keys %alreadyProcessed) . " already-run classes from the original set of " . scalar(@compiledClasses) . ", leaving " . (scalar(@compiledClasses) - scalar(keys %alreadyProcessed)) . ".\n";
+                        print STDERR "# Checked: $_\n" foreach @DEBUG;    #DEBUG
+                        @compiledClasses = grep { !exists $alreadyProcessed{$_} } @compiledClasses;
+                    }
 
 #                        my $pomPath = providerPath($opts->{targetOtherProvider}, $g, $a, $v) =~ s/\.jar$/.pom/r;
 #                        my $basePath = $pomPath =~ s|/[^/]+$||r;
@@ -441,11 +487,11 @@ THE_END
                     my $classPath = join(":",
                         ($opts->{useJacoco} ? "$pwd/$JACOCOPATH/jacocoagent.jar" : ()),
                         "$projectCP",
-                        $evosuiteRuntimeJarPath,
+                        $EVOSUITERUNTIMEJAR,
 #                                "$testGenPath/evosuite-tests",
                         ".",        # We're running from the compilation directory
-                        $junit4JarPath,
-                        $hamcrestJarPath
+                        $JUNIT4JAR,
+                        $HAMCRESTJAR
                     );
 #                            my %dirsWithClasses = map { $_ => 1 } map { m|(.*)/| } @generatedClasses;
 #                            my @condensedClasses = map { "$pwd/$_/*_ESTest*.java" } sort keys %dirsWithClasses;
@@ -457,7 +503,8 @@ THE_END
 
                         if ($keepRunFilter->("$outBasename.out")) {
                             if (!$createdDirYet) {
-                                my $mkdirCmd = "( mkdir -p \"$testRunPath\" && cd '$testCompilePath'";    # Note we *don't* change to the dir we create this time! Symlink should already be there. Double-quote $testRunPath to let shell expand $RUNDIR.
+#                                my $mkdirCmd = "( mkdir -p \"$testRunPath\" && cd '$testCompilePath'";    # Note we *don't* change to the dir we create this time! Symlink should already be there. Double-quote $testRunPath to let shell expand $RUNDIR.
+                                my $mkdirCmd = "( mkdir -p \"$testRunPath\" && cd '$testCompilePath' && ln -sT $genBasePath/target t";    # Note we *don't* change to the dir we create this time! Create the symlink in case we just downloaded the archive and ran make clean-run (it will already be there otherwise). Double-quote $testRunPath to let shell expand $RUNDIR.
                                 print $mkdirCmd, "\n";
                                 $createdDirYet = 1;
                             }
@@ -486,11 +533,13 @@ THE_END
 }
 
 # Sanity-check paths
-die "Is \$ROOT set correctly?" if !-d $BASE || !-e $CLASSPATH;
-die "Expected EvoSuite at $EVOSUITEJAR" if !-e $EVOSUITEJAR;
+die "Must set env var \$JARROOT" if !defined $JARROOT;
+die "Expected jar root dir at $JARROOT" if !-d $JARROOT;
+die "Is \$JARROOT set correctly?" if !-d "$JARROOT/repo1.maven.org/maven2";     # mvnc should be there
 
 # Main program
 my $useJacoco = 0;      # Relevant for running tests only
+my $skipAlreadyProcessed = 0;      # Relevant for compiling and running tests only
 while (1) {
     if (@ARGV && $ARGV[0] eq "--keep-run-filter") {
         shift;
@@ -499,6 +548,9 @@ while (1) {
     } elsif (@ARGV && $ARGV[0] eq '--use-jacoco') {
         shift;
         $useJacoco = 1;
+    } elsif (@ARGV && $ARGV[0] eq '--skip-already-processed') {
+        $skipAlreadyProcessed = 1;
+        shift;
     } else {
         last;
     }
@@ -511,9 +563,15 @@ if (!defined $mode) {
     generateComparisons();
 } elsif ($mode eq '--generate-tests') {
     generateOrRunTests({ shouldGenerateTests => 1 });
+} elsif ($mode eq '--setup-deps-for-test-gen') {
+    die unless @ARGV == 1;
+    generateOrRunTests({ shouldSetupDepsForTestGen => 1, targetOtherProvider => shift });
+} elsif ($mode eq '--setup-deps-for-compile-or-run') {
+    die unless @ARGV == 1;
+    generateOrRunTests({ shouldSetupDepsForCompileOrRun => 1, targetOtherProvider => shift });
 } elsif ($mode eq '--compile-tests') {
     die unless @ARGV == 1;
-    generateOrRunTests({ shouldCompileTests => 1, targetOtherProvider => shift });
+    generateOrRunTests({ shouldCompileTests => 1, targetOtherProvider => shift, skipAlreadyProcessed => $skipAlreadyProcessed });
 } elsif ($mode eq '--jacocofy-jars') {
     die unless @ARGV == 1;
     generateOrRunTests({ shouldJacocofy => 1, targetOtherProvider => shift });
@@ -522,7 +580,7 @@ if (!defined $mode) {
     generateOrRunTests({ shouldCompileTests => 1, shouldRunTests => 1, targetOtherProvider => shift, viaMvn => 1 });
 } elsif ($mode eq '--run-tests') {
     die unless @ARGV == 1;
-    generateOrRunTests({ shouldRunTests => 1, targetOtherProvider => shift, useJacoco => $useJacoco });
+    generateOrRunTests({ shouldRunTests => 1, targetOtherProvider => shift, useJacoco => $useJacoco, skipAlreadyProcessed => $skipAlreadyProcessed });
 } elsif ($mode eq '--compile-and-run-tests') {
     die unless @ARGV == 1;
     generateOrRunTests({ shouldCompileTests => 1, shouldRunTests => 1, targetOtherProvider => shift });
