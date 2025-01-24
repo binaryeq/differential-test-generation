@@ -61,3 +61,24 @@ make                       # Generate tests with EvoSuite, compile and run them,
 ```
 
 This will produce `different_test_outcomes.tsv`, as before.
+
+# Common problems
+
+### Q: I see errors like `java.awt.AWTError: Can't connect to X11 window server using 'localhost:13.0' as the value of the DISPLAY variable.` when running tests -- what can I do?
+
+**A:** Ensure the `$DISPLAY` environment variable is not present in the environment by running `export -n DISPLAY` before running `make`.
+
+Explanation: `$DISPLAY` may be set to an erroneous value, e.g., if using an `ssh` connection with X forwarding turned on but no X server running on the host.
+
+### Q: I got rid of `$DISPLAY`, but now I see errors like `java.awt.AWTError: Assistive Technology not found: org.GNOME.Accessibility.AtkWrapper` when running tests -- what can I do?
+
+**A:** Per [these instructions](https://askubuntu.com/a/723503), before running `make`, turn off AWT assistive technologies by commenting out the line:
+
+```
+assistive_technologies=org.GNOME.Accessibility.AtkWrapper
+```
+
+in `/etc/java-8-openjdk/accessibility.properties` by prepending a `#`.
+This requires root privileges.
+
+Explanation: Seems to be a known issue with "headless" JDK versions, e.g., `openjdk-8-jdk-headless:amd64` for Ubuntu 24.04.1 LTS.
