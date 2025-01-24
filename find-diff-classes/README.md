@@ -1,6 +1,6 @@
 # Reproducing the results from the paper
 
-Table 1 in the paper summarises the differing test outcome results from the file `different_test_outcomes.tsv` in this archive.
+Table 1 in the paper is `data-summary-table-tabular.tex` in this archive.
 You can reproduce these results yourself on any Linux system.
 
 ## Download external tools and set up environment
@@ -34,7 +34,8 @@ make clean-compile         # Remove prebuilt results from test compilation onwar
 make                       # Compile existing EvoSuite-generated tests, run them and summarise results
 ```
 
-This will take around 40 minutes and produce `different_test_outcomes.tsv`.
+This will take around 40 minutes and produce `data-summary-table-tabular.tex`.
+The file `different_test_outcomes.tsv` contains the same results in more detail.
 
 See also the [Makefile](Makefile), which has detailed comments explaining each step.
 
@@ -60,7 +61,7 @@ make clean-compare         # Remove prebuilt results from test generation onward
 make                       # Generate tests with EvoSuite, compile and run them, and summarise results
 ```
 
-This will produce `different_test_outcomes.tsv`, as before.
+This will produce `data-summary-table-tabular.tex` and `different_test_outcomes.tsv`, as before.
 
 # Common problems
 
