@@ -1,6 +1,6 @@
 # Reproducing the results from the paper
 
-Figure 1 in the paper summarises the differing test outcome results from the file `different_test_outcomes.tsv` in this archive.
+Table 1 in the paper summarises the differing test outcome results from the file `different_test_outcomes.tsv` in this archive.
 You can reproduce these results yourself on any Linux system.
 
 ## Download external tools and set up environment

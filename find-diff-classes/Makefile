@@ -7,7 +7,8 @@
 #
 # See README.md for more details.
 
-all: different_test_outcomes.tsv #compile_and_run_all_mvn_tests.done
+#all: different_test_outcomes.tsv #compile_and_run_all_mvn_tests.done
+all: data-summary-table-tabular.tex
 
 BUILDS := mvnc obfs gaoss
 
@@ -181,6 +182,15 @@ import_test_results_%.done: test_results_%.tsv create_table_test_classes.sql.don
 
 different_test_outcomes.tsv: $(foreach b,$(BUILDS),import_test_results_$b.done) create_view_differing_failed_test_methods.sql.done
 	sqlite3 -tabs "$(DB)" "SELECT * FROM differing_failed_test_methods ORDER BY 1, 2, 3, 4, 5, 6, 7;" > $@
+
+# We don't actually use the prereq file; instead we rely on the fact that it's been imported into the DB.
+data-summary-table-body.tex: different_test_outcomes.tsv
+	sqlite3 -tabs "$(DB)" "select provider1, replace(groupId, '/', '.') || ':' || artifactId || ':' || version as artifact, testClass as 'test class', count(*) as 'tests' from differing_failed_test_methods group by 1, 2, 3 order by 1, 2, 3;" | perl -lpe 's/\t/ & /g; $$_ .= " \\\\"; s/_/\\_/g' > $@
+
+# It turns out that you can't use \hline after \input inside a \tabular environment: https://stackoverflow.com/questions/73198591/hline-issue-with-latex-when-importing-table-from-different-tex-file-into-a-tab. Obviously.
+# So, do the "macro expansion" ourselves.
+data-summary-table-tabular.tex: data-summary-table-body.tex
+	( /usr/bin/echo '\begin{tabular}{p{0.5cm}p{5cm}p{7.5cm}r} ' ; /usr/bin/echo '\toprule ' ; /usr/bin/echo '\textbf{build} & \textbf{artifact} & \textbf{test class} & \textbf{tests} \\ \midrule' ; cat $< ; /usr/bin/echo ' \bottomrule \end{tabular}' ) > $@
 
 # Pattern rule to run any shell script and produce a .sh.done file afterwards if it succeeded, logging stdout + stderr
 # and timing info to a .sh.pid$$.log file, as well as to stdout.
