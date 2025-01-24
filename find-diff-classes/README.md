@@ -1,20 +1,10 @@
 # Reproducing the results from the paper
 
 Figure 1 in the paper summarises the differing test outcome results from the file `different_test_outcomes.tsv` in this archive.
-There are several stages at which these results can be reproduced on a Linux system.
-In increasing order of thoroughness (and running time):
+You can reproduce these results yourself on any Linux system.
 
-0. Look at the existing `different_test_outcomes.tsv` file included in the archive.
-1. Run the existing, precompiled tests included in the archive, and generate the above file.
-2. Compile the existing, pre-generated tests, then proceed as above.
-3. Generate fresh tests using EvoSuite (time-consuming!), then proceed as above.
-4. Compare all (*mvnc*, *alternative*) pairs of GAVs to determine which of their classes differ according to the `jNorm` tool, then filter out classes that differ only according to compiler changes introduced in JDK18, then proceed as above.
-
-## Starting from stage 2 (compile and run tests)
-This is the recommended starting point.
-It will take around 40 minutes.
-
-All starting points (except 0) require first downloading several files, then copying `.env.template` to `.env` and changing entries in `.env` to point to their absolute paths:
+## Download external tools and set up environment
+First download the following files, then copy `.env.template` to `.env` and change entries in `.env` to point to their absolute paths:
 
 | Download                                                                                                                                                                                                                               | Setting in `.env` |
 |----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------|
@@ -23,7 +13,7 @@ All starting points (except 0) require first downloading several files, then cop
 | [JUnit 4.13.2 jar](https://repo1.maven.org/maven2/junit/junit/4.13.2/junit-4.13.2.jar) (if you use Maven, you may already have this at `${HOME}/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar`)                                   | `JUNIT4JAR`                 |
 | [Hamcrest 1.3 jar](https://repo1.maven.org/maven2/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar) (if you use Maven, you may already have this at `${HOME}/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar`) | `HAMCRESTJAR`                 |
 
-Also set `DB` in `.env` to the absolute path of an SQLite database file, which will be created if it does not already exist.
+Also set `DB` in `.env` to the absolute path of an SQLite database file to store results in, which will be created if it does not already exist.
 Results will be written to the table `different_test_outcomes` in this database.
 
 You will also need the following tools installed:
@@ -35,6 +25,7 @@ You will also need the following tools installed:
 - `bash` (installed by default on ~all Linux systems)
 - `perl` (installed by default on ~all Linux systems)
 
+## Compile and run tests and summarise results
 Then run:
 
 ```
@@ -43,15 +34,51 @@ make clean-compile         # Remove prebuilt results from test compilation onwar
 make                       # Compile existing EvoSuite-generated tests, run them and summarise results
 ```
 
+This will take around 40 minutes and produce `different_test_outcomes.tsv`.
+
 See also the [Makefile](Makefile), which has detailed comments explaining each step.
 
 Note that all shell scripts in the archive root directory are **generated** by `make`.
 
-## Starting from an earlier stage
-Starting at earlier (higher-numbered) stages requires additional downloads:
+# Regenerating tests using EvoSuite
+The above steps show how to reproduce the results in the paper, starting from EvoSuite-generated tests already present in the archive.
+Alternatively, you can first regenerate these tests yourself using EvoSuite.
+This will in general produce different results, since EvoSuite test generation is not deterministic.
 
-| If starting at     | Download                                                                                                                                                                       | Setting in `.env` |
-|--------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------|
-| 3. Test generation | [EvoSuite 1.2.0 full jar](https://github.com/EvoSuite/evosuite/releases/download/v1.2.0/evosuite-1.2.0.jar)                                                                    | `EVOSUITEJAR`     |
-| 4. Comparison      | `bineq-1.0.0-jar-with-dependencies.jar` from https://zenodo.org/records/14037542                                                                                               | `BINEQ_CLASSPATH` |
-|                    | [`jNorm 1.0.0 client jar`](https://github.com/stschott/jnorm-tool/releases/download/v1.0.0/jnorm-cli-1.0.0.jar), must be downloaded to `tools/jnorm-jar-with-dependencies.jar` | -                 |
+**NOTE: Regenerating tests is time-consuming!**
+
+## Additional setup
+
+In addition to the steps in "Download tools and set up environment" above, download the [EvoSuite 1.2.0 full jar](https://github.com/EvoSuite/evosuite/releases/download/v1.2.0/evosuite-1.2.0.jar), uncomment the line beginning with `#EVOSUITEJAR=` in `.env` and set it to the downloaded file's absolute path.
+
+## Compile and run tests and summarise results
+Then run:
+
+```
+make fix-timestamps        # Fix file modification times after git clone / git checkout
+make clean-compare         # Remove prebuilt results from test generation onwards
+make                       # Generate tests with EvoSuite, compile and run them, and summarise results
+```
+
+This will produce `different_test_outcomes.tsv`, as before.
+
+# Common problems
+
+### Q: I see errors like `java.awt.AWTError: Can't connect to X11 window server using 'localhost:13.0' as the value of the DISPLAY variable.` when running tests -- what can I do?
+
+**A:** Ensure the `$DISPLAY` environment variable is not present in the environment by running `export -n DISPLAY` before running `make`.
+
+Explanation: `$DISPLAY` may be set to an erroneous value, e.g., if using an `ssh` connection with X forwarding turned on but no X server running on the host.
+
+### Q: I got rid of `$DISPLAY`, but now I see errors like `java.awt.AWTError: Assistive Technology not found: org.GNOME.Accessibility.AtkWrapper` when running tests -- what can I do?
+
+**A:** Per [these instructions](https://askubuntu.com/a/723503), before running `make`, turn off AWT assistive technologies by commenting out the line:
+
+```
+assistive_technologies=org.GNOME.Accessibility.AtkWrapper
+```
+
+in `/etc/java-8-openjdk/accessibility.properties` by prepending a `#`.
+This requires root privileges.
+
+Explanation: Seems to be a known issue with "headless" JDK versions, e.g., `openjdk-8-jdk-headless:amd64` for Ubuntu 24.04.1 LTS.
