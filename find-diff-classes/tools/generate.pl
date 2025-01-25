@@ -504,7 +504,7 @@ THE_END
                         if ($keepRunFilter->("$outBasename.out")) {
                             if (!$createdDirYet) {
 #                                my $mkdirCmd = "( mkdir -p \"$testRunPath\" && cd '$testCompilePath'";    # Note we *don't* change to the dir we create this time! Symlink should already be there. Double-quote $testRunPath to let shell expand $RUNDIR.
-                                my $mkdirCmd = "( mkdir -p \"$testRunPath\" && cd '$testCompilePath' && ln -sT $genBasePath/target t";    # Note we *don't* change to the dir we create this time! Create the symlink in case we just downloaded the archive and ran make clean-run (it will already be there otherwise). Double-quote $testRunPath to let shell expand $RUNDIR.
+                                my $mkdirCmd = "( mkdir -p \"$testRunPath\" && cd '$testCompilePath' && ( ln -sT $genBasePath/target t || true )";    # Note we *don't* change to the dir we create this time! Create the symlink in case we just downloaded the archive and ran make clean-run (it will already be there otherwise). Double-quote $testRunPath to let shell expand $RUNDIR.
                                 print $mkdirCmd, "\n";
                                 $createdDirYet = 1;
                             }
@@ -513,7 +513,7 @@ THE_END
                             my $jacocoDestSysProp = ($opts->{useJacoco} ? "-Djacoco-agent.destfile=\"$jacocoExecFile\"" : "");
 
                             print "# Run compiled test class $compiledClass for $jarPath for $opts->{targetOtherProvider}\n";
-                            my $javaCmd = "CLASSPATH=\"$classPath\" time $JAVA8 $jacocoDestSysProp org.junit.runner.JUnitCore \"$dottedClassName\" > \"$outBasename.out\" 2> \"$outBasename.err\"";
+                            my $javaCmd = "CLASSPATH=\"$classPath\" time $JAVA8 $jacocoDestSysProp org.junit.runner.JUnitCore \"$dottedClassName\" > \"$outBasename.out\" 2> \"$outBasename.err\" || true";	# "|| true" since we don't want test failure to fail the whole run stage
                             print $javaCmd, "\n";
 
                             if ($opts->{useJacoco}) {

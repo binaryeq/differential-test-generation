@@ -44,6 +44,7 @@ clean-compile: clean-run
 	rm -rf \
 		compile/ \
 		$(foreach b,$(BUILDS), \
+			setup_compile_or_run_deps_for_$b.sh{,.done} \
 			compile_and_run_mvn_tests_for_$b.sh{,.done} \
 			compile_tests_for_$b.sh{,.done} \
 		) \
