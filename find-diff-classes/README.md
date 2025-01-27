@@ -34,7 +34,7 @@ make clean-compile         # Remove prebuilt results from test compilation onwar
 make                       # Compile existing EvoSuite-generated tests, run them and summarise results
 ```
 
-This will take around 40 minutes and produce `data-summary-table-tabular.tex`.
+This will take around 2.5 hours and 5GB of disk space, and produce `data-summary-table-tabular.tex`.
 The file `different_test_outcomes.tsv` contains the same results in more detail.
 
 See also the [Makefile](Makefile), which has detailed comments explaining each step.
