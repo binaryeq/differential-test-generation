@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DB=/home/wtwhite/code/craw-redhat-oss/sqlite/crawl.sqlite
+echo "DB=${DB:?env var DB not set}"
 
 sqlite3 "$DB" 'DROP TABLE IF EXISTS test_classes;' 'CREATE TABLE test_classes (provider TEXT, groupId TEXT, artifactId TEXT, version TEXT, testClass TEXT, nTests INTEGER, nTestsSucceeded INTEGER, nTestsFailed INTEGER, elapsedTime REAL);'
 sqlite3 "$DB" 'DROP TABLE IF EXISTS failed_test_methods;' 'CREATE TABLE failed_test_methods (provider TEXT, groupId TEXT, artifactId TEXT, version TEXT, testClass TEXT, testMethodSuffix TEXT);'
