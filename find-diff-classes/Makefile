@@ -58,7 +58,9 @@ clean-run: clean-db
 			tests_results_$b.tsv \
 			import_test_results_$b.done \
 		) \
-		different_test_outcomes.tsv
+		different_test_outcomes.tsv \
+		data-summary-table-body.tex \
+		data-summary-table-tabular.tex
 
 clean-db: drop_table_failed_test_methods.sql.ALWAYS_DO drop_table_test_classes.sql.ALWAYS_DO drop_view_differing_failed_test_methods.sql.ALWAYS_DO
 

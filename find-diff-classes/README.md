@@ -1,3 +1,9 @@
+# Towards Cross-Build Differential Testing
+
+The paper:
+
+Jens Dietrich, Tim White, Valerio Terragni and Behnaz Hassanshahi. *Towards Cross-Build Differential Testing.* 18th IEEE International Conference on Software Testing, Verification and Validation (ICST) 2025.
+
 # Reproducing the results from the paper
 
 Table 1 in the paper is `data-summary-table-tabular.tex` in this archive.
@@ -8,7 +14,7 @@ First download the following files, then copy `.env.template` to `.env` and chan
 
 | Download                                                                                                                                                                                                                               | Setting in `.env` |
 |----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------|
-| Download and unpack the 31GB `bineq-altbuild-dataset.zip` dataset from https://zenodo.org/records/14037542                                                                                                                             | `JARROOT`                 |
+| Download and unpack the 31GB `bineq-altbuild-dataset.zip` dataset from https://zenodo.org/records/14751788                                                                                                                             | `JARROOT`                 |
 | [EvoSuite 1.2.0 runtime jar](https://github.com/EvoSuite/evosuite/releases/download/v1.2.0/evosuite-standalone-runtime-1.2.0.jar)                                                                                                      | `EVOSUITERUNTIMEJAR`                 |
 | [JUnit 4.13.2 jar](https://repo1.maven.org/maven2/junit/junit/4.13.2/junit-4.13.2.jar) (if you use Maven, you may already have this at `${HOME}/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar`)                                   | `JUNIT4JAR`                 |
 | [Hamcrest 1.3 jar](https://repo1.maven.org/maven2/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar) (if you use Maven, you may already have this at `${HOME}/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar`) | `HAMCRESTJAR`                 |
@@ -34,7 +40,7 @@ make clean-compile         # Remove prebuilt results from test compilation onwar
 make                       # Compile existing EvoSuite-generated tests, run them and summarise results
 ```
 
-This will take around 40 minutes and produce `data-summary-table-tabular.tex`.
+This will take around 2.5 hours and 5GB of disk space, and produce `data-summary-table-tabular.tex`.
 The file `different_test_outcomes.tsv` contains the same results in more detail.
 
 See also the [Makefile](Makefile), which has detailed comments explaining each step.
