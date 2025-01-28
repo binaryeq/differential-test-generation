@@ -1,3 +1,9 @@
+# Towards Cross-Build Differential Testing
+
+The paper:
+
+Jens Dietrich, Tim White, Valerio Terragni and Behnaz Hassanshahi. *Towards Cross-Build Differential Testing.* 18th IEEE International Conference on Software Testing, Verification and Validation (ICST) 2025.
+
 # Reproducing the results from the paper
 
 Table 1 in the paper is `data-summary-table-tabular.tex` in this archive.
