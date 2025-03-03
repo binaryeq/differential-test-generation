@@ -37,7 +37,7 @@
 
 \lstdefinestyle{mystyle}{
 	numberstyle=\tiny,
-	basicstyle=\ttfamily\footnotesize,
+	basicstyle=\ttfamily\scriptsize,
 	breakatwhitespace=false,         
 	breaklines=true,                 
 	captionpos=b,                    
@@ -64,17 +64,17 @@
 %\author{Anonymous Author(s)}
 %Valerio: the track is double blind
 
-\author{\IEEEauthorblockN{1\textsuperscript{st} Jens Dietrich  \hspace{1cm} 2\textsuperscript{nd} Tim White}
+\author{\IEEEauthorblockN{Jens Dietrich  \hspace{1cm} Tim White}
 \IEEEauthorblockA{\textit{Victoria University of Wellington} \\
 Wellington, New Zealand \\
 \{jens.dietrich,tim.white\}@vuw.ac.nz}
 \and
-\IEEEauthorblockN{3\textsuperscript{rd} Valerio Terragni}
+\IEEEauthorblockN{Valerio Terragni}
 \IEEEauthorblockA{\textit{University of Auckland} \\
 Auckland, New Zealand \\
 v.terragni@auckland.ac.nz}
 \and
-\IEEEauthorblockN{4\textsuperscript{th} Behnaz Hassanshahi}
+\IEEEauthorblockN{Behnaz Hassanshahi}
 \IEEEauthorblockA{\textit{Oracle Labs Australia} \\
 Brisbane, Australia \\
 behnaz.hassanshahi@oracle.com}
@@ -139,7 +139,7 @@ An overview of our methodology is depicted in Figure~\ref{fig:methodology}.  As 
 
 \begin{figure}[t!]
 	\centering
-	\includegraphics[width=\columnwidth]{figures/methodology.pdf}
+	\includegraphics[width=0.8\columnwidth]{figures/methodology.pdf}
 	\caption{Methodology Overview \label{fig:methodology}}
 \end{figure}
 
@@ -230,8 +230,8 @@ Therefore, this issue is caused by the different JDK versions used during the bu
 	\label{tab:nosuchmethoderror}
 \end{table}
 
-The two \textit{gaoss} test failures on \texttt{io.netty.netty-\-codec-http:4.1.102.Final} are similar, but ``in reverse'': Here, it is the \textit{mvnc} jar that was built with a newer JDK version (19), while \textit{gaoss} was built with JDK 8\footnote{The jar manifests contain the entries \textit{Build-Jdk-Spec: 19} and \textit{Build-Jdk-Spec: 1.8}, respectively.}.
-This time, the generated tests \textit{expect} \texttt{NoSuchMethodError} to be thrown, resulting in test failure on \textit{gaoss} when the call to \texttt{java/nio/ByteBuffer.flip:()Ljava/nio/Buffer;} completes normally.%
+The two \textit{gaoss} test failures on \texttt{io.netty.netty-\-codec-http:4.1.102.Final} are similar, but ``in reverse'': Here, the \textit{mvnc} jar that was built with JDK 19, while \textit{gaoss} was built with JDK 8\footnote{The jar manifests contain the entries \textit{Build-Jdk-Spec: 19} and \textit{Build-Jdk-Spec: 1.8}, respectively.}.
+This time, the generated tests \textit{expect} \texttt{NoSuchMethodError} to be thrown, resulting in test failure on \textit{gaoss} when the call to \texttt{java/\-nio/\-Byte\-Buffer.flip:()Ljava/nio/Buffer;} completes normally.%
 % Tim cutting this for space (and time):
 %\footnote{Interestingly, the code paths that trigger the \textit{NoSuchMethodError} on \textit{mvnc} seem to occur only as a result of buggy interference between test methods: See \tim{add URL to anonymised description page, or cut} for details.}
 
@@ -248,7 +248,7 @@ We have identified three generated test classes with inconsistent behaviour betw
     \item  \texttt{org...io.output.UncheckedAppendableImpl\_ESTest}
 \end{enumerate}
 
-All of these test inconsistencies are caused by the same pattern.  The \textit{obfs} binary was built  with Java 8, while the \textit{mvnc} binary was built with Java 21. The target level for both was set to 52 (compatible with Java 8). Table~\ref{tab:stackoverflow} summarises the situation.
+All of these inconsistencies are caused by the same pattern.  The \textit{obfs} binary was built  with Java 8, while the \textit{mvnc} binary was built with Java 21. The target level for both was set to 52 (compatible with Java 8). Table~\ref{tab:stackoverflow} summarises the situation.
 
 
 \begin{table}[h]
@@ -272,11 +272,9 @@ Comparable comp =  ... ;
 comp.toString();
 \end{lstlisting}	
 
-Up to Java 17, this call was compiled to \texttt{invokevirtual Object::toString}\footnote{Package names and descriptors are omitted for brevity}. Starting with Java 18, this call is now compiled to \texttt{invokeinterface Comparable::toString}.
+Up to Java 17, this call was compiled to \texttt{invokevirtual Object::toString}\footnote{Package names and descriptors are omitted for brevity}. Starting with Java 18, this call is now compiled to \texttt{invokeinterface Comparable::toString}. This results in changes to runtime behaviour when using the \evosuite runtime, as \evosuite replaces these calls with calls to its own mocks, such as  \texttt{org.evosuite.runtime.System::toString}. But this only replaces the older call pattern, not the new one. 
 
-This results in changes to runtime behaviour when using the \evosuite runtime, as \evosuite replaces these calls with calls to its own mocks, such as  \texttt{org.evosuite.runtime.System::toString}. But this only replaces the older call pattern, not the new one. 
-
-An example of such inconsistent behaviour we have encountered  is when a \texttt{toString} implementation is recursive. Then \evosuite generates a test with a self-referential data structure that expects a \texttt{StackOverFlowError} to occur when \texttt{toString} is invoked on this data structure. However, when the mock substitution is performed by \evosuite, this error does not occur as the mock \texttt{toString} method is not recursive, and the test fails. I.e., the test outcome now depends on whether \evosuite performs the substitution or not, and this depends on the compiler that had been used.
+An example of such inconsistent behaviour is when a \texttt{toString} implementation is recursive. Then \evosuite generates a test with a self-referential data structure that expects a \texttt{StackOverFlowError} to occur when \texttt{toString} is invoked on this data structure. However, when the mock substitution is performed, this error does not occur as the mock \texttt{toString} method is not recursive, and the test fails. I.e., the test outcome now depends on whether \evosuite performs the substitution or not, and this depends on the compiler that had been used.
 
 In this case we think the misconfiguration is on the Maven Central side, where a very recent Java version has been used to create a binary compatible with Java 8, but this hasn't been configured correctly.
 %Tim: I would instead say it's a problem caused by EvoSuite not being maintained, but I know this is a delicate issue!
@@ -288,16 +286,10 @@ In this case we think the misconfiguration is on the Maven Central side, where a
 \section{Related Work}
 \label{sec:relatedwork}
 
-\emph{Differential Testing}\cite{difftesting} is an automated approach that identifies various errors by comparing the behaviour of two or more comparable systems\cite{xie2007towards,jin10:automated,diffgen}. In the context of object-oriented (OO) programming, notable techniques include \textsc{Diffut}\cite{xie2007towards}, \textsc{BeRT}\cite{jin10:automated}, and \textsc{DiffGen}~\cite{diffgen}. Similar to our approach, these techniques leverage the differences between two software versions to generate test cases that reveal behavioural discrepancies. However, our approach focuses on comparing binaries, which required us to design and implement specialised ad-hoc analyses.
+\emph{Differential Testing}\cite{difftesting} is an automated approach that identifies various errors by comparing the behaviour of two or more comparable systems\cite{xie2007towards,jin10:automated,diffgen}. In the context of object-oriented (OO) programming, notable techniques include \textsc{Diffut}\cite{xie2007towards}, \textsc{BeRT}\cite{jin10:automated}, and \textsc{DiffGen}~\cite{diffgen}. Similar to our approach, these techniques leverage the differences between two software versions to generate test cases that reveal behavioural discrepancies. However, our approach focuses on comparing binaries, which required a specialised ad-hoc analyses.
 
 Although the implementation details may differ, all differential testing techniques share the core idea of generating and executing the same test cases on the versions being compared to reveal behavioural differences. % One of the most common applications of differential testing is regression testing, where two versions of the same program are compared. 
-While differential testing has been effective in detecting semantic errors in various domains (e.g., C compilers~\cite{Yang:compiler:pldi:2011} and JVM implementations~\cite{Chen:jvmdiff:pldi:2016}), to the best of our knowledge, it has not yet been applied to identify differences between alternative builds of the same program version.
-
-
-\section{Data Access}
-\label{sec:dataaccess}
-
-The input jar pairs, generated tests and raw test run reports can be found here: \url{https://doi.org/10.5281/zenodo.14753368}.
+While differential testing has been effective in detecting semantic errors in various domains (e.g., C compilers~\cite{Yang:compiler:pldi:2011} and JVM implementations~\cite{Chen:jvmdiff:pldi:2016}), to the best of our knowledge, it has not yet been applied to identify differences between alternative builds.
 
 
 \section{Conclusion}
@@ -306,6 +298,13 @@ The input jar pairs, generated tests and raw test run reports can be found here:
 In this paper we have explored a novel use case for differential testing: to assess the behavioural equivalence of binaries built independently from the same source code. Our research was motivated by software supply chain security. While we did not find any evidence that components in our dataset had been compromised during the build, we did find two interesting cases of build misconfiguration.  
 
 A possible avenue for future research is to analyse other signals from test executions, namely coverage. This could still reveal differences in program behaviour not captured by the assertions in generated tests. 
+
+
+
+\section{Data Access}
+\label{sec:dataaccess}
+
+The input jar pairs, generated tests and raw test run reports can be found here: \url{https://doi.org/10.5281/zenodo.14753368}.
 
 \section*{Acknowledgements}
 
